@@ -24,9 +24,6 @@ const ParticlesComponent = () => {
     console.log(container);
   };
 
-  if (!init) {
-    return <></>; // Return nothing until initialization is complete
-  }
 
   // Increase the number of particles by adjusting the value property
   const increasedParticles = {
@@ -35,7 +32,7 @@ const ParticlesComponent = () => {
       ...particles.particles,
       number: {
         ...particles?.particles?.number,
-        value: 100, // Adjust the value to increase the number of particles
+        value: 300, // Adjust the value to increase the number of particles
       },
     },
   };
