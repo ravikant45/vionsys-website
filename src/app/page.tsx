@@ -16,7 +16,7 @@ export default function Home() {
     AOS.refresh();
   }, [])
   return (
-    <div data-aos="fade-up" className='pt-24'>
+    <div data-aos="fade-up" className='pt-24 h-screen'>
       Hello
     </div>
   );

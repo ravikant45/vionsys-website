@@ -20,10 +20,10 @@ import { Industries } from "./Navlinks";
 const ResponsiveMenu = ({ showMenu }: any) => {
     return (
         <div
-            className={`${showMenu ? 'top-0 md:hidden' : 'hidden'} bg-white h-[60vh] flex items-start justify-center py-6 border-b shadow-md `}
+            className={`${showMenu ? 'top-8 md:hidden' : 'hidden'} fixed w-full z-10 bg-white h-[50vh] flex items-start justify-center py-6 border-b shadow-md `}
         >
             <NavigationMenu>
-                <NavigationMenuList className="flex flex-col gap-2">
+                <NavigationMenuList className="flex flex-col gap-4">
                     {/* Home section */}
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>

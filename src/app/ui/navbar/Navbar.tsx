@@ -42,18 +42,18 @@ const Navbar = () => {
     }
     return (
         <div className="">
-            <div className={`w-[100vw] flex justify-between items-center  ${scrolling ? 'bg-white border-b' : 'bg-transparent'}`}>
+            <div className={` md:fixed absolute z-20 w-[100vw] flex p-1 justify-between items-center  ${scrolling ? 'bg-white' : 'bg-white'}`}>
                 {/* Logo of the organization */}
                 <div className="px-4">
-                    Logo
+                    <img src="https://www.vionsys.com/public/assets/img/logo_3.png" alt="" />
                 </div>
 
                 {/* Nav menus */}
                 <div className="py-2 md:block hidden px-4">
                     <NavigationMenu>
-                        <NavigationMenuList>
+                        <NavigationMenuList >
                             {/* Home page */}
-                            <NavigationMenuItem>
+                            <NavigationMenuItem >
                                 <Link href="/" legacyBehavior passHref>
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Home
