@@ -15,7 +15,7 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="opacity-90  relative px-2 bottom-0 w-[100vw] overflow-hidden">
+    <footer className="opacity-90 relative px-2 bottom-0 w-[100vw] overflow-hidden">
       <div className="w-full absolute -z-10">
         <svg
           id="svg"
@@ -56,8 +56,8 @@ const Footer = () => {
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
             {/* Logo */}
-            <div className="text-center md:text-left">
-              <h3>Logo</h3>
+            <div className="text-center md:text-left flex justify-center items-center">
+              <img src="https://www.vionsys.com/public/assets/img/logo_3.png" alt="" />
             </div>
 
             {/* About Us */}
