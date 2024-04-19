@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import Hero from './ui/home/Hero';
+import AboutOurCompany from './ui/home/AboutOurCompany';
 
 export default function Home() {
   useEffect(() => {
@@ -17,8 +18,9 @@ export default function Home() {
     AOS.refresh();
   }, [])
   return (
-    <div data-aos="fade-up" className=''>
+    <div className='pt-20'>
       <Hero />
+      <AboutOurCompany />
     </div>
   );
 }
