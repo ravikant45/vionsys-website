@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Training from "./training";
-import Jobs from "./jobs";
+import JobsCard from "./JobsCard";
 const CareerComponent = () => {
   return (
     <div className="  w-[100vw] h-[100vh] ">
