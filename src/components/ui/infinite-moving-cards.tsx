@@ -6,6 +6,7 @@ import React, {
 } from 'react';
 
 import { cn } from '@/lib/utils';
+import { Button } from './button';
 
 export const InfiniteMovingCards = ({
   items,
@@ -17,7 +18,7 @@ export const InfiniteMovingCards = ({
   items: {
     name: string;
     description: string;
-    button: string;
+    button: any;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -77,7 +78,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-10  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -107,12 +108,12 @@ export const InfiniteMovingCards = ({
                 {item.name}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className=" text-sm leading-[1.6] border-slate-700 font-normal">
+                <span className="flex flex-col gap-4">
+                  <span className=" text-sm leading-[1.6] text-black border-slate-700 font-normal">
                     {item.description}
                   </span>
                   <span className=" text-sm leading-[1.6] text-red-500 underline font-normal">
-                    {item.button}
+                    <Button>{item.button}</Button>
                   </span>
                 </span>
               </div>
