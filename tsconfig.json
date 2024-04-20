@@ -32,7 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/utils/SquareAnimation3d.jsx"
+    "src/utils/SquareAnimation3d.jsx",
+    "src/app/ui/home/ParticlesComponent.jsx"
   ],
   "exclude": [
     "node_modules"
