@@ -15,8 +15,8 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="opacity-90 relative px-2 bottom-0 w-[100vw] overflow-hidden">
-      <div className="w-full absolute -z-10">
+    <footer className="px-2 w-[100vw]  overflow-hidden">
+      <div className="w-full absolute overflow-hidden -z-10">
         <svg
           id="svg"
           viewBox="0 0 1440 325"
@@ -52,7 +52,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Content */}
-      <div className="bg-transparent z-10 py-5">
+      <div className="bg-transparent py-5">
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
             {/* Logo */}
