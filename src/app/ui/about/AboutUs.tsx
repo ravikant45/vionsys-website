@@ -16,7 +16,7 @@ const AboutUs = () => {
               "url('https://img.freepik.com/premium-photo/business-meeting_53876-91042.jpg')",
           }}
         >
-          <div className="h-screen w-full flex flex-col justify-start py-4 items-center">
+          <div className="h-screen border-2 w-full flex flex-col justify-start py-4 lg:items-start">
             {/* Image Icon */}
             <img
               src="https://png.pngtree.com/png-vector/20221122/ourmid/pngtree-thinking-man-illustration-with-question-mark-and-light-bulb-for-business-png-image_6475461.png"
@@ -31,7 +31,7 @@ const AboutUs = () => {
               transition={{ duration: 1 }}
               className="text-center mt-5 px-8 sm:mt-10 sm:px-20"
             >
-              <h1 className="text-zinc-600 text-3xl sm:text-7xl">
+              <h1 className="text-zinc-600 text-3xl md:text-7xl">
                 Ready To <br className="sm:hidden" />
                 <span className="block">Transform Your Ideas </span>
                 Into Reality?
@@ -39,28 +39,15 @@ const AboutUs = () => {
             </motion.div>
 
             {/* Contact Us Button */}
-            <Link href="/contact" legacyBehavior passHref>
-              <button
-                className={`bg-transparent hover:bg-blue-700 hover:text-white absolute mb-12 left-1/2 transform -translate-x-1/2 text-blue-700 border-blue-700 border-2 font-bold py-2 px-4 rounded-full shadow-xl sm:bottom-16 sm:py-3 sm:px-6 sm:text-lg ${navigationMenuTriggerStyle()}`}
-              >
-                <BsTelephoneOutboundFill className="inline-block mr-2" />
-                Contact Us
-              </button>
-            </Link>
-
-            {/* Para Container */}
-            <div className="p-4 sm:p-6 rounded-3xl bg-blue-500 hover:bg-blue-700 cursor-pointer absolute bottom-10 right-10 mx-auto max-w-[500px] text-center shadow-gray-500 shadow-xl overflow-hidden">
-              <p className="text-sm sm:text-base text-white leading-relaxed">
-                At Vionsys It Solutions, we're dedicated{" "}
-                <br className="sm:hidden" /> to providing specialized expertise
-                and dependable <br className="sm:hidden" />
-                support for projects of all types. Select the{" "}
-                <br className="sm:hidden" /> engagement model that fits your
-                project best and <br className="sm:hidden" /> set out on a
-                journey toward digital excellence <br className="sm:hidden" />{" "}
-                alongside our trusted team.
-              </p>
+            <div className="h-12 flex justify-center md:absolute md:left-80 md:top-[530px] items-center bg-white text-blue-700 hover:bg-blue-700 hover:text-white border-2 border-blue-700 rounded-full shadow-xl sm:p-3">
+              <Link href="/contact" passHref>
+                <button className="font-bold transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                  <BsTelephoneOutboundFill className="inline-block mr-2 text-xl" />
+                  Get In Touch
+                </button>
+              </Link>
             </div>
+
           </div>
         </div>
       </div>
