@@ -4,7 +4,7 @@ import Training from "./training";
 import JobsCard from "./JobsCard";
 const CareerComponent = () => {
   return (
-    <div className="  w-[100vw] h-[100vh] ">
+    <div className="  w-[100vw] h-[100vh]">
       <div className="relative w-full h-full">
         <img
           className="w-full h-full object-cover bg-no-repeat"
