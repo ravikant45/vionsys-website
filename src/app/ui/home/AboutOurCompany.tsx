@@ -3,8 +3,8 @@ import About from '../../../../public/assets/about.jpg';
 import Image from 'next/image';
 const AboutOurCompany = () => {
     return (
-        <div className='grid md:grid-cols-2 grid-cols-1 bg-slate-100 justify-items-center items-center overflow-hidden'>
-            <div className='md:p-5 pt-16'>
+        <div className='grid md:grid-cols-2 grid-cols-1 bg-slate-100 justify-items-center items-center'>
+            <div className='md:p-5 '>
                 <Image src={About} alt="" />
             </div>
             <div className='w-4/5'>

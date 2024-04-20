@@ -3,7 +3,7 @@ import React from "react";
 const Life = () => {
   return (
     <div className="w-[100vw] py-20 ">
-      <div className="inset-0 flex flex-col justify-center items-center text-center">
+      <div className="flex flex-col justify-center items-center text-center">
         <h1 className="text-5xl text-start text-blue-600 font-bold  pb-4">
           Life @ Vionsys
         </h1>
