@@ -23,7 +23,7 @@ function Hero() {
                 ]}
                 //    wrapper="span"
                 speed={60}
-                className='text-[3rem] font-medium align-middle normal-case md:pl-18 leading-normal text-orange'
+                className='md:text-[3rem] text-[2rem] font-medium align-middle normal-case md:pl-18 leading-normal text-orange'
                 repeat={Infinity}
               />
             </span>
@@ -33,7 +33,7 @@ function Hero() {
             Your one-stop destination for top-notch web design & development services.
           </p>
           <div className='flex justify-start items-center'>
-            <p className='bg-blue5 px-6 text-white p-2 rounded-bl-3xl rounded-tr-3xl'>You Think, <span className="rounded-l-xl">We Make It!</span></p>
+            <p className='bg-blue5 px-6 text-white p-2 rounded-bl-2xl rounded-tr-2xl'>You Think, <span className="rounded-l-xl">We Make It!</span></p>
           </div>
           <div className='flex justify-start items-center'>
             <Button>Get In Touch</Button>
