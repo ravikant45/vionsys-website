@@ -1,11 +1,15 @@
 'use client';
-import AOS from 'aos';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useEffect } from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import 'aos/dist/aos.css';
-import Hero from './ui/home/Hero';
+
+import { useEffect } from 'react';
+
+import AOS from 'aos';
+
 import AboutOurCompany from './ui/home/AboutOurCompany';
+import Hero from './ui/home/Hero';
+import WeProvide from './ui/home/WeProvide';
 
 export default function Home() {
   useEffect(() => {
@@ -18,9 +22,10 @@ export default function Home() {
     AOS.refresh();
   }, [])
   return (
-    <div className='pt-20'>
+    <div className='pt-16'>
       <Hero />
       <AboutOurCompany />
+      <WeProvide />
     </div>
   );
 }

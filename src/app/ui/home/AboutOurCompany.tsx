@@ -1,12 +1,34 @@
-import React from 'react'
-import About from '../../../../public/assets/about.jpg';
-import Image from 'next/image';
+import React from 'react';
+
 const AboutOurCompany = () => {
     return (
         <div className='grid md:grid-cols-2 grid-cols-1 bg-slate-100 justify-items-center items-center'>
-            <div className='md:p-5 '>
+            {/* <div className='md:p-5 '>
                 <Image src={About} alt="" />
+            </div> */}
+        <div className="grid grid-cols-3 gap-x-6 gap-y-0 m-14 ">
+            <div className='relative md:w-32 md:h-32 [clip-path:polygon(0%_25%,0%_75%,50%_100%,100%_75%,100%_25%,50%_0)] hover:scale-125 md:translate-x-20 transition-all duration-300 ease-linear'>
+                <img src="https://picsum.photos/id/1040/300/300" alt="" className="transform transition duration-200 cursor-pointer"/>
             </div>
+            <div className='relative md:w-32 md:h-32 [clip-path:polygon(0%_25%,0%_75%,50%_100%,100%_75%,100%_25%,50%_0)] hover:scale-125 md:translate-x-20 transition-all duration-300 ease-linear'>
+                <img src="https://picsum.photos/id/1040/300/300" alt="" className="transform transition duration-200 cursor-pointer"/>
+            </div> <br />
+           <div className='relative md:w-32 md:h-32 [clip-path:polygon(0%_25%,0%_75%,50%_100%,100%_75%,100%_25%,50%_0)] hover:scale-125 transition-all duration-300 ease-linear'>
+                <img src="https://picsum.photos/id/1040/300/300" alt="" className="transform transition duration-200 cursor-pointer"/>
+            </div>
+            <div className='relative md:w-32 md:h-32 [clip-path:polygon(0%_25%,0%_75%,50%_100%,100%_75%,100%_25%,50%_0)] hover:scale-125 transition-all duration-300 ease-linear'>
+                <img src="https://picsum.photos/id/1040/300/300" alt="" className="transform transition duration-200 cursor-pointer"/>
+            </div>
+            <div className='relative md:w-32 md:h-32 [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)] hover:scale-125 transition-all duration-300 ease-linear'>
+                <img src="https://picsum.photos/id/1040/300/300" alt="" className="transform transition duration-200 cursor-pointer"/>
+            </div>
+            <div className='relative md:w-32 md:h-32 [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)] hover:scale-125 md:translate-x-20 transition-all duration-300 ease-linear'>
+                <img src="https://picsum.photos/id/1040/300/300" alt="" className="transform transition duration-200 cursor-pointer"/>
+            </div>
+            <div className='relative md:w-32 md:h-32 [clip-path:polygon(50%_0%,_100%_25%,_100%_75%,_50%_100%,_0%_75%,_0%_25%)] hover:scale-125 md:translate-x-20 transition-all duration-300 ease-linear'>
+                <img src="https://picsum.photos/id/1040/300/300" alt="" className="transform transition duration-200 cursor-pointer"/>
+            </div>
+        </div>
             <div className='w-4/5'>
                 <h4 className='underline font-semibold text-xl mt-7'>About Our Company</h4>
                 <h5 className='text-lg mt-5'>Elevating your business through exemplary IT services is our unwavering passion and commitment.</h5>
