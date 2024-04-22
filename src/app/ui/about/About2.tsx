@@ -3,8 +3,8 @@ import React from "react";
 const About2 = () => {
   return (
     <>
-      <div className="w-screen lg:h-[40] flex justify-center items-center py-2 ">
-        <div className="h-[300px] w-[1300px]  py-2 flex flex-wrap justify-around ">
+      <div className="w-screen lg:h-[40] flex justify-center items-center py-4 ">
+        <div className="h-[300px] w-[1300px]  py-2 flex flex-wrap justify-center items-center gap-10 ">
           <h1 className="lg:h-[100px] h-10 lg:w-[550px] w-auto lg:text-4xl text-2xl font-bold">
             Crafting Solutions For{" "}
             <span className="text-blue-700 ">Global Innovators.</span>
@@ -21,7 +21,7 @@ const About2 = () => {
       </div>
 
       <div className="w-screen h-[40] flex justify-center items-center py-4">
-        <div className="h-[300px] w-[1300px] flex justify-around px-2">
+        <div className="w-screen flex justify-evenly items-center px-2">
           <h1 className="lg:px-4 h-[200px] w-[700px] lg:text-2xl text-sm font-semibold">
             At our core, we've been driven by a clear objective: supporting
             entrepreneurs in bringing meaningful software solutions to life. Our
@@ -29,7 +29,7 @@ const About2 = () => {
             benefit people, driving positive change for a better world, and that
             includes our own.
           </h1>
-          <img
+          <img className="md:h-96 md:w-96 h-32 w-32"
             src="https://img.freepik.com/free-vector/illustration-social-media-concept_53876-18383.jpg"
             alt=""
           />
