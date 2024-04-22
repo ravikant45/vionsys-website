@@ -19,6 +19,7 @@
     "@tsparticles/react": "^3.0.0",
     "@types/aos": "^3.0.7",
     "@types/three": "^0.163.0",
+    "antd": "^5.16.4",
     "aos": "^2.3.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
