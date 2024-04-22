@@ -1,16 +1,8 @@
 import { cn } from "@/utils/cn";
 import React from "react";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
+
 import { Jobs } from "./JobsData";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export default function JobsCard() {
   return (
@@ -21,16 +13,9 @@ export default function JobsCard() {
         </h1>
         <h2 className="text-black font-bold text-2xl">Current Openings</h2>
       </div>
-      <BentoGrid className="mx-auto">
-        {Jobs.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.position}
-            description={item.jobDescription}
-            requirements={item.Requirement}
-          />
-        ))}
-      </BentoGrid>
+      <div className="w-full px-4">
+        <HoverEffect items={Jobs} />
+      </div>
     </>
   );
 }
