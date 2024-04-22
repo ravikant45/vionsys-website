@@ -1,5 +1,6 @@
-import { Button } from '@/components/ui/button';
 import React from 'react';
+
+import { Button } from '@/components/ui/button';
 
 const AboutOurCompany = () => {
     return (
@@ -31,9 +32,9 @@ const AboutOurCompany = () => {
                 </div>
             </div>
             <div className='w-4/5'>
-                <h4 className='underline font-bold md:text-2xl text-xl mt-7 text-black'>About Our Company</h4>
+                <h4 className='underline font-bold md:text-xl text-xl text-orange'>About Our Company</h4>
                 <h5 className='text-lg mt-5 text-black'>Elevating your business through exemplary IT services is our unwavering passion and commitment.</h5>
-                <div className='text-sm mt-5 text-gray1 pb-4'>Vionsys IT solutions INDIA Pvt. Ltd. is a leading IT company providing comprehensive solutions. From software development and cloud services to cybersecurity and IT consulting, we offer a wide range of expertise. Our experienced team delivers tailored solutions, ensuring efficiency, reliability, and scalability, to empower businesses to thrive in the digital era.</div>
+                <div className='text-sm mt-5 text-gray1 pb-4'>Vionsys IT Solutions India Pvt. Ltd. is a leading provider of comprehensive IT services, including software development, cloud solutions, cybersecurity, and IT consulting. With our experienced team, we deliver tailored solutions for businesses, ensuring efficiency, reliability, and scalability in the digital age.</div>
                 <Button>Learn More</Button>
             </div>
         </div>
