@@ -8,7 +8,10 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 
 import AboutOurCompany from './ui/home/AboutOurCompany';
+import ChooseUs from './ui/home/ChooseUs';
+import Count from './ui/home/Count';
 import Hero from './ui/home/Hero';
+import TrustUs from './ui/home/TrustUs';
 import WeProvide from './ui/home/WeProvide';
 
 export default function Home() {
@@ -26,6 +29,9 @@ export default function Home() {
       <Hero />
       <AboutOurCompany />
       <WeProvide />
+      <ChooseUs />
+      <TrustUs/>
+      <Count />
     </div>
   );
 }
