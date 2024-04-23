@@ -1,88 +1,130 @@
-export const ServicesLinks: { title: string; href: string; description: string }[] = [
-    {
-        title: "Software Development",
-        href: "/services/softwareDevelopment",
-        description:
-            "A modal dialog that interrupts the user with important content and expects a response.",
-    },
-    {
-        title: "Product Development",
-        href: "/services/productDevelopment",
-        description:
-            "For sighted users to preview content available behind a link.",
-    },
-    {
-        title: "Cloud Computing",
-        href: "/services/cloudComputing",
-        description:
-            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-    },
-    {
-        title: "Testing and QA",
-        href: "/services/testing",
-        description: "Visually or semantically separates content.",
-    },
-    {
-        title: "Devops Solutions",
-        href: "/services/devops",
-        description:
-            "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-    },
-    {
-        title: "BI and Analytics",
-        href: "/services/biAnalytics",
-        description:
-            "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-    },
-    {
-        title: "Big Data Analytics",
-        href: "/services/bigDataAnalytics",
-        description:
-            "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-    },
-    {
-        title: "Web Development",
-        href: "/services/webDevelopment",
-        description:
-            "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-    },
-]
+export const ServicesLinks: {
+  title: string;
+  href: string;
+  description: string;
+}[] = [
+  {
+    title: "Software Development",
+    href: "/services/softwareDevelopment",
+    description:
+      "Design, development, testing, and maintenance of software applications tailored to your business needs.",
+  },
+  {
+    title: "Product Development",
+    href: "/services/productDevelopment",
+    description:
+      "End-to-end product development services from conceptualization to launch, ensuring high quality and user satisfaction.",
+  },
+  {
+    title: "Cloud Computing",
+    href: "/services/cloudComputing",
+    description:
+      "Scalable and flexible cloud solutions that enable efficient resource management and enhance business agility.",
+  },
+  {
+    title: "Testing and QA",
+    href: "/services/testing",
+    description:
+      "Comprehensive testing services to ensure the reliability, performance, and security of your software products.",
+  },
+  {
+    title: "DevOps Solutions",
+    href: "/services/devOps",
+    description:
+      "Streamline software delivery processes and improve collaboration between development and operations teams through effective DevOps practices.",
+  },
+  {
+    title: "BI and Analytics",
+    href: "/services/biAnalytics",
+    description:
+      "Unlock valuable insights from your data and drive informed decision-making with our business intelligence and analytics solutions.",
+  },
+  {
+    title: "Big Data Analytics",
+    href: "/services/bigDataAnalytics",
+    description:
+      "Harness the power of big data to derive actionable insights, optimize processes, and gain a competitive edge in the market.",
+  },
+  {
+    title: "Web Development",
+    href: "/services/webDevelopment",
+    description:
+      "Create engaging and user-friendly web applications that deliver seamless digital experiences across all devices and platforms.",
+  },
+  {
+    title: "CRM",
+    href: "/services/crm",
+    description:
+      "Centralize customer data, automate sales processes, and enhance customer relationships with our customizable CRM solutions.",
+  },
+  {
+    title: "Machine Learning and AI",
+    href: "/services/machineLearningAI",
+    description:
+      "Leverage advanced algorithms and artificial intelligence to extract insights, automate processes, and drive innovation.",
+  },
+  {
+    title: "Salesforce",
+    href: "/services/salesforce",
+    description:
+      "Maximize customer engagement and streamline sales processes with our Salesforce CRM solutions tailored to your business needs.",
+  },
+  {
+    title: "Digital Marketing",
+    href: "/services/digitalMarketing",
+    description:
+      "Expand your online presence, attract more customers, and drive business growth with our comprehensive digital marketing strategies.",
+  },
+];
 
-export const Industries: { title: string; href: string; description: string }[] = [
-    {
-        title: 'Pharma',
-        href: '/industires/pharma',
-        description: ''
-    },
-    {
-        title: 'Insurance',
-        href: '/industires/insurance',
-        description: ''
-    },
-    {
-        title: 'Health Care',
-        href: '/industires/healthcare',
-        description: ''
-    },
-    {
-        title: 'Professional Services',
-        href: '/industires/professionalServices',
-        description: ''
-    },
-    {
-        title: 'Field Services',
-        href: '/industires/fieldServices',
-        description: ''
-    },
-    {
-        title: 'Banking',
-        href: '/industires/banking',
-        description: ''
-    },
-    {
-        title: 'Education',
-        href: '/industires/education',
-        description: ''
-    }
+export const Industries: {
+  title: string;
+  href: string;
+  description?: string; // Adding "?" to make description optional
+}[] = [
+  {
+    title: "Pharma",
+    href: "/industries/pharma",
+  },
+  {
+    title: "Insurance",
+    href: "/industries/insurance",
+  },
+  {
+    title: "Health Care",
+    href: "/industries/healthcare",
+  },
+  {
+    title: "Professional Services",
+    href: "/industries/professionalServices",
+  },
+  {
+    title: "Field Services",
+    href: "/industries/fieldServices",
+  },
+  {
+    title: "Banking",
+    href: "/industries/banking",
+  },
+  {
+    title: "Education",
+    href: "/industries/education",
+  },
+  {
+    title: "Finance",
+    href: "/industries/finance",
+  },
+  {
+    title: "Telecom",
+    href: "/industries/telecom",
+  },
+  {
+    title: "Construction",
+    href: "/industries/construction",
+  },
 
-]
+  {
+    title: "IT Digital Transformation",
+    href: "/industries/ITdigitalTransformation",
+  },
+];
