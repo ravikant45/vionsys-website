@@ -15,14 +15,14 @@ const ParticlesComponent = () => {
   }, []);
 
   // Modify particlesConfig to increase the number of particles
-  particles.particles.number.value = 400; // Set the number of particles to 100
+  particles.particles.number.value = 250; // Set the number of particles to 100
 
   return (
     <Particles
       id="tsparticles"
       options={particles}
       init={particlesInit}
-      className="absolute w-full h-screen z-0 bg-transparent overflow-hidden"
+      className="absolute w-full h-screen z-0 bg-transparent overflow-x-hidden"
     />
   );
 };

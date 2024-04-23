@@ -5,10 +5,12 @@ import Link from "next/link";
 
 function ThreeDCard() {
   return (
-    <div className="md:flex md:justify-center" >
-      <div>
+    <div className="w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-wrap items-center justify-center" >
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+
+      <div data-aos="zoom-in">
         <CardContainer className="inter-var">
-          <CardBody className="bg-white border-none shadow-xl relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border m-4">
+          <CardBody className="bg-white h-80 shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem]  rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -16,32 +18,31 @@ function ThreeDCard() {
               Vision
             </CardItem>
 
-            <CardItem translateZ="100" className="w-full mt-4">
+            <CardItem translateZ="100" className="w-full">
               <Image
                 src="/vision.jpg"
-                height="1000"
+                height="500"
                 width="1000"
-                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                className="h-32 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                 alt="thumbnail"
               />
             </CardItem>
-            <div className="flex justify-between items-center mt-20">
+            <div className="flex justify-between items-center">
               <CardItem
                 as="p"
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                Setting the standard as a global IT solution provider,
-                prioritizing customer relationships above all.
+                Our vision is to set the standard as a global IT solution provider, distinguishing ourselves by prioritizing customer relationships above all, ensuring lasting satisfaction and trust.
               </CardItem>
             </div>
           </CardBody>
         </CardContainer>
       </div>
 
-      <div>
+      <div data-aos="zoom-in">
         <CardContainer className="inter-var">
-          <CardBody className="bg-white border-none shadow-xl relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border m-4">
+          <CardBody className="bg-white h-80  shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -49,32 +50,31 @@ function ThreeDCard() {
               Mission
             </CardItem>
 
-            <CardItem translateZ="100" className="w-full mt-4">
+            <CardItem translateZ="100" className="w-full">
               <Image
                 src="/mission.jpg"
-                height="1000"
+                height="500"
                 width="1000"
-                className="h-56 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                className="h-32 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                 alt="thumbnail"
               />
             </CardItem>
-            <div className="flex justify-between items-center mt-20">
+            <div className="flex justify-between items-center">
               <CardItem
                 as="p"
                 translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                className="text-neutral-500 text-sm max-w-sm dark:text-neutral-300"
               >
-                To provide cutting-edge IT services that empower our clients to
-                maintain a competitive edge and stay ahead of the curve.
+                Our mission is to deliver cutting-edge IT services that empower our clients to not only maintain but also enhance their competitive edge, enabling them to stay ahead of the curve in an ever-evolving digital landscape.
               </CardItem>
             </div>
           </CardBody>
         </CardContainer>
       </div>
 
-      <div>
+      <div data-aos="zoom-in">
         <CardContainer className="inter-var flex justify-evenly">
-          <CardBody className="bg-white border-none shadow-xl relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] h-auto rounded-xl p-6 border m-4">
+          <CardBody className="bg-white h-80 shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -82,23 +82,22 @@ function ThreeDCard() {
               Strength And Motto
             </CardItem>
 
-            <CardItem translateZ="100" className="w-full mt-4">
+            <CardItem translateZ="100" className="w-full">
               <Image
                 src="/strength.jpg"
-                height="1000"
+                height="500"
                 width="1000"
-                className="h-64 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                className="h-32 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                 alt="thumbnail"
               />
             </CardItem>
-            <div className="flex justify-between items-center mt-20">
+            <div className="flex justify-between items-center ">
               <CardItem
                 as="p"
                 translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                className="text-neutral-500 text-sm max-w-sm  dark:text-neutral-300"
               >
-                To harness the power of technology for the advancement and
-                benefit of mankind.
+                Our motto encapsulates our commitment to harnessing the transformative power of technology for the advancement and benefit of all humankind.
               </CardItem>
             </div>
           </CardBody>

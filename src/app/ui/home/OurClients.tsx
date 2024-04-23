@@ -41,6 +41,15 @@ const OurClients = () => {
             id: 6,
             logo: ClientImage7
         }
+        ,
+        {
+            id: 7,
+            logo: ClientImage6
+        },
+        {
+            id: 8,
+            logo: ClientImage7
+        }
     ]
     return (
         <section className="w-[100vw] overflow-x-hidden flex justify-center items-center px-6 py-14 bg-[#fd4343] bg-[linear-gradient(45deg,_#fd4343_0%,_#ffbde9_50%,_#8983fb_100%)]">
@@ -51,7 +60,7 @@ const OurClients = () => {
                 <motion.div
                     drag="x"
                     dragConstraints={{ right: 0, left: -width }}
-                    className="flex items-center gap-4 md:w-[60%]"
+                    className="flex items-center gap-4"
                 >
                     {
                         MyClients.map((item) => (
