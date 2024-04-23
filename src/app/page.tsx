@@ -13,6 +13,7 @@ import Count from './ui/home/Count';
 import Hero from './ui/home/Hero';
 import TrustUs from './ui/home/TrustUs';
 import WeProvide from './ui/home/WeProvide';
+import OurClients from './ui/home/OurClients';
 
 export default function Home() {
   useEffect(() => {
@@ -30,7 +31,8 @@ export default function Home() {
       <AboutOurCompany />
       <WeProvide />
       <ChooseUs />
-      <TrustUs/>
+      <TrustUs />
+      <OurClients />
       <Count />
     </div>
   );
