@@ -20,7 +20,7 @@ const SkeletonOne = () => {
     </div>
   );
 };
- 
+
 const SkeletonTwo = () => {
   return (
     <div>
@@ -56,7 +56,7 @@ const SkeletonSix = () => {
     </div>
   );
 };
- 
+
 const cards = [
   {
     id: 1,
@@ -100,13 +100,13 @@ function TrustUs() {
   return (
     <div className='grid md:grid-cols-3 px-2 py-4 grid-cols-1 justify-items-center items-center'>
       <div className="h-screen w-full col-span-2">
-          <LayoutGrid cards={cards} />
+        <LayoutGrid cards={cards} />
       </div>
       <div className=''>
-            <p className='underline font-semibold text-xl text-orange'>Why trust us?</p>
-            <p className='text-lg mt-5 text-black'>Achieve digital transformation for your retail business services</p>
-            <p className='text-sm mt-5 mb-5'>Trust on us for your IT requirements, backed by our track record of successful projects, commitment to data security, adherence to high service quality standards, and dedication to fostering enduring client partnerships founded on trust and reliability.</p>
-        </div>
+        <p data-aos="fade-left" className='underline font-semibold text-xl text-orange'>Why trust us?</p>
+        <p data-aos="fade-right" className='text-lg mt-5 text-black'>Achieve digital transformation for your retail business services</p>
+        <p data-aos="zoom-out" className='text-sm mt-5 mb-5'>Trust on us for your IT requirements, backed by our track record of successful projects, commitment to data security, adherence to high service quality standards, and dedication to fostering enduring client partnerships founded on trust and reliability.</p>
+      </div>
     </div>
   )
 }

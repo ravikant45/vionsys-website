@@ -41,7 +41,7 @@ function WeProvide() {
     },
   ]
   return (
-    <div className='z-0 px-6 py-4 '>
+    <div className='z-0 px-6 py-4 overflow-x-hidden'>
       <div className=''>
         <p className='underline font-semibold text-xl mt-7 text-orange'>What we provide</p>
         <h1 className='text-3xl mt-5 font-bold'>IT Solutions</h1>

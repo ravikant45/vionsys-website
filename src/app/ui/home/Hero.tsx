@@ -19,7 +19,7 @@ function Hero() {
     },
   };
   return (
-    <section className="relative w-screen overflow-hidden z-10 backdrop-blur-md bg-[radial-gradient(circle_at_top,_#fff_50%,_#f8defd_100%)]">
+    <section className="relative w-screen overflow-x-hidden z-10 backdrop-blur-md bg-[radial-gradient(circle_at_top,_#fff_50%,_#f8defd_100%)]">
       {/* Particles component as background */}
       <ParticlesComponent />
       <div className="relative overflow-x-hidden w-full md:h-screen grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-4 justify-center items-center md:p-6 px-4">

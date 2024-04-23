@@ -8,6 +8,11 @@ import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { RxLinkedinLogo } from "react-icons/rx";
 import { useRef } from "react";
+import LinkedIn from "../../../../public/assets/socialicons/linkedin.png";
+import Instagram from "../../../../public/assets/socialicons/instagram.png";
+import Facebook from "../../../../public/assets/socialicons/facebook.png";
+import Image from "next/image";
+
 
 const Footer = () => {
   const columnStyle: React.CSSProperties = {
@@ -15,14 +20,14 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="px-2 w-[100vw]  overflow-hidden">
-      <div className="w-full absolute overflow-hidden -z-10">
+    <footer className="px-2 w-[100vw]   overflow-x-hidden">
+      <div className="w-full absolute overflow-x-hidden -z-10">
         <svg
           id="svg"
-          viewBox="0 0 1440 325"
+          viewBox="0 0 1320 325"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid meet"
-          className="transition duration-300 ease-in-out delay-150"
+          className="transition duration-300 ease-in-out delay-150 overflow-x-hidden"
         >
           <defs>
             <linearGradient id="gradient" x1="46%" y1="0%" x2="54%" y2="100%">
@@ -45,23 +50,23 @@ const Footer = () => {
             strokeWidth="0"
             fill="url(#gradient)"
             fillOpacity="1"
-            className="transition-all duration-300 ease-in-out delay-150 path-1"
+            className="transition-all duration-300 ease-in-out delay-150 path-1 overflow-x-hidden"
             transform="rotate(-180 720 200)"
           ></path>
         </svg>
       </div>
 
       {/* Footer Content */}
-      <div className="bg-transparent py-5">
+      <div className="bg-transparent py-5 overflow-x-hidden">
         <div className="container mx-auto px-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {/* Logo */}
             <div className="text-center md:text-left flex justify-center items-center">
               <img src="https://www.vionsys.com/public/assets/img/logo_3.png" alt="" />
             </div>
 
             {/* About Us */}
-            <div data-aos="fade-up" className="text-center md:text-left">
+            <div data-aos="fade-up" className="text-center md:text-left col-span-2 flex flex-col gap-2">
               <h3 className="text-lg text-[#171717] font-bold mb-2 underline   ">
                 {" "}
                 About Us
@@ -73,69 +78,48 @@ const Footer = () => {
                 cloud services, and IT consulting, we empower businesses to
                 thrive in the digital era.{" "}
               </p>
-              <div className="flex justify-center md:justify-start mt-4">
-                <BsFacebook size={28} className="mr-3" />
-                <BsInstagram size={26} className="mr-3" />
-                <RxLinkedinLogo size={28} />
+              <div className="flex gap-2">
+                <Link href="/"><Image src={Facebook} alt="" quality={100} /></Link>
+                <Link href={"/"}><Image src={Instagram} alt="" quality={100} /></Link>
+                <Link href={"/"}><Image src={LinkedIn} alt="" quality={100} /></Link>
               </div>
             </div>
 
             {/* Our Services */}
-            <div data-aos="fade-left" className="text-center md:text-left">
+            <div data-aos="fade-left" className="text-center md:text-left flex flex-col  gap-2">
               <h3 className="text-lg text-[#171717] font-bold mb-2 underline">
                 Our Services
               </h3>
-              <div className="mt-4">
-                <p>Software Development</p>
-                <p>Cloud Computing</p>
-                <p>Artificial Intelligence</p>
-                <p>Web Development</p>
-                <p>DevOps</p>
+              <div className="flex flex-col gap-1">
+                <Link href="/services/softwareDevelopement">Software Development</Link>
+                <Link href="/services/webDevelopment">Web Development</Link>
+                <Link href="/services/crm">CRM</Link>
+                <Link href="/services/salesforce">Salesforce</Link>
+                <Link href="/services/devops">DevOps</Link>
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div data-aos="fade-right" className="text-center md:text-left">
-              <h3 className="text-lg text-[#171717] font-bold mb-2 underline">
-                Quick Links
-              </h3>
-              <div className="mt-4">
-                <ul>
-                  <li className="mb-1">
-                    <a href="#">About Us</a>
-                  </li>
-                  <li className="mb-1">
-                    <a href="#">Services</a>
-                  </li>
-                  <li className="mb-1">
-                    <a href="#">Contact Us</a>
-                  </li>
-                  <li className="mb-1">
-                    <a href="#">Career</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+
 
             {/* Contact Info */}
-            <div data-aos="fade-down" className="text-center md:text-left">
+            <div data-aos="fade-down" className="text-center md:text-left col-span-2 flex flex-col  gap-2">
               <h3 className="text-lg text-[#171717] font-bold mb-2 underline">
                 Contact Info
               </h3>
-              <div className="mt-4">
-                <p className="flex items-center">
-                  <FiPhoneCall size={19} className="mr-2" />
-                  Phone: 8766613742
-                </p>
-                <p className="flex items-center">
-                  <MdOutlineMail size={22} className="mr-2" />
-                  Email: hr@vionsys.com
-                </p>
-                <p className="flex items-center">
-                  <GrLocation className="w-6 h-6 flex-shrink-0 mr-2" />
-                  Address: 6th floor office no.504 Stellar Spaces, opposite
-                  Zensar it park Kharadi pune
-                </p>
+              <div className="flex flex-col justify-center gap-2">
+                <div className="flex  gap-3">
+                  <div><FiPhoneCall size={19} className="mr-2" /></div>
+                  <span> Phone: 8766613742</span>
+                </div>
+                <div className="flex gap-3">
+                  <div> <MdOutlineMail size={22} className="mr-2" /></div>
+                  <span> Email: hr@vionsys.com</span>
+                </div>
+                <div className="flex  gap-3">
+                  <div><GrLocation className="w-6 h-6 flex-shrink-0 mr-2" /></div>
+                  <span>Address: 6th floor office no.504 Stellar Spaces, opposite
+                    Zensar it park, Kharadi, pune</span>
+                </div>
               </div>
             </div>
           </div>
