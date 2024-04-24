@@ -4,7 +4,7 @@ import About2 from '../ui/about/About2'
 import ThreeDCard from '../ui/about/ThreeDCard'
 import Visit from '../ui/about/Visit'
 import { TypewriterDemo } from '../ui/about/TypeWriterDemo'
-import { DirectionAwareHoverDemo } from '../ui/about/DirectionAwareHoverDemo'
+import Testimonial from '../ui/about/Testimonial'
 
 const page = () => {
     return (
@@ -12,7 +12,7 @@ const page = () => {
             <AboutUs/>
             <About2/>
             <ThreeDCard/>
-            <DirectionAwareHoverDemo/>
+            <Testimonial/>
             <TypewriterDemo/>
             <Visit/>
         </>
