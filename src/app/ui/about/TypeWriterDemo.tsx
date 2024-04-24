@@ -1,6 +1,7 @@
 "use client";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { Button } from '@/components/ui/button';
+import { BsTelephoneOutboundFill } from "react-icons/bs";
 
 export function TypewriterDemo() {
   const words = [
@@ -13,11 +14,11 @@ export function TypewriterDemo() {
     },
     {
       text: "Career",
-      className: "text-orange dark:text-blue",
+      className: "text-orange",
     },
     {
       text: "opportunities",
-      className: "text-orange dark:text-blue",
+      className: "text-orange",
     },
     {
         text: "with",
@@ -34,7 +35,7 @@ export function TypewriterDemo() {
       }}>
       <TypewriterEffect words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
-      <Button>Call Us</Button>
+      <Button>Call Us <BsTelephoneOutboundFill className="inline-block ml-2 text-sm" /></Button>
       </div>
     </div>
   );

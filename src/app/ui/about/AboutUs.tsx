@@ -17,7 +17,6 @@ const AboutUs = () => {
             className="absolute inset-0 object-cover w-full h-full"
           >
             <source src="/assets/About/AboutBg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
 
           <div className="h-screen absolute z-1 w-full flex flex-col justify-center py-4 lg:items-start">
@@ -33,17 +32,19 @@ const AboutUs = () => {
                 <span className="block">Transform Your Ideas </span>
                 Into Reality?
               </h1>
-            </motion.div>
 
-            {/* Contact Us Button */}
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
+              {/* Contact Us Button */}
+            <div className="flex flex-col justify-center md:flex-row  space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
               <Link href="/contact" passHref>
                 <Button>
-                  Call Us{" "}
+                  Get In Touch{" "}
                   <BsTelephoneOutboundFill className="inline-block ml-2 text-sm" />
                 </Button>
               </Link>
             </div>
+            </motion.div>
+
+            
           </div>
         </div>
       </div>
