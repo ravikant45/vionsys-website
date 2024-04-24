@@ -4,37 +4,37 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 const Second = () => {
   return (
-    <div className=" mt-0 h-fit">
+    <div className="mt-0 h-">
       <div className="flex justify-center p-4">
-          <h2 className="justify-center text-2xl">
-            Thank you for your
-            <span className="text-indigo-800 text-2xl pl-1">
-              Interest in Vionsys Services
-            </span>
-          </h2>
-        </div>
-      <div className="flex justify-center relative m-0 ">
-        <div className="flex-col-3 flex w-1/2 shadow-md shadow-slate-400 rounded-lg p-12 m-4 transition ease-in-out delay-150 hover:-translate-y-4 hover:scale-100 divide-y-2 duration-300">
-          <h2 className="lg:text-2xl sm:text-sm md:text font-semibold mb-4 items-center text-black">
-            Office Address-
-          </h2>
-          <p className=" text-black ml-2 border-none lg:text-2xl sm:text-wrap md:text-wrap pt-2 pl-5 font-semibold underline-offset-4 underline decoration-slice">
-            6th floor office no. 504 Stellar Spaces ,
-            <span className="">opposite Zensar it park Kharadi pune</span>{" "}
-          </p>
-        </div>
-        <div className=" flex-col-3 flex w-1/2 shadow-md  shadow-slate-400 rounded-lg  pt-4 pl-9  m-4 h-auto transition ease-in-out delay-150 hover:-translate-y-4 hover:scale-100 divide-y-2 duration-300">
-          <h2 className="lg:text-2xl md:text-base sm:text-sm font-semibold mb-4 content-center text-black">
-            Email ID-{" "}
-          </h2>
-          <p className="ml-2 border-none p-8">
-            <span className="lg:text-2xl md:text-base sm:text-sm sm:pr-9 flex content-center mt-6 text-black font-semibold underline underline-offset-4 decoration-slice">
-              Hr@Vionsys.com{" "}
-            </span>
-            <span className="text-orange-600 font-semibold lg:text-3xl sm:text-sm md:text-2xl">
-              Feel free to contact...
-            </span>{" "}
-          </p>
+        <h2 className="justify-center text-2xl transform hover:scale-125 transition duration-300 ease-in-out">
+          Thanks for your
+          <span className="text-blue-700 text-2xl pl-1 transform hover:scale-125 transition duration-300 ease-in-out font-bold">
+            Interest in Vionsys Services
+          </span>
+        </h2>
+      </div>
+      <div className="flex justify-center pt-4 pb-4">
+        <h4 className="text-amber-500 text-2xl font-bold underline decoration-slice underline-offset-4 decoration-slate-700">
+          LET'S GO WITH US
+        </h4>
+      </div>
+      <div className="py-2 h-[80vh] flex justify-evenly">
+        <div className="grid grid-cols-2 gap-10">
+          <div className="relative bg-slate-200 text-center shadow-xl shadow-amber-600 rounded-[22px] max-w-sm p-4 sm:p-10 ">
+            <h1 className="text-amber-600 text-xl font-bold pb-5">
+              Office Address
+            </h1>
+            <p className="">
+              6th floor office no. 504 Stellar Spaces , opposite Zensar it park
+              Kharadi pune
+            </p>
+          </div>
+          <div className="relative bg-slate-200 text-center  shadow-xl shadow-amber-600 rounded-[22px] max-w-sm p-4 sm:p-10">
+            <h1 className="text-amber-600 text-xl font-bold pb-5">
+              Email id/Contact
+            </h1>
+            <p> hr@vionsys.com<span className="flex justify-center flex-wrap">8766613742</span></p>
+          </div>
         </div>
       </div>
     </div>

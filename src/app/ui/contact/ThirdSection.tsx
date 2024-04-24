@@ -1,90 +1,124 @@
+"use client";
 import React from "react";
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { RxLinkedinLogo } from "react-icons/rx";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+const formSchema = z.object({
+
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+  contact: z.string().min(2, {
+    message: "Contact must be  at least 10 digits.",
+  }),
+  email: z.string().min(2, {
+    message: "Required field.",
+  }),
+  usermessage:z.string().min(2, {
+    message:".",
+  }
+    )
+});
 
 const ThirdSection = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const number = formData.get("number") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
+  // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      contact: "",
+      email: "",
+      usermessage:"",
+    },
+  });
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+  }
 
-    // Handle form submission
-    console.log({ name, email, message, number });
-    e.currentTarget.reset();
-  };
   return (
     <div>
-      <div className=" w-full justify-center pt-3">
-        <h1 className="flex justify-center lg:text-pretty text-3xl font-semibold text-decoration underline-offset-0 underline-solid">
-          Drop us a Line
-        </h1>
-      </div>
-      <form className="max-w-md mx-auto">
-        <div className="mb-4">
-          <label form="name" className="block mb-2 font-bold text-gray-600">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-            required
-          />
-        </div>
+      <div className="flex justify-around w-full h-auto ">
+      <img src="https://img.freepik.com/free-vector/white-background-with-wavy-lines_23-2149124446.jpg?t=st=1713935414~exp=1713939014~hmac=4e4633f5a4e31b12fea0cdee7b3b4ffaa6423369fd539fcac49f589fc5675c5a&w=900" className="bg- object-cover w-full saturate-100 h-[100vh]"></img>
+        <Form {...form}>
 
-        <div className="mb-4">
-          <label form="email" className="block mb-2 font-bold text-gray-600">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-            required
-          />
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className=" mt-10 shadow-xl shadow-blue-500 space-y-4 w-1/2 bg-slate-100 absolute pl-36 h-[auto]">
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <h1 className="flex justify-center pt-3 pb-3 tracking-wide text-2xl font-medium underline underline-offset-8 decoration-amber-500"> Send A Message </h1>
+                  <FormLabel>Enter Your name</FormLabel>
+                  <FormControl>
+                    <Input placeholder=" Enter your name" {...field} />
+                  </FormControl>
+                  <FormDescription></FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="contact"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Contact Number</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter contact number" {...field} />
+                  </FormControl>
+                  <FormDescription></FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Enter Email id</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter your email" {...field} />
+                  </FormControl>
+                  <FormDescription></FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="usermessage"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Your Message</FormLabel>
+                  <Textarea placeholder="Type your message here." id="message-2" />
+                  <FormDescription></FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button type="submit"className="ml-36">Submit</Button>
+          </form>
+        </Form>
         </div>
-        <div className="mb-4">
-          <label
-            form="number"
-            className="block mb-2 font-bold text-gray-600 placeholder:text-slate-400"
-          >
-            Contact Number
-          </label>
-          <input
-            type="text"
-            id="number"
-            name="number"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label form="message" className="block mb-2 font-bold text-gray-600">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-            required
-          />
-        </div>
-        <div className="text-center">
-          <button
-            type="submit"
-            className="w-1/2 py-2 px-4 bg-indigo-400 hover:bg-indigo-500 text-black font-bold rounded-md focus:outline-none focus:bg-indigo-500"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
       <div className="Location Area mt-6">
         <div className="flex  lg:flex-col h-full w-full md:h-auto">
           <iframe
@@ -95,8 +129,9 @@ const ThirdSection = () => {
           ></iframe>
         </div>
       </div>
-      <div className="flex justify-center bg-gray-200 w-full h-[50vh]">
-        <div className="pt-20 text-black lg:text-4xl md:text-3xl sm:text-2xl font-extrabold">
+      <div className="flex justify-center bg-gray-300 w-full h-[50vh]">
+        <div className="pt-20 lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
+        bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-700">
           <h1 className="inline">
             Stay Updated With Our{" "}
             <span className="flex">Social Media Channels</span>
@@ -104,10 +139,10 @@ const ThirdSection = () => {
           <div className="w-full h-5 text-black">
             <ul>
               <li>
-                <div className="flex justify-center md:justify-start mt-7 pl-24">
-                  <BsFacebook size={40} className="mr-3" color="blue" />
-                  <BsInstagram size={40} className="mr-3" color="#e1306c" />
-                  <RxLinkedinLogo size={40} color="#0077B5" />
+                <div className="flex justify-center md:justify-start mt-7 pl-28">
+                  <BsFacebook size={40} className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out" color="blue" />
+                  <BsInstagram size={40} className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out" color="#e1306c" />
+                  <RxLinkedinLogo size={40} className=" mr-3transform hover:scale-125 transition duration-300 ease-in-out" color="#0077B5" />
                 </div>
               </li>
             </ul>
