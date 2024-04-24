@@ -19,12 +19,12 @@ function Hero() {
     },
   };
   return (
-    <section className="relative w-screen overflow-x-hidden z-10 backdrop-blur-md bg-[radial-gradient(circle_at_top,_#fff_50%,_#f8defd_100%)]">
+    <section className="relative w-screen md:h-screen overflow-hidden z-10 backdrop-blur-md bg-[radial-gradient(circle_at_top,_#fff_50%,_#f8defd_100%)]">
       {/* Particles component as background */}
       <ParticlesComponent />
-      <div className="relative overflow-x-hidden w-full md:h-screen grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-4 justify-center items-center md:p-6 px-4">
+      <div className="relative overflow-hidden w-full h-full  grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-4 justify-center items-center md:p-6 px-4">
         {/* left */}
-        <div data-aos="fade-up" className="flex w-full overflow-hidden flex-col gap-4">
+        <div data-aos="fade-up" className="flex flex-col gap-4">
           {/* title */}
           <h2 className="flex flex-col justify-center gap-0">
             <span className="md:text-3xl text-xl text-black">Web</span>
@@ -66,7 +66,7 @@ function Hero() {
 
         {/* right */}
         <div className="relative w-full h-full overflow-hidden flex justify-center items-center -z-20">
-          <img data-aos="zoom-in" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149365021.jpg?t=st=1713787087~exp=1713790687~hmac=ba02281f3eee502ad8e74fb0e8611c868955b2eab210dab955f321f8abd1bb5a&w=740" alt="" className='rounded-md w-[100%] -z-50 absolute' />
+          <img data-aos="zoom-in" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149365021.jpg?t=st=1713787087~exp=1713790687~hmac=ba02281f3eee502ad8e74fb0e8611c868955b2eab210dab955f321f8abd1bb5a&w=740" alt="" className='rounded-md w-[100%] h-[100%] -z-50 absolute' />
 
           {/* <HomePageVisuals /> */}
 
