@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import * as React from "react"
 import Link from "next/link"
 
@@ -18,6 +17,40 @@ import { Industries, ServicesLinks } from "./Navlinks";
 import { VscClose } from "react-icons/vsc"
 import { HiMenuAlt1 } from "react-icons/hi"
 import ResponsiveMenu from "./ResponsiveMenu"
+import { useRouter } from "next/navigation";
+
+interface ListItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+    title: string;
+    href: string;
+}
+
+
+const ListItem: React.FC<ListItemProps> = ({ className, title, children, href }) => {
+    const router = useRouter();
+
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        router.push(href);
+    };
+
+    return (
+        <li>
+            <NavigationMenuLink asChild>
+                <div
+                    onClick={handleClick}
+                    className={cn(
+                        'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+                        className
+                    )}
+                >
+                    <div className="text-sm font-medium leading-none">{title}</div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+                </div>
+            </NavigationMenuLink>
+        </li>
+    );
+};
+
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = React.useState(false);
@@ -42,7 +75,7 @@ const Navbar = () => {
     }
     return (
         <div className="">
-            <div className={` md:fixed absolute z-20 w-[100vw] flex p-1 justify-between items-center  ${scrolling ? 'bg-white' : 'bg-white'}`}>
+            <div className={` md:fixed absolute z-50 w-[100vw] flex p-1 justify-between items-center  ${scrolling ? 'bg-white' : 'bg-white'}`}>
                 {/* Logo of the organization */}
                 <div className="px-4">
                     <img src="https://www.vionsys.com/public/assets/img/logo_3.png" alt="" />
@@ -74,14 +107,14 @@ const Navbar = () => {
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] ">
+                                    <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
                                         {ServicesLinks.map((component) => (
                                             <ListItem
                                                 key={component.title}
                                                 title={component.title}
                                                 href={component.href}
                                             >
-                                                {component.description}
+                                                {/* {component.description} */}
                                             </ListItem>
                                         ))}
                                     </ul>
@@ -91,20 +124,11 @@ const Navbar = () => {
 
                             {/*Industries dropdown */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] ">
-                                        {Industries.map((component) => (
-                                            <ListItem
-                                                key={component.title}
-                                                title={component.title}
-                                                href={component.href}
-                                            >
-                                                {component.description}
-                                            </ListItem>
-                                        ))}
-                                    </ul>
-                                </NavigationMenuContent>
+                                <Link href="/industries" legacyBehavior passHref>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        Industries
+                                    </NavigationMenuLink>
+                                </Link>
                             </NavigationMenuItem>
 
 
@@ -142,29 +166,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-    return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
-                    <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
-                </a>
-            </NavigationMenuLink>
-        </li>
-    )
-})
-ListItem.displayName = "ListItem";
