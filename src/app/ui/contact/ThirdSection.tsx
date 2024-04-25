@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
 import { BsFacebook } from "react-icons/bs";
@@ -37,7 +39,6 @@ const formSchema = z.object({
 });
 
 const ThirdSection = () => {
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,19 +54,18 @@ const ThirdSection = () => {
 
   return (
     <div>
-      <div className="flex justify-around w-full h-auto ">
-      <img src="https://img.freepik.com/free-vector/white-background-with-wavy-lines_23-2149124446.jpg?t=st=1713935414~exp=1713939014~hmac=4e4633f5a4e31b12fea0cdee7b3b4ffaa6423369fd539fcac49f589fc5675c5a&w=900" className="bg- object-cover w-full saturate-100 h-[100vh]"></img>
+      <div className="flex justify-around">
+      <img src="https://img.freepik.com/free-vector/white-background-with-wavy-lines_23-2149124446.jpg?t=st=1713935414~exp=1713939014~hmac=4e4633f5a4e31b12fea0cdee7b3b4ffaa6423369fd539fcac49f589fc5675c5a&w=900" className="bg-object-cover saturate-100 lg:w-full lg:h-screen md:max-h-md md:w-full lg:mt-0"></img>
         <Form {...form}>
-
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className=" mt-10 shadow-xl shadow-blue-500 space-y-4 w-1/2 bg-slate-100 absolute pl-36 h-[auto]">
+            className="md:mt-10 shadow-md shadow-blue-500 rounded-[22px] space-y-4 w-1/2 bg-slate-100 absolute lg:p-10">
             <FormField
               control={form.control}
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <h1 className="flex justify-center pt-3 pb-3 tracking-wide text-2xl font-medium underline underline-offset-8 decoration-amber-500"> Send A Message </h1>
+                  <h1 className=" md:pt-3 sm:pb-3 tracking-wide text-2xl font-medium underline underline-offset-8 decoration-blue-800"> Send A Message </h1>
                   <FormLabel>Enter Your name</FormLabel>
                   <FormControl>
                     <Input placeholder=" Enter your name" {...field} />
@@ -115,12 +115,12 @@ const ThirdSection = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit"className="ml-36">Submit</Button>
+            <Button type="submit"className="">Submit</Button>
           </form>
         </Form>
         </div>
-      <div className="Location Area mt-6">
-        <div className="flex  lg:flex-col h-full w-full md:h-auto">
+      <div className="Location Area">
+        <div className="flex flex-col h-full md:w-full md:h-auto">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6818.152391642604!2d73.93858737762325!3d18.546651353587574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf282419d50d%3A0x2cc71f615579ab3a!2sVionsys%20IT%20Solutions%20India%20Pvt.Ltd!5e0!3m2!1sen!2sin!4v1713765708125!5m2!1sen!2sin"
             width="screen"
@@ -136,10 +136,10 @@ const ThirdSection = () => {
             Stay Updated With Our{" "}
             <span className="flex">Social Media Channels</span>
           </h1>
-          <div className="w-full h-5 text-black">
+          <div className="  text-black">
             <ul>
               <li>
-                <div className="flex justify-center md:justify-start mt-7 pl-28">
+                <div className="flex justify-center md:justify-start mt-7 md:pl-28">
                   <BsFacebook size={40} className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out" color="blue" />
                   <BsInstagram size={40} className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out" color="#e1306c" />
                   <RxLinkedinLogo size={40} className=" mr-3transform hover:scale-125 transition duration-300 ease-in-out" color="#0077B5" />
