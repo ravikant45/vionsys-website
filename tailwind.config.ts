@@ -25,6 +25,10 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "mmd": "700px",
+        "ssm": "400px",
+      },
       colors: {
         orange: "#e57e2c",
         black: "#080808",

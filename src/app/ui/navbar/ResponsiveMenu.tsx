@@ -20,7 +20,7 @@ import { Industries } from "./Navlinks";
 const ResponsiveMenu = ({ showMenu }: any) => {
     return (
         <div
-            className={`${showMenu ? 'top-8 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[50vh] flex items-start justify-center py-6 border-b shadow-md `}
+            className={`${showMenu ? 'top-16 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[40vh] flex items-start justify-center py-6 border-b shadow-md `}
         >
             <NavigationMenu>
                 <NavigationMenuList className="flex flex-col gap-4">
@@ -64,16 +64,11 @@ const ResponsiveMenu = ({ showMenu }: any) => {
                     <NavigationMenuItem>
                         <div >
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger className="outline-none flex justify-center items-center gap-2">Industries<IoChevronForwardOutline /></DropdownMenuTrigger>
-                                    <DropdownMenuContent>
-                                        {
-                                            Industries.map((link) => (
-                                                <Link href={link.href} key={link.title}><DropdownMenuItem >{link.title}</DropdownMenuItem></Link>
-                                            ))
-                                        }
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
+                                <Link href="/industries" legacyBehavior passHref>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        Industries
+                                    </NavigationMenuLink>
+                                </Link>
                             </NavigationMenuLink>
                         </div>
                     </NavigationMenuItem>
