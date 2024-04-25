@@ -74,8 +74,8 @@ const Navbar = () => {
         setShowMenu(!showMenu);
     }
     return (
-        <div className="">
-            <div className={` md:fixed absolute z-50 w-[100vw] flex p-1 justify-between items-center  ${scrolling ? 'bg-white' : 'bg-white'}`}>
+        <div className="overflow-x-hidden">
+            <div className={`fixed z-50 w-[100vw] flex p-1 justify-between items-center  ${scrolling ? 'bg-white' : 'bg-white'}`}>
                 {/* Logo of the organization */}
                 <div className="px-4">
                     <img src="https://www.vionsys.com/public/assets/img/logo_3.png" alt="" />
