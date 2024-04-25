@@ -31,7 +31,7 @@ export function TypewriterDemo() {
     <div className="flex flex-col items-center bg-cover justify-center h-[40rem] " 
         style={{
         backgroundImage:
-          "url('https://png.pngtree.com/background/20210709/original/pngtree-simple-e-commerce-web-page-business-picture-image_935500.jpg')",
+          "url('/TypeWriter.jpg')",
       }}>
       <TypewriterEffect words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
