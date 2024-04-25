@@ -4,12 +4,36 @@ import Link from "next/link";
 import { WavyBackground } from "@/components/ui/wavy-background";
 
 const ServicesTemplateOne = ({ data }: { data: any }) => {
+  const getWaveColor = (heading: string): string[] => {
+    switch (heading) {
+      case "SOFTWARE DEVELOPMENT":
+        return ["#38bdf8", "#818cf8", "#c084fc", "#e879f9", "#22d3ee"];
+      case "WEB DEVELOPMENT":
+        return ["#f8d361", "#f69d3f", "#f76c5e", "#e879f9", "#22d3ee"];
+      case "PRODUCT DEVELOPMENT":
+        return ["#65f7d0", "#5fd3f3", "#4d7cff", "#D20062", "#22d3ee"];
+      default:
+        return ["#38bdf8", "#FEC7B4", "#102C57", "#e879f9", "#D20062"];
+    }
+  };
+
   return (
     <main>
       {/* hero section */}
       {/* Radial gradient for the container to give a faded look */}
       <section>
-        <WavyBackground className="max-w-4xl mx-auto pb-40">
+        <WavyBackground
+          colors={
+            getWaveColor(data?.headline) || [
+              "#38bdf8",
+              "#818cf8",
+              "#c084fc",
+              "#e879f9",
+              "#22d3ee",
+            ]
+          }
+          className="max-w-4xl mx-auto pb-40"
+        >
           <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
             {data?.headline}
           </p>

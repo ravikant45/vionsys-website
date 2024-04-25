@@ -3,7 +3,7 @@ import { FaBuilding } from "react-icons/fa6";
 import { FaMobileButton } from "react-icons/fa6";
 import { MdOutlineWeb } from "react-icons/md";
 import { MdOutlineIntegrationInstructions } from "react-icons/md";
-import hero_image from "/public/assets/services/softwarebg.jpg";
+
 import experties from "/public/assets/services/experties.jpg";
 import cuttingedge from "/public/assets/services/cuttingedge.jpg";
 import time from "/public/assets/services/time.jpg";
