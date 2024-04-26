@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import testimonials from "./TestLinks";
@@ -6,7 +7,7 @@ const Testimonial = () => {
   return (
     <>
       <h1 className="text-center text-4xl py-2 font-semibold hover:underline text-blue3">
-        What Our Clients Are Saying
+        What Our Client's Are Saying
       </h1>
       <div className="h-auto w-[100%] px-2 py-2">
         <Image

@@ -24,7 +24,7 @@ const Visit = () => {
           />
         </div>
 
-        <div className="lg:h-screen h-auto flex flex-col justify-center lg:items-start items-center md:gap-12 gap-4">
+        <div data-aos="zoom-in" className="lg:h-screen h-auto flex flex-col justify-center lg:items-start items-center md:gap-12 gap-4">
           <h1 className="md:text-3xl text-xs font-bold">
             Visit Our Office in <span className="text-orange">Pune, India</span>
           </h1>

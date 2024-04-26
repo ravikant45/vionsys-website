@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -13,15 +13,12 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import { ServicesLinks } from "./Navlinks";
-import { Industries } from "./Navlinks";
 
 const ResponsiveMenu = ({ showMenu }: any) => {
     return (
-        <div
-            className={`${showMenu ? 'top-16 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[40vh] flex items-start justify-center py-6 border-b shadow-md `}
-        >
+        <div className={`${showMenu ? 'top-16 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[50vh] flex items-start justify-center py-6 border-b shadow-md`}>
             <NavigationMenu>
                 <NavigationMenuList className="flex flex-col gap-4">
                     {/* Home section */}
@@ -44,36 +41,26 @@ const ResponsiveMenu = ({ showMenu }: any) => {
 
                     {/* services dropdown */}
                     <NavigationMenuItem>
-                        <div>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger className="outline-none flex justify-center items-center gap-2">Services<IoChevronForwardOutline /></DropdownMenuTrigger>
-                                    <DropdownMenuContent>
-                                        {
-                                            ServicesLinks.map((link) => (
-                                                <Link href={link.href} key={link.title}><DropdownMenuItem >{link.title}</DropdownMenuItem></Link>
-                                            ))
-                                        }
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </NavigationMenuLink>
-                        </div>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger className="outline-none flex justify-center items-center gap-2">Services<IoChevronForwardOutline /></DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                {ServicesLinks.map((link) => (
+                                    <Link href={link.href} key={link.title}><DropdownMenuItem>{link.title}</DropdownMenuItem></Link>
+                                ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </NavigationMenuItem>
 
                     {/* industries dropdown */}
                     <NavigationMenuItem>
-                        <div >
+                        <Link href="/industries" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                <Link href="/industries" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                        Industries
-                                    </NavigationMenuLink>
-                                </Link>
+                                Industries
                             </NavigationMenuLink>
-                        </div>
+                        </Link>
                     </NavigationMenuItem>
 
-                    {/* Career  page*/}
+                    {/* Career page */}
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -93,7 +80,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
                 </NavigationMenuList>
             </NavigationMenu>
         </div>
-    )
-}
+    );
+};
 
-export default ResponsiveMenu
+export default ResponsiveMenu;
