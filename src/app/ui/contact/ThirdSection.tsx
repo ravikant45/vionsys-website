@@ -9,7 +9,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea"
+import { Textarea } from "@/components/ui/textarea";
 import {
   Form,
   FormControl,
@@ -22,7 +22,6 @@ import {
 import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
-
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
@@ -32,10 +31,9 @@ const formSchema = z.object({
   email: z.string().min(2, {
     message: "Required field.",
   }),
-  usermessage:z.string().min(2, {
-    message:".",
-  }
-    )
+  usermessage: z.string().min(2, {
+    message: ".",
+  }),
 });
 
 const ThirdSection = () => {
@@ -45,7 +43,7 @@ const ThirdSection = () => {
       username: "",
       contact: "",
       email: "",
-      usermessage:"",
+      usermessage: "",
     },
   });
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -54,18 +52,25 @@ const ThirdSection = () => {
 
   return (
     <div>
-      <div className="flex justify-around">
-      <img src="https://img.freepik.com/free-vector/white-background-with-wavy-lines_23-2149124446.jpg?t=st=1713935414~exp=1713939014~hmac=4e4633f5a4e31b12fea0cdee7b3b4ffaa6423369fd539fcac49f589fc5675c5a&w=900" className="bg-object-cover saturate-100 lg:w-full lg:h-screen md:max-h-md md:w-full lg:mt-0"></img>
+      <div className="flex justify-around mt-0 bg-white">
+        <img
+          src="https://img.freepik.com/free-vector/white-background-with-wavy-lines_23-2149124446.jpg?t=st=1713935414~exp=1713939014~hmac=4e4633f5a4e31b12fea0cdee7b3b4ffaa6423369fd539fcac49f589fc5675c5a&w=900"
+          className="bg-object-cover lg:w-full lg:h-screen md:block hidden md:w-full lg:mt-0"
+        ></img>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="md:mt-10 shadow-md shadow-blue-500 rounded-[22px] space-y-4 w-1/2 bg-slate-100 absolute lg:p-10">
+            className="md:mt-10 shadow-md shadow-blue-500 rounded-[22px] md:w-1/2 w-full p-8 m-4 bg-slate-100 md:absolute lg:p-10"
+          >
             <FormField
               control={form.control}
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <h1 className=" md:pt-3 sm:pb-3 tracking-wide text-2xl font-medium underline underline-offset-8 decoration-blue-800"> Send A Message </h1>
+                  <h1 className="pb-4 tracking-wide md:text-2xl text-md text-center font-medium underline underline-offset-4 decoration-blue-800">
+                    {" "}
+                    Send A Message{" "}
+                  </h1>
                   <FormLabel>Enter Your name</FormLabel>
                   <FormControl>
                     <Input placeholder=" Enter your name" {...field} />
@@ -109,16 +114,21 @@ const ThirdSection = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Your Message</FormLabel>
-                  <Textarea placeholder="Type your message here." id="message-2" />
+                  <Textarea
+                    placeholder="Type your message here."
+                    id="message-2"
+                  />
                   <FormDescription></FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit"className="">Submit</Button>
+            <Button type="submit" className="flex justify-center">
+              Submit
+            </Button>
           </form>
         </Form>
-        </div>
+      </div>
       <div className="Location Area">
         <div className="flex flex-col h-full md:w-full md:h-auto">
           <iframe
@@ -129,9 +139,17 @@ const ThirdSection = () => {
           ></iframe>
         </div>
       </div>
-      <div className="flex justify-center bg-gray-300 w-full h-[50vh]">
-        <div className="pt-20 lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
-        bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-700">
+      <div className="flex justify-center bg-gray-300 w-screen h-[50vh]">
+        <img
+          src="https://img.freepik.com/free-photo/colorful-abstract-textured-background-design_53876-108265.jpg?t=st=1714111992~exp=1714115592~hmac=038c18ae50be3d00e4092aefb8280812b6146931b746f313f723bebaa18bf4d6&w=900"
+          alt=""
+          className="object-cover w-full"
+        ></img>
+        <div
+          data-aos="fade right"
+          className=" absolute pt-20 lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
+        bg-clip-text text-transparent bg-gradient-to-r animate-pulse from-red-500 to-blue-700"
+        >
           <h1 className="inline">
             Stay Updated With Our{" "}
             <span className="flex">Social Media Channels</span>
@@ -140,9 +158,21 @@ const ThirdSection = () => {
             <ul>
               <li>
                 <div className="flex justify-center md:justify-start mt-7 md:pl-28">
-                  <BsFacebook size={40} className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out" color="blue" />
-                  <BsInstagram size={40} className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out" color="#e1306c" />
-                  <RxLinkedinLogo size={40} className=" mr-3transform hover:scale-125 transition duration-300 ease-in-out" color="#0077B5" />
+                  <BsFacebook
+                    size={40}
+                    className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
+                    color="blue"
+                  />
+                  <BsInstagram
+                    size={40}
+                    className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
+                    color="#e1306c"
+                  />
+                  <RxLinkedinLogo
+                    size={40}
+                    className=" mr-3transform hover:scale-125 transition duration-300 ease-in-out"
+                    color="#0077B5"
+                  />
                 </div>
               </li>
             </ul>
