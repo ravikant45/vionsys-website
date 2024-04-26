@@ -1,13 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
-import React from "react";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import Image, { StaticImageData } from "next/image";
-import { PinContainer } from "@/components/ui/3d-pin";
-import { BiAndAnalyticsDataType } from "./data/BiAndAnalytics";
-import { Button } from "@/components/ui/button";
-import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
+import React from 'react';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
+import { PinContainer } from '@/components/ui/3d-pin';
+import { AuroraBackground } from '@/components/ui/aurora-background';
+import ScheduleMeetAndContactCTA from '@/utils/ScheduleMeetAndContactCTA';
+
+import { BiAndAnalyticsDataType } from './data/BiAndAnalytics';
 
 interface Props {
     data: BiAndAnalyticsDataType;
@@ -61,7 +63,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
                             data?.cards.map((card) => (
                                 <PinContainer
                                     key={card.title}
-                                    title="Data-Driven Decision Making"
+                                    title={card.title}
                                     href="https://twitter.com/mannupaaji"
                                 >
                                     <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 md:w-[20rem] w-[18rem] h-[20rem] md:h-[20rem] ">

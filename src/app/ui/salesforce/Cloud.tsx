@@ -7,13 +7,13 @@ function Cloud() {
         <div className="bg-white py-10">
             <div className="max-w-screen px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
                 <div className="text-center">
-                    <h3 className="text-xl sm:text-2xl leading-normal font-extrabold tracking-tight text-gray-900">
+                    <h3 data-aos="fade-right" className="text-xl sm:text-2xl leading-normal font-extrabold tracking-tight text-gray-900">
                         Salesforce <span className="text-indigo-600">Cloud Services</span>
                     </h3>
                 </div>
 
-                <div className="mt-12">
-                    <ul className="grid md:grid-cols-2 grid-cols-1 gap-x-8">
+                <div data-aos="zoom-out" className="mt-12">
+                    <ul data-aos="zoom-in" className="grid md:grid-cols-2 grid-cols-1 gap-x-8">
                         <li className="bg-gray-100 p-5 mb-20">
                             <div className="flex flex-col items-center">
                                 <div className="flex-shrink-0 relative top-0 -mt-16">

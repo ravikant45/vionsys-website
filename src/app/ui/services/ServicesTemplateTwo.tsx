@@ -1,15 +1,17 @@
-import { Feature } from "./data/CloudComputingServicesData";
-import Link from "next/link";
-import exp from "/public/assets/services/exp.jpg";
-import inno from "/public/assets/services/inno.jpg";
-import supp from "/public/assets/services/supp.jpg";
-import Image from "next/image";
+import exp from '/public/assets/services/exp.jpg';
+import inno from '/public/assets/services/inno.jpg';
+import supp from '/public/assets/services/supp.jpg';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { Feature } from './data/CloudComputingServicesData';
+
 const ServicesTemplateTwo = ({ data }: { data: any }) => {
   return (
     <main>
       {/* hero section */}
-      <section>
-        <div className="flex h-screen justify-center items-center dark:bg-slate-800">
+      <section className='pb-20'>
+        <div  data-aos='fade-up' className="flex h-screen justify-center items-center dark:bg-slate-800">
           <div className="mx-auto flex justify-center px-4 sm:mt-6 sm:px-4 md:mt-4 lg:mt-2 lg:px-8">
             <div className="text-center ">
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
@@ -54,15 +56,15 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
       {/* the services section */}
       <section className="container space-y-6 bg-slate-50 py-4 mx-auto md:py-6 lg:py-12">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+          <h2 data-aos='fade-left' className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
             Our Features
           </h2>
-          <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+          <p data-aos='fade-right' className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
             Discover the amazing features offered by us to enhance your online
             presence.
           </p>
         </div>
-        <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+        <div data-aos='zoom-out' className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
           {data?.features?.map((feat: Feature) => {
             return (
               <div
@@ -86,8 +88,8 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
       {/* why choose us section */}
       <section>
         <div className=" flex flex-col justify-center items-center font-bold md:py-5">
-          <h1 className="text-xl p-5">Why Choose Us</h1>
-          <p className="max-w-[50rem] text-center">
+          <h1 data-aos='fade-right' className="text-xl p-5">Why Choose Us</h1>
+          <p data-aos='fade-left' className="max-w-[50rem] text-center">
             At Vionsys IT Solution Pvt. Ltd., we understand that choosing a
             development partner is a critical decision for your business. Here's
             why we believe we are the right choice for your development needs.
@@ -97,7 +99,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
         {/* the static section for the why choose us  */}
         <section className="p-5 flex flex-col gap-4">
           <section className="flex flex-col md:flex-row justify-evenly items-center ">
-            <div className="max-w-[35rem] space-y-2">
+            <div data-aos='fade-right' className="max-w-[35rem] space-y-2">
               <h1 className="font-semibold text-4xl bg-gradient-to-r from-indigo-600 to-pink-800 bg-clip-text text-transparent">
                 Expertise
               </h1>
@@ -107,7 +109,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 enterprises.
               </p>
             </div>
-            <div className="video">
+            <div data-aos='fade-left' className="video">
               <Image
                 className="rounded-2xl"
                 src={exp}
@@ -118,7 +120,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             </div>
           </section>
           <section className="flex flex-col md:flex-row justify-evenly items-center ">
-            <div className="video">
+            <div  data-aos='fade-right' className="video">
               <Image
                 src={inno}
                 className="rounded-2xl"
@@ -127,7 +129,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 height={400}
               />
             </div>
-            <div className="max-w-[35rem] space-y-2">
+            <div data-aos='fade-left' className="max-w-[35rem] space-y-2">
               <h1 className=" font-semibold text-4xl bg-gradient-to-r from-indigo-600 to-pink-800 bg-clip-text text-transparent">
                 Innovation
               </h1>
@@ -138,7 +140,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             </div>
           </section>
           <section className="flex flex-col md:flex-row justify-evenly items-center ">
-            <div className="max-w-[35rem] space-y-2">
+            <div data-aos='fade-right' className="max-w-[35rem] space-y-2">
               <h1 className="font-semibold text-4xl bg-gradient-to-r from-indigo-600 to-pink-800 bg-clip-text text-transparent">
                 On-Time Support
               </h1>
@@ -147,7 +149,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 requirements and deliver incremental updates regularly.
               </p>
             </div>
-            <div className="video">
+            <div data-aos='fade-left' className="video">
               <Image
                 src={supp}
                 className="rounded-2xl"
