@@ -1,7 +1,9 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { WavyBackground } from "@/components/ui/wavy-background";
+import React from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { WavyBackground } from '@/components/ui/wavy-background';
 
 const ServicesTemplateOne = ({ data }: { data: any }) => {
   const getWaveColor = (heading: string): string[] => {
@@ -34,10 +36,10 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
           }
           className="max-w-4xl mx-auto pb-40"
         >
-          <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+          <p data-aos='fade-down' className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
             {data?.headline}
           </p>
-          <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+          <p data-aos='fade-up' className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
             {data?.paragraph}
           </p>
         </WavyBackground>
@@ -46,9 +48,9 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
       {/* //the services sections */}
       <section className="services_look ">
         <div className=" flex justify-center items-center font-bold py-6">
-          <h1 className="text-xl text-center">Our Services</h1>
+          <h1 data-aos='fade-left' className="text-xl text-center">Our Services</h1>
         </div>
-        <div className="flex flex-wrap justify-center gap-5">
+        <div data-aos='zoom-out' className="flex flex-wrap justify-center gap-5">
           {data?.Services?.map((ser: any) => {
             return (
               <div
@@ -71,19 +73,19 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
       {/* types of of that services */}
       <section className="">
         <div className=" flex flex-col justify-center items-center font-bold md:py-5">
-          <h1 className="text-xl p-5">Why Choose Us</h1>
-          <p className="max-w-[50rem] text-center">
+          <h1 data-aos='fade-right' className="text-xl p-5">Why Choose Us</h1>
+          <p data-aos='fade-left' className="max-w-[50rem] text-center">
             At Vionsys IT Solution Pvt. Ltd., we understand that choosing a
             development partner is a critical decision for your business. Here's
             why we believe we are the right choice for your development needs.
           </p>
         </div>
-        <div className="flex flex-wrap md:gap-5 p-2">
+        <div className="flex flex-wrap justify-center items-center  md:gap-5 p-2">
           {data.workType.map((work: any) => {
             return (
               <div
-                key={work.id}
-                className=" w-[27rem] h-[20rem] m-5 flex flex-col group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
+                key={work.id} data-aos='zoom-out'
+                className=" w-[20rem] h-[20rem] m-5 flex flex-col group bg-white border shadow-sm rounded-xl overflow-hidden hover:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
               >
                 <div className="relativerounded-t-xl overflow-hidden">
                   <Image
@@ -110,7 +112,7 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
 
       {/* contact us small section */}
       <section>
-        <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-20">
+        <div data-aos='slide-left' className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-20">
           <div className="flex w-full mx-auto text-left">
             <div className="relative inline-flex items-center mx-auto align-middle">
               <div className="text-center">
@@ -145,10 +147,10 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
       <section>
         <div className="bg-white">
           <div className="max-w-screen-xl mx-auto pt-12 pb-16 sm:pt-16 sm:pb-20 px-4 sm:px-6 lg:pt-20 lg:pb-28 lg:px-8">
-            <h2 className="text-3xl leading-9 font-extrabold text-gray-900 text-center">
+            <h2 data-aos='fade-left' className="text-3xl leading-9 font-extrabold text-gray-900 text-center">
               Frequently asked questions
             </h2>
-            <div className="mt-6 border-t-4 border-gray-100 pt-10">
+            <div data-aos='zoom-out' className="mt-6 border-t-4 border-gray-100 pt-10">
               <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 md:gap-y-12">
                 {data?.faq.map((data: any) => {
                   return (

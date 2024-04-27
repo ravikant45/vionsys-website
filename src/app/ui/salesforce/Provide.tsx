@@ -5,11 +5,13 @@ import { TbArrowsRight } from 'react-icons/tb';
 function Provide() {
   return (
     <div className="w-[100vw] py-4 flex flex-col md:flex-row md:px-8 px-10 gap-8 items-center justify-center">
-      <h4 className="mt-2 text-2xl font-bold leading-8 text-orange sm:text-3xl sm:leading-9">
+      <h4 data-aos="fade-left" className="mt-2 text-2xl font-bold leading-8 text-orange sm:text-3xl sm:leading-9">
         We Provide
       </h4>
-      <TbArrowsRight size={50}/>
-      <ul className="space-y-3 font-medium">
+      <div data-aos="fade-down" className='md:block hidden' >
+        <TbArrowsRight size={50}/>
+      </div>
+      <ul data-aos="fade-right" className="space-y-3 font-medium">
         <li className="flex items-start lg:col-span-1">
           <div className="flex-shrink-0">
             <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
