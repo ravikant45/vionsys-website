@@ -18,12 +18,9 @@ const Second = () => {
           <span className="text-blue-700 md:text-3xl md:pl-1 md:align-center transform hover:scale-125 transition duration-300 ease-in-out font-bold">
             Interest in Vionsys Services
           </span>
-          <h2
-            className="flex justify-center text-amber-600 pt-5 font-medium  border-amber-600 border-b-2
-          "
-          >
+          <p className="flex justify-center text-amber-600 pt-5 font-medium  border-amber-600 border-b-2">
             Let's Go With Us
-          </h2>
+          </p>
         </h2>
       </div>
 
