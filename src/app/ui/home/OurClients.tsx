@@ -1,14 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion } from "framer-motion";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+
 import { Card } from 'antd';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import ClientImage1 from "../../../../public/assets/clients/client-1.png";
-import ClientImage2 from "../../../../public/assets/clients/client-2.png";
-import ClientImage3 from "../../../../public/assets/clients/client-3.png";
-import ClientImage4 from "../../../../public/assets/clients/client-4.png";
-import ClientImage5 from "../../../../public/assets/clients/client-6.png";
-import ClientImage6 from "../../../../public/assets/clients/client-7.png";
-import ClientImage7 from "../../../../public/assets/clients/client-8.png";
+
+import ClientImage1 from '../../../../public/assets/clients/client-1.png';
+import ClientImage2 from '../../../../public/assets/clients/client-2.png';
+import ClientImage3 from '../../../../public/assets/clients/client-3.png';
+import ClientImage4 from '../../../../public/assets/clients/client-4.png';
+import ClientImage5 from '../../../../public/assets/clients/client-5.png';
+import ClientImage6 from '../../../../public/assets/clients/client-6.png';
+import ClientImage7 from '../../../../public/assets/clients/client-7.png';
+import ClientImage8 from '../../../../public/assets/clients/client-8.png';
 
 const OurClients = () => {
     const [width, setWidth] = useState(0);
@@ -35,20 +42,20 @@ const OurClients = () => {
         },
         {
             id: 5,
-            logo: ClientImage6
+            logo: ClientImage5
         },
         {
             id: 6,
-            logo: ClientImage7
+            logo: ClientImage6
         }
         ,
         {
             id: 7,
-            logo: ClientImage6
+            logo: ClientImage7
         },
         {
             id: 8,
-            logo: ClientImage7
+            logo: ClientImage8
         }
     ]
     return (

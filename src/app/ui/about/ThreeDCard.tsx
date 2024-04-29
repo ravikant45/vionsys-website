@@ -1,7 +1,13 @@
 "use client"
-import Image from "next/image";
-import React from "react";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import React from 'react';
+
+import Image from 'next/image';
+
+import {
+  CardBody,
+  CardContainer,
+  CardItem,
+} from '@/components/ui/3d-card';
 
 function ThreeDCard() {
   return (
@@ -10,7 +16,7 @@ function ThreeDCard() {
 
       <div data-aos="zoom-in">
         <CardContainer className="inter-var">
-          <CardBody className="bg-white lg:h-80 h-auto shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem]  rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
+          <CardBody className="bg-white lg:h-96 h-auto shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem]  rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -33,7 +39,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                Our vision is to set the standard as a global IT solution provider, distinguishing ourselves by prioritizing customer relationships above all, ensuring lasting satisfaction and trust.
+                Our vision is to be a leading provider of innovative IT solutions, driving digital transformation and empowering businesses to thrive in the ever-evolving technological landscape.
               </CardItem>
             </div>
           </CardBody>
@@ -42,7 +48,7 @@ function ThreeDCard() {
 
       <div data-aos="zoom-in">
         <CardContainer className="inter-var">
-          <CardBody className="bg-white lg:h-80 h-auto  shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
+          <CardBody className="bg-white lg:h-96 h-auto  shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -65,7 +71,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm dark:text-neutral-300"
               >
-                Our mission is to deliver cutting-edge IT services that empower our clients to not only maintain but also enhance their competitive edge, enabling them to stay ahead of the curve in an ever-evolving digital landscape.
+                Our mission is to deliver exceptional IT solutions tailored to the unique needs of our clients, leveraging cutting- edge technologies, fostering innovation, and providing unparalleled customer satisfaction.
               </CardItem>
             </div>
           </CardBody>
@@ -74,12 +80,12 @@ function ThreeDCard() {
 
       <div data-aos="zoom-in">
         <CardContainer className="inter-var flex justify-evenly">
-          <CardBody className="bg-white lg:h-80 h-auto shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
+          <CardBody className="bg-white lg:h-96 h-auto shadow-blue2 shadow-md relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] w-auto sm:w-[20rem] rounded-xl px-6 border mx-4 py-2 flex flex-col gap-2 justify-center items-center">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
             >
-              Strength And Motto
+              Company Value
             </CardItem>
 
             <CardItem translateZ="100" className="w-full">
@@ -97,7 +103,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm  dark:text-neutral-300"
               >
-                Our motto encapsulates our commitment to harnessing the transformative power of technology for the advancement and benefit of all humankind.
+                Embodying a culture of innovation, integrity, and collaboration, we strive for excellence in every endeavor. Our commitment to customer-centricity ensures unwavering dedication to client success, fostering enduring relationships built on trust, transparency, and exceptional service.
               </CardItem>
             </div>
           </CardBody>
