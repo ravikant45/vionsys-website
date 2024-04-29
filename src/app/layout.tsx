@@ -3,8 +3,7 @@ import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
 import Footer from "./ui/footer/Footer";
 import Navbar from "./ui/navbar/Navbar";
-
-
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={GeistSans.className}>
         <Navbar />
+        <Toaster position="bottom-center" />
         {children}
         <Footer />
       </body>
