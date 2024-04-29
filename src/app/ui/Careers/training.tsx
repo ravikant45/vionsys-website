@@ -1,21 +1,23 @@
 import React from "react";
-
+import TrainingWorkshopImage from "/public/assets/career/trainingWorkshop.jpg";
+import Image from "next/image";
 const Training = () => {
   return (
     <div className="w-[100vw] pb-20">
       <div className="grid md:grid-cols-2 grid-cols-1 ">
-        <div>
-          <img
-            className="flex justify-center items-center opacity-75"
-            src="https://images.unsplash.com/photo-1573167507387-6b4b98cb7c13?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        <div className="bg-black">
+          <Image
+            data-aos="zoom-out"
+            className="flex justify-center items-center opacity-55"
+            src={TrainingWorkshopImage}
             alt=""
           />
         </div>
-        <div className="bg-blue-600 text-white flex flex-col justify-center items-center text-center px-12">
-          <h1 className="text-5xl text-bold text-start py-8">
+        <div className="bg-blue4 text-white flex flex-col justify-center gap-4 px-12">
+          <h1 data-aos="fade-left" className="text-2xl font-bold">
             Workshop and Training Programs
           </h1>
-          <p className="text-xl text-start ">
+          <p data-aos="fade-right" className="text-md text-start ">
             As technology advances, the workplaces need strategies to evolve, so
             the teams! We like to keep our team ready to take on new challenges
             and have a thorough understanding of the changing landscape of the
