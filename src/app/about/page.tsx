@@ -8,14 +8,14 @@ import Testimonial from '../ui/about/Testimonial'
 
 const page = () => {
     return (
-        <>
-            <AboutUs/>
-            <About2/>
-            <ThreeDCard/>
-            <Testimonial/>
-            <TypewriterDemo/>
-            <Visit/>
-        </>
+        <div className='pt-16 pb-20'>
+            <AboutUs />
+            <About2 />
+            <ThreeDCard />
+            <Testimonial />
+            <TypewriterDemo />
+            <Visit />
+        </div>
     )
 }
 

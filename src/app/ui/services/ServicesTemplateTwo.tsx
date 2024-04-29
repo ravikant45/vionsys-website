@@ -8,10 +8,10 @@ import { Feature } from './data/CloudComputingServicesData';
 
 const ServicesTemplateTwo = ({ data }: { data: any }) => {
   return (
-    <main>
+    <main className=''>
       {/* hero section */}
-      <section className='pb-20'>
-        <div  data-aos='fade-up' className="flex h-screen justify-center items-center dark:bg-slate-800">
+      <section>
+        <div data-aos='fade-up' className="flex h-screen justify-center items-center dark:bg-slate-800">
           <div className="mx-auto flex justify-center px-4 sm:mt-6 sm:px-4 md:mt-4 lg:mt-2 lg:px-8">
             <div className="text-center ">
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
@@ -87,7 +87,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
       </section>
       {/* why choose us section */}
       <section>
-        <div className=" flex flex-col justify-center items-center font-bold md:py-5">
+        <div className="flex flex-col justify-center items-center font-bold md:py-5">
           <h1 data-aos='fade-right' className="text-xl p-5">Why Choose Us</h1>
           <p data-aos='fade-left' className="max-w-[50rem] text-center">
             At Vionsys IT Solution Pvt. Ltd., we understand that choosing a
@@ -120,7 +120,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             </div>
           </section>
           <section className="flex flex-col md:flex-row justify-evenly items-center ">
-            <div  data-aos='fade-right' className="video">
+            <div data-aos='fade-right' className="video">
               <Image
                 src={inno}
                 className="rounded-2xl"

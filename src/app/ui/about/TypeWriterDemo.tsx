@@ -2,12 +2,14 @@
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { Button } from '@/components/ui/button';
 import { BsTelephoneOutboundFill } from "react-icons/bs";
+import BgTypewriteImage from "/public/TypeWriter.jpg";
+import Image from "next/image";
 
 export function TypewriterDemo() {
   const words = [
     {
       text: "Intrested",
-      
+
     },
     {
       text: "in",
@@ -21,21 +23,22 @@ export function TypewriterDemo() {
       className: "text-orange",
     },
     {
-        text: "with",
-      },
+      text: "with",
+    },
     {
       text: "us?",
     },
   ];
   return (
-    <div className="flex flex-col items-center bg-cover justify-center h-[40rem] " 
-        style={{
-        backgroundImage:
-          "url('/TypeWriter.jpg')",
-      }}>
-      <TypewriterEffect words={words} />
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
-      <Button>Call Us <BsTelephoneOutboundFill className="inline-block ml-2 text-sm" /></Button>
+    <div className="bg-black">
+      <div className="flex flex-col items-center bg-cover justify-center h-[40rem] w-[100vw] relative">
+        <Image src={BgTypewriteImage} alt="" className="absolute w-full h-full opacity-45" />
+        <div className="absolute top-0 flex flex-col gap-4 justify-center items-center w-full h-full">
+          <TypewriterEffect words={words} />
+          <div className="">
+            <Button>Call Us <BsTelephoneOutboundFill className="inline-block ml-2 text-sm" /></Button>
+          </div>
+        </div>
       </div>
     </div>
   );
