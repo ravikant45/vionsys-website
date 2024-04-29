@@ -2,12 +2,12 @@ import React from "react";
 
 const Life = () => {
   return (
-    <div className="w-[100vw] py-20 ">
+    <div className="w-[100vw] py-20 px-2">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="text-5xl text-start text-blue-600 font-bold  pb-4">
+        <h1 data-aos="fade-left" className="text-5xl text-start text-blue2 font-bold  pb-4">
           Life @ Vionsys
         </h1>
-        <p className="text-xl w-2/3 text-start">
+        <p data-aos="fade-right" className="text-md md:w-2/3 text-start">
           At Vionys IT Solutions India Pvt.Ltd., we are on a mission to design
           make innovative yet stunning products and mark an impactful presence
           in the industry. And to do that, we empower our greatest resource to

@@ -24,6 +24,7 @@ export const HoverEffect = ({
     <>
       <Job_modal isModalOpen={isModalOpen} setisModalOpen={setisModalOpen} />
       <div
+        data-aos="zoom-out"
         className={cn(
           "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 w-full",
           className

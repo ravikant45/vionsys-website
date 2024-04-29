@@ -40,7 +40,7 @@ const Job_modal = ({
     <div>
       <Modal
         title="Job Application"
-        visible={isModalOpen}
+        open={isModalOpen}
         onCancel={handleClose}
         footer={null}
       >
