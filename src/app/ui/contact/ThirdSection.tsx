@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { RxLinkedinLogo } from "react-icons/rx";
@@ -10,6 +10,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
+import { AxiosError, AxiosResponse } from "axios";
+import { toast } from 'react-hot-toast';
+
 import {
   Form,
   FormControl,
@@ -20,34 +24,58 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { headers } from "next/headers";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
+  name: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  contact: z.string().min(2, {
-    message: "Contact must be  at least 10 digits.",
+  number: z.string().length(10, {
+    message: "Contact number must be at least 10 digits.",
   }),
-  email: z.string().min(2, {
-    message: "Required field.",
-  }),
-  usermessage: z.string().min(2, {
-    message: ".",
+  email: z.string().email("Invalid email!!"),
+  message: z.string().min(2, {
+    message: "Message must be at least 2 characters.",
   }),
 });
 
 const ThirdSection = () => {
+  const [isPending, setIsPending] = useState<boolean>(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      contact: "",
+      name: "",
+      number: "",
       email: "",
-      usermessage: "",
+      message: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    try {
+      setIsPending(true);
+      const response: AxiosResponse<any> = await axios.post(
+        "/api/email", // Replace with your API endpoint
+        values,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setIsPending(false);
+      toast.success("Message sent successfully!");
+      console.log("Response:", response.data);
+      form.reset(); // Reset the form after successful submission
+    } catch (error) {
+      const err = error as AxiosError;
+      console.error("Error:", err.response?.data || err.message);
+      setIsPending(false);
+      toast.error(err.message);
+    }
+
+    form.reset();
   }
 
   return (
@@ -57,6 +85,7 @@ const ThirdSection = () => {
           src="https://img.freepik.com/free-vector/white-background-with-wavy-lines_23-2149124446.jpg?t=st=1713935414~exp=1713939014~hmac=4e4633f5a4e31b12fea0cdee7b3b4ffaa6423369fd539fcac49f589fc5675c5a&w=900"
           className="bg-object-cover lg:w-full lg:h-screen md:block hidden md:w-full lg:mt-0"
         ></img>
+
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -64,7 +93,7 @@ const ThirdSection = () => {
           >
             <FormField
               control={form.control}
-              name="username"
+              name="name"
               render={({ field }) => (
                 <FormItem>
                   <h1 className="pb-4 tracking-wide md:text-2xl text-md text-center font-medium underline underline-offset-4 decoration-blue-800">
@@ -82,7 +111,7 @@ const ThirdSection = () => {
             />
             <FormField
               control={form.control}
-              name="contact"
+              name="number"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Contact Number</FormLabel>
@@ -110,11 +139,12 @@ const ThirdSection = () => {
             />
             <FormField
               control={form.control}
-              name="usermessage"
+              name="message"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Your Message</FormLabel>
                   <Textarea
+                    {...field} // Pass the field props to TextArea
                     placeholder="Type your message here."
                     id="message-2"
                   />
@@ -123,12 +153,24 @@ const ThirdSection = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="flex justify-center">
-              Submit
-            </Button>
+            {
+              !isPending ? (<Button type="submit" className="flex justify-center">
+                Submit
+              </Button>) : (
+                <Button type="submit" className="flex justify-center">
+                  <svg aria-hidden="true" role="status" className="inline w-4 h-4 me-3 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB" />
+                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor" />
+                  </svg>
+                  Submit
+                </Button>
+              )
+            }
           </form>
         </Form>
       </div>
+
+
       <div className="Location Area">
         <div className="flex flex-col h-full md:w-full md:h-auto">
           <iframe
