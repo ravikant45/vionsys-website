@@ -40,9 +40,6 @@ const salesforce = () => {
       <Future />
       <Cloud />
       <Provide />
-
-      {/* Contact us and schedule a meet section */}
-      <ScheduleMeetAndContactCTA />
     </div>
   );
 };

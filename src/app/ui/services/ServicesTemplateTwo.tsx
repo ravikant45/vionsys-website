@@ -90,66 +90,69 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
         <div className="flex flex-col justify-center items-center font-bold md:py-5">
           <h1 data-aos='fade-right' className="text-xl p-5">Why Choose Us</h1>
           <p data-aos='fade-left' className="max-w-[50rem] text-center">
-            At Vionsys IT Solution Pvt. Ltd., we understand that choosing a
+            At Vionsys IT Solutions India Pvt. Ltd., we understand that choosing a
             development partner is a critical decision for your business. Here's
             why we believe we are the right choice for your development needs.
           </p>
         </div>
 
         {/* the static section for the why choose us  */}
-        <section className="p-5 flex flex-col gap-4">
-          <section className="flex flex-col md:flex-row justify-evenly items-center ">
-            <div data-aos='fade-right' className="max-w-[35rem] space-y-2">
-              <h1 className="font-semibold text-4xl bg-gradient-to-r from-indigo-600 to-pink-800 bg-clip-text text-transparent">
-                Expertise
-              </h1>
-              <p>
-                Our team brings years of collective experience in software
+
+        <section className='z-0 bg-transparent'>
+          {/* First section */}
+          <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
+            {/* left side */}
+            <div data-aos="fade-left" className='flex flex-col justify-center  gap-2'>
+              <h1 className='font-bold text-xl'>Expertise</h1>
+              <p className='text-md text-gray1'>Our team brings years of collective experience in software
                 development across various industries. From startups to
-                enterprises.
-              </p>
+                enterprises.</p>
             </div>
-            <div data-aos='fade-left' className="video">
+
+            {/* right side */}
+            <div className='flex justify-center items-center'>
               <Image
-                className="rounded-2xl"
                 src={exp}
-                alt="exp_img"
-                width={400}
-                height={400}
-              />
-            </div>
-          </section>
-          <section className="flex flex-col md:flex-row justify-evenly items-center ">
-            <div data-aos='fade-right' className="video">
-              <Image
-                src={inno}
                 className="rounded-2xl"
-                alt="innovation-image"
+                alt="support_image"
                 width={400}
                 height={400}
               />
             </div>
-            <div data-aos='fade-left' className="max-w-[35rem] space-y-2">
-              <h1 className=" font-semibold text-4xl bg-gradient-to-r from-indigo-600 to-pink-800 bg-clip-text text-transparent">
-                Innovation
-              </h1>
-              <p>
-                we constantly update our skills and stay abreast of the latest
-                trends and technologies in software development.
-              </p>
+          </div>
+
+          {/* Second section */}
+          <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
+
+            {/* left side */}
+            <Image
+              src={inno}
+              className="rounded-2xl"
+              alt="support_image"
+              width={400}
+              height={400}
+            />
+            <div data-aos="fade-right" className='flex justify-center items-center'>
+              {/* right side */}
+              <div className='flex flex-col justify-center  gap-2'>
+                <h1 className='font-bold text-xl'>Innovation</h1>
+                <p className='text-md text-gray1'>we constantly update our skills and stay abreast of the latest
+                  trends and technologies in software development.</p>
+              </div>
             </div>
-          </section>
-          <section className="flex flex-col md:flex-row justify-evenly items-center ">
-            <div data-aos='fade-right' className="max-w-[35rem] space-y-2">
-              <h1 className="font-semibold text-4xl bg-gradient-to-r from-indigo-600 to-pink-800 bg-clip-text text-transparent">
-                On-Time Support
-              </h1>
-              <p>
-                Our agile development methodology allows us to adapt to changing
-                requirements and deliver incremental updates regularly.
-              </p>
+          </div>
+
+          {/* third section */}
+          <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
+            {/* left side */}
+            <div data-aos="fade-left" className='flex flex-col justify-center  gap-2'>
+              <h1 className='font-bold text-xl'>On-Time Support</h1>
+              <p className='text-md text-gray1'>Our agile development methodology allows us to adapt to changing
+                requirements and deliver incremental updates regularly.</p>
             </div>
-            <div data-aos='fade-left' className="video">
+
+            {/* right side */}
+            <div className='flex justify-center items-center'>
               <Image
                 src={supp}
                 className="rounded-2xl"
@@ -158,7 +161,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 height={400}
               />
             </div>
-          </section>
+          </div>
         </section>
       </section>
     </main>

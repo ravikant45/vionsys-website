@@ -2,7 +2,7 @@ import React from "react";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Image from "next/image";
 import first from "/public/assets/Contact/first.jpg";
-export function TypewriterEffectDemo() {}
+export function TypewriterEffectDemo() { }
 const words = [
   {
     text: "Think",
@@ -50,9 +50,9 @@ const Conts = () => {
   return (
     <div>
       <div className="">
-        <div className="w-full h-full relative flex bg-black">
-          <Image src={first} alt="" className="w-full h-full  object-cover bg-no-repeat opacity-45"/>
-          <div className="absolute top-0 left-0 right-20  w-full text-2xl h-full flex items-center">
+        <div className="md:w-[100vw] md:h-[100vh] relative flex bg-black">
+          <Image src={first} alt="" className="w-full h-full  object-cover bg-no-repeat opacity-45" />
+          <div className="absolute top-0  w-full text-2xl h-full flex items-center px-4">
             <TypewriterEffect words={words} />
           </div>
         </div>

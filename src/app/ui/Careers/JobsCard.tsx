@@ -7,8 +7,8 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 export default function JobsCard() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center pb-4">
-        <h1 data-aos="fade-left" className="text-blue2 font-bold text-4xl pb-3">
+      <div className="flex flex-col justify-center items-center py-2">
+        <h1 data-aos="fade-left" className="text-blue2 font-bold md:text-start text-center text-4xl pb-3">
           Your Future Begins Here
         </h1>
         <h2 data-aos="fade-right" className="text-black font-bold text-2xl">Current Openings</h2>
