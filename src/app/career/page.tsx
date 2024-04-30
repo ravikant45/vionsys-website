@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <CareerComponent />
       <Life />
       <Training />

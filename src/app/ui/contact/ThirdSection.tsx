@@ -82,17 +82,18 @@ const ThirdSection = () => {
 
   return (
     <div>
-      <div className="flex justify-around mt-0 bg-white">
+      <div className="flex justify-center items-center mt-0 bg-white">
         <Image
           src={fourth}
           alt=""
-          className="bg-object-cover lg:w-full lg:h-screen md:block hidden md:w-full lg:mt-0"
+          quality={100}
+          className="bg-object-cover lg:w-full h-auto md:block hidden md:w-full lg:mt-0"
         />
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            data-aos="fade-right"
-            className="md:mt-10 shadow-md shadow-blue-500 rounded-[22px] md:w-1/2 w-full p-8 m-4 bg-slate-100 md:absolute lg:p-10"
+            data-aos="zoom-out"
+            className="md:mt-10 shadow-md shadow-blue4 rounded-[22px] md:w-1/2 w-full p-8 m-4 bg-white md:absolute lg:p-10"
           >
             <FormField
               control={form.control}

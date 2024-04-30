@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 const page = () => {
   return (
-    <main className="pt-16">
+    <main className="pt-16 overflow-hidden">
       <ServicesTemplateTwo data={CloudComputingServicesData} />
     </main>
   );

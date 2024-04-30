@@ -1,13 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
 import Link from "next/link";
 import { MdOutlineMail } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { RxLinkedinLogo } from "react-icons/rx";
-import { useRef } from "react";
 import LinkedIn from "../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../public/assets/socialicons/facebook.png";
@@ -20,7 +15,7 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="px-2 w-[100vw] overflow-hidden bg-blue5 text-white">
+    <footer className="px-2 w-[100vw] overflow-hidden bg-blue5 text-white z-10">
       {/* <div className="w-full absolute overflow-x-hidden -z-10">
         <svg
           id="svg"
@@ -66,7 +61,7 @@ const Footer = () => {
             </div>
 
             {/* About Us */}
-            <div data-aos="fade-up" className="text-center md:text-left col-span-2 flex flex-col gap-2">
+            <div className="text-center md:text-left col-span-2 flex flex-col gap-2">
               <h3 className="text-lg text-white font-bold mb-2 underline   ">
                 {" "}
                 About Us
@@ -78,7 +73,7 @@ const Footer = () => {
                 cloud services, and IT consulting, we empower businesses to
                 thrive in the digital era.{" "}
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 md:justify-start justify-center">
                 <Link href="/"><Image src={Facebook} alt="" quality={100} /></Link>
                 <Link href={"/"}><Image src={Instagram} alt="" quality={100} /></Link>
                 <Link href={"/"}><Image src={LinkedIn} alt="" quality={100} /></Link>
@@ -86,7 +81,7 @@ const Footer = () => {
             </div>
 
             {/* Our Services */}
-            <div data-aos="fade-left" className="text-center md:text-left flex flex-col  gap-2">
+            <div className="text-center md:text-left flex flex-col  gap-2">
               <h3 className="text-lg text-white font-bold mb-2 underline">
                 Our Services
               </h3>
@@ -102,7 +97,7 @@ const Footer = () => {
 
 
             {/* Contact Info */}
-            <div data-aos="fade-down" className="text-center md:text-left col-span-2 flex flex-col  gap-2">
+            <div className="text-center md:text-left col-span-2 flex flex-col  gap-2">
               <h3 className="text-lg text-white font-bold mb-2 underline">
                 Contact Info
               </h3>
