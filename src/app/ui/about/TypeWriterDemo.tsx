@@ -31,7 +31,7 @@ export function TypewriterDemo() {
   ];
   return (
     <div className="bg-black">
-      <div className="flex flex-col items-center bg-cover justify-center h-[40rem] w-[100vw] relative">
+      <div className="flex flex-col items-center bg-cover justify-center md:h-[40rem] h-[20rem] w-[100vw] relative">
         <Image src={BgTypewriteImage} alt="" className="absolute w-full h-full opacity-45" />
         <div className="absolute top-0 flex flex-col gap-4 justify-center items-center w-full h-full">
           <TypewriterEffect words={words} />
