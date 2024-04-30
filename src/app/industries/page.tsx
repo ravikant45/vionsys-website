@@ -11,14 +11,13 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div className="pt-16 overflow-x-hidden">
-      {/* First Section */}
-      <FirstSection />
-
       {/* Second Section */}
       <SecondSection />
-
+      {/* First Section */}
+      <FirstSection />
       {/* Third Section */}
       <ThirdSection />
+      
     </div>
   );
 };

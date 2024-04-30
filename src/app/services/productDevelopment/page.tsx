@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Product Development Service",
+  title: "Product Development Services",
 };
 
 const page = () => {
