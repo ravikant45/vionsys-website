@@ -20,8 +20,8 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="px-2 w-[100vw]   overflow-x-hidden">
-      <div className="w-full absolute overflow-x-hidden -z-10">
+    <footer className="px-2 w-[100vw] overflow-hidden bg-blue5 text-white">
+      {/* <div className="w-full absolute overflow-x-hidden -z-10">
         <svg
           id="svg"
           viewBox="0 0 1320 325"
@@ -54,10 +54,10 @@ const Footer = () => {
             transform="rotate(-180 720 200)"
           ></path>
         </svg>
-      </div>
+      </div> */}
 
       {/* Footer Content */}
-      <div className="bg-transparent py-5 overflow-x-hidden">
+      <div className="bg-transparent py-5 overflow-hidden">
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {/* Logo */}
@@ -67,7 +67,7 @@ const Footer = () => {
 
             {/* About Us */}
             <div data-aos="fade-up" className="text-center md:text-left col-span-2 flex flex-col gap-2">
-              <h3 className="text-lg text-[#171717] font-bold mb-2 underline   ">
+              <h3 className="text-lg text-white font-bold mb-2 underline   ">
                 {" "}
                 About Us
               </h3>
@@ -87,7 +87,7 @@ const Footer = () => {
 
             {/* Our Services */}
             <div data-aos="fade-left" className="text-center md:text-left flex flex-col  gap-2">
-              <h3 className="text-lg text-[#171717] font-bold mb-2 underline">
+              <h3 className="text-lg text-white font-bold mb-2 underline">
                 Our Services
               </h3>
               <div className="flex flex-col gap-1">
@@ -103,7 +103,7 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div data-aos="fade-down" className="text-center md:text-left col-span-2 flex flex-col  gap-2">
-              <h3 className="text-lg text-[#171717] font-bold mb-2 underline">
+              <h3 className="text-lg text-white font-bold mb-2 underline">
                 Contact Info
               </h3>
               <div className="flex flex-col justify-center gap-2">
@@ -126,8 +126,8 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div className="text-center bottom-0 relative flex justify-center items-center py-2">
-        <p className=" ">
+      <div className="text-center  relative flex justify-center items-center py-2">
+        <p className=" text-slate-200">
           {" "}
           Copyright &#169; 2017 Vionsys IT Solutions India Pvt. Ltd . - All
           Rights Reserved.
