@@ -9,8 +9,8 @@ export const Jobs: {
     jobDescription:
       "As an RPA Developer, you will be responsible for designing, developing, testing, and implementing robotic process automation solutions to streamline business processes and increase efficiency. You will work closely with business analysts and stakeholders to understand automation requirements and ensure the successful deployment of RPA solutions.",
     Requirement: [
-      "Employment Type: Full Time, Permanent",
       "Role Category: Software Development",
+      "Employment Type: Full Time, Permanent",
       "Experience: 4+year",
       "Location :Kharadi",
     ],

@@ -88,16 +88,16 @@ const FirstSection = () => {
   return (
     <div>
       <section>
-        <div className="bg-black">
-          <Image src={Finance} alt="" className="h-[50vh] opacity-45" />
-          <div className="absolute md:left-1/2 md:top-32 top-20 px-3 flex justify-center items-center flex-col transform text-white">
+        <div className="bg-black relative">
+          <Image src={Finance} alt="" className="h-[70vh] opacity-45" />
+          <div className="absolute md:left-1/2 md:top-48 top-28 px-3 flex justify-center items-center flex-col transform text-white">
             <h1
               data-aos="fade-right"
               className="md:text-2xl underline font-bold text-orange text-center"
             >
               Finance Sector
             </h1>
-            <p data-aos="fade-left" className="my-3 h-auto">
+            <p data-aos="fade-left" className="my-3">
               We offer tailored IT solutions for the finance sector, enabling
               institutions to innovate, optimize operations, and enhance
               customer service. Our advanced technologies, including AI and

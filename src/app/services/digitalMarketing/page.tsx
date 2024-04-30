@@ -1,7 +1,6 @@
 
 import ServicesTemplateFour from '@/app/ui/services/ServicesTemplateFour'
 import React from 'react'
-import ServicesTemplateFour from "@/app/ui/services/ServicesTemplateFour";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Digital Marketing Services",
