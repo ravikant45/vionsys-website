@@ -11,8 +11,8 @@ const ThirdSection = () => {
       {/* Parent div */}
       <div className="flex flex-col gap-2 md:flex-row justify-center w-full px-2">
         <div className="md:w-1/2 w-full">
-          <Image src={insurance} alt="" className=""/>
-          </div>
+          <Image src={insurance} alt="" className="" />
+        </div>
         <div className="bg-grey m-2 h-[auto] w-full md:w-1/2">
           <h1
             className="text-3xl font-extrabold text-[#3469bc] underline"
@@ -100,26 +100,26 @@ const ThirdSection = () => {
                 Data Management and Analytics
               </li>
               <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Customer Insights
+                Cybersecurity Solutions
               </li>
               <li
                 className="px-6 py-2 w-full border-b border-gray-400
                  hover:bg-blue-400"
               >
-                Cloud Services
+                Telemedicine Solutions
               </li>
             </ul>
           </div>
         </div>
         <div className="w-full md:w-1/2 m-2">
-          <Image src={healthcare} alt="" className=""/>
-          </div>
+          <Image src={healthcare} alt="" className="" />
+        </div>
       </div>
       {/* Third Div */}
       <div className="flex flex-col md:flex-row justify-center gap-2  h-[auto] w-full px-2">
         <div className="m-2 md:w-1/2 w-full">
-          <Image src={education} alt="" className=""/>
-          </div>
+          <Image src={education} alt="" className="" />
+        </div>
         <div className="bg-grey m-2 h-[auto] w-full md:w-1/2">
           <h1
             className="text-3xl font-extrabold text-[#3469bc] underline"
@@ -212,8 +212,8 @@ const ThirdSection = () => {
           </div>
         </div>
         <div className="md:w-1/2 w-full m-2">
-          <Image src={profservice} alt="" className="w-full"/>
-         </div>
+          <Image src={profservice} alt="" className="w-full" />
+        </div>
       </div>
     </>
   );
