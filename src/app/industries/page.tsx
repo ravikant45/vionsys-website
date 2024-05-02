@@ -1,8 +1,15 @@
 import React from "react";
-import FirstSection from "../ui/industries/FirstSection";
-import SecondSection from "../ui/industries/SecondSection";
-import ThirdSection from "../ui/industries/ThirdSection";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+const FirstSection = dynamic(() => import("../ui/industries/FirstSection"), {
+  loading: () => <p>Loading...</p>,
+});
+const SecondSection = dynamic(() => import("../ui/industries/SecondSection"), {
+  loading: () => <p>Loading...</p>,
+});
+const ThirdSection = dynamic(() => import("../ui/industries/ThirdSection"), {
+  loading: () => <p>Loading...</p>,
+});
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -17,7 +24,6 @@ const page = () => {
       <FirstSection />
       {/* Third Section */}
       <ThirdSection />
-      
     </div>
   );
 };
