@@ -79,11 +79,13 @@ const Footer = () => {
                 cloud services, and IT consulting, we empower businesses to
                 thrive in the digital era.{" "}
               </motion.p>
-              <div className="flex gap-2 md:justify-start justify-center">
-                <Link href="/"><Image src={Facebook} alt="" quality={100} /></Link>
-                <Link href={"/"}><Image src={Instagram} alt="" quality={100} /></Link>
-                <Link href={"/"}><Image src={LinkedIn} alt="" quality={100} /></Link>
-              </div>
+              <motion.div initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }} className="flex gap-2 md:justify-start justify-center">
+                <Link href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "><Image src={Facebook} alt="" quality={100} /></Link>
+                <Link href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"><Image src={Instagram} alt="" quality={100} /></Link>
+                <Link href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"><Image src={LinkedIn} alt="" quality={100} /></Link>
+              </motion.div>
             </div>
 
             {/* Our Services */}
@@ -93,13 +95,15 @@ const Footer = () => {
               transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline">
                 Our Services
               </motion.h3>
-              <div className="flex flex-col gap-1">
+              <motion.div initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }} className="flex flex-col gap-1">
                 <Link href="/services/softwareDevelopement">Software Development</Link>
                 <Link href="/services/webDevelopment">Web Development</Link>
                 <Link href="/services/crm">CRM</Link>
                 <Link href="/services/salesforce">Salesforce</Link>
                 <Link href="/services/devops">DevOps</Link>
-              </div>
+              </motion.div>
             </div>
 
 
@@ -111,7 +115,9 @@ const Footer = () => {
               transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline">
                 <Link href='/contact'>Contact Info</Link>
               </motion.h3>
-              <div className="flex flex-col justify-center gap-2">
+              <motion.div initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }} className="flex flex-col justify-center gap-2">
                 <div className="flex  gap-3">
                   <div><FiPhoneCall size={19} className="mr-2" /></div>
                   <span> Phone: 8766613742</span>
@@ -125,7 +131,7 @@ const Footer = () => {
                   <span>Address: 6th floor office no.504 Stellar Spaces, opposite
                     Zensar it park, Kharadi, pune</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
