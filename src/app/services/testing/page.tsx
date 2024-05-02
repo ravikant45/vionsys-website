@@ -19,6 +19,7 @@ import { MdOutlineWifiProtectedSetup } from "react-icons/md";
 import { TbSettingsAutomation } from "react-icons/tb";
 import { TbReportAnalytics } from "react-icons/tb";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Testing Services",
@@ -144,7 +145,7 @@ const page: React.FC = () => {
                 success in today's dynamic digital landscape.
               </p>
               <div>
-                <Button data-aos="fade-right">Contact us</Button>
+                <Link href='/contact'><Button data-aos="fade-right">Contact us</Button></Link>
               </div>
             </div>
           </div>

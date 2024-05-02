@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import BgVisual from "/public/assets/Home/bgVisualForVionsys.jpg";
+import Link from 'next/link';
+
 function Hero() {
   const squareVariants = {
     initial: {
@@ -60,7 +62,9 @@ function Hero() {
             </motion.div>
           </div>
           <div className='flex justify-start items-center'>
+            <Link href='/contact'>
             <Button>Get In Touch</Button>
+            </Link>
           </div>
         </div>
 
