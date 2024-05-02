@@ -1,39 +1,58 @@
-'use client';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'aos/dist/aos.css';
+"use client";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "aos/dist/aos.css";
+import dynamic from "next/dynamic";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import AOS from 'aos';
+import AOS from "aos";
 
-import ThreeDCard from './ui/about/ThreeDCard';
-import AboutOurCompany from './ui/home/AboutOurCompany';
-import ChooseUs from './ui/home/ChooseUs';
-import Count from './ui/home/Count';
-import Hero from './ui/home/Hero';
-import OurClients from './ui/home/OurClients';
-import TrustUs from './ui/home/TrustUs';
-import WeProvide from './ui/home/WeProvide';
-import WorkWithUs from './ui/home/WorkWithUs';
+const ThreeDCard = dynamic(() => import("./ui/about/ThreeDCard"), {
+  loading: () => <p>Loading...</p>,
+});
+const AboutOurCompany = dynamic(() => import("./ui/home/AboutOurCompany"), {
+  loading: () => <p>Loading...</p>,
+});
+const ChooseUs = dynamic(() => import("./ui/home/ChooseUs"), {
+  loading: () => <p>Loading...</p>,
+});
+const Count = dynamic(() => import("./ui/home/Count"), {
+  loading: () => <p>Loading...</p>,
+});
+const Hero = dynamic(() => import("./ui/home/Hero"), {
+  loading: () => <p>Loading...</p>,
+});
+const OurClients = dynamic(() => import("./ui/home/OurClients"), {
+  loading: () => <p>Loading...</p>,
+});
+const TrustUs = dynamic(() => import("./ui/home/TrustUs"), {
+  loading: () => <p>Loading...</p>,
+});
+const WeProvide = dynamic(() => import("./ui/home/TrustUs"), {
+  loading: () => <p>Loading...</p>,
+});
+const WorkWithUs = dynamic(() => import("./ui/home/WorkWithUs"), {
+  loading: () => <p>Loading...</p>,
+});
 
 export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 300,
-      easing: 'ease-in-sine',
+      easing: "ease-in-sine",
       offset: 100,
       delay: 10,
     });
     AOS.refresh();
-  }, [])
+  }, []);
   return (
-    <div className='pt-16 overflow-x-hidden'>
+    <div className="pt-16 overflow-x-hidden">
       <Hero />
       <Count />
       <AboutOurCompany />
       <ThreeDCard />
-      <OurClients/>
+      <OurClients />
       <WeProvide />
       <ChooseUs />
       <TrustUs />
