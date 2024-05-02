@@ -25,25 +25,16 @@ function WorkWithUs() {
         </Suspense>
       </Modal>
       <AuroraBackground>
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-24 py-4"
-        >
+        <div className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-24 py-4">
           {/* <div className='flex flex-col justify-items-center items-center'> */}
-          <h4 className="underline font-bold md:text-xl text-xl text-orange">
+          <h4  data-aos="fade-left" className="underline font-bold md:text-xl text-xl text-orange">
             Want to work with us?
           </h4>
-          <h5 className="text-lg text-black font-semibold">
+          <h5 data-aos="fade-right" className="text-lg text-black font-semibold">
             Elevate your business through digital transformation, driving
             sustainable growth.
           </h5>
-          <div className="text-sm text-gray1 pb-4 md:px-44 leading-7 text-center">
+          <div data-aos="fade-left" className="text-sm text-gray1 pb-4 md:px-44 leading-7 text-center">
             Explore limitless possibilities with Vionsys IT Solutions INDIA Pvt.
             Ltd. Join our vibrant team where you'll engage in innovative
             projects, thrive in a collaborative atmosphere, access ongoing
@@ -51,16 +42,16 @@ function WorkWithUs() {
             Discover the ideal environment to unleash your full potential in the
             dynamic IT industry.
           </div>
-          <div className="flex flex-wrap gap-7 text-center">
-            <Button onClick={() => setmodalopen(true)}>
+          <div  className="flex flex-wrap gap-7 text-center">
+            <Button data-aos="fade-right"data-aos-duration="500" onClick={() => setmodalopen(true)}>
               Schedule a meeting
             </Button>
             <Link href={"/contact"}>
-              <Button>Contact Us</Button>
+              <Button data-aos="fade-left"data-aos-duration="500">Contact Us</Button>
             </Link>
           </div>
           {/* </div> */}
-        </motion.div>
+        </div>
       </AuroraBackground>
     </>
   );
