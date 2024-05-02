@@ -27,21 +27,11 @@ const AboutUs = () => {
               transition={{ duration: 1 }}
               className="text-center mt-5 px-8 sm:mt-10 sm:px-20"
             >
-              <h1 className="text-white text-2xl md:text-4xl lg:text-7xl">
+              <h1 className="text-white font-medium text-2xl md:text-4xl lg:text-7xl">
                 Ready To <br className="sm:hidden" />
                 <span className="block">Transform Your Ideas </span>
                 Into Reality?
               </h1>
-
-              {/* Contact Us Button */}
-            <div className="flex flex-col justify-center md:flex-row  space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
-              <Link href="/contact" passHref>
-                <Button>
-                  Get In Touch{" "}
-                  <BsTelephoneOutboundFill className="inline-block ml-2 text-sm" />
-                </Button>
-              </Link>
-            </div>
             </motion.div>
 
             

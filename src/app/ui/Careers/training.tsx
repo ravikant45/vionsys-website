@@ -13,7 +13,7 @@ const Training = () => {
             alt=""
           />
         </div>
-        <div className="bg-blue4 text-white flex flex-col justify-center gap-4 px-12">
+        <div className="bg-blue4 text-white flex flex-col justify-center gap-4 md:px-12 px-2 py-2">
           <h1 data-aos="fade-left" className="text-2xl font-bold">
             Workshop and Training Programs
           </h1>

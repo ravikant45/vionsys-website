@@ -1,17 +1,14 @@
+"use client";
 import React from "react";
-import { useEffect } from "react";
 import Link from "next/link";
 import { MdOutlineMail } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { RxLinkedinLogo } from "react-icons/rx";
-import { useRef } from "react";
 import LinkedIn from "../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../public/assets/socialicons/facebook.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 
 const Footer = () => {
@@ -20,8 +17,8 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="px-2 w-[100vw]   overflow-x-hidden">
-      <div className="w-full absolute overflow-x-hidden -z-10">
+    <footer className="px-2 w-[100vw] overflow-hidden bg-blue5 text-white z-10">
+      {/* <div className="w-full absolute overflow-x-hidden -z-10">
         <svg
           id="svg"
           viewBox="0 0 1320 325"
@@ -54,10 +51,10 @@ const Footer = () => {
             transform="rotate(-180 720 200)"
           ></path>
         </svg>
-      </div>
+      </div> */}
 
       {/* Footer Content */}
-      <div className="bg-transparent py-5 overflow-x-hidden">
+      <div className="bg-transparent py-5 overflow-hidden">
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {/* Logo */}
@@ -66,47 +63,61 @@ const Footer = () => {
             </div>
 
             {/* About Us */}
-            <div data-aos="fade-up" className="text-center md:text-left col-span-2 flex flex-col gap-2">
-              <h3 className="text-lg text-[#171717] font-bold mb-2 underline   ">
+            <div className="text-center md:text-left col-span-2 flex flex-col gap-2">
+              <motion.h3 initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline   ">
                 {" "}
-                About Us
-              </h3>
-              <p>
+                <Link href='/about'>About Us</Link>
+              </motion.h3>
+              <motion.p initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }}>
                 Vionsys IT solutions INDIA Pvt. Ltd. is a comprehensive IT
                 company offering end-to-end technology solutions. With expertise
                 in software development, network infrastructure, cybersecurity,
                 cloud services, and IT consulting, we empower businesses to
                 thrive in the digital era.{" "}
-              </p>
-              <div className="flex gap-2">
-                <Link href="/"><Image src={Facebook} alt="" quality={100} /></Link>
-                <Link href={"/"}><Image src={Instagram} alt="" quality={100} /></Link>
-                <Link href={"/"}><Image src={LinkedIn} alt="" quality={100} /></Link>
-              </div>
+              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }} className="flex gap-2 md:justify-start justify-center">
+                <Link href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "><Image src={Facebook} alt="" quality={100} /></Link>
+                <Link href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"><Image src={Instagram} alt="" quality={100} /></Link>
+                <Link href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"><Image src={LinkedIn} alt="" quality={100} /></Link>
+              </motion.div>
             </div>
 
             {/* Our Services */}
-            <div data-aos="fade-left" className="text-center md:text-left flex flex-col  gap-2">
-              <h3 className="text-lg text-[#171717] font-bold mb-2 underline">
+            <div className="text-center md:text-left flex flex-col  gap-2">
+              <motion.h3 initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline">
                 Our Services
-              </h3>
-              <div className="flex flex-col gap-1">
+              </motion.h3>
+              <motion.div initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }} className="flex flex-col gap-1">
                 <Link href="/services/softwareDevelopement">Software Development</Link>
                 <Link href="/services/webDevelopment">Web Development</Link>
                 <Link href="/services/crm">CRM</Link>
                 <Link href="/services/salesforce">Salesforce</Link>
                 <Link href="/services/devops">DevOps</Link>
-              </div>
+              </motion.div>
             </div>
 
 
 
             {/* Contact Info */}
-            <div data-aos="fade-down" className="text-center md:text-left col-span-2 flex flex-col  gap-2">
-              <h3 className="text-lg text-[#171717] font-bold mb-2 underline">
-                Contact Info
-              </h3>
-              <div className="flex flex-col justify-center gap-2">
+            <div className="text-center md:text-left col-span-2 flex flex-col  gap-2">
+              <motion.h3 initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline">
+                <Link href='/contact'>Contact Info</Link>
+              </motion.h3>
+              <motion.div initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }} className="flex flex-col justify-center gap-2">
                 <div className="flex  gap-3">
                   <div><FiPhoneCall size={19} className="mr-2" /></div>
                   <span> Phone: 8766613742</span>
@@ -120,14 +131,14 @@ const Footer = () => {
                   <span>Address: 6th floor office no.504 Stellar Spaces, opposite
                     Zensar it park, Kharadi, pune</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </div>
       <hr />
-      <div className="text-center bottom-0 relative flex justify-center items-center py-2">
-        <p className=" ">
+      <div className="text-center  relative flex justify-center items-center py-2">
+        <p className=" text-slate-200">
           {" "}
           Copyright &#169; 2017 Vionsys IT Solutions India Pvt. Ltd . - All
           Rights Reserved.

@@ -1,54 +1,65 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram, FaLinkedin } from "react-icons/fa6";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const Second = () => {
   return (
-    <div
-      className="mt-0 h-auto bg-cover bg-no-repeat md:block"
-      style={{
-        backgroundImage:
-          "url('https://img.freepik.com/free-vector/white-technology-background_23-2148390327.jpg?t=st=1714029584~exp=1714033184~hmac=b94f61580fabfd448168591c056a35d5be9f70f2bd3a9957fbc69fef7591226f&w=900')",
-      }}
-    >
-      <div className="flex justify-center bg-gray-200 pt-2">
-        <h2 className="md:text-3xl text-center transform hover:scale-125 transition duration-300 ease-in-out">
-          Thanks for your
-          <span className="text-blue-700 md:text-3xl md:pl-1 md:align-center transform hover:scale-125 transition duration-300 ease-in-out font-bold">
-            Interest in Vionsys Services
-          </span>
-          <p className="flex justify-center text-amber-600 pt-5 font-medium  border-amber-600 border-b-2">
-            Let's Go With Us
-          </p>
-        </h2>
-      </div>
+    <section>
+      <div className="w-[100vw] py-6 dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex flex-col gap-4 items-center justify-center">
+        {/* Radial gradient for the container to give a faded look */}
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      <div className="flex justify-center p-2 ">
-        <div className="p-10 sm:m-20 w-auto  flex justify-center  bg-white outline outline-blue-400 outline-offset-1 rounded-[22px] lg:w-[50vw] px-2">
-          <div className="text-center mx-auto lg:w-full md:max-w-md md:p-4">
-            <h1 className="text-blue-600 text-xl font-bold  tracking-wide border-b-4 border-neutral-900">
-              Office Address
-            </h1>
-            <div>
-              <p className=" md:text-left text-wrap font-medium transform hover:scale-110 transition duration-300 ease-in-out md:pt-2">
-                Stellar Spaces Office no.504 6th floor, Opposite Zensar IT park
-                Kharadi pune.
+        <div className="flex flex-col gap-2">
+          <h2
+            data-aos="fade-left"
+            className="text-3xl font-bold text-orange relative z-20 text-center"
+          >
+            Thanks for your{" "}
+            <span className="text-blue2">Interest in vionsys services</span>{" "}
+          </h2>
+          <h3
+            data-aos="fade-right"
+            className="text-center text-xl font-bold text-blue1"
+          >
+            Visit us at our office
+          </h3>
+        </div>
+
+        <div data-aos="zoom-in" className="px-3 z-20">
+          <Card className="shadow-md shadow-blue4">
+            <CardContent className="flex flex-col py-2 gap-2">
+              <h3 className="text-center font-semibold text-xl text-orange">
+                Office Address
+              </h3>
+              <div className="w-full h-[1px] bg-black"></div>
+              <p className="text-md font-semibold pb-4">
+                Stellar Spaces Office no.504 6th floor, Opposite Zensar IT Park
+                Kharadi, Pune.
               </p>
-              <h1 className="lg:pt-3 text-blue-600 text-xl font-bold tracking-wider border-b-4 border-neutral-900">
+              <h3 className="font-semibold text-center text-xl text-orange">
                 Contact
-              </h1>
-              <p className=" lg:pt-3 font-medium transform hover:scale-125 transition duration-300 ease-in-out">
-                hr@vionsys.com
+              </h3>
+              <div className="w-full h-[1px] bg-black"></div>
+              <div className="flex flex-col justify-center items-center">
+                <p className="text-md font-semibold">info@vionsys.com</p>
+                <p className="text-md font-semibold">8766613742</p>
+              </div>
+            </CardContent>
+            <CardFooter className="flex justify-end items-center">
+              <p className="text-sm text-gray1 text-center">
+                ~ Come visit us and experience our space firsthand!{" "}
               </p>
-              <p className=" lg: pt-2 font-medium transform hover:scale-125 transition duration-300 ease-in-out">
-                8766613742
-              </p>
-            </div>
-          </div>
+            </CardFooter>
+          </Card>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

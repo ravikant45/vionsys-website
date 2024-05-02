@@ -1,22 +1,34 @@
-import React from 'react'
-import AboutUs from '../ui/about/AboutUs'
-import About2 from '../ui/about/About2'
-import ThreeDCard from '../ui/about/ThreeDCard'
-import Visit from '../ui/about/Visit'
-import { TypewriterDemo } from '../ui/about/TypeWriterDemo'
-import Testimonial from '../ui/about/Testimonial'
+import React from "react";
+import { TypewriterDemo } from "../ui/about/TypeWriterDemo";
+import { Metadata } from "next";
+import dynamic from "next/dynamic";
+const AboutUs = dynamic(() => import("../ui/about/AboutUs"), {
+  loading: () => <p>Loading...</p>,
+});
+const About2 = dynamic(() => import("../ui/about/About2"), {
+  loading: () => <p>Loading...</p>,
+});
+const Visit = dynamic(() => import("../ui/about/Visit"), {
+  loading: () => <p>Loading...</p>,
+});
+const ThreeDCard = dynamic(() => import("../ui/about/ThreeDCard"), {
+  loading: () => <p>Loading...</p>,
+});
+
+export const metadata: Metadata = {
+  title: "About Us",
+};
 
 const page = () => {
-    return (
-        <div className='pt-16 pb-20'>
-            <AboutUs />
-            <About2 />
-            <ThreeDCard />
-            <Testimonial />
-            <TypewriterDemo />
-            <Visit />
-        </div>
-    )
-}
+  return (
+    <div className="pt-16">
+      <AboutUs />
+      <About2 />
+      <ThreeDCard />
+      <TypewriterDemo />
+      <Visit />
+    </div>
+  );
+};
 
-export default page
+export default page;

@@ -4,7 +4,7 @@ const Life = () => {
   return (
     <div className="w-[100vw] py-20 px-2">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 data-aos="fade-left" className="text-5xl text-start text-blue2 font-bold  pb-4">
+        <h1 data-aos="fade-left" className="md:text-4xl text-2xl text-start text-blue2 font-bold  pb-4">
           Life @ Vionsys
         </h1>
         <p data-aos="fade-right" className="text-md md:w-2/3 text-start">
