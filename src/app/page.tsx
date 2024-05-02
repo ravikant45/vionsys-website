@@ -29,7 +29,7 @@ const OurClients = dynamic(() => import("./ui/home/OurClients"), {
 const TrustUs = dynamic(() => import("./ui/home/TrustUs"), {
   loading: () => <p>Loading...</p>,
 });
-const WeProvide = dynamic(() => import("./ui/home/TrustUs"), {
+const WeProvide = dynamic(() => import("./ui/home/WeProvide"), {
   loading: () => <p>Loading...</p>,
 });
 const WorkWithUs = dynamic(() => import("./ui/home/WorkWithUs"), {

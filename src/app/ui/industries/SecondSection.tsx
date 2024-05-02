@@ -172,6 +172,25 @@ const SecondSection = () => {
       <section>
         <div className="bg-black relative">
           <Image
+            src={IT}
+            alt=""
+            className="lg:h-[50vh] h-auto lg:w-screen w-auto opacity-45"
+          />
+          <div className="absolute inset-0 flex justify-center items-center flex-col text-white">
+            <h1 className="md:text-6xl text-xl font-bold text-white text-center">
+              IT Digital Transformation
+            </h1>
+          </div>
+        </div>
+
+        <div className="lg:h-auto">
+          <StickyScroll content={content2} />
+        </div>
+      </section>
+
+      <section>
+        <div className="bg-black relative">
+          <Image
             src={ConstHeading}
             alt=""
             className="lg:h-[50vh] h-auto lg:w-screen w-auto opacity-55"
@@ -185,21 +204,6 @@ const SecondSection = () => {
 
         <div className="lg:h-auto">
           <StickyScroll content={content} />
-        </div>
-      </section>
-
-      <section>
-        <div className="bg-black relative">
-          <Image src={IT} alt="" className="lg:h-[50vh] h-auto lg:w-screen w-auto opacity-45" />
-          <div className="absolute inset-0 flex justify-center items-center flex-col text-white">
-            <h1 className="md:text-6xl text-xl font-bold text-white text-center">
-              IT Digital Transformation
-            </h1>
-          </div>
-        </div>
-
-        <div className="lg:h-auto">
-          <StickyScroll content={content2} />
         </div>
       </section>
 
@@ -235,29 +239,29 @@ const SecondSection = () => {
               Optimization.
             </h2>
             <p className="md:font-medium text-gray1 pt-3 text-left">
-              Field services involve providing on-site
-              support, installation, maintenance, and troubleshooting services
-              for software products and solutions. These services are crucial
-              for ensuring that customers can effectively implement and utilize
-              software to its fullest potential. Field service technicians are
-              dispatched to customer locations to address technical issues,
-              resolve software-related problems, and provide training and
-              guidance to users. They play a critical role in maintaining
-              customer satisfaction, resolving issues promptly, and optimizing
-              software performance. Field services for software companies often
-              include proactive maintenance, scheduled upgrades, and emergency
-              support to minimize downtime and ensure uninterrupted operation of
+              Field services involve providing on-site support, installation,
+              maintenance, and troubleshooting services for software products
+              and solutions. These services are crucial for ensuring that
+              customers can effectively implement and utilize software to its
+              fullest potential. Field service technicians are dispatched to
+              customer locations to address technical issues, resolve
+              software-related problems, and provide training and guidance to
+              users. They play a critical role in maintaining customer
+              satisfaction, resolving issues promptly, and optimizing software
+              performance. Field services for software companies often include
+              proactive maintenance, scheduled upgrades, and emergency support
+              to minimize downtime and ensure uninterrupted operation of
               software systems.
             </p>
           </div>
           <div className=" bg-no-repeat h-auto w-full md:w-1/2 m-2 flex justify-center items-center ">
-          <Image
-            src="/Feild.jpg"
-            alt=""
-            height={1000}
-            width={1000}
-            className="lg:h-[60vh] h-auto lg:w-screen w-auto"
-          />
+            <Image
+              src="/Feild.jpg"
+              alt=""
+              height={1000}
+              width={1000}
+              className="lg:h-[60vh] h-auto lg:w-screen w-auto"
+            />
           </div>
         </div>
       </section>
