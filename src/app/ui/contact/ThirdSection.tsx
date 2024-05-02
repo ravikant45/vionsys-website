@@ -26,7 +26,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { headers } from "next/headers";
 import Link from "next/link";
 
 const formSchema = z.object({
@@ -68,14 +67,14 @@ const ThirdSection = () => {
       );
 
       setIsPending(false);
-      toast.success("Message sent successfully!");
+      toast.success("Thanks, For Connecting With Us");
       console.log("Response:", response.data);
       form.reset(); // Reset the form after successful submission
     } catch (error) {
       const err = error as AxiosError;
       console.error("Error:", err.response?.data || err.message);
       setIsPending(false);
-      toast.error(err.message);
+      toast.error(err?.message || "Failed to send message");
     }
 
     form.reset();
@@ -213,23 +212,27 @@ const ThirdSection = () => {
             <ul>
               <li>
                 <div className="flex justify-center md:justify-start mt-7 md:pl-28">
-                  <Link href='https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg '><BsFacebook
-                    size={40}
-                    className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
-                    color="blue"
-                  /></Link>
-                  <Link href='https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux'>
-                  <BsInstagram
-                    size={40}
-                    className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
-                    color="#e1306c"
-                  /></Link>
-                  <Link href='https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in'>
-                  <RxLinkedinLogo
-                    size={40}
-                    className=" mr-3transform hover:scale-125 transition duration-300 ease-in-out"
-                    color="#0077B5"
-                  /></Link>
+                  <Link href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg ">
+                    <BsFacebook
+                      size={40}
+                      className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
+                      color="blue"
+                    />
+                  </Link>
+                  <Link href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux">
+                    <BsInstagram
+                      size={40}
+                      className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
+                      color="#e1306c"
+                    />
+                  </Link>
+                  <Link href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in">
+                    <RxLinkedinLogo
+                      size={40}
+                      className=" mr-3transform hover:scale-125 transition duration-300 ease-in-out"
+                      color="#0077B5"
+                    />
+                  </Link>
                 </div>
               </li>
             </ul>
