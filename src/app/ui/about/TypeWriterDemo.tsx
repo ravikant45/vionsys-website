@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { BsTelephoneOutboundFill } from "react-icons/bs";
 import BgTypewriteImage from "/public/TypeWriter.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 export function TypewriterDemo() {
   const words = [
@@ -40,7 +41,7 @@ export function TypewriterDemo() {
         <div className="absolute top-0 flex flex-col gap-4 justify-center items-center px-3 w-1/2  h-full">
           <TypewriterEffect words={words} />
           <div className="">
-            <Button>Contact<BsTelephoneOutboundFill className="inline-block ml-2 text-sm" /></Button>
+            <Link href='/contact'><Button>Contact<BsTelephoneOutboundFill className="inline-block ml-2 text-sm" /></Button></Link>
           </div>
         </div>
       </div>

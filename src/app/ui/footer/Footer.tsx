@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { MdOutlineMail } from "react-icons/md";
@@ -7,6 +8,7 @@ import LinkedIn from "../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../public/assets/socialicons/facebook.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 
 const Footer = () => {
@@ -62,17 +64,21 @@ const Footer = () => {
 
             {/* About Us */}
             <div className="text-center md:text-left col-span-2 flex flex-col gap-2">
-              <h3 className="text-lg text-white font-bold mb-2 underline   ">
+              <motion.h3 initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline   ">
                 {" "}
-                About Us
-              </h3>
-              <p>
+                <Link href='/about'>About Us</Link>
+              </motion.h3>
+              <motion.p initial={{ opacity: 0, y: 100}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }}>
                 Vionsys IT solutions INDIA Pvt. Ltd. is a comprehensive IT
                 company offering end-to-end technology solutions. With expertise
                 in software development, network infrastructure, cybersecurity,
                 cloud services, and IT consulting, we empower businesses to
                 thrive in the digital era.{" "}
-              </p>
+              </motion.p>
               <div className="flex gap-2 md:justify-start justify-center">
                 <Link href="/"><Image src={Facebook} alt="" quality={100} /></Link>
                 <Link href={"/"}><Image src={Instagram} alt="" quality={100} /></Link>
@@ -82,9 +88,11 @@ const Footer = () => {
 
             {/* Our Services */}
             <div className="text-center md:text-left flex flex-col  gap-2">
-              <h3 className="text-lg text-white font-bold mb-2 underline">
+              <motion.h3 initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline">
                 Our Services
-              </h3>
+              </motion.h3>
               <div className="flex flex-col gap-1">
                 <Link href="/services/softwareDevelopement">Software Development</Link>
                 <Link href="/services/webDevelopment">Web Development</Link>
@@ -98,9 +106,11 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="text-center md:text-left col-span-2 flex flex-col  gap-2">
-              <h3 className="text-lg text-white font-bold mb-2 underline">
-                Contact Info
-              </h3>
+              <motion.h3 initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }} className="text-lg text-white font-bold mb-2 underline">
+                <Link href='/contact'>Contact Info</Link>
+              </motion.h3>
               <div className="flex flex-col justify-center gap-2">
                 <div className="flex  gap-3">
                   <div><FiPhoneCall size={19} className="mr-2" /></div>

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Salesforce Services",
 };
 const salesforce = () => {
+
   return (
     <div className="pt-16">
       <div className="grid overflow-x-hidden md:grid-cols-2 px-6 py-4 grid-cols-1 bg-white justify-items-center items-center">
@@ -40,6 +41,7 @@ const salesforce = () => {
       <Future />
       <Cloud />
       <Provide />
+      <ScheduleMeetAndContactCTA />
     </div>
   );
 };
