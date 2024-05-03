@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { RxLinkedinLogo } from "react-icons/rx";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -229,8 +230,14 @@ const ThirdSection = () => {
                   <Link href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in">
                     <RxLinkedinLogo
                       size={40}
-                      className=" mr-3transform hover:scale-125 transition duration-300 ease-in-out"
+                      className=" mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
                       color="#0077B5"
+                    />
+                  </Link>
+                  <Link href="">
+                    <FaSquareXTwitter
+                      size={40}
+                      className=" mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
                     />
                   </Link>
                 </div>
