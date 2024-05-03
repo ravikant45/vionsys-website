@@ -27,8 +27,8 @@ function WeProvide() {
   ];
   const tests = [
     {
-      name: "Artificial Intelligence",
-      description: "Artificial Intelligence (AI) is a specialized field within computer science dedicated to the development of intelligent machines capable of emulating human behavior.",
+      name: "Machine Learning & AI",
+      description: "Machine learning is a subset of artificial intelligence focused on developing algorithms that enable computers to learn from and make predictions based on data.",
       button: <Link href="/services/machineLearningAI">Read More</Link>,
     },
     {
