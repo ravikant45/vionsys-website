@@ -47,7 +47,7 @@ export default function Home() {
     AOS.refresh();
   }, []);
   return (
-    <div className="pt-16 overflow-x-hidden">
+    <div className="pt-14 overflow-x-hidden">
       <Hero />
       <Count />
       <AboutOurCompany />

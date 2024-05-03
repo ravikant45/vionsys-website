@@ -23,7 +23,7 @@ function Hero() {
   return (
     <section className="relative w-screen md:h-[100vh] overflow-hidden z-10 backdrop-blur-md">
       {/* Particles component as background */}
-      <ParticlesComponent />
+      {/* <ParticlesComponent /> */}
       <div className="relative overflow-hidden w-full h-full  grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-4 justify-center items-center md:p-6 px-4">
         {/* left */}
         <div data-aos="fade-up" className="flex flex-col gap-4 py-4">
@@ -63,14 +63,17 @@ function Hero() {
           </div>
           <div className='flex justify-start items-center'>
             <Link href='/contact'>
-            <Button>Get In Touch</Button>
+              <Button>Get In Touch</Button>
             </Link>
           </div>
         </div>
 
         {/* right */}
-        <div className="absolute w-full h-full overflow-hidden flex justify-center items-center -z-20">
-          <Image data-aos="zoom-in" src={BgVisual} alt="" className='w-[100%] h-[100%] overflow-hidden -z-50 absolute opacity-30' />
+        <div className="absolute w-full h-full overflow-hidden flex justify-center items-center -z-20 bg-black">
+          {/* <Image data-aos="zoom-in" src={BgVisual} alt="" className='w-[100%] h-[100%] overflow-hidden -z-50 absolute opacity-30' /> */}
+          <video loop autoPlay muted>
+            <source src="/assets/Home/bg-visual.mp4" type="video/mp4" className='w-[100%] h-[100%] overflow-hidden -z-50 opacity-30' />
+          </video>
         </div>
       </div>
     </section>
