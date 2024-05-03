@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 const Page: React.FC = () => {
   return (
-    <div className="pt-16 overflow-x-hidden">
+    <div className="pt-16 overflow-x-hidden relative">
       <div className="grid overflow-x-hidden md:grid-cols-2 md:px-6 px-2 py-4 grid-cols-1 bg-slate-100 justify-items-center items-center">
         <div className="md:px-4 px-2">
           <h1 data-aos="fade-left" className="text-2xl text-orange font-bold">
