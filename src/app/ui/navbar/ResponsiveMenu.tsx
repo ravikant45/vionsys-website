@@ -18,7 +18,7 @@ import { ServicesLinks } from "./Navlinks";
 
 const ResponsiveMenu = ({ showMenu }: any) => {
     return (
-        <div className={`${showMenu ? 'top-16 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[50vh] flex items-start justify-center py-6 border-b shadow-md`}>
+        <div className={`${showMenu ? 'top-14 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[50vh] flex items-center justify-center py-6 border-b shadow-md`}>
             <NavigationMenu>
                 <NavigationMenuList className="flex flex-col gap-4">
                     {/* Home section */}
@@ -32,7 +32,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
 
                     {/* About page */}
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/about" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 About
                             </NavigationMenuLink>
@@ -62,7 +62,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
 
                     {/* Career page */}
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/career" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Career
                             </NavigationMenuLink>
@@ -71,7 +71,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
 
                     {/* Contact page */}
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/contact" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Contact
                             </NavigationMenuLink>
