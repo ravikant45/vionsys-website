@@ -27,7 +27,7 @@ function WeProvide() {
     {
       name: "Artificial Intelligence",
       description: "Artificial Intelligence (AI) is a specialized field within computer science dedicated to the development of intelligent machines capable of emulating human behavior.",
-      button: <Link href="/services/aiAndIntelligence">Read More</Link>,
+      button: <Link href="/services/machineLearningAI">Read More</Link>,
     },
     {
       name: "DevOps",
@@ -37,7 +37,7 @@ function WeProvide() {
     {
       name: "Testing and QA",
       description: "Testing and Quality Assurance (QA) ensure software meets quality standards, functions flawlessly, and satisfies user requirements through thorough evaluation.",
-      button: <Link href="/services/testingAndQa">Read More</Link>,
+      button: <Link href="/services/testing">Read More</Link>,
     },
   ]
   return (
