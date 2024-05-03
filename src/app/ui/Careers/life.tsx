@@ -4,7 +4,10 @@ const Life = () => {
   return (
     <div className="w-[100vw] py-20 px-2">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 data-aos="fade-left" className="md:text-4xl text-2xl text-start text-blue2 font-bold  pb-4">
+        <h1
+          data-aos="fade-left"
+          className="md:text-4xl text-2xl text-start text-blue2 font-bold  pb-4"
+        >
           Life @ Vionsys
         </h1>
         <p data-aos="fade-right" className="text-md md:w-2/3 text-start">
@@ -17,6 +20,13 @@ const Life = () => {
           beyond the conventional limits and opportunities to exceptional growth
           has made remarkable difference in the individual performance within
           teams.
+        </p>
+        <p data-aos="fade-right" className="py-4 font-semibold">
+          For inquiries related to employment opportunities, please reach out to
+          our HR Manager:
+        </p>
+        <p data-aos="fade-right" className=" underline font-bold">
+          Email: hr@vionsys.com
         </p>
       </div>
     </div>
