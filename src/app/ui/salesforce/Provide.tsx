@@ -4,7 +4,7 @@ import { TbArrowsRight } from 'react-icons/tb';
 
 function Provide() {
   return (
-    <div className="w-[100vw] py-4 flex flex-col md:flex-row md:px-8 px-10 gap-8 items-center justify-center">
+    <div className="w-[100vw] py-4 flex flex-col md:flex-row md:px-8 px-10 gap-8 items-center justify-center border-b-8 border-blue-500 rounded-3xl">
       <h4 className="mt-2 text-2xl font-bold leading-8 text-orange sm:text-3xl sm:leading-9">
         We Provide
       </h4>
