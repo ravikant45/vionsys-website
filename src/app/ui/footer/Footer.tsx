@@ -97,13 +97,13 @@ const Footer = () => {
                 transition={{ duration: 2 }}
                 className="flex flex-col gap-1"
               >
-                <Link href="/services/softwareDevelopement">
+                <Link href="/services/softwareDevelopment">
                   Software Development
                 </Link>
                 <Link href="/services/webDevelopment">Web Development</Link>
                 <Link href="/services/crm">CRM</Link>
                 <Link href="/services/salesforce">Salesforce</Link>
-                <Link href="/services/devops">DevOps</Link>
+                <Link href="/services/devOps">DevOps</Link>
               </motion.div>
             </div>
 
