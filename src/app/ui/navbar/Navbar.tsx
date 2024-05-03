@@ -12,12 +12,13 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-
+import LogoImage from "/public/assets/logo.png";
 import { ServicesLinks } from "./Navlinks";
 import { VscClose } from "react-icons/vsc";
 import { HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface ListItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   title: string;
@@ -59,21 +60,20 @@ const ListItem: React.FC<ListItemProps> = ({
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = React.useState(false);
-  const [scrolling, setScrolling] = React.useState(false);
+  const [prevScrollPos, setPrevScrollPos] = React.useState(0);
+  const [visible, setVisible] = React.useState(true);
+
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
+      const currentScrollPos = window.pageYOffset;
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -81,15 +81,15 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className={`fixed z-50 w-[100vw] flex p-1 justify-between items-center  ${
-          scrolling ? "bg-white" : "bg-white"
-        }`}
+        className={`fixed z-50 w-[100vw] flex p-2 justify-between items-center bg-white  ${visible ? "top-0 shadow-md shadow-gray2" : "-top-full"
+          }`}
       >
         {/* Logo of the organization */}
         <div className="px-4">
-          <img
-            src="https://www.vionsys.com/public/assets/img/logo_3.png"
+          <Image
+            src={LogoImage}
             alt=""
+            className="w-[152px]"
           />
         </div>
 
