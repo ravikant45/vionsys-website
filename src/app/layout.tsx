@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "./ui/footer/Footer";
 import Navbar from "./ui/navbar/Navbar";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         <Toaster position="bottom-center" />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>

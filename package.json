@@ -25,6 +25,7 @@
     "@types/axios": "^0.14.0",
     "@types/nodemailer": "^6.4.14",
     "@types/three": "^0.163.0",
+    "@vercel/analytics": "^1.2.2",
     "antd": "^5.16.4",
     "aos": "^2.3.4",
     "axios": "^1.6.8",
