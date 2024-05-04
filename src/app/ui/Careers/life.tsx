@@ -6,7 +6,7 @@ const Life = () => {
       <div className="flex flex-col justify-center items-center text-center">
         <h1
           data-aos="fade-left"
-          className="md:text-3xl text-2xl text-start text-blue2 font-bold  pb-4"
+          className="md:text-3xl text-2xl text-start text-blue2 font-bold pb-4"
         >
           Life @ Vionsys
         </h1>
@@ -21,11 +21,11 @@ const Life = () => {
           opening doors to exceptional growth and individual performance within
           our teams.
         </p>
-        <p data-aos="fade-right" className="py-4 font-semibold">
+        <p data-aos="fade-right" className="">
           For inquiries related to employment opportunities, please reach out to
           our HR Manager:
         </p>
-        <p data-aos="fade-right" className=" underline font-bold">
+        <p data-aos="fade-right" className="">
           Email: hr@vionsys.com
         </p>
       </div>
