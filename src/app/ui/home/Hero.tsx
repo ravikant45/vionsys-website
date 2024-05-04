@@ -69,10 +69,9 @@ function Hero() {
         </div>
 
         {/* right */}
-        <div className="absolute w-full h-full overflow-hidden flex justify-center items-center -z-20 bg-black">
-          {/* <Image data-aos="zoom-in" src={BgVisual} alt="" className='w-[100%] h-[100%] overflow-hidden -z-50 absolute opacity-30' /> */}
+        <div className="absolute w-full md:h-full h-[50vh] overflow-hidden flex justify-center items-center -z-20 bg-black">
           <video loop autoPlay muted>
-            <source src="/assets/Home/bg-visual.mp4" type="video/mp4" className='w-[100%] h-[100%] overflow-hidden -z-50 opacity-30' />
+            <source src="/assets/Home/bg-visual.mp4" type="video/mp4" className='w-full h-full overflow-hidden -z-50 opacity-30' />
           </video>
         </div>
       </div>
