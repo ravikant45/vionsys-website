@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { WavyBackground } from '@/components/ui/wavy-background';
+import { SparklesCore } from '@/components/ui/sparkles';
 
 const ServicesTemplateOne = ({ data }: { data: any }) => {
   const getWaveColor = (heading: string): string[] => {
@@ -20,29 +21,27 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
   };
 
   return (
-    <main>
+    <main className='overflow-x-hidden'>
       {/* hero section */}
       {/* Radial gradient for the container to give a faded look */}
-      <section>
-        <WavyBackground
-          colors={
-            getWaveColor(data?.headline) || [
-              "#38bdf8",
-              "#818cf8",
-              "#c084fc",
-              "#e879f9",
-              "#22d3ee",
-            ]
-          }
-          className="max-w-4xl mx-auto pb-40"
-        >
-          <p data-aos='fade-down' className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
-            {data?.headline}
-          </p>
-          <p data-aos='fade-up' className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
-            {data?.paragraph}
-          </p>
-        </WavyBackground>
+      <section className='relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md py-4 md:h-screen h-[40vh] px-2'>
+        <div className="w-full absolute inset-0 h-screen">
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={100}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+        </div>
+        <p data-aos='fade-down' className="text-2xl md:text-4xl lg:text-7xl  font-bold text-white inter-var text-center">
+          {data?.headline}
+        </p>
+        <p data-aos='fade-up' className="text-base md:text-lg mt-4  font-normal inter-var text-white text-center">
+          {data?.paragraph}
+        </p>
       </section>
 
       {/* //the services sections */}
