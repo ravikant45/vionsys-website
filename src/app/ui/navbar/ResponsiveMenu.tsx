@@ -18,7 +18,7 @@ import { ServicesLinks } from "./Navlinks";
 
 const ResponsiveMenu = ({ showMenu }: any) => {
     return (
-        <div className={`${showMenu ? 'top-14 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[50vh] flex items-center justify-center py-6 border-b shadow-md`}>
+        <div className={`${showMenu ? 'top-14 md:hidden' : 'hidden'} fixed w-[100vw] overflow-x-hidden z-50 bg-white h-[50vh] flex items-center justify-center py-6 border-b shadow-md`}>
             <NavigationMenu>
                 <NavigationMenuList className="flex flex-col gap-4">
                     {/* Home section */}
