@@ -7,22 +7,23 @@ const About2 = () => {
     <div className="flex flex-col flex-wrap">
       <div className="w-screen lg:h-[40] flex justify-center items-center px-2 py-4 " >
         <div
-          className="rounded-2xl shadow-xl lg:h-[300px] h-auto w-[1300px]  py-2 flex flex-col lg:flex-wrap lg:justify-center lg:items-center gap-10 bg-cover overflow-hidden"
+          className="rounded-2xl bg-black shadow-xl lg:h-[300px] h-auto w-[1300px]  py-2 flex flex-col lg:flex-wrap lg:justify-center lg:items-center gap-10 bg-cover overflow-hidden"
           style={{
+            
             backgroundImage:
-              "url('https://img.freepik.com/free-photo/glowing-geometric-shapes-vibrant-colors-ly-reflect-generated-by-ai_188544-41203.jpg?t=st=1714050034~exp=1714053634~hmac=2dd69bad17e644f7c3204152d77955ea5e297fe158e44466146d852e25be97c0&w=1060 ')",
-          }}
+              "url('https://img.freepik.com/free-photo/conference-room-with-desk-wall-windows-that-says-office_1340-37385.jpg?t=st=1714821147~exp=1714824747~hmac=4aca4652589e46e4152c7c54e6a110f6013359caaddb39999bf663ccecad2b81&w=900')",
+           }}
         >
           <h1
             data-aos="fade-right"
-            className="text-white lg:h-[100px] h-auto lg:w-[550px] w-auto lg:text-4xl text-2xl font-bold text-center"
+            className="text-[#e57e2c] lg:h-[100px] h-auto lg:w-[550px] w-auto lg:text-4xl text-2xl font-bold text-center"
           >
             Crafting Solutions For{" "}
-            <span className="text-white ">Global Innovators.</span>
+            <span className=" text-[#e57e2c]">Global Innovators.</span>
           </h1>
           <p
             data-aos="fade-left"
-            className="lg:h-[200px]  h-auto lg:w-[600px] w-auto  px-4 lg:text-lg text-sm font-medium text-white "
+            className="lg:h-[200px]  h-auto lg:w-[600px] w-auto font-bold  px-4 lg:text-lg text-sm  text-white "
           >
             Vionsys IT solutions INDIA Pvt. Ltd. is a leading IT company
             providing comprehensive solutions. From software development and
@@ -34,11 +35,11 @@ const About2 = () => {
         </div>
       </div>
 
-      <div className="w-screen h-[40] flex lg:flex lg:justify-center flex-col items-center  py-2">
-        <div  className="w-screen flex flex-wrap justify-around items-start px-4 " >
+      <div className="w-screen h-[40] flex lg:flex lg:justify-center flex-col items-center  border-t-8 border-b-8  border-text[#e57e2c]-500 rounded-3xl">
+        <div  className="w-screen flex flex-wrap justify-around items-start px-5" >
           <h1
             data-aos="fade-right"
-            className="lg:px-4 h-auto lg:h-[360px] w-[600px] lg:text-lg text-sm font-normal text-gray1"
+            className=" pt-6 lg:px-4 h-auto lg:h-[360px] w-[600px] lg:text-lg text-sm font-normal text-gray1"
           >
             At our core, we've been driven by a clear objective: supporting
             entrepreneurs in bringing meaningful software solutions to life. Our
@@ -53,11 +54,11 @@ const About2 = () => {
           </h1>
           <Image
             data-aos="fade-down"
-            className="relative  lg:w-[20%] p-1 lg:right-32 lg:bottom-1"
-            src="/aboutImg1.jpg"
+            className="relative  lg:w-[30%] mt-5 py-2 lg:bottom-1"
+            src="/Corevalue.jpg"
             alt="Image not Found"
-            height={200}
-            width={200}
+            height={500}
+            width={500}
           />
         </div>
       </div>
