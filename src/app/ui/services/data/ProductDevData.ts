@@ -39,7 +39,7 @@ interface ProductServicesData {
 const ProductServicesData: ProductServicesData = {
   headline: " PRODUCT DEVELOPMENT",
   paragraph:
-    "At Vionsys IT Solutions INDIA Pvt. Ltd., we provide comprehensive product development solutions aimed at turning your concepts into thriving and market-ready products. Our seasoned team guides businesses seamlessly through every stage of the product development lifecycle, from ideation to market launch.",
+    "In our suite of services, we specialize in comprehensive product development solutions, dedicated to transforming your ideas into successful, market-ready products. Our experienced team expertly navigates businesses through every phase of the product development journey, from concept to market launch.",
   Services: [
     {
       id: 1,

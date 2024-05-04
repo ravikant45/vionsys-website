@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Feature } from './data/CloudComputingServicesData';
+import { Button } from '@/components/ui/button';
 
 const ServicesTemplateTwo = ({ data }: { data: any }) => {
   return (
@@ -36,30 +37,30 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                   </span>
                 </div>
               </h1>
-              <p className="mx-auto mt-3 max-w-3xl text-lg text-gray-500 dark:text-slate-400 sm:mt-6 md:mt-8">
+              <p className="mx-auto mt-3 max-w-3xl text-paragraph dark:text-slate-400 sm:mt-6 md:mt-8">
                 {data?.para}
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
-                <div className="rounded-md shadow">
+                <Button className="shadow">
                   <Link
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange px-8 py-3 text-base font-medium text-white hover:bg-amber-500 md:py-4 md:px-10 md:text-lg"
+                    className=""
                     href={"/contact"}
                   >
                     Connect With Us
                   </Link>
-                </div>
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* the services section */}
-      <section className="container space-y-6 bg-slate-50 py-4 mx-auto md:py-6 lg:py-12">
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <h2 data-aos='fade-left' className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+      <section className="container space-y-3 bg-slate-100 py-4 mx-auto md:py-6 lg:py-12">
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center">
+          <h2 data-aos='fade-left' className="text-MainHeading font-extrabold">
             Our Features
           </h2>
-          <p data-aos='fade-right' className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+          <p data-aos='fade-right' className="text-SubHeading font-bold">
             Discover the amazing features offered by us to enhance your online
             presence.
           </p>
@@ -74,8 +75,8 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
                   <feat.icon size={30} />
                   <div className="space-y-2">
-                    <h3 className="font-bold">{feat?.title}</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <h3 className="font-bold text-2xl">{feat?.title}</h3>
+                    <p className="text-md text-muted-foreground">
                       {feat?.description}
                     </p>
                   </div>
@@ -88,11 +89,9 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
       {/* why choose us section */}
       <section>
         <div className="flex flex-col justify-center items-center font-bold md:py-5">
-          <h1 data-aos='fade-right' className="text-xl p-5">Why Choose Us</h1>
-          <p data-aos='fade-left' className="max-w-[50rem] text-center">
-            At Vionsys IT Solutions India Pvt. Ltd., we understand that choosing a
-            development partner is a critical decision for your business. Here's
-            why we believe we are the right choice for your development needs.
+          <h1 data-aos='fade-right' className="text-MainHeading font-extrabold">Why Choose Us</h1>
+          <p data-aos='fade-left' className="max-w-[50rem] text-SubHeading font-bold text-center">
+            Understanding the importance of selecting the right development partner for your business, we present why we're the ideal choice for your development needs.
           </p>
         </div>
 
@@ -103,8 +102,8 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
           <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
             {/* left side */}
             <div data-aos="fade-left" className='flex flex-col justify-center  gap-2'>
-              <h1 className='font-bold text-xl'>Expertise</h1>
-              <p className='text-md text-gray1'>Our team brings years of collective experience in software
+              <h1 className='text-2xl text-black font-bold'>Expertise</h1>
+              <p className='text-paragraph'>Our team brings years of collective experience in software
                 development across various industries. From startups to
                 enterprises.</p>
             </div>
@@ -135,8 +134,8 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             <div data-aos="fade-right" className='flex justify-center items-center'>
               {/* right side */}
               <div className='flex flex-col justify-center  gap-2'>
-                <h1 className='font-bold text-xl'>Innovation</h1>
-                <p className='text-md text-gray1'>we constantly update our skills and stay abreast of the latest
+                <h1 className='text-2xl text-black font-bold'>Innovation</h1>
+                <p className='text-paragraph'>we constantly update our skills and stay abreast of the latest
                   trends and technologies in software development.</p>
               </div>
             </div>
@@ -146,8 +145,8 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
           <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
             {/* left side */}
             <div data-aos="fade-left" className='flex flex-col justify-center  gap-2'>
-              <h1 className='font-bold text-xl'>On-Time Support</h1>
-              <p className='text-md text-gray1'>Our agile development methodology allows us to adapt to changing
+              <h1 className='text-2xl text-black font-bold'>On-Time Support</h1>
+              <p className='text-paragraph'>Our agile development methodology allows us to adapt to changing
                 requirements and deliver incremental updates regularly.</p>
             </div>
 

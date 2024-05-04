@@ -38,7 +38,7 @@ interface SoftwareServicesData {
 const SoftwareServicesData: SoftwareServicesData = {
   headline: " SOFTWARE DEVELOPMENT",
   paragraph:
-    "At Vionsys IT Solutions INDIA Pvt. Ltd., we are not just about software development; we are architects of digital transformation. Our team crafts bespoke, scalable solutions that empower businesses to conquer their challenges and seize opportunities in the digital landscape.",
+    "Choosing us for your software development needs means choosing a partner dedicated to your success. We don't just write code; we craft digital experiences that resonate with your audience and drive results. Our secret sauce? A perfect blend of expertise, innovation, and customer-centricity.",
   Services: [
     {
       id: 1,
