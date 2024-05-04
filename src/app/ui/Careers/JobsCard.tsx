@@ -10,11 +10,11 @@ export default function JobsCard() {
       <div className="flex flex-col justify-center items-center py-2">
         <h1
           data-aos="fade-left"
-          className="text-blue2 font-bold md:text-start text-center text-3xl pb-3"
+          className="text-MainHeading font-extrabold md:text-start text-center pb-3"
         >
           Your Future Begins Here
         </h1>
-        <h2 data-aos="fade-right" className="text-black font-bold text-2xl">
+        <h2 data-aos="fade-right" className="font-bold text-SubHeading">
           Current Openings
         </h2>
       </div>

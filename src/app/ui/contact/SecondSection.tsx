@@ -25,7 +25,7 @@ const Second = () => {
           </h2>
           <h3
             data-aos="fade-right"
-            className="text-center text-xl font-bold text-blue1"
+            className="text-center text-2xl font-bold text-blue1"
           >
             Visit us at our office
           </h3>
