@@ -234,7 +234,7 @@ const ThirdSection = () => {
                       color="#0077B5"
                     />
                   </Link>
-                  <Link href="">
+                  <Link href="https://twitter.com/vionsysit">
                     <FaSquareXTwitter
                       size={40}
                       className=" mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
