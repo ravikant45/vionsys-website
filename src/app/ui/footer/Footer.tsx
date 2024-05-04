@@ -18,7 +18,7 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="px-2 w-[100vw] overflow-hidden bg-blue5 text-white z-10">
+    <footer className="px-2 pt-6 w-[100vw] overflow-hidden bg-blue5 text-white z-10">
       {/* Footer Content */}
       <div className="bg-transparent py-5 overflow-hidden">
         <div className="container mx-auto px-5">
@@ -38,7 +38,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-lg text-white font-bold mb-2 underline   "
+                className=" text-start text-2xl text-white font-bold mb-2 underline   "
               >
                 {" "}
                 <Link href="/about">About Us</Link>
@@ -47,6 +47,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2 }}
+                className="text-lg"
               >
                 Vionsys IT solutions INDIA Pvt. Ltd. is a comprehensive IT
                 company offering end-to-end technology solutions. With expertise
@@ -58,24 +59,42 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2 }}
-                className="flex gap-2 md:justify-start justify-center"
+                className="flex gap-4 md:justify-start justify-center  py-6"
               >
                 <Link href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg ">
-                  <Image src={Facebook} alt="" quality={100} />
+                  <Image
+                    src={Facebook}
+                    alt=""
+                    quality={100}
+                    width={40}
+                    height={40}
+                  />
                 </Link>
                 <Link href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux">
-                  <Image src={Instagram} alt="" quality={100} />
+                  <Image
+                    src={Instagram}
+                    alt=""
+                    quality={100}
+                    width={40}
+                    height={40}
+                  />
                 </Link>
                 <Link href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in">
-                  <Image src={LinkedIn} alt="" quality={100} />
+                  <Image
+                    src={LinkedIn}
+                    alt=""
+                    quality={100}
+                    width={40}
+                    height={40}
+                  />
                 </Link>
                 <Link href="https://twitter.com/vionsysit">
                   <Image
                     src={Twitter}
                     alt=""
                     quality={100}
-                    width={30}
-                    height={30}
+                    width={40}
+                    height={40}
                   />
                 </Link>
               </motion.div>
@@ -87,7 +106,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-lg text-center text-white font-bold mb-2 underline"
+                className="text-2xl text-start text-white font-bold mb-2 underline"
               >
                 Our Services
               </motion.h3>
@@ -95,15 +114,18 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2 }}
-                className="flex flex-col gap-1"
+                className="flex flex-col gap-2 text-lg"
               >
                 <Link href="/services/softwareDevelopment">
                   Software Development
                 </Link>
                 <Link href="/services/webDevelopment">Web Development</Link>
-                <Link href="/services/crm">CRM</Link>
+
                 <Link href="/services/salesforce">Salesforce</Link>
                 <Link href="/services/devOps">DevOps</Link>
+                <Link href="services/cloudComputing">Cloud Computing</Link>
+                <Link href="/services/crm">CRM</Link>
+                <Link href="services/digitalMarketing">Digital Marketing</Link>
               </motion.div>
             </div>
 
@@ -113,7 +135,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-lg text-center text-white font-bold mb-2 underline"
+                className=" text-start text-2xl text-white font-bold mb-2 underline"
               >
                 <Link href="/contact">Contact Info</Link>
               </motion.h3>
@@ -121,7 +143,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2 }}
-                className="flex flex-col justify-center gap-2"
+                className="flex flex-col justify-center gap-2 text-lg"
               >
                 <div className="flex  gap-3">
                   <div>
@@ -151,10 +173,10 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div className="text-center  relative flex justify-center items-center py-2">
+      <div className="text-center  relative flex justify-center items-center pt-4 ">
         <p className=" text-slate-200">
           {" "}
-          Copyright &#169; 2017 Vionsys IT Solutions India Pvt. Ltd . - All
+          Copyright &#169; 2023 Vionsys IT Solutions India Pvt. Ltd . - All
           Rights Reserved.
         </p>
       </div>

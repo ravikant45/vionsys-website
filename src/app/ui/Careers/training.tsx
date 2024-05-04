@@ -14,10 +14,10 @@ const Training = () => {
           />
         </div>
         <div className="bg-blue4 text-white flex flex-col justify-center gap-4 md:px-12 px-2 py-2">
-          <h1 data-aos="fade-left" className="text-2xl font-bold">
+          <h1 data-aos="fade-left" className="text-3xl font-bold text-black">
             Workshop and Training Programs
           </h1>
-          <p data-aos="fade-right" className="text-md text-start ">
+          <p data-aos="fade-right" className="text-base text-start ">
             As technology advances, the workplaces need strategies to evolve, so
             the teams! We like to keep our team ready to take on new challenges
             and have a thorough understanding of the changing landscape of the
