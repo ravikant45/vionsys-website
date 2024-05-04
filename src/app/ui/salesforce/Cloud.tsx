@@ -1,22 +1,24 @@
 import React from "react";
 import Image from "next/image";
 import { MdOutlineCloud } from "react-icons/md";
-import  cloudback  from "/public/assets/services/Salesforce/cloudback.jpg";
+import cloudback from "/public/assets/services/Salesforce/cloudback.jpg";
 
 function Cloud() {
   return (
-      <div className="bg-white">
-          <div className="bg-black relative bg-contain border-t-8 border-blue-500 rounded-3xl ">
-          <Image src={cloudback} alt="" className="lg:h-[70vh] h-auto lg:w-screen w-auto opacity-45 overflow-x-hidden"
-          />
-          <div className="absolute inset-0 flex justify-center items-center flex-col text-white ">
-            <h1 className="md:text-6xl text-xl font-bold text-white text-center">
-              Salesforce Cloud
-            </h1>
-          </div>
+    <div className="bg-white">
+      <div className="bg-black relative bg-contain border-t-8 border-blue-500 rounded-3xl ">
+        <Image
+          src={cloudback}
+          alt=""
+          className="lg:h-[70vh] h-auto lg:w-screen w-auto opacity-45 overflow-x-hidden"
+        />
+        <div className="absolute inset-0 flex justify-center items-center flex-col text-white ">
+          <h1 className="md:text-5xl text-xl font-bold text-white text-center">
+            Salesforce Cloud
+          </h1>
         </div>
-          <div className="max-w-screen px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
-
+      </div>
+      <div className="max-w-screen px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
         <div data-aos="zoom-out" className="mt-12">
           <ul
             data-aos="zoom-in"
@@ -30,10 +32,10 @@ function Cloud() {
                   </div>
                 </div>
                 <div className="mt-1 ">
-                  <h4 className="text-lg leading-6 text-center font-semibold text-gray-900">
+                  <h4 className="text-SubHeading leading-8 text-center font-semibold text-gray-900">
                     Sales Cloud
                   </h4>
-                  <p className="my-2 text-sm leading-6 text-gray-500">
+                  <p className="my-2 text-paragraph leading-6 ">
                     Transform your sales process with Sales Cloud, a
                     comprehensive sales CRM platform that empowers your team to
                     sell smarter and faster. From lead management to pipeline
@@ -51,10 +53,10 @@ function Cloud() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <h4 className="text-lg leading-6 text-center font-semibold text-gray-900">
+                  <h4 className="text-SubHeading leading-6 text-center font-semibold text-gray-900">
                     Service Cloud
                   </h4>
-                  <p className="my-2 text-sm leading-6 text-gray-500">
+                  <p className="my-2 text-paragraph leading-6 text-gray-500">
                     Deliver exceptional customer service experiences with
                     Service Cloud. This powerful customer service platform
                     enables you to support customers across multiple channels,
@@ -72,10 +74,10 @@ function Cloud() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <h4 className="text-lg leading-6 text-center font-semibold text-gray-900">
+                  <h4 className="text-SubHeading leading-8 text-center font-semibold text-gray-900">
                     Marketing Cloud
                   </h4>
-                  <p className="my-2 text-sm leading-6 text-gray-500">
+                  <p className="my-2 text-paragraph leading-6 text-gray-500">
                     Engage customers at every touchpoint with Marketing Cloud.
                     This integrated marketing platform allows you to create
                     personalized, data-driven marketing campaigns, automate
@@ -93,10 +95,10 @@ function Cloud() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <h4 className="text-lg leading-6 text-center font-semibold text-gray-900">
+                  <h4 className="text-SubHeading leading-8 text-center font-semibold text-gray-900">
                     Platform and App Cloud
                   </h4>
-                  <p className="my-2 text-sm leading-6 text-gray-500">
+                  <p className="my-2 text-paragraph leading-6 text-gray-500">
                     Customize and extend Salesforce to fit your unique business
                     needs with Platform and App Cloud. Build custom
                     applications, integrate with third-party systems, and extend
@@ -107,8 +109,7 @@ function Cloud() {
             </li>
           </ul>
         </div>
-          </div>
-          
+      </div>
     </div>
   );
 }
