@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="pt-14 overflow-x-hidden">
       <Hero />
-      <Count />
+      {/* <Count /> */}
       <AboutOurCompany />
       <ThreeDCard />
       <OurClients />

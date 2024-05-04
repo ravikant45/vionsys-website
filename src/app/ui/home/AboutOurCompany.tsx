@@ -73,15 +73,15 @@ type Card = {
 const AboutOurCompany = () => {
     return (
         <div className='grid md:grid-cols-2 grid-cols-1 bg-white justify-items-center items-center overflow-x-hidden'>
-             <div className="h-[80vh] py-10 md:w-[50vw] w-[100vw] col-span-1">
+             <div className="h-[80vh] md:w-[50vw] w-[100vw] col-span-1">
                 <LayoutGrid cards={cards} />
              </div>
             <div className='col-span-1 px-5'>
-                <h4 data-aos="fade-right" className='underline font-bold md:text-xl text-xl text-orange'>About Our Company</h4>
-                <h5 data-aos="fade-left" className='text-lg mt-5 text-black'>Elevating your business through exemplary IT services is our unwavering passion and commitment.</h5>
-                <div data-aos="fade-down" className='text-sm mt-5 text-gray1 pb-4'>Vionsys IT Solutions India Pvt. Ltd. is a leading provider of comprehensive IT services, including software development, cloud solutions, cybersecurity, and IT consulting. With our experienced team, we deliver tailored solutions for businesses, ensuring efficiency, reliability, and scalability in the digital age.</div>
+                <h4 data-aos="fade-right" className='underline font-extrabold text-MainHeading'>About Our Company</h4>
+                <h5 data-aos="fade-left" className='text-lg mt-5 text-SubHeading font-bold'>Elevating your business through exemplary IT services is our unwavering passion and commitment.</h5>
+                <div data-aos="fade-down" className='text-paragraph mt-5 pb-4'>Vionsys IT Solutions India Pvt. Ltd. is a leading provider of comprehensive IT services, including software development, cloud solutions, cybersecurity, and IT consulting. With our experienced team, we deliver tailored solutions for businesses, ensuring efficiency, reliability, and scalability in the digital age.</div>
                 <Link href='/about'>
-                <Button data-aos="zoom-in">Learn More</Button>
+                <Button data-aos="zoom-in" className='text-lg'>Learn More</Button>
                 </Link>
             </div>
         </div>
