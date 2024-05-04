@@ -27,14 +27,14 @@ function WorkWithUs() {
       <AuroraBackground>
         <div className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-24 py-4">
           {/* <div className='flex flex-col justify-items-center items-center'> */}
-          <h4  data-aos="fade-left" className="underline font-bold md:text-xl text-xl text-orange">
+          <h4  data-aos="fade-left" className="underline font-extrabold text-MainHeading">
             Want to work with us?
           </h4>
-          <h5 data-aos="fade-right" className="text-lg text-black font-semibold">
+          <h5 data-aos="fade-right" className="text-SubHeading font-bold">
             Elevate your business through digital transformation, driving
             sustainable growth.
           </h5>
-          <div data-aos="fade-left" className="text-sm text-gray1 pb-4 md:px-44 leading-7 text-center">
+          <div data-aos="fade-left" className="text-paragraph text-gray1 pb-4 md:px-44 leading-7 text-center">
             Explore limitless possibilities with Vionsys IT Solutions INDIA Pvt.
             Ltd. Join our vibrant team where you'll engage in innovative
             projects, thrive in a collaborative atmosphere, access ongoing
@@ -43,11 +43,11 @@ function WorkWithUs() {
             dynamic IT industry.
           </div>
           <div  className="flex flex-wrap gap-7 text-center">
-            <Button data-aos="fade-right"data-aos-duration="500" onClick={() => setmodalopen(true)}>
+            <Button className="text-lg" data-aos="fade-right"data-aos-duration="500" onClick={() => setmodalopen(true)}>
               Schedule a meeting
             </Button>
             <Link href={"/contact"}>
-              <Button data-aos="fade-left"data-aos-duration="500">Contact Us</Button>
+              <Button className="text-lg" data-aos="fade-left"data-aos-duration="500">Contact Us</Button>
             </Link>
           </div>
           {/* </div> */}
