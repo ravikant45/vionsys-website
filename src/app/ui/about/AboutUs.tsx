@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
-import { BsTelephoneOutboundFill } from "react-icons/bs";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 const AboutUs = () => {
   return (
