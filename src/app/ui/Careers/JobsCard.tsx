@@ -8,10 +8,15 @@ export default function JobsCard() {
   return (
     <>
       <div className="flex flex-col justify-center items-center py-2">
-        <h1 data-aos="fade-left" className="text-blue2 font-bold md:text-start text-center text-4xl pb-3">
+        <h1
+          data-aos="fade-left"
+          className="text-blue2 font-bold md:text-start text-center text-3xl pb-3"
+        >
           Your Future Begins Here
         </h1>
-        <h2 data-aos="fade-right" className="text-black font-bold text-2xl">Current Openings</h2>
+        <h2 data-aos="fade-right" className="text-black font-bold text-2xl">
+          Current Openings
+        </h2>
       </div>
       <div className="w-full px-4">
         <HoverEffect items={Jobs} />
