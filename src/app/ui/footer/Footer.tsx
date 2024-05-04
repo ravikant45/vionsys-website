@@ -69,7 +69,7 @@ const Footer = () => {
                 <Link href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in">
                   <Image src={LinkedIn} alt="" quality={100} />
                 </Link>
-                <Link href="">
+                <Link href="https://twitter.com/vionsysit">
                   <Image
                     src={Twitter}
                     alt=""
@@ -82,12 +82,12 @@ const Footer = () => {
             </div>
 
             {/* Our Services */}
-            <div className="text-center md:text-left flex flex-col  gap-2">
+            <div className=" md:text-left flex flex-col  gap-2">
               <motion.h3
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-lg text-white font-bold mb-2 underline"
+                className="text-lg text-center text-white font-bold mb-2 underline"
               >
                 Our Services
               </motion.h3>
@@ -108,12 +108,12 @@ const Footer = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="text-center md:text-left col-span-2 flex flex-col  gap-2">
+            <div className=" text-start col-span-2 flex flex-col  gap-2">
               <motion.h3
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-lg text-white font-bold mb-2 underline"
+                className="text-lg text-center text-white font-bold mb-2 underline"
               >
                 <Link href="/contact">Contact Info</Link>
               </motion.h3>
@@ -142,7 +142,7 @@ const Footer = () => {
                   </div>
                   <span>
                     Address: 6th floor office no.504 Stellar Spaces, opposite
-                    Zensar it park, Kharadi, pune
+                    Zensar IT Park, Kharadi, Pune - 411014.
                   </span>
                 </div>
               </motion.div>
