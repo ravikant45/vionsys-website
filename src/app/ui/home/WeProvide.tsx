@@ -46,10 +46,10 @@ function WeProvide() {
   return (
     <div className="z-0 px-6 py-4 overflow-x-hidden">
       <div className="">
-        <p className="underline font-semibold text-xl mt-7 text-orange">
+        <p className="font-bold text-SubHeading mt-4">
           What we provide
         </p>
-        <h1 className="text-3xl mt-5 font-bold">IT Solutions</h1>
+        <h1 className="text-MainHeading font-extrabold underline mt-2">IT Solutions</h1>
       </div>
       <div className="py-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
