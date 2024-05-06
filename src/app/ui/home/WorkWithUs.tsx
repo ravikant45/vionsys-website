@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Suspense } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 import { AuroraBackground } from "@/components/ui/aurora-background";

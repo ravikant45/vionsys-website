@@ -16,7 +16,6 @@ import { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-hot-toast";
 import Image from "next/image";
 import third from "/public/assets/Contact/third.jpg";
-import fourth from "/public/assets/Contact/fourth.jpg";
 import {
   Form,
   FormControl,
@@ -83,13 +82,13 @@ const ThirdSection = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center mt-0 bg-dot-zinc-400 py-7">
+      <div className="flex justify-center items-center mt-0 bg-dot-zinc-400 px-2 py-7">
         
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             data-aos="zoom-out"
-            className="shadow-md shadow-blue4 rounded-[22px] md:w-1/2 w-full bg-white lg:p-10"
+            className="shadow-md shadow-blue4 rounded-[22px] md:w-1/2 w-full px-4 py-2 bg-white lg:p-10"
           >
             <FormField
               control={form.control}

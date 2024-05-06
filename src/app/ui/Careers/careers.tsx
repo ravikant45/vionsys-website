@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Training from "./training";
-import JobsCard from "./JobsCard";
 import CareerImage from "/public/assets/career/career.jpg";
 const CareerComponent = () => {
   return (
