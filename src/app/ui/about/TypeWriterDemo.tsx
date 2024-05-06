@@ -35,7 +35,7 @@ export function TypewriterDemo() {
   return (
     <div className="bg-dot-slate-300 flex justify-center items-center">
       <div className="flex flex-col items-center bg-cover justify-center w-[100vw] relative">
-        <div className="py-10 flex flex-col gap-4 justify-center items-center px-3 w-1/2  h-full">
+        <div className="py-10 flex flex-col justify-center items-center px-3 w-1/2  h-full">
           <TypewriterEffect words={words} />
           <div className="">
             <Link href='/contact'><Button>Contact<BsTelephoneOutboundFill className="inline-block ml-2 text-sm" /></Button></Link>

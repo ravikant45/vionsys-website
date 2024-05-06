@@ -47,13 +47,10 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2 }}
-                className="text-lg"
+                className="text-lg md:text-start text-justify"
               >
                 Vionsys IT solutions INDIA Pvt. Ltd. is a comprehensive IT
-                company offering end-to-end technology solutions. With expertise
-                in software development, network infrastructure, cybersecurity,
-                cloud services, and IT consulting, we empower businesses to
-                thrive in the digital era.{" "}
+                company offering end-to-end technology solutions. Specializing in software development, network infrastructure, cybersecurity, cloud services, and IT consulting, we enable businesses to excel in the digital age.{" "}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
