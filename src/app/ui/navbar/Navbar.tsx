@@ -78,6 +78,9 @@ const Navbar = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
   return (
     <div>
       <div
@@ -100,7 +103,7 @@ const Navbar = () => {
               {/* Home page */}
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
                     Home
                   </NavigationMenuLink>
                 </Link>
@@ -109,7 +112,7 @@ const Navbar = () => {
               {/* About page */}
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
                     About
                   </NavigationMenuLink>
                 </Link>
@@ -136,7 +139,7 @@ const Navbar = () => {
               {/*Industries dropdown */}
               <NavigationMenuItem>
                 <Link href="/industries" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
                     Industries
                   </NavigationMenuLink>
                 </Link>
@@ -145,7 +148,7 @@ const Navbar = () => {
               {/* Career Page */}
               <NavigationMenuItem>
                 <Link href="/career" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
                     Career
                   </NavigationMenuLink>
                 </Link>
@@ -154,7 +157,7 @@ const Navbar = () => {
               {/* Contact page */}
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
                     Contact
                   </NavigationMenuLink>
                 </Link>
@@ -172,7 +175,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <ResponsiveMenu showMenu={showMenu} />
+      <ResponsiveMenu showMenu={showMenu} closeMenu={closeMenu} />
     </div>
   );
 };

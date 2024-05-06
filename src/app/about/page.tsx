@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden">
       <AboutUs />
       <About2 />
       <ThreeDCard />
-      <LifeAtVionsys/>
+      <LifeAtVionsys />
       <TypewriterDemo />
       <Visit />
     </div>
