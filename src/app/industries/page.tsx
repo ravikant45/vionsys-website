@@ -18,11 +18,8 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div className="pt-16 overflow-x-hidden">
-      {/* Second Section */}
-      <SecondSection />
-      {/* First Section */}
       <FirstSection />
-      {/* Third Section */}
+      <SecondSection />
       <ThirdSection />
     </div>
   );

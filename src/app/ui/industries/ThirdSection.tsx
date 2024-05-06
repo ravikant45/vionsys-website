@@ -1,68 +1,73 @@
 import React from "react";
 import Image from "next/image";
-import insurance from "/public/assets/Industries/insurance.jpg";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+
+import ConstHeading from "/public/ConstHeading.jpg";
 import healthcare from "/public/assets/Industries/healthcare.jpg";
 import education from "/public/assets/Industries/education.jpg";
-import profservice from "/public/assets/Industries/profservice.jpg";
+import ConstContent1 from "/public/assets/Industries/ConstContent1.jpeg";
+import ConstContent2 from "/public/assets/Industries/ConstContent2.jpg";
+
+// Construction
+const content = [
+  {
+    title: "Features of Construction Technology",
+    description:
+      "Construction software often includes robust project management tools to help oversee various aspects of a construction project. This can include task scheduling, resource allocation, budget management, and timeline tracking. With these features, project managers can efficiently plan, execute, and monitor the progress of construction projects.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src={ConstContent1}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Collaboration Tools:",
+    description:
+      "Effective collaboration is essential in construction projects involving multiple stakeholders such as architects, engineers, contractors, and clients. Construction software typically provides collaboration tools such as document sharing, real-time communication, and project messaging. These tools facilitate seamless communication and collaboration among team members, leading to improved coordination and productivity.",
+    content: (
+      <Image
+        src={ConstContent2}
+        width={500}
+        height={300}
+        className="h-full w-full object-cover"
+        alt="linear board demo"
+      />
+    ),
+  },
+];
 
 const ThirdSection = () => {
   return (
     <>
-      {/* Parent div */}
-      <div className="flex flex-col gap-2 md:flex-row justify-center w-full px-2 py-2">
-        <div className="md:w-1/2 w-full">
-          <Image src={insurance} alt="" className="" />
-        </div>
-        <div className="bg-grey m-2 h-[auto] w-full md:w-1/2">
-          <h1
-            className="text-3xl font-extrabold text-MainHeading underline"
-            data-aos="fade-left"
-            data-aos-duration="700"
-          >
-            Insurance
-          </h1>
-          <h2
-            className="text-SubHeading font-bold md:w-[50vw] pt-2"
-            data-aos="fade-right"
-            data-aos-duration="700"
-          >
-            Empowering insurers to adapt, innovate, and thrive.
-          </h2>
-          <p className="text-paragraph pt-3">
-            Catalyzing insurance evolution through tailored IT solutions, we're
-            here to streamline operations, fortify security, and drive
-            unparalleled growth. With our expertise, your insurance business
-            will navigate the digital landscape seamlessly, delivering enhanced
-            customer experiences and sustainable success.
-          </p>
-
-          <div className="md:w-1/2 h-[auto]">
-            <h3 className="text-ThirdHeading font-bold pt-4 w-1/2">
-              Key Offerings:
-            </h3>
-            <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc md:h-auto">
-              <li className="px-6 py-2 border-b w-full rounded-t-lg hover:bg-blue-300 list-disc">
-                Risk Management
-              </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Fraud Detection
-              </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Data Management and Analytics
-              </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Customer Insights
-              </li>
-              <li className="px-6 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
-                Cloud Services
-              </li>
-            </ul>
+      {/* Construction Sector */}
+      <section>
+        <div className="bg-black relative">
+          <Image
+            src={ConstHeading}
+            alt=""
+            className="lg:h-[50vh] h-auto lg:w-screen w-auto opacity-55"
+          />
+          <div className="absolute inset-0 flex justify-center items-center flex-col text-white px-2">
+            <h1 className="md:text-6xl text-xl  font-bold text-white text-center">
+              CONSTRUCTION
+            </h1>
           </div>
         </div>
-      </div>
-      {/* Second div */}
-      <div className="flex flex-col md:flex-row md:h-[auto] justify-evenly w-full px-2">
-        <div className="bg-grey m-3 h-[auto] w-full md:w-1/2 md:order-1 order-2">
+
+        <div className="lg:h-auto">
+          <StickyScroll content={content} />
+        </div>
+      </section>
+      {/* HealthCare Sector */}
+      <section>
+      <div className="bg-slate-100 flex flex-col md:flex-row md:h-[auto] justify-evenly w-full px-2">
+        <div className="bg-grey m-3 h-[auto] w-full md:w-1/2 md:order-1 order-2 py-5">
           <h1
             className="text-MainHeading font-extrabold pt-2 underline"
             data-aos="fade-left"
@@ -77,7 +82,7 @@ const ThirdSection = () => {
           >
             Delivering precision, enhancing care.
           </h2>
-          <p className=" pt-3 text-left text-paragraph">
+          <p data-aos="fade-left" className=" pt-3 text-left text-paragraph">
             Authorising healthcare organizations with innovative IT solutions,
             we're dedicated to revolutionizing patient care, optimizing
             operations, and ensuring data security in an ever-evolving
@@ -86,23 +91,23 @@ const ThirdSection = () => {
             outcomes.for improving lives.
           </p>
           <div className="md:w-1/2 h-[auto]">
-            <h3 className="text-ThirdHeading font-bold pt-4 w-1/2">
+            <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-4 w-1/2">
               Key Offerings:
             </h3>
             <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc">
-              <li className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
+              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
                 Healthcare Cloud Solutions
               </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 Electronic Health Records Systems
               </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 Data Management and Analytics
               </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 Cybersecurity Solutions
               </li>
-              <li
+              <li data-aos="fade-left"
                 className="px-6 py-2 w-full border-b border-gray-400
                  hover:bg-blue-400"
               >
@@ -111,11 +116,12 @@ const ThirdSection = () => {
             </ul>
           </div>
         </div>
-        <div className="w-full md:w-1/2 m-2 md:order-2 order-1">
+        <div className="w-full md:w-1/2 m-2 md:order-2 order-1 flex items-center">
           <Image src={healthcare} alt="" className="" />
         </div>
       </div>
-      {/* Third Div */}
+      </section>
+      {/* Eductaion Sector */}
       <div className="flex flex-col md:flex-row justify-center gap-2  h-[auto] w-full px-2">
         <div className="m-2 md:w-1/2 w-full">
           <Image src={education} alt="" className="" />
@@ -135,86 +141,87 @@ const ThirdSection = () => {
           >
             Elevating education through seamless integration of technology.
           </h2>
-          <p className="text-paragraph pt-3">
+          <p data-aos="fade-left" className="text-paragraph pt-3">
             Empowering educators and institutions with innovative IT solutions,
             we pave the way for transformative learning experiences. From
             seamless management systems to interactive platforms, our solutions
             revolutionize education delivery, ensuring efficiency,excellence.
           </p>
           <div className="md:w-1/2">
-            <h3 className="text-ThirdHeading font-bold pt-2 w-1/2">
+            <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2 w-1/2">
               Key Offerings:
             </h3>
             <ul className="bg-white rounded-lg text-gray-900 font-medium list-inside list-disc w-auto">
-              <li className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc md:text-nowrap">
+              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc md:text-nowrap">
                 Learning Management Systems (LMS)
               </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 E-Learning Solutions
               </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 Student Information Systems (SIS)
               </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 Online Assessment and Proctoring
               </li>
             </ul>
           </div>
         </div>
       </div>
-      {/* Fourth div started */}
-      <div className="flex flex-col md:flex-row h-[auto] justify-evenly w-full px-2">
-        <div className="bg-grey m-3 h-[auto] w-full md:w-1/2 md:order-1 order-2">
-          <h1
-            className="text-MainHeading font-extrabold pt-2 underline"
-            data-aos="fade-left"
-            data-aos-duration="700"
-          >
-            Professional Services
-          </h1>
-          <h2
-            className="text-SubHeading font-bold md:w-[40vw] mt-2"
-            data-aos="fade-right"
-            data-aos-duration="700"
-          >
-            Empowering professionals to thrive in a digital-first world.
-          </h2>
-          <p className="text-paragraph pt-3">
-            Approving healthcare organizations with innovative IT solutions,
-            we're dedicated to revolutionizing patient care, optimizing
-            operations, and ensuring data security in an ever-evolving
-            landscape. From seamless integration to cutting-edge digital tools.
-          </p>
-          <div className="md:w-1/2 lg:w-2/3">
-            <h3 className="text-ThirdHeading font-bold pt-4 w-1/2">
-              Key Offerings:
-            </h3>
-            <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc text-wrap lg:text-nowrap">
-              <li className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
-                Enterprise Resource Planning (ERP) Systems
-              </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Customer Relationship Management (CRM) Systems
-              </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Project Management Tools
-              </li>
-              <li className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Cybersecurity Solutions
-              </li>
-              <li
-                className="px-6 py-2 w-full border-b border-gray-400
-                 hover:bg-blue-400"
+      {/* Field Sector */}
+      <section>
+        <div className="flex flex-col md:flex bg-slate-100 md:flex-row h-auto md:justify-evenly w-full px-4 py-8">
+          <div className="bg-grey m-3 h-auto w-full md:w-1/2 px-3">
+            <h1 data-aos="fade-right" className="text-MainHeading font-extrabold underline py-4">
+              Field Services
+            </h1>
+            <h2 data-aos="fade-left" className="text-SubHeading font-bold md:w-[40vw] mt-2">
+              Driving Business Growth Through Strategic Field Service
+              Optimization.
+            </h2>
+            <p data-aos="fade-right" className="text-paragraph pt-3 text-left">
+              Field services encompass on-site support, installation, maintenance, and troubleshooting for software products, ensuring effective implementation and utilization. Technicians resolve technical issues, provide user training, and optimize software performance at customer locations. Proactive maintenance, upgrades, and emergency support minimize downtime and ensure uninterrupted operation.
+            </p>
+            <div className="">
+              <p
+                data-aos="fade-left"
+                className="font-bold text-ThirdHeading md:px-6 px-4 py-3"
               >
-                Knowledge Management Systems
-              </li>
-            </ul>
+                Key offerings:
+              </p>
+              <ul className="list-disc list-inside font-medium text-paragraph">
+                <li data-aos="fade-right" className="hover:bg-[#7ca4d6] py-2">
+                  Software Solutions
+                </li>
+                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                  Mobile Applications
+                </li>
+                <li data-aos="fade-right" className="hover:bg-[#7ca4d6] py-2">
+                  Cloud Services
+                </li>
+                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                  Internet of Things Integration
+                </li>
+                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                  IT Infrastructure Support
+                </li>
+                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                  Training and Support
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className=" bg-no-repeat h-auto w-full md:w-1/2 m-2 flex justify-center items-center ">
+            <Image
+              src="/Feild.jpg"
+              alt=""
+              height={1000}
+              width={1000}
+              className="lg:h-[60vh] h-auto lg:w-screen w-auto"
+            />
           </div>
         </div>
-        <div className="md:w-1/2 w-full m-2 md:order-2 order-1">
-          <Image src={profservice} alt="" className="w-full" />
-        </div>
-      </div>
+      </section>
     </>
   );
 };

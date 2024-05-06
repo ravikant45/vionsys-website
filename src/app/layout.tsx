@@ -5,6 +5,7 @@ import Footer from "./ui/footer/Footer";
 import Navbar from "./ui/navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: {
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Toaster position="bottom-center" />
         {children}
         <Analytics />
+        <SpeedInsights/>
         <Footer />
       </body>
     </html>
