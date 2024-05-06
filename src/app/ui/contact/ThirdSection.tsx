@@ -16,7 +16,6 @@ import { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-hot-toast";
 import Image from "next/image";
 import third from "/public/assets/Contact/third.jpg";
-import fourth from "/public/assets/Contact/fourth.jpg";
 import {
   Form,
   FormControl,

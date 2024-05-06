@@ -1,4 +1,3 @@
-import { cn } from "@/utils/cn";
 import React from "react";
 
 import { Jobs } from "./JobsData";

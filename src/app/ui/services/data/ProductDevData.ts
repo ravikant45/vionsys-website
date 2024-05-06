@@ -3,7 +3,6 @@ import { MdOutlineDesignServices } from "react-icons/md";
 import { MdOutlineDeveloperBoard } from "react-icons/md";
 import { MdRocketLaunch } from "react-icons/md";
 import { MdHighQuality } from "react-icons/md";
-import ProductImg from "/public/assets/services/productImg.jpg";
 import endtoend from "/public/assets/services/endtoend.jpg";
 import satisfy from "/public/assets/services/satisfy.jpg";
 import support from "/public/assets/services/support.jpg";

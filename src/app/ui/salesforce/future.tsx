@@ -1,14 +1,5 @@
 import React from "react";
 
-import Custom from "/public/assets/services/Salesforce/Custom.jpg";
-import Customer from "/public/assets/services/Salesforce/Customer.png";
-import Emerging from "/public/assets/services/Salesforce/Emerging.jpeg";
-import Expansion from "/public/assets/services/Salesforce/Expansion.png";
-import Growth from "/public/assets/services/Salesforce/Growth.png";
-import IntegrationAI from "/public/assets/services/Salesforce/IntegrationAI.jpg";
-import Security from "/public/assets/services/Salesforce/Security.jpeg";
-import Image from "next/image";
-
 function Future() {
   return (
     <div>
