@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
         const { name, email, position, experience, attachments } = await req.json();
         const mailOptions = {
             from: process.env.GMAIL_USER!,
-            to: "Ravikantwaghmare@vionsys.com",
+            to: "hr@vionsys.com",
             subject: 'Vionsys Website Contact Form',
             html: `
            <h2>Vionsys Website Job application for ${position}</h2>

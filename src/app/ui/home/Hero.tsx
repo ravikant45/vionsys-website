@@ -66,7 +66,7 @@ function Hero() {
         </div>
 
         {/* right */}
-        <div className="absolute w-full h-full overflow-hidden flex justify-center items-center -z-20 opacity-55">
+        <div className="absolute w-full h-full overflow-hidden flex justify-center items-center -z-20 opacity-65">
           <video loop autoPlay muted className='absolute top-0 left-0 min-w-full min-h-full object-cover'>
             <source src="/assets/Home/bg-visual.mp4" type="video/mp4" className='w-full h-full overflow-hidden -z-50' />
           </video>
