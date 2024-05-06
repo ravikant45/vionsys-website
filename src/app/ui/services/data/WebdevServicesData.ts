@@ -3,7 +3,6 @@ import { GrHostMaintenance } from "react-icons/gr";
 import { FaWordpress } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaMobileButton } from "react-icons/fa6";
-import webImg from "/public/assets/services/wedevImg.jpg";
 import innovate from "/public/assets/services/innovation.jpg";
 import scalable from "/public/assets/services/scalable.jpg";
 import pricing from "/public/assets/services/pricing.jpg";
@@ -38,7 +37,7 @@ interface webdevServicesData {
 const webdevServicesData: webdevServicesData = {
   headline: "WEB DEVELOPMENT",
   paragraph:
-    "At Vionsys IT Solutions INDIA Pvt. Ltd., we are not just another web development company; we are the pioneers of digital innovation. Our mission is to revolutionize the online experience for businesses. By leveraging cutting-edge technologies and ingenious design strategies, we architect bespoke, user-centric websites and web applications. These digital solutions are not mere platforms; they are powerful tools that empower businesses to establish a commanding online presence, drive customer engagement, and seize lucrative opportunities in the ever-evolving digital landscape.",
+    "In our services, we're not just another web development company; we're digital innovation pioneers. Our mission is to revolutionize online experiences for businesses. Through cutting-edge technologies and creative design, we craft bespoke, user-centric websites and applications. These solutions empower businesses to command online presence, engage customers, and seize digital opportunities.",
 
   Services: [
     {

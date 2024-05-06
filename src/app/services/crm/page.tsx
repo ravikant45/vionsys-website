@@ -13,16 +13,16 @@ const Page: React.FC = () => {
     <div className="pt-16 overflow-x-hidden relative">
       <div className="grid overflow-x-hidden md:grid-cols-2 md:px-6 px-2 py-4 grid-cols-1 bg-slate-100 justify-items-center items-center">
         <div className="md:px-4 px-2">
-          <h1 data-aos="fade-left" className="text-2xl text-orange font-bold">
+          <h1 data-aos="fade-left" className="text-MainHeading font-extrabold">
             Customer Relationship Management (CRM)
           </h1>
           <h3
             data-aos="fade-right"
-            className="text-sm py-1 text-gray1 pb-4 italic"
+            className="text-md py-1 text-gray1 pb-4 italic"
           >
             Selecting Excellence: Elevate Your CRM Experience with Us.
           </h3>
-          <p data-aos="fade-down" className="text-sm text-black py-8">
+          <p data-aos="fade-down" className="text-paragraph text-black py-8">
             Discover CRM excellence with our innovative methodology, blending
             precision and innovation for unparalleled success. Seamlessly
             integrating technology and data-driven insights, we propel

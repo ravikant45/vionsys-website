@@ -31,8 +31,8 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
                         className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-10 py-4  md:h-[50vh]"
                     >
                         <div className="flex flex-col justify-center items-center gap-4">
-                            <h3 className="text-5xl font-bold text-orange text-center">{data.mainTitle}</h3>
-                            <p className="text-md text-center text-gray1 ">{data.subTitle}</p>
+                            <h3 className="text-5xl text-MainHeading font-extrabold text-center">{data.mainTitle}</h3>
+                            <p className="text-center text-paragraph">{data.subTitle}</p>
                         </div>
                     </motion.div>
                 </AuroraBackground>
@@ -42,22 +42,22 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
             <section className="w-[100vw] overflow-x-hidden">
                 <div className="w-full">
                     <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6">
-                        <div className="w-full lg:w-1/2 mb-8 lg:mb-0 md:p-6">
+                        <div className="w-full lg:w-1/2 mb-8 lg:mb-0 md:px-6">
                             <Image data-aos="zoom-in" src={data.secondSectionImage} alt="" className="w-full" />
                         </div>
                         <div className="w-full lg:w-1/2 p-2">
-                            <h2 data-aos="fade-left" className="text-3xl text-orange font-bold mb-4 text-center md:text-start">{data.secondTitle}</h2>
-                            <p data-aos="fade-right" className="text-md text-gray1 text-center md:text-start">{data.secondSubTitle}</p>
+                            <h2 data-aos="fade-left" className="text-SubHeading font-bold mb-4 text-center md:text-start">{data.secondTitle}</h2>
+                            <p data-aos="fade-right" className="text-paragraph text-center md:text-start">{data.secondSubTitle}</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Third Section */}
-            <section className="w-[100vw] z-0 overflow-x-hidden py-6 dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
+            <section className="w-[100vw] z-0 overflow-x-hidden py-8 dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
                 <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-                <div className="w-full flex flex-col gap-4 py-14 md:px-8 px-4">
-                    <h3 data-aos="fade-down" className="text-center md:text-4xl text-lg text-orange font-semibold  sm:text-7xl  relative z-20 bg-clip-text py-8 capitalize">{data.cardsTitle}</h3>
+                <div className="w-full flex flex-col gap-4 py-6 md:px-8 px-4">
+                    <h3 data-aos="fade-down" className="text-center text-MainHeading font-extrabold relative z-20 bg-clip-text capitalize">{data.cardsTitle}</h3>
                     <div data-aos="zoom-in" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:px-6 gap-x-4 gap-y-14 md:mt-0 mt-8">
                         {
                             data?.cards.map((card) => (
@@ -71,11 +71,11 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
                                             {card.title}
                                         </h3>
                                         <div className="!m-0 !p-0 font-normal">
-                                            <span className="text-gray1 text-sm">
+                                            <span className="text-black text-sm">
                                                 {card.message}
                                             </span>
                                         </div>
-                                        <Image width="100" height="100" src={card.image} alt="" className="w-full h-full" />
+                                        <Image quality={100} width="300" height="200" src={card.image} alt="" className="w-full h-full" />
                                     </div>
                                 </PinContainer>
 
@@ -89,13 +89,14 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
             <section>
                 <div className="py-4 w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
                     <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black -z-10 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+
                     <div className="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
                         <div data-aos="" className="text-center">
-                            <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900  relative z-0 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+                            <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900  relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-500 to-neutral-800 py-8">
                                 Frequently Asked <span className="text-blue1">Questions</span>
                             </h3>
                         </div>
-                        <div className="mt-20">
+                        <div className="">
                             <ul>
                                 {
                                     data?.faqs?.map((faq) => (

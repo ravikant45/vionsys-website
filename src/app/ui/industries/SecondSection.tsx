@@ -177,7 +177,7 @@ const SecondSection = () => {
             className="lg:h-[50vh] h-auto lg:w-screen w-auto opacity-45"
           />
           <div className="absolute inset-0 flex justify-center items-center flex-col text-white">
-            <h1 className="md:text-6xl text-xl font-bold text-white text-center">
+            <h1 className="md:text-5xl text-xl font-bold text-white text-center">
               IT Digital Transformation
             </h1>
           </div>
@@ -229,16 +229,16 @@ const SecondSection = () => {
       </section>
 
       <section>
-        <div className="flex flex-col md:flex md:flex-row h-auto md:justify-evenly w-full px-4 py-8">
+        <div className="flex flex-col md:flex bg-slate-100 md:flex-row h-auto md:justify-evenly w-full px-4 py-8">
           <div className="bg-grey m-3 h-auto w-full md:w-1/2 px-3">
-            <h1 className="md:text-4xl text-xl font-extrabold text-[#3469bc] py-4">
+            <h1 className="text-MainHeading font-extrabold py-4">
               Field Services
             </h1>
-            <h2 className="md:text-3xl text-xl font-bold text-amber-600 md:w-[40vw] mt-2">
+            <h2 className="text-SubHeading font-bold md:w-[40vw] mt-2">
               Driving Business Growth Through Strategic Field Service
               Optimization.
             </h2>
-            <p className="md:font-medium text-gray1 pt-3 text-left">
+            <p className="text-paragraph pt-3 text-left">
               Field services involve providing on-site support, installation,
               maintenance, and troubleshooting services for software products
               and solutions. These services are crucial for ensuring that

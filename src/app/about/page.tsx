@@ -2,6 +2,7 @@ import React from "react";
 import { TypewriterDemo } from "../ui/about/TypeWriterDemo";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import LifeAtVionsys from "../ui/about/LifeAtVionsys";
 const AboutUs = dynamic(() => import("../ui/about/AboutUs"), {
   loading: () => <p>Loading...</p>,
 });
@@ -21,10 +22,11 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden">
       <AboutUs />
       <About2 />
       <ThreeDCard />
+      <LifeAtVionsys />
       <TypewriterDemo />
       <Visit />
     </div>

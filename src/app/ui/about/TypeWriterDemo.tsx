@@ -2,8 +2,6 @@
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { Button } from '@/components/ui/button';
 import { BsTelephoneOutboundFill } from "react-icons/bs";
-import BgTypewriteImage from "/public/TypeWriter.jpg";
-import Image from "next/image";
 import Link from "next/link";
 
 export function TypewriterDemo() {
@@ -35,10 +33,9 @@ export function TypewriterDemo() {
     },
   ];
   return (
-    <div className="">
-      <div className="flex flex-col items-center bg-cover justify-center md:h-[40rem] h-[20rem] w-[100vw] relative">
-        <Image src={BgTypewriteImage} alt="" className="absolute w-full h-full" />
-        <div className="absolute top-0 flex flex-col gap-4 justify-center items-center px-3 w-1/2  h-full">
+    <div className="bg-dot-slate-300 flex justify-center items-center">
+      <div className="flex flex-col items-center bg-cover justify-center w-[100vw] relative">
+        <div className="py-10 flex flex-col justify-center items-center px-3 w-1/2  h-full">
           <TypewriterEffect words={words} />
           <div className="">
             <Link href='/contact'><Button>Contact<BsTelephoneOutboundFill className="inline-block ml-2 text-sm" /></Button></Link>

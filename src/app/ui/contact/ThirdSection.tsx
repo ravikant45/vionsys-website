@@ -16,7 +16,6 @@ import { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-hot-toast";
 import Image from "next/image";
 import third from "/public/assets/Contact/third.jpg";
-import fourth from "/public/assets/Contact/fourth.jpg";
 import {
   Form,
   FormControl,
@@ -83,18 +82,13 @@ const ThirdSection = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center mt-0 bg-white">
-        <Image
-          src={fourth}
-          alt=""
-          quality={100}
-          className="bg-object-cover lg:w-full h-auto md:block hidden md:w-full lg:mt-0"
-        />
+      <div className="flex justify-center items-center mt-0 bg-dot-zinc-400 px-2 py-7">
+        
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             data-aos="zoom-out"
-            className="md:mt-10 shadow-md shadow-blue4 rounded-[22px] md:w-1/2 w-full p-8 m-4 bg-white md:absolute lg:p-10"
+            className="shadow-md shadow-blue4 rounded-[22px] md:w-1/2 w-full px-4 py-2 bg-white lg:p-10"
           >
             <FormField
               control={form.control}
@@ -198,11 +192,11 @@ const ThirdSection = () => {
           ></iframe>
         </div>
       </div>
-      <div className="flex justify-center bg-gray-300 w-screen h-[50vh]">
+      <div className="flex justify-center w-full md:h-[50vh] relative h-auto">
         {/*fourth image here */}
-        <Image src={third} alt="" className="object-cover w-full" />
+        <Image src={third} alt="" className="object-cover w-full md:h-[50vh] h-[20vh]" />
         <div
-          className=" absolute pt-20 lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
+          className=" absolute md:py-20 py-10 text-lg lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
         bg-clip-text text-transparent bg-gradient-to-r animate-pulse from-red-500 to-blue-700"
         >
           <h1 data-aos="fade-right" className="inline">
@@ -234,7 +228,7 @@ const ThirdSection = () => {
                       color="#0077B5"
                     />
                   </Link>
-                  <Link href="">
+                  <Link href="https://twitter.com/vionsysit">
                     <FaSquareXTwitter
                       size={40}
                       className=" mr-3 transform hover:scale-125 transition duration-300 ease-in-out"

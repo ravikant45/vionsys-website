@@ -61,7 +61,7 @@ export const StickyScroll = ({
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-5">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -69,7 +69,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="md:text-2xl text-xl text-blue2 font-bold" // Removing text color class to inherit black color
+                className="md:text-2xl text-xl text-MainHeading font-bold" // Removing text color class to inherit black color
               >
                 {item.title}
               </motion.h2>
@@ -80,7 +80,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="md:text-lg text-sm max-w-lg mt-10 text-gray1" // Removing text color class to inherit black color
+                className="md:text-lg text-sm max-w-lg mt-10 text-paragraph" // Removing text color class to inherit black color
               >
                 {item.description}
               </motion.p>

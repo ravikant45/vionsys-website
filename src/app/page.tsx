@@ -17,9 +17,6 @@ const AboutOurCompany = dynamic(() => import("./ui/home/AboutOurCompany"), {
 const ChooseUs = dynamic(() => import("./ui/home/ChooseUs"), {
   loading: () => <p>Loading...</p>,
 });
-const Count = dynamic(() => import("./ui/home/Count"), {
-  loading: () => <p>Loading...</p>,
-});
 const Hero = dynamic(() => import("./ui/home/Hero"), {
   loading: () => <p>Loading...</p>,
 });
@@ -49,7 +46,6 @@ export default function Home() {
   return (
     <div className="pt-14 overflow-x-hidden">
       <Hero />
-      {/* <Count /> */}
       <AboutOurCompany />
       <ThreeDCard />
       <OurClients />

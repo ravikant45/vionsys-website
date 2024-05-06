@@ -15,16 +15,22 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ServicesLinks } from "./Navlinks";
-
-const ResponsiveMenu = ({ showMenu }: any) => {
+interface Props {
+    showMenu: boolean;
+    closeMenu: () => void;
+}
+const ResponsiveMenu: React.FC<Props> = ({ showMenu, closeMenu }) => {
+    const handleClick = () => {
+        closeMenu();
+    };
     return (
-        <div className={`${showMenu ? 'top-14 md:hidden' : 'hidden'} fixed w-full z-50 bg-white h-[50vh] flex items-center justify-center py-6 border-b shadow-md`}>
+        <div className={`${showMenu ? 'top-14 md:hidden' : 'hidden'} fixed w-[100vw] overflow-x-hidden z-50 bg-white h-[50vh] flex items-center justify-center py-6 border-b shadow-md`}>
             <NavigationMenu>
                 <NavigationMenuList className="flex flex-col gap-4">
                     {/* Home section */}
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={handleClick}>
                                 Home
                             </NavigationMenuLink>
                         </Link>
@@ -33,7 +39,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
                     {/* About page */}
                     <NavigationMenuItem>
                         <Link href="/about" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={handleClick}>
                                 About
                             </NavigationMenuLink>
                         </Link>
@@ -45,7 +51,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
                             <DropdownMenuTrigger className="outline-none flex justify-center items-center gap-2">Services<IoChevronForwardOutline /></DropdownMenuTrigger>
                             <DropdownMenuContent>
                                 {ServicesLinks.map((link) => (
-                                    <Link href={link.href} key={link.title}><DropdownMenuItem>{link.title}</DropdownMenuItem></Link>
+                                    <Link href={link.href} key={link.title}><DropdownMenuItem onClick={handleClick}>{link.title}</DropdownMenuItem></Link>
                                 ))}
                             </DropdownMenuContent>
                         </DropdownMenu>
@@ -54,7 +60,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
                     {/* industries dropdown */}
                     <NavigationMenuItem>
                         <Link href="/industries" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={handleClick}>
                                 Industries
                             </NavigationMenuLink>
                         </Link>
@@ -63,7 +69,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
                     {/* Career page */}
                     <NavigationMenuItem>
                         <Link href="/career" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={handleClick}>
                                 Career
                             </NavigationMenuLink>
                         </Link>
@@ -72,7 +78,7 @@ const ResponsiveMenu = ({ showMenu }: any) => {
                     {/* Contact page */}
                     <NavigationMenuItem>
                         <Link href="/contact" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={handleClick}>
                                 Contact
                             </NavigationMenuLink>
                         </Link>

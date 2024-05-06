@@ -18,8 +18,8 @@ const page = () => {
   return (
     <div>
       <Conts />
-      <Second />
       <ThirdSection />
+      <Second />
     </div>
   );
 };

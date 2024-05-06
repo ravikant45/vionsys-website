@@ -130,11 +130,11 @@ const page: React.FC = () => {
             <div className="md:w-[60%] w-full flex flex-col gap-2 p-2">
               <h4
                 data-aos="fade-left"
-                className="md:text-4xl text-xl font-bold text-orange "
+                className="md:text-3xl text-xl font-extrabold text-orange "
               >
                 Ensuring Software Stability Through Rigorous Testing
               </h4>
-              <p data-aos="fade-right" className="text-md">
+              <p data-aos="fade-right" className="text-base py-4">
                 At Vionsys IT Solutions India Pvt Ltd, we redefine software
                 testing and quality assurance with a tailored approach that
                 merges innovation and expertise. With a relentless pursuit of
@@ -145,7 +145,9 @@ const page: React.FC = () => {
                 success in today's dynamic digital landscape.
               </p>
               <div>
-                <Link href='/contact'><Button data-aos="fade-right">Contact us</Button></Link>
+                <Link href="/contact">
+                  <Button data-aos="fade-right">Contact us</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -157,14 +159,14 @@ const page: React.FC = () => {
         <div className="w-full flex flex-col gap-8 justify-center items-center md:px-4 md:py-6 py-3 px-2">
           <h2
             data-aos="fade-down"
-            className="md:text-3xl text-xl font-bold text-orange"
+            className="md:text-3xl text-xl font-extrabold text-orange"
           >
             Why Vionsys Excels as Your QA and Testing Partner?
           </h2>
           <div className="w-full grid md:grid-cols-2 grid-cols-1  gap-4 md:px-12">
             {/* left side */}
-            <div className="flex flex-col gap-2">
-              <p data-aos="fade-left">
+            <div className="flex flex-col gap-2 text-base">
+              <p data-aos="fade-left ">
                 Vionsys emerges as your top-tier QA and testing partner,
                 guaranteeing unparalleled expertise. With our commitment to
                 excellence, bolstered by cutting-edge tools and meticulous
@@ -199,7 +201,7 @@ const page: React.FC = () => {
           <h3 className="text-orange font-bold md:text-3xl text-xl relative z-20">
             Our Software Testing Services
           </h3>
-          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-8">
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-8 text-xl">
             {services.map((service) => (
               <div
                 data-aos="flip-left"
@@ -210,7 +212,7 @@ const page: React.FC = () => {
                 <h4 className="text-blue3 font-bold relative z-20 bg-clip-text">
                   {service.title}
                 </h4>
-                <p className="text-center text-sm relative z-20 bg-clip-text">
+                <p className="text-center text-base relative z-20 bg-clip-text">
                   {service.description}
                 </p>
               </div>
@@ -234,10 +236,10 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2 py-2">
-                <h3 className="font-bold text-black">
+                <h3 className="text-ThirdHeading font-bold">
                   Requirement Understanding
                 </h3>
-                <p className="text-sm text-gray1">
+                <p className="text-paragraph">
                   At the outset, we engage closely with our clients, delving
                   into their pivotal needs and aspirations. This initial phase
                   lays the groundwork for comprehending their unique
@@ -257,8 +259,8 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
-                <h3 className="font-bold text-black">Test Planning</h3>
-                <p className="text-sm text-gray1">
+                <h3 className="text-ThirdHeading font-bold">Test Planning</h3>
+                <p className="text-paragraph">
                   Crafting a thorough blueprint is our forte, encompassing
                   strategic outlines, delineated testing phases, deliverables,
                   and resource requisites. This meticulous approach ensures
@@ -278,8 +280,10 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
-                <h3 className="font-bold text-black">Test Cases Development</h3>
-                <p className="text-sm text-gray1">
+                <h3 className="text-ThirdHeading font-bold">
+                  Test Cases Development
+                </h3>
+                <p className="text-paragraph">
                   Post-test plan analysis, our QA team swiftly identifies key
                   objectives, crafting detailed test cases. This includes test
                   data, preconditions, expected results, and postconditions,
@@ -294,7 +298,7 @@ const page: React.FC = () => {
               data-aos="zoom-out"
               className="col-span-1 w-44 h-44 rounded-full bg-gray2 flex justify-center items-center border-4 border-blue1"
             >
-              <h3 className="uppercase font-bold text-blue1 text-2xl">Steps</h3>
+              <h3 className="uppercase font-bold text-black text-2xl">Steps</h3>
             </div>
           </div>
           {/* Right side */}
@@ -309,8 +313,10 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2 py-2">
-                <h3 className="font-bold text-black">Environment Set-up</h3>
-                <p className="text-sm text-gray1">
+                <h3 className="text-ThirdHeading font-bold">
+                  Environment Set-up
+                </h3>
+                <p className="text-paragraph">
                   After grasping the project plan and objectives, our developers
                   swiftly select optimal advanced testing tools. We meticulously
                   configure these tools for test execution, culminating in a
@@ -330,10 +336,10 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
-                <h3 className="font-bold text-black">
+                <h3 className="text-ThirdHeading font-bold">
                   Test Execution & Automation
                 </h3>
-                <p className="text-sm text-gray1">
+                <p className="text-paragraph">
                   As a premier software testing company in India, our adept QA
                   team swiftly executes and automates tests in accordance with
                   the test plan. We promptly initiate retesting to guarantee
@@ -353,8 +359,8 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
-                <h3 className="font-bold text-black">Final Report</h3>
-                <p className="text-sm text-gray1">
+                <h3 className="text-ThirdHeading font-bold">Final Report</h3>
+                <p className="text-paragraph">
                   To offer a comprehensive overview for analysis, we
                   meticulously compile a detailed document summarizing the
                   entire process. This includes all tests conducted, the final

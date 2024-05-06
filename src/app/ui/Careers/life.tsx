@@ -6,26 +6,26 @@ const Life = () => {
       <div className="flex flex-col justify-center items-center text-center">
         <h1
           data-aos="fade-left"
-          className="md:text-4xl text-2xl text-start text-blue2 font-bold  pb-4"
+          className="md:text-3xl text-2xl text-start text-blue2 font-bold pb-4"
         >
           Life @ Vionsys
         </h1>
-        <p data-aos="fade-right" className="text-md md:w-2/3 text-start">
-          At Vionys IT Solutions India Pvt.Ltd., we are on a mission to design
-          make innovative yet stunning products and mark an impactful presence
-          in the industry. And to do that, we empower our greatest resource to
-          work fruitfully and simply by following adhocratic yet a clan culture!
-          The environment is built in a way that every single effort of each
-          resource is noticed, valued and appreciated. The freedom of going
-          beyond the conventional limits and opportunities to exceptional growth
-          has made remarkable difference in the individual performance within
-          teams.
+        <p data-aos="fade-right" className="text-base md:w-2/3 text-start">
+          At our organization, our driving force is the pursuit of innovative
+          and impactful products that leave a mark on the industry. To achieve
+          this, we foster an environment where our greatest resource—our
+          people—can thrive. We embrace an adhocratic yet clan culture,
+          encouraging collaboration and autonomy. Every effort is recognized,
+          valued, and appreciated, creating a sense of belonging and motivation.
+          We empower our team members to push beyond conventional limits,
+          opening doors to exceptional growth and individual performance within
+          our teams.
         </p>
-        <p data-aos="fade-right" className="py-4 font-semibold">
+        <p data-aos="fade-right" className="">
           For inquiries related to employment opportunities, please reach out to
           our HR Manager:
         </p>
-        <p data-aos="fade-right" className=" underline font-bold">
+        <p data-aos="fade-right" className="">
           Email: hr@vionsys.com
         </p>
       </div>
