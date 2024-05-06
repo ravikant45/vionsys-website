@@ -75,7 +75,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
                                                 {card.message}
                                             </span>
                                         </div>
-                                        <Image width="100" height="100" src={card.image} alt="" className="w-full h-full" />
+                                        <Image quality={100} width="300" height="200" src={card.image} alt="" className="w-full h-full" />
                                     </div>
                                 </PinContainer>
 
