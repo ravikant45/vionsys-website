@@ -17,6 +17,7 @@ import Small_Business
 const SkeletonOne = () => {
   return (
     <div>
+      <p className="font-bold text-2xl text-white">Protect Your Business</p>
     </div>
   );
 };

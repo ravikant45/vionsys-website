@@ -5,24 +5,26 @@ import CRM from "../../../../public/assets/services/crm/CRM.png";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { Metadata } from "next";
 import CRMFaq from "@/app/ui/services/CRMFaq";
+import CRMF from "/public/assets/services/crm/CRMH.jpg";
 export const metadata: Metadata = {
   title: "Customer Relationship Management Services",
 };
 const Page: React.FC = () => {
   return (
     <div className="pt-16 overflow-x-hidden relative">
-      <div className="grid overflow-x-hidden md:grid-cols-2 md:px-6 px-2 py-4 grid-cols-1 bg-slate-100 justify-items-center items-center">
-        <div className="md:px-4 px-2">
-          <h1 data-aos="fade-left" className="text-MainHeading font-extrabold">
+      <div className="bg-black relative">
+        <Image src={CRMF} alt='' className="md:w-[100vw] h-[100vh] opacity-45" quality={100}/>
+        <div className="absolute md:top-48 top-10 px-3 flex justify-center items-center flex-col transform text-white">
+        <h1 data-aos="fade-left" className="text-3xl text-white font-extrabold">
             Customer Relationship Management (CRM)
           </h1>
           <h3
             data-aos="fade-right"
-            className="text-md py-1 text-gray1 pb-4 italic"
+            className="text-md py-1 text-white pb-4 italic"
           >
             Selecting Excellence: Elevate Your CRM Experience with Us.
           </h3>
-          <p data-aos="fade-down" className="text-paragraph text-black py-8">
+          <p data-aos="fade-down" className="text-paragraph text-white py-8">
             Discover CRM excellence with our innovative methodology, blending
             precision and innovation for unparalleled success. Seamlessly
             integrating technology and data-driven insights, we propel
@@ -30,9 +32,6 @@ const Page: React.FC = () => {
             Experience the pinnacle of effective work, meticulously designed for
             sustained growth and unmatched satisfaction.
           </p>
-        </div>
-        <div>
-          <Image data-aos="zoom-in" src={CRM} alt="" width="800" height="800" />
         </div>
       </div>
       <Empower />

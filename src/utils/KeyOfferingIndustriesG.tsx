@@ -8,7 +8,7 @@ const KeyOfferingIndustriesG = ({keys}:any) => {
             {keys.map((offer:any) => (
               <h1
                 key={offer.id}
-                className="bg-gray-100 flex-grow text-black border-l-8 border-[#7ca4df] text-paragraph font-medium rounded-md px-3 py-2 w-full md:w-5/12 lg:w-3/12"
+                className="bg-white flex-grow text-black border-l-8 border-[#7ca4df] text-paragraph font-medium rounded-md px-3 py-2 w-full md:w-5/12 lg:w-3/12"
               >
                 {offer.title}{" "}
               </h1>
