@@ -17,7 +17,7 @@ function WorkWithUs() {
         <Suspense fallback={"Loading..."}>
           <iframe
             className="overflow-hidden"
-            src="https://calendly.com/worksagar20/vionsysservices"
+            src="https://calendly.com/hr--eppa/30min"
             height={600}
             width="100%"
           ></iframe>
@@ -26,7 +26,7 @@ function WorkWithUs() {
       <AuroraBackground>
         <div className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-24 py-4">
           {/* <div className='flex flex-col justify-items-center items-center'> */}
-          <h4  data-aos="fade-left" className="underline font-extrabold text-MainHeading">
+          <h4 data-aos="fade-left" className="underline font-extrabold text-MainHeading">
             Want to work with us?
           </h4>
           <h5 data-aos="fade-right" className="text-SubHeading font-bold">
@@ -41,12 +41,12 @@ function WorkWithUs() {
             Discover the ideal environment to unleash your full potential in the
             dynamic IT industry.
           </div>
-          <div  className="flex flex-wrap gap-7 text-center">
-            <Button className="text-lg" data-aos="fade-right"data-aos-duration="500" onClick={() => setmodalopen(true)}>
+          <div className="flex flex-wrap gap-7 text-center">
+            <Button className="text-lg" data-aos="fade-right" data-aos-duration="500" onClick={() => setmodalopen(true)}>
               Schedule a meeting
             </Button>
             <Link href={"/contact"}>
-              <Button className="text-lg" data-aos="fade-left"data-aos-duration="500">Contact Us</Button>
+              <Button className="text-lg" data-aos="fade-left" data-aos-duration="500">Contact Us</Button>
             </Link>
           </div>
           {/* </div> */}

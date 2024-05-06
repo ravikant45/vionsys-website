@@ -10,13 +10,15 @@ const ScheduleMeetAndContactCTA: React.FC = () => {
     setmodalopen(false);
   };
 
+  // Get the environment variable value
+
   return (
     <>
       <Modal open={modalopen} onCancel={handlecancle} footer={null}>
         <Suspense fallback={"Loading..."}>
           <iframe
             className="overflow-hidden"
-            src="https://calendly.com/worksagar20/vionsysservices"
+            src="https://calendly.com/hr--eppa/30min"
             height={600}
             width="100%"
           ></iframe>
