@@ -4,7 +4,7 @@ import CareerImage from "/public/assets/career/career.jpg";
 const CareerComponent = () => {
   return (
     <div className=" w-[100vw] md:h-[100vh] h-auto">
-      <div className="relative w-full md:h-full h-[90%] bg-black">
+      <div className="relative w-full md:h-full h-[70vh] bg-black">
         <Image
           className="w-full h-full object-cover bg-no-repeat opacity-45"
           src={CareerImage}
