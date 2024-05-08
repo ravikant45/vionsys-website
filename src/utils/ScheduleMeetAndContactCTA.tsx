@@ -36,7 +36,7 @@ const ScheduleMeetAndContactCTA: React.FC = () => {
               Excited about the prospect of collaborating? Share your ideas, and
               let's work together to create something truly remarkable!
             </h4>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex md:gap-4 gap-2 justify-center items-center flex-wrap">
               <Button data-aos="fade-right" onClick={() => setmodalopen(true)}>
                 Schedule a meeting
               </Button>

@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Empower from "@/app/ui/crm/Empower";
+const Img = dynamic(() => import("../../ui/crm/Img"), {
+  loading: () => <p>Loading...</p>,
+});
 import Importance from "@/app/ui/crm/Importance";
 import CRM from "../../../../public/assets/services/crm/CRM.png";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { Metadata } from "next";
 import CRMFaq from "@/app/ui/services/CRMFaq";
 import CRMF from "/public/assets/services/crm/CRMH.jpg";
+import dynamic from "next/dynamic";
 export const metadata: Metadata = {
   title: "Customer Relationship Management Services",
 };
@@ -13,18 +17,18 @@ const Page: React.FC = () => {
   return (
     <div className="pt-16 overflow-x-hidden relative">
       <div className="bg-black relative">
-        <Image src={CRMF} alt='' className="md:w-[100vw] h-[100vh] opacity-45" quality={100}/>
-        <div className="absolute md:top-48 top-10 px-3 flex justify-center items-center flex-col transform text-white">
-        <h1 data-aos="fade-left" className="text-3xl text-white font-extrabold">
+        <Image src={CRMF} alt='' className="md:w-[100vw] md:h-[100vh] h-[60vh] sm:[50vh] opacity-45" quality={100}/>
+        <div className="absolute md:top-96 sm:top-32 top-14 px-3 flex justify-center items-center flex-col transform text-white">
+        <h1 data-aos="fade-left" className="md:text-5xl text-2xl text-white font-extrabold text-center">
             Customer Relationship Management (CRM)
           </h1>
           <h3
             data-aos="fade-right"
-            className="text-md py-1 text-white pb-4 italic"
+            className="py-2 text-white pb-4 italic md:text-xl text-sm"
           >
             Selecting Excellence: Elevate Your CRM Experience with Us.
           </h3>
-          <p data-aos="fade-down" className="text-paragraph text-white py-8">
+          <p data-aos="fade-down" className="md:text-xl text-base text-white py-6 md:px-52 mmd:px-10 px-3 sm:px-20 text-center">
             Discover CRM excellence with our innovative methodology, blending
             precision and innovation for unparalleled success. Seamlessly
             integrating technology and data-driven insights, we propel
@@ -35,6 +39,7 @@ const Page: React.FC = () => {
         </div>
       </div>
       <Empower />
+      <Img/>
       <Importance />
 
       <CRMFaq />
