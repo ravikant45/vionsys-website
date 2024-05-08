@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
-import SoftwareTestingImage from "/public/assets/services/Testing/software-testing-banner.jpg";
+import SoftwareTestingImage from "/public/assets/services/Testing/software-testing-banner.png";
 import QualityAssuranceImage from "/public/assets/services/Testing/QAassurance.jpg";
 import { TbAutomaticGearbox } from "react-icons/tb";
 import { MdOutlineViewCompactAlt } from "react-icons/md";
@@ -20,6 +20,7 @@ import { TbSettingsAutomation } from "react-icons/tb";
 import { TbReportAnalytics } from "react-icons/tb";
 import { Metadata } from "next";
 import Link from "next/link";
+import Quality from "/public/assets/services/Testing/Quality.jpeg";
 
 export const metadata: Metadata = {
   title: "Testing Services",
@@ -119,23 +120,23 @@ const page: React.FC = () => {
   return (
     <main className="pt-16 overflow-x-hidden">
       {/* Hero Section  */}
-      <section className="w-[100vw] md:h-[100vh] h-[50vh] ">
+      <section className="w-[100vw] md:h-[100vh] h-[60vh] ">
         <div className="relative w-full h-full flex justify-start items-center">
           <Image
             src={SoftwareTestingImage}
             alt=""
-            className="w-full h-full  z-0"
+            className="w-full h-full z-0"
           />
           <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-start w-full px-4">
-            <div className="md:w-[60%] w-full flex flex-col gap-2 p-2">
+            <div className="md:w-[50%] w-full flex flex-col gap-2 p-2">
               <h4
                 data-aos="fade-left"
-                className="md:text-3xl text-xl font-extrabold text-orange "
+                className="md:text-5xl text-xl font-extrabold text-orange "
               >
                 Ensuring Software Stability Through Rigorous Testing
               </h4>
-              <p data-aos="fade-right" className="text-base py-4">
-                At Vionsys IT Solutions India Pvt Ltd, we redefine software
+              <p data-aos="fade-right" className="md:text-lg text-base py-4">
+                We redefine software
                 testing and quality assurance with a tailored approach that
                 merges innovation and expertise. With a relentless pursuit of
                 perfection, we meticulously assess, refine, and optimize your
@@ -165,13 +166,9 @@ const page: React.FC = () => {
           </h2>
           <div className="w-full grid md:grid-cols-2 grid-cols-1  gap-4 md:px-12">
             {/* left side */}
-            <div className="flex flex-col gap-2 text-base">
+            <div className="flex flex-col gap-2 text-base leading-8 justify-center">
               <p data-aos="fade-left ">
-                Vionsys emerges as your top-tier QA and testing partner,
-                guaranteeing unparalleled expertise. With our commitment to
-                excellence, bolstered by cutting-edge tools and meticulous
-                methodologies, we ensure software reliability and seamless user
-                experiences, driving unparalleled business success.
+                We emerge as your top-tier QA and testing partner, offering unparalleled expertise. With our commitment to excellence, bolstered by cutting-edge tools and meticulous methodologies, we ensure software reliability and deliver seamless user experiences that drive exceptional business success.
               </p>
               <ul data-aos="zoom-in" className="ml-4 list-disc">
                 <li>Expertise in QA and testing.</li>
@@ -221,11 +218,26 @@ const page: React.FC = () => {
         </div>
       </section>
 
-      {/* process for implementation */}
+      {/* Photo for QA & Testing */}
+      <section>
+        <div className="bg-black relative">
+          <Image src={Quality} alt='' className="md:w-[100vw] md:h-[100vh] h-[60vh] sm:[50vh] opacity-75" quality={100} />
+          <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-start w-full px-4">
+            <div className="md:w-[50%] w-full flex flex-col gap-2 p-2">
+              <h1 data-aos="fade-left" className="md:text-5xl text-2xl py-4 text-white font-bold">
+                Below are the testing implementation steps
+              </h1>
+              <p data-aos="fade-right" className="text-lg font-medium">We implement testing follows a structured process starting with requirement understanding. Test cases are executed in a prepared environment, defects are reported and resolved through retesting, and regression testing ensures stability. This culminates in comprehensive test closure and post-implementation support for seamless software deployment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* process of implementation */}
       <section className="w-[100vw] py-6">
         <div className="grid md:grid-cols-5 grid-cols-1 justify-center items-center gap-4 px-8">
           {/* left side */}
-          <div className=" col-span-2 flex flex-col justify-center items-center gap-4 ">
+          <div className=" col-span-2 flex flex-col justify-center items-center gap-4 md:order-1 order-2">
             <div
               data-aos="fade-left"
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"
@@ -293,16 +305,16 @@ const page: React.FC = () => {
             </div>
           </div>
           {/* middle */}
-          <div className="md:flex hidden justify-center items-center">
+          <div className="md:flex hidden justify-center items-center md:order-2 order-1">
             <div
               data-aos="zoom-out"
-              className="col-span-1 w-44 h-44 rounded-full bg-gray2 flex justify-center items-center border-4 border-blue1"
+              className="col-span-1 w-44 h-44 h-22 md:rounded-full bg-gray2 flex justify-center items-center border-4 border-blue1"
             >
-              <h3 className="uppercase font-bold text-black text-2xl">Steps</h3>
+              <h3 className="uppercase font-bold text-center text-black text-2xl">Steps of testing</h3>
             </div>
           </div>
           {/* Right side */}
-          <div className="col-span-2 flex flex-col justify-center items-center gap-4">
+          <div className="col-span-2 flex flex-col justify-center items-center gap-4 order-3">
             <div
               data-aos="fade-left"
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"

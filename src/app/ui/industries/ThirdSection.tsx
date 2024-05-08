@@ -171,7 +171,7 @@ const ThirdSection = () => {
       {/* Field Sector */}
       <section>
         <div className="flex flex-col md:flex bg-slate-100 md:flex-row h-auto md:justify-evenly w-full px-4 py-8">
-          <div className="bg-grey m-3 h-auto w-full md:w-1/2 px-3">
+          <div className="bg-grey m-3 h-auto w-full md:w-1/2 px-3 md:order-1 order-2">
             <h1 data-aos="fade-right" className="text-MainHeading font-extrabold underline py-4">
               Field Services
             </h1>
@@ -211,7 +211,7 @@ const ThirdSection = () => {
               </ul>
             </div>
           </div>
-          <div className=" bg-no-repeat h-auto w-full md:w-1/2 m-2 flex justify-center items-center ">
+          <div className=" bg-no-repeat h-auto w-full md:w-1/2 m-2 flex justify-center items-center md:order-2 order-1">
             <Image
               src="/Feild.jpg"
               alt=""

@@ -4,8 +4,8 @@ import Image from "next/image";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import KeyOfferingIndustriesL from "@/utils/KeyOfferingIndustriesL";
 
-import PharmaContent1 from "/public/assets/Industries/PharmaContent1.jpg";
-import PharmaContent2 from "/public/assets/Industries/PharmaContent2.jpg";
+import PharmaContent1 from "/public/assets/Industries/PharmaContent1.jpeg";
+import PharmaContent2 from "/public/assets/Industries/PharmaContent2.png";
 import Telecom from "/public/assets/Industries/Telecom.jpg";
 import Ecomm from "/public/assets/Industries/Ecomm.jpeg";
 import insurance from "/public/assets/Industries/insurance.jpg";
