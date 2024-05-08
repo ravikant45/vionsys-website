@@ -31,20 +31,20 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
       Your browser does not support the video tag.
     </video>
     <div className="absolute items-center left-1 h-full top-0 flex w-full p-2 md:p-5">
-      <div className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3">
-      <h1 className="loop_video_title text-4xl md:text-6xl text-white max-w-[50rem] font-bold">
+      <div data-aos="fade-right" className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3">
+        <h1 className="loop_video_title text-4xl md:text-6xl text-white max-w-[50rem] font-bold">
           {title}
         </h1>
         <p className="loop_video_desc max-w-[25rem] md:text-base font-medium text-white">
           {desc}
         </p>
         <div className='flex justify-start items-center'>
-            <div
-              className="bg-blue3 text-white italic px-4 py-2 font-mono rounded-tl-md rounded-br-md"
-            >
-              You Think, We Make It!
-            </div>
+          <div
+            className="bg-blue3 text-white italic px-4 py-2 font-mono rounded-tl-md rounded-br-md"
+          >
+            You Think, We Make It!
           </div>
+        </div>
         <Link href={link}>
           <Button>Discover with us</Button>
         </Link>

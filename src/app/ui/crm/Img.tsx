@@ -7,7 +7,7 @@ const Img = () => {
         <div className="pt-16 overflow-x-hidden relative">
             <div className="bg-black relative">
                 <Image src={CRMMiddle} alt='' className="md:w-[100vw] md:h-[100vh] h-[60vh] opacity-55" />
-                <div className='absolute md:top-56 top-0 md:px-3 px-2 flex justify-center items-center flex-col transform text-white'>
+                <div className='absolute bottom-4 md:px-3 px-2 flex justify-center items-center flex-col gap-4 transform text-white'>
                     <h1 data-aos="fade-right" className="md:text-4xl text-2xl py-4 text-white text-center font-bold pt-4 md:w-1/2 w-full">
                         Why Choose Us?
                     </h1>
