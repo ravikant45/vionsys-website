@@ -17,7 +17,7 @@ const AboutOurCompany = dynamic(() => import("./ui/home/AboutOurCompany"), {
 const ChooseUs = dynamic(() => import("./ui/home/ChooseUs"), {
   loading: () => <p>Loading...</p>,
 });
-const Hero = dynamic(() => import("./ui/home/Hero"), {
+const Hero = dynamic(() => import("./ui/home/Home"), {
   loading: () => <p>Loading...</p>,
 });
 const OurClients = dynamic(() => import("./ui/home/OurClients"), {

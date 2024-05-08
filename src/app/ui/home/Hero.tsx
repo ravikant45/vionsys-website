@@ -47,16 +47,11 @@ function Hero() {
             Your one-stop destination for top-notch web design & development services.
           </p>
           <div className='flex justify-start items-center'>
-            <motion.div
-              className="bg-blue1 text-white italic px-4 py-2 font-mono rounded-tl-md rounded-br-md"
-              variants={squareVariants}
-              initial="initial"
-              animate="animate"
+            <div
+              className="bg-blue3 text-white italic px-4 py-2 font-mono rounded-tl-md rounded-br-md"
             >
-              <span>
-                You Think, <span className="rounded-l-xl">We Make It!</span>
-              </span>
-            </motion.div>
+              You Think, We Make It!
+            </div>
           </div>
           <div className='flex justify-start items-center'>
             <Link href='/contact'>

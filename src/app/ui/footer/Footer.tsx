@@ -120,9 +120,9 @@ const Footer = () => {
 
                 <Link href="/services/salesforce">Salesforce</Link>
                 <Link href="/services/devOps">DevOps</Link>
-                <Link href="services/cloudComputing">Cloud Computing</Link>
+                <Link href="/services/cloudComputing">Cloud Computing</Link>
                 <Link href="/services/crm">CRM</Link>
-                <Link href="services/digitalMarketing">Digital Marketing</Link>
+                <Link href="/services/digitalMarketing">Digital Marketing</Link>
               </motion.div>
             </div>
 
