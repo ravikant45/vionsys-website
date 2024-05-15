@@ -95,7 +95,7 @@ const ThirdSection = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <h1 className="pb-4 tracking-wide md:text-2xl text-md text-center font-medium underline underline-offset-4 decoration-blue-800">
+                  <h1 className="pb-4 tracking-wide md:text-2xl text-md text-center font-medium">
                     {" "}
                     Send A Message{" "}
                   </h1>

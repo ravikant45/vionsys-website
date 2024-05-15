@@ -57,14 +57,14 @@ const MLAIServicesData: MLAIServicesData = {
       icon: FaRobot,
       title: "AI Robotics",
       description:
-        "Transform your operations with proactive insights and performance management capabilities enabled.",
+        "Transform operations with proactive insights and performance management capabilities enabled.",
     },
     {
       id: 6,
       icon: RiAiGenerate,
       title: "Generative AI",
       description:
-        "Ensure peace of mind and operational continuity with secure and configuration management powered by generative AI.",
+        "Ensure operational continuity with secure and configuration management powered by generative AI.",
     },
   ],
 };

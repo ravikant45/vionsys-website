@@ -77,7 +77,7 @@ const ProductServicesData: ProductServicesData = {
       img: endtoend,
       title: "End-to-End Solutions",
       description:
-        "From initial ideation to final product launch, we offer comprehensive, end-to-end solutions that cover every aspect of the product development lifecycle.",
+        "From initial ideation to final product launch, we offer comprehensive solutions that cover every aspect of the product development lifecycle.",
     },
     {
       id: 2,

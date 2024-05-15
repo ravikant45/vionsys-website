@@ -10,7 +10,7 @@ import Facebook from "../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../public/assets/socialicons/Twitter4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import LogoImage from "/public/assets/logo.png";
+// import LogoImage from "/public/assets/logo.png";
 
 const Footer = () => {
   const columnStyle: React.CSSProperties = {
@@ -24,13 +24,13 @@ const Footer = () => {
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {/* Logo */}
-            <div className="text-center md:text-left flex justify-center items-center ">
+            {/* <div className="text-center md:text-left flex justify-center items-center ">
               <Image
                 src={LogoImage}
                 alt=""
                 className="bg-white rounded-md p-2"
               />
-            </div>
+            </div> */}
 
             {/* About Us */}
             <div className="text-center md:text-left col-span-2 flex flex-col gap-2">
@@ -38,7 +38,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className=" text-start text-2xl text-white font-bold mb-2 underline   "
+                className=" text-start text-2xl text-white font-bold mb-2"
               >
                 {" "}
                 <Link href="/about">About Us</Link>
@@ -49,7 +49,7 @@ const Footer = () => {
                 transition={{ duration: 2 }}
                 className="text-lg md:text-start text-justify"
               >
-                Vionsys IT solutions INDIA Pvt. Ltd. is a comprehensive IT
+                Vionsys IT Solutions India Pvt. Ltd. is a comprehensive IT
                 company offering end-to-end technology solutions. Specializing in software development, network infrastructure, cybersecurity, cloud services, and IT consulting, we enable businesses to excel in the digital age.{" "}
               </motion.p>
               <motion.div
@@ -98,12 +98,12 @@ const Footer = () => {
             </div>
 
             {/* Our Services */}
-            <div className=" md:text-left flex flex-col  gap-2">
+            <div className=" md:text-left flex flex-col col-span-2 gap-2">
               <motion.h3
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-2xl text-start text-white font-bold mb-2 underline"
+                className="text-2xl text-start text-white font-bold mb-2"
               >
                 Our Services
               </motion.h3>
@@ -111,7 +111,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 2 }}
-                className="flex flex-col gap-2 text-lg"
+                className="grid md:grid-cols-2 grid-cols-1 gap-2 text-lg"
               >
                 <Link href="/services/softwareDevelopment">
                   Software Development
@@ -119,10 +119,15 @@ const Footer = () => {
                 <Link href="/services/webDevelopment">Web Development</Link>
 
                 <Link href="/services/salesforce">Salesforce</Link>
-                <Link href="/services/devOps">DevOps</Link>
+                <Link href="/services/devOps">DevOps Solutions</Link>
                 <Link href="/services/cloudComputing">Cloud Computing</Link>
                 <Link href="/services/crm">CRM</Link>
                 <Link href="/services/digitalMarketing">Digital Marketing</Link>
+                <Link href="/services/biAnalytics">BI and ANalytics</Link>
+                <Link href="/services/testing">Testing and QA</Link>
+                <Link href="/services/machineLearningAI">Machine Learning and AI</Link>
+                <Link href="/services/productDevelopment">Product Development</Link>
+                <Link href="/services/bigDataAnalytics">Big Data Analytics</Link>
               </motion.div>
             </div>
 
@@ -132,7 +137,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className=" text-start text-2xl text-white font-bold mb-2 underline"
+                className=" text-start text-2xl text-white font-bold mb-2"
               >
                 <Link href="/contact">Contact Info</Link>
               </motion.h3>

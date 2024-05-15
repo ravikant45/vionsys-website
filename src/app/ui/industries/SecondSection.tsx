@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import KeyOfferingIndustriesL from "@/utils/KeyOfferingIndustriesL";
 
 import PharmaContent1 from "/public/assets/Industries/PharmaContent1.jpeg";
 import PharmaContent2 from "/public/assets/Industries/PharmaContent2.png";
@@ -11,7 +10,7 @@ import Ecomm from "/public/assets/Industries/Ecomm.jpeg";
 import insurance from "/public/assets/Industries/insurance.jpg";
 
 
-{/* Pharma array*/}
+{/* Pharma array*/ }
 const content3 = [
   {
     title: "Pharmaceutical Industry",
@@ -65,37 +64,6 @@ export interface Key {
   id: number;
   title: string;
 }
-{/* Telecom Sector */}
-const List: Key[] = [
-  {
-    id: 1,
-    title: "Network Infrastructure",
-  },
-  {
-    id: 2,
-    title: "Software Solutions",
-  },
-  {
-    id: 3,
-    title: "Data Management and Analytics",
-  },
-  {
-    id: 4,
-    title: "Cybersecurity",
-  },
-  {
-    id: 5,
-    title: "Internet of Things (IoT)",
-  },
-  {
-    id: 6,
-    title: "Next-Generation Technologies",
-  },
-  {
-    id: 7,
-    title: "Cloud Services",
-  },
-];
 
 const SecondSection = () => {
   return (
@@ -123,90 +91,111 @@ const SecondSection = () => {
       </section>
       {/* Telecom Sector */}
       <section>
-        <div className="grid overflow-x-hidden md:grid-cols-2 px-6 grid-cols-1 bg-slate-100 justify-items-center items-center py-6">
-          <div data-aos="fade-right" className="md:order-2 order-1">
-            <Image src={Telecom} quality={100} alt="" className="md:p-5" />
+        <div className="flex flex-col gap-2 md:flex-row justify-center w-full px-2 py-2">
+          <div data-aos="fade-right" className=" md:order-2 order-1 md:w-1/2 w-full">
+            <Image src={Telecom} alt="" className="md:p-5" />
           </div>
-          <div className="md:order-1 order-2">
+          <div className="md:order-1 order-2 m-2 h-[auto] w-full md:w-1/2">
             <p
               data-aos="fade-up"
-              className="underline font-extrabold text-MainHeading"
+              className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
             >
               Telecommunication Sector
             </p>
-            <p data-aos="fade-left" className="mt-5 text-SubHeading font-bold">
+            <p data-aos="fade-left" className="md:text-SubHeading text-xl text-[#e57e2c] font-bold md:w-[50vw] pt-2">
               Ensure the protection of your brand with our Cybersecurity & IT
               Solutions
             </p>
-            <p data-aos="fade-right" className="text-paragraph mt-5 mb-5">
+            <p data-aos="fade-right" className="text-paragraph pt-3">
               Choose us for your IT requirements as we provide innovative
               solutions, have a team of highly skilled experts, provide reliable
               support and prioritize customer satisfaction to propel your
               business towards success.
             </p>
-            <p
-              data-aos="fade-left"
-              className="text-ThirdHeading font-bold md:px-6 px-4 py-3"
-            >
-              Key offerings:
-            </p>
-            {<KeyOfferingIndustriesL List={List} />}
+            <div className="md:w-1/3 lg:w-4/5">
+              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+                Key Offerings:
+              </h3>
+              <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc text-wrap lg:text-nowrap">
+                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
+                  Network Infrastructure
+                </li>
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Software Solutions
+                </li>
+                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Data Management and Analytics
+                </li>
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Cybersecurity
+                </li>
+                <li data-aos='fade-left' className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
+                  Internet of Things (IoT)
+                </li>
+                <li data-aos='fade-left' className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
+                  Next-Generation Technologies
+                </li>
+                <li data-aos='fade-left' className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
+                  Cloud Services
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
       {/* Insurance */}
       <section>
-      <div className="flex flex-col gap-2 md:flex-row justify-center w-full px-2 py-2">
-        <div className="md:w-1/2 w-full">
-          <Image src={insurance} alt="" className="" />
-        </div>
-        <div className="bg-grey m-2 h-[auto] w-full md:w-1/2">
-          <h1
-            className="text-3xl font-extrabold text-MainHeading underline"
-            data-aos="fade-left"
-            data-aos-duration="700"
-          >
-            Insurance
-          </h1>
-          <h2
-            className="text-SubHeading font-bold md:w-[50vw] pt-2"
-            data-aos="fade-right"
-            data-aos-duration="700"
-          >
-            Empowering insurers to adapt, innovate, and thrive.
-          </h2>
-          <p data-aos="fade-left" className="text-paragraph pt-3">
-            Catalyzing insurance evolution through tailored IT solutions, we're
-            here to streamline operations, fortify security, and drive
-            unparalleled growth. With our expertise, your insurance business
-            will navigate the digital landscape seamlessly, delivering enhanced
-            customer experiences and sustainable success.
-          </p>
+        <div className="flex flex-col gap-2 md:flex-row justify-center w-full px-2 py-2">
+          <div className="md:w-1/2 w-full">
+            <Image src={insurance} alt="" className="" />
+          </div>
+          <div className="bg-grey m-2 h-[auto] w-full md:w-1/2">
+            <h1
+              className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
+              data-aos="fade-left"
+              data-aos-duration="700"
+            >
+              Insurance
+            </h1>
+            <h2
+              className="md:text-SubHeading text-xl text-[#e57e2c] font-bold md:w-[50vw] pt-2"
+              data-aos="fade-right"
+              data-aos-duration="700"
+            >
+              Empowering insurers to adapt, innovate, and thrive.
+            </h2>
+            <p data-aos="fade-left" className="text-paragraph pt-3">
+              Catalyzing insurance evolution through tailored IT solutions, we're
+              here to streamline operations, fortify security, and drive
+              unparalleled growth. With our expertise, your insurance business
+              will navigate the digital landscape seamlessly, delivering enhanced
+              customer experiences and sustainable success.
+            </p>
 
-          <div className="md:w-1/2 h-[auto]">
-            <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-4 w-1/2">
-              Key Offerings:
-            </h3>
-            <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc md:h-auto">
-              <li data-aos="fade-left" className="px-6 py-2 border-b w-full rounded-t-lg hover:bg-blue-300 list-disc">
-                Risk Management
-              </li>
-              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Fraud Detection
-              </li>
-              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Data Management and Analytics
-              </li>
-              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Customer Insights
-              </li>
-              <li data-aos="fade-left" className="px-6 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
-                Cloud Services
-              </li>
-            </ul>
+            <div className="md:w-1/3 lg:w-4/5 h-[auto]">
+              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+                Key Offerings:
+              </h3>
+              <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc md:h-auto">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
+                  Risk Management
+                </li>
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Fraud Detection
+                </li>
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Data Management and Analytics
+                </li>
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Customer Insights
+                </li>
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
+                  Cloud Services
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
       </section>
       {/* E-Commerce Sector */}
       <section>
@@ -214,41 +203,38 @@ const SecondSection = () => {
           <div className="md:order-2 order-1">
             <Image src={Ecomm} alt="" className="md:px-4 px-2 py-2" quality={100} />
           </div>
-          <div className="md:order-1 order-2 px-4">
+          <div className="md:order-1 order-2 md:px-4 px-1">
             <h1
               data-aos="fade-left"
-              className="text-MainHeading underline font-extrabold"
+              className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
             >
               E-commerce Sector
             </h1>
-            <p className="font-bold text-SubHeading">Elevate Your E-commerce with Cutting-Edge IT Solutions</p>
+            <p className="font-bold md:text-SubHeading text-xl text-[#e57e2c]">Elevate Your E-commerce with Cutting-Edge IT Solutions</p>
             <p data-aos="fade-right" className="my-3">
               We are here to revolutionize e-commerce with essential services. From seamless websites and apps to big data insights, we've got you covered. Personalized recommendations, optimized supply chain, and top-notch security solutions. Boost mobile commerce and enhance customer relationships with us!
             </p>
-            <div className="">
-              <p
-                data-aos="fade-left"
-                className="font-bold text-ThirdHeading md:px-6 px-4 py-3"
-              >
-                Key offerings:
-              </p>
-              <ul className="list-disc list-inside font-medium text-paragraph">
-                <li data-aos="fade-right" className="hover:bg-[#7ca4d6] py-2">
+            <div className="md:w-1/3 lg:w-4/5 h-[auto]">
+              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+                Key Offerings:
+              </h3>
+              <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc md:h-auto">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
                   E-commerce Website Development
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   Mobile App Development
                 </li>
-                <li data-aos="fade-right" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   E-commerce Platform Integration
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   Cloud Services
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
                   Analytics and Business Intelligence
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
                   Security and Fraud Prevention
                 </li>
               </ul>

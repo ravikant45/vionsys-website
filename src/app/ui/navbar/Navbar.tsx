@@ -89,11 +89,12 @@ const Navbar = () => {
       >
         {/* Logo of the organization */}
         <div className="px-4">
-          <Image
+          <Link href="/"><Image
             src={LogoImage}
             alt=""
             className="w-[152px]"
           />
+          </Link>
         </div>
 
         {/* Nav menus */}

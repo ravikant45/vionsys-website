@@ -42,7 +42,7 @@ function Future() {
           >
             {/*first */}
             <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-[200px] flex-col justify-between rounded-md p-6">
+              <div className="flex h-180 flex-col justify-between rounded-md p-6">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">AI Integration</h3>
                   <p className="text-md text-black">
@@ -56,7 +56,7 @@ function Future() {
             </div>
             {/*Second */}
             <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+              <div className="flex h-180 flex-col justify-between rounded-md p-6">
                 <div className="space-y-2">
                   <h3 className="font-bold ">Customer Experience</h3>
                   <p className="text-md text-black">
@@ -70,7 +70,7 @@ function Future() {
             </div>
             {/*third */}
             <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+              <div className="flex h-180 flex-col justify-between rounded-md p-6">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">
                     Data Privacy and Security
@@ -86,22 +86,23 @@ function Future() {
             </div>
             {/*fourth */}
             <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-                <div className="space-y-2">
-                  <h3 className="font-bold text-black">
-                    Integration with Emerging Technologies
-                  </h3>
-                  <p className="text-md text-black">
-                    Integrating with emerging technologies like blockchain, IoT,
-                    and AR can unlock new opportunities for innovation and
-                    differentiation.
-                  </p>
-                </div>
-              </div>
-            </div>
+  <div className="flex h-180 flex-col justify-between rounded-md p-6">
+    <div className="space-y-2">
+      <h3 className="font-bold text-black">
+        Integration with Emerging Technologies
+      </h3>
+      <p className="text-md text-black">
+        Integrating with emerging technologies like blockchain, IoT,
+        and AR can unlock new opportunities for innovation and
+        differentiation.
+      </p>
+    </div>
+  </div>
+</div>
+
             {/*fifth */}
             <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+              <div className="flex h-180 flex-col justify-between rounded-md p-6">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">
                     Customization and Flexibility
@@ -116,7 +117,7 @@ function Future() {
             </div>
             {/*sixth */}
             <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+              <div className="flex h-180 flex-col justify-between rounded-md p-6">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">Continued Growth</h3>
                   <p className="text-md text-black">

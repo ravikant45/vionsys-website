@@ -55,13 +55,13 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: "white", // Changing background color to white
       }}
-      className="h-[35rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10 text-black" // Changing text color to black
+      className="h-[35rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md md:p-10 p-5 text-black" // Changing text color to black
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
+      <div className="div relative flex items-start md:px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-5">
+            <div key={item.title + index} className="md:my-5">
               <motion.h2
                 initial={{
                   opacity: 0,

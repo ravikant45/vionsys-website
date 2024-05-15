@@ -43,21 +43,21 @@ const DevOpesServicesData: DevOpesServicesData = {
       icon: MdPeople,
       title: "Collaboration",
       description:
-        "Foster efficient governance and streamlined operations through robust collaboration and communication tools.",
+        "Enhance governance and operations with collaboration and communication tools.",
     },
     {
       id: 4,
       icon: SiTestcafe,
       title: "Automated Testing",
       description:
-        "Maximize ROI with strategic resource allocation through comprehensive automated testing.",
+        "Maximize ROI with strategic resource allocation through comprehensive testing.",
     },
     {
       id: 5,
       icon: FaDev,
       title: "Orchestration Software",
       description:
-        "Gain proactive insights for performance management through advanced orchestration capabilities.",
+        "Gain proactive insights for performance management through advanced orchestration.",
     },
     {
       id: 6,

@@ -75,8 +75,8 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
                   <feat.icon size={30} />
                   <div className="space-y-2">
-                    <h3 className="font-bold text-2xl">{feat?.title}</h3>
-                    <p className="text-md text-muted-foreground">
+                    <h3 className="font-bold text-lg">{feat?.title}</h3>
+                    <p className="text-sm text-muted-foreground">
                       {feat?.description}
                     </p>
                   </div>
@@ -97,11 +97,11 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
 
         {/* the static section for the why choose us  */}
 
-        <section className='z-0 bg-transparent'>
+        <section className='z-0 bg-transparent md:px-10 px-1'>
           {/* First section */}
-          <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
+          <div className='w-full px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
             {/* left side */}
-            <div data-aos="fade-left" className='flex flex-col justify-center  gap-2'>
+            <div data-aos="fade-left" className='flex flex-col justify-center gap-2 md:p-10 p-2'>
               <h1 className='text-2xl text-black font-bold'>Expertise</h1>
               <p className='text-paragraph'>Our team brings years of collective experience in software
                 development across various industries. From startups to
@@ -121,9 +121,10 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
           </div>
 
           {/* Second section */}
-          <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
+          <div className='w-full px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
 
             {/* left side */}
+            <div className='flex justify-center items-center md:order-1 order-2'>
             <Image
               src={inno}
               className="rounded-2xl"
@@ -131,9 +132,10 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               width={400}
               height={400}
             />
-            <div data-aos="fade-right" className='flex justify-center items-center'>
+            </div>
+            <div data-aos="fade-right" className='flex justify-center items-center md:order-2 order-1'>
               {/* right side */}
-              <div className='flex flex-col justify-center  gap-2'>
+              <div className='flex flex-col justify-center gap-2 md:p-10 p-2'>
                 <h1 className='text-2xl text-black font-bold'>Innovation</h1>
                 <p className='text-paragraph'>we constantly update our skills and stay abreast of the latest
                   trends and technologies in software development.</p>
@@ -142,9 +144,9 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
           </div>
 
           {/* third section */}
-          <div className='w-[100vw] px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
+          <div className='w-full px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
             {/* left side */}
-            <div data-aos="fade-left" className='flex flex-col justify-center  gap-2'>
+            <div data-aos="fade-left" className='flex flex-col justify-center md:p-10 p-2 gap-2'>
               <h1 className='text-2xl text-black font-bold'>On-Time Support</h1>
               <p className='text-paragraph'>Our agile development methodology allows us to adapt to changing
                 requirements and deliver incremental updates regularly.</p>
