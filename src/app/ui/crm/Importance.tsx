@@ -17,13 +17,13 @@ function Importance() {
       <ul className="grid md:grid-cols-2 grid-cols-1 justify-center md:gap-y-10 md:gap-x-10 items-center md:p-4">
         <li
           data-aos="fade-left"
-          className="relative flex md:flex-row flex-col items-start p-2"
+          className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
-          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1">
-            <h3 className="mb-1 text-xl font-semibold">
+          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
+            <h3 className="mb-1 md:text-xl text-lg font-semibold">
               Enhanced Customer Relationship
             </h3>
-            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph">
+            <div className="prose prose-slate prose-sm text-sm text-wrap py-2 text-paragraph h-auto">
               <p>CRM enables businesses to maintain comprehensive records of interactions with customers, leading to better understanding and personalized engagement, ultimately fostering stronger relationships.
               </p>
             </div>
@@ -39,13 +39,13 @@ function Importance() {
 
         <li
           data-aos="fade-left"
-          className="relative flex md:flex-row flex-col items-start p-2"
+          className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
-          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1">
+          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
             <h3 className="mb-1 text-xl font-semibold">
               Enhanced Customer Service
             </h3>
-            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph">
+            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
               CRM centralizes customer data, enabling businesses to provide personalized support. This quick access empowers service teams to resolve issues promptly, boosting satisfaction and loyalty.
               </p>
@@ -62,13 +62,13 @@ function Importance() {
 
         <li
           data-aos="fade-right"
-          className="relative flex md:flex-row flex-col items-start p-2"
+          className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
-          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1">
+          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
             <h3 className="mb-1 text-xl font-semibold">
               Improved Sales Performance
             </h3>
-            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph">
+            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
                 With CRM, sales teams can efficiently manage leads, track
                 opportunities and streamline sales processes, resulting in
@@ -88,13 +88,13 @@ function Importance() {
 
         <li
           data-aos="fade-right"
-          className="relative flex md:flex-row flex-col items-start p-2"
+          className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
-          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1">
+          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto ">
             <h3 className="mb-1 text-xl font-semibold">
               Data-Driven Decision Making
             </h3>
-            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph">
+            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
               CRM provides insights into customer behavior, trends, and preferences through analytics tools. Businesses leverage this data to make informed decisions and drive growth effectively.
               </p>
@@ -111,13 +111,13 @@ function Importance() {
 
         <li
           data-aos="fade-left"
-          className="relative flex md:flex-row flex-col items-start p-2"
+          className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
-          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1">
+          <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
             <h3 className="mb-1 text-xl font-semibold">
               Scalability and Growth
             </h3>
-            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph">
+            <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
               As businesses expand, CRM systems can scale accordingly, accommodating growing customer bases. This scalable foundation supports sustainable growth and enables businesses to thrive in competitive markets.
               </p>
