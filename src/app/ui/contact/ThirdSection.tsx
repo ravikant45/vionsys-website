@@ -194,7 +194,7 @@ const ThirdSection = () => {
       </div>
       <div className="flex justify-center w-full md:h-[50vh] relative h-auto">
         {/*fourth image here */}
-        <Image src={third} alt="" className="object-cover w-full md:h-[50vh] h-[20vh]" />
+        <Image src={third} alt="" className="object-cover w-full md:h-[50vh] h-[30vh]" />
         <div
           className=" absolute md:py-20 py-10 text-lg lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
         bg-clip-text text-transparent bg-gradient-to-r animate-pulse from-red-500 to-blue-700"

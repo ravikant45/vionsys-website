@@ -206,7 +206,7 @@ const page: React.FC = () => {
                 className="flex flex-col py-4 items-center gap-2"
               >
                 {service.icon}
-                <h4 className="text-blue3 font-bold relative z-20 bg-clip-text">
+                <h4 className="text-blue3 font-bold items-center relative z-20 bg-clip-text">
                   {service.title}
                 </h4>
                 <p className="text-center text-base relative z-20 bg-clip-text">

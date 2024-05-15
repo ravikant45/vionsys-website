@@ -5,10 +5,10 @@ const About2 = () => {
   return (
     <div className="flex flex-col flex-wrap overflow-x-hidden">
       <div className="w-screen flex justify-center items-center px-2 py-4 " >
-        <div className="h-auto py-2 flex flex-col  gap-4 justify-center items-center bg-cover bg-dot-zinc-400">
+        <div className="h-auto py-2 flex flex-col  gap-4 justify-center items-center bg-cover">
           <h1 data-aos="fade-right"
             className="text-MainHeading font-extrabold text-center">
-            Crafting Solutions For{" "}
+            Crafting Solutions For
             <span className="text-orange">Global Innovators.</span>
           </h1>
           <p
