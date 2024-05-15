@@ -11,13 +11,13 @@ const ServicesTemplateFour: React.FC = () => {
     return (
         <main>
             {/* First section */}
-            <section className='w-[100vw] md:h-screen mmd:h-[60vh] ssm:[50vh] h-[40vh]'>
+            <section className='w-[100vw] md:h-screen mmd:h-[70vh] ssm:[60vh] h-[50vh]'>
                 <div className='w-full h-full relative bg-black'>
                     <Image src={AnnounceMentImage} alt="" className='w-full h-full md:opacity-60 opacity-30 z-0' />
                     <div className='bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-end w-full px-4'>
                         <div className='md:w-[43%] w-full flex flex-col gap-2'>
                             <h3 data-aos="fade-left" className='font-bold md:text-3xl text-lg'>Integrated Digital Marketing Services</h3>
-                            <p data-aos="fade-right" className='text-base'>Whether you're a small business or a large corporation, we're equipped to boost your digital marketing success. What sets us apart in India's digital marketing landscape is our commitment to staying ahead of trends. Alongside traditional services like SEO and PPC, we excel in social media, email, and content marketing. With our innovative strategies, we're ready to enhance your online presence and drive results.</p>
+                            <p data-aos="fade-right" className='text-sm'>Whether you're a small business or a large corporation, we're equipped to boost your digital marketing success. What sets us apart in India's digital marketing landscape is our commitment to staying ahead of trends. Alongside traditional services like SEO and PPC, we excel in social media, email, and content marketing. With our innovative strategies, we're ready to enhance your online presence and drive results.</p>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ const ServicesTemplateFour: React.FC = () => {
             {/* FAQ section for digital marketing */}
             <section id="faq" className="relative mx-auto py-12 md:px-20 px-4 w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] flex flex-col items-center justify-center">
                 <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-                <h3 data-aos="zoom-out" className="text-orange text-center text-3xl font-extrabold underline decoration-orange lg:text-left xl:text-4xl z-10">
+                <h3 data-aos="zoom-out" className="text-orange text-center text-3xl font-extrabold decoration-orange lg:text-left xl:text-4xl z-10">
                     Frequently Asked Questions
                 </h3>
 
