@@ -103,8 +103,8 @@ function TrustUs() {
       <div className="h-screen w-full col-span-2 md:order-1 order-2">
         <LayoutGrid cards={cards} />
       </div>
-      <div className='order-1 md:order-2'>
-        <p data-aos="fade-left" className='underline font-extrabold text-MainHeading'>Why trust us?</p>
+      <div className='order-1 md:order-2 p-8'>
+        <p data-aos="fade-left" className='font-extrabold text-MainHeading'>Why trust us?</p>
         <p data-aos="fade-right" className='text-SubHeading mt-5 font-bold'>Achieve digital transformation for your retail business services</p>
         <p data-aos="zoom-out" className='text-paragraph mt-5 mb-5'>Trust on us for your IT requirements, backed by our track record of successful projects, commitment to data security, adherence to high service quality standards, and dedication to fostering enduring client partnerships founded on trust and reliability.</p>
       </div>

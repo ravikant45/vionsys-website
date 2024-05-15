@@ -77,7 +77,7 @@ const AboutOurCompany = () => {
                 <LayoutGrid cards={cards} />
              </div>
             <div className='col-span-1 px-5'>
-                <h4 data-aos="fade-right" className='underline font-extrabold text-MainHeading'>About Our Company</h4>
+                <h4 data-aos="fade-right" className='font-extrabold text-MainHeading'>About Our Company</h4>
                 <h5 data-aos="fade-left" className='text-lg mt-5 text-SubHeading font-bold'>Elevating your business through exemplary IT services is our unwavering passion and commitment.</h5>
                 <div data-aos="fade-down" className='text-paragraph mt-5 pb-4'>Vionsys IT Solutions India Pvt. Ltd. is a leading provider of comprehensive IT services, including software development, cloud solutions, cybersecurity, and IT consulting. With our experienced team, we deliver tailored solutions for businesses, ensuring efficiency, reliability, and scalability in the digital age.</div>
                 <Link href='/about'>

@@ -49,13 +49,13 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
           {data?.Services?.map((ser: any) => {
             return (
               <div
-                className="flex flex-col gap-2 justify-center items-center w-[20rem] px-2 border rounded-lg"
+                className="flex flex-col gap-2 py-5 items-center w-[20rem] px-2 border rounded-lg"
                 key={ser?.id}
               >
                 <span className=" bg-purple-700 p-5 w-16 h-16 rounded-full hover:cursor-pointer hover:scale-105 transition-all">
                   <ser.logo color="white" size={25} />
                 </span>
-                <h1 className="text-SubHeading text-center font-bold">{ser?.title}</h1>
+                <h1 className="text-ThirdHeading text-[#e57e2c] text-center font-bold">{ser?.title}</h1>
                 <p className="text-paragraph  text-center">
                   {ser?.desc}
                 </p>
@@ -70,7 +70,7 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
         <div className=" flex flex-col justify-center items-center md:py-3">
           <h1 data-aos='fade-right' className="text-MainHeading font-extrabold p-5">Why Choose Us</h1>
           <p data-aos='fade-left' className="max-w-[50rem] text-SubHeading font-bold text-center">
-            At Vionsys IT Solution Pvt. Ltd., we understand that choosing a
+            At Vionsys IT Solutions Pvt. Ltd., we understand that choosing a
             development partner is a critical decision for your business. Here's
             why we believe we are the right choice for your development needs.
           </p>

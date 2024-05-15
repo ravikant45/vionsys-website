@@ -49,7 +49,7 @@ export const BiAndAnalyticsData: BiAndAnalyticsDataType = {
         },
         {
             title: "Enhanced Performance Monitoring",
-            message: "Enhanced performance monitoring provides real-time insights into key metrics, enabling proactive adjustments and improved business outcomes.",
+            message: "Enhanced performance monitoring provides insights key metrics, enabling adjustments and improved business outcomes.",
             image: PerformanceMonitoring
         },
         {

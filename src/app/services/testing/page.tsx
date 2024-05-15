@@ -135,7 +135,7 @@ const page: React.FC = () => {
               >
                 Ensuring Software Stability Through Rigorous Testing
               </h4>
-              <p data-aos="fade-right" className="md:text-lg text-base py-4">
+              <p data-aos="fade-right" className="md:text-lg text-sm py-4">
                 We redefine software
                 testing and quality assurance with a tailored approach that
                 merges innovation and expertise. With a relentless pursuit of
@@ -145,7 +145,7 @@ const page: React.FC = () => {
                 reliability and user satisfaction, empowering your business for
                 success in today's dynamic digital landscape.
               </p>
-              <div>
+              <div className="md:block hidden">
                 <Link href="/contact">
                   <Button data-aos="fade-right">Contact us</Button>
                 </Link>
@@ -203,7 +203,7 @@ const page: React.FC = () => {
               <div
                 data-aos="flip-left"
                 key={service.id}
-                className="flex flex-col justify-center items-center gap-2"
+                className="flex flex-col py-4 items-center gap-2"
               >
                 {service.icon}
                 <h4 className="text-blue3 font-bold relative z-20 bg-clip-text">
@@ -227,7 +227,7 @@ const page: React.FC = () => {
               <h1 data-aos="fade-left" className="md:text-5xl text-2xl py-4 text-white font-bold">
                 Below are the testing implementation steps
               </h1>
-              <p data-aos="fade-right" className="text-lg font-medium">We implement testing follows a structured process starting with requirement understanding. Test cases are executed in a prepared environment, defects are reported and resolved through retesting, and regression testing ensures stability. This culminates in comprehensive test closure and post-implementation support for seamless software deployment.</p>
+              <p data-aos="fade-right" className="md:text-lg text-sm font-medium">We implement testing follows a structured process starting with requirement understanding. Test cases are executed in a prepared environment, defects are reported and resolved through retesting, and regression testing ensures stability. This culminates in comprehensive test closure and post-implementation support for seamless software deployment.</p>
             </div>
           </div>
         </div>

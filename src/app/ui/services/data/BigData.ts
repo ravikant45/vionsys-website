@@ -61,12 +61,12 @@ export const BigData: BiAndAnalyticsDataType = {
         },
         {
             title: "Effective Visualization",
-            message: "Communicate insights clearly through data visualization techniques, aiding understanding and decision-making across the organization.",
+            message: "Communicate insights through data visualization techniques, aiding understanding and decision-making across the organization.",
             image: DataVisualizationImage
         },
         {
-            title: "Continuous Integration and Development",
-            message: "Implement practices to ensure smooth data processing workflows and adaptability to changing business needs and data environments.",
+            title: "Integration and Development",
+            message: "Implement practices to ensure smooth data workflows and adaptability to changing business needs and data environments.",
             image: DataCiAndCdImage
         }
     ],

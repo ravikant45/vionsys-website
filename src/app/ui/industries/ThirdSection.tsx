@@ -66,60 +66,60 @@ const ThirdSection = () => {
       </section>
       {/* HealthCare Sector */}
       <section>
-      <div className="bg-slate-100 flex flex-col md:flex-row md:h-[auto] justify-evenly w-full px-2">
-        <div className="bg-grey m-3 h-[auto] w-full md:w-1/2 md:order-1 order-2 py-5">
-          <h1
-            className="text-MainHeading font-extrabold pt-2 underline"
-            data-aos="fade-left"
-            data-aos-duration="700"
-          >
-            Healthcare
-          </h1>
-          <h2
-            className="text-SubHeading font-bold md:w-[40vw] mt-2"
-            data-aos="fade-right"
-            data-aos-duration="700"
-          >
-            Delivering precision, enhancing care.
-          </h2>
-          <p data-aos="fade-left" className=" pt-3 text-left text-paragraph">
-            Authorising healthcare organizations with innovative IT solutions,
-            we're dedicated to revolutionizing patient care, optimizing
-            operations, and ensuring data security in an ever-evolving
-            landscape. From seamless integration to cutting-edge digital tools,
-            we're committed to enhancing efficiency and enabling better
-            outcomes.for improving lives.
-          </p>
-          <div className="md:w-1/2 h-[auto]">
-            <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-4 w-1/2">
-              Key Offerings:
-            </h3>
-            <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc">
-              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
-                Healthcare Cloud Solutions
-              </li>
-              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Electronic Health Records Systems
-              </li>
-              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Data Management and Analytics
-              </li>
-              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                Cybersecurity Solutions
-              </li>
-              <li data-aos="fade-left"
-                className="px-6 py-2 w-full border-b border-gray-400
+        <div className="bg-slate-100 flex flex-col md:flex-row md:h-[auto] justify-evenly w-full px-2">
+          <div className="bg-grey m-3 h-[auto] w-full md:w-1/2 md:order-1 order-2 py-5">
+            <h1
+              className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
+              data-aos="fade-left"
+              data-aos-duration="700"
+            >
+              Healthcare
+            </h1>
+            <h2
+              className="md:text-SubHeading text-xl text-[#e57e2c] font-bold md:w-[40vw] mt-2"
+              data-aos="fade-right"
+              data-aos-duration="700"
+            >
+              Delivering precision, enhancing care.
+            </h2>
+            <p data-aos="fade-left" className=" pt-3 text-left text-paragraph">
+              Authorising healthcare organizations with innovative IT solutions,
+              we're dedicated to revolutionizing patient care, optimizing
+              operations, and ensuring data security in an ever-evolving
+              landscape. From seamless integration to cutting-edge digital tools,
+              we're committed to enhancing efficiency and enabling better
+              outcomes.for improving lives.
+            </p>
+            <div className="md:w-1/3 lg:w-4/5 h-[auto]">
+              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+                Key Offerings:
+              </h3>
+              <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
+                  Healthcare Cloud Solutions
+                </li>
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Electronic Health Records Systems
+                </li>
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Data Management and Analytics
+                </li>
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                  Cybersecurity Solutions
+                </li>
+                <li data-aos="fade-left"
+                  className="px-6 py-2 w-full border-b border-gray-400
                  hover:bg-blue-400"
-              >
-                Telemedicine Solutions
-              </li>
-            </ul>
+                >
+                  Telemedicine Solutions
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 m-2 md:order-2 order-1 flex items-center">
+            <Image src={healthcare} alt="" className="" />
           </div>
         </div>
-        <div className="w-full md:w-1/2 m-2 md:order-2 order-1 flex items-center">
-          <Image src={healthcare} alt="" className="" />
-        </div>
-      </div>
       </section>
       {/* Eductaion Sector */}
       <div className="flex flex-col md:flex-row justify-center gap-2  h-[auto] w-full px-2">
@@ -128,14 +128,14 @@ const ThirdSection = () => {
         </div>
         <div className="bg-grey m-2 h-[auto] w-full md:w-1/2">
           <h1
-            className="text-MainHeading font-extrabold underline"
+            className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
             data-aos="fade-left"
             data-aos-duration="700"
           >
             Education
           </h1>
           <h2
-            className="text-SubHeading font-bold md:w-[50vw] pt-2"
+            className="md:text-SubHeading text-xl text-[#e57e2c] font-bold md:w-[50vw] md:pt-2"
             data-aos="fade-right"
             data-aos-duration="700"
           >
@@ -147,21 +147,21 @@ const ThirdSection = () => {
             seamless management systems to interactive platforms, our solutions
             revolutionize education delivery, ensuring efficiency,excellence.
           </p>
-          <div className="md:w-1/2">
-            <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2 w-1/2">
+          <div className="md:w-1/3 lg:w-4/5 h-[auto]">
+            <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
               Key Offerings:
             </h3>
             <ul className="bg-white rounded-lg text-gray-900 font-medium list-inside list-disc w-auto">
-              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc md:text-nowrap">
+              <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc md:text-nowrap">
                 Learning Management Systems (LMS)
               </li>
-              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 E-Learning Solutions
               </li>
-              <li data-aos="fade-left" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 Student Information Systems (SIS)
               </li>
-              <li data-aos="fade-right" className="px-6 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+              <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                 Online Assessment and Proctoring
               </li>
             </ul>
@@ -170,42 +170,39 @@ const ThirdSection = () => {
       </div>
       {/* Field Sector */}
       <section>
-        <div className="flex flex-col md:flex bg-slate-100 md:flex-row h-auto md:justify-evenly w-full px-4 py-8">
-          <div className="bg-grey m-3 h-auto w-full md:w-1/2 px-3 md:order-1 order-2">
-            <h1 data-aos="fade-right" className="text-MainHeading font-extrabold underline py-4">
+        <div className="flex flex-col md:flex bg-slate-100 md:flex-row h-auto md:justify-evenly w-full md:px-4 px-1 py-8">
+          <div className="bg-grey m-3 h-auto w-full md:w-1/2 md:px-3 px-1 md:order-1 order-2">
+            <h1 data-aos="fade-right" className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]">
               Field Services
             </h1>
-            <h2 data-aos="fade-left" className="text-SubHeading font-bold md:w-[40vw] mt-2">
+            <h2 data-aos="fade-left" className="md:text-SubHeading text-xl text-[#e57e2c] font-bold md:w-[40vw] md:mt-2">
               Driving Business Growth Through Strategic Field Service
               Optimization.
             </h2>
             <p data-aos="fade-right" className="text-paragraph pt-3 text-left">
               Field services encompass on-site support, installation, maintenance, and troubleshooting for software products, ensuring effective implementation and utilization. Technicians resolve technical issues, provide user training, and optimize software performance at customer locations. Proactive maintenance, upgrades, and emergency support minimize downtime and ensure uninterrupted operation.
             </p>
-            <div className="">
-              <p
-                data-aos="fade-left"
-                className="font-bold text-ThirdHeading md:px-6 px-4 py-3"
-              >
-                Key offerings:
-              </p>
-              <ul className="list-disc list-inside font-medium text-paragraph">
-                <li data-aos="fade-right" className="hover:bg-[#7ca4d6] py-2">
+            <div className="md:w-1/3 lg:w-4/5 h-[auto]">
+              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+                Key Offerings:
+              </h3>
+              <ul className="bg-white rounded-lg text-gray-900 font-medium list-inside list-disc w-auto">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc md:text-nowrap">
                   Software Solutions
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   Mobile Applications
                 </li>
-                <li data-aos="fade-right" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   Cloud Services
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   Internet of Things Integration
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   IT Infrastructure Support
                 </li>
-                <li data-aos="fade-left" className="hover:bg-[#7ca4d6] py-2">
+                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   Training and Support
                 </li>
               </ul>

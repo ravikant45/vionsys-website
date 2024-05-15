@@ -26,7 +26,7 @@ function WorkWithUs() {
       <AuroraBackground>
         <div className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-24 py-4">
           {/* <div className='flex flex-col justify-items-center items-center'> */}
-          <h4 data-aos="fade-left" className="underline font-extrabold text-MainHeading">
+          <h4 data-aos="fade-left" className="font-extrabold text-MainHeading">
             Want to work with us?
           </h4>
           <h5 data-aos="fade-right" className="text-SubHeading font-bold">
@@ -34,7 +34,7 @@ function WorkWithUs() {
             sustainable growth.
           </h5>
           <div data-aos="fade-left" className="text-paragraph text-gray1 pb-4 md:px-44 leading-7 text-center">
-            Explore limitless possibilities with Vionsys IT Solutions INDIA Pvt.
+            Explore limitless possibilities with Vionsys IT Solutions India Pvt.
             Ltd. Join our vibrant team where you'll engage in innovative
             projects, thrive in a collaborative atmosphere, access ongoing
             learning initiatives, and chart a path for professional advancement.
