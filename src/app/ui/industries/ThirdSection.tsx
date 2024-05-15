@@ -107,10 +107,7 @@ const ThirdSection = () => {
                 <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
                   Cybersecurity Solutions
                 </li>
-                <li data-aos="fade-left"
-                  className="px-6 py-2 w-full border-b border-gray-400
-                 hover:bg-blue-400"
-                >
+                <li data-aos="fade-left" className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
                   Telemedicine Solutions
                 </li>
               </ul>

@@ -103,9 +103,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             {/* left side */}
             <div data-aos="fade-left" className='flex flex-col justify-center gap-2 md:p-10 p-2'>
               <h1 className='text-2xl text-black font-bold'>Expertise</h1>
-              <p className='text-paragraph'>Our team brings years of collective experience in software
-                development across various industries. From startups to
-                enterprises.</p>
+              <p className='text-paragraph'>Expertise refers to specialized skills and knowledge in software development, encompassing proficiency in programming languages, frameworks, and industry-specific practices.</p>
             </div>
 
             {/* right side */}
@@ -137,8 +135,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               {/* right side */}
               <div className='flex flex-col justify-center gap-2 md:p-10 p-2'>
                 <h1 className='text-2xl text-black font-bold'>Innovation</h1>
-                <p className='text-paragraph'>we constantly update our skills and stay abreast of the latest
-                  trends and technologies in software development.</p>
+                <p className='text-paragraph'>Innovation involves introducing new ideas, technologies, and solutions to create value and drive progress in software development. It includes adopting emerging technologies and creative problem-solving.</p>
               </div>
             </div>
           </div>
@@ -148,8 +145,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             {/* left side */}
             <div data-aos="fade-left" className='flex flex-col justify-center md:p-10 p-2 gap-2'>
               <h1 className='text-2xl text-black font-bold'>On-Time Support</h1>
-              <p className='text-paragraph'>Our agile development methodology allows us to adapt to changing
-                requirements and deliver incremental updates regularly.</p>
+              <p className='text-paragraph'>Commitment to delivering timely and responsive assistance throughout the software development process. This involves adapting to changing requirements, delivering updates regularly, and maintaining transparent communication with clients.</p>
             </div>
 
             {/* right side */}
