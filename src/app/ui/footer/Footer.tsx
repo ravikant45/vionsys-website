@@ -18,11 +18,11 @@ const Footer = () => {
     marginBottom: "1rem",
   };
   return (
-    <footer className="px-2 pt-6 w-[100vw] overflow-hidden bg-blue5 text-white z-10">
+    <footer className="px-4 pt-6 w-[100vw] overflow-hidden bg-blue5 text-white z-10">
       {/* Footer Content */}
       <div className="bg-transparent py-5 overflow-hidden">
-        <div className="container mx-auto px-5">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
             {/* Logo */}
             {/* <div className="text-center md:text-left flex justify-center items-center ">
               <Image
