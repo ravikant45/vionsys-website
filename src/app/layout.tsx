@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     images: "/src/app/opengraph-image.png",
   },
 
+  icons: {
+    icon: [  
+    '/favicon.ico?v=4',
+  ]},
+
   description:
     "  Welcome­ to VionSys IT Solutions. We give you computer things to he­lp your business. From making software to kee­ping computers safe and cloud service­s, we help businesse­s do well with software solution. Our software pe­ople make programs for your nee­ds.",
 };
