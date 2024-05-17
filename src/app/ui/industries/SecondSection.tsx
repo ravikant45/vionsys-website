@@ -47,7 +47,7 @@ const content3 = [
   {
     title: "Why Choose Us?",
     description:
-      "We prioritize quality and reliability in our software solutions, ensuring that they meet the highest standards of performance, security, and scalability. Our solutions undergo rigorous testing and validation processes to ensure they deliver consistent results and meet customer expectations.",
+      "We prioritize quality and reliability in our software solutions, ensuring that they meet the highest standards of performance, security, and scalability. Our solutions undergo rigorous testing and validation processes to ensure they deliver consistent results and meet customer expectations. By leveraging the latest technologies and industry best practices, we ensure that our software remains ahead of the curve. Additionally, our dedicated support team is always ready to assist, ensuring a seamless experience for our clients.",
     content: (
       <Image
         src="/PharmaContent3.jpg"
