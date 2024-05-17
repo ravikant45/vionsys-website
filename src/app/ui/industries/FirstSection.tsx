@@ -47,7 +47,7 @@ const content2 = [
   {
     title: "Why Choose Us?",
     description:
-      "We boasts a team of experienced professionals with expertise in digital transformation strategies, technologies, and implementation. They have a proven track record of successfully guiding businesses through the digital transformation journey.",
+      "Our team consists of highly experienced professionals with deep expertise in digital transformation strategies, technologies, and implementation. They have a proven track record of successfully guiding businesses through their digital transformation journeys. With comprehensive knowledge of the challenges and opportunities in this field, we deliver tailored solutions that drive innovation, efficiency, and growth. Whether adopting new technologies or optimizing processes, our experts are dedicated to helping businesses thrive in the digital age.",
     content: (
       <Image
         src="/ITContent3.jpg"
