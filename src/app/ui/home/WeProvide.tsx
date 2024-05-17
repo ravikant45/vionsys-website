@@ -45,7 +45,7 @@ function WeProvide() {
   ];
   return (
     <div className="z-0 px-6 py-4 overflow-x-hidden">
-      <div className="">
+      <div className="text-center">
         <p className="font-bold text-SubHeading mt-4">
           What we provide
         </p>

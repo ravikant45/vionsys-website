@@ -97,7 +97,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
 
         {/* the static section for the why choose us  */}
 
-        <section className='z-0 bg-transparent md:px-10 px-1'>
+        <section className='z-0 bg-transparent md:p-10 px-1'>
           {/* First section */}
           <div className='w-full px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
             {/* left side */}

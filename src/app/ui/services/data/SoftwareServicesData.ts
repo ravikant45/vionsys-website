@@ -38,7 +38,7 @@ interface SoftwareServicesData {
 const SoftwareServicesData: SoftwareServicesData = {
   headline: " SOFTWARE DEVELOPMENT",
   paragraph:
-    "Choosing us for your software development needs means choosing a partner dedicated to your success. We don't just write code; we craft digital experiences that resonate with your audience and drive results. Our secret sauce? A perfect blend of expertise, innovation, and customer-centricity.",
+    "Choosing us for your software development needs means choosing a partner dedicated to your success. We don't just write code, we craft digital experiences that resonate with your audience and drive results. Our secret sauce? A perfect blend of expertise, innovation, and customer-centricity.",
   Services: [
     {
       id: 1,

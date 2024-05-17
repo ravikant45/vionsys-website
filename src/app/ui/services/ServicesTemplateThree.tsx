@@ -42,7 +42,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
             <section className="w-[100vw] overflow-x-hidden">
                 <div className="w-full">
                     <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6">
-                        <div className="w-full lg:w-1/2 mb-8 lg:mb-0 md:px-6">
+                        <div className="w-full lg:w-1/2 mb-8 lg:mb-0 md:p-6">
                             <Image data-aos="zoom-in" src={data.secondSectionImage} alt="" className="w-full" />
                         </div>
                         <div className="w-full lg:w-1/2 p-2">
