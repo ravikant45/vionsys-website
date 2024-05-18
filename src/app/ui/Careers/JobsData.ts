@@ -21,7 +21,7 @@ export const Jobs: {
   {
     position: "Web Developer",
     jobDescription:
-      "As a Web Developer, you will be responsible for designing, coding, and maintaining websites and web applications. You will work closely with clients, designers, and other team members to create user-friendly and visually appealing online experiences.",
+      "As a Web Developer, your duties will involve designing, coding, and maintaining websites and web applications. You will work closely with clients, designers, and other team members to create user-friendly and visually appealing online experiences.",
     Requirement: [
       "Role Category: Software Development",
       "Employment Type: Full Time, Permanent",
@@ -75,7 +75,7 @@ export const Jobs: {
   {
     position: "Full Stack Developer",
     jobDescription:
-      "As a Full Stack Developer, you will be responsible for designing, developing, and maintaining web applications. You will work on both the front-end and back-end components, collaborating with cross-functional teams to deliver high-quality software solutions.",
+      "As a Full Stack Developer, your role will encompass designing, developing, and maintaining web applications. You will handle both front-end and back-end components, working alongside cross-functional teams to deliver top-notch software solutions.",
     Requirement: [
       "Role Category: Software Development",
       "Employment Type: Full Time,Permanent",

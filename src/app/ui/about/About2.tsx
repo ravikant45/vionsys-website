@@ -9,7 +9,7 @@ const About2 = () => {
           <h1 data-aos="fade-right"
             className="text-MainHeading font-extrabold text-center">
             Crafting Solutions For
-            <span className="text-orange">Global Innovators.</span>
+            <span className="text-orange"> Global Innovators.</span>
           </h1>
           <p
             data-aos="fade-left"

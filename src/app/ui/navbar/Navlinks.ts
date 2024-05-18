@@ -75,4 +75,10 @@ export const ServicesLinks: {
       description:
         "Expand your online presence, attract more customers, and drive business growth with our comprehensive digital marketing strategies.",
     },
+    {
+      title: "IT Staffing",
+      href: "/services/ITStaffing",
+      description:
+        "Enhance your workforce, streamline recruitment processes, and boost organizational efficiency with our specialized IT staffing solutions.",
+    },
   ];
