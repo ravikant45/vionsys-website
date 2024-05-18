@@ -3,6 +3,8 @@ import { GrHostMaintenance } from "react-icons/gr";
 import { FaWordpress } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaMobileButton } from "react-icons/fa6";
+import { MdOutlineSecurity } from "react-icons/md";
+
 import innovate from "/public/assets/services/innovation.jpg";
 import scalable from "/public/assets/services/scalable.jpg";
 import pricing from "/public/assets/services/pricing.jpg";
@@ -72,9 +74,9 @@ const webdevServicesData: webdevServicesData = {
     },
     {
       id: 5,
-      title: "Responsive Design",
-      logo: FaShoppingCart,
-      desc: "Ensures your website looks great and functions perfectly on any device, from smartphones to tablets.",
+      title: "Security and Performance",
+      logo: MdOutlineSecurity,
+      desc: "We ensure your website's safety and fast loading times with robust security measures.",
     }
   ],
 
