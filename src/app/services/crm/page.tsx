@@ -4,7 +4,6 @@ const Img = dynamic(() => import("../../ui/crm/Img"), {
   loading: () => <p>Loading...</p>,
 });
 import Importance from "@/app/ui/crm/Importance";
-import CRM from "../../../../public/assets/services/crm/CRM.png";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { Metadata } from "next";
 import CRMFaq from "@/app/ui/services/CRMFaq";
