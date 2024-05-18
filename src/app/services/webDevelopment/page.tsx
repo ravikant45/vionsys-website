@@ -46,18 +46,18 @@ const Page = () => {
           Unlock your business's potential with our expert software development services, crafting tailored solutions to fit your needs and keeping you ahead in today's digital landscape.
         </p>
         <div data-aos='zoom-out' className="-mx-4 flex flex-wrap p-8">
-          {data?.Services?.map((ser: any) => (
-            <div className="w-full px-4 md:w-1/2 lg:w-1/3" key={ser.title}>
-              <div className="mb-0 py-8 px-7 transition-all  sm:p-9 lg:px-6 xl:px-9 ">
-                <div className="p-3 rounded-full w-12 h-12 inline-block bg-blue1">
-                  <ser.logo color="white" size={25} />
-                </div>
-                <div>
-                  <h3 className="mb-4 text-xl font-bold text-black sm:text-2xl lg:text-xl xl:text-2xl">{ser?.title}</h3>
-                  <p className="text-base font-medium text-body-color">{ser?.desc}</p>
-                </div>
-              </div>
-            </div>
+  {data?.Services?.map((ser: any) => (
+    <div className="w-full px-4 md:w-1/2 lg:w-1/3" key={ser.title}>
+      <div className="mb-0 py-8 px-7 transition-all sm:p-9 lg:px-6 xl:px-9 flex flex-col items-center">
+        <div className="p-3 rounded-full w-12 h-12 bg-blue1 flex justify-center items-center mb-4">
+          <ser.logo color="white" size={25} />
+        </div>
+        <div className="text-center">
+          <h3 className="mb-4 text-xl font-bold text-black sm:text-2xl lg:text-xl xl:text-2xl">{ser?.title}</h3>
+          <p className="text-base font-medium text-body-color">{ser?.desc}</p>
+        </div>
+      </div>
+    </div>
           ))}
         </div>
       </section>
