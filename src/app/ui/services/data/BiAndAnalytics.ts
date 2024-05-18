@@ -28,9 +28,10 @@ import OperationalEfficency from "../../../../../public/assets/services/AIBigDat
 import PerformanceMonitoring from "../../../../../public/assets/services/AIBigDataAnalysisBi/performanceMonitoring.jpg";
 import InnovationImage from "../../../../../public/assets/services/AIBigDataAnalysisBi/innovation.jpg";
 import ResourceAllocation from "../../../../../public/assets/services/AIBigDataAnalysisBi/resourceAllocation.jpg";
+import ScalableSolutions from "../../../../../public/assets/services/AIBigDataAnalysisBi/ScalableSolutions.jpg";
 
 export const BiAndAnalyticsData: BiAndAnalyticsDataType = {
-    mainTitle: "Business Intelligence and Analytics Services",
+    mainTitle: "Business Intelligence & Analytics Services",
     subTitle: "Our tailored Business Intelligence and Analytics Services seamlessly convert data into strategic assets, empowering proactive decision-making. Through meticulous data collection, analysis, and visualization, we unveil hidden insights and growth opportunities within your organization. With our bespoke solutions, businesses optimize operations and propel towards sustained success in today's dynamic landscape.",
     secondSectionImage: DataCollectionImage,
     secondTitle: "Unlock Insights with Advanced Analytics",
@@ -61,13 +62,18 @@ export const BiAndAnalyticsData: BiAndAnalyticsDataType = {
             title: "Efficient Resource Allocation",
             message: "Efficient resource allocation optimizes utilization and minimizes waste, enhancing overall productivity and profitability.",
             image: ResourceAllocation
+        },
+        {
+            title: "Scalable Solutions",
+            message: "Adapt and grow with flexible BI and analytics solutions that scale with your business needs.",
+            image: ScalableSolutions
         }
     ],
     faqs: [
         {
             qid: 1,
             question: "What is business intelligence (BI) and analytics, and how do they differ?",
-            answer: "Business intelligence (BI) involves the use of data analysis tools and techniques to transform raw data into actionable insights for informed decision-making. Analytics, on the other hand, refers to the process of analyzing data to uncover patterns, trends, and correlations that can drive strategic business decisions. While BI focuses on reporting past and present data, analytics involves predictive and prescriptive analysis to anticipate future outcomes and optimize strategies."
+            answer: "Business intelligence (BI) involves the use of a data analysis tools and techniques to transform raw data into actionable insights for informed decision-making. Analytics, on the other hand, refers to the process of analyzing data to uncover patterns, trends, and correlations that can drive strategic business decisions. While BI focuses on reporting past and present data, analytics involves predictive and prescriptive analysis to anticipate future outcomes and optimize strategies."
         },
         {
             qid: 2,
