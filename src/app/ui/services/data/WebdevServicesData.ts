@@ -44,13 +44,13 @@ const webdevServicesData: webdevServicesData = {
       id: 1,
       title: "Custom Web Development",
       logo: BiSolidCustomize,
-      desc: "Tailored software solutions designed to meet your unique business requirements.",
+      desc: "Customized software solutions crafted to fulfill your specific business needs.",
     },
     {
       id: 2,
       title: "Website Maintenance",
       logo: GrHostMaintenance,
-      desc: "Streamline operations with personalized enterprise applications for enhanced efficiency.",
+      desc: "Streamline operations with personalized enterprise applications for efficiency.",
     },
     {
       id: 3,
@@ -70,6 +70,12 @@ const webdevServicesData: webdevServicesData = {
       logo: FaShoppingCart,
       desc: "Creating integrated solutions to seamlessly enhance your digital commerce ecosystem.",
     },
+    {
+      id: 5,
+      title: "Responsive Design",
+      logo: FaShoppingCart,
+      desc: "Ensures your website looks great and functions perfectly on any device, from smartphones to tablets.",
+    }
   ],
 
   workType: [
@@ -85,7 +91,7 @@ const webdevServicesData: webdevServicesData = {
       img: scalable,
       title: "Scalability and Flexibility",
       description:
-        "Empower your skills, achievements, and portfolio through a customized online platform built for growth and adaptability.",
+        "Enhance your skills, achievements, and portfolio with a personalized online platform designed for growth and flexibility.",
     },
     {
       id: 3,
@@ -117,6 +123,16 @@ const webdevServicesData: webdevServicesData = {
       ques: "What post-launch support services do you provide for websites?",
       ans: "Our commitment to your website's success extends beyond its launch. We offer comprehensive post-launch support services, including regular maintenance, performance monitoring, bug fixes, and content updates. Our goal is to ensure your website remains secure, up-to-date, and optimized for peak performance.",
     },
+    {
+      id: 5,
+      ques: "What industries do you specialize in for web development?",
+      ans: "We have extensive experience in various industries, including e-commerce, healthcare, finance, education, and more. Our team is adept at understanding the unique challenges and requirements of each sector, ensuring that we deliver tailored solutions that drive business success.",
+    },
+    {
+      id: 6,
+      ques: "What is your approach to mobile responsiveness in web development?",
+      ans: "We prioritize mobile responsiveness to ensure that your website performs seamlessly across all devices. Our development process includes creating fluid grid layouts, flexible images, and media queries to adapt the design to different screen sizes. This approach ensures that users have a consistent and optimized experience, whether they access your site on a desktop, tablet, or smartphone."
+      },
   ],
 };
 export default webdevServicesData;
