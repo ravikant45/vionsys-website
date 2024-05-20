@@ -16,10 +16,10 @@ const page = () => {
     <main className="pt-16">
       {/* Hero Section */}
       <section>
-        <div className="relative h-screen w-full overflow-hidden bg-black">
+        <div className="relative h-full w-full overflow-hidden bg-black">
           <Image
             alt="Hero Image"
-            className="h-full w-full object-cover opacity-45"
+            className="md:h-full h-[40vh] w-full object-cover opacity-45"
             height={1080}
             src={MainImg}
             style={{
@@ -54,9 +54,9 @@ const page = () => {
               We offer a wide range of services to help your business succeed.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <div className="grid grid-cols-1 md:gap-6 gap-2 pt-2 md:pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             <div
-            className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
+            className="rounded-lg bg-white md:p-6 p-2 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <BriefcaseIcon className="h-6 w-6" />
               </div>
@@ -120,7 +120,7 @@ const page = () => {
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Establish a culture of continuous improvement within your
-                product development process, empowering teams to iterate, learn,
+                product development process, empowering teams to iterate, learn
                 and innovate to deliver ongoing value to customers.
               </p>
             </div>
@@ -139,7 +139,7 @@ const page = () => {
                 </h2>
                 <p data-aos="fade-left" data-aos-duration="500" className="max-w-[600px] text-gray-500 md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed dark:text-gray-400">
                   Discover the benefits of our exceptional product or service
-                  and why we're the best choice for your needs.
+                  and why we are the best choice for your needs.
                 </p>
               </div>
               <div className="grid gap-6">

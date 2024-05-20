@@ -8,7 +8,7 @@ export interface FAQItem {
     {
       question: "Q. What services do you offer?",
       answer:
-        "We offer a wide range of product development services, including product strategy, design, development, and testing.",
+        "We offer a wide range of product development services including product strategy, design, development and testing.",
       qid: 1,
     },
     {
@@ -32,13 +32,13 @@ export interface FAQItem {
     {
       question: "Q. What industries do you specialize in?",
       answer:
-        "We have experience working across various industries, including technology, healthcare, finance, e-commerce, and more. Our adaptable approach allows us to cater to the unique needs of each industry.",
+        "We have experience working across various industries including technology, healthcare, finance, e-commerce and more. Our adaptable approach allows us to cater to the unique needs of each industry.",
       qid: 5,
     },
     {
         question: "Q. How do you ensure the security of the products you develop?",
         answer:
-          "Security is a top priority in all our development projects. We employ industry-standard security measures, conduct rigorous testing, and adhere to best practices to safeguard your product against potential threats. Additionally, we stay updated on the latest security trends and continuously monitor and improve the security posture of our products throughout their lifecycle. ",
+          "Security is a top priority in all our development projects. We employ industry-standard security measures, conduct rigorous testing and adhere to best practices to safeguard your product against potential threats. Additionally, we stay updated on the latest security trends and continuously monitor and improve the security posture of our products throughout their lifecycle. ",
         qid: 6,
       },
   ];

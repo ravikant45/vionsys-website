@@ -60,7 +60,7 @@ const Footer = () => {
                 className="text-base md:text-start text-justify"
               >
                 Vionsys IT Solutions India Pvt. Ltd. is a comprehensive IT
-                company offering end-to-end technology solutions. Specializing in software development, network infrastructure, cybersecurity, cloud services, and IT consulting, we enable businesses to excel in the digital age.{" "}
+                company offering end-to-end technology solutions. Specializing in software development, network infrastructure, cybersecurity, cloud services and IT consulting, we enable businesses to excel in the digital age.{" "}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}

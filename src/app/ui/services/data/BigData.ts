@@ -33,15 +33,15 @@ import DataCiAndCdImage from "../../../../../public/assets/services/BigData/devO
 
 export const BigData: BiAndAnalyticsDataType = {
     mainTitle: "Big Data Analytics",
-    subTitle: "Discover the power of our Big Data Analytics services, meticulously designed to transform raw data into actionable insights. With our tailored approach, we seamlessly integrate data collection, analysis, and visualization, unveiling hidden opportunities for growth within your organization. Our bespoke solutions empower businesses to optimize operations and navigate towards sustained success in today's ever-evolving landscape.",
+    subTitle: "Discover the power of our Big Data Analytics services, meticulously designed to transform raw data into actionable insights. With our tailored approach, we seamlessly integrate data collection, analysis and visualization, unveiling hidden opportunities for growth within your organization. Our bespoke solutions empower businesses to optimize operations and navigate towards sustained success in today's ever-evolving landscape.",
     secondSectionImage: BigDataCollectionImage,
     secondTitle: "Unveiling Insights with Big Data Analytics",
-    secondSubTitle: "Cultivating a rich data ecosystem, our approach to data collection and integration is a meticulous orchestration of gathering and harmonizing diverse datasets from a myriad of sources. Through a systematic process of acquisition, organization, and standardization, we ensure not just consistency and accuracy, but a seamless fusion that illuminates insights previously hidden in the data's complexity. By integrating these disparate datasets, organizations are empowered with a panoramic view of their operations, customer behaviors, and market dynamics. This holistic perspective becomes the cornerstone for informed decision-making and strategic planning, propelling businesses towards agile and future-ready strategies.",
+    secondSubTitle: "Cultivating a rich data ecosystem, our approach to data collection and integration is a meticulous orchestration of gathering and harmonizing diverse datasets from a myriad of sources. Through a systematic process of acquisition, organization and standardization, we ensure not just consistency and accuracy but a seamless fusion that illuminates insights previously hidden in the data's complexity. By integrating these disparate datasets, organizations are empowered with a panoramic view of their operations, customer behaviors and market dynamics. This holistic perspective becomes the cornerstone for informed decision-making and strategic planning, propelling businesses towards agile and future-ready strategies.",
     cardsTitle: "benefits in our big data analytics service spectrum",
     cards: [
         {
             title: "Data Quality Assurance",
-            message: "Prioritize accuracy, completeness, and relevance of data for generating reliable insights.",
+            message: "Prioritize accuracy, completeness and relevance of data for generating reliable insights.",
             image: DataQualityImage
         },
         {
@@ -74,27 +74,27 @@ export const BigData: BiAndAnalyticsDataType = {
         {
             qid: 1,
             question: "What is Big Data Analytics, and How Does It Benefit Businesses?",
-            answer: "Big Data Analytics involves analyzing large and varied datasets to uncover insights. It benefits businesses by informing decision-making, identifying trends, optimizing operations, and enhancing customer experiences."
+            answer: "Big Data Analytics involves analyzing large and varied datasets to uncover insights. It benefits businesses by informing decision-making, identifying trends, optimizing operations and enhancing customer experiences."
         },
         {
             qid: 2,
             question: "What Types of Data Sources Can be Analyzed in Big Data Analytics?",
-            answer: "Big Data Analytics can analyze structured, semi-structured, and unstructured data, including databases, spreadsheets, text documents, social media posts, images, videos, IoT devices, and sensors."
+            answer: "Big Data Analytics can analyze structured, semi-structured, and unstructured data including databases, spreadsheets, text documents, social media posts, images, videos, IoT devices and sensors."
         },
         {
             qid: 3,
             question: "What Tools and Technologies are Used in Big Data Analytics?",
-            answer: "Tools and technologies include programming languages like Python, R, and SQL, platforms like Hadoop and Apache Spark for distributed computing, machine learning frameworks like TensorFlow, and visualization tools such as Tableau and Power BI."
+            answer: "Tools and technologies include programming languages like Python, R and SQL, platforms like Hadoop and Apache Spark for distributed computing, machine learning frameworks like TensorFlow and visualization tools such as Tableau and Power BI."
         },
         {
             qid: 4,
             question: "How Does Big Data Analytics Ensure Data Security and Privacy?",
-            answer: "Big Data Analytics employs encryption, access controls, anonymization, and compliance with data protection regulations like GDPR and CCPA. Secure data storage and transmission practices are also implemented."
+            answer: "Big Data Analytics employs encryption, access controls, anonymization and compliance with data protection regulations like GDPR and CCPA. Secure data storage and transmission practices are also implemented."
         },
         {
             qid: 5,
             question: "What Challenges are Associated with Big Data Analytics Implementation?",
-            answer: "Challenges include managing large data volumes, ensuring data quality, integrating disparate data sources, selecting analytical techniques, addressing security and privacy concerns, talent acquisition, training, and cultural adoption of data-driven decision-making."
+            answer: "Challenges include managing large data volumes, ensuring data quality, integrating disparate data sources, selecting analytical techniques, addressing security and privacy concerns, talent acquisition, training and cultural adoption of data-driven decision-making."
         }
     ]
 }

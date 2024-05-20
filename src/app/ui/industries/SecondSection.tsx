@@ -5,6 +5,7 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 import PharmaContent1 from "/public/assets/Industries/PharmaContent1.jpeg";
 import PharmaContent2 from "/public/assets/Industries/PharmaContent2.png";
+import PharmaContent3 from "/public/assets/Industries/PharmaContent3.jpg";
 import Telecom from "/public/assets/Industries/Telecom.jpg";
 import Ecomm from "/public/assets/Industries/Ecomm.jpeg";
 import insurance from "/public/assets/Industries/insurance.jpg";
@@ -15,7 +16,7 @@ const content3 = [
   {
     title: "Pharmaceutical Industry",
     description:
-      "IT companies offer specialized solutions for the pharmaceutical industry to ensure compliance with regulations, enhance quality management, streamline clinical trials, optimize supply chain operations, manage pharmacovigilance, derive insights from data analytics, enable digital marketing and sales, and integrate with healthcare IT systems. These solutions help pharmaceutical companies improve efficiency, ensure product safety and efficacy, accelerate time-to-market, and drive innovation in a highly regulated and competitive market landscape.",
+      "IT companies offer specialized solutions for the pharmaceutical industry to ensure compliance with regulations, enhance quality management, streamline clinical trials, optimize supply chain operations, manage pharmacovigilance, derive insights from data analytics, enable digital marketing and sales and integrate with healthcare IT systems. These solutions help pharmaceutical companies improve efficiency, ensure product safety and efficacy, accelerate time-to-market and drive innovation in a highly regulated and competitive market landscape.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -31,7 +32,7 @@ const content3 = [
   {
     title: "Pharmacovigilance Systems:",
     description:
-      "Pharmacovigilance software enables pharmaceutical companies to monitor and manage the safety of their products throughout their lifecycle. It includes features for adverse event reporting, safety surveillance, signal detection, risk management, and regulatory reporting. These systems help companies comply with pharmacovigilance regulations and ensure the safety and efficacy of their products.",
+      "Pharmacovigilance software enables pharmaceutical companies to monitor and manage the safety of their products throughout their lifecycle. It includes features for adverse event reporting, safety surveillance, signal detection, risk management and regulatory reporting. These systems help companies comply with pharmacovigilance regulations and ensure the safety and efficacy of their products.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -47,10 +48,10 @@ const content3 = [
   {
     title: "Why Choose Us?",
     description:
-      "We prioritize quality and reliability in our software solutions, ensuring that they meet the highest standards of performance, security, and scalability. Our solutions undergo rigorous testing and validation processes to ensure they deliver consistent results and meet customer expectations. By leveraging the latest technologies and industry best practices, we ensure that our software remains ahead of the curve. Additionally, our dedicated support team is always ready to assist, ensuring a seamless experience for our clients.",
+      "We prioritize quality and reliability in our software solutions, ensuring that they meet the highest standards of performance, security and scalability. Our solutions undergo rigorous testing and validation processes to ensure they deliver consistent results and meet customer expectations. By leveraging the latest technologies and industry best practices, we ensure that our software remains ahead of the curve. Additionally, our dedicated support team is always ready to assist, ensuring a seamless experience for our clients.",
     content: (
       <Image
-        src="/PharmaContent3.jpg"
+        src={PharmaContent3}
         width={500}
         height={300}
         className="h-full w-full object-cover"
@@ -166,7 +167,7 @@ const SecondSection = () => {
             </h2>
             <p data-aos="fade-left" className="text-paragraph pt-3">
               Catalyzing insurance evolution through tailored IT solutions, we're
-              here to streamline operations, fortify security, and drive
+              here to streamline operations, fortify security and drive
               unparalleled growth. With our expertise, your insurance business
               will navigate the digital landscape seamlessly, delivering enhanced
               customer experiences and sustainable success.
@@ -212,7 +213,7 @@ const SecondSection = () => {
             </h1>
             <p className="font-bold md:text-SubHeading text-xl text-[#e57e2c]">Elevate Your E-commerce with Cutting-Edge IT Solutions</p>
             <p data-aos="fade-right" className="my-3">
-              We are here to revolutionize e-commerce with essential services. From seamless websites and apps to big data insights, we've got you covered. Personalized recommendations, optimized supply chain, and top-notch security solutions. Boost mobile commerce and enhance customer relationships with us!
+              We are here to revolutionize e-commerce with essential services. From seamless websites and apps to big data insights, we've got you covered. Personalized recommendations, optimized supply chain and top-notch security solutions. Boost mobile commerce and enhance customer relationships with us!
             </p>
             <div className="md:w-1/3 lg:w-4/5 h-[auto]">
               <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">

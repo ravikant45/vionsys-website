@@ -19,10 +19,10 @@ const Img = () => {
                             Intuitive and user-friendly interface for seamless adoption and usage.
                         </li>
                         <li data-aos="fade-left" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                            Comprehensive features including lead management, sales forecasting, and marketing automation.
+                            Comprehensive features including lead management, sales forecasting and marketing automation.
                         </li>
                         <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
-                            Scalable platform that grows with your business, accommodating increasing demands.
+                            Scalable platform that grows with your business accommodating increasing demands.
                         </li>
                         <li data-aos="fade-left" className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
                             Dedicated customer support and training resources to ensure success.

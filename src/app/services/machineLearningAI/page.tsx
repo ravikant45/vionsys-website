@@ -51,7 +51,7 @@ const page = () => {
     {/* Features */}
     <section className="py-10 md:py-20 mt-4 md:mt-0 flex items-center justify-center flex-col">
         <div className="flex w-[90%] flex-col items-center text-start">
-          <p data-aos='fade-right' className="text-2xl md:text-3xl text-blue-700 underline underline-offset-4 decoration-orange font-bold">
+          <p data-aos='fade-right' className="text-2xl md:text-3xl text-blue-700 decoration-orange font-bold">
             Discover the amazing features offered by us to enhance your online
             presence.
           </p>
@@ -85,7 +85,7 @@ const page = () => {
           <Image className='object-cover w-full h-[40rem] sm:h-[26rem]' src={background} alt="background image" height={1000} width={1000}></Image>
           <div className='absolute inset-0 flex flex-col gap-2 md:gap-4 items-start justify-center p-6 md:w-[60%]'>
             <h2 className='text-2xl md:text-3xl text-orange font-semibold'>Why Choose Us for Machine Learning and AI Services ?</h2>
-            <p className='text-sm md:text-md text-white text-muted-foreground'>Choosing us for your AI and ML needs means partnering with a team of dedicated experts who are at the forefront of technological innovation. Our deep industry experience and cutting-edge solutions are tailored to drive your business success. We offer end-to-end services, from initial consultation and data collection to model development, integration, and ongoing support, ensuring seamless implementation and maximum impact. Our commitment to data privacy, security, and ethical AI practices guarantees that your projects are handled with the utmost care and responsibility. Additionally, our customer-centric approach means we work closely with you to understand your unique challenges and goals, delivering customized solutions that provide real, measurable results. Trust us to transform your data into actionable insights, optimize your operations, and give you a competitive edge in the ever-evolving market.</p>
+            <p className='text-sm md:text-md text-white text-muted-foreground'>Choosing us for your AI and ML needs means partnering with a team of dedicated experts who are at the forefront of technological innovation. Our deep industry experience and cutting-edge solutions are tailored to drive your business success. We offer end-to-end services from initial consultation and data collection to model development, integration and ongoing support, ensuring seamless implementation and maximum impact. Our commitment to data privacy, security and ethical AI practices guarantees that your projects are handled with the utmost care and responsibility. Additionally, our customer-centric approach means we work closely with you to understand your unique challenges and goals, delivering customized solutions that provide real, measurable results. Trust us to transform your data into actionable insights, optimize your operations and give you a competitive edge in the ever-evolving market.</p>
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ const page = () => {
       {/* Industries we serve */}
       <section className='py-10 md:py-20'>
         <div className=' flex flex-col items-center justify-center'>
-          <h1 className='text-2xl md:text-3xl text-blue-700 underline underline-offset-4 decoration-orange pb-4 md:pb-10 font-bold'>Industries We Serve</h1>
+          <h1 className='text-2xl md:text-3xl text-blue-700 decoration-orange pb-4 md:pb-10 font-bold'>Industries We Serve</h1>
           <div className='md:w-[90%] grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-10 px-6'>
           {MLAIServicesData?.industries?.map((feat) => {
             return (
@@ -123,7 +123,7 @@ const page = () => {
       <div
         className="relative w-full bg-white pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5">
         <div className=" flex flex-col items-center justify-center">
-          <h2 className="md:mt-5 text-center text-2xl md:text-3xl text-blue-700 underline underline-offset-4 font-bold decoration-orange">Frequently Asked Questions (FAQ)</h2>
+          <h2 className="md:mt-5 text-center text-2xl md:text-3xl text-blue-700 font-bold decoration-orange">Frequently Asked Questions (FAQ)</h2>
           <div className=" mt-8 grid w-[90%] md:w-[70%] gap-4">
           {MLAIServicesData?.faq?.map((feat) => {
             return (

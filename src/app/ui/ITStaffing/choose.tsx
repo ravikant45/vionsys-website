@@ -40,7 +40,7 @@ const styles = [
     {
         id: 8,
         title: "Client-Centric Approach",
-        para: "Experience a commitment to building trust-based, transparent, and mutually successful partnerships."
+        para: "Experience a commitment to building trust-based, transparent and mutually successful partnerships."
     },
     {
         id: 9,
