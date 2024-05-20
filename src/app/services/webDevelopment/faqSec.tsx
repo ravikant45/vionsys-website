@@ -14,12 +14,12 @@ const faqSec: React.FC  = () => {
         Frequently asked questions?
       </h2>
     </div>
-            <div data-aos='zoom-out' className="mt-6 border-t-2 border-orange pt-10">
+            <div data-aos='zoom-out' className="mt-6 border-t-2 border-orange md:pt-10 pt-2">
               <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 md:gap-y-12">
 
                 {data?.faq.map((data: any) => {
                   return (
-                    <div className="h-full py-4 px-6 border border-blue1 border-t-0 border-l-0 rounded-br-xl">
+                    <div className="h-full md:py-4 md:px-6 p-3 border border-blue1 border-t-0 border-l-0 rounded-br-xl">
                       <dl key={data?.id}>
 
                         <dt className="leading-6 text-black font-bold text-2 mt-4 flex items-center">

@@ -69,7 +69,7 @@ const videos: Video[] = [
   {
     video: "/assets/Home/HomeV5.mp4",
     title: "Customer Relationship Management",
-    desc: "Streamline Customer Relationships with AI-Powered CRM. Improve Efficiency, Personalize Interactions, and Foster Growth.",
+    desc: "Streamline Customer Relationships with AI-Powered CRM. Improve Efficiency, Personalize Interactions and Foster Growth.",
     link: "/services/crm",
   },
   {

@@ -16,7 +16,7 @@ const Life = () => {
           this, we foster an environment where our greatest resource—our
           people—can thrive. We embrace an adhocratic yet clan culture,
           encouraging collaboration and autonomy. Every effort is recognized,
-          valued, and appreciated, creating a sense of belonging and motivation.
+          valued and appreciated, creating a sense of belonging and motivation.
           We empower our team members to push beyond conventional limits,
           opening doors to exceptional growth and individual performance within
           our teams.

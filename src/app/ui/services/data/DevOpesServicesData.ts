@@ -21,7 +21,7 @@ interface DevOpesServicesData {
 const DevOpesServicesData: DevOpesServicesData = {
   line1: "Streamline your development lifecycle with",
   line2: "Agile DevOps Solutions ",
-  para: "Revolutionize your software delivery process with our agile DevOps solutions. By breaking down silos between development and operations teams, we empower your organization to accelerate innovation, increase efficiency, and deliver value to your customers faster than ever before.",
+  para: "Revolutionize your software delivery process with our agile DevOps solutions. By breaking down silos between development and operations teams, we empower your organization to accelerate innovation, increase efficiency and deliver value to your customers faster than ever before.",
 
   features: [
     {

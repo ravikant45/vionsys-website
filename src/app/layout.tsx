@@ -19,13 +19,8 @@ export const metadata: Metadata = {
     images: "/src/app/opengraph-image.png",
   },
 
-  icons: {
-    icon: [  
-    '/favicon.ico?v=4',
-  ]},
-
   description:
-    "  Welcome­ to VionSys IT Solutions. We give you computer things to he­lp your business. From making software to kee­ping computers safe and cloud service­s, we help businesse­s do well with software solution. Our software pe­ople make programs for your nee­ds.",
+    "Welcome to Vionsys IT Solutions. We specialize in delivering advanced IT services to drive your business forward. Our offerings include custom software development, robust cybersecurity measures and efficient cloud solutions. At Vionsys, we are committed to crafting innovative software tailored to your unique requirements ensuring your business thrives.",
 };
 
 export default function RootLayout({

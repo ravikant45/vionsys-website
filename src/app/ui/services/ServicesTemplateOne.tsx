@@ -32,7 +32,7 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
             particleColor="#FFFFFF"
           />
         </div>
-        <p data-aos='fade-down' className="text-4xl uppercase font-extrabold text-white tracking-wider leading-9 text-center">
+        <p data-aos='fade-down' className="md:text-4xl text-3xl uppercase font-extrabold text-white tracking-wider leading-9 text-center">
           {data?.headline}
         </p>
         <p data-aos='fade-up' className="text-paragraph text-white text-center">

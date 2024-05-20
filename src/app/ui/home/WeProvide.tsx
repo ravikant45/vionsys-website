@@ -9,19 +9,19 @@ function WeProvide() {
     {
       name: "Software Development",
       description:
-        "Software development entails crafting computer programs to meet specific user needs, boosting efficiency, and driving digital innovation through meticulous coding and development methodologies.",
+        "Software development entails crafting computer programs to meet specific user needs, boosting efficiency and driving digital innovation through meticulous coding and development methodologies.",
       button: <Link href="/services/softwareDevelopment">Read More</Link>,
     },
     {
       name: "Web Development",
       description:
-        "Web development is the strategic fusion of design and coding to create impactful websites and web applications, harnessing technologies like HTML, CSS, JavaScript, and backend frameworks for tailored digital experiences.",
+        "Web development is the strategic fusion of design and coding to create impactful websites and web applications, harnessing technologies like HTML, CSS, JavaScript and backend frameworks for tailored digital experiences.",
       button: <Link href="/services/webDevelopment">Read More</Link>,
     },
     {
       name: "Cloud Computing",
       description:
-        "Cloud computing entails the dynamic delivery of computing resources like storage, servers, and software over the internet, offering unparalleled scalability and flexibility to businesses.",
+        "Cloud computing entails the dynamic delivery of computing resources like storage, servers and software over the internet, offering unparalleled scalability and flexibility to businesses.",
       button: <Link href="/services/cloudComputing">Read More</Link>,
     },
   ];
@@ -39,7 +39,7 @@ function WeProvide() {
     },
     {
       name: "Testing and QA",
-      description: "Testing and Quality Assurance (QA) ensure software meets quality standards, functions flawlessly, and satisfies user requirements through thorough evaluation.",
+      description: "Testing and Quality Assurance (QA) ensure software meets quality standards, functions flawlessly and satisfies user requirements through thorough evaluation.",
       button: <Link href="/services/testing">Read More</Link>,
     },
   ];

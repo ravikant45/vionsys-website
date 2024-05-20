@@ -8,6 +8,7 @@ import BankingC from "/public/assets/Industries/bankingC.jpg";
 import profservice from "/public/assets/Industries/profservice.jpg";
 import ITContent1 from "/public/assets/Industries/ITContent1.jpg";
 import ITContent2 from "/public/assets/Industries/ITContent2.jpg";
+import ITContent3 from "/public/assets/Industries/ITContent3.jpg";
 
 
 {/* IT digital transformation array */ }
@@ -15,7 +16,7 @@ const content2 = [
   {
     title: "IT digital transformation",
     description:
-      "IT digital transformation revolutionizes businesses by utilizing technology to reshape operations, enhance customer value, and stay competitive. It involves adopting digital tools like cloud computing, AI, IoT, and automation to innovate, boost efficiency, and improve experiences. This process requires both technological implementation and cultural shifts within organizations, fostering agility and responsiveness to evolving market demands. Ultimately, digital transformation empowers businesses to embrace innovation, drive growth, and remain competitive.",
+      "IT digital transformation revolutionizes businesses by utilizing technology to reshape operations, enhance customer value and stay competitive. It involves adopting digital tools like cloud computing, AI, IoT and automation to innovate, boost efficiency and improve experiences. This process requires both technological implementation and cultural shifts within organizations, fostering agility and responsiveness to evolving market demands. Ultimately, digital transformation empowers businesses to embrace innovation, drive growth and remain competitive.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -31,7 +32,7 @@ const content2 = [
   {
     title: "Technology Adoption:",
     description:
-      "IT digital transformation involves adopting digital technologies such as cloud computing, artificial intelligence (AI), data analytics, Internet of Things (IoT), and automation to drive innovation and improve business processes. ",
+      "IT digital transformation involves adopting digital technologies such as cloud computing, artificial intelligence (AI), data analytics, Internet of Things (IoT) and automation to drive innovation and improve business processes. ",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -47,10 +48,10 @@ const content2 = [
   {
     title: "Why Choose Us?",
     description:
-      "Our team consists of highly experienced professionals with deep expertise in digital transformation strategies, technologies, and implementation. They have a proven track record of successfully guiding businesses through their digital transformation journeys. With comprehensive knowledge of the challenges and opportunities in this field, we deliver tailored solutions that drive innovation, efficiency, and growth. Whether adopting new technologies or optimizing processes, our experts are dedicated to helping businesses thrive in the digital age.",
+      "Our team consists of highly experienced professionals with deep expertise in digital transformation strategies, technologies and implementation. They have a proven track record of successfully guiding businesses through their digital transformation journeys. With comprehensive knowledge of the challenges and opportunities in this field, we deliver tailored solutions that drive innovation, efficiency and growth. Whether adopting new technologies or optimizing processes, our experts are dedicated to helping businesses thrive in the digital age.",
     content: (
       <Image
-        src="/ITContent3.jpg"
+        src={ITContent3}
         width={500}
         height={300}
         className="h-full w-full object-cover"
@@ -106,10 +107,10 @@ const FirstSection = () => {
             <p className="font-bold md:text-SubHeading text-xl text-[#e57e2c]">Driving Financial Excellence with IT Innovation.</p>
             <p data-aos="fade-left" className="text-base my-3">
               We offer tailored IT solutions for the finance sector, enabling
-              institutions to innovate, optimize operations, and enhance
-              customer service. Our advanced technologies, including AI and
+              institutions to innovate, optimize operations and enhance
+              customer service. Our advanced technologies including AI and
               blockchain, empower clients to streamline processes, mitigate
-              risks, and capitalize on opportunities. By partnering with us,
+              risks and capitalize on opportunities. By partnering with us,
               financial institutions can leverage technology to stay competitive
               and better serve their customers in the digital age.
             </p>
@@ -163,7 +164,7 @@ const FirstSection = () => {
             <p data-aos='fade-left' className="text-paragraph pt-3">
               Approving healthcare organizations with innovative IT solutions,
               we're dedicated to revolutionizing patient care, optimizing
-              operations, and ensuring data security in an ever-evolving
+              operations and ensuring data security in an ever-evolving
               landscape. From seamless integration to cutting-edge digital tools.
             </p>
             <div className="md:w-1/3 lg:w-4/5">

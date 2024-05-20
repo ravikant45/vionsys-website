@@ -29,7 +29,7 @@ const page = () => {
               <div className="flex flex-col items-start space-y-4">
                 <p className="mx-auto max-w-[700px] text-SubHeading md:text-xl font-bold dark:text-gray-400">
                   Accelerate your software delivery with our cutting-edge DevOps
-                  platform. Automate deployments, scale effortlessly, and gain
+                  platform. Automate deployments, scale effortlessly and gain
                   real-time insights.
                 </p>
                 <div className="space-x-4">
@@ -55,7 +55,7 @@ const page = () => {
           <div className="container space-y-12 px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg  px-3 py-1 text-SubHeading font-bold dark:bg-gray-800">
+                <div className="inline-block rounded-lg px-3 py-1 text-SubHeading font-bold dark:bg-gray-800">
                   Key Features
                 </div>
                 <h2
@@ -71,17 +71,17 @@ const page = () => {
                   className="max-w-[900px] text-SubHeading md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-bold"
                 >
                   Streamline your software delivery with our powerful DevOps
-                  platform. Automate deployments, scale effortlessly, and gain
+                  platform. Automate deployments, scale effortlessly and gain
                   real-time insights.
                 </p>
               </div>
             </div>
             {/*Cards Division */}
-            <div className="mx-auto grid items-start gap-10 sm:max-w-4xl sm:grid-cols-2 md:gap-20 lg:max-w-5xl lg:grid-cols-3">
+            <div className="mx-auto grid items-start gap-5 sm:max-w-4xl sm:grid-cols-2 md:gap-20 lg:max-w-5xl lg:grid-cols-3">
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-3"
+                className="grid gap-1"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Automated Deployments
@@ -95,7 +95,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-3"
+                className="grid gap-1"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Scalable Infrastructure
@@ -109,7 +109,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-3"
+                className="grid gap-1"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Real-time Monitoring
@@ -123,7 +123,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-3"
+                className="grid gap-1"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Secure and Compliant
@@ -136,7 +136,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-3"
+                className="grid gap-1"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Collaboration-Focused
@@ -149,7 +149,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-3"
+                className="grid gap-1"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Customizable Workflows
@@ -163,7 +163,7 @@ const page = () => {
           </div>
         </section>
         {/**Workflow section */}
-        <section className="w-full py-12 lg:pb-10 md:py-24 lg:py-4 dark:bg-gray-800">
+        <section className="w-full py- l5g:pb-10 md:py-24 lg:py-4 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
             <div className="space-y-4 text-center">
               <h2
@@ -182,8 +182,8 @@ const page = () => {
                 DevOps solutions.
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:gap-12">
-              <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6 shadow-sm transition-all hover:scale-105 hover:shadow-md dark:bg-gray-950">
+            <div className="mt-12 grid grid-cols-1 md:gap-8 gap-3 sm:grid-cols-2 md:grid-cols-4 lg:gap-12">
+              <div className="flex flex-col items-center md:gap-4 gap-2 rounded-lg bg-white p-6 shadow-sm transition-all hover:scale-105 hover:shadow-md dark:bg-gray-950">
                 <PlaneIcon className="h-12 w-12 text-gray-500 dark:text-gray-400" />
                 <h3 className="text-ThirdHeading font-semibold">Plan</h3>
                 <p className="text-center text-cardPara">
@@ -231,7 +231,7 @@ const page = () => {
                         development (Dev) and IT operations (Ops). It aims to
                         shorten the systems development life cycle and provide
                         continuous delivery with high software quality. DevOps
-                        involves automation, collaboration, and a culture shift
+                        involves automation, collaboration and a culture shift
                         within an organization to enable faster delivery of
                         applications and services.
                       </p>
@@ -243,20 +243,20 @@ const page = () => {
                     </h3>
                     <div className=" text-paragraph">
                       <p data-aos="fade-left" data-aos-duration="600">
-                        Some of the most popular DevOps tools include:Version
-                        control systems (e.g. Git, SVN),Continuous
+                        Some of the most popular DevOps tools include: Version
+                        control systems (e.g. Git, SVN), Continuous
                         Integration/Continuous Deployment (CI/CD) tools (e.g.
-                        Jenkins, CircleCI, Travis CI),Configuration management
-                        tools (e.g. Ansible, Puppet, Chef),Containerization
+                        Jenkins, CircleCI, Travis CI), Configuration management
+                        tools (e.g. Ansible, Puppet, Chef), Containerization
                         platforms (e.g. Docker, Kubernetes), Monitoring and
                         logging tools (e.g. Prometheus, Grafana, ELK
-                        Stack),Cloud platforms (e.g. AWS, Azure, Google Cloud)
+                        Stack), Cloud platforms (e.g. AWS, Azure, Google Cloud)
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="grid gap-2">
                   <h3 className="font-bold">
                     What is a typical DevOps workflow?
@@ -270,7 +270,7 @@ const page = () => {
                       tests are run to ensure the quality of the code and the
                       artifact. Deploy: The artifact is deployed to a staging or
                       production environment. Monitor: The deployed application
-                      is monitored for performance, errors, and other metrics.
+                      is monitored for performance, errors and other metrics.
                     </p>
                   </div>
                 </div>
