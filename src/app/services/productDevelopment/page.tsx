@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <main className="pt-16">
+    <main className="pt-16 overflow-x-hidden">
       {/* Hero Section */}
       <section>
         <div className="relative h-full w-full overflow-hidden bg-black">
