@@ -17,8 +17,8 @@ const CareerComponent = () => {
             Build your career at Vionsys
           </h1>
           <p data-aos="fade-right" className="text-xl md:w-1/2 pt-2">
-            Uncover boundless possibilities with Vionsys IT Solutions INDIA Pvt.
-            Ltd. Be part of a dynamic team where creativity, advancement, and
+            Uncover boundless possibilities with Vionsys IT Solutions India Pvt.
+            Ltd. Be part of a dynamic team where creativity, advancement and
             teamwork thrive. Embark on your path towards a brighter professional
             future now.
           </p>

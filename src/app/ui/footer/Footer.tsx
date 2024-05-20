@@ -36,27 +36,42 @@ const Footer = () => {
             <div className="text-center md:text-left col-span-2 flex flex-col gap-2">
               <motion.h3
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: {type:'spring', stiffness: 30},
+                  opacity: {duration: 0.6},
+                  ease: "easeIn",
+                 }}
                 className=" text-start text-2xl text-white font-bold mb-2"
               >
                 {" "}
                 <Link href="/about">About Us</Link>
               </motion.h3>
               <motion.p
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2 }}
-                className="text-lg md:text-start text-justify"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: {type:'spring', stiffness: 30},
+                  opacity: {duration: 0.6},
+                  ease: "easeIn",
+                 }}
+                className="text-base md:text-start text-justify"
               >
                 Vionsys IT Solutions India Pvt. Ltd. is a comprehensive IT
-                company offering end-to-end technology solutions. Specializing in software development, network infrastructure, cybersecurity, cloud services, and IT consulting, we enable businesses to excel in the digital age.{" "}
+                company offering end-to-end technology solutions. Specializing in software development, network infrastructure, cybersecurity, cloud services and IT consulting, we enable businesses to excel in the digital age.{" "}
               </motion.p>
               <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2 }}
-                className="flex gap-4 md:justify-start justify-center  py-6"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: {type:'spring', stiffness: 30},
+                  opacity: {duration: 0.6},
+                  ease: "easeIn",
+                 }}
+                className="flex gap-4 md:justify-start justify-center py-6"
               >
                 <Link href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg ">
                   <Image
@@ -101,17 +116,27 @@ const Footer = () => {
             <div className=" md:text-left flex flex-col col-span-2 gap-2">
               <motion.h3
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-2xl text-start text-white font-bold mb-2"
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: {type:'spring', stiffness: 30},
+                  opacity: {duration: 0.6},
+                  ease: "easeIn",
+                 }}
+                className="md:text-2xl text-xl text-start text-white font-bold mb-2"
               >
                 Our Services
               </motion.h3>
               <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2 }}
-                className="grid md:grid-cols-2 grid-cols-1 gap-2 text-lg"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: {type:'spring', stiffness: 30},
+                  opacity: {duration: 0.6},
+                  ease: "easeIn",
+                 }}
+                className="grid md:grid-cols-2 grid-cols-1 gap-2 text-base"
               >
                 <Link href="/services/softwareDevelopment">
                   Software Development
@@ -123,11 +148,11 @@ const Footer = () => {
                 <Link href="/services/cloudComputing">Cloud Computing</Link>
                 <Link href="/services/crm">CRM</Link>
                 <Link href="/services/digitalMarketing">Digital Marketing</Link>
-                <Link href="/services/biAnalytics">BI and ANalytics</Link>
+                <Link href="/services/biAnalytics">BI and Analytics</Link>
                 <Link href="/services/testing">Testing and QA</Link>
-                <Link href="/services/machineLearningAI">Machine Learning and AI</Link>
                 <Link href="/services/productDevelopment">Product Development</Link>
                 <Link href="/services/bigDataAnalytics">Big Data Analytics</Link>
+                <Link href="/services/machineLearningAI">Machine Learning and AI</Link>
               </motion.div>
             </div>
 
@@ -135,17 +160,27 @@ const Footer = () => {
             <div className=" text-start col-span-2 flex flex-col  gap-2">
               <motion.h3
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: {type:'spring', stiffness: 30},
+                  opacity: {duration: 0.6},
+                  ease: "easeIn",
+                 }}
                 className=" text-start text-2xl text-white font-bold mb-2"
               >
                 <Link href="/contact">Contact Info</Link>
               </motion.h3>
               <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2 }}
-                className="flex flex-col justify-center gap-2 text-lg"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: {type:'spring', stiffness: 30},
+                  opacity: {duration: 0.6},
+                  ease: "easeIn",
+                 }}
+                className="flex flex-col justify-center gap-2 text-base"
               >
                 <div className="flex  gap-3">
                   <div>

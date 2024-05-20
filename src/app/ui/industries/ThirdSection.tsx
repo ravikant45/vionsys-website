@@ -13,7 +13,7 @@ const content = [
   {
     title: "Features of Construction Technology",
     description:
-      "Construction software often includes robust project management tools to help oversee various aspects of a construction project. This can include task scheduling, resource allocation, budget management, and timeline tracking. With these features, project managers can efficiently plan, execute, and monitor the progress of construction projects.",
+      "Construction software often includes robust project management tools to help oversee various aspects of a construction project. This can include task scheduling, resource allocation, budget management and timeline tracking. With these features, project managers can efficiently plan, execute and monitor the progress of construction projects.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
@@ -29,7 +29,7 @@ const content = [
   {
     title: "Collaboration Tools:",
     description:
-      "Effective collaboration is essential in construction projects involving multiple stakeholders such as architects, engineers, contractors, and clients. Construction software typically provides collaboration tools such as document sharing, real-time communication, and project messaging. These tools facilitate seamless communication and collaboration among team members, leading to improved coordination and productivity.",
+      "Effective collaboration is essential in construction projects involving multiple stakeholders such as architects, engineers, contractors and clients. Construction software typically provides collaboration tools such as document sharing, real-time communication and project messaging. These tools facilitate seamless communication and collaboration among team members, leading to improved coordination and productivity.",
     content: (
       <Image
         src={ConstContent2}
@@ -84,11 +84,11 @@ const ThirdSection = () => {
             </h2>
             <p data-aos="fade-left" className=" pt-3 text-left text-paragraph">
               Authorising healthcare organizations with innovative IT solutions,
-              we're dedicated to revolutionizing patient care, optimizing
-              operations, and ensuring data security in an ever-evolving
+              we are dedicated to revolutionizing patient care, optimizing
+              operations and ensuring data security in an ever-evolving
               landscape. From seamless integration to cutting-edge digital tools,
-              we're committed to enhancing efficiency and enabling better
-              outcomes.for improving lives.
+              we are committed to enhancing efficiency and enabling better
+              outcomes for improving lives.
             </p>
             <div className="md:w-1/3 lg:w-4/5 h-[auto]">
               <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
@@ -142,7 +142,7 @@ const ThirdSection = () => {
             Empowering educators and institutions with innovative IT solutions,
             we pave the way for transformative learning experiences. From
             seamless management systems to interactive platforms, our solutions
-            revolutionize education delivery, ensuring efficiency,excellence.
+            revolutionize education delivery, ensuring efficiency, excellence.
           </p>
           <div className="md:w-1/3 lg:w-4/5 h-[auto]">
             <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
@@ -177,7 +177,7 @@ const ThirdSection = () => {
               Optimization.
             </h2>
             <p data-aos="fade-right" className="text-paragraph pt-3 text-left">
-              Field services encompass on-site support, installation, maintenance, and troubleshooting for software products, ensuring effective implementation and utilization. Technicians resolve technical issues, provide user training, and optimize software performance at customer locations. Proactive maintenance, upgrades, and emergency support minimize downtime and ensure uninterrupted operation.
+              Field services encompass on-site support, installation, maintenance and troubleshooting for software products, ensuring effective implementation and utilization. Technicians resolve technical issues, provide user training and optimize software performance at customer locations. Proactive maintenance, upgrades and emergency support minimize downtime and ensure uninterrupted operation.
             </p>
             <div className="md:w-1/3 lg:w-4/5 h-[auto]">
               <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">

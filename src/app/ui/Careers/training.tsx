@@ -18,13 +18,7 @@ const Training = () => {
             Workshop and Training Programs
           </h1>
           <p data-aos="fade-right" className="text-base text-start ">
-            As technology advances, the workplaces need strategies to evolve, so
-            the teams! We like to keep our team ready to take on new challenges
-            and have a thorough understanding of the changing landscape of the
-            industry. Through the various technical as well as soft-skills
-            training, continuous and ongoing seminars/ workshops and performance
-            matrix we are successfully transforming the raw resources into the
-            assets.
+            With the rapid advancement of technology, workplaces must adapt and so must their teams. We are committed to ensuring our team is well-prepared to tackle new challenges and stay abreast of industry changes. By offering a range of technical and soft-skills training, ongoing seminars, workshops and performance evaluations, we are effectively turning our raw talent into valuable assets.
           </p>
         </div>
       </div>

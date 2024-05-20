@@ -57,11 +57,7 @@ function Cloud() {
                     Service Cloud
                   </h4>
                   <p className="my-2 text-paragraph leading-6 text-gray-500">
-                    Deliver exceptional customer service experiences with
-                    Service Cloud. This powerful customer service platform
-                    enables you to support customers across multiple channels,
-                    resolve issues faster with AI-powered tools, and build
-                    lasting customer relationships.
+                    Empower your customer service team with Service Cloud to deliver unparalleled customer experiences. This robust platform allows you to assist customers through various channels, expedite issue resolution with AI-driven tools and foster enduring customer connections.
                   </p>
                 </div>
               </div>
@@ -81,7 +77,7 @@ function Cloud() {
                     Engage customers at every touchpoint with Marketing Cloud.
                     This integrated marketing platform allows you to create
                     personalized, data-driven marketing campaigns, automate
-                    customer journeys, and measure the impact of your marketing
+                    customer journeys and measure the impact of your marketing
                     efforts.{" "}
                   </p>
                 </div>
@@ -101,7 +97,7 @@ function Cloud() {
                   <p className="my-2 text-paragraph leading-6 text-gray-500">
                     Customize and extend Salesforce to fit your unique business
                     needs with Platform and App Cloud. Build custom
-                    applications, integrate with third-party systems, and extend
+                    applications, integrate with third-party systems and extend
                     the power of Salesforce with low-code development tools.
                   </p>
                 </div>

@@ -38,7 +38,7 @@ interface SoftwareServicesData {
 const SoftwareServicesData: SoftwareServicesData = {
   headline: " SOFTWARE DEVELOPMENT",
   paragraph:
-    "Choosing us for your software development needs means choosing a partner dedicated to your success. We don't just write code; we craft digital experiences that resonate with your audience and drive results. Our secret sauce? A perfect blend of expertise, innovation, and customer-centricity.",
+    "Choosing us for your software development needs means choosing a partner dedicated to your success. We don't just write code, we craft digital experiences that resonate with your audience and drive results. Our secret sauce? A perfect blend of expertise, innovation and customer-centricity.",
   Services: [
     {
       id: 1,
@@ -98,22 +98,22 @@ const SoftwareServicesData: SoftwareServicesData = {
     {
       id: 1,
       ques: "What programming languages do you specialize in?",
-      ans: "We specialize in a wide range of programming languages, including but not limited to Java, Python, JavaScript, C#, and Ruby. Our language selection is tailored to your project's specific requirements, ensuring optimal performance and scalability.",
+      ans: "We specialize in a wide range of programming languages including but not limited to Java, Python, JavaScript, C# and Ruby. Our language selection is tailored to your project's specific requirements, ensuring optimal performance and scalability.",
     },
     {
       id: 2,
       ques: "What development methodologies do you follow?",
-      ans: "Our team is proficient in various development methodologies, such as Agile, Scrum, and DevOps. We prioritize collaboration, transparency, and iterative development to efficiently deliver high-quality solutions.",
+      ans: "Our team is proficient in various development methodologies such as Agile, Scrum and DevOps. We prioritize collaboration, transparency and iterative development to efficiently deliver high-quality solutions.",
     },
     {
       id: 3,
       ques: "How do you ensure the security of software applications?",
-      ans: "Security is paramount to us. We adhere to industry best practices and standards to protect your applications from potential threats. Through rigorous code reviews, encryption protocols, and continuous security testing, we mitigate risks effectively throughout the development lifecycle.",
+      ans: "Security is paramount to us. We adhere to industry best practices and standards to protect your applications from potential threats. Through rigorous code reviews, encryption protocols and continuous security testing, we mitigate risks effectively throughout the development lifecycle.",
     },
     {
       id: 4,
       ques: "What support and maintenance services do you offer post-launch?",
-      ans: "Our commitment extends beyond the launch of your software. We provide comprehensive support, including troubleshooting, bug fixes, and updates, ensuring the ongoing success and performance optimization of your applications.",
+      ans: "Our commitment extends beyond the launch of your software. We provide comprehensive support including troubleshooting, bug fixes and updates, ensuring the ongoing success and performance optimization of your applications.",
     },
   ],
 };

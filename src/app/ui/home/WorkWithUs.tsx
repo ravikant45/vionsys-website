@@ -37,7 +37,7 @@ function WorkWithUs() {
             Explore limitless possibilities with Vionsys IT Solutions India Pvt.
             Ltd. Join our vibrant team where you'll engage in innovative
             projects, thrive in a collaborative atmosphere, access ongoing
-            learning initiatives, and chart a path for professional advancement.
+            learning initiatives and chart a path for professional advancement.
             Discover the ideal environment to unleash your full potential in the
             dynamic IT industry.
           </div>

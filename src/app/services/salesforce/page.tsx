@@ -34,7 +34,7 @@ const salesforce = () => {
         Elevate Your Business with Our Salesforce Services.
       </h3>
 
-      <p className="text-center font-normal md:w-1/2 w-full text-paragraph px-2 leading-9 text-white relative">Empower your business with our tailored Salesforce services. Streamline operations, boost customer relationships, and drive growth in today's dynamic digital landscape. Let us be your trusted partner in harnessing the full potential of Salesforce.</p>
+      <p className="text-center font-normal md:w-1/2 w-full text-paragraph px-2 leading-9 text-white relative">Empower your business with our tailored Salesforce services. Streamline operations, boost customer relationships and drive growth in today's dynamic digital landscape. Let us be your trusted partner in harnessing the full potential of Salesforce.</p>
     </div>
 
   </div>

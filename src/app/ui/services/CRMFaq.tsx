@@ -20,25 +20,25 @@ const CRMFaq = () => {
     {
       question: "What are the key benefits of implementing a CRM system?",
       answer:
-        "Benefits include improved customer relationships, increased efficiency, better decision-making, enhanced marketing and sales effectiveness, and improved customer service.",
+        "Benefits include improved customer relationships, increased efficiency, better decision-making, enhanced marketing and sales effectiveness and improved customer service.",
     },
     {
       question:
         "What are the different types of CRM systems available, and how do they differ?",
       answer:
-        "There are operational CRM, analytical CRM, and collaborative CRM. Operational focuses on customer-facing processes, analytical on data analysis, and collaborative on interdepartmental communication.",
+        "There are operational CRM, analytical CRM and collaborative CRM. Operational focuses on customer-facing processes, analytical on data analysis and collaborative on interdepartmental communication.",
     },
     {
       question:
         "What are some common challenges associated with implementing a CRM system?",
       answer:
-        "Challenges include resistance to change, data quality issues, integration challenges, lack of executive buy-in, and training/support needs.",
+        "Challenges include resistance to change, data quality issues, integration challenges, lack of executive buy-in and training/support needs.",
     },
     {
       question:
         "How can businesses measure the success of their CRM initiatives?",
       answer:
-        "Success can be measured through metrics like customer satisfaction, sales performance, marketing effectiveness, customer service quality, and overall business performance.",
+        "Success can be measured through metrics like customer satisfaction, sales performance, marketing effectiveness, customer service quality and overall business performance.",
     },
   ];
 

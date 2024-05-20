@@ -97,13 +97,13 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
 
         {/* the static section for the why choose us  */}
 
-        <section className='z-0 bg-transparent md:px-10 px-1'>
+        <section className='z-0 bg-transparent md:p-10 px-1'>
           {/* First section */}
           <div className='w-full px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2'>
             {/* left side */}
             <div data-aos="fade-left" className='flex flex-col justify-center gap-2 md:p-10 p-2'>
               <h1 className='text-2xl text-black font-bold'>Expertise</h1>
-              <p className='text-paragraph'>Expertise refers to specialized skills and knowledge in software development, encompassing proficiency in programming languages, frameworks, and industry-specific practices.</p>
+              <p className='text-paragraph'>Expertise refers to specialized skills and knowledge in software development, encompassing proficiency in programming languages, frameworks and industry-specific practices.</p>
             </div>
 
             {/* right side */}
@@ -135,7 +135,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               {/* right side */}
               <div className='flex flex-col justify-center gap-2 md:p-10 p-2'>
                 <h1 className='text-2xl text-black font-bold'>Innovation</h1>
-                <p className='text-paragraph'>Innovation involves introducing new ideas, technologies, and solutions to create value and drive progress in software development. It includes adopting emerging technologies and creative problem-solving.</p>
+                <p className='text-paragraph'>Innovation involves introducing new ideas, technologies and solutions to create value and drive progress in software development. It includes adopting emerging technologies and creative problem-solving.</p>
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             {/* left side */}
             <div data-aos="fade-left" className='flex flex-col justify-center md:p-10 p-2 gap-2'>
               <h1 className='text-2xl text-black font-bold'>On-Time Support</h1>
-              <p className='text-paragraph'>Commitment to delivering timely and responsive assistance throughout the software development process. This involves adapting to changing requirements, delivering updates regularly, and maintaining transparent communication with clients.</p>
+              <p className='text-paragraph'>Commitment to delivering timely and responsive assistance throughout the software development process. This involves adapting to changing requirements, delivering updates regularly and maintaining transparent communication with clients.</p>
             </div>
 
             {/* right side */}

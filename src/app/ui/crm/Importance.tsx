@@ -96,7 +96,7 @@ function Importance() {
             </h3>
             <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
-              CRM provides insights into customer behavior, trends, and preferences through analytics tools. Businesses leverage this data to make informed decisions and drive growth effectively.
+              CRM provides insights into customer behavior, trends and preferences through analytics tools. Businesses leverage this data to make informed decisions and drive growth effectively.
               </p>
             </div>
           </div>
@@ -119,7 +119,7 @@ function Importance() {
             </h3>
             <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
-              As businesses expand, CRM systems can scale accordingly, accommodating growing customer bases. This scalable foundation supports sustainable growth and enables businesses to thrive in competitive markets.
+              As businesses expand, CRM systems can scale accordingly accommodating growing customer bases. This scalable foundation supports sustainable growth and enables businesses to thrive in competitive markets.
               </p>
             </div>
           </div>
