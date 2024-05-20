@@ -52,7 +52,7 @@ const BiAndAnalyticsDatapage = () => {
                     <div className="w-[100%] z-0 overflow-x-hidden md:pt-20 pt-10 md:gap-10 gap-5 bg-transparent flex-col relative flex items-center justify-center">
                 
                        <h3 className="text-center md:text-MainHeading text-2xl text-[#215cbc] font-extrabold relative z-20 bg-clip-text capitalize">{BiAndAnalyticsData.cardsTitle}</h3>
-                       <div className="flex md:gap-10 gap-2 py-2 flex-wrap justify-evenly w-full">
+                       <div className="flex md:gap-10 gap-2 py-2 flex-wrap justify-evenly w-full overflow-x-hidden">
                         {
                             BiAndAnalyticsData?.cards.map((card) => (
                                <div key={card.title} className="flex justify-end h-auto relative border border-gray-300 rounded-3xl items-center md:flex-row flex-col-reverse text-slate-100/50">
@@ -77,7 +77,7 @@ const BiAndAnalyticsDatapage = () => {
 
                 {/* Fourth section */}
             <section id="bisection3">
-                <div className="py-4 w-full relative flex items-center justify-center">
+                <div className="py-4 w-full relative flex items-center justify-center overflow-x-hidden">
                     <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
                     <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
@@ -86,7 +86,7 @@ const BiAndAnalyticsDatapage = () => {
                                 Frequently Asked <span className="text-blue1">Questions</span>
                             </h3>
                         </div>
-                        <div className="">
+                        <div className="overflow-x-hidden">
                             <ul>
                                 {
                                     BiAndAnalyticsData?.faqs?.map((faq) => (
