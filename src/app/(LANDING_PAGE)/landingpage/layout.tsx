@@ -4,10 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Vionsys IT Solutions India Pvt. Ltd.",
-    template: "Vionsys IT Solutions India Pvt. Ltd.",
-  },
+  title: "Landing Page - Vionsys IT Solutions India Pvt. Ltd.",
   openGraph: {
     images: "/src/app/opengraph-image.png",
   },
