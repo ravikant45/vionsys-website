@@ -48,7 +48,7 @@ const Second = () => {
               <div className="w-full h-[1px] bg-black"></div>
               <div className="flex flex-col justify-center items-center">
                 <p className="text-md font-semibold">info@vionsys.com</p>
-                <p className="text-md font-semibold">8766613742</p>
+                <p className="text-md font-semibold">+91 02047242493</p>
               </div>
             </CardContent>
             <CardFooter className="flex justify-end items-center">
