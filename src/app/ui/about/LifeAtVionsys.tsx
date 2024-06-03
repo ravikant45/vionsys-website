@@ -19,7 +19,7 @@ const LifeAtVionsys: React.FC = () => {
       id: 1,
       title: "Benefits",
       description:
-        "We offers a comprehensive benefits package that includes healthcare, retirement plans, wellness programs, and other perks designed to support employees' health, financial security, and overall well-being.",
+        "We offers a comprehensive benefits package that includes healthcare, retirement plans, wellness programs and other perks designed to support employees' health, financial security and overall well-being.",
       icon: (
         <div data-aos="flip-right" className="p-4  rounded-full relative z-20 ">
           <FaHandsHelping size={45} className="text-blue1" />
@@ -30,7 +30,7 @@ const LifeAtVionsys: React.FC = () => {
       id: 2,
       title: "Culture",
       description:
-        "We foster a vibrant and inclusive culture that values diversity, teamwork, and respect. We encourage our employees to bring their authentic selves to work and contribute to a positive and supportive environment",
+        "We foster a vibrant and inclusive culture that values diversity, teamwork and respect. We encourage our employees to bring their authentic selves to work and contribute to a positive and supportive environment",
       icon: (
         <div data-aos="flip-right" className="p-4  rounded-full relative z-20 ">
           <FaUsersGear  size={45} className="text-blue1" />
@@ -41,7 +41,7 @@ const LifeAtVionsys: React.FC = () => {
       id: 3,
       title: "Flexible Work",
       description:
-        "We recognizes the importance of work-life balance and offers flexible work arrangements, including remote work options, flexible hours, and other accommodations to help employees manage their professional and personal responsibilities effectively.",
+        "We recognizes the importance of work-life balance and offers flexible work arrangements including remote work options, flexible hours and other accommodations to help employees manage their professional and personal responsibilities effectively.",
       icon: (
         <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
           <FaRegClock  size={45} className="text-blue1" />
@@ -52,7 +52,7 @@ const LifeAtVionsys: React.FC = () => {
       id: 4,
       title: "Innovation and Collaboration",
       description:
-        "We promotes a culture of innovation and collaboration, where employees are encouraged to think creatively, share ideas, and collaborate across teams to drive business growth and achieve shared goals.",
+        "We promotes a culture of innovation and collaboration where employees are encouraged to think creatively, share ideas and collaborate across teams to drive business growth and achieve shared goals.",
       icon: (
         <div data-aos="flip-right" className="p-4 rounded-full relative z-20 ">
           <FaBrain  size={45} className="text-blue1" />
@@ -63,7 +63,7 @@ const LifeAtVionsys: React.FC = () => {
       id: 5,
       title: "Career Development",
       description:
-        "We are committed to investing in the professional development of its employees. The company offers various training programs, mentorship opportunities, and career advancement pathways to help employees grow their skills, expand their knowledge, and advance their careers within the organization.",
+        "We are committed to investing in the professional development of its employees. The company offers various training programs, mentorship opportunities and career advancement pathways to help employees grow their skills, expand their knowledge and advance their careers within the organization.",
       icon: (
         <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
           <FaBriefcase  size={45} className="text-blue1" />

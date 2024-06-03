@@ -43,7 +43,7 @@ const page: React.FC = () => {
       id: 2,
       title: "Compatibility Testing for Web Applications",
       description:
-        "Ensuring that web applications function seamlessly across different web browsers, devices, and screen resolutions to provide a consistent user experience.",
+        "Ensuring that web applications function seamlessly across different web browsers, devices and screen resolutions to provide a consistent user experience.",
       icon: (
         <div className="p-4 bg-gray2 rounded-full relative z-20 ">
           <MdOutlineViewCompactAlt size={35} className="text-orange" />
@@ -54,7 +54,7 @@ const page: React.FC = () => {
       id: 3,
       title: "Usability Testing",
       description:
-        "Assessing the user interface and experience of web applications to ensure intuitive navigation, efficient workflow, and overall user satisfaction.",
+        "Assessing the user interface and experience of web applications to ensure intuitive navigation, efficient workflow and overall user satisfaction.",
       icon: (
         <div className="p-4 bg-gray2 rounded-full relative z-20">
           <MdOutlineVerifiedUser size={35} className="text-orange" />
@@ -65,7 +65,7 @@ const page: React.FC = () => {
       id: 4,
       title: "Performance Testing",
       description:
-        "Evaluating the speed, responsiveness, and scalability of web applications under various load conditions to ensure optimal performance.",
+        "Evaluating the speed, responsiveness and scalability of web applications under various load conditions to ensure optimal performance.",
       icon: (
         <div className="p-4 bg-gray2 rounded-full relative z-20 ">
           <CgPerformance size={35} className="text-orange" />
@@ -87,7 +87,7 @@ const page: React.FC = () => {
       id: 6,
       title: "Regression Testing",
       description:
-        " Detecting and preventing the introduction of defects or errors in web applications due to recent code changes or updates.",
+        "Detecting and preventing the introduction of defects or errors in web applications due to recent code changes or updates.",
       icon: (
         <div className="p-4 bg-gray2 rounded-full relative z-20">
           <TbTestPipe size={35} className="text-orange" />
@@ -109,7 +109,7 @@ const page: React.FC = () => {
       id: 8,
       title: "Security Testing",
       description:
-        " Identifying and addressing potential security vulnerabilities in web applications to safeguard against cyber threats and protect sensitive data.",
+        "Identifying and addressing potential security vulnerabilities in web applications to safeguard against cyber threats and protect sensitive data.",
       icon: (
         <div className="p-4 bg-gray2 rounded-full relative z-20">
           <MdOutlineSecurity size={35} className="text-orange" />
@@ -139,8 +139,8 @@ const page: React.FC = () => {
                 We redefine software
                 testing and quality assurance with a tailored approach that
                 merges innovation and expertise. With a relentless pursuit of
-                perfection, we meticulously assess, refine, and optimize your
-                software, ensuring robustness, security, and exceptional
+                perfection, we meticulously assess, refine and optimize your
+                software, ensuring robustness, security and exceptional
                 performance. Trust us to elevate your software to new heights of
                 reliability and user satisfaction, empowering your business for
                 success in today's dynamic digital landscape.
@@ -168,7 +168,7 @@ const page: React.FC = () => {
             {/* left side */}
             <div className="flex flex-col gap-2 text-base leading-8 justify-center">
               <p data-aos="fade-left ">
-                We emerge as your top-tier QA and testing partner, offering unparalleled expertise. With our commitment to excellence, bolstered by cutting-edge tools and meticulous methodologies, we ensure software reliability and deliver seamless user experiences that drive exceptional business success.
+                We emerge as your top-tier QA and testing partner offering unparalleled expertise. With our commitment to excellence, bolstered by cutting-edge tools and meticulous methodologies, we ensure software reliability and deliver seamless user experiences that drive exceptional business success.
               </p>
               <ul data-aos="zoom-in" className="ml-4 list-disc">
                 <li>Expertise in QA and testing.</li>
@@ -227,7 +227,7 @@ const page: React.FC = () => {
               <h1 data-aos="fade-left" className="md:text-5xl text-2xl py-4 text-white font-bold">
                 Below are the testing implementation steps
               </h1>
-              <p data-aos="fade-right" className="md:text-lg text-sm font-medium">We implement testing follows a structured process starting with requirement understanding. Test cases are executed in a prepared environment, defects are reported and resolved through retesting, and regression testing ensures stability. This culminates in comprehensive test closure and post-implementation support for seamless software deployment.</p>
+              <p data-aos="fade-right" className="md:text-lg text-sm font-medium">We implement testing follows a structured process starting with requirement understanding. Test cases are executed in a prepared environment, defects are reported and resolved through retesting and regression testing ensures stability. This culminates in comprehensive test closure and post-implementation support for seamless software deployment.</p>
             </div>
           </div>
         </div>
@@ -274,7 +274,7 @@ const page: React.FC = () => {
                 <h3 className="text-ThirdHeading font-bold">Test Planning</h3>
                 <p className="text-paragraph">
                   Crafting a thorough blueprint is our forte, encompassing
-                  strategic outlines, delineated testing phases, deliverables,
+                  strategic outlines, delineated testing phases, deliverables
                   and resource requisites. This meticulous approach ensures
                   simplification and seamless implementation of the testing
                   process, driving efficiency and effectiveness throughout.
@@ -298,7 +298,7 @@ const page: React.FC = () => {
                 <p className="text-paragraph">
                   Post-test plan analysis, our QA team swiftly identifies key
                   objectives, crafting detailed test cases. This includes test
-                  data, preconditions, expected results, and postconditions,
+                  data, preconditions, expected results and postconditions,
                   ensuring precision in our testing approach.
                 </p>
               </div>
@@ -376,7 +376,7 @@ const page: React.FC = () => {
                   To offer a comprehensive overview for analysis, we
                   meticulously compile a detailed document summarizing the
                   entire process. This includes all tests conducted, the final
-                  testing report, and completion metrics, ensuring clarity and
+                  testing report and completion metrics, ensuring clarity and
                   transparency in our testing procedures.
                 </p>
               </div>

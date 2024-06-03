@@ -51,13 +51,13 @@ const BiAndAnalyticsDatapage = () => {
                     {/* Third Section */}
                     <div className="w-[100%] z-0 overflow-x-hidden md:pt-20 pt-10 md:gap-10 gap-5 bg-transparent flex-col relative flex items-center justify-center">
                 
-                       <h3 className="text-center text-MainHeading font-extrabold relative z-20 bg-clip-text capitalize">{BiAndAnalyticsData.cardsTitle}</h3>
-                       <div className="flex gap-10 py-2 flex-wrap justify-evenly w-full">
+                       <h3 className="text-center md:text-MainHeading text-2xl text-[#215cbc] font-extrabold relative z-20 bg-clip-text capitalize">{BiAndAnalyticsData.cardsTitle}</h3>
+                       <div className="flex md:gap-10 gap-2 py-2 flex-wrap justify-evenly w-full overflow-x-hidden">
                         {
                             BiAndAnalyticsData?.cards.map((card) => (
                                <div key={card.title} className="flex justify-end h-auto relative border border-gray-300 rounded-3xl items-center md:flex-row flex-col-reverse text-slate-100/50">
                                 <Image data-aos="zoom-in" quality={100} width="300" height="200" src={card.image} alt="" className="p-4 h-full w-96 md:w-72 rounded-3xl bg-grid-yellow-500" />
-                                        <div className="p-4 md:w-64 w-80">
+                                        <div className="md:p-4 p-2 md:w-64 w-auto">
                                         <h3 data-aos="fade-left" className="max-w-xs !pb-2 !m-0 font-bold  text-base text-violet-800">
                                             {card.title}
                                         </h3>
@@ -77,22 +77,22 @@ const BiAndAnalyticsDatapage = () => {
 
                 {/* Fourth section */}
             <section id="bisection3">
-                <div className="py-4 w-full relative flex items-center justify-center">
+                <div className="py-4 w-full relative flex items-center justify-center overflow-x-hidden">
                     <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
                     <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
                         <div className="text-center">
-                            <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-black  relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-500 to-neutral-800 py-8">
+                            <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-black  relative z-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-500 to-neutral-800 md:py-8">
                                 Frequently Asked <span className="text-blue1">Questions</span>
                             </h3>
                         </div>
-                        <div className="">
+                        <div className="overflow-x-hidden">
                             <ul>
                                 {
                                     BiAndAnalyticsData?.faqs?.map((faq) => (
-                                        <li key={faq.qid} className="text-left mb-10">
-                                            <div className="flex flex-row items-start mb-5">
-                                                <div className="hidden sm:flex items-center justify-center p-3 mr-3 rounded-full bg-indigo-500 text-white border-4 border-white text-xl font-semibold">
+                                        <li key={faq.qid} className="text-left md:mb-10">
+                                            <div className="flex flex-row items-start md:mb-5">
+                                                <div className="hidden sm:flex items-center justify-center md:p-3 p-1 mr-3 rounded-full bg-indigo-500 text-white border-4 border-white text-xl font-semibold">
                                                     <svg width="30px" fill="white" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                         <g data-name="Layer 2">
                                                             <g data-name="menu-arrow">
@@ -108,7 +108,7 @@ const BiAndAnalyticsDatapage = () => {
                                                 </div>
                                             </div>
                                             <div data-aos="fade-left" className="flex flex-row items-start">
-                                                <div className="border-black shadow shadow-indigo-300 border rounded-b-3xl mt-8 rounded-tl-3xl p-5 w-fit flex items-center">
+                                                <div className="border-black shadow shadow-indigo-300 border rounded-b-3xl md:mt-8 mt-2 rounded-tl-3xl p-5 w-fit flex items-center">
                                                     <p className="text-black text-md">{faq.answer}</p>
                                                 </div>
                                                 <div className="hidden sm:flex items-center justify-center p-3 ml-3 rounded-full bg-indigo-500 text-white border-4 border-white text-xl font-semibold">

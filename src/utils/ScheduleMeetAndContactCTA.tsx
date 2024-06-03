@@ -33,7 +33,7 @@ const ScheduleMeetAndContactCTA: React.FC = () => {
               data-aos="zoom-out"
               className="text-2xl text-blue1 font-bold text-center"
             >
-              Excited about the prospect of collaborating? Share your ideas, and
+              Excited about the prospect of collaborating? Share your ideas and
               let's work together to create something truly remarkable!
             </h4>
             <div className="flex md:gap-4 gap-2 justify-center items-center flex-wrap">

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const services = () => {
   return (
     <div className='bg-dot-slate-300'>
-        <div className="relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 py-8">
+        <div className="relative flex flex-col justify-between h-full max-w-6xl md:px-10 mx-auto xl:px-0 md:py-8 p-5">
       <h2 data-aos="fade-down" className="mb-1 md:text-MainHeading text-2xl text-[#215cbc] font-extrabold">Our Services</h2>
       <p data-aos="fade-down" className="mb-4 md:text-SubHeading text-xl text-[#e57e2c] text-bold">Explore a range of outstanding services we provide.</p>
       <div data-aos='zoom-in' className="w-full">
@@ -12,7 +12,7 @@ const services = () => {
           <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
             <div className="relative h-full ml-0 mr-0 sm:mr-10">
               <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-[#215cbc] rounded-lg"></span>
-              <div className="relative h-full p-5 bg-white border-2 border-[#215cbc] rounded-lg">
+              <div className="relative h-full md:p-5 p-2 bg-white border-2 border-[#215cbc] rounded-lg">
                 <div className="flex items-center -mt-1">
                   <h3 className="my-2 ml-3 md:text-lg text-base font-bold text-black">Temporary Staffing Solutions</h3>
                 </div>
@@ -86,7 +86,7 @@ const services = () => {
                   <h3 className="my-2 ml-3 md:text-lg text-base font-bold text-black">Skill Assessment and Training</h3>
                 </div>
                 <p className="mb-2 text-gray-600 md:text-base text-sm">
-                Invest in the continuous development of your IT workforce with our skill assessment and training programs. We offer technical assessments, coding challenges, and professional development courses designed to enhance your team's capabilities and keep them ahead of the curve.
+                Invest in the continuous development of your IT workforce with our skill assessment and training programs. We offer technical assessments, coding challenges and professional development courses designed to enhance your team's capabilities and keep them ahead of the curve.
                 </p>
               </div>
             </div>
@@ -99,7 +99,7 @@ const services = () => {
                   <h3 className="my-2 ml-3 md:text-lg text-base font-bold text-black">Vendor Management Services (VMS)</h3>
                 </div>
                 <p className="mb-2 text-gray-600 md:text-base text-sm">
-                Simplify the management of your contingent workforce with our vendor management services. We help you optimize vendor relationships, standardize processes, and ensure compliance to maximize efficiency and minimize risk.
+                Simplify the management of your contingent workforce with our vendor management services. We help you optimize vendor relationships, standardize processes and ensure compliance to maximize efficiency and minimize risk.
                 </p>
               </div>
             </div>

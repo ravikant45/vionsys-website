@@ -71,7 +71,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-cardPara font-normal max-w-sm dark:text-neutral-300"
               >
-                Our mission is to deliver exceptional IT solutions tailored to the unique needs of our clients, leveraging cutting- edge technologies, fostering innovation, and providing unparalleled customer satisfaction.
+                Our mission is to deliver exceptional IT solutions tailored to the unique needs of our clients, leveraging cutting- edge technologies, fostering innovation and providing unparalleled customer satisfaction.
               </CardItem>
             </div>
           </CardBody>
@@ -103,7 +103,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-cardPara font-normal max-w-sm  dark:text-neutral-300"
               >
-                Embodying a culture of innovation, integrity, and collaboration, we strive for excellence in every endeavor. Our commitment to customer-centricity ensures unwavering dedication to client success, fostering enduring relationships built on trust, transparency, and exceptional service.
+                Embodying a culture of innovation, integrity and collaboration, we strive for excellence in every endeavor. Our commitment to customer-centricity ensures unwavering dedication to client success, fostering enduring relationships built on trust, transparency and exceptional service.
               </CardItem>
             </div>
           </CardBody>
