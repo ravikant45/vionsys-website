@@ -29,12 +29,7 @@ export interface Industries {
   description: string;
 }
 
-export interface FAQ{
-  id: number;
-  question: string;
-  ans: string;
-  
-}
+
 
 interface MLAIServicesData {
   line1: string;
@@ -42,7 +37,7 @@ interface MLAIServicesData {
   para: string;
   features: Feature[];
   industries:Industries[];
-  faq:FAQ[];
+  
 }
 
 
@@ -162,39 +157,7 @@ const MLAIServicesData: MLAIServicesData = {
         "In the education sector, our AI and ML solutions enable personalized learning, student performance analytics and administrative automation. We help educational institutions improve learning outcomes, enhance student engagement and streamline administrative processes.",
     }
   ],
-  faq:[
-    {
-      id: 1,
-      question:"How can Machine Learning and AI benefit my business?",
-      ans:"Machine Learning and AI can help your business by automating processes, enhancing decision-making through predictive analytics, improving customer experiences, optimizing operations and driving innovation. These technologies can uncover insights from data that can lead to cost savings, increased revenue and competitive advantages."
-    },
-    {
-      id: 2,
-      question:"How do you ensure the reliability and accuracy of AI/ML models?",
-      ans:"We ensure reliability and accuracy through rigorous testing and validation processes. This includes cross-validation, A/B testing, performance monitoring and continuous model refinement. We use metrics such as accuracy, precision, recall and F1-score to evaluate model performance."
-    },
-    {
-      id: 3,
-      question:"How do you address data privacy and security in AI/ML projects?",
-      ans:"We prioritize data privacy and security by adhering to strict data governance practices. This includes data anonymization, encryption, access controls and compliance with regulations like GDPR and CCPA. Our solutions are designed to ensure data integrity and confidentiality."
-    },
-    {
-      id: 4,
-      question:"What is the typical timeline for developing an AI/ML solution?",
-      ans:"The timeline varies based on project complexity and requirements. A simple proof of concept can take a few weeks while a full-scale deployment might take several months. We provide detailed project timelines after an initial consultation and needs assessment."
-    },
-    {
-      id: 5,
-      question:"What services does your company offer in Machine Learning and AI?",
-      ans:"We offer a comprehensive range of Machine Learning and AI services including consulting, custom model development, data analysis, model training, deployment, integration and ongoing support and maintenance."
-    },
-    {
-      id: 6,
-      question:" How do you stay updated with the latest advancements in Machine Learning and AI?",
-      ans:"Our team continuously engages in professional development, attends industry conferences, participates in research,and collaborates with academic institutions to stay at the forefront of Machine Learning and AI advancements. This ensures that we deliver cutting-edge solutions to our clients."
-    },
-    
-  ]
+  
 };
 
 export { MLAIServicesData };

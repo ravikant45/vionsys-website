@@ -11,7 +11,7 @@ export const Jobs: {
     Requirement: [
       "Role Category: Software Development",
       "Employment Type: Full Time, Permanent",
-      "Experience: 4+year",
+      "Experience: 0-4 year",
       "Location: Kharadi",
     ],
     education:
@@ -38,7 +38,7 @@ export const Jobs: {
     Requirement: [
       "Role Category: Software Development",
       "Employment Type: Full Time, Permanent",
-      "Experience: 4+year",
+      "Experience: 0-4 year",
       "Location: Kharadi",
     ],
     education: "UG: B.Tech/B.E. in Computers, Any Graduate",
@@ -93,7 +93,7 @@ export const Jobs: {
     Requirement: [
       "Role Category: Software Development",
       "Employment Type: Full Time,Permanent",
-      "Experience: 4+year",
+      "Experience: 0-4 year",
       "Location: Kharadi",
     ],
     education:
