@@ -12,11 +12,18 @@ const CareerComponent = () => {
           alt=""
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10 pt-10">
-          <h1 data-aos="fade-left" className="text-4xl font-extrabold py-6">
+          <h1
+            data-aos="fade-left"
+            className="md:text-4xl text-3xl font-extrabold py-6 sm:px-2
+          "
+          >
             {" "}
             Build your career at Vionsys
           </h1>
-          <p data-aos="fade-right" className="text-xl md:w-1/2 pt-2">
+          <p
+            data-aos="fade-right"
+            className="md:text-xl text-lg  md:w-1/2 pt-2"
+          >
             Uncover boundless possibilities with Vionsys IT Solutions India Pvt.
             Ltd. Be part of a dynamic team where creativity, advancement and
             teamwork thrive. Embark on your path towards a brighter professional

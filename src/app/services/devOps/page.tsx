@@ -81,7 +81,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-1"
+                className="grid gap-1 border border-gray-300 rounded p-4 transition-transform transform hover:scale-105 hover:shadow-md"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Automated Deployments
@@ -95,7 +95,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-1"
+                className="grid gap-1 border border-gray-300 rounded p-4 transition-transform transform hover:scale-105 hover:shadow-md"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Scalable Infrastructure
@@ -109,7 +109,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-1"
+                className="grid gap-1 border border-gray-300 rounded p-4 transition-transform transform hover:scale-105 hover:shadow-md"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Real-time Monitoring
@@ -123,7 +123,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-1"
+                className="grid gap-1 border border-gray-300 rounded p-4 transition-transform transform hover:scale-105 hover:shadow-md"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Secure and Compliant
@@ -136,7 +136,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-1"
+                className="grid gap-1 border border-gray-300 rounded p-4 transition-transform transform hover:scale-105 hover:shadow-md"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Collaboration-Focused
@@ -149,7 +149,7 @@ const page = () => {
               <div
                 data-aos="zoom-in"
                 data-aos-duration="800"
-                className="grid gap-1"
+                className="grid gap-1 border border-gray-300 rounded p-4 transition-transform transform hover:scale-105 hover:shadow-md"
               >
                 <h3 className="text-ThirdHeading font-bold">
                   Customizable Workflows
@@ -249,8 +249,8 @@ const page = () => {
                         Jenkins, CircleCI, Travis CI), Configuration management
                         tools (e.g. Ansible, Puppet, Chef), Containerization
                         platforms (e.g. Docker, Kubernetes), Monitoring and
-                        logging tools (e.g. Prometheus, Grafana, ELK
-                        Stack), Cloud platforms (e.g. AWS, Azure, Google Cloud)
+                        logging tools (e.g. Prometheus, Grafana, ELK Stack),
+                        Cloud platforms (e.g. AWS, Azure, Google Cloud)
                       </p>
                     </div>
                   </div>
@@ -280,14 +280,14 @@ const page = () => {
                   </h3>
                   <div className=" text-paragraph">
                     <p data-aos="fade-right" data-aos-duration="600">
-                        Some of the key benefits of adopting DevOps include:
-                        Faster software delivery: DevOps enables organizations to
-                        release new features and updates more frequently. Improved
-                        reliability: Automated testing and monitoring help
-                        identify and fix issues more quickly. Increased
-                        collaboration: DevOps promotes better communication and
-                        collaboration between development and operations teams.
-                        Cost savings: Automation and efficient workflows.
+                      Some of the key benefits of adopting DevOps include:
+                      Faster software delivery: DevOps enables organizations to
+                      release new features and updates more frequently. Improved
+                      reliability: Automated testing and monitoring help
+                      identify and fix issues more quickly. Increased
+                      collaboration: DevOps promotes better communication and
+                      collaboration between development and operations teams.
+                      Cost savings: Automation and efficient workflows.
                     </p>
                   </div>
                 </div>

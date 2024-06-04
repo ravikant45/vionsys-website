@@ -2,8 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { MdOutlineMail } from "react-icons/md";
-import { FiPhoneCall } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
+import { TbDeviceLandlinePhone } from "react-icons/tb";
 import LinkedIn from "../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../public/assets/socialicons/facebook.png";
@@ -57,7 +57,7 @@ const Footer = () => {
                   opacity: {duration: 0.6},
                   ease: "easeIn",
                  }}
-                className="text-base md:text-start text-justify"
+                className="text-base text-start"
               >
                 Vionsys IT Solutions India Pvt. Ltd. is a comprehensive IT
                 company offering end-to-end technology solutions. Specializing in software development, network infrastructure, cybersecurity, cloud services and IT consulting, we enable businesses to excel in the digital age.{" "}
@@ -184,9 +184,10 @@ const Footer = () => {
               >
                 <div className="flex  gap-3">
                   <div>
-                    <FiPhoneCall size={19} className="mr-2" />
+                  <TbDeviceLandlinePhone size={19} className="mr-2" />
                   </div>
-                  <span> Phone: +91 02047242493</span>
+                  <span> Landline: +91 (020) 47242493
+                  </span>
                 </div>
                 <div className="flex gap-3">
                   <div>
@@ -200,8 +201,11 @@ const Footer = () => {
                     <GrLocation className="w-6 h-6 flex-shrink-0 mr-2" />
                   </div>
                   <span>
-                    Address: 6th floor office no.504 Stellar Spaces, opposite
-                    Zensar IT Park, Kharadi, Pune - 411014.
+                    Address: 6th Floor, Office No. 504, Stellar Spaces, 
+                              Opposite Zensar IT Park, 
+                              Kharadi, Pune - 411014, 
+                              India
+
                   </span>
                 </div>
               </motion.div>
@@ -213,7 +217,7 @@ const Footer = () => {
       <div className="text-center  relative flex justify-center items-center pt-4 ">
         <p className=" text-slate-200">
           {" "}
-          Copyright &#169; 2023 Vionsys IT Solutions India Pvt. Ltd . - All
+          Copyright &#169; 2024 Vionsys IT Solutions India Pvt. Ltd . - All
           Rights Reserved.
         </p>
       </div>
