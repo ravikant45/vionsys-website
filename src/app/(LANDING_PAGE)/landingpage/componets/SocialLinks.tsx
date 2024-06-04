@@ -3,8 +3,13 @@ import React from "react";
 
 const SocialLinks = () => {
   return (
-    <main className="flex items-center justify-center gap-8 pb-12">
-      {/* facebook link */}
+    <main id="contactbg" className="flex flex-col items-center justify-center gap-8 py-20">
+      <h1 className="text-MainHeading text-orange font-semibold text-center block">
+        Stay connected with us
+      </h1>
+
+      <div className="flex justify-center items-center gap-8">
+        {/* facebook link */}
       <section className="flex justify-center items-center">
         <Link
           target="_blank"
@@ -16,7 +21,7 @@ const SocialLinks = () => {
             width="1em"
             height="1.1em"
             viewBox="0 0 448 512"
-            stroke-width="0"
+            strokeWidth="0"
             fill="currentColor"
             stroke="currentColor"
             className="w-5"
@@ -40,7 +45,7 @@ const SocialLinks = () => {
             width="1em"
             height="1.2em"
             viewBox="0 0 24 24"
-            stroke-width="1"
+            strokeWidth="1"
             fill="currentColor"
             stroke="currentColor"
             className="w-5"
@@ -64,7 +69,7 @@ const SocialLinks = () => {
             width="1em"
             height="1.1em"
             viewBox="0 0 512 512"
-            stroke-width="0"
+            strokeWidth="0"
             fill="currentColor"
             stroke="currentColor"
             className="w-5 h-5"
@@ -88,7 +93,7 @@ const SocialLinks = () => {
             width="1em"
             height="1em"
             viewBox="0 0 24 24"
-            stroke-width="0"
+            strokeWidth="0"
             fill="currentColor"
             stroke="currentColor"
           >
@@ -99,6 +104,7 @@ const SocialLinks = () => {
           </span>
         </Link>
       </section>
+      </div>
     </main>
   );
 };

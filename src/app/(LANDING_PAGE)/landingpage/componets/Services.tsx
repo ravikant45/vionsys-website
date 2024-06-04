@@ -4,10 +4,10 @@ const Services = () => {
   return (
     <main>
       <section className="heading pt-6">
-        <h1 className="w-full text-center mx-auto mb-4 text-4xl font-bold leading-tight text-gray-900 sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight">
+        <h1 className="w-full text-center mx-auto mb-4 text-4xl font-bold leading-tight text-gray-900 sm:leading-tight sm:text-5xl lg:text-MainHeading lg:leading-tight">
           Our Services
         </h1>
-        <p className="md:w-[70%] w-full  mx-auto px-4 text-lg text-gray-600 font-inter">
+        <p className="md:w-[70%] w-full mx-auto px-4 text-lg text-gray-800 text-paragraph text-center">
           We provide top-notch web design and development services tailored to
           your unique needs. Our customized and affordable web design solutions
           ensure your website stands out. With us, you can select the best plans
@@ -47,7 +47,7 @@ const Services = () => {
                   <div className="relative h-full p-5 bg-white border-2 border-purple-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        24*7 Service Support-
+                        24/7 Service Support
                       </h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">
@@ -138,7 +138,7 @@ const Services = () => {
                   <div className="relative h-full p-5 bg-white border-2 border-indigo-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        Graphic Design & Logo design
+                        Graphic Design & Logo Design
                       </h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-indigo-500 uppercase">
@@ -150,6 +150,29 @@ const Services = () => {
                       identity. Let your brand speak volumes through our
                       expertly crafted designs, where every pixel tells a story
                       of innovation and excellence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full sm:w-1/2">
+                <div className="relative h-full ml-0 md:mr-10">
+                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-purple-500 rounded-lg"></span>
+                  <div className="relative h-full p-5 bg-white border-2 border-purple-500 rounded-lg">
+                    <div className="flex items-center -mt-1">
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
+                        Web Hosting and Domain Services
+                      </h3>
+                    </div>
+                    <p className="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">
+                      ------------
+                    </p>
+                    <p className="mb-2 text-gray-600">
+                      We offer comprehensive web hosting and domain services to
+                      ensure your online presence is seamless and robust. Our
+                      web hosting solutions are designed to meet the diverse
+                      needs of businesses, from startups to large enterprises,
+                      providing reliable, secure, and high-performance hosting
+                      environments.
                     </p>
                   </div>
                 </div>
