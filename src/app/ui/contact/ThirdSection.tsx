@@ -32,8 +32,9 @@ const formSchema = z.object({
   name: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  number: z.string().length(10, {
-    message: "Contact number must be at least 10 digits.",
+  number: z.string().refine((value) => /^\d{10}$/.test(value), {
+    message:
+      "Contact number must be exactly 10 digits and should not contain alphabets or special characters.",
   }),
   email: z.string().email("Invalid email!!"),
   message: z.string().min(2, {
@@ -83,7 +84,6 @@ const ThirdSection = () => {
   return (
     <div>
       <div className="flex justify-center items-center mt-0 bg-dot-zinc-400 px-2 py-7">
-        
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -194,7 +194,11 @@ const ThirdSection = () => {
       </div>
       <div className="flex justify-center w-full md:h-[50vh] relative h-auto">
         {/*fourth image here */}
-        <Image src={third} alt="" className="object-cover w-full md:h-[50vh] h-[30vh]" />
+        <Image
+          src={third}
+          alt=""
+          className="object-cover w-full md:h-[50vh] h-[30vh]"
+        />
         <div
           className=" absolute md:py-20 py-10 text-lg lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
         bg-clip-text text-transparent bg-gradient-to-r animate-pulse from-red-500 to-blue-700"

@@ -30,12 +30,17 @@ const page = () => {
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 px-4 text-center text-white">
             <h1
-              data-aos="fade-left" data-aos-duration="500"
+              data-aos="fade-left"
+              data-aos-duration="500"
               className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
             >
               Product Development
             </h1>
-            <p data-aos="fade-left" data-aos-duration="500" className="max-w-xl text-lg md:text-xl">
+            <p
+              data-aos="fade-left"
+              data-aos-duration="500"
+              className="max-w-xl text-lg md:text-xl"
+            >
               Discover our innovative solutions and transform your business
               today.
             </p>
@@ -47,20 +52,33 @@ const page = () => {
       <section className="w-full py-12 md:py-24 lg:py-16  dark:bg-gray-800">
         <div className="container px-4 md:px-6">
           <div className="space-y-3 text-center">
-            <h2 data-aos="zoom-in" data-aos-duration="500" className="text-3xl text-gray-700 font-bold tracking-tighter md:text-4xl">
+            <h2
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              className="text-3xl text-gray-700 font-bold tracking-tighter md:text-4xl"
+            >
               Our Key <span className="text-blue-700">Services</span>
             </h2>
-            <p data-aos="zoom-out" data-aos-duration="500" className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p
+              data-aos="zoom-out"
+              data-aos-duration="500"
+              className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+            >
               We offer a wide range of services to help your business succeed.
             </p>
           </div>
           <div className="grid grid-cols-1 md:gap-6 gap-2 pt-2 md:pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            <div
-            className="rounded-lg bg-white md:p-6 p-2 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
+            <div className="rounded-lg bg-white md:p-6 p-2 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <BriefcaseIcon className="h-6 w-6" />
               </div>
-              <h3 data-aos="zoom-in" data-aos-duration="500" className="mt-4 text-xl font-semibold">Product Strategy</h3>
+              <h3
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="mt-4 text-xl font-semibold"
+              >
+                Product Strategy
+              </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Craft a unique product strategy tailored to your business needs,
                 ensuring alignment with your objectives and market demands.
@@ -70,7 +88,13 @@ const page = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <CogIcon className="h-6 w-6" />
               </div>
-              <h3 data-aos="zoom-in"  data-aos-duration="500" className="mt-4 text-xl font-semibold">Product Design</h3>
+              <h3
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="mt-4 text-xl font-semibold"
+              >
+                Product Design
+              </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Transform your vision into reality with captivating product
                 designs that optimize efficiency and enhance user experience.
@@ -80,7 +104,11 @@ const page = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <LightbulbIcon className="h-6 w-6" />
               </div>
-              <h3 data-aos="zoom-in" data-aos-duration="500" className="mt-4 text-xl font-semibold">
+              <h3
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="mt-4 text-xl font-semibold"
+              >
                 Product Development
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
@@ -93,7 +121,13 @@ const page = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <RocketIcon className="h-6 w-6" />
               </div>
-              <h3 data-aos="zoom-in" data-aos-duration="500" className="mt-4 text-xl font-semibold">Quality Assurance</h3>
+              <h3
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="mt-4 text-xl font-semibold"
+              >
+                Quality Assurance
+              </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Ensure the highest standards of quality and reliability for your
                 products with our rigorous quality assurance processes and
@@ -104,7 +138,13 @@ const page = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <WrenchIcon className="h-6 w-6" />
               </div>
-              <h3 data-aos="zoom-in" data-aos-duration="500" className="mt-4 text-xl font-semibold">Product Launch</h3>
+              <h3
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="mt-4 text-xl font-semibold"
+              >
+                Product Launch
+              </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Successfully introduce your products to the market with our
                 seamless product launch solutions, including integration
@@ -115,7 +155,11 @@ const page = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <PencilIcon className="h-6 w-6" />
               </div>
-              <h3 data-aos="zoom-in" data-aos-duration="500" className="mt-4 text-xl font-semibold">
+              <h3
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="mt-4 text-xl font-semibold"
+              >
                 Continuous Improvement
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
@@ -134,22 +178,42 @@ const page = () => {
           <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
             <div className="space-y-4">
               <div className="space-y-2">
-                <h2 data-aos="fade-left" data-aos-duration="500" className="text-3xl font-bold text-gray-700 tracking-tighter lg:text-4xl">
+                <h2
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  className="text-3xl font-bold text-gray-700 tracking-tighter lg:text-4xl"
+                >
                   Why Choose <span className="text-blue-700">Us</span>
                 </h2>
-                <p data-aos="fade-left" data-aos-duration="500" className="max-w-[600px] text-gray-500 md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed dark:text-gray-400">
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  className="max-w-[600px] text-gray-500 md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed dark:text-gray-400"
+                >
                   Discover the benefits of our exceptional product or service
                   and why we are the best choice for your needs.
                 </p>
               </div>
               <div className="grid gap-6">
                 <div className="flex items-start gap-4">
-                  <RocketIcon data-aos="fade-left" data-aos-duration="500" className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50" />
+                  <RocketIcon
+                    data-aos="fade-left"
+                    data-aos-duration="500"
+                    className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50"
+                  />
                   <div>
-                    <h3 data-aos="fade-left" data-aos-duration="500" className="text-lg font-semibold">
+                    <h3
+                      data-aos="fade-left"
+                      data-aos-duration="500"
+                      className="text-lg font-semibold"
+                    >
                       Unparalleled Performance
                     </h3>
-                    <p data-aos="fade-left" data-aos-duration="500" className="text-gray-500 dark:text-gray-400">
+                    <p
+                      data-aos="fade-left"
+                      data-aos-duration="500"
+                      className="text-gray-500 dark:text-gray-400"
+                    >
                       Our cutting-edge technology ensures lightning-fast speeds
                       and uninterrupted service, delivering an exceptional user
                       experience.
@@ -157,10 +221,24 @@ const page = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <ShieldIcon data-aos="fade-left" data-aos-duration="500" className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50" />
+                  <ShieldIcon
+                    data-aos="fade-left"
+                    data-aos-duration="500"
+                    className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50"
+                  />
                   <div>
-                    <h3 data-aos="fade-left" data-aos-duration="500" className="text-lg font-semibold">Robust Security</h3>
-                    <p data-aos="fade-left"  data-aos-duration="500" className="text-gray-500 dark:text-gray-400">
+                    <h3
+                      data-aos="fade-left"
+                      data-aos-duration="500"
+                      className="text-lg font-semibold"
+                    >
+                      Robust Security
+                    </h3>
+                    <p
+                      data-aos="fade-left"
+                      data-aos-duration="500"
+                      className="text-gray-500 dark:text-gray-400"
+                    >
                       Your data and privacy are our top priority. We employ
                       state-of-the-art security measures to protect your
                       information.
@@ -168,12 +246,24 @@ const page = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <SettingsIcon data-aos="fade-left" data-aos-duration="500" className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50" />
+                  <SettingsIcon
+                    data-aos="fade-left"
+                    data-aos-duration="500"
+                    className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50"
+                  />
                   <div>
-                    <h3 data-aos="fade-left" data-aos-duration="500" className="text-lg font-semibold">
+                    <h3
+                      data-aos="fade-left"
+                      data-aos-duration="500"
+                      className="text-lg font-semibold"
+                    >
                       Exceptional Support
                     </h3>
-                    <p data-aos="fade-left" data-aos-duration="500" className="text-gray-500 dark:text-gray-400">
+                    <p
+                      data-aos="fade-left"
+                      data-aos-duration="500"
+                      className="text-gray-500 dark:text-gray-400"
+                    >
                       We provide ongoing support and maintenance services to
                       ensure that your product continues to meet your needs and
                       perform at its best.
@@ -199,23 +289,34 @@ const page = () => {
           <div className="flex w-full mx-auto text-left">
             <div className="relative w-full inline-flex items-center">
               <div className="text-center w-full">
-                <h1 data-aos="zoom-in" data-aos-duration="500" className="max-w-auto w-full text-xl font-extrabold leading-none tracking-tighter text-gray-700 lg:text-4xl lg:max-w-7xl">
+                <h1
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
+                  className="max-w-auto w-full text-xl font-extrabold leading-none tracking-tighter text-gray-700 lg:text-4xl lg:max-w-7xl"
+                >
                   Upgrade to
                   <span className="hidden lg:block text-blue-700">
                     Elite Development Environments
                   </span>
                 </h1>
-                <p data-aos="zoom-out" data-aos-duration="500" className="text-sm md:text-lg py-6 leading-relaxed text-paragraph">
+                <p
+                  data-aos="zoom-out"
+                  data-aos-duration="500"
+                  className="text-sm md:text-lg py-6 leading-relaxed text-paragraph"
+                >
                   We believe in delivering the best development to our customers
                   and providing nothing short of excellence.
                 </p>
                 <div className="flex justify-center w-full max-w-2xl gap-2 mx-auto">
                   <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3 flex lg:flex-row flex-col hover:text-white gap-4 lg:gap-6">
                     <Link href="/contact">
-                      <Button>Get Started</Button>
+                      <Button>Contact Us</Button>
                     </Link>
                     <Link href="/about">
-                      <Button>More About Us<HiMiniArrowSmallRight/></Button>
+                      <Button>
+                        More About Us
+                        <HiMiniArrowSmallRight />
+                      </Button>
                     </Link>
                   </div>
                 </div>
@@ -227,19 +328,35 @@ const page = () => {
 
       {/* FAQ Section */}
       <section className="bg-slate-50">
-        <div  className="text-center pb-4">
-          <h3 data-aos="fade-left" data-aos-duration="500" className="lg:text-4xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-700 z-10  py-8">
+        <div className="text-center pb-4">
+          <h3
+            data-aos="fade-left"
+            data-aos-duration="500"
+            className="lg:text-4xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-700 z-10  py-8"
+          >
             Frequently Asked <span className="text-blue1">Questions</span>
           </h3>
         </div>
         <div className=" px-4 sm:px-6 lg:px-8">
           <div className="">
-            <ul  className="grid md:grid-cols-2 grid-cols-1 gap-4">
+            <ul className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {FAQData.map((data: FAQItem) => (
                 <li key={data.qid} className="text-left mb-2 border-b-2 pb-2">
                   <div>
-                    <h4 data-aos="zoom-in" data-aos-duration="500" className="font-semibold text-lg">{data.question}</h4>
-                    <p data-aos="zoom-in" data-aos-duration="500" className="text-gray-600">{data.answer}</p>
+                    <h4
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      className="font-semibold text-lg"
+                    >
+                      {data.question}
+                    </h4>
+                    <p
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      className="text-gray-600"
+                    >
+                      {data.answer}
+                    </p>
                   </div>
                 </li>
               ))}

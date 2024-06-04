@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-import { cn } from '@/utils/cn';
+import { cn } from "@/utils/cn";
 
 type Card = {
   id: number;
@@ -28,7 +28,10 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div data-aos="zoom-in" className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative">
+    <div
+      data-aos="zoom-in"
+      className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative"
+    >
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -38,9 +41,9 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               "relative overflow-hidden",
               selected?.id === card.id
                 ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
-                : lastSelected?.id === card.id
-                  ? "z-40 bg-white rounded-xl h-full w-full"
-                  : "bg-white rounded-xl h-full w-full"
+                : lastSelected?.id === card.id                                
+                ? "z-40 bg-white rounded-xl h-full w-full"
+                : "bg-white rounded-xl h-full w-full"
             )}
             layout
           >
@@ -66,11 +69,11 @@ const BlurImage = ({ card }: { card: Card }) => {
   return (
     <Image
       src={card.thumbnail}
-      height="500"
-      width="500"
+      height="800"
+      width="800"
       onLoad={() => setLoaded(true)}
       className={cn(
-        "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
+        "object-fill absolute inset-0 h-full w-full transition duration-200",
         loaded ? "blur-none" : "blur-md"
       )}
       alt="thumbnail"
