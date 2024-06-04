@@ -10,8 +10,9 @@ import ITContent1 from "/public/assets/Industries/ITContent1.jpg";
 import ITContent2 from "/public/assets/Industries/ITContent2.jpg";
 import ITContent3 from "/public/assets/Industries/ITContent3.jpg";
 
-
-{/* IT digital transformation array */ }
+{
+  /* IT digital transformation array */
+}
 const content2 = [
   {
     title: "IT digital transformation",
@@ -67,7 +68,6 @@ export interface Key {
 }
 // Finance Sector array
 const FirstSection = () => {
-
   return (
     <div>
       {/* IT digital transformation */}
@@ -92,56 +92,81 @@ const FirstSection = () => {
       {/* Finance Sector */}
       <section>
         <div className="grid overflow-x-hidden bg-slate-100 md:grid-cols-2 px-6 grid-cols-1 py-10 justify-items-center items-center">
-          <div data-aos="fade-left" >
-            <Image src={Finance} quality={100}
+          <div data-aos="fade-left">
+            <Image
+              src={Finance}
+              quality={100}
               alt=""
-              className="md:px-4 px-2 py-2" />
+              className="md:px-4 px-2 py-2"
+            />
           </div>
-          <div className=''>
+          <div className="">
             <h1
               data-aos="fade-right"
               className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
             >
               Finance Sector
             </h1>
-            <p className="font-bold md:text-SubHeading text-xl text-[#e57e2c]">Driving Financial Excellence with IT Innovation.</p>
+            <p className="font-bold md:text-SubHeading text-xl text-[#e57e2c]">
+              Driving Financial Excellence with IT Innovation.
+            </p>
             <p data-aos="fade-left" className="text-base my-3">
               We offer tailored IT solutions for the finance sector, enabling
-              institutions to innovate, optimize operations and enhance
-              customer service. Our advanced technologies including AI and
-              blockchain, empower clients to streamline processes, mitigate
-              risks and capitalize on opportunities. By partnering with us,
-              financial institutions can leverage technology to stay competitive
-              and better serve their customers in the digital age.
+              institutions to innovate, optimize operations and enhance customer
+              service. Our advanced technologies including AI and blockchain,
+              empower clients to streamline processes, mitigate risks and
+              capitalize on opportunities. By partnering with us, financial
+              institutions can leverage technology to stay competitive and
+              better serve their customers in the digital age.
             </p>
             <div className="md:w-1/3 lg:w-4/5">
-              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+              <h3
+                data-aos="fade-right"
+                className="text-ThirdHeading font-bold pt-2"
+              >
                 Key Offerings:
               </h3>
               <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc text-wrap lg:text-nowrap">
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc"
+                >
                   Software Solutions & CRM Systems
                 </li>
-                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-right"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Data Analytics and Business Intelligence
                 </li>
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Cybersecurity Solutions
                 </li>
-                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-right"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Cloud Computing Services & e-Banking
                 </li>
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400"
+                >
                   Robotic Process Automation
                 </li>
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400"
+                >
                   Artificial Intelligence and Machine Learning
                 </li>
               </ul>
             </div>
           </div>
         </div>
-
       </section>
       {/* Professional Services */}
       <section>
@@ -161,30 +186,49 @@ const FirstSection = () => {
             >
               Empowering professionals to thrive in a digital-first world.
             </h2>
-            <p data-aos='fade-left' className="text-paragraph pt-3">
+            <p data-aos="fade-left" className="text-paragraph pt-3">
               Approving healthcare organizations with innovative IT solutions,
               we're dedicated to revolutionizing patient care, optimizing
               operations and ensuring data security in an ever-evolving
-              landscape. From seamless integration to cutting-edge digital tools.
+              landscape. From seamless integration to cutting-edge digital
+              tools.
             </p>
             <div className="md:w-1/3 lg:w-4/5">
-              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+              <h3
+                data-aos="fade-right"
+                className="text-ThirdHeading font-bold pt-2"
+              >
                 Key Offerings:
               </h3>
               <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc text-wrap lg:text-nowrap">
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc"
+                >
                   Enterprise Resource Planning (ERP) Systems
                 </li>
-                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-right"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Customer Relationship Management (CRM) Systems
                 </li>
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Project Management Tools
                 </li>
-                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-right"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Cybersecurity Solutions
                 </li>
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 w-full border-b border-gray-400 hover:bg-blue-400"
+                >
                   Knowledge Management Systems
                 </li>
               </ul>
@@ -213,24 +257,46 @@ const FirstSection = () => {
             >
               Banking Sector
             </p>
-            <p className="font-bold md:text-SubHeading text-xl text-[#e57e2c]">Empowering the banking sector through innovative IT solutions.</p>
-            <p data-aos="fade-up" className="text-paragraph mt-5 mb-5">Our company plays a pivotal role in modernizing the banking industry by offering cutting-edge solutions. We empower banks to operate with greater efficiency, enabling them to deliver superior products and services while seamlessly adapting to evolving consumer preferences in today's digital landscape.
+            <p className="font-bold md:text-SubHeading text-xl text-[#e57e2c]">
+              Empowering the banking sector through innovative IT solutions.
+            </p>
+            <p data-aos="fade-up" className="text-paragraph mt-5 mb-5">
+              Our company plays a pivotal role in modernizing the banking
+              industry by offering cutting-edge solutions. We empower banks to
+              operate with greater efficiency, enabling them to deliver superior
+              products and services while seamlessly adapting to evolving
+              consumer preferences in today's digital landscape.
             </p>
             <div className="md:w-1/3 lg:w-4/5">
-              <h3 data-aos="fade-right" className="text-ThirdHeading font-bold pt-2">
+              <h3
+                data-aos="fade-right"
+                className="text-ThirdHeading font-bold pt-2"
+              >
                 Key Offerings:
               </h3>
               <ul className="bg-white rounded-lg w-full text-paragraph font-medium list-inside list-disc text-wrap lg:text-nowrap">
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full rounded-t-lg hover:bg-blue-300 list-disc"
+                >
                   Digital Transformation
                 </li>
-                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-right"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Cybersecurity
                 </li>
-                <li data-aos='fade-left' className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-left"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Customer Experience
                 </li>
-                <li data-aos="fade-right" className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300">
+                <li
+                  data-aos="fade-right"
+                  className="md:px-6 px-2 py-2 border-b border-gray-400 w-full hover:bg-blue-300"
+                >
                   Cloud Computing
                 </li>
               </ul>

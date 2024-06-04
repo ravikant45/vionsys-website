@@ -24,16 +24,20 @@ function Importance() {
               Enhanced Customer Relationship
             </h3>
             <div className="prose prose-slate prose-sm text-sm text-wrap py-2 text-paragraph h-auto">
-              <p>CRM enables businesses to maintain comprehensive records of interactions with customers, leading to better understanding and personalized engagement, ultimately fostering stronger relationships.
+              <p>
+                CRM enables businesses to maintain comprehensive records of
+                interactions with customers, leading to better understanding and
+                personalized engagement, ultimately fostering stronger
+                relationships.
               </p>
             </div>
           </div>
           <div className="md:w-2/5 full">
-          <Image
-            src={ECR1}
-            alt=""
-            className="shadow-md rounded-lg bg-slate-50"
-          />
+            <Image
+              src={ECR1}
+              alt=""
+              className="shadow-md rounded-lg bg-slate-50"
+            />
           </div>
         </li>
 
@@ -47,16 +51,18 @@ function Importance() {
             </h3>
             <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
-              CRM centralizes customer data, enabling businesses to provide personalized support. This quick access empowers service teams to resolve issues promptly, boosting satisfaction and loyalty.
+                CRM centralizes customer data, enabling businesses to provide
+                personalized support. This quick access empowers service teams
+                to resolve issues promptly, boosting satisfaction and loyalty.
               </p>
             </div>
           </div>
           <div className="md:w-2/5 full">
-          <Image
-            src={ECS2}
-            alt=""
-            className="shadow-md rounded-lg bg-slate-50"
-          />
+            <Image
+              src={ECS2}
+              alt=""
+              className="shadow-md rounded-lg bg-slate-50"
+            />
           </div>
         </li>
 
@@ -78,11 +84,11 @@ function Importance() {
             </div>
           </div>
           <div className="md:w-2/5 full">
-          <Image
-            src={ISP3}
-            alt=""
-            className="shadow-md rounded-lg bg-slate-50"
-          />
+            <Image
+              src={ISP3}
+              alt=""
+              className="shadow-md rounded-lg bg-slate-50"
+            />
           </div>
         </li>
 
@@ -96,16 +102,18 @@ function Importance() {
             </h3>
             <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
-              CRM provides insights into customer behavior, trends and preferences through analytics tools. Businesses leverage this data to make informed decisions and drive growth effectively.
+                CRM provides insights into customer behavior, trends and
+                preferences through analytics tools. Businesses leverage this
+                data to make informed decisions and drive growth effectively.
               </p>
             </div>
           </div>
           <div className="md:w-2/5 full">
-          <Image
-            src={DDDM4}
-            alt=""
-            className="shadow-md rounded-lg bg-slate-50"
-          />
+            <Image
+              src={DDDM4}
+              alt=""
+              className="shadow-md rounded-lg bg-slate-50"
+            />
           </div>
         </li>
 
@@ -119,16 +127,19 @@ function Importance() {
             </h3>
             <div className="prose prose-slate prose-sm text-sm py-2 text-paragraph h-auto">
               <p>
-              As businesses expand, CRM systems can scale accordingly accommodating growing customer bases. This scalable foundation supports sustainable growth and enables businesses to thrive in competitive markets.
+                As businesses expand, CRM systems can scale accordingly
+                accommodating growing customer bases. This scalable foundation
+                supports sustainable growth and enables businesses to thrive in
+                competitive markets.
               </p>
             </div>
           </div>
           <div className="md:w-2/5 full">
-          <Image
-            src={SAG5}
-            alt=""
-            className="shadow-md rounded-lg bg-slate-50"
-          />
+            <Image
+              src={SAG5}
+              alt=""
+              className="shadow-md rounded-lg bg-slate-50"
+            />
           </div>
         </li>
       </ul>

@@ -96,9 +96,9 @@ const page: React.FC = () => {
     },
     {
       id: 7,
-      title: "Unit Testing",
+      title: "Mobile Testing",
       description:
-        "Unit testing involves verifying individual components of the web application's code to ensure they function correctly in isolation. These tests are automated and focus on identifying and addressing bugs early in the development process.",
+        "Mobile testing involves verifying individual components of the application's code to ensure they function correctly on various devices. Automated tests identify and fix bugs early in development, ensuring a smooth user experience.",
       icon: (
         <div className="p-4 bg-gray2 rounded-full relative z-20">
           <FaUnity size={35} className="text-orange" />
@@ -136,14 +136,13 @@ const page: React.FC = () => {
                 Ensuring Software Stability Through Rigorous Testing
               </h4>
               <p data-aos="fade-right" className="md:text-lg text-sm py-4">
-                We redefine software
-                testing and quality assurance with a tailored approach that
-                merges innovation and expertise. With a relentless pursuit of
-                perfection, we meticulously assess, refine and optimize your
-                software, ensuring robustness, security and exceptional
-                performance. Trust us to elevate your software to new heights of
-                reliability and user satisfaction, empowering your business for
-                success in today's dynamic digital landscape.
+                We redefine software testing and quality assurance with a
+                tailored approach that merges innovation and expertise. With a
+                relentless pursuit of perfection, we meticulously assess, refine
+                and optimize your software, ensuring robustness, security and
+                exceptional performance. Trust us to elevate your software to
+                new heights of reliability and user satisfaction, empowering
+                your business for success in today's dynamic digital landscape.
               </p>
               <div className="md:block hidden">
                 <Link href="/contact">
@@ -168,7 +167,11 @@ const page: React.FC = () => {
             {/* left side */}
             <div className="flex flex-col gap-2 text-base leading-8 justify-center">
               <p data-aos="fade-left ">
-                We emerge as your top-tier QA and testing partner offering unparalleled expertise. With our commitment to excellence, bolstered by cutting-edge tools and meticulous methodologies, we ensure software reliability and deliver seamless user experiences that drive exceptional business success.
+                We emerge as your top-tier QA and testing partner offering
+                unparalleled expertise. With our commitment to excellence,
+                bolstered by cutting-edge tools and meticulous methodologies, we
+                ensure software reliability and deliver seamless user
+                experiences that drive exceptional business success.
               </p>
               <ul data-aos="zoom-in" className="ml-4 list-disc">
                 <li>Expertise in QA and testing.</li>
@@ -203,7 +206,8 @@ const page: React.FC = () => {
               <div
                 data-aos="flip-left"
                 key={service.id}
-                className="flex flex-col py-4 items-center gap-2"
+                className="flex flex-col py-4 items-center gap-2 bg-white border border-gray-200 rounded-lg shadow-md transition-transform hover:scale-110 hover:z-10 hover:shadow-xl"
+                style={{ margin: "10px" }} 
               >
                 {service.icon}
                 <h4 className="text-blue3 font-bold items-center relative z-20 bg-clip-text">
@@ -221,13 +225,31 @@ const page: React.FC = () => {
       {/* Photo for QA & Testing */}
       <section>
         <div className="bg-black relative">
-          <Image src={Quality} alt='' className="md:w-[100vw] md:h-[100vh] h-[60vh] sm:[50vh] opacity-75" quality={100} />
+          <Image
+            src={Quality}
+            alt=""
+            className="md:w-[100vw] md:h-[100vh] h-[60vh] sm:[50vh] opacity-75"
+            quality={100}
+          />
           <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-start w-full px-4">
             <div className="md:w-[50%] w-full flex flex-col gap-2 p-2">
-              <h1 data-aos="fade-left" className="md:text-5xl text-2xl py-4 text-white font-bold">
+              <h1
+                data-aos="fade-left"
+                className="md:text-5xl text-2xl py-4 text-white font-bold"
+              >
                 Below are the testing implementation steps
               </h1>
-              <p data-aos="fade-right" className="md:text-lg text-sm font-medium">We implement testing follows a structured process starting with requirement understanding. Test cases are executed in a prepared environment, defects are reported and resolved through retesting and regression testing ensures stability. This culminates in comprehensive test closure and post-implementation support for seamless software deployment.</p>
+              <p
+                data-aos="fade-right"
+                className="md:text-lg text-sm font-medium"
+              >
+                We implement testing follows a structured process starting with
+                requirement understanding. Test cases are executed in a prepared
+                environment, defects are reported and resolved through retesting
+                and regression testing ensures stability. This culminates in
+                comprehensive test closure and post-implementation support for
+                seamless software deployment.
+              </p>
             </div>
           </div>
         </div>
@@ -249,7 +271,7 @@ const page: React.FC = () => {
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2 py-2">
                 <h3 className="text-ThirdHeading font-bold">
-                  Requirement Understanding
+                  1. Requirement Understanding
                 </h3>
                 <p className="text-paragraph">
                   At the outset, we engage closely with our clients, delving
@@ -271,7 +293,9 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
-                <h3 className="text-ThirdHeading font-bold">Test Planning</h3>
+                <h3 className="text-ThirdHeading font-bold">
+                  2. Test Planning
+                </h3>
                 <p className="text-paragraph">
                   Crafting a thorough blueprint is our forte, encompassing
                   strategic outlines, delineated testing phases, deliverables
@@ -293,7 +317,7 @@ const page: React.FC = () => {
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
                 <h3 className="text-ThirdHeading font-bold">
-                  Test Cases Development
+                  3. Test Cases Development
                 </h3>
                 <p className="text-paragraph">
                   Post-test plan analysis, our QA team swiftly identifies key
@@ -310,7 +334,9 @@ const page: React.FC = () => {
               data-aos="zoom-out"
               className="col-span-1 w-44 h-44 h-22 md:rounded-full bg-gray2 flex justify-center items-center border-4 border-blue1"
             >
-              <h3 className="uppercase font-bold text-center text-black text-2xl">Steps of testing</h3>
+              <h3 className="uppercase font-bold text-center text-black text-2xl">
+                Steps of testing
+              </h3>
             </div>
           </div>
           {/* Right side */}
@@ -326,7 +352,7 @@ const page: React.FC = () => {
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2 py-2">
                 <h3 className="text-ThirdHeading font-bold">
-                  Environment Set-up
+                  4. Environment Set-up
                 </h3>
                 <p className="text-paragraph">
                   After grasping the project plan and objectives, our developers
@@ -349,7 +375,7 @@ const page: React.FC = () => {
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
                 <h3 className="text-ThirdHeading font-bold">
-                  Test Execution & Automation
+                  5. Test Execution & Automation
                 </h3>
                 <p className="text-paragraph">
                   As a premier software testing company in India, our adept QA
@@ -371,7 +397,7 @@ const page: React.FC = () => {
                 </div>
               </div>
               <div className="col-span-2 flex flex-col pl-2 gap-2">
-                <h3 className="text-ThirdHeading font-bold">Final Report</h3>
+                <h3 className="text-ThirdHeading font-bold">6. Final Report</h3>
                 <p className="text-paragraph">
                   To offer a comprehensive overview for analysis, we
                   meticulously compile a detailed document summarizing the
