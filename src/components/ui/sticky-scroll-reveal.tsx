@@ -21,7 +21,7 @@ export const StickyScroll = ({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
     // target: ref
     container: ref,
-    offset: ["start start", "end start"],
+    
   });
   const cardLength = content.length;
 
@@ -59,23 +59,14 @@ export const StickyScroll = ({
           {content.map((item, index) => (
             <div key={item.title + index} className="md:my-5">
               <motion.h2
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
+                
+                
                 className="md:text-2xl text-xl text-MainHeading font-bold" // Removing text color class to inherit black color
               >
                 {item.title}
               </motion.h2>
               <motion.p
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
+                
                 className="md:text-lg text-sm max-w-lg mt-10 text-paragraph" // Removing text color class to inherit black color
               >
                 {item.description}
