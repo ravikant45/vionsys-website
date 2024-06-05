@@ -1,141 +1,200 @@
 "use client";
-import React, { useState } from "react";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import axios, { AxiosError } from "axios";
+import React, { useState, ChangeEvent, FormEvent } from "react";
+import axios from "axios";
 import { toast } from "react-hot-toast";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Button, Form, Input } from "antd";
 
-const formSchema = z.object({
-  name: z.string().min(5, {
-    message: "Name must be at least 5 characters.",
-  }),
-  email: z.string().email("Invalid email address."),
-  number: z.string().min(10, "Contact number must be at least 10 digits."),
-  message: z.string().min(5, {
-    message: "Message must be at least 5 characters.",
-  }),
-});
+const ContactUs: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [form] = Form.useForm();
 
-const ContactUs = () => {
-  const [isPending, setIsPending] = useState(false);
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      number: "",
-      message: "",
-    },
-  });
-
-  const handleSubmit = async (values: z.infer<typeof formSchema>) => {
+  const handleSubmit = async (values: any) => {
+    console.log("Form Values:", values); // Print form values to the console
+    setLoading(true);
     try {
-      setIsPending(true);
       const response = await axios.post("/api/email", values, {
         headers: {
           "Content-Type": "application/json",
         },
       });
       toast.success("Thanks for connecting with us!");
-      form.reset();
+      form.resetFields();
     } catch (error) {
-      const err = error as AxiosError;
-      //   console.error("Error:", err.response?.data || err.message);
-      toast.error(err?.message || "Failed to send message");
-    } finally {
-      setIsPending(false);
+      toast.error("Failed to send message");
     }
+    setLoading(false);
   };
 
   return (
-    <main>
-      <div className="flex py-10 items-center justify-start bg-white">
-        {/* contact us form */}
-        <div className="mx-auto w-full max-w-lg p-4">
-          <h1 className="text-4xl font-medium">Contact us</h1>
-          <p className="mt-3">
-            Email us at info@vionsys.com or message us here:
-          </p>
-          <form onSubmit={form.handleSubmit(handleSubmit)} className="mt-10">
-            <div className="">
-              <div className="flex flex-col ">
-                <div className="relative z-0 p-3">
-                  <input
-                    type="text"
-                    {...form.register("name")}
-                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-                    placeholder=" "
-                  />
-                  <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600">
-                    Your name
-                  </label>
-                  {form.formState.errors.name && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {form.formState.errors.name.message}
-                    </p>
-                  )}
-                </div>
-                <div className="relative z-0 p-3">
-                  <input
-                    type="email"
-                    {...form.register("email")}
-                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-                    placeholder=" "
-                  />
-                  <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600">
-                    Your email
-                  </label>
-                  {form.formState.errors.email && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {form.formState.errors.email.message}
-                    </p>
-                  )}
-                </div>
-                <div className="relative z-0 p-3">
-                  <input
-                    type="text"
-                    {...form.register("number")}
-                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-                    placeholder=" "
-                  />
-                  <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600">
-                    Contact number
-                  </label>
-                  {form.formState.errors.number && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {form.formState.errors.number.message}
-                    </p>
-                  )}
-                </div>
-                <div className="relative z-0 col-span-2 p-3">
-                  <textarea
-                    {...form.register("message")}
-                    rows={5}
-                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
-                    placeholder=" "
-                  ></textarea>
-                  <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600">
-                    Your message
-                  </label>
-                  {form.formState.errors.message && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {form.formState.errors.message.message}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="mt-5 rounded-md bg-black px-10 py-2 text-white"
+    <>
+      <div>
+        <div className="flex md:flex-row flex-col justify-evenly items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }} //X:100
+            whileInView={{ opacity: 1, scale: 1 }} //y:100
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
+            className="flex justify-center items-center px-4 md:py-10 py-5 sm:px-6 sm:py-16 lg:px-8"
+          >
+            <Image
+              src="/ContactForm.jpg"
+              height={3000}
+              width={5000}
+              className="rounded-2xl lg:h-[78vh] lg:w-[40vw] transition-all duration-300 cursor-pointer grayscale hover:grayscale-0"
+              alt="Image not found"
+            />
+          </motion.div>
+          <div className="flex items-center justify-center md:py-10 py-5 sm:py-16 lg:px-8">
+            <div className="md:w-[35rem] w-[18rem] border-2 rounded-2xl border-blue1">
+              <h2 className="text-3xl text-orange font-bold text-center leading-tight text-blue950 sm:text-4xl py-6">
+                Get In Touch
+              </h2>
+              <Form
+                form={form}
+                layout="vertical"
+                onFinish={handleSubmit}
+                className="p-5"
               >
-                {isPending ? "Sending..." : "Send Message"}
-              </button>
+                <Form.Item
+                  className="w-full"
+                  name="name"
+                  label={<span className="font-semibold">Full Name</span>}
+                  rules={[
+                    { required: true, message: "Please enter your full name" },
+                  ]}
+                >
+                  <Input
+                    placeholder="Enter Your Name"
+                    style={{
+                      border: "none",
+                      borderBottom: "2px solid #a1a1aa",
+                      borderRadius: "0",
+                      outline: "none",
+                      boxShadow: "none",
+                    }}
+                  />
+                </Form.Item>
+
+                <Form.Item
+                  name="email"
+                  label={<span className="font-semibold">Email Address</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your email!",
+                      type: "email",
+                    },
+                  ]}
+                >
+                  <Input
+                    placeholder="Enter Email Address"
+                    style={{
+                      border: "none",
+                      borderBottom: "2px solid #a1a1aa",
+                      borderRadius: "0",
+                      outline: "none",
+                      boxShadow: "none",
+                    }}
+                  />
+                </Form.Item>
+
+                <Form.Item
+                  name="number"
+                  label={<span className="font-semibold">Phone Number</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your phone number!",
+                    },
+                    {
+                      pattern: /^\d{10}$/,
+                      message: "Phone number must be numeric and 10 digits long.",
+                    },
+                  ]}
+                >
+                  <Input
+                    placeholder="Enter Phone Number"
+                    style={{
+                      border: "none",
+                      borderBottom: "2px solid #a1a1aa",
+                      borderRadius: "0",
+                      outline: "none",
+                      boxShadow: "none",
+                    }}
+                  />
+                </Form.Item>
+
+                <Form.Item
+                  name="message"
+                  label={
+                    <span className="block text-sm font-semibold py-2">
+                      Your Message
+                    </span>
+                  }
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your message!",
+                    },
+                  ]}
+                >
+                  <Input.TextArea
+                    placeholder="Leave a comment..."
+                    style={{
+                      border: "none",
+                      borderBottom: "2px solid #a1a1aa",
+                      borderRadius: "0",
+                      outline: "none",
+                      boxShadow: "none",
+                    }}
+                  />
+                </Form.Item>
+
+                <Form.Item>
+                  <div className="flex justify-center items-center">
+                    <Button
+                      className="bg-blue-600 border-2 border-[#3e3e3e] rounded-lg text-white px-4 py-2 text-base hover:bg-blue2 cursor-pointer transition relative"
+                      htmlType="submit"
+                      disabled={loading}
+                    >
+                      {loading && (
+                        <svg
+                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.418 3.582 8 8 8v-4c-2.697 0-5.074-1.072-6.834-2.709l2.834-2.833zm8-10.582A7.962 7.962 0 0120 12h4c0-6.627-5.373-12-12-12v4c2.697 0 5.074 1.072 6.834 2.709l-2.834 2.833z"
+                          ></path>
+                        </svg>
+                      )}
+                      Submit
+                    </Button>
+                  </div>
+                </Form.Item>
+              </Form>
             </div>
-          </form>
+          </div>
         </div>
       </div>
-    </main>
+    </>
   );
 };
 

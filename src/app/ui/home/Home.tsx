@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from '@/components/ui/button';
-
+import { Button } from "@/components/ui/button";
 
 interface Video {
   video: any;
@@ -25,23 +24,33 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
   link,
   isVisible,
 }) => (
-  <div className={`relative ${isVisible ? "" : "hidden"} h-[30rem] md:h-full w-[100vw]`}>
-    <video className="w-full h-full object-cover opacity-50" autoPlay loop muted>
+  <div
+    className={`relative ${
+      isVisible ? "" : "hidden"
+    } h-[30rem] md:h-full w-[100vw]`}
+  >
+    <video
+      className="w-full h-full object-cover opacity-50"
+      autoPlay
+      loop
+      muted
+    >
       <source src={video} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div className="absolute items-center left-1 h-full top-0 flex w-full p-2 md:p-5">
-      <div data-aos="fade-right" className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3">
+      <div
+        data-aos="fade-right"
+        className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3"
+      >
         <h1 className="loop_video_title text-4xl md:text-6xl text-white max-w-[50rem] font-bold">
           {title}
         </h1>
         <p className="loop_video_desc max-w-[25rem] md:text-base font-medium text-white">
           {desc}
         </p>
-        <div className='flex justify-start items-center'>
-          <div
-            className="bg-blue3 text-white italic px-4 py-2 font-mono rounded-tl-md rounded-br-md"
-          >
+        <div className="flex justify-start items-center">
+          <div className=" text-white italic text-lg py-2 font-mono rounded-tl-md rounded-br-md">
             You Think, We Make It!
           </div>
         </div>
@@ -50,7 +59,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
         </Link>
       </div>
     </div>
-  </div >
+  </div>
 );
 
 const videos: Video[] = [

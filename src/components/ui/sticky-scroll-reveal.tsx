@@ -21,7 +21,7 @@ export const StickyScroll = ({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
     // target: ref
     container: ref,
-    offset: ["start start", "end start"],
+    
   });
   const cardLength = content.length;
 
@@ -40,10 +40,7 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "var(--black)",
-    "var(--neutral-900)",
-  ];
+  const backgroundColors = ["var(--black)", "var(--neutral-900)" ];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
     "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
@@ -54,7 +51,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: "white", // Changing background color to white
       }}
-      className="h-[35rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md md:p-10 p-5 text-black" // Changing text color to black
+      className="md:h-[30rem] h-[20rem]  overflow-y-auto flex justify-center relative space-x-10 rounded-md md:p-10 p-5 text-black" // Changing text color to black
       ref={ref}
     >
       <div className="div relative flex items-start md:px-4">
@@ -62,23 +59,14 @@ export const StickyScroll = ({
           {content.map((item, index) => (
             <div key={item.title + index} className="md:my-5">
               <motion.h2
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
+                
+                
                 className="md:text-2xl text-xl text-MainHeading font-bold" // Removing text color class to inherit black color
               >
                 {item.title}
               </motion.h2>
               <motion.p
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
-                }}
+                
                 className="md:text-lg text-sm max-w-lg mt-10 text-paragraph" // Removing text color class to inherit black color
               >
                 {item.description}

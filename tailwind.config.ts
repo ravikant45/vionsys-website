@@ -129,7 +129,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors,
+  plugins: [require("tailwindcss-animate"), addVariablesForColors, require('tailwind-scrollbar'),
   function ({ matchUtilities, theme }: any) {
     matchUtilities(
       {

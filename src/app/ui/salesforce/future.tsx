@@ -41,7 +41,7 @@ function Future() {
             className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3"
           >
             {/*first */}
-            <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
+            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
               <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">AI Integration</h3>
@@ -55,7 +55,7 @@ function Future() {
               </div>
             </div>
             {/*Second */}
-            <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
+            <div className="relative outline outline-amber-600 hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
               <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
                 <div className="space-y-2">
                   <h3 className="font-bold ">Customer Experience</h3>
@@ -69,7 +69,7 @@ function Future() {
               </div>
             </div>
             {/*third */}
-            <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
+            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
               <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">
@@ -85,23 +85,23 @@ function Future() {
               </div>
             </div>
             {/*fourth */}
-            <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-  <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
-    <div className="space-y-2">
-      <h3 className="font-bold text-black">
-        Integration with Emerging Technologies
-      </h3>
-      <p className="text-md text-black">
-        Integrating with emerging technologies like blockchain, IoT
-        and AR can unlock new opportunities for innovation and
-        differentiation.
-      </p>
-    </div>
-  </div>
-</div>
+            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
+              <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
+                <div className="space-y-2">
+                  <h3 className="font-bold text-black">
+                    Integration with Emerging Technologies
+                  </h3>
+                  <p className="text-md text-black">
+                    Integrating with emerging technologies like blockchain, IoT
+                    and AR can unlock new opportunities for innovation and
+                    differentiation.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             {/*fifth */}
-            <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
+            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
               <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">
@@ -116,7 +116,7 @@ function Future() {
               </div>
             </div>
             {/*sixth */}
-            <div className="relative outline outline-amber-600 hover:cursor-pointer hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
+            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
               <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
                 <div className="space-y-2">
                   <h3 className="font-bold text-black">Continued Growth</h3>
