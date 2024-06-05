@@ -4,7 +4,7 @@ const Services = () => {
   return (
     <main>
       <section className="heading pt-6">
-        <h1 className="w-full text-center mx-auto mb-4 text-4xl font-bold leading-tight text-gray-900 sm:leading-tight sm:text-5xl lg:text-MainHeading lg:leading-tight">
+        <h1 className="w-full text-center mx-auto mb-4 font-bold leading-tight text-MainHeading">
           Our Services
         </h1>
         <p className="md:w-[70%] w-full mx-auto px-4 text-lg text-gray-800 text-paragraph text-center">
@@ -22,7 +22,7 @@ const Services = () => {
               <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div className="relative h-full ml-0 mr-0 sm:mr-10">
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-indigo-500 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-indigo-500 rounded-lg">
+                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-indigo-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
                         Premium Website Quality
@@ -44,7 +44,7 @@ const Services = () => {
               <div className="w-full sm:w-1/2">
                 <div className="relative h-full ml-0 md:mr-10">
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-purple-500 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-purple-500 rounded-lg">
+                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-purple-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
                         24/7 Service Support
@@ -67,7 +67,7 @@ const Services = () => {
               <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div className="relative h-full ml-0 mr-0 sm:mr-10">
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-blue-400 rounded-lg">
+                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-blue-400 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
                         Website Maintenance
@@ -88,7 +88,7 @@ const Services = () => {
               <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div className="relative h-full ml-0 mr-0 sm:mr-10">
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-yellow-400 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-yellow-400 rounded-lg">
+                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-yellow-400 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
                         Responsive Web Design
@@ -107,10 +107,10 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full sm:w-1/2">
+              <div className="w-full sm:w-1/2 mb-10">
                 <div className="relative h-full ml-0 md:mr-10">
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-green-500 rounded-lg">
+                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-green-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
                         Fast Delivery & Total Transparency
@@ -135,7 +135,7 @@ const Services = () => {
               <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div className="relative h-full ml-0 mr-0 sm:mr-10">
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-indigo-500 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-indigo-500 rounded-lg">
+                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-indigo-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
                         Graphic Design & Logo Design
@@ -157,7 +157,7 @@ const Services = () => {
               <div className="w-full sm:w-1/2">
                 <div className="relative h-full ml-0 md:mr-10">
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-purple-500 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-purple-500 rounded-lg">
+                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-purple-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
                         Web Hosting and Domain Services

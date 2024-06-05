@@ -3,7 +3,7 @@ import React from "react";
 
 const SocialLinks = () => {
   return (
-    <main id="contactbg" className="flex flex-col items-center justify-center gap-8 py-20">
+    <main id="contactbg" className="flex flex-col items-center justify-center gap-8 md:py-20 py-5">
       <h1 className="text-MainHeading text-orange font-semibold text-center block">
         Stay connected with us
       </h1>

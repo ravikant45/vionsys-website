@@ -18,7 +18,7 @@ const LandingPage = () => {
       <PricingSection />
       <WhychooseUs />
       <WorkWithUs/>
-      <ContactUs />
+      <ContactUs/>
       <SocialLinks />
       <App />
     </main>
