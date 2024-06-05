@@ -1,30 +1,45 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import DigitalMarketingImage from "/public/assets/services/DigitalMarketing/DigitalMarketing.jpg";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
-
+import SearchEngineOptimization from "/public/assets/services/DigitalMarketing/seo1.jpg";
+import ContentMarketing from "/public/assets/services/DigitalMarketing/content.jpg";
+import SocialMediaMarketing from "/public/assets/services/DigitalMarketing/social.jpg";
+import EmailMarketing from "/public/assets/services/DigitalMarketing/Email.jpg";
+import { motion } from "framer-motion";
 const ServicesTemplateFour: React.FC = () => {
   return (
     <main>
       {/* First section */}
-      <section className="w-[100vw] md:h-screen mmd:h-[70vh] ssm:[60vh] h-[50vh]">
+      <section className="w-[100vw] md:h-screen sm:[60vh] h-[50vh]">
         <div className="w-full h-full relative bg-black">
           <Image
             src={DigitalMarketingImage}
             alt=""
-            className="w-full h-full md:opacity-30 z-0"
+            className="w-full h-full opacity-30  z-0"
           />
-          <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-center w-full px-4">
-            <div className="md:w-[60%] w-full flex flex-col gap-6">
+          <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-center w-full md:px-4 px-2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.3,
+                scale: { type: "spring", stiffness: 30 },
+                duration: 0.6,
+                ease: "easeInOut",
+              }}
+              className="md:w-[60%] w-full flex flex-col md:gap-6 "
+            >
               <h3
                 data-aos="fade-left"
-                className="font-extrabold md:text-5xl text-lg"
+                className="font-extrabold md:text-5xl text-xl"
               >
                 Integrated Digital Marketing Services
               </h3>
               <p
                 data-aos="fade-right"
-                className="md:text-lg text-sm font-semibold"
+                className="md:text-lg text-base font-semibold"
               >
                 Whether you are a small business or a large corporation, we are
                 equipped to boost your digital marketing success. What sets us
@@ -34,217 +49,458 @@ const ServicesTemplateFour: React.FC = () => {
                 marketing. With our innovative strategies, we're ready to
                 enhance your online presence and drive results.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* section2 */}
-      <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-          <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-blue1 sm:text-4xl md:mx-auto">
-            <span className="relative inline-block">
-              <span className="relative">Digital Marketing</span>
-            </span>{" "}
-            Strategies
-          </h2>
+      {/* digital marketing strategies */}
+      <div className="w-full flex justify-center items-center flex-col gap-6 h-auto py-10">
+        <div className="w-full px-4 flex justify-center items-center">
+          <h1 className="text-orange font-bold md:text-4xl text-2xl">
+            Digital Marketing Strategies
+          </h1>
         </div>
 
-        <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="bg-gray-200 flex flex-col justify-between p-5 border rounded shadow-sm hover:bg-gray-300 transition duration-300">
-            <div>
-              <h6 className="mb-2 font-semibold text-lg leading-5">
-                Search Engine Optimization (SEO)
-              </h6>
-              <p className="mb-3 text-base text-gray-900">
-                SEO optimizes your website's content, structure, and technical
-                aspects to improve search engine rankings and increase organic
-                traffic, including on-page SEO, off-page SEO, and technical SEO.
-              </p>
+        <div className="flex flex-col md:gap-16 gap-4">
+          {/* SEO */}
+          <div className="flex md:flex-row  flex-col w-full px-4 gap-3">
+            <motion.div
+              initial={{ opacity: 0.0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.1,
+                y: { type: "spring", stiffness: 30 },
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className="md:w-[50%] w-full pt-2 flex flex-col gap-4"
+            >
+              <div className="flex flex-col gap-3">
+                <h1 className="md:text-2xl text-xl font-semibold">
+                  Search Engine Optimization(SEO)
+                </h1>
+                <p className="md:text-lg text-base">
+                  In digital marketing, our SEO service enhances online
+                  visibility and drives sustainable growth. Using advanced
+                  strategies and detailed optimization, we boost your website's
+                  search engine rankings. Through keyword research, on-page
+                  optimization, and link-building, we position your brand
+                  prominently in search results. Our expert team delivers
+                  measurable results, driving targeted traffic and maximizing
+                  ROI. With a tailored, continuously refined approach, we keep
+                  your online presence competitive and adaptable. Trust us to
+                  navigate SEO complexities and unlock your digital marketing
+                  potential.
+                </p>
+              </div>
+              <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
+                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                  Key Strategies of SEO
+                </h2>
+                <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Keyword Research
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    On-Page Optimization
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Competitor Analysis
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+            <div className="md:w-[50%] w-full md:px-8">
+              <Image
+                src={SearchEngineOptimization}
+                alt=""
+                className="w-full h-full border rounded-2xl"
+              />
             </div>
           </div>
-          <div className="bg-gray-200 flex flex-col justify-between p-5 border rounded shadow-sm hover:bg-gray-300 transition duration-300">
-            <div>
-              <h6 className="mb-2 font-semibold text-lg leading-5">
-                Content Marketing
-              </h6>
-              <p className="mb-3 text-base text-gray-900">
-                Content marketing involves creating and sharing valuable,
-                relevant content to attract and retain a target audience. This
-                includes blog posts, videos, infographics, ebooks, and
-                whitepapers to educate or entertain and drive profitable
-                customer actions.
-              </p>
+
+          {/* content marketing */}
+          <div className="flex md:flex-row  flex-col w-full px-4 gap-3">
+            <div className="md:w-[50%]  w-full md:px-8 md:order-1 order-2">
+              <Image
+                src={ContentMarketing}
+                alt=""
+                className="w-full h-full border rounded-2xl"
+              />
+            </div>
+            <motion.div
+              initial={{ opacity: 0.0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.1,
+                y: { type: "spring", stiffness: 30 },
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className="md:w-[50%] w-full pt-2 flex flex-col gap-4 md:order-2 order-1 "
+            >
+              <div className="flex flex-col gap-3">
+                <h1 className="md:text-2xl text-xl font-semibold">
+                  Content Marketing
+                </h1>
+                <p className="md:text-lg text-base">
+                  Within the realm of digital marketing, our Content Marketing
+                  service serves as the cornerstone for building brand authority
+                  and driving engagement. Through strategic storytelling and
+                  compelling content creation, we captivate your audience and
+                  establish your brand as a thought leader in your industry.
+                  With a focus on delivering valuable and relevant content, we
+                  aim to educate, inspire and engage your audience, driving
+                  organic growth and fostering long-term customer relationships.
+                  Trust us to craft tailored content strategies that resonate
+                  with your audience and elevate your brand's presence in the
+                  digital landscape.
+                </p>
+              </div>
+              <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
+                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                  Key Strategies of Content Marketing
+                </h2>
+                <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Create High-Quality Content
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Measure and Analyze Performance
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Engage with Your Audience
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Social media marketing */}
+          <div className="flex md:flex-row  flex-col w-full px-4 gap-3">
+            <motion.div
+              initial={{ opacity: 0.0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.1,
+                y: { type: "spring", stiffness: 30 },
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className="md:w-[50%] w-full pt-2 flex flex-col gap-4"
+            >
+              <div className="flex flex-col gap-3">
+                <h1 className="md:text-2xl text-xl font-semibold">
+                  Social Media Marketing
+                </h1>
+                <p className="md:text-lg text-base">
+                  In the dynamic realm of digital marketing, our Social Media
+                  Marketing (SMM) service boosts your online presence and
+                  connects with your target audience. Through innovative
+                  strategies and compelling content, we amplify your brand's
+                  message and drive engagement. Our expert team handles
+                  everything from posts to ad campaigns, ensuring your social
+                  media presence stays relevant and impactful. Trust us to
+                  elevate your brand's visibility in the ever-evolving social
+                  media landscape.
+                </p>
+              </div>
+              <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
+                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                  Key Strategies of SEO
+                </h2>
+                <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Influencer Marketing
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Engagement and Interaction
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    SEO and Hashtags
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+            <div className="md:w-[50%] w-full md:px-8">
+              <Image
+                src={SocialMediaMarketing}
+                alt=""
+                className="w-full h-full border rounded-2xl"
+              />
             </div>
           </div>
-          <div className="bg-gray-200 flex flex-col justify-between p-5 border rounded shadow-sm hover:bg-gray-300 transition duration-300">
-            <div>
-              <h6 className="mb-2 font-semibold text-lg leading-5">
-                Email Marketing
-              </h6>
-              <p className="mb-3 text-base text-gray-900">
-                Email marketing sends targeted messages to subscribers to
-                nurture leads and build relationships, including newsletters,
-                promotions, and automated sequences delivering personalized
-                content based on user behavior.
-              </p>
+
+          {/* email marketing */}
+          <div className="flex md:flex-row  flex-col w-full px-4 gap-3">
+            <div className="md:w-[50%]  w-full md:px-8 md:order-1 order-2">
+              <Image
+                src={EmailMarketing}
+                alt=""
+                className="w-full h-full border rounded-2xl opacity-90"
+              />
             </div>
-          </div>
-          <div className="bg-gray-200 flex flex-col justify-between p-5 border rounded shadow-sm hover:bg-gray-300 transition duration-300">
-            <div>
-              <h6 className="mb-2 font-semibold text-lg leading-5">
-                Social Media Marketing
-              </h6>
-              <p className="mb-3 text-base text-gray-900">
-                Social media marketing utilizes platforms such as Facebook,
-                Instagram, Twitter, LinkedIn, and TikTok to promote products,
-                engage customers, and increase brand awareness through organic
-                posts and targeted paid advertising campaigns.
-              </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0.0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.1,
+                y: { type: "spring", stiffness: 30 },
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className="md:w-[50%] w-full pt-2 flex flex-col gap-4 md:order-2 order-1 "
+            >
+              <div className="flex flex-col gap-3">
+                <h1 className="md:text-2xl text-xl font-semibold">
+                  Email Marketing
+                </h1>
+                <p className="md:text-lg text-base">
+                  In the digital marketing sphere, our Email Marketing service
+                  stands as a beacon for fostering direct and personalized
+                  connections with your audience. Through strategic campaigns
+                  and compelling content, we harness the power of email to
+                  nurture customer relationships and drive conversions. With
+                  tailored strategies and meticulous attention to detail, we
+                  ensure that your email campaigns resonate with your audience,
+                  delivering measurable results and driving business growth.
+                  Trust us to elevate your email marketing efforts and unlock
+                  the full potential of your brand's communication strategy.
+                </p>
+              </div>
+              <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
+                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                  Key Strategies of Email Marketing
+                </h2>
+                <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Responsive Design
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Analytics and Metrics
+                  </li>
+                  <li className="w-full bg-gray-100 p-3 rounded-md">
+                    Personalization
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* section3 */}
+      {/* Why Choose us */}
       <div className="container mx-auto">
         <div className="p-4 mx-auto text-center md:px-10 lg:px-32 xl:max-w-3xl">
-          <h2
-            data-aos="fade-right "
-            data-aos-duration="1000"
-            data-aos-delay="200"
+          <motion.h2
+            initial={{ opacity: 0.0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.1,
+              y: { type: "spring", stiffness: 30 },
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
             className="text-2xl font-bold text-blue1 leading-none sm:text-4xl"
           >
             Why Choose Us?
-          </h2>
+          </motion.h2>
         </div>
-        <div className="grid grid-cols-5 p-4 md:p-8">
-          <div className="flex justify-center px-4 col-span-full md:col-span-1 md:flex-col md:justify-start md:items-start">
-            <button className="p-2 border-b-2 md:border-l-2 md:border-b-0 md:py-3 dark:border-gray-700 dark:text-gray-600">
-              Industry Expertise
-            </button>
-            <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 dark:border-violet-600 dark:text-gray-900">
-              Innovative Technology
-            </button>
-            <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 dark:border-gray-700 dark:text-gray-600">
-              Tailored Solutions
-            </button>
-            <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 dark:border-gray-700 dark:text-gray-600">
-              Exceptional Support
-            </button>
-            <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 dark:border-gray-700 dark:text-gray-600">
-              Proven Track Record
-            </button>
-          </div>
-          <div className="grid gap-12 py-4 text-center sm:grid-cols-2 col-span-full md:col-span-4 md:text-left">
-            <div className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 dark:text-violet-600"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                ></path>
-              </svg>
-              <h5 className="text-xl font-semibold">Industry Expertise</h5>
-              <p>
-                With years of experience in the software industry, we possess an
-                in-depth understanding of your business needs, ensuring that our
-                solutions are finely tuned to drive your success.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 dark:text-violet-600"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-                ></path>
-              </svg>
-              <h5 className="text-xl font-semibold">Innovative Technology</h5>
-              <p>
-                Stay ahead with our cutting-edge, future-proof solutions
-                leveraging the latest technology.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 dark:text-violet-600"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-                ></path>
-              </svg>
-              <h5 className="text-xl font-semibold">Tailored Solutions</h5>
-              <p>
-                We understand your uniqueness. Our personalized approach crafts
-                tailored solutions aligned perfectly with your needs.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 dark:text-violet-600"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                ></path>
-              </svg>
-              <h5 className="text-xl font-semibold">Exceptional Support</h5>
-              <p>
-                Our 24/7 support ensures seamless operations. Count on us for
-                prompt solutions whenever you need them.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 dark:text-violet-600"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                ></path>
-              </svg>
-              <h5 className="text-xl font-semibold">Proven Track Record</h5>
-              <p>
-                Backed by a proven track record of successful projects and
-                satisfied clients, we're the trusted partner you need to achieve
-                your business objectives. Choose us for results you can rely on.
-              </p>
-            </div>
-          </div>
+
+        <div className="grid gap-6 py-4 text-center sm:grid-cols-2 col-span-full md:col-span-4 md:text-left">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.3,
+              scale: { type: "spring", stiffness: 30 },
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
+            className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 dark:text-violet-600"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+              ></path>
+            </svg>
+            <h5 className="text-xl font-semibold">Industry Expertise</h5>
+            <p>
+              With years of experience in the software industry, we possess an
+              in-depth understanding of your business needs, ensuring that our
+              solutions are finely tuned to drive your success.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.3,
+              scale: { type: "spring", stiffness: 30 },
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
+            className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 dark:text-violet-600"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+              ></path>
+            </svg>
+            <h5 className="text-xl font-semibold">Innovative Technology</h5>
+            <p>
+              Stay ahead with our cutting-edge, future-proof solutions
+              leveraging the latest technology.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.3,
+              scale: { type: "spring", stiffness: 30 },
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
+            className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 dark:text-violet-600"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+              ></path>
+            </svg>
+            <h5 className="text-xl font-semibold">Tailored Solutions</h5>
+            <p>
+              We understand your uniqueness. Our personalized approach crafts
+              tailored solutions aligned perfectly with your needs.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.3,
+              scale: { type: "spring", stiffness: 30 },
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
+            className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 dark:text-violet-600"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+              ></path>
+            </svg>
+            <h5 className="text-xl font-semibold">Exceptional Support</h5>
+            <p>
+              Our 24/7 support ensures seamless operations. Count on us for
+              prompt solutions whenever you need them.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.3,
+              scale: { type: "spring", stiffness: 30 },
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
+            className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 dark:text-violet-600"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+              ></path>
+            </svg>
+            <h5 className="text-xl font-semibold">Proven Track Record</h5>
+            <p>
+              Backed by a proven track record of successful projects and
+              satisfied clients, we're the trusted partner you need to achieve
+              your business objectives. Choose us for results you can rely on.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.3,
+              scale: { type: "spring", stiffness: 30 },
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
+            className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 dark:text-violet-600"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+              ></path>
+            </svg>
+            <h5 className="text-xl font-semibold">
+              Comprehensive Service Offering
+            </h5>
+            <p>
+              Providing a wide range of digital marketing services, including
+              SEO, PPC, content marketing, and social media management, ensuring
+              all your software company's marketing needs are met under one
+              roof.
+            </p>
+          </motion.div>
         </div>
       </div>
 
@@ -261,7 +517,17 @@ const ServicesTemplateFour: React.FC = () => {
           Frequently Asked Questions
         </h3>
 
-        <div data-aos="fade-left" className="my-6 z-10">
+        <motion.div
+          initial={{ opacity: 0.0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            y: { type: "spring", stiffness: 30 },
+            delay: 0.2,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="my-6 z-10"
+        >
           <div className="rounded-t-2xl bg-teal-600/80 w-full  select-none border-2 border-teal-600/30 px-4 py-4 text-gray-100 transition duration-300 hover:border-teal-600/80 hover:text-white">
             <h4 className="text-lg font-medium">
               What are the key digital marketing channels and strategies?
@@ -275,9 +541,19 @@ const ServicesTemplateFour: React.FC = () => {
               data analytics for optimization.
             </h5>
           </div>
-        </div>
+        </motion.div>
 
-        <div data-aos="fade-right" className="my-6 z-10">
+        <motion.div
+          initial={{ opacity: 0.0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            y: { type: "spring", stiffness: 30 },
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="my-6 z-10"
+        >
           <div className="rounded-t-2xl bg-teal-600/80 w-full  select-none border-2 border-teal-600/30 px-4 py-4 text-gray-100 transition duration-300 hover:border-teal-600/80 hover:text-white">
             <h4 className="text-lg font-medium">
               How can businesses measure the success of digital marketing
@@ -292,9 +568,19 @@ const ServicesTemplateFour: React.FC = () => {
               into user behavior and campaign performance.
             </h5>
           </div>
-        </div>
+        </motion.div>
 
-        <div data-aos="fade-left" className="my-6 z-10">
+        <motion.div
+          initial={{ opacity: 0.0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.1,
+            y: { type: "spring", stiffness: 30 },
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="my-6 z-10"
+        >
           <div className="rounded-t-2xl bg-teal-600/80 w-full select-none border-2 border-teal-600/30 px-4 py-4 text-gray-100 transition duration-300 hover:border-teal-600/80 hover:text-white">
             <h4 className="text-lg font-medium">
               What are common challenges in digital marketing and how to
@@ -310,7 +596,7 @@ const ServicesTemplateFour: React.FC = () => {
               data-driven insights.
             </h5>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Schedule a meet or contact us section */}
