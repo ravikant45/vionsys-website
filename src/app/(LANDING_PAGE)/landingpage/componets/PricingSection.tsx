@@ -45,14 +45,14 @@ const PricingSection = () => {
             budget.
           </p>
         </div>
-        <div className="grid gap-10 md:grid-cols-3 grid-cols-1 sm:mx-auto ">
+        <div className="grid gap-10 lg:grid-cols-3 md:grid-col-2  grid-cols-1 sm:mx-auto m-auto h-auto">
           <div className="group">
             <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-            <div className="md:p-8 p-2 flex flex-col bg-gray-900 rounded md:h-[90vh] md:justify-between">
+            <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[95vh] md:justify-between">
               <div>
                 <div className="mb-4 text-center">
                   <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
-                    <h1 className="bg-[#0EA5E9] rounded-lg w-[55%] p-1">
+                    <h1 className="bg-[#0EA5E9] rounded-lg w-[70%] p-1">
                       Basic Plan
                     </h1>
                   </div>
@@ -63,7 +63,7 @@ const PricingSection = () => {
                     <p className="text-lg text-gray-500">/ Project</p>
                   </div>
                 </div>
-                <ul className="mb-8 space-y-2">
+                <ul className="space-y-2">
                   {starterPackBenefits.map((benefit) => {
                     return (
                       <li key={benefit?.id} className="flex items-center">
@@ -112,11 +112,11 @@ const PricingSection = () => {
           </div>
           <div className="group">
             <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-            <div className="md:p-8 p-2 flex flex-col bg-gray-900 rounded md:h-[90vh] md:justify-between">
+            <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[95vh] md:justify-between">
               <div>
                 <div className="mb-4 text-center">
                   <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
-                    <h1 className="bg-[#10b981] rounded-lg w-[55%] p-1">
+                    <h1 className="bg-[#10b981] rounded-lg w-[70%] p-1">
                       Advanced Plan
                     </h1>
                   </div>
@@ -128,7 +128,7 @@ const PricingSection = () => {
                   </div>
                 </div>
 
-                <ul className="mb-8 space-y-2">
+                <ul className="space-y-2">
                   {proPackBenefits.map((benefit) => {
                     return (
                       <li key={benefit?.id} className="flex items-center">
@@ -177,11 +177,11 @@ const PricingSection = () => {
           </div>
           <div className="group">
             <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-            <div className="md:p-8 p-2 flex flex-col bg-gray-900 rounded md:h-[90vh] md:justify-between">
-              <div className="justify-between">
+            <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[95vh] h-auto md:justify-between">
+              <div>
                 <div className="mb-4 text-center">
                   <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
-                    <h1 className="bg-[#ca8a04] rounded-lg w-[55%] p-1">
+                    <h1 className="bg-[#ca8a04] rounded-lg w-[70%] p-1">
                       Enterprise Plan
                     </h1>
                   </div>
@@ -192,7 +192,7 @@ const PricingSection = () => {
                     <p className="text-lg text-gray-500">/ Project</p>
                   </div>
                 </div>
-                <ul className="mb-8 space-y-2">
+                <ul className="space-y-2">
                   {businessPackBenefits.map((benefit) => {
                     return (
                       <li key={benefit?.id} className="flex items-center">

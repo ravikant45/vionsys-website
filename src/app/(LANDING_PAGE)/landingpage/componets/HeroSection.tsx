@@ -43,6 +43,8 @@ const HeroSection = () => {
     },
   ];
 
+
+
   return (
     <main>
       <div className=" w-full md:min-w-full md:p-10">
@@ -80,11 +82,11 @@ const HeroSection = () => {
 
           <!-- hero section --> */}
 
-              <div className="flex md:h-[80vh] h-[60vh] mt-4" style={gridStyle}>
+              <div className="flex md:h-[90vh] h-[60vh] mt-4" style={gridStyle}>
                 <div className="flex flex-col justify-center items-center md:w-1/2 w-full">
                   <div className="flex flex-col justify-center md:pr-8 xl:pr-0 md::max-w-xl">
                     <div className="md:max-w-xl mb-6">
-                      <h2 className="mb-6 md:text-5xl font-bold tracking-tight text-gray-900 text-4xl sm:leading-none md:h-24 h-30">
+                      <h2 className="mb-6 md:text-3xl font-bold tracking-tight text-gray-900 text-2xl sm:leading-none h-auto md:h-24 h-30">
                         <TypewriterEffect1 words={words} />
                       </h2>
                       <p className="text-base text-gray-800 md:text-xl">
