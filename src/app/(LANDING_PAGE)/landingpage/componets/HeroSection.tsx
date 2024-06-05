@@ -1,11 +1,13 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Land1 from "../landingpage/Land1.jpeg";
 import Land2 from "../landingpage/Land2.jpeg";
 import Land3 from "../landingpage/Land3.jpeg";
 import Land4 from "../landingpage/Land5.jpg";
 import Land5 from "../landingpage/Land6.jpg";
-import { TypewriterEffect1 } from "@/components/ui/typewriter-effect1"
+import { TypewriterEffect1 } from "@/components/ui/typewriter-effect1";
 import React from "react";
 import LogoImage from "/public/assets/logo.png";
 
@@ -42,8 +44,6 @@ const HeroSection = () => {
       className: "text-black",
     },
   ];
-
-
 
   return (
     <main>
@@ -89,14 +89,32 @@ const HeroSection = () => {
                       <h2 className="mb-6 md:text-3xl font-bold tracking-tight text-gray-900 text-2xl sm:leading-none h-auto md:h-24 h-30">
                         <TypewriterEffect1 words={words} />
                       </h2>
-                      <p className="text-base text-gray-800 md:text-xl">
+                      <motion.div
+                      initial={{ opacity: 0, x: -100 }} //X:100
+                      whileInView={{ opacity: 1, x: 0 }} //y:100
+                      transition={{
+                        delay: 0.2,
+                        scale: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.6 },
+                        ease: "easeInOut",
+                      }} className="text-base text-gray-800 md:text-xl">
                         Your one-stop destination for top-notch web design &
                         development services.
-                      </p>
+                      </motion.div>
                     </div>
-                    <div className="inline-flex mb-6 items-center italic font-semibold transition-colors duration-200 text-purple-600 hover:text-purple-900 text-lg">
+                    <motion.div
+                      initial={{ opacity: 0, x: 100 }} //X:100
+                      whileInView={{ opacity: 1, x: 0 }} //y:100
+                      transition={{
+                        delay: 0.2,
+                        scale: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.6 },
+                        ease: "easeInOut",
+                      }}
+                      className="inline-flex mb-6 items-center italic font-semibold transition-colors duration-200 text-purple-600 hover:text-purple-900 text-lg"
+                    >
                       You Think, We Make It!
-                    </div>
+                    </motion.div>
                     <div>
                       <Link
                         href={"/"}

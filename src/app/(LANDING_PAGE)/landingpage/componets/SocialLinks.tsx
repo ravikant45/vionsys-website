@@ -1,12 +1,22 @@
+"use client"
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 const SocialLinks = () => {
   return (
     <main id="contactbg" className="flex flex-col items-center justify-center gap-8 md:py-20 py-5">
-      <h1 className="text-MainHeading text-orange font-semibold text-center block">
+      <motion.div
+            initial={{ opacity: 0, y: -100 }} //X:100
+            whileInView={{ opacity: 1, y: 0 }} //y:100
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }} className="text-MainHeading text-orange font-semibold text-center block">
         Stay connected with us
-      </h1>
+      </motion.div>
 
       <div className="flex justify-center items-center gap-8">
         {/* facebook link */}

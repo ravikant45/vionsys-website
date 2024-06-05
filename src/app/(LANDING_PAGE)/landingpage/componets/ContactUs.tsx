@@ -2,6 +2,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button, Form, Input } from "antd";
 
@@ -30,7 +31,17 @@ const ContactUs: React.FC = () => {
     <>
       <div>
         <div className="flex md:flex-row flex-col justify-evenly items-center">
-          <div className="flex justify-center items-center px-4 md:py-10 py-5 sm:px-6 sm:py-16 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }} //X:100
+            whileInView={{ opacity: 1, scale: 1 }} //y:100
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
+            className="flex justify-center items-center px-4 md:py-10 py-5 sm:px-6 sm:py-16 lg:px-8"
+          >
             <Image
               src="/ContactForm.jpg"
               height={3000}
@@ -38,9 +49,9 @@ const ContactUs: React.FC = () => {
               className="rounded-2xl lg:h-[78vh] lg:w-[40vw] transition-all duration-300 cursor-pointer grayscale hover:grayscale-0"
               alt="Image not found"
             />
-          </div>
-          <div className="flex items-center justify-center px-4 md:py-10 py-5 sm:px-6 sm:py-16 lg:px-8">
-            <div className="mx-auto lg:w-[50vw] w-auto border-2 rounded-2xl border-blue1">
+          </motion.div>
+          <div className="flex items-center justify-center md:py-10 py-5 sm:py-16 lg:px-8">
+            <div className="md:w-[35rem] w-[18rem] border-2 rounded-2xl border-blue1">
               <h2 className="text-3xl text-orange font-bold text-center leading-tight text-blue950 sm:text-4xl py-6">
                 Get In Touch
               </h2>
@@ -51,6 +62,7 @@ const ContactUs: React.FC = () => {
                 className="p-5"
               >
                 <Form.Item
+                  className="w-full"
                   name="name"
                   label={<span className="font-semibold">Full Name</span>}
                   rules={[
@@ -80,13 +92,16 @@ const ContactUs: React.FC = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="Enter Email Address" style={{
+                  <Input
+                    placeholder="Enter Email Address"
+                    style={{
                       border: "none",
                       borderBottom: "2px solid #a1a1aa",
                       borderRadius: "0",
                       outline: "none",
                       boxShadow: "none",
-                    }}/>
+                    }}
+                  />
                 </Form.Item>
 
                 <Form.Item
@@ -97,15 +112,22 @@ const ContactUs: React.FC = () => {
                       required: true,
                       message: "Please enter your phone number!",
                     },
+                    {
+                      pattern: /^\d{10}$/,
+                      message: "Phone number must be numeric and 10 digits long.",
+                    },
                   ]}
                 >
-                  <Input placeholder="Enter Phone Number" style={{
+                  <Input
+                    placeholder="Enter Phone Number"
+                    style={{
                       border: "none",
                       borderBottom: "2px solid #a1a1aa",
                       borderRadius: "0",
                       outline: "none",
                       boxShadow: "none",
-                    }}/>
+                    }}
+                  />
                 </Form.Item>
 
                 <Form.Item
@@ -115,6 +137,12 @@ const ContactUs: React.FC = () => {
                       Your Message
                     </span>
                   }
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your message!",
+                    },
+                  ]}
                 >
                   <Input.TextArea
                     placeholder="Leave a comment..."
