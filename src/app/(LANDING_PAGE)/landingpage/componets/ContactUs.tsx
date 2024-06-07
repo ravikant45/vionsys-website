@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button, Form, Input } from "antd";
+import LContact from '@/app/(LANDING_PAGE)/landingpage/landingpage/LContact2.jpg'
 
 const ContactUs: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -40,13 +41,13 @@ const ContactUs: React.FC = () => {
               opacity: { duration: 0.6 },
               ease: "easeInOut",
             }}
-            className="flex justify-center items-center px-4 md:py-10 py-5 sm:px-6 sm:py-16 lg:px-8"
+            className="flex justify-center items-center md:py-10 py-5 sm:py-16"
           >
             <Image
-              src="/ContactForm.jpg"
+              src={LContact}
               height={3000}
               width={5000}
-              className="rounded-2xl lg:h-[78vh] lg:w-[40vw] transition-all duration-300 cursor-pointer grayscale hover:grayscale-0"
+              className="rounded-2xl lg:h-[78vh] lg:w-[40vw] transition-all duration-300"
               alt="Image not found"
             />
           </motion.div>

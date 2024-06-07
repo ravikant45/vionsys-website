@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const PricingSection = () => {
   return (
-    <div className="relative w-full md:h-[1100px]">
+    <div className="relative w-full md:h-auto">
       <div className="absolute hidden w-full bg-gray-50 lg:block md:h-96" />
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -70,7 +70,7 @@ const PricingSection = () => {
             className="group"
           >
             <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[95vh] md:justify-between">
+              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[650px] md:justify-between">
                 <div>
                   <div className="mb-4 text-center">
                     <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
@@ -144,7 +144,7 @@ const PricingSection = () => {
             className="group"
           >
             <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[95vh] md:justify-between">
+              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[650px] md:justify-between">
                 <div>
                   <div className="mb-4 text-center">
                     <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
@@ -219,7 +219,7 @@ const PricingSection = () => {
             className="group"
           >
             <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[95vh] h-auto md:justify-between">
+              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[650px] h-auto md:justify-between">
                 <div>
                   <div className="mb-4 text-center">
                     <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
