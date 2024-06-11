@@ -50,7 +50,7 @@ const HeroSection = () => {
       <div className=" w-full md:min-w-full md:p-10">
         <div className="relative w-full max-w-full lg:max-w-6xl xl:max-w-screen-2xl mx-auto">
           <div className="absolute inset-0 -mr-3.5 bg-gradient-to-r from-red-100 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:rotate-3 sm:rounded-3xl"></div>
-          <div className="relative bg-white shadow-lg sm:rounded-3xl">
+          <div className="relative  bg-white shadow-lg sm:rounded-3xl ">
             <div className=" px-4 md:px-20 py-6">
               {/* navbar  */}
               <div className="flex items-center justify-between">
@@ -82,7 +82,7 @@ const HeroSection = () => {
 
           <!-- hero section --> */}
 
-              <div className="flex md:h-[90vh] h-[60vh] mt-4" style={gridStyle}>
+              <div className="flex md:h-[100vh] h-[60vh] md:mt-16" style={gridStyle}>
                 <div className="flex flex-col justify-center items-center md:w-1/2 w-full">
                   <div className="flex flex-col justify-center md:pr-8 xl:pr-0 md::max-w-xl">
                     <div className="md:max-w-xl mb-6">
