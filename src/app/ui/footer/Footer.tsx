@@ -186,7 +186,7 @@ const Footer = () => {
                   <div>
                   <TbDeviceLandlinePhone size={19} className="mr-2" />
                   </div>
-                  <span> Landline: +91 (020) 47242493
+                  <span> Landline: (020) 4724-2493
                   </span>
                 </div>
                 <div className="flex gap-3">
@@ -194,7 +194,7 @@ const Footer = () => {
                     {" "}
                     <MdOutlineMail size={22} className="mr-2" />
                   </div>
-                  <span> Email: hr@vionsys.com</span>
+                  <span> Email: info@vionsys.com</span>
                 </div>
                 <div className="flex  gap-3">
                   <div>
