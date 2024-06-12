@@ -1,18 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { LayoutGrid } from '@/components/ui/layout-grid';
+import { LayoutGrid } from "@/components/ui/layout-grid";
 
-import Business_Systems
-  from '../../../../public/assets/Home/Business-Systems.jpg';
-import Data_Security from '../../../../public/assets/Home/Data-Security.jpg';
-import Network_Monitoring
-  from '../../../../public/assets/Home/Network-Monitoring-2.jpg';
-import Network_Security
-  from '../../../../public/assets/Home/Network-Security.jpg';
-import Business_System
-  from '../../../../public/assets/Home/Protect_Business.jpeg';
-import Small_Business
-  from '../../../../public/assets/Home/Small-Business-1.jpeg';
+import Business_Systems from "../../../../public/assets/Home/Business-Systems.jpg";
+import Data_Security from "../../../../public/assets/Home/Data-Security.jpg";
+import Network_Monitoring from "../../../../public/assets/Home/Network-Monitoring-2.jpg";
+import Network_Security from "../../../../public/assets/Home/Network-Security.jpg";
+import Business_System from "../../../../public/assets/Home/Protect_Business.jpeg";
+import Small_Business from "../../../../public/assets/Home/Small-Business-1.jpeg";
 
 const SkeletonOne = () => {
   return (
@@ -39,21 +34,27 @@ const SkeletonThree = () => {
 const SkeletonFour = () => {
   return (
     <div>
-      <p className="font-bold text-2xl text-white bg-black opacity-60">Small Business Owners</p>
+      <p className="font-bold text-2xl text-white bg-black opacity-60">
+        Small Business Owners
+      </p>
     </div>
   );
 };
 const SkeletonFive = () => {
   return (
     <div>
-      <p className="font-bold text-2xl text-white bg-black opacity-60">Run your Business</p>
+      <p className="font-bold text-2xl text-white bg-black opacity-60">
+        Run your Business
+      </p>
     </div>
   );
 };
 const SkeletonSix = () => {
   return (
     <div>
-      <p className="font-bold text-2xl text-white bg-black opacity-60">Network Monitoring</p>
+      <p className="font-bold text-2xl text-white bg-black opacity-60">
+        Network Monitoring
+      </p>
     </div>
   );
 };
@@ -99,17 +100,26 @@ const cards = [
 
 function TrustUs() {
   return (
-    <div className='grid md:grid-cols-3 px-2 py-4 grid-cols-1 justify-items-center items-center'>
+    <div className="grid md:grid-cols-3 px-2 py-4 grid-cols-1 justify-items-center items-center">
       <div className="h-screen w-full col-span-2 md:order-1 order-2">
         <LayoutGrid cards={cards} />
       </div>
-      <div className='order-1 md:order-2 p-8'>
-        <p data-aos="fade-left" className='font-extrabold text-MainHeading'>Why trust us?</p>
-        <p data-aos="fade-right" className='text-SubHeading mt-5 font-bold'>Achieve digital transformation for your retail business services</p>
-        <p data-aos="zoom-out" className='text-paragraph mt-5 mb-5'>Trust on us for your IT requirements, backed by our track record of successful projects, commitment to data security, adherence to high service quality standards and dedication to fostering enduring client partnerships founded on trust and reliability.</p>
+      <div className="order-1 md:order-2 p-8">
+        <p data-aos="fade-left" className="font-extrabold text-MainHeading">
+          Why trust us?
+        </p>
+        <p data-aos="fade-right" className="text-SubHeading mt-5 font-bold">
+          Achieve digital transformation for your retail business services
+        </p>
+        <p data-aos="zoom-out" className="text-paragraph mt-5 mb-5">
+          Trust on us for your IT requirements, backed by our track record of
+          successful projects, commitment to data security, adherence to high
+          service quality standards and dedication to fostering enduring client
+          partnerships founded on trust and reliability.
+        </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default TrustUs
+export default TrustUs;

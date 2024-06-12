@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { FAQ, MLAIServicesData } from "@/app/ui/services/data/ML&AIServicesData";
+import { MLAIServicesData } from "@/app/ui/services/data/ML&AIServicesData";
 import { Metadata } from "next";
 import React from "react";
 import ALML3 from "/public/AIML3.jpg";
@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Button } from '@/components/ui/button';
 import background from "/public/background.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
+import MLAIFaq from '@/app/ui/services/MLAIFaq';
 // import FAQpage from '@/app/ui/services/FAQpage';
 
 export const metadata: Metadata = {
@@ -57,12 +58,12 @@ const page = () => {
           </p>
         </div>
 
-        <div data-aos='zoom-out' className="w-[90%] grid items-center justify-center gap-4 md:gap-10 sm:grid-cols-2 lg:grid-cols-3 my-4 md:my-10">
+        <div data-aos='zoom-out' className="w-[90%] grid items-center justify-center gap-4 md:gap-10 sm:grid-cols-2 lg:grid-cols-3 my-4 md:my-10 ">
           {MLAIServicesData?.features?.map((feat) => {
             return (
               <div
                 key={feat?.id}
-                className="relative hover:cursor-pointer hover:scale-105 transition-all overflow-hidden rounded-lg bg-background p-2"
+                className="relative hover:scale-105 transition-all overflow-hidden border border-gray-300 rounded-lg bg-background p-2"
               >
                 <div className="flex flex-col justify-center items-center rounded-md p-1">
                   <div className='text-8xl text-orange'><feat.icon /></div>
@@ -112,14 +113,14 @@ const page = () => {
 
       {/* CTA */}
       <section>
-        <div className='bg-gradient-to-r from-amber-500 to-pink-500 flex flex-col sm:flex-row items-center justify-center gap-2 p-4 md:p-10'>
+        <div className='bg-gray-100 flex flex-col sm:flex-row items-center justify-center gap-2 p-4 md:p-10'>
           <h3 className='text-xl md:text-2xl font-semibold animate-pulse ease-out duration-1000 bg-gradient-to-l from-black to-blue-950 bg-clip-text text-transparent'>Ready to transform your business with Machine Learning and AI? Contact us today to get started!</h3>
-          <div className='text-4xl font-bold animate-pulse ease-out duration-1000 text-black'><Link href={"/contact"}><FaArrowRightLong/></Link></div>
+          <div className='text-4xl font-bold animate-pulse ease-out duration-1000 text-black'><Link href={"/contact"}><FaArrowRightLong color='blue'/></Link></div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section>
+      {/* <section>
       <div
         className="relative w-full bg-white pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5">
         <div className=" flex flex-col items-center justify-center">
@@ -127,7 +128,7 @@ const page = () => {
           <div className=" mt-8 grid w-[90%] md:w-[70%] gap-4">
           {MLAIServicesData?.faq?.map((feat) => {
             return (
-              <div key={feat.id} className="border-2 rounded-xl p-1.5 md:p-2 bg-slate-100">
+              <div key={feat.id} className="border-2 rounded-xl p-1.5 md:p-2 ">
               <details className="group">
                 <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
                   <span className='text-sm md:text-lg font-semibold'> {feat.question}</span>
@@ -150,7 +151,9 @@ const page = () => {
           </div>
         </div>
       </div>
-      </section>
+      </section>  */}
+      <MLAIFaq/>
+     
         
     </main>
   );

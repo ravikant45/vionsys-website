@@ -23,10 +23,10 @@ const Life = () => {
         </p>
         <p data-aos="fade-right" className="">
           For inquiries related to employment opportunities, please reach out to
-          our HR Manager:
+          our HR team at
         </p>
         <p data-aos="fade-right" className="">
-          Email: hr@vionsys.com
+          hr@vionsys.com
         </p>
       </div>
     </div>

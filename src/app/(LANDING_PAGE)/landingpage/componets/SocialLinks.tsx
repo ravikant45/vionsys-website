@@ -1,10 +1,25 @@
+"use client"
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 const SocialLinks = () => {
   return (
-    <main className="flex items-center justify-center gap-8 pb-12">
-      {/* facebook link */}
+    <main id="contactbg" className="flex flex-col items-center justify-center gap-8 md:py-20 py-5">
+      <motion.div
+            initial={{ opacity: 0, y: -100 }} //X:100
+            whileInView={{ opacity: 1, y: 0 }} //y:100
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }} className="text-MainHeading text-orange font-semibold text-center block">
+        Stay connected with us
+      </motion.div>
+
+      <div className="flex justify-center items-center gap-8">
+        {/* facebook link */}
       <section className="flex justify-center items-center">
         <Link
           target="_blank"
@@ -16,7 +31,7 @@ const SocialLinks = () => {
             width="1em"
             height="1.1em"
             viewBox="0 0 448 512"
-            stroke-width="0"
+            strokeWidth="0"
             fill="currentColor"
             stroke="currentColor"
             className="w-5"
@@ -40,7 +55,7 @@ const SocialLinks = () => {
             width="1em"
             height="1.2em"
             viewBox="0 0 24 24"
-            stroke-width="1"
+            strokeWidth="1"
             fill="currentColor"
             stroke="currentColor"
             className="w-5"
@@ -64,7 +79,7 @@ const SocialLinks = () => {
             width="1em"
             height="1.1em"
             viewBox="0 0 512 512"
-            stroke-width="0"
+            strokeWidth="0"
             fill="currentColor"
             stroke="currentColor"
             className="w-5 h-5"
@@ -88,7 +103,7 @@ const SocialLinks = () => {
             width="1em"
             height="1em"
             viewBox="0 0 24 24"
-            stroke-width="0"
+            strokeWidth="0"
             fill="currentColor"
             stroke="currentColor"
           >
@@ -99,6 +114,7 @@ const SocialLinks = () => {
           </span>
         </Link>
       </section>
+      </div>
     </main>
   );
 };
