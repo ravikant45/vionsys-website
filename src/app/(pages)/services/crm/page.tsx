@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Empower from "@/app/ui/crm/Empower";
-const Img = dynamic(() => import("../../ui/crm/Img"), {
+const Img = dynamic(() => import("../../../ui/crm/Img"), {
   loading: () => <p>Loading...</p>,
 });
 import Importance from "@/app/ui/crm/Importance";
