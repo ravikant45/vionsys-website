@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import Navbar from "../ui/navbar/Navbar";
+import Footer from "../ui/footer/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -27,13 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={GeistSans.className}>
+    
+      <main className={GeistSans.className}>
+        <Navbar />
         <Toaster position="bottom-center" />
         {children}
-        <Analytics />
-        <SpeedInsights/>
-      </body>
-    </html>
+        <Footer />
+      </main>
   );
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-const Conts = dynamic(() => import("../ui/contact/FirstSection"), {
+const Conts = dynamic(() => import("../../ui/contact/FirstSection"), {
   loading: () => <p>Loading...</p>,
 });
-const Second = dynamic(() => import("../ui/contact/SecondSection"), {
+const Second = dynamic(() => import("../../ui/contact/SecondSection"), {
   loading: () => <p>Loading...</p>,
 });
-const ThirdSection = dynamic(() => import("../ui/contact/ThirdSection"), {
+const ThirdSection = dynamic(() => import("../../ui/contact/ThirdSection"), {
   loading: () => <p>Loading...</p>,
 });
 
