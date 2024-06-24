@@ -82,7 +82,7 @@ const Navbar = () => {
     setShowMenu(false);
   };
   return (
-    <div>
+    <>
       <div
         className={`fixed z-50 w-[100vw] flex p-2 justify-between items-center bg-white  ${visible ? "top-0 shadow-md shadow-gray2" : "-top-full"
           }`}
@@ -177,7 +177,7 @@ const Navbar = () => {
         </div>
       </div>
       <ResponsiveMenu showMenu={showMenu} closeMenu={closeMenu} />
-    </div>
+    </>
   );
 };
 
