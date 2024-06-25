@@ -22,11 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={GeistSans.className}>
+    
+      <main className={GeistSans.className}>
         <Toaster position="bottom-center" />
         {children}
-      </body>
-    </html>
+      </main>
+
   );
 }

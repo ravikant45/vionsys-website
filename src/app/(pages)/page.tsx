@@ -8,28 +8,28 @@ import { useEffect } from "react";
 
 import AOS from "aos";
 
-const ThreeDCard = dynamic(() => import("./ui/about/ThreeDCard"), {
+const ThreeDCard = dynamic(() => import("./../ui/about/ThreeDCard"), {
   loading: () => <p>Loading...</p>,
 });
-const AboutOurCompany = dynamic(() => import("./ui/home/AboutOurCompany"), {
+const AboutOurCompany = dynamic(() => import("./../ui/home/AboutOurCompany"), {
   loading: () => <p>Loading...</p>,
 });
-const ChooseUs = dynamic(() => import("./ui/home/ChooseUs"), {
+const ChooseUs = dynamic(() => import("./../ui/home/ChooseUs"), {
   loading: () => <p>Loading...</p>,
 });
-const Hero = dynamic(() => import("./ui/home/Home"), {
+const Hero = dynamic(() => import("./../ui/home/Home"), {
   loading: () => <p>Loading...</p>,
 });
-const OurClients = dynamic(() => import("./ui/home/OurClients"), {
+const OurClients = dynamic(() => import("./../ui/home/OurClients"), {
   loading: () => <p>Loading...</p>,
 });
-const TrustUs = dynamic(() => import("./ui/home/TrustUs"), {
+const TrustUs = dynamic(() => import("./../ui/home/TrustUs"), {
   loading: () => <p>Loading...</p>,
 });
-const WeProvide = dynamic(() => import("./ui/home/WeProvide"), {
+const WeProvide = dynamic(() => import("./../ui/home/WeProvide"), {
   loading: () => <p>Loading...</p>,
 });
-const WorkWithUs = dynamic(() => import("./ui/home/WorkWithUs"), {
+const WorkWithUs = dynamic(() => import("./../ui/home/WorkWithUs"), {
   loading: () => <p>Loading...</p>,
 });
 
