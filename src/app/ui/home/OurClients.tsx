@@ -17,6 +17,9 @@ import ClientImage5 from '../../../../public/assets/clients/client-5.png';
 import ClientImage6 from '../../../../public/assets/clients/client-6.png';
 import ClientImage7 from '../../../../public/assets/clients/client-7.png';
 import ClientImage8 from '../../../../public/assets/clients/client-8.png';
+import ClientImage9 from '../../../../public/assets/clients/client-9.png';
+import ClientImage10 from '../../../../public/assets/clients/client-10.png';
+import ClientImage11 from '../../../../public/assets/clients/client-11.png';
 
 const OurClients = () => {
     const [width, setWidth] = useState(0);
@@ -27,37 +30,50 @@ const OurClients = () => {
     const MyClients = [
         {
             id: 1,
-            logo: ClientImage1
+            logo: ClientImage9
         },
         {
             id: 2,
-            logo: ClientImage2
+            logo: ClientImage10
         },
         {
             id: 3,
-            logo: ClientImage3
+            logo: ClientImage11
         },
         {
             id: 4,
-            logo: ClientImage4
+            logo: ClientImage1
         },
         {
             id: 5,
-            logo: ClientImage5
+            logo: ClientImage2
         },
         {
             id: 6,
+            logo: ClientImage3
+        },
+        {
+            id: 7,
+            logo: ClientImage4
+        },
+        {
+            id: 8,
+            logo: ClientImage5
+        },
+        {
+            id: 9,
             logo: ClientImage6
         }
         ,
         {
-            id: 7,
+            id: 10,
             logo: ClientImage7
         },
         {
-            id: 8,
+            id: 11,
             logo: ClientImage8
-        }
+        },
+        
     ]
     return (
         <section className="w-[100vw] overflow-x-hidden flex justify-center items-center px-6 py-14 bg-[#fd4343] bg-[linear-gradient(45deg,_#fd4343_0%,_#ffbde9_50%,_#8983fb_100%)]">
