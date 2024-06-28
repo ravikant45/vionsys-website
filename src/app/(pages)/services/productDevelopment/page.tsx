@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import MainImg from "../../../../public/assets/services/Product Development/Main.jpg";
+import MainImg from "../../../../public/assets/services/ProductDevelopment/Main.jpg";
 import Image from "next/image";
-import ChooseUs from "../../../../public/assets/services/Product Development/ChooseUs.jpg";
+import ChooseUs from "../../../../public/assets/services/ProductDevelopment/ChooseUs.jpg";
 import FAQData, { FAQItem } from "@/app/ui/services/data/ProductFAQ";
 import { HiMiniArrowSmallRight } from "react-icons/hi2";
 import { Button } from "@/components/ui/button";
