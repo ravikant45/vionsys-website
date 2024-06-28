@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import MainImg from "../../../../public/assets/services/ProductDevelopment/Main.jpg";
 import Image from "next/image";
-import ChooseUs from "../../../../public/assets/services/ProductDevelopment/ChooseUs.jpg";
 import FAQData, { FAQItem } from "@/app/ui/services/data/ProductFAQ";
 import { HiMiniArrowSmallRight } from "react-icons/hi2";
 import { Button } from "@/components/ui/button";
@@ -21,7 +19,7 @@ const page = () => {
             alt="Hero Image"
             className="md:h-full h-[40vh] w-full object-cover opacity-45"
             height={1080}
-            src={MainImg}
+            src={"/assets/services/ProductDevelopment/Main.jpg"}
             style={{
               aspectRatio: "1920/1080",
               objectFit: "cover",
@@ -276,7 +274,7 @@ const page = () => {
               alt="Why Choose Us"
               className="mx-auto aspect-video lg:h-[60vh] overflow-hidden shadow-lg shadow-slate-500 bg-cover object-cover object-center sm:w-full lg:order-last"
               height="1000"
-              src={ChooseUs}
+              src={"/assets/services/ProductDevelopment/ChooseUs.jpg"}
               width="1000"
             />
           </div>
