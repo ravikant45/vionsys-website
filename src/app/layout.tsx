@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +29,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
+      <head>
+        <GoogleTagManager gtmId="GTM-MQT388RN"/>
+      </head>
+
       <body className={GeistSans.className}>
+
+      <noscript>
+      <iframe
+           src="https://www.googletagmanager.com/ns.html?id=GTM-MQT388RN"
+           height="0"
+           width="0"
+           style={{ display: "none", visibility: "hidden" }}>
+       </iframe>
+       </noscript>
+
         <Toaster position="bottom-center" />
         {children}
         <Analytics />
