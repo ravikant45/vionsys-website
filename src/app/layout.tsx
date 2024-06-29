@@ -29,22 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
-      <head>
-        <GoogleTagManager gtmId="GTM-MQT388RN"/>
-      </head>
-
+     <GoogleTagManager gtmId="GTM-MQT388RN"/>
       <body className={GeistSans.className}>
-
-      <noscript>
-      <iframe
-           src="https://www.googletagmanager.com/ns.html?id=GTM-MQT388RN"
-           height="0"
-           width="0"
-           style={{ display: "none", visibility: "hidden" }}>
-       </iframe>
-       </noscript>
-
         <Toaster position="bottom-center" />
         {children}
         <Analytics />
