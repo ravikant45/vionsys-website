@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Navbar from "../ui/navbar/Navbar";
 import Footer from "../ui/footer/Footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     
-      <main className={GeistSans.className}>
+      <main className={GeistSans.className}> 
+      <GoogleTagManager gtmId="GTM-MQT388RN"/>
         <Navbar />
         <Toaster position="bottom-center" />
         {children}
