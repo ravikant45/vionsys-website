@@ -25,9 +25,8 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
   isVisible,
 }) => (
   <div
-    className={`relative ${
-      isVisible ? "" : "hidden"
-    } h-[30rem] md:h-full w-[100vw]`}
+    className={`relative ${isVisible ? "" : "hidden"
+      } h-[30rem] md:h-full w-[100vw]`}
   >
     <video
       className="w-full h-full object-cover opacity-50"
@@ -65,7 +64,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
 const videos: Video[] = [
   {
     video: "/assets/Home/HomeV1.mp4",
-    title: "Software Developement",
+    title: "Software Development",
     desc: "Your one-stop destination for top-notch software design & development services.",
     link: "/services/softwareDevelopment",
   },
