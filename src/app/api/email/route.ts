@@ -6,7 +6,7 @@ export async function POST(req: Request) {
         // Setup email data
         const mailOptions = {
             from: process.env.GMAIL_USER!,
-            to: "hr@vionsys.com",
+            to: "info@vionsys.com",
             subject: 'Vionsys Website Contact Form',
             html: `
             <h3>You have a new contact query from vionsys website!!!</h3>
