@@ -5,7 +5,7 @@ import { IoHome } from "react-icons/io5";
 import { usePathname, useRouter } from 'next/navigation';
 import classNames from 'classnames';
 import { LiaBlogSolid } from "react-icons/lia";
-import { MdWork } from "react-icons/md";
+import { SiMaterialformkdocs } from "react-icons/si";
 import { IoLogOut } from "react-icons/io5";
 import Link from 'next/link';
 import useAuthLogout from '@/services/auth/useAuthLogout';
@@ -28,10 +28,10 @@ const Sidebar = () => {
                         <Image src={"/assets/logo.png"} alt='Logo' width={200} height={200} />
                     </div>
 
-                    <div className='flex flex-col gap-2 w-full items-center py-4'>
+                    <div className='flex flex-col gap-1 w-full items-center py-4'>
                         <Link
                             href={"/admin"}
-                            className={classNames('flex gap-4 px-4 items-center py-4 rounded-md w-full', {
+                            className={classNames('flex gap-4 px-4 items-center py-3 rounded-md w-full', {
                                 'bg-white': pathname === '/admin' || pathname === '/',
                                 'hover:bg-white': pathname !== '/admin' && pathname !== '/'
                             })}
@@ -40,13 +40,19 @@ const Sidebar = () => {
                             <IoHome size={20} />
                             <h1>Home</h1>
                         </Link>
-                        <Link href={"/admin/blogs"} className='flex gap-4 px-4 items-center py-4 hover:bg-white rounded-md w-full'>
+                        <Link href={"/admin/blogs"} className={classNames('flex gap-4 px-4 items-center py-3 rounded-md w-full', {
+                            'bg-white': pathname === '/admin/blogs' || pathname === '/',
+                            'hover:bg-white': pathname !== '/admin/blogs' && pathname !== '/'
+                        })}>
                             <LiaBlogSolid size={20} />
                             <h1>Blogs</h1>
                         </Link>
-                        <Link href={"/admin/jobs"} className='flex gap-4 px-4 items-center py-4 hover:bg-white rounded-md w-full'>
-                            <MdWork size={20} />
-                            <h1>Jobs</h1>
+                        <Link href={"/admin/caseStudies"} className={classNames('flex gap-4 px-4 items-center py-3 rounded-md w-full', {
+                            'bg-white': pathname === '/admin/caseStudies' || pathname === '/',
+                            'hover:bg-white': pathname !== '/admin/caseStudies' && pathname !== '/'
+                        })}>
+                            <SiMaterialformkdocs size={20} />
+                            <h1>Case Studies</h1>
                         </Link>
                     </div>
                 </div>
