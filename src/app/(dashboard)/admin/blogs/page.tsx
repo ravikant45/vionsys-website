@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { jwtdecode } from '@/utils/jwt-decode';
 import Errorpage from '@/components/ui/Errorpage';
+import AllBlogs from '@/app/ui/dashboard/blogs/AllBlogs';
 
 const page = () => {
     const [role, setRole] = useState<string | null>(null);
@@ -34,9 +35,7 @@ const page = () => {
     return (
         <>
             {role === "admin" ? (
-                <div>
-                    <h3>Blogs page</h3>
-                </div>
+                <AllBlogs />
             ) : (
                 <Errorpage
                     errorCode='401'
