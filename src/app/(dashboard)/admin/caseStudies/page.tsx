@@ -35,7 +35,7 @@ const page = () => {
         <>
             {role === "admin" ? (
                 <div>
-                    <h3>Blogs page</h3>
+                    <h3>Case Studies page</h3>
                 </div>
             ) : (
                 <Errorpage
