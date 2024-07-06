@@ -13,6 +13,11 @@ const ThirdSection = dynamic(() => import("../../ui/industries/ThirdSection"), {
 
 export const metadata: Metadata = {
   title: "Industries",
+  description:"Vionsys IT Solutions Pvt Ltd provides customized technology solutions to a wide range of industries, including healthcare and finance. Our expertise in industry-specific IT encourages innovation, increases efficiency, and assures compliance, allowing firms to prosper in competitive marketplaces.",
+  openGraph:{
+    images:"/opangraph.png",
+    description:"Explore Vionsys IT Solutions Pvt Ltd industry-specific services. We provide specialized IT solutions for sectors such as retail, manufacturing, and healthcare, assuring optimal operations and a competitive advantage through innovative technology and skilled support."
+  }
 };
 
 const page = () => {
