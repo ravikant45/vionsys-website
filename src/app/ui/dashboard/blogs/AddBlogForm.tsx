@@ -1,5 +1,4 @@
-'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/utils/cn';
@@ -9,35 +8,84 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Image from 'next/image';
 import useAddBlog from '@/services/blogs/useAddBlog';
+import useUpdateBlog from '@/services/blogs/useUpdateBlog';
+
+interface BlogProps {
+    id?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+    postDate?: string;
+    setShowModal: (show: boolean) => void; // Add setShowModal prop
+}
 
 interface FormValues {
     title: string;
     file: UploadFile[];
 }
 
-const AddBlogForm: React.FC = () => {
+const BlogForm: React.FC<BlogProps> = ({ id, title = '', description: initialDescription = '', image, postDate, setShowModal }) => {
     const [form] = Form.useForm();
-    const [description, setDescription] = useState<string>('');
+    const [description, setDescription] = useState<string>(initialDescription);
+    const [fileList, setFileList] = useState<UploadFile[]>([]);
     const { mutate: addBlog, isPending: isAddBlogPending } = useAddBlog();
+    const { mutate: updateBlog, isPending: isUpdateBlogPending } = useUpdateBlog();
+    const isUpdating = !!id;
 
     const handleFormSubmit = (values: FormValues) => {
-        console.log(values.file[0].originFileObj as Blob);
-        console.log(description)
-        const currentDate = new Date();
         const formData = new FormData();
         formData.append('title', values.title);
         formData.append('description', description);
-        formData.append('currentDate', currentDate.toISOString());
-        if (values.file && values.file.length > 0) {
-            formData.append('file', values.file[0].originFileObj as Blob);
+        if (!isUpdating) {
+            const currentDate = new Date();
+            formData.append('currentDate', currentDate.toISOString());
         }
-        addBlog(formData, {
-            onSuccess: () => {
-                form.resetFields();
-                setDescription('');
-            }
-        });
+
+        if (fileList.length > 0) {
+            formData.append('file', fileList[0].originFileObj as Blob);
+        }
+
+        if (isUpdating) {
+            formData.append('id', id as string);
+            updateBlog(formData, {
+                onSuccess: () => {
+                    form.resetFields();
+                    setDescription('');
+                    setFileList([]);
+                    setShowModal(false); // Close modal after successful update
+                }
+            });
+        } else {
+            addBlog(formData, {
+                onSuccess: () => {
+                    form.resetFields();
+                    setDescription('');
+                    setFileList([]);
+                    setShowModal(false); // Close modal after successful addition
+                }
+            });
+        }
     };
+
+    useEffect(() => {
+        form.setFieldsValue({
+            title,
+        });
+        setDescription(initialDescription);
+
+        if (image) {
+            setFileList([
+                {
+                    uid: '-1',
+                    name: 'image.png',
+                    status: 'done',
+                    url: image,
+                } as UploadFile,
+            ]);
+        }
+    }, [form, title, initialDescription, image]);
+
+    const handleFileChange = ({ fileList }: { fileList: UploadFile[] }) => setFileList(fileList);
 
     return (
         <div className='flex w-full justify-center items-center bg-blue-100 mt-6 px-4 rounded-2xl'>
@@ -95,13 +143,15 @@ const AddBlogForm: React.FC = () => {
                             name="file"
                             valuePropName="fileList"
                             getValueFromEvent={(e) => (Array.isArray(e) ? e : e && e.fileList)}
-                            rules={[{ required: true, message: 'Please upload an image!' }]}
+                            rules={[{ required: !isUpdating, message: 'Please upload an image!' }]}
                         >
                             <Upload
                                 name="file"
                                 listType="picture"
                                 beforeUpload={() => false}
                                 maxCount={1}
+                                fileList={fileList}
+                                onChange={handleFileChange}
                             >
                                 <Button icon={<UploadOutlined />}>Click to upload</Button>
                             </Upload>
@@ -110,12 +160,12 @@ const AddBlogForm: React.FC = () => {
 
                     <Form.Item className='w-32'>
                         <Button
-                            loading={isAddBlogPending}
-                            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] transition-all duration-300 ease-linear px-2"
-                            type="text"
+                            loading={isUpdating ? isUpdateBlogPending : isAddBlogPending}
+                            className={isUpdating ? "bg-yellow-500 hover:bg-yellow-600" : "bg-gradient-to-br from-black to-neutral-600"}
+                            type="primary"
                             htmlType="submit"
                         >
-                            &nbsp;Submit &rarr;
+                            &nbsp;{isUpdating ? 'Update' : 'Add'} &rarr;
                             <BottomGradient />
                         </Button>
                     </Form.Item>
@@ -128,8 +178,8 @@ const AddBlogForm: React.FC = () => {
 const BottomGradient: React.FC = () => {
     return (
         <>
-            <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-            <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+            <span className="group-hover:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
+            <span className="group-hover:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
         </>
     );
 };
@@ -150,4 +200,4 @@ const LabelInputContainer: React.FC<LabelInputContainerProps> = ({
     );
 };
 
-export default AddBlogForm;
+export default BlogForm;

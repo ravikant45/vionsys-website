@@ -2,25 +2,46 @@
 import React, { useEffect, useState } from 'react'
 import { jwtdecode } from '@/utils/jwt-decode';
 import Errorpage from '@/components/ui/Errorpage';
-import AllBlogs from '@/app/ui/dashboard/blogs/AllBlogs';
+import dynamic from 'next/dynamic';
 
-const page = () => {
+// Dynamically import the AllBlogs component
+const AllBlogs = dynamic(() => import('@/app/ui/dashboard/blogs/AllBlogs'), { ssr: false });
+
+const Page = () => {
     const [role, setRole] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token) {
-            const { role } = jwtdecode(token);
-            setRole(role);
+        if (typeof window !== 'undefined') {
+            const token = localStorage.getItem("token");
+            if (token) {
+                try {
+                    const { role } = jwtdecode(token);
+                    setRole(role);
+                } catch (e) {
+                    setError("Failed to decode token.");
+                }
+            } else {
+                setError("No token found.");
+            }
+            setLoading(false);
         }
-        setLoading(false); // Set loading to false after checking the token
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>; // Show a loading indicator while waiting
+        return <div>Loading...</div>;
     }
 
+    if (error) {
+        return (
+            <Errorpage
+                errorCode='400'
+                errorTitle={"Error"}
+                errorDescription={error}
+            />
+        );
+    }
 
     if (role === null) {
         return (
@@ -47,4 +68,4 @@ const page = () => {
     );
 }
 
-export default page;
+export default Page;
