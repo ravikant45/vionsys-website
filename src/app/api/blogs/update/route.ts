@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../prisma/database";
 import cloudinaryDelete from "@/helper/cloudinaryDelete";
 import cloudinaryUpload from "@/helper/cloudinaryUpload";
+import isAdmin from "@/helper/isAdmin";
 
 async function fileToBuffer(file: File): Promise<Buffer> {
     const arrayBuffer = await file.arrayBuffer();
@@ -10,6 +11,9 @@ async function fileToBuffer(file: File): Promise<Buffer> {
 
 export async function PUT(req: NextRequest) {
     try {
+        // if user is admin --> he can perform this operation
+        await isAdmin(req);
+
         const data = await req.formData();
         const id = data.get("id") as string;
         const title = data.get("title") as string;
