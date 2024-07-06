@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     template: "%s - Vionsys IT Solutions India Pvt. Ltd.",
   },
   openGraph: {
-    images: "/src/app/opengraph-image.png",
+    images: "/opangraph.png",
   },
   twitter: {
-    images: "/src/app/opengraph-image.png",
+    images: "/opengraph.png",
   },
 
   description:
