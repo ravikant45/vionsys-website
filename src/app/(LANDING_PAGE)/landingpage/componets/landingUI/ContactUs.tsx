@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button, Form, Input } from "antd";
-import LContact from '@/app/(LANDING_PAGE)/landingpage/landingpage/LContact2.jpg'
+import LContact from '@/app/(LANDING_PAGE)/landingpage/images/landingImg/LContact2.jpg';
 
 const ContactUs: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);

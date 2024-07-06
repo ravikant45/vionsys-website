@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Navbar from "../ui/navbar/Navbar";
 import Footer from "../ui/footer/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Providers from "@/utils/Providers";
 
 export const metadata: Metadata = {
   title: {
@@ -12,10 +13,10 @@ export const metadata: Metadata = {
     template: "%s - Vionsys IT Solutions India Pvt. Ltd.",
   },
   openGraph: {
-    images: "/src/app/opengraph-image.png",
+    images: "/opangraph.png",
   },
   twitter: {
-    images: "/src/app/opengraph-image.png",
+    images: "/opengraph.png",
   },
 
   description:
@@ -28,13 +29,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
-      <main className={GeistSans.className}> 
-      <GoogleTagManager gtmId="GTM-MQT388RN"/>
+
+    <main className={GeistSans.className}>
+      <GoogleTagManager gtmId="GTM-MQT388RN" />
+      <Providers>
         <Navbar />
         <Toaster position="bottom-center" />
         {children}
         <Footer />
-      </main>
+      </Providers>
+    </main>
   );
 }

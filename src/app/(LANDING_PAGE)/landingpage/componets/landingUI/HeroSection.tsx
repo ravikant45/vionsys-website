@@ -2,11 +2,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Land1 from "../landingpage/Land1.jpeg";
-import Land2 from "../landingpage/Land2.jpeg";
-import Land3 from "../landingpage/Land3.jpeg";
-import Land4 from "../landingpage/Land5.jpg";
-import Land5 from "../landingpage/Land6.jpg";
+import Land1 from "../../images/landingImg/Land1.jpeg";
+import Land2 from "../../images/landingImg/Land2.jpeg";
+import Land3 from "../../images/landingImg/Land3.jpeg";
+import Land4 from "../../images/landingImg/Land5.jpg";
+import Land5 from "../../images/landingImg/Land6.jpg";
 import { TypewriterEffect1 } from "@/components/ui/typewriter-effect1";
 import React from "react";
 import LogoImage from "/public/assets/logo.png";
@@ -90,14 +90,14 @@ const HeroSection = () => {
                         <TypewriterEffect1 words={words} />
                       </h2>
                       <motion.div
-                      initial={{ opacity: 0, x: -100 }} //X:100
-                      whileInView={{ opacity: 1, x: 0 }} //y:100
-                      transition={{
-                        delay: 0.2,
-                        scale: { type: "spring", stiffness: 30 },
-                        opacity: { duration: 0.6 },
-                        ease: "easeInOut",
-                      }} className="text-base text-gray-800 md:text-xl">
+                        initial={{ opacity: 0, x: -100 }} //X:100
+                        whileInView={{ opacity: 1, x: 0 }} //y:100
+                        transition={{
+                          delay: 0.2,
+                          scale: { type: "spring", stiffness: 30 },
+                          opacity: { duration: 0.6 },
+                          ease: "easeInOut",
+                        }} className="text-base text-gray-800 md:text-xl">
                         Your one-stop destination for top-notch web design &
                         development services.
                       </motion.div>

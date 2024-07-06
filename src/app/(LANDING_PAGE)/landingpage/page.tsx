@@ -1,11 +1,11 @@
 import React from "react";
-import HeroSection from "./componets/HeroSection";
-import Services from "./componets/Services";
-import PricingSection from "./componets/PricingSection";
+import HeroSection from "./componets/landingUI/HeroSection";
+import Services from "./componets/landingUI/Services";
+import PricingSection from "./componets/landingUI/PricingSection";
 import OurClients from "@/app/ui/home/OurClients";
-import WhychooseUs from "./componets/WhychooseUs";
-import ContactUs from "./componets/ContactUs";
-import SocialLinks from "./componets/SocialLinks";
+import WhychooseUs from "./componets/landingUI/WhychooseUs";
+import ContactUs from "./componets/landingUI/ContactUs";
+import SocialLinks from "./componets/landingUI/SocialLinks";
 import WorkWithUs from "@/app/ui/home/WorkWithUs";
 import App from "./app";
 
