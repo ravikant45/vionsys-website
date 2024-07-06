@@ -1,4 +1,5 @@
 'use client';
+import AllCaseStudies from '@/app/ui/dashboard/caseStudies/AllCaseStudies';
 import Errorpage from '@/components/ui/Errorpage';
 import { jwtdecode } from '@/utils/jwt-decode';
 import React, { useEffect, useState } from 'react'
@@ -34,9 +35,7 @@ const page = () => {
     return (
         <>
             {role === "admin" ? (
-                <div>
-                    <h3>Case Studies page</h3>
-                </div>
+                <AllCaseStudies />
             ) : (
                 <Errorpage
                     errorCode='401'
