@@ -16,6 +16,10 @@ export const getOneBlog = async (id: any) => {
     return response.data;
 }
 
+export const deleteBlog = async (id: any) => {
+    const response = await axios.delete(`/api/blogs/delete?id=${id}`);
+    return response.data;
+}
 
 export const updateBlog = async (formData: FormData) => {
     const response = await axios.put('/api/blogs/update', formData);

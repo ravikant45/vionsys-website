@@ -30,7 +30,7 @@ const Page = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='h-[100vh] w-full flex justify-center items-center text-2xl font-bold'>Loading...</div>;
     }
 
     if (error) {
