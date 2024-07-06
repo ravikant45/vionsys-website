@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col items-center justify-between xl:flex-row">
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-                  Integrated Digital Marketing Services <br className="hidden md:block" />
+                  Web Development <br className="hidden md:block" />
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-gray2 md:text-lg">
                   Whether you are a small business or a large corporation, we are equipped to boost your digital marketing success. What sets us apart in India's digital marketing landscape is our commitment to staying ahead of trends. Alongside traditional services like SEO and PPC, we excel in social media, email and content marketing. With our innovative strategies, we're ready to enhance your online presence and drive results.
