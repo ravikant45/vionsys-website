@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // images: {
-  //   domains: ["images.unsplash.com", "img.freepik.com"],
-  // },
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
