@@ -1,20 +1,23 @@
-import { addBlog } from "@/features/blogApi";
+import { updateBlog } from "@/features/blogApi";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { message } from "antd";
 
-const useAddBlog = () => {
+const useUpdateBlog = () => {
     const queryClient = useQueryClient();
     const { mutate, isPending } = useMutation({
-        mutationFn: (formData: FormData) => addBlog(formData),
+        mutationFn: (formData: FormData) => updateBlog(formData),
         onSuccess: (res: any) => {
-            // Invalidate the get all blogs section 
             queryClient.invalidateQueries({
-                queryKey: ['allBlogs']
-            })
+                queryKey: ['blog']
+            });
+            queryClient.invalidateQueries(
+                {
+                    queryKey: ['allBlogs']
+                }
+            )
             message.success(res?.message);
         },
         onError: (err: any) => {
-            console.log(err);
             message.error(err?.response?.data?.error);
         }
     });
@@ -25,5 +28,4 @@ const useAddBlog = () => {
     };
 };
 
-
-export default useAddBlog;
+export default useUpdateBlog;

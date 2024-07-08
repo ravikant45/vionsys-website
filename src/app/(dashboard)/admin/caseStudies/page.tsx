@@ -1,4 +1,5 @@
 'use client';
+import AllCaseStudies from '@/app/ui/dashboard/caseStudies/AllCaseStudies';
 import Errorpage from '@/components/ui/Errorpage';
 import { jwtdecode } from '@/utils/jwt-decode';
 import React, { useEffect, useState } from 'react'
@@ -17,7 +18,7 @@ const page = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>; // Show a loading indicator while waiting
+        return <div className='w-full h-screen flex justify-center items-center font-bold text-xl'>Loading...</div>; // Show a loading indicator while waiting
     }
 
 
@@ -34,9 +35,7 @@ const page = () => {
     return (
         <>
             {role === "admin" ? (
-                <div>
-                    <h3>Case Studies page</h3>
-                </div>
+                <AllCaseStudies />
             ) : (
                 <Errorpage
                     errorCode='401'
@@ -48,4 +47,4 @@ const page = () => {
     );
 }
 
-export default page
+export default page;

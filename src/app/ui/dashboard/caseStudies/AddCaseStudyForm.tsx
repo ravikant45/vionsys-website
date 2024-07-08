@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/utils/cn';
 import { Form, Button, Upload, UploadFile } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import Image from 'next/image';
-import useAddBlog from '@/services/blogs/useAddBlog';
-import useUpdateBlog from '@/services/blogs/useUpdateBlog';
+import useAddCaseStudy from '@/services/caseStudies/useAddCaseStudy';
+import useUpdateCaseStudy from '@/services/caseStudies/useUpdateCaseStudy';
 
-interface BlogProps {
+interface CaseStudyFormProps {
     id?: string;
     title?: string;
     description?: string;
     image?: string;
-    postDate?: string;
     setShowModal: (show: boolean) => void; // Add setShowModal prop
 }
 
@@ -24,22 +22,21 @@ interface FormValues {
     file: UploadFile[];
 }
 
-const BlogForm: React.FC<BlogProps> = ({ id, title = '', description: initialDescription = '', image, postDate, setShowModal }) => {
+// Dynamically import ReactQuill to avoid server-side rendering issues
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
+const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({ id, title = '', description: initialDescription = '', image, setShowModal }) => {
     const [form] = Form.useForm();
     const [description, setDescription] = useState<string>(initialDescription);
     const [fileList, setFileList] = useState<UploadFile[]>([]);
-    const { mutate: addBlog, isPending: isAddBlogPending } = useAddBlog();
-    const { mutate: updateBlog, isPending: isUpdateBlogPending } = useUpdateBlog();
+    const { mutate: updateCaseStudy, isPending: isCaseStudyUpdating } = useUpdateCaseStudy();
+    const { mutate: addCaseStudy, isPending: isAddingCaseStudy } = useAddCaseStudy();
     const isUpdating = !!id;
 
     const handleFormSubmit = (values: FormValues) => {
         const formData = new FormData();
         formData.append('title', values.title);
         formData.append('description', description);
-        if (!isUpdating) {
-            const currentDate = new Date();
-            formData.append('currentDate', currentDate.toISOString());
-        }
 
         if (fileList.length > 0) {
             formData.append('file', fileList[0].originFileObj as Blob);
@@ -47,7 +44,7 @@ const BlogForm: React.FC<BlogProps> = ({ id, title = '', description: initialDes
 
         if (isUpdating) {
             formData.append('id', id as string);
-            updateBlog(formData, {
+            updateCaseStudy(formData, {
                 onSuccess: () => {
                     form.resetFields();
                     setDescription('');
@@ -56,7 +53,7 @@ const BlogForm: React.FC<BlogProps> = ({ id, title = '', description: initialDes
                 }
             });
         } else {
-            addBlog(formData, {
+            addCaseStudy(formData, {
                 onSuccess: () => {
                     form.resetFields();
                     setDescription('');
@@ -88,14 +85,9 @@ const BlogForm: React.FC<BlogProps> = ({ id, title = '', description: initialDes
     const handleFileChange = ({ fileList }: { fileList: UploadFile[] }) => setFileList(fileList);
 
     return (
-        <div className='flex w-full justify-center items-center bg-blue-100 mt-6 px-4 rounded-2xl'>
+        <div className='flex w-full justify-center items-center bg-orange mt-6 px-4 rounded-2xl'>
             <div className="max-w-full w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-                <div className='flex'>
-                    <div className="text-start flex justify-center mb-6">
-                        <Image src="/assets/logo.png" alt="Logo" width={150} height={150} className="" />
-                    </div>
-                </div>
-
+                <h3 className='text-center font-bold'>{isUpdating ? 'Update Case Study' : 'Add Case Study'}</h3>
                 <Form form={form} className="" onFinish={handleFormSubmit}>
                     <LabelInputContainer className="mb-4">
                         <Label htmlFor="title">Title</Label>
@@ -160,7 +152,7 @@ const BlogForm: React.FC<BlogProps> = ({ id, title = '', description: initialDes
 
                     <Form.Item className='w-32'>
                         <Button
-                            loading={isUpdating ? isUpdateBlogPending : isAddBlogPending}
+                            loading={isUpdating ? isCaseStudyUpdating : isAddingCaseStudy}
                             className={isUpdating ? "bg-yellow-500 hover:bg-yellow-600" : "bg-gradient-to-br from-black to-neutral-600"}
                             type="primary"
                             htmlType="submit"
@@ -200,4 +192,4 @@ const LabelInputContainer: React.FC<LabelInputContainerProps> = ({
     );
 };
 
-export default BlogForm;
+export default AddCaseStudyForm;

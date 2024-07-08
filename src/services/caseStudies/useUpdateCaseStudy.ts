@@ -1,20 +1,24 @@
-import { addBlog } from "@/features/blogApi";
+import { updateCaseStudy } from "@/features/caseStudiesApi";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { message } from "antd";
 
-const useAddBlog = () => {
+const useUpdateCaseStudy = () => {
     const queryClient = useQueryClient();
     const { mutate, isPending } = useMutation({
-        mutationFn: (formData: FormData) => addBlog(formData),
+        mutationFn: (formData: FormData) => updateCaseStudy(formData),
         onSuccess: (res: any) => {
-            // Invalidate the get all blogs section 
+            // Invalidate the get all case studies section
             queryClient.invalidateQueries({
-                queryKey: ['allBlogs']
+                queryKey: ['allCaseStudies']
+            });
+
+            // Invalidate individual case study
+            queryClient.invalidateQueries({
+                queryKey: ['caseStudy']
             })
             message.success(res?.message);
         },
         onError: (err: any) => {
-            console.log(err);
             message.error(err?.response?.data?.error);
         }
     });
@@ -22,8 +26,7 @@ const useAddBlog = () => {
     return {
         mutate,
         isPending
-    };
+    }
 };
 
-
-export default useAddBlog;
+export default useUpdateCaseStudy;
