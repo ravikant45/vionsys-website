@@ -18,7 +18,7 @@ const page = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>; // Show a loading indicator while waiting
+        return <div className='w-full h-screen flex justify-center items-center font-bold text-xl'>Loading...</div>; // Show a loading indicator while waiting
     }
 
 
@@ -47,4 +47,4 @@ const page = () => {
     );
 }
 
-export default page
+export default page;
