@@ -49,10 +49,14 @@ const AllBlogs: React.FC = () => {
     }
 
     return (
-        <section className='px-4 py-6 w-full bg-slate-50 bg-dot-slate-300'>
-            <Button onClick={() => setIsAddModalOpen(!isAddModalOpen)} type='primary' className='text-base'>
-                Add Blog
-            </Button>
+        <section className='px-8 py-6 w-full bg-slate-50 bg-dot-slate-300'>
+            {
+                role === 'admin' && (
+                    <Button onClick={() => setIsAddModalOpen(!isAddModalOpen)} type='primary' className='text-base'>
+                        Add Blog
+                    </Button>
+                )
+            }
 
             <Modal width={900} centered open={isAddModalOpen} footer={null} onCancel={() => setIsAddModalOpen(false)}>
                 {/* Add Blog Form */}
@@ -66,7 +70,7 @@ const AllBlogs: React.FC = () => {
                         <div className='grid md:grid-cols-3 grid-cols-1 justify-center items-center gap-4'>
                             {
                                 Blogs?.map((blog: Blog) => (
-                                    <div key={blog.id} className='max-w-sm h-[430px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+                                    <div key={blog.id} className='max-w-sm md:h-[430px] h-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
                                         <div className='relative'>
                                             <Link href={`/admin/blogs/${blog?.id}`}>
                                                 <Image src={blog?.image} alt="" width={1000} height={1000} className="rounded-t-md w-full h-[200px]" />
@@ -81,15 +85,15 @@ const AllBlogs: React.FC = () => {
                                             </div>
 
 
-                                            <div className='py-2 px-4 flex justify-between items-center gap-4'>
+                                            <div className='py-2 px-4 flex flex-wrap justify-between items-center gap-4'>
                                                 <Link href={`/admin/blogs/${blog?.id}`} type='link' className='text-blue-400 hover:underline'>Read More</Link>
                                                 <div>
                                                     {
-                                                        role === 'admin' ? (
+                                                        role === 'admin' && (
                                                             <Button onClick={() => handleDeleteBlog(`${blog.id}`)} danger className='flex justify-center items-center cursor-pointer'>
                                                                 <MdDeleteOutline size={20} className=' hover:text-red-400 text-red-600' />
                                                             </Button>
-                                                        ) : ''
+                                                        )
                                                     }
                                                 </div>
                                             </div>
@@ -99,9 +103,11 @@ const AllBlogs: React.FC = () => {
                             }
                         </div>
                     ) : (
-                        <Flex align="center" gap="middle">
-                            <Spin size="large" />
-                        </Flex>
+                        <div className={`h-screen flex justify-center items-center`}>
+                            <Flex align="center" gap="middle">
+                                <Spin size="large" />
+                            </Flex>
+                        </div>
                     )
                 }
             </div>

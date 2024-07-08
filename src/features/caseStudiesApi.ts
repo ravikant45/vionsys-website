@@ -14,3 +14,14 @@ export const getCaseStudy = async (id: string) => {
     const response = await axios.get(`/api/caseStudies/get?id=${id}`);
     return response.data;
 }
+
+
+export const updateCaseStudy = async (formData: FormData) => {
+    const response = await axios.put(`/api/caseStudies/update`, formData);
+    return response.data;
+}
+
+export const deleteCaseStudy = async (id: string) => {
+    const response = await axios.delete(`/api/caseStudies/delete?id=${id}`);
+    return response.data;
+}

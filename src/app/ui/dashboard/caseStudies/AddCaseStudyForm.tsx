@@ -7,6 +7,7 @@ import { Form, Button, Upload, UploadFile } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import 'react-quill/dist/quill.snow.css';
 import useAddCaseStudy from '@/services/caseStudies/useAddCaseStudy';
+import useUpdateCaseStudy from '@/services/caseStudies/useUpdateCaseStudy';
 
 interface CaseStudyFormProps {
     id?: string;
@@ -28,6 +29,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({ id, title = '', descri
     const [form] = Form.useForm();
     const [description, setDescription] = useState<string>(initialDescription);
     const [fileList, setFileList] = useState<UploadFile[]>([]);
+    const { mutate: updateCaseStudy, isPending: isCaseStudyUpdating } = useUpdateCaseStudy();
     const { mutate: addCaseStudy, isPending: isAddingCaseStudy } = useAddCaseStudy();
     const isUpdating = !!id;
 
@@ -42,13 +44,15 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({ id, title = '', descri
 
         if (isUpdating) {
             formData.append('id', id as string);
-            console.log('Update Case Study:', Object.fromEntries(formData.entries()));
-            form.resetFields();
-            setDescription('');
-            setFileList([]);
-            setShowModal(false); // Close modal after successful update
+            updateCaseStudy(formData, {
+                onSuccess: () => {
+                    form.resetFields();
+                    setDescription('');
+                    setFileList([]);
+                    setShowModal(false); // Close modal after successful update
+                }
+            });
         } else {
-            console.log('Add Case Study:', Object.fromEntries(formData.entries()));
             addCaseStudy(formData, {
                 onSuccess: () => {
                     form.resetFields();
@@ -56,7 +60,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({ id, title = '', descri
                     setFileList([]);
                     setShowModal(false); // Close modal after successful addition
                 }
-            })
+            });
         }
     };
 
@@ -148,7 +152,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({ id, title = '', descri
 
                     <Form.Item className='w-32'>
                         <Button
-                            loading={isUpdating ? false : isAddingCaseStudy}
+                            loading={isUpdating ? isCaseStudyUpdating : isAddingCaseStudy}
                             className={isUpdating ? "bg-yellow-500 hover:bg-yellow-600" : "bg-gradient-to-br from-black to-neutral-600"}
                             type="primary"
                             htmlType="submit"

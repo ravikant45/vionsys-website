@@ -41,7 +41,7 @@ const Page: React.FC = () => {
 
     return (
         <div className='py-6 flex justify-center items-center bg-dot-slate-300'>
-            <div className="py-8 px-4 max-w-4xl mx-auto bg-blue-100 rounded-lg shadow-md">
+            <div className="py-8 md:px-4 px-8 md:max-w-4xl w-auto md:mx-auto md:bg-blue-100 bg-white rounded-lg md:shadow-md">
                 <div className='mb-2'>
                     <Link href={"/admin/blogs"} className='bg-blue-400 rounded-md w-10 flex justify-center items-center cursor-pointer mt-2 py-2'>
                         <IoMdArrowBack size={25} />
