@@ -16,11 +16,14 @@ import { formatDate } from "@/app/ui/dashboard/blogs/AllBlogs";
 const Page = () => {
   const { id } = useParams();
   const router = useRouter();
+  const [openmodalDelete, setopenmodalDelete] = useState(false);
+  const [deleteblogId, setdeleteblogId] = useState("");
   const [role, setRole] = useState<string | null>(null);
   const { data, isPending } = useGetCaseStudy(id);
   const { mutate: deleteCaseStudy, isPending: isDeletingCaseStudy } =
     useDeleteCaseStudy();
   const [showModal, setShowModal] = useState<boolean>(false);
+  const handleCancelDeleteModal = () => setopenmodalDelete(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -51,6 +54,28 @@ const Page = () => {
 
   return (
     <div className="py-4 md:pl-8 px-4 flex justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300">
+      {/* modal to delete the case study */}
+      <Modal
+        footer={null}
+        open={openmodalDelete}
+        onCancel={handleCancelDeleteModal}
+      >
+        <div className="flex flex-col gap-4">
+          <h1 className="text-red-600 font-bold text-lg">
+            Do you really want to delete this blog?
+          </h1>
+          <p className="text-gray-600">
+            This action cannot be undone. Are you sure you want to proceed?
+          </p>
+          <Button
+            className="bg-red-600"
+            onClick={() => handleDeleteCaseStudy(deleteblogId)}
+          >
+            {isDeletingCaseStudy ? "Deleting..." : "Delete"}
+          </Button>
+        </div>
+      </Modal>
+
       <div className="w-full mx-auto bg-white rounded-lg shadow-lg md:p-8 p-4">
         <div className="mb-4">
           <Link
@@ -94,10 +119,13 @@ const Page = () => {
             <div className="flex gap-6 flex-wrap">
               <Button onClick={() => setShowModal(!showModal)}>Update</Button>
               <Button
-                onClick={() => handleDeleteCaseStudy(`${data?.data?.id}`)}
+                onClick={() => {
+                  setdeleteblogId(data?.data?.id);
+                  setopenmodalDelete(true);
+                }}
                 className="bg-red-600 hover:bg-red-500"
               >
-                {isDeletingCaseStudy ? "Deleting..." : "Delete"}
+                Delete
               </Button>
             </div>
           )}
