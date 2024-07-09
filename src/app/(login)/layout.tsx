@@ -6,9 +6,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className={GeistSans.className}>
-      <Providers>{children}</Providers>
-    </div>
-  );
+  return <Providers>{children}</Providers>;
 }
