@@ -88,11 +88,11 @@ export const ArticlesLinks: {
   href: string;
 }[] = [
   {
-    title: "Blog",
+    title: "Blogs",
     href: "/blogs",
   },
   {
-    title: "Case Study",
+    title: "Case Studies",
     href: "/caseStudies",
   },
 ];
