@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { jwtdecode } from "@/utils/jwt-decode";
 import Errorpage from "@/components/ui/Errorpage";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Loading from "@/app/(pages)/loading";
+import AllBlogs from "@/app/ui/dashboard/blogs/AllBlogs";
 
 // Dynamically import the AllBlogs component
-const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
-  ssr: false,
-});
+// const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
+//   ssr: false,
+// });
 
 const Page = () => {
   const [role, setRole] = useState<string | null>(null);

@@ -1,4 +1,5 @@
-import { Button, Modal, Spin } from "antd";
+"use client";
+import { Button, Modal } from "antd";
 import React, { useEffect, useState } from "react";
 import AddBlogForm from "./AddBlogForm";
 import useGetAllBlogs from "@/services/blogs/useGetAllBlogs";
