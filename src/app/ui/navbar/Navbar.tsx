@@ -13,7 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import LogoImage from "/public/assets/logo.png";
-import { ServicesLinks } from "./Navlinks";
+import { ArticlesLinks, ServicesLinks } from "./Navlinks";
 import { VscClose } from "react-icons/vsc";
 import { HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -63,7 +63,6 @@ const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
 
-
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
@@ -84,16 +83,14 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed z-50 w-[100vw] flex p-2 justify-between items-center bg-white  ${visible ? "top-0 shadow-md shadow-gray2" : "-top-full"
-          }`}
+        className={`fixed z-50 w-[100vw] flex p-2 justify-between items-center bg-white  ${
+          visible ? "top-0 shadow-md shadow-gray2" : "-top-full"
+        }`}
       >
         {/* Logo of the organization */}
         <div className="px-4">
-          <Link href="/"><Image
-            src={LogoImage}
-            alt=""
-            className="w-[152px]"
-          />
+          <Link href="/">
+            <Image src={LogoImage} alt="" className="w-[152px]" />
           </Link>
         </div>
 
@@ -104,7 +101,10 @@ const Navbar = () => {
               {/* Home page */}
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={closeMenu}
+                  >
                     Home
                   </NavigationMenuLink>
                 </Link>
@@ -113,7 +113,10 @@ const Navbar = () => {
               {/* About page */}
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={closeMenu}
+                  >
                     About
                   </NavigationMenuLink>
                 </Link>
@@ -126,6 +129,26 @@ const Navbar = () => {
                   <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
                     {ServicesLinks.map((component) => (
                       <ListItem
+                        className="hover:cursor-pointer"
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                      >
+                        {/* {component.description} */}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* articles links */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Insights</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[500px] ">
+                    {ArticlesLinks.map((component) => (
+                      <ListItem
+                        className="hover:cursor-pointer"
                         key={component.title}
                         title={component.title}
                         href={component.href}
@@ -140,7 +163,10 @@ const Navbar = () => {
               {/*Industries dropdown */}
               <NavigationMenuItem>
                 <Link href="/industries" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={closeMenu}
+                  >
                     Industries
                   </NavigationMenuLink>
                 </Link>
@@ -149,7 +175,10 @@ const Navbar = () => {
               {/* Career Page */}
               <NavigationMenuItem>
                 <Link href="/career" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={closeMenu}
+                  >
                     Career
                   </NavigationMenuLink>
                 </Link>
@@ -158,7 +187,10 @@ const Navbar = () => {
               {/* Contact page */}
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={closeMenu}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={closeMenu}
+                  >
                     Contact
                   </NavigationMenuLink>
                 </Link>
