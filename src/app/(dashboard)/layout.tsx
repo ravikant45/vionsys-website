@@ -9,8 +9,10 @@ export default function RootLayout({
 }>) {
   return (
     <div className={GeistSans.className}>
-      <Sidebar />
-      <Providers>{children}</Providers>
+      <Providers>
+        <Sidebar />
+        {children}
+      </Providers>
     </div>
   );
 }
