@@ -2,14 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { jwtdecode } from "@/utils/jwt-decode";
 import Errorpage from "@/components/ui/Errorpage";
-// import dynamic from "next/dynamic";
 import Loading from "@/app/(pages)/loading";
-import AllBlogs from "@/app/ui/dashboard/blogs/AllBlogs";
+import dynamic from "next/dynamic";
 
-// Dynamically import the AllBlogs component
-// const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
-//   ssr: false,
-// });
+// Dynamically import the AllBlogs component to avoid SSR issues
+const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
+  ssr: false,
+});
 
 const Page = () => {
   const [role, setRole] = useState<string | null>(null);
@@ -47,22 +46,10 @@ const Page = () => {
     );
   }
 
-  if (role === null) {
-    return (
-      <Errorpage
-        errorCode="401"
-        errorTitle={"You're not authorized!!"}
-        errorDescription={
-          "You tried to access a page you did not have prior authorization for."
-        }
-      />
-    );
-  }
-
   return (
     <>
       {role === "admin" ? (
-        <AllBlogs />
+        <AllBlogs role={role} />
       ) : (
         <Errorpage
           errorCode="401"

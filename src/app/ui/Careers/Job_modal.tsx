@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import toast from "react-hot-toast";
+import { FaLessThanEqual } from "react-icons/fa";
 //fileschema
 const fileSchema = z.object({
   filename: z.string(),
@@ -63,7 +64,6 @@ const Job_modal = ({
   };
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log("Job Application Details:", values);
     try {
       setIsPending(true);
       const response: AxiosResponse<any> = await axios.post(
@@ -86,6 +86,7 @@ const Job_modal = ({
       toast.error(err?.message || "failed to send Job Application");
     }
     form.reset();
+    setisModalOpen(false);
   };
 
   return (
