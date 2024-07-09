@@ -1,6 +1,9 @@
-import AllBlogs from "@/app/ui/dashboard/blogs/AllBlogs";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 
+const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
+  ssr: false,
+});
 export const metadata: Metadata = {
   title: "Blogs",
   description:
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <main className="py-16">
-      <AllBlogs />
+      <AllBlogs role={"user"} />
     </main>
   );
 };

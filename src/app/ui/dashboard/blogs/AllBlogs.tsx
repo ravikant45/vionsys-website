@@ -1,10 +1,9 @@
 "use client";
 import { Button, Modal } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AddBlogForm from "./AddBlogForm";
 import useGetAllBlogs from "@/services/blogs/useGetAllBlogs";
 import Image from "next/image";
-import { jwtdecode } from "@/utils/jwt-decode";
 import Link from "next/link";
 import { MdDeleteOutline } from "react-icons/md";
 import useDeleteBlog from "@/services/blogs/useDeleteBlog";
@@ -27,8 +26,7 @@ export const formatDate = (dateString: string): string => {
   return new Intl.DateTimeFormat("en-US", options).format(date);
 };
 
-const AllBlogs: React.FC = () => {
-  const [role, setRole] = useState<string | null>(null);
+const AllBlogs = ({ role }: { role: string }) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState<boolean>(false);
   const [deleteblogId, setdeleteblogId] = useState<string>("");
 
@@ -39,20 +37,6 @@ const AllBlogs: React.FC = () => {
   const handleCancelDeleteModal = () => setopenmodalDelete(false);
 
   const Blogs: Blog[] | undefined = AllBlogs?.data;
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          const { role } = jwtdecode(token);
-          setRole(role);
-        } catch (e) {
-          console.log(e);
-        }
-      }
-    }
-  }, []);
 
   const handleDeleteBlog = async (id: string) => {
     deleteBlog(id, {
