@@ -13,6 +13,8 @@ export interface CaseStudy {
   id: string;
   image: string;
   title: string;
+  createdAt?: string;
+  description?: string;
 }
 
 const AllCaseStudies = () => {

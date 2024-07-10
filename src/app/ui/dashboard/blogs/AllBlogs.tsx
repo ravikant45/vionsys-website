@@ -8,6 +8,7 @@ import Link from "next/link";
 import { MdDeleteOutline } from "react-icons/md";
 import useDeleteBlog from "@/services/blogs/useDeleteBlog";
 import Loading from "@/app/(pages)/loading";
+import { formatDate } from "@/utils/formatDate";
 
 interface Blog {
   id: string;
@@ -15,16 +16,6 @@ interface Blog {
   postDate: string;
   title: string;
 }
-
-export const formatDate = (dateString: string): string => {
-  const date = new Date(dateString);
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  return new Intl.DateTimeFormat("en-US", options).format(date);
-};
 
 const AllBlogs = ({ role }: { role: string }) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState<boolean>(false);

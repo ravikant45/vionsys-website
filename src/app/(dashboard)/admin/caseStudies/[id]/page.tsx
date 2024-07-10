@@ -11,7 +11,7 @@ import { Modal } from "antd";
 import AddCaseStudyForm from "@/app/ui/dashboard/caseStudies/AddCaseStudyForm";
 import useDeleteCaseStudy from "@/services/caseStudies/useDeleteCaseStudy";
 import Loading from "@/app/(pages)/loading";
-import { formatDate } from "@/app/ui/dashboard/blogs/AllBlogs";
+import { formatDate } from "@/utils/formatDate";
 
 const Page = () => {
   const { id } = useParams();
