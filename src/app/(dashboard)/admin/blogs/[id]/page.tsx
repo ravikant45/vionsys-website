@@ -1,9 +1,10 @@
 "use client";
 import Loading from "@/app/(pages)/loading";
 import AddBlogForm from "@/app/ui/dashboard/blogs/AddBlogForm";
-import { formatDate } from "@/app/ui/dashboard/blogs/AllBlogs";
+
 import { Button } from "@/components/ui/button";
 import useGetBlog from "@/services/blogs/useGetBlog";
+import { formatDate } from "@/utils/formatDate";
 import { jwtdecode } from "@/utils/jwt-decode";
 import { Modal } from "antd";
 import Image from "next/image";

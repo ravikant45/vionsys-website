@@ -4,9 +4,10 @@ import Loading from "@/app/(pages)/loading";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { IoMdArrowBack } from "react-icons/io";
-import { formatDate } from "../dashboard/blogs/AllBlogs";
+
 import Link from "next/link";
 import useGetBlog from "@/services/blogs/useGetBlog";
+import { formatDate } from "@/utils/formatDate";
 
 const BlogPage = () => {
   const { id } = useParams();
