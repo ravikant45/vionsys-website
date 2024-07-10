@@ -23,7 +23,7 @@ const BlogPage = () => {
           className="bg-blue-500 text-white rounded-md p-2 flex items-center gap-2 hover:bg-blue-600 transition"
         >
           <IoMdArrowBack size={20} />
-          <span>Back to Blogs</span>
+          <span>Back</span>
         </Link>
       </div>
 
