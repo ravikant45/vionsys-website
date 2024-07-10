@@ -4,10 +4,10 @@ import { useParams } from "next/navigation";
 
 import React from "react";
 import Loading from "../../loading";
-import { formatDate } from "@/app/ui/dashboard/blogs/AllBlogs";
 import Image from "next/image";
 import { IoMdArrowBack } from "react-icons/io";
 import Link from "next/link";
+import { formatDate } from "@/utils/formatDate";
 
 const page = () => {
   const { id } = useParams();
@@ -25,7 +25,7 @@ const page = () => {
             className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
           >
             <IoMdArrowBack size={24} />
-            <span className="ml-2 text-lg font-medium">Back to Stories</span>
+            <span className="ml-2 text-lg font-medium">Back</span>
           </Link>
         </div>
         <section className="flex flex-col md:justify-center md:items-center md:flex-row gap-8">
