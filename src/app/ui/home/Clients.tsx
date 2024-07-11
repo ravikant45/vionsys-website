@@ -10,7 +10,7 @@ import ClientImage7 from '../../../../public/assets/clients/client-7.png';
 import ClientImage8 from '../../../../public/assets/clients/client-8.png';
 import ClientImage9 from '../../../../public/assets/clients/client-9.png';
 import ClientImage10 from '../../../../public/assets/clients/client-10.png';
-import ClientImage11 from '../../../../public/assets/clients/client-11.png';
+
 
 import InfiniteMovingCards2 from '../../../components/ui/infinite-moving-cards2';
 import { motion } from 'framer-motion';
@@ -31,7 +31,6 @@ const testimonials: Testimonial[] = [
   { id: '8', img: ClientImage8.src },
   { id: '9', img: ClientImage9.src },
   { id: '10', img: ClientImage10.src },
-  { id: '11', img: ClientImage11.src },
 ];
 
 export function InfiniteMovingCardsDemo() {
@@ -50,7 +49,7 @@ export function InfiniteMovingCardsDemo() {
       >
         Our Clients
       </motion.h1>
-      <div className="h-auto md:py-4 py-2 rounded-md flex items-center antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="h-auto md:py-4 py-2 rounded-md flex antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards2
           items={testimonials}
           direction="right"
