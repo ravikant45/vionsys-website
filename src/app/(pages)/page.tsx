@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
 import AOS from "aos";
+import InfiniteMovingCardsDemo from "../ui/home/Clients";
 
 const ThreeDCard = dynamic(() => import("./../ui/about/ThreeDCard"), {
   loading: () => <p>Loading...</p>,
@@ -18,9 +19,6 @@ const ChooseUs = dynamic(() => import("./../ui/home/ChooseUs"), {
   loading: () => <p>Loading...</p>,
 });
 const Hero = dynamic(() => import("./../ui/home/Home"), {
-  loading: () => <p>Loading...</p>,
-});
-const OurClients = dynamic(() => import("./../ui/home/OurClients"), {
   loading: () => <p>Loading...</p>,
 });
 const TrustUs = dynamic(() => import("./../ui/home/TrustUs"), {
@@ -48,7 +46,7 @@ export default function Home() {
       <Hero />
       <AboutOurCompany />
       <ThreeDCard />
-      <OurClients />
+      <InfiniteMovingCardsDemo/>
       <WeProvide />
       <ChooseUs />
       <TrustUs />
