@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { jwtdecode } from "@/utils/jwt-decode";
 import Loading from "@/app/(pages)/loading";
+import { formatDate } from "@/utils/formatDate";
 // import img from "../../../../../public/background.jpg";
 
 export interface CaseStudy {
@@ -55,24 +56,45 @@ const AllCaseStudies = () => {
       )}
       <div className="relative py-8">
         <div className="relative flex flex-wrap justify-center gap-8 z-10">
-          {data?.data?.map((caseStudy: CaseStudy) => (
-            <div
-              key={caseStudy.id}
-              className="relative w-[300px] h-[300px] bg-white shadow-lg rounded-xl overflow-hidden transform transition-transform hover:scale-105"
-            >
-              <Link href={`/admin/caseStudies/${caseStudy.id}`}>
-                <Image
-                  src={caseStudy.image}
-                  alt={`Image for ${caseStudy.title}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-xl transition-transform transform hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-xl"></div>
-                <h2 className="absolute bottom-4 left-4 text-white text-xl font-bold">
-                  {caseStudy.title}
-                </h2>
-              </Link>
+          {data?.data?.map((study: CaseStudy) => (
+            <div className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
+              <Image
+                width={300}
+                height={300}
+                src={study.image}
+                alt="Card img"
+                className="object-cover object-center w-full h-52"
+              />
+              <div className="flex flex-grow">
+                <div className="triangle"></div>
+                <div className="flex flex-col w-full justify-between px-4 py-6 bg-white border border-gray-400 text">
+                  <div>
+                    <span className="inline-block mb-2 text-xs font-bold capitalize ">
+                      {study.createdAt && formatDate(study.createdAt)}
+                    </span>
+                    <Link
+                      href={`/admin/caseStudies/${study.id}`}
+                      className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
+                    >
+                      {study.title}
+                    </Link>
+                    <p
+                      className="mb-4"
+                      dangerouslySetInnerHTML={{
+                        __html: study.description?.slice(0, 150) + "...",
+                      }}
+                    ></p>
+                  </div>
+                  <div>
+                    <Link
+                      href={`/admin/caseStudies/${study.id}`}
+                      className="inline-block pb-1 mt-1 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
+                    >
+                      Read More{" "}
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
