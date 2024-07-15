@@ -24,6 +24,11 @@ import Quality from "/public/assets/services/Testing/Quality.jpeg";
 
 export const metadata: Metadata = {
   title: "Testing Services",
+  description: "Vionsys IT Solutions India Pvt Ltd provides complete Testing and Quality Assurance (QA) services to ensure the reliability and performance of your software. Our skilled team provides comprehensive testing solutions, ranging from functional and performance testing to security and usability tests. Partner with us for comprehensive testing that finds and addresses issues early on, ensuring the success of your product. Choose Vionsys for reliable quality. ",
+  openGraph: {
+    images:"/opangraph.png",
+    description:"Vionsys IT Solutions India Pvt Ltd specializes in offering top-tier testing and quality assurance (QA) services to ensure the delivery of flawless software solutions. Our stringent testing techniques, which include automation, manual, and regression testing, ensure that your apps work well under any conditions. Protect your company's reputation with our complete QA services, which reduce risks and improve software quality. "
+  }
 };
 
 const page: React.FC = () => {
