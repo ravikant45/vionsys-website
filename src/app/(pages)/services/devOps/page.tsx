@@ -7,6 +7,11 @@ import devops from "/public/assets/services/devops.jpg";
 import { SVGProps } from "react";
 export const metadata: Metadata = {
   title: "DevOpes Services",
+  description: "Vionsys IT Solutions India Pvt Ltd's complete DevOps solutions will help you streamline your development and operational processes. Our services, which include continuous integration, automated deployment, and cloud administration, are designed to improve collaboration, speed, and efficiency. With our skilled DevOps solutions, you can transform your software development lifecycle and reduce time-to-market significantly. Trust Vionsys to streamline your operations for smooth and consistent delivery. ",
+  openGraph: {
+    images: "/opangraph.png",
+    description:"Vionsys IT Solutions India Pvt Ltd provides experienced DevOps services that bridge the gap between development and operations, resulting in a seamless and effective workflow. Our solutions include infrastructure automation, monitoring, and continuous delivery, all designed to increase your team's productivity and reduce downtime. Partner with us to implement industry-leading processes and solutions, improving your IT operations and increasing agility. "
+  }
 };
 const page = () => {
   return (

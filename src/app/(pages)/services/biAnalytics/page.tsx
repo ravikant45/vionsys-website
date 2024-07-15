@@ -1,46 +1,24 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { BiAndAnalyticsData } from "@/app/ui/services/data/BiAndAnalytics";
-import { motion } from "framer-motion";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
-import Link from "next/link";
+import Firstsection from "@/app/ui/services/biAnalytics/Firstsection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Business Intelligence & Analytics Service",
+  description:"Vionsys IT Solutions India Pvt Ltd's Business Intelligence and Analytics services will help you realize the full potential of data. We offer comprehensive solutions to help businesses make data-driven decisions, streamline processes, and improve business performance. Our skilled team use cutting-edge technology to provide actionable insights that promote growth. Discover how our BI and Analytics services can help your business today. ",
+  openGraph: {
+    images:"/opangraph.png",
+    description:"Vionsys IT Solutions India Pvt Ltd provides superior Business Intelligence and Analytics services to help you maximize the value of your data. Our bespoke solutions include in-depth analysis, real-time reporting, and predictive insights, allowing you to make educated decisions and stay ahead of the competition. Partner with us for tailored BI and Analytics to improve your business intelligence skills.  "
+  }
+};
 
 const BiAndAnalyticsDatapage = () => {
   return (
     <main className="pt-16">
       {/* First section */}
-      <section
-        className="overflow-x-hidden bg-gray-100
-      "
-      >
-        <motion.div
-          initial={{ opacity: 0.0, y: -100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-10 py-4 md:h-[500px] h-auto"
-        >
-          <div className="flex flex-col h-full justify-center items-center gap-4">
-            <h3 className="md:text-[45px] text-MainHeading font-semibold text-center bg-gradient-to-r to-danger bg-clip-text text-transparent from-purple-800 via-blue-800 to-pink-600">
-              {BiAndAnalyticsData.mainTitle}
-            </h3>
-            <p className="text-center md:px-20 md:text-lg text-base">
-              {BiAndAnalyticsData.subTitle}
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block py-2 px-6 bg-orange hover:bg-amber-500 rounded-xl text-md text-white"
-            >
-              Contact Now
-            </Link>
-          </div>
-        </motion.div>
-      </section>
-
+      <Firstsection/>
       {/* Second section */}
       <section className=" bg-gray-100 w-[100vw] overflow-x-hidden -mt-[70px] pt-16 pb-6 md:pb-16 md:px-10 px-3">
         <div className="w-full">
