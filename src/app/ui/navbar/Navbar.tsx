@@ -142,7 +142,7 @@ const Navbar = () => {
               </NavigationMenuItem>
 
               {/* articles links */}
-              {/* <NavigationMenuItem>
+              <NavigationMenuItem>
                 <NavigationMenuTrigger>Insights</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[500px] ">
@@ -154,11 +154,11 @@ const Navbar = () => {
                         href={component.href}
                       >
                         {/* {component.description} */}
-              {/* </ListItem> */}
-              {/* ))} */}
-              {/* </ul> */}
-              {/* </NavigationMenuContent> */}
-              {/* {/* </NavigationMenuItem> * */}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
               {/*Industries dropdown */}
               <NavigationMenuItem>
