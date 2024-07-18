@@ -13,6 +13,7 @@ interface CountryData {
   alt: string;
   extra?: string;
   extra1?: string;
+  extra2?: string
 }
 
 const countriesData: CountryData[] = [
@@ -23,7 +24,8 @@ const countriesData: CountryData[] = [
     description: "Stellar Spaces Office no.504 6th floor, Opposite Zensar IT Park Kharadi , Pune.",
     alt: "Ind-Flag",
     extra: "(HeadQuarters)",
-    extra1:"Contact no: (020) 4724-2493"
+    extra1: "Contact no: (020) 4724-2493",
+    extra2: "Mobile no: +91 8766613742"
   },
   {
     id: "us",
@@ -36,9 +38,9 @@ const countriesData: CountryData[] = [
     id: "qa",
     flag: qa,
     name: "Qatar",
-    description: "Icono View building, Near Holiday Villa C ring road, Qatar ",
+    description: "Icono View building, Near Holiday Villa C Ring Road, Qatar ",
     alt: "Qtr-Flag",
-    extra1:"Contact no: +974 70769424"
+    extra1: "Contact no: +974 70769424"
   }
   // },
   // {
@@ -56,7 +58,7 @@ const Countries: React.FC = () => {
       <div className="mx-auto px-6 md:px-12 xl:px-6">
         <div className="md:w-2/3 lg:w-full flex flex-col justify-center items-center text-gray-100">
           <h2 className="py-2 text-2xl md:w-2/3 font-bold text-center text-blue1 md:text-3xl">
-            We operate in diverse locations worldwide, shifting from one to another.
+            Our Diverse Worldwide Locations and Regional Offices.
           </h2>
         </div>
         <div className="grid divide-y overflow-hidden rounded-xl justify-center shadow-lg bg-slate-100 border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-3">
@@ -75,9 +77,11 @@ const Countries: React.FC = () => {
                   <h5 className="text-2xl font-semibold text-black">
                     {country.name} {country.extra && <span className="font-normal text-sm">{country.extra}</span>}
                   </h5>
-                  <p className="text-gray-600 text-paragraph">{country.description} 
+                  <p className="text-gray-600 text-paragraph">{country.description}
                     {country.extra1 && <span className="font-bold flex text-sm">{country.extra1}</span>}
+                    {country.extra2 && <span className="font-bold flex text-sm">{country.extra2}</span>}
                   </p>
+
                 </div>
               </div>
             </div>
