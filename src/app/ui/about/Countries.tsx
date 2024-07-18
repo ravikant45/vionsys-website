@@ -78,8 +78,8 @@ const Countries: React.FC = () => {
                     {country.name} {country.extra && <span className="font-normal text-sm">{country.extra}</span>}
                   </h5>
                   <p className="text-gray-600 text-paragraph">{country.description}
-                    {country.extra1 && <span className="font-bold flex text-sm">{country.extra1}</span>}
                     {country.extra2 && <span className="font-bold flex text-sm">{country.extra2}</span>}
+                    {country.extra1 && <span className="font-bold flex text-sm">{country.extra1}</span>}
                   </p>
 
                 </div>
