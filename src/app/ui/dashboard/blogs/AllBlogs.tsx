@@ -122,9 +122,9 @@ const AllBlogs = ({ role }: { role: string }) => {
                       />
                     </Link>
                   )}
-                  <p className="absolute bottom-0 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded-tr-lg">
+                  {/* <p className="absolute bottom-0 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded-tr-lg">
                     {formatDate(blog.postDate)}
-                  </p>
+                  </p> */}
                 </div>
                 <div className="p-4">
                   <h2 className="text-xl font-semibold text-gray-800">

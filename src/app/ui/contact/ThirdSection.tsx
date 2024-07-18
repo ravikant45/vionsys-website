@@ -2,10 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { RxLinkedinLogo } from "react-icons/rx";
-import { FaSquareXTwitter } from "react-icons/fa6";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -14,8 +10,6 @@ import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-hot-toast";
-import Image from "next/image";
-import third from "/public/assets/Contact/third.jpg";
 import { SiTicktick } from "react-icons/si";
 import {
   Form,
@@ -196,69 +190,6 @@ const ThirdSection = () => {
             </div>
           </div>
         </Modal>
-      </div>
-
-      <div className="Location Area">
-        <div className="flex flex-col h-full md:w-full md:h-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6818.152391642604!2d73.93858737762325!3d18.546651353587574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf282419d50d%3A0x2cc71f615579ab3a!2sVionsys%20IT%20Solutions%20India%20Pvt.Ltd!5e0!3m2!1sen!2sin!4v1713765708125!5m2!1sen!2sin"
-            width="screen"
-            height="500"
-            loading="eager"
-          ></iframe>
-        </div>
-      </div>
-      <div className="flex justify-center w-full md:h-[50vh] relative h-auto">
-        {/*fourth image here */}
-        <Image
-          src={third}
-          alt=""
-          className="object-cover w-full md:h-[50vh] h-[30vh]"
-        />
-        <div
-          className=" absolute md:py-20 py-10 text-lg lg:text-4xl md:text-3xl sm:text-2xl font-extrabold
-        bg-clip-text text-transparent bg-gradient-to-r animate-pulse from-red-500 to-blue-700"
-        >
-          <h1 data-aos="fade-right" className="inline">
-            Stay Updated With Our{" "}
-            <span className="flex">Social Media Channels</span>
-          </h1>
-          <div className="  text-black">
-            <ul>
-              <li>
-                <div className="flex justify-center md:justify-start mt-7 md:pl-28">
-                  <Link href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg ">
-                    <BsFacebook
-                      size={40}
-                      className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
-                      color="blue"
-                    />
-                  </Link>
-                  <Link href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux">
-                    <BsInstagram
-                      size={40}
-                      className="mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
-                      color="#e1306c"
-                    />
-                  </Link>
-                  <Link href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in">
-                    <RxLinkedinLogo
-                      size={40}
-                      className=" mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
-                      color="#0077B5"
-                    />
-                  </Link>
-                  <Link href="https://twitter.com/vionsysit">
-                    <FaSquareXTwitter
-                      size={40}
-                      className=" mr-3 transform hover:scale-125 transition duration-300 ease-in-out"
-                    />
-                  </Link>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   );

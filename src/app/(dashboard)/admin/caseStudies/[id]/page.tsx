@@ -105,7 +105,7 @@ const Page = () => {
             <h1 className="text-4xl font-bold text-gray-800 mb-4">
               {data?.data.title}
             </h1>
-            <p>Updated at : {formatDate(data.data.updatedAt)}</p>
+            {/* <p>Updated at : {formatDate(data.data.updatedAt)}</p> */}
           </div>
         </section>
 

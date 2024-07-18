@@ -5,7 +5,7 @@ import isoLogo from "@/../public/isoLogo.png";
 export const ISOLogo = () => {
   return (
     <>
-      <section className="py-10 md:py-16 md:px-6">
+      <section className="py-10 md:py-7 md:px-6">
         <div className="container flex md:flex-row flex-col gap-4  items-center justify-evenly  px-4">
           <div className="space-y-4">
             <h2 className="text-3xl text-blue1 font-extrabold tracking-tighter text-center md:text-MainHeading">
