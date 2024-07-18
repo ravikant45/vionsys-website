@@ -69,9 +69,9 @@ const AllCaseStudies = () => {
                 <div className="triangle"></div>
                 <div className="flex flex-col w-full justify-between px-4 py-6 bg-white border border-gray-400 text">
                   <div>
-                    <span className="inline-block mb-2 text-xs font-bold capitalize ">
+                    {/* <span className="inline-block mb-2 text-xs font-bold capitalize ">
                       {study.createdAt && formatDate(study.createdAt)}
-                    </span>
+                    </span> */}
                     <Link
                       href={`/admin/caseStudies/${study.id}`}
                       className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"

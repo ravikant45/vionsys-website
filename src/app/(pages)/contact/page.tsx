@@ -4,10 +4,10 @@ import dynamic from "next/dynamic";
 const Conts = dynamic(() => import("../../ui/contact/FirstSection"), {
   loading: () => <p>Loading...</p>,
 });
-const Second = dynamic(() => import("../../ui/contact/SecondSection"), {
+const ThirdSection = dynamic(() => import("../../ui/contact/ThirdSection"), {
   loading: () => <p>Loading...</p>,
 });
-const ThirdSection = dynamic(() => import("../../ui/contact/ThirdSection"), {
+const Countries = dynamic(() => import("../../ui/about/Countries"), {
   loading: () => <p>Loading...</p>,
 });
 
@@ -24,7 +24,7 @@ const page = () => {
     <div>
       <Conts />
       <ThirdSection />
-      <Second />
+      <Countries />
     </div>
   );
 };
