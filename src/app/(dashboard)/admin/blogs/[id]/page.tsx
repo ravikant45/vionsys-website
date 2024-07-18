@@ -66,10 +66,10 @@ const Page: React.FC = () => {
             <h1 className="text-4xl font-bold mb-4 text-gray-800">
               {data?.data.title}
             </h1>
-            <p className="text-sm text-gray-600">
+            {/* <p className="text-sm text-gray-600">
               <span className="font-semibold">Posted On:&nbsp;</span>
               {formatDate(data?.data.postDate)}
-            </p>
+            </p> */}
           </div>
         </div>
 

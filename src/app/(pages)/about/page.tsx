@@ -1,5 +1,4 @@
 import React from "react";
-import { TypewriterDemo } from "../../ui/about/TypeWriterDemo";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import LifeAtVionsys from "../../ui/about/LifeAtVionsys";
@@ -10,12 +9,10 @@ const AboutUs = dynamic(() => import("../../ui/about/AboutUs"), {
 const About2 = dynamic(() => import("../../ui/about/About2"), {
   loading: () => <p>Loading...</p>,
 });
-const Visit = dynamic(() => import("../../ui/about/Visit"), {
-  loading: () => <p>Loading...</p>,
-});
 const ThreeDCard = dynamic(() => import("../../ui/about/ThreeDCard"), {
   loading: () => <p>Loading...</p>,
 });
+const Countries = dynamic(() => import ("../../ui/about/Countries"))
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -35,8 +32,7 @@ const page = () => {
       <ThreeDCard />
       <LifeAtVionsys />
       <ISOLogo />
-      <TypewriterDemo />
-      <Visit />
+      <Countries />
     </div>
   );
 };
