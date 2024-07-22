@@ -24,6 +24,7 @@ model Blog {
   postDate    String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  keyWord     String   @unique
 }
 
 model CaseStudies {
@@ -33,4 +34,5 @@ model CaseStudies {
   image       String   @unique
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  // keyWord     String   @unique
 }

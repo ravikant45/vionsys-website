@@ -7,8 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { jwtdecode } from "@/utils/jwt-decode";
 import Loading from "@/app/(pages)/loading";
-import { formatDate } from "@/utils/formatDate";
-// import img from "../../../../../public/background.jpg";
+import CaseStudies from "../../casestudy/CaseStudies";
 
 export interface CaseStudy {
   id: string;
@@ -23,6 +22,10 @@ const AllCaseStudies = () => {
   const { data, isPending } = useGetAllCaseStudies();
   const [role, setRole] = useState<string | null>(null);
 
+  data?.data?.sort(
+    (a: any, b: any) =>
+      new Date(b?.createdAt)?.getTime() - new Date(a?.createdAt)?.getTime()
+  );
   useEffect(() => {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("token");
@@ -57,12 +60,15 @@ const AllCaseStudies = () => {
       <div className="relative py-8">
         <div className="relative flex flex-wrap justify-center gap-8 z-10">
           {data?.data?.map((study: CaseStudy) => (
-            <div className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col">
+            <div
+              key={study?.id}
+              className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col"
+            >
               <Image
                 width={300}
                 height={300}
-                src={study.image}
-                alt="Card img"
+                src={study?.image}
+                alt={study?.title}
                 className="object-cover object-center w-full h-52"
               />
               <div className="flex flex-grow">
@@ -73,7 +79,7 @@ const AllCaseStudies = () => {
                       {study.createdAt && formatDate(study.createdAt)}
                     </span> */}
                     <Link
-                      href={`/admin/caseStudies/${study.id}`}
+                      href={`/admin/caseStudies/${study?.id}`}
                       className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
                     >
                       {study.title}
@@ -87,7 +93,7 @@ const AllCaseStudies = () => {
                   </div>
                   <div>
                     <Link
-                      href={`/admin/caseStudies/${study.id}`}
+                      href={`/admin/caseStudies/${study?.id}`}
                       className="inline-block pb-1 mt-1 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
                     >
                       Read More{" "}
