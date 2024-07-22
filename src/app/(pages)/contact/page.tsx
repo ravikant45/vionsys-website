@@ -23,8 +23,8 @@ const page = () => {
   return (
     <div>
       <Conts />
-      <ThirdSection />
       <Countries />
+      <ThirdSection />
     </div>
   );
 };

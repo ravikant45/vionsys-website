@@ -84,7 +84,17 @@ const ThirdSection = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center mt-0 bg-dot-zinc-400 px-2 py-7">
+      <div className="md:flex justify-evenly flex-row gap-20 items-center mt-0 bg-dot-zinc-400 px-2 md:py-7 py-2">
+        <div className="flex justify-center ">
+          <h1 className="py-5 md:py-10 tracking-wide md:text-5xl text-4xl text-start font-bold text-[#e57e2c]">
+            {" "} 
+            Get In Touch{" "}
+            <p className="text-xl py-5 text-black">
+              Sales: info@vionsys.com
+              <span className="flex py-5">Mobile: +91 8766613742</span>
+            </p>
+          </h1>
+        </div>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -96,10 +106,6 @@ const ThirdSection = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <h1 className="pb-4 tracking-wide md:text-2xl text-md text-center font-medium">
-                    {" "}
-                    Send A Message{" "}
-                  </h1>
                   <FormLabel>Enter Your name</FormLabel>
                   <FormControl>
                     <Input placeholder=" Enter your name" {...field} />
@@ -181,12 +187,23 @@ const ThirdSection = () => {
             )}
           </form>
         </Form>
-        <Modal footer={null} open={isModalOpen} onCancel={() => setIsModalOpen(false)} className="">
+        <Modal
+          footer={null}
+          open={isModalOpen}
+          onCancel={() => setIsModalOpen(false)}
+          className=""
+        >
           <div className="pt-6 flex justify-center items-center bg-white text-black">
             <div className="flex flex-col items-center gap-4">
-              <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400"><SiTicktick size={30} className="text-green-400" /></div>
-              <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">Thank you for reaching out!</h2>
-              <p className="text-2xl font-semibold text-SubHeading text-center">We appreciate your interest and will get back to you shortly.</p>
+              <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400">
+                <SiTicktick size={30} className="text-green-400" />
+              </div>
+              <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">
+                Thank you for reaching out!
+              </h2>
+              <p className="text-2xl font-semibold text-SubHeading text-center">
+                We appreciate your interest and will get back to you shortly.
+              </p>
             </div>
           </div>
         </Modal>
