@@ -57,7 +57,7 @@ const Countries: React.FC = () => {
     <div className="md:h-full h-auto py-6">
       <div className="mx-auto px-6 md:px-12 xl:px-6">
         <div className="md:w-2/3 lg:w-full flex flex-col justify-center items-center text-gray-100">
-          <h2 className="py-2 text-2xl md:w-2/3 font-bold text-center text-blue1 md:text-3xl">
+          <h2 className="py-2 text-2xl md:w-3/6 font-bold text-center text-blue1 md:text-4xl">
             Our Diverse Worldwide Locations and Regional Offices.
           </h2>
         </div>
