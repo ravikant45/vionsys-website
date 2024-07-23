@@ -48,16 +48,16 @@ const words = [
 
 const Conts = () => {
   return (
-    <div>
-      <div className="">
-        <div className="md:w-[100vw] md:h-[100vh] relative flex bg-black">
+    <>
+      <div className="pt-5">
+        <div className="md:w-[100vw] md:h-[100vh] h-[50vh] relative flex bg-black">
           <Image src={first} alt="" className="w-full h-full  object-cover bg-no-repeat opacity-45" />
           <div className="absolute top-0  w-full text-2xl h-full flex items-center px-4">
-            <TypewriterEffect words={words} />
+            <TypewriterEffect className="md:text-3xl text-2xl" words={words} />
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Conts;
