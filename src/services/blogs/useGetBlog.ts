@@ -1,16 +1,16 @@
 import { getOneBlog } from "@/features/blogApi";
 import { useQuery } from "@tanstack/react-query";
 
-const useGetBlog = (id: any) => {
-    const { data, isPending } = useQuery({
-        queryKey: ['blog'],
-        queryFn: () => getOneBlog(id)
-    });
+const useGetBlog = (keyWord: string | string[]) => {
+  const { data, isPending } = useQuery({
+    queryKey: ["blog"],
+    queryFn: () => getOneBlog(keyWord),
+  });
 
-    return {
-        data,
-        isPending
-    };
+  return {
+    data,
+    isPending,
+  };
 };
 
 export default useGetBlog;

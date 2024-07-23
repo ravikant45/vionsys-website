@@ -1,16 +1,16 @@
-import { getCaseStudy } from "@/features/caseStudiesApi"
-import { useQuery } from "@tanstack/react-query"
+import { getCaseStudy } from "@/features/caseStudiesApi";
+import { useQuery } from "@tanstack/react-query";
 
-const useGetCaseStudy = (id: any) => {
-    const { data, isPending } = useQuery({
-        queryKey: ['caseStudy'],
-        queryFn: () => getCaseStudy(id)
-    });
+const useGetCaseStudy = (keyWord: string | string[]) => {
+  const { data, isPending } = useQuery({
+    queryKey: ["caseStudy"],
+    queryFn: () => getCaseStudy(keyWord),
+  });
 
-    return {
-        data,
-        isPending
-    };
+  return {
+    data,
+    isPending,
+  };
 };
 
 export default useGetCaseStudy;

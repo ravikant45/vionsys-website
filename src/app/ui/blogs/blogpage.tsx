@@ -7,15 +7,14 @@ import { IoMdArrowBack } from "react-icons/io";
 
 import Link from "next/link";
 import useGetBlog from "@/services/blogs/useGetBlog";
-import { formatDate } from "@/utils/formatDate";
+// import { formatDate } from "@/utils/formatDate";
 
 const BlogPage = () => {
-  const { id } = useParams();
-  const { data, isPending } = useGetBlog(id);
+  const { id: blogKey } = useParams();
+  const { data, isPending } = useGetBlog(blogKey);
 
-  if (isPending) {
-    return <Loading />;
-  }
+  if (isPending) return <Loading />;
+
   return (
     <div className="md:px-10 px-8 py-20 p-3 w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
       <div className="mb-4 flex justify-start">

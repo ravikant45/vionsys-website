@@ -97,11 +97,12 @@ const Page: React.FC = () => {
           onCancel={() => setShowModal(false)}
         >
           <AddBlogForm
-            id={data?.data.id}
-            title={data?.data.title}
-            description={data?.data.description}
-            image={data?.data.image}
-            postDate={data?.data.createdDate}
+            id={data?.data?.id}
+            title={data?.data?.title}
+            description={data?.data?.description}
+            image={data?.data?.image}
+            postDate={data?.data?.createdDate}
+            keyWord={data?.data?.keyWord}
             setShowModal={setShowModal}
           />
         </Modal>
