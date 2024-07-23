@@ -83,8 +83,8 @@ const ThirdSection = () => {
   }
 
   return (
-    <div>
-      <div className="md:flex justify-evenly flex-row gap-20 items-center mt-0 bg-dot-zinc-400 px-2 md:py-7 py-2">
+    <>
+      <div className="md:flex justify-evenly flex-row gap-20 items-center mt-0 px-2 md:py-7 py-2">
         <div className="flex justify-center ">
           <h1 className="py-5 md:py-10 tracking-wide md:text-5xl text-4xl text-start font-bold text-[#e57e2c]">
             {" "} 
@@ -99,7 +99,7 @@ const ThirdSection = () => {
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             data-aos="zoom-out"
-            className="shadow-md shadow-blue4 rounded-[22px] md:w-1/2 w-full px-4 py-2 bg-white lg:p-10"
+            className=" rounded-[10px] md:w-1/2 w-full px-4 py-2 bg-white lg:p-10"
           >
             <FormField
               control={form.control}
@@ -208,7 +208,7 @@ const ThirdSection = () => {
           </div>
         </Modal>
       </div>
-    </div>
+    </>
   );
 };
 export default ThirdSection;
