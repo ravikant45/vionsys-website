@@ -15,6 +15,7 @@ export async function POST(req: NextRequest) {
 
     const title = data.get("title") as string;
     const description = data.get("description") as string;
+    const keyWord = data.get("keyWord") as string;
     const image = data.get("file") as unknown as File;
 
     // buffered image
@@ -28,6 +29,7 @@ export async function POST(req: NextRequest) {
     await prisma.caseStudies.create({
       data: {
         title,
+        keyWord,
         description,
         image: cloudinary_url,
       },

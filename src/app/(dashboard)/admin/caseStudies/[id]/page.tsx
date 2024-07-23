@@ -14,17 +14,17 @@ import Loading from "@/app/(pages)/loading";
 import { formatDate } from "@/utils/formatDate";
 
 const Page = () => {
-  const { id } = useParams();
+  const { id: keyWord } = useParams();
+
   const router = useRouter();
   const [openmodalDelete, setopenmodalDelete] = useState(false);
   const [deleteblogId, setdeleteblogId] = useState("");
   const [role, setRole] = useState<string | null>(null);
-  const { data, isPending } = useGetCaseStudy(id);
+  const { data, isPending } = useGetCaseStudy(keyWord);
   const { mutate: deleteCaseStudy, isPending: isDeletingCaseStudy } =
     useDeleteCaseStudy();
   const [showModal, setShowModal] = useState<boolean>(false);
   const handleCancelDeleteModal = () => setopenmodalDelete(false);
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("token");
@@ -143,6 +143,7 @@ const Page = () => {
             title={data?.data?.title}
             description={data?.data?.description}
             image={data?.data?.image}
+            keyWord={data?.data?.keyWord}
             setShowModal={setShowModal}
           />
         </Modal>

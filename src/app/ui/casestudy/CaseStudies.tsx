@@ -5,10 +5,15 @@ import React from "react";
 import { CaseStudy } from "../dashboard/caseStudies/AllCaseStudies";
 import Link from "next/link";
 import Image from "next/image";
-import { formatDate } from "@/utils/formatDate";
+// import { formatDate } from "@/utils/formatDate";
 
 const CaseStudies = () => {
   const { data, isPending } = useGetAllCaseStudies();
+
+  data?.data?.sort(
+    (a: any, b: any) =>
+      new Date(b?.createdAt)?.getTime() - new Date(a?.createdAt)?.getTime()
+  );
 
   if (isPending) {
     return <Loading />;
@@ -44,7 +49,7 @@ const CaseStudies = () => {
                         {study.createdAt && formatDate(study.createdAt)}
                       </span> */}
                       <Link
-                        href={`/caseStudies/${study.id}`}
+                        href={`/caseStudies/${study.keyWord}`}
                         className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
                       >
                         {study.title}
@@ -58,7 +63,7 @@ const CaseStudies = () => {
                     </div>
                     <div>
                       <Link
-                        href={`/caseStudies/${study.id}`}
+                        href={`/caseStudies/${study.keyWord}`}
                         className="inline-block pb-1 mt-1 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
                       >
                         Read More{" "}

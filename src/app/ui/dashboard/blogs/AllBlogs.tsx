@@ -8,13 +8,16 @@ import Link from "next/link";
 import { MdDeleteOutline } from "react-icons/md";
 import useDeleteBlog from "@/services/blogs/useDeleteBlog";
 import Loading from "@/app/(pages)/loading";
-import { formatDate } from "@/utils/formatDate";
 
 interface Blog {
+  createdAt: string;
+  description: string;
   id: string;
   image: string;
   postDate: string;
   title: string;
+  updatedAt: string;
+  keyWord: string;
 }
 
 const AllBlogs = ({ role }: { role: string }) => {
@@ -27,8 +30,12 @@ const AllBlogs = ({ role }: { role: string }) => {
     useDeleteBlog();
   const handleCancelDeleteModal = () => setopenmodalDelete(false);
 
-  const Blogs: Blog[] | undefined = AllBlogs?.data;
+  const Blogs: Blog[] = AllBlogs?.data;
 
+  Blogs?.sort(
+    (a, b) =>
+      new Date(b?.createdAt)?.getTime() - new Date(a?.createdAt)?.getTime()
+  );
   const handleDeleteBlog = async (id: string) => {
     deleteBlog(id, {
       onSettled: () => setopenmodalDelete(false),
@@ -102,7 +109,7 @@ const AllBlogs = ({ role }: { role: string }) => {
               >
                 <div className="relative">
                   {role === "admin" ? (
-                    <Link href={`/admin/blogs/${blog.id}`}>
+                    <Link href={`/admin/blogs/${blog.keyWord}`}>
                       <Image
                         src={blog.image}
                         alt={blog.title}
@@ -112,7 +119,7 @@ const AllBlogs = ({ role }: { role: string }) => {
                       />
                     </Link>
                   ) : (
-                    <Link href={`/blogs/${blog.id}`}>
+                    <Link href={`/blogs/${blog?.keyWord}`}>
                       <Image
                         src={blog.image}
                         alt={blog.title}
@@ -134,14 +141,14 @@ const AllBlogs = ({ role }: { role: string }) => {
                 <div className="p-4 flex justify-between items-center">
                   {role === "admin" ? (
                     <Link
-                      href={`/admin/blogs/${blog.id}`}
+                      href={`/admin/blogs/${blog?.keyWord}`}
                       className="text-blue-500 hover:underline"
                     >
                       Read More
                     </Link>
                   ) : (
                     <Link
-                      href={`blogs/${blog.id}`}
+                      href={`blogs/${blog?.keyWord}`}
                       className="text-blue-500 hover:underline"
                     >
                       Read More
