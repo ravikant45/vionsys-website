@@ -59,7 +59,7 @@ const BlogForm: React.FC<BlogProps> = ({
         } as UploadFile,
       ]);
     }
-  }, [form, title, initialDescription, image]);
+  }, [form, title, initialDescription, keyWord, image]);
 
   const handleFormSubmit = (values: FormValues) => {
     const formData = new FormData();

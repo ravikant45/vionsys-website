@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { jwtdecode } from "@/utils/jwt-decode";
 import Loading from "@/app/(pages)/loading";
-import CaseStudies from "../../casestudy/CaseStudies";
 
 export interface CaseStudy {
   id: string;
@@ -15,6 +14,7 @@ export interface CaseStudy {
   title: string;
   createdAt?: string;
   description?: string;
+  keyWord?: string;
 }
 
 const AllCaseStudies = () => {
@@ -79,7 +79,7 @@ const AllCaseStudies = () => {
                       {study.createdAt && formatDate(study.createdAt)}
                     </span> */}
                     <Link
-                      href={`/admin/caseStudies/${study?.id}`}
+                      href={`/admin/caseStudies/${study?.keyWord}`}
                       className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
                     >
                       {study.title}
@@ -93,7 +93,7 @@ const AllCaseStudies = () => {
                   </div>
                   <div>
                     <Link
-                      href={`/admin/caseStudies/${study?.id}`}
+                      href={`/admin/caseStudies/${study?.keyWord}`}
                       className="inline-block pb-1 mt-1 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
                     >
                       Read More{" "}
