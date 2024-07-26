@@ -14,7 +14,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ServicesLinks } from "./Navlinks";
+import { ServicesLinks, ArticlesLinks } from "./Navlinks";
 interface Props {
     showMenu: boolean;
     closeMenu: () => void;
@@ -51,6 +51,18 @@ const ResponsiveMenu: React.FC<Props> = ({ showMenu, closeMenu }) => {
                             <DropdownMenuTrigger className="outline-none flex justify-center items-center gap-2">Services<IoChevronForwardOutline /></DropdownMenuTrigger>
                             <DropdownMenuContent>
                                 {ServicesLinks.map((link) => (
+                                    <Link href={link.href} key={link.title}><DropdownMenuItem onClick={handleClick}>{link.title}</DropdownMenuItem></Link>
+                                ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </NavigationMenuItem>
+                    
+                    {/* Articles dropdown */}
+                    <NavigationMenuItem>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger className="outline-none flex justify-center items-center gap-2">Insights<IoChevronForwardOutline /></DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                {ArticlesLinks.map((link) => (
                                     <Link href={link.href} key={link.title}><DropdownMenuItem onClick={handleClick}>{link.title}</DropdownMenuItem></Link>
                                 ))}
                             </DropdownMenuContent>
