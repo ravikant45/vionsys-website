@@ -6,7 +6,7 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 export default function JobsCard() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center py-2">
+      <div className="flex flex-col justify-center items-center md:pt-11 pt-3">
         <h1
           data-aos="fade-left"
           className="text-MainHeading font-extrabold md:text-start text-center pb-3"

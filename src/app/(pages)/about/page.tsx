@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import LifeAtVionsys from "../../ui/about/LifeAtVionsys";
 import ISOLogo from "@/components/ui/ISOLogo";
+import CeoDesk from "@/app/ui/about/CeoDesk";
 const AboutUs = dynamic(() => import("../../ui/about/AboutUs"), {
   loading: () => <p>Loading...</p>,
 });
@@ -28,6 +29,7 @@ const page = () => {
   return (
     <div className="pt-16 overflow-x-hidden">
       <AboutUs />
+      <CeoDesk />
       <About2 />
       <ThreeDCard />
       <LifeAtVionsys />

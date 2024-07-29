@@ -149,11 +149,6 @@ const page: React.FC = () => {
                 new heights of reliability and user satisfaction, empowering
                 your business for success in today's dynamic digital landscape.
               </p>
-              <div className="md:block hidden">
-                <Link href="/contact">
-                  <Button data-aos="fade-right">Contact us</Button>
-                </Link>
-              </div>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { BiSolidCustomize } from "react-icons/bi";
 import { FaBuilding } from "react-icons/fa6";
 import { FaMobileButton } from "react-icons/fa6";
 import { MdOutlineWeb } from "react-icons/md";
+import { FaWrench } from 'react-icons/fa';
 import { MdOutlineIntegrationInstructions } from "react-icons/md";
 
 import experties from "/public/assets/services/experties.jpg";
@@ -44,7 +45,7 @@ const SoftwareServicesData: SoftwareServicesData = {
       id: 1,
       title: "Custom Development",
       logo: BiSolidCustomize,
-      desc: "Unique software tailored to your business needs. ",
+      desc: "Unique and innovative software solutions tailored to your specific business needs.",
     },
     {
       id: 2,
@@ -69,6 +70,12 @@ const SoftwareServicesData: SoftwareServicesData = {
       title: "Software Integration",
       logo: MdOutlineIntegrationInstructions,
       desc: "Seamless integration solutions for your digital ecosystem.",
+    },
+    {
+      id: 5,
+      title: "Maintenance and Support",
+      logo: FaWrench,
+      desc: "Reliable maintenance and support to keep your software running smoothly.",
     },
   ],
   workType: [
