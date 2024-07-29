@@ -41,7 +41,7 @@ const LifeAtVionsys: React.FC = () => {
       id: 3,
       title: "Flexible Work",
       description:
-        "We recognizes the importance of work-life balance and offers flexible work arrangements including remote work options, flexible hours and other accommodations to help employees manage their professional and personal responsibilities effectively.",
+        "We recognize the importance of work-life balance and offer flexible work arrangements, including remote work options and flexible hours, to help employees manage their responsibilities effectively.",
       icon: (
         <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
           <FaRegClock  size={45} className="text-blue1" />
@@ -63,7 +63,7 @@ const LifeAtVionsys: React.FC = () => {
       id: 5,
       title: "Career Development",
       description:
-        "We are committed to investing in the professional development of its employees. The company offers various training programs, mentorship opportunities and career advancement pathways to help employees grow their skills, expand their knowledge and advance their careers within the organization.",
+        "We invest in our employees' professional development by offering training programs, mentorship opportunities, and career advancement pathways to help them grow their skills and advance their careers.",
       icon: (
         <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
           <FaBriefcase  size={45} className="text-blue1" />
@@ -74,7 +74,7 @@ const LifeAtVionsys: React.FC = () => {
         id: 6,
         title: "Work-Life Balance",
         description:
-          "We fosters a healthy work-life balance, empowering employees to manage their workload efficiently while prioritizing personal and family time. This dedication promotes fulfillment and well-being, enhancing both professional satisfaction and overall happiness.",
+          "WWe foster a healthy work-life balance, empowering employees to manage their workload efficiently while prioritizing family time. This dedication enhances professional satisfaction and happiness.",
         icon: (
           <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
             <FaBalanceScale  size={45} className="text-blue1" />
@@ -92,7 +92,7 @@ const LifeAtVionsys: React.FC = () => {
           <h1 className="text-3xl font-extrabold text-orange relative z-20">
             Life At Vionsys
           </h1>
-          <div className="grid md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-8">
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-8">
             {services.map((service) => (
               <div
                 
@@ -103,7 +103,7 @@ const LifeAtVionsys: React.FC = () => {
                 <h4  className="text-[#3469bc] text-xl font-bold relative z-20 bg-clip-text">
                   {service.title}
                 </h4>
-                <p className="text-paragraph md:px-16 px-5 font-normal text-justify hover:text-black text-lg relative z-20 bg-clip-text">
+                <p className="text-paragraph md:px-7 px-5 font-normal text-justify hover:text-black text-lg relative z-20 bg-clip-text">
                   {service.description}
                 </p>
               </div>

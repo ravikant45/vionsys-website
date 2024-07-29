@@ -4,7 +4,7 @@ import ITStaffing from "/public/assets/services/ITStaffing/ITStaffing.jpg";
 import Services from "@/app/ui/ITStaffing/services";
 import Choose from "@/app/ui/ITStaffing/choose";
 import { Metadata } from "next";
-import GetStart from "@/app/ui/ITStaffing/getStart";
+import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 
 export const metadata: Metadata = {
   title: "IT Staffing",
@@ -45,7 +45,11 @@ function Page() {
       </div>
       <Services />
       <Choose />
-      <GetStart />
+      
+      {/* CTA */}
+      <section className="bg-gray-100">
+        <ScheduleMeetAndContactCTA />
+      </section>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Link from "next/link";
 import FaqSec from "./faqSec";
 import Firstsec from "./Firstsec";
 import { Metadata } from "next";
+import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 
 export const metadata: Metadata = {
   title: "Web Development Service",
@@ -79,50 +80,15 @@ const Page = () => {
         </div>
       </section>
 
-      {/* contact us small section */}
-      <section id="Vsec4" className="p-3">
-        <div className="relative items-center w-full px-5 py-2 mx-auto md:px-12 lg:px-16 max-w-7xl">
-          <div className="flex w-full mx-auto text-left">
-            <div className="relative inline-flex items-center mx-auto align-middle">
-              <div className="text-center">
-                <h1 className="max-w-5xl text-2xl font-bold leading-none tracking-tighter text-gray-700 md:text-5xl lg:text-4xl lg:max-w-7xl">
-                  Experience the Best
-                  <br className="hidden lg:block" />
-                  Web Development Environment
-                </h1>
-                <p className="max-w-xl mx-auto leading-relaxed text-paragraph p-2">
-                  We believe in delivering the best Website to our customers and
-                  providing nothing short of excellence.
-                </p>
-                <div className="flex md:flex-row flex-col justify-center items-center w-full max-w-2xl gap-2 mx-auto">
-                  <div className="mt-3 rounded-lg sm:mt-0">
-                    <Link
-                      href={"/contact"}
-                      className="px-5 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 lg:px-10 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                    >
-                      Contact Us
-                    </Link>
-                  </div>
-                  <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3">
-                    <Link
-                      href={"/about"}
-                      className="items-center px-5 py-2  text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transform border shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-                    >
-                      About Us
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* faq section */}
       <div>
         <FaqSec />
       </div>
-      {/*  */}
+
+      {/* CTA */}
+      <section className="bg-gray-100">
+        <ScheduleMeetAndContactCTA />
+      </section>
     </main>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SparklesCore } from "@/components/ui/sparkles";
+import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 const ServicesTemplateOne = ({ data }: { data: any }) => {
   const getWaveColor = (heading: string): string[] => {
     switch (heading) {
@@ -60,7 +61,7 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
           {data?.Services?.map((ser: any) => {
             return (
               <div
-                className="flex flex-col gap-2 py-5 items-center w-[20rem] px-2 border rounded-lg"
+                className="flex flex-col gap-2 py-5 items-center w-[25rem] px-2 border rounded-lg"
                 key={ser?.id}
               >
                 <span className=" bg-purple-700 p-5 w-16 h-16 rounded-full hover:cursor-pointer hover:scale-105 transition-all">
@@ -125,42 +126,6 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
         </div>
       </section>
 
-      {/* contact us small section */}
-      <section>
-        <div
-          data-aos="slide-left"
-          className="relative items-center w-full px-5 py-2 mx-auto md:px-12 lg:px-16 max-w-7xl"
-        >
-          <div className="flex w-full mx-auto text-left">
-            <div className="relative inline-flex items-center mx-auto align-middle">
-              <div className="text-center">
-                <h1 className="max-w-5xl text-2xl font-bold leading-none tracking-tighter text-black md:text-5xl lg:text-6xl lg:max-w-7xl">
-                  Experience the Best
-                  <br className="hidden lg:block" />
-                  Development Environment
-                </h1>
-                <p className="max-w-xl mx-auto mt-4 leading-relaxed text-paragraph">
-                  We believe in delivering the best development to our customers
-                  and providing nothing short of excellence.
-                </p>
-                <div className="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6">
-                  <div className="mt-3 rounded-lg sm:mt-0">
-                    <button className="px-5 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 lg:px-10 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                      <Link href={"/contact"}>Contact Us</Link>
-                    </button>
-                  </div>
-                  <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3">
-                    <button className="items-center block px-5 py-2 lg:px-10  text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transform border shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                      <Link href={"/about"}>About Us</Link>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* faq section */}
       <section>
         <div className="bg-white">
@@ -194,6 +159,11 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-gray-100">
+        <ScheduleMeetAndContactCTA />
       </section>
     </main>
   );

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import devops from "/public/assets/services/devops.jpg";
 import { SVGProps } from "react";
+import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 export const metadata: Metadata = {
   title: "DevOpes Services",
   description: "Vionsys IT Solutions India Pvt Ltd's complete DevOps solutions will help you streamline your development and operational processes. Our services, which include continuous integration, automated deployment, and cloud administration, are designed to improve collaboration, speed, and efficiency. With our skilled DevOps solutions, you can transform your software development lifecycle and reduce time-to-market significantly. Trust Vionsys to streamline your operations for smooth and consistent delivery. ",
@@ -31,19 +32,12 @@ const page = () => {
                   Optimize Your DevOps with Acme
                 </h1>
               </div>
-              <div className="flex flex-col items-start space-y-4">
+              <div className="flex flex-col items-center justify-center space-y-4">
                 <p className="mx-auto max-w-[700px] text-SubHeading md:text-xl font-bold dark:text-gray-400">
                   Accelerate your software delivery with our cutting-edge DevOps
                   platform. Automate deployments, scale effortlessly and gain
                   real-time insights.
                 </p>
-                <div className="space-x-4">
-                  <Button className="shadow">
-                    <Link className="" href={"/contact"}>
-                      Connect With Us
-                    </Link>
-                  </Button>
-                </div>
               </div>
             </div>
             <Image
@@ -55,6 +49,7 @@ const page = () => {
             />
           </div>
         </section>
+
         {/*Key Features section*/}
         <section className="w-full py-12 md:py-24 lg:py-24">
           <div className="container space-y-12 px-4 md:px-6">
@@ -167,6 +162,7 @@ const page = () => {
             </div>
           </div>
         </section>
+
         {/**Workflow section */}
         <section className="w-full py- l5g:pb-10 md:py-24 lg:py-4 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
@@ -219,6 +215,7 @@ const page = () => {
             </div>
           </div>
         </section>
+
         {/* FAQ Section*/}
         <section className="w-full py-12 md:py-24 lg:py-12 border-t">
           <h2 className="text-3xl font-bold text-center py-10">
@@ -300,6 +297,11 @@ const page = () => {
             </div>
           </div>
         </section>
+
+        {/* CTA */}
+      <section className="bg-gray-100">
+        <ScheduleMeetAndContactCTA />
+      </section>
       </main>
     </div>
   );
