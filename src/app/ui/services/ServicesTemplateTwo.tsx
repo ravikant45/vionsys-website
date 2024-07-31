@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { Feature } from "./data/CloudComputingServicesData";
 import { Button } from "@/components/ui/button";
+import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 
 const ServicesTemplateTwo = ({ data }: { data: any }) => {
   return (
@@ -43,13 +44,6 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               <p className="mx-auto mt-3 max-w-3xl text-paragraph dark:text-slate-400 sm:mt-6 md:mt-8">
                 {data?.para}
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
-                <Button className="shadow">
-                  <Link className="" href={"/contact"}>
-                    Connect With Us
-                  </Link>
-                </Button>
-              </div>
             </div>
           </div>
         </div>
@@ -192,6 +186,11 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             </div>
           </div>
         </section>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-gray-100">
+        <ScheduleMeetAndContactCTA />
       </section>
     </main>
   );

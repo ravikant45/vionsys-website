@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import background from "/public/background.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
 import MLAIFaq from '@/app/ui/services/MLAIFaq';
+import ScheduleMeetAndContactCTA from '@/utils/ScheduleMeetAndContactCTA';
 // import FAQpage from '@/app/ui/services/FAQpage';
 
 export const metadata: Metadata = {
@@ -36,14 +37,6 @@ const page = () => {
                   </span>
                 </span> 
               </h1>
-              <Button className="shadow mt-10 animate-bounce rounded-full duration-1000">
-                  <Link
-                    className=""
-                    href={"/contact"}
-                  >
-                    Connect With Us
-                  </Link>
-              </Button>
               
             </div>
           </div>
@@ -115,49 +108,11 @@ const page = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section>
-        <div className='bg-gray-100 flex flex-col sm:flex-row items-center justify-center gap-2 p-4 md:p-10'>
-          <h3 className='text-xl md:text-2xl font-semibold animate-pulse ease-out duration-1000 bg-gradient-to-l from-black to-blue-950 bg-clip-text text-transparent'>Ready to transform your business with Machine Learning and AI? Contact us today to get started!</h3>
-          <div className='text-4xl font-bold animate-pulse ease-out duration-1000 text-black'><Link href={"/contact"}><FaArrowRightLong color='blue'/></Link></div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      {/* <section>
-      <div
-        className="relative w-full bg-white pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5">
-        <div className=" flex flex-col items-center justify-center">
-          <h2 className="md:mt-5 text-center text-2xl md:text-3xl text-blue-700 font-bold decoration-orange">Frequently Asked Questions (FAQ)</h2>
-          <div className=" mt-8 grid w-[90%] md:w-[70%] gap-4">
-          {MLAIServicesData?.faq?.map((feat) => {
-            return (
-              <div key={feat.id} className="border-2 rounded-xl p-1.5 md:p-2 ">
-              <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                  <span className='text-sm md:text-lg font-semibold'> {feat.question}</span>
-                  <span className="transition group-open:rotate-180">
-                  <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>                                 
-                  </span>
-                </summary>
-                <p className="group-open:animate-fadeIn mt-3 text-neutral-600 text-sm md:text-md">
-                  {feat.ans}
-                </p>
-              </details>
-            </div>
-            );
-          })}
-            
-          </div>
-        </div>
-      </div>
-      </section>  */}
       <MLAIFaq/>
+
+      <section className="bg-gray-100">
+        <ScheduleMeetAndContactCTA />
+      </section>
      
         
     </main>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import FAQData, { FAQItem } from "@/app/ui/services/data/ProductFAQ";
 import { HiMiniArrowSmallRight } from "react-icons/hi2";
 import { Button } from "@/components/ui/button";
+import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 
 export const metadata: Metadata = {
   title: "Product Development Services",
@@ -287,7 +288,7 @@ const page = () => {
       </section>
 
       {/* contact us small section */}
-      <section>
+      {/* <section>
         <div className="relative items-center w-full px-5 py-2 mx-auto md:px-12 lg:px-16 lg:py-12 max-w-7xl overflow-x-hidden">
           <div className="flex w-full mx-auto text-left">
             <div className="relative w-full inline-flex items-center">
@@ -327,7 +328,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="bg-slate-50">
@@ -366,6 +367,11 @@ const page = () => {
             </ul>
           </div>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-gray-100">
+        <ScheduleMeetAndContactCTA />
       </section>
     </main>
   );
