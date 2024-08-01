@@ -13,7 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import LogoImage from "/public/assets/logo.png";
-import { ArticlesLinks, ServicesLinks } from "./Navlinks";
+import { ArticlesLinks, IndustriesLinks, ServicesLinks } from "./Navlinks";
 import { VscClose } from "react-icons/vsc";
 import { HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -162,14 +162,21 @@ const Navbar = () => {
 
               {/*Industries dropdown */}
               <NavigationMenuItem>
-                <Link href="/industries" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={navigationMenuTriggerStyle()}
-                    onClick={closeMenu}
-                  >
-                    Industries
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
+                    {IndustriesLinks.map((component) => (
+                      <ListItem
+                        className="hover:cursor-pointer"
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                      >
+                        {/* {component.description} */}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
 
               {/* Career Page */}

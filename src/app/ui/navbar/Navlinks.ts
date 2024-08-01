@@ -96,3 +96,83 @@ export const ArticlesLinks: {
     href: "/caseStudies",
   },
 ];
+
+
+export const IndustriesLinks: {
+  title: string;
+  href: string;
+  description: string;
+}[] = [
+  {
+    title: "IT Digital Transformation",
+    href: "/industries/itDigital",
+    description:
+      "IT digital transformation services that empower businesses to adapt, grow, and excel in the evolving digital landscape.",
+  },
+  {
+    title: "Finance Sector",
+    href: "/industries/finance",
+    description:
+      "IT services to enhance competitiveness, compliance, and customer experience in the financial sector.",
+  },
+  {
+    title: "Professional Services",
+    href: "/industries/professional",
+    description:
+      "Expert advice, personalized solutions, and comprehensive support to help businesses overcome challenges and achieve their strategic goals in a competitive landscape.",
+  },
+  {
+    title: "Banking Sector",
+    href: "/industries/banking",
+    description:
+      "We delivers tailored, secure, and scalable IT services to enhance efficiency, compliance, and customer experience in the banking sector.",
+  },
+  {
+    title: "Pharma Sector",
+    href: "/industries/pharma",
+    description:
+      "Specialized IT services for the pharmaceutical sector to streamline operations, ensure compliance, and accelerate innovation.",
+  },
+  {
+    title: "Telecommunication Sector",
+    href: "/industries/telecom",
+    description:
+      "IT services that enhance telecom networks and customer experiences, driving innovation amid rapid technological changes.",
+  },
+  {
+    title: "Insurance Sector",
+    href: "/industries/insurance",
+    description:
+      "We boosts efficiency, customer experience, and compliance in the evolving insurance industry through expert IT services.",
+  },
+  {
+    title: "E-commerce Sector",
+    href: "/industries/ecommerce",
+    description:
+      "We offers comprehensive IT solutions for the e-commerce industry, including website and mobile app development, trading platform integration, cloud services, analytics, business intelligence, and security.",
+  },
+  {
+    title: "Construction Sector",
+    href: "/industries/construction",
+    description:
+      "Expert IT solutions to modernize the construction industry by enhancing project management, efficiency, safety, and compliance.",
+  },
+  {
+    title: "Healthcare Sector",
+    href: "/industries/health",
+    description:
+      "Specialized IT solutions for the healthcare sector, focusing on patient care, operational efficiency, and data protection.",
+  },
+  {
+    title: "Education Sector",
+    href: "/industries/education",
+    description:
+      "We provide expert IT solutions for the education sector, including LMS, e-learning, SIS, and online assessment to enhance learning, productivity, and security.",
+  },
+  {
+    title: "Field Service sector",
+    href: "/industries/field",
+    description:
+      "IT solutions to streamline farming operations, enhance service delivery, and boost competitiveness with software, mobile apps, cloud services, IoT integration, and IT support.",
+  },
+];
