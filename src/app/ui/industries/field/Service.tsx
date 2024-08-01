@@ -25,7 +25,7 @@ const Service = () => {
           para3: "Inventory Management",
           Des3: "Offer solutions for tracking and optimization, ensuring technicians have necessary tools.",
           para4: "Reporting and Analytics",
-          Des4: "Provide reporting and analytics to gain performance, identify improvements, and data-driven decisions.",
+          Des4: "Provide reporting and analytics to gain performance, identify improvements, etc.",
           className1: "border-l-0 rounded-br-xl",
           className2: "mr-0 md:mr-8 order-1",
           className3: "order-2"
@@ -57,7 +57,7 @@ const Service = () => {
           para2: "Data Storage and Security",
           Des2: "Provide secure cloud storage solutions and ensure compliance with regulations.",
           para3: "Disaster Recovery and Backup",
-          Des3: "Implemented disaster recovery and backup solutions to keep the company on track with data security. ",
+          Des3: "Implemented disaster recovery and backup solutions to keep the company on track. ",
           para4: "Hybrid and Multi-Cloud Solutions",
           Des4: "Create strategies to maximize performance, cost-efficiency, and security across cloud platforms.",
           className1: "border-l-0 rounded-br-xl",
@@ -136,7 +136,7 @@ const Service = () => {
           </div>
 
           <div className="flex flex-col md:flex-row">
-            <div className={`mb-6 md:mb-0 md:p-0 p-3 ${item.className2}`}>
+            <div className={`mb-6 md:mb-0 md:p-0 p-3 w-1/3 ${item.className2}`}>
               <Image
                 className="w-full mx-auto rounded-lg"
                 src={item.img}
