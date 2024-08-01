@@ -7,6 +7,7 @@ import { IoMdArrowBack } from "react-icons/io";
 
 import Link from "next/link";
 import useGetBlog from "@/services/blogs/useGetBlog";
+import { Button } from "@/components/ui/button";
 // import { formatDate } from "@/utils/formatDate";
 
 const BlogPage = () => {
@@ -16,45 +17,71 @@ const BlogPage = () => {
   if (isPending) return <Loading />;
 
   return (
-    <div className="md:px-10 px-8 py-20 p-3 w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
-      <div className="mb-4 flex justify-start">
-        <Link
-          href={"/blogs"}
-          className="bg-blue-500 text-white rounded-md p-2 flex items-center gap-2 hover:bg-blue-600 transition"
-        >
-          <IoMdArrowBack size={20} />
-          <span>Back</span>
-        </Link>
-      </div>
-
-      <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mb-8">
-        <div className="w-full lg:w-1/2 relative">
-          <Image
-            src={data?.data.image}
-            alt={data?.data.title}
-            layout="responsive"
-            width={400}
-            height={400}
-            objectFit="cover"
-            className="rounded-lg shadow-sm"
-          />
+    <>
+      <div className="md:px-10 px-8 py-20 p-3 w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
+        <div className="mb-4 flex justify-start">
+          <Link
+            href={"/blogs"}
+            className="bg-blue-500 text-white rounded-md p-2 flex items-center gap-2 hover:bg-blue-600 transition"
+          >
+            <IoMdArrowBack size={20} />
+            <span>Back</span>
+          </Link>
         </div>
-        <div className="flex flex-col lg:w-1/2">
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">
-            {data?.data.title}
-          </h1>
-          {/* <p className="text-sm text-gray-600">
+
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mb-8">
+          <div className="w-full lg:w-1/2 relative">
+            <Image
+              src={data?.data.image}
+              alt={data?.data.title}
+              layout="responsive"
+              width={400}
+              height={400}
+              objectFit="cover"
+              className="rounded-lg shadow-sm"
+            />
+          </div>
+          <div className="flex flex-col lg:w-1/2">
+            <h1 className="text-4xl font-bold mb-4 text-gray-800">
+              {data?.data.title}
+            </h1>
+            {/* <p className="text-sm text-gray-600">
             <span className="font-semibold">Posted On:&nbsp;</span>
             {formatDate(data?.data.postDate)}
           </p> */}
+          </div>
         </div>
+
+        <div
+          className="prose prose-lg max-w-none mb-8"
+          dangerouslySetInnerHTML={{ __html: data?.data?.description }}
+        />
       </div>
 
-      <div
-        className="prose prose-lg max-w-none mb-8"
-        dangerouslySetInnerHTML={{ __html: data?.data?.description }}
-      />
-    </div>
+      {/* CTA */}
+      <div className="w-full max-w-4xl my-4 mx-auto p-2">
+        <div className="border border-[#215cbc] p-4 md:p-6 rounded-lg text-center">
+          <h2 className="text-MainHeading font-bold mb-4">
+            Let's Connect and Innovate Together!
+          </h2>
+
+          <p className="text-lg mb-4 text-gray-700">
+            We turn your ideas into reality. Whether it's{" "}
+            <strong>
+              custom software, expert advice, or an IT challenge, we're here to
+              help.
+            </strong>{" "}
+            Reach out today and let's innovate and grow together!
+          </p>
+
+          <p className="mt-4 flex md:gap-4 gap-2 justify-center items-center flex-wrap">
+            <Link href="/contact">
+              <Button data-aos="fade-left">Contact us</Button>
+            </Link>
+          </p>
+        </div>
+      </div>
+    </>
   );
 };
 

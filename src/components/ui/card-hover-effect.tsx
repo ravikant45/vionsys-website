@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "@/utils/cn";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "./button";
 import Job_modal from "@/app/ui/Careers/Job_modal";
+import { Modal } from "antd";
 
 export const HoverEffect = ({
   items,
@@ -19,10 +19,26 @@ export const HoverEffect = ({
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isModalOpen, setisModalOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentItemIndex, setCurrentItemIndex] = useState<number | null>(null);
+
 
   return (
     <>
       <Job_modal isModalOpen={isModalOpen} setisModalOpen={setisModalOpen} />
+       <Modal
+              width={"700px"}
+                footer={null}
+                open={isVisible}
+                onCancel={() => setIsVisible(false)}
+              >
+                {currentItemIndex !== null && (
+                  <div className="p-3">
+                    <CardTitle>{items[currentItemIndex].position}</CardTitle>
+                    <section className="mt-4" dangerouslySetInnerHTML={{ __html: items[currentItemIndex]?.jobDescription }} />
+                  </div>
+                )}
+              </Modal>
       <div
         data-aos="zoom-out"
         className={cn(
@@ -54,9 +70,22 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
+           
             <Card>
               <CardTitle>{item?.position}</CardTitle>
-              <CardDescription>{item?.jobDescription}</CardDescription>
+              <section className="line-clamp-4">
+                <div dangerouslySetInnerHTML={{ __html: item?.jobDescription }} />
+              </section>
+             
+              <span
+                className="text-blue-700 capitalize cursor-pointer"
+                onClick={() => {
+                  setIsVisible(true);
+                  setCurrentItemIndex(idx);
+                }}
+              >
+                ...Read more
+              </span>
               <ul className="py-3">
                 {item?.Requirement.map((requirement, index) => (
                   <li key={index}>{requirement}</li>
@@ -87,7 +116,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white border  dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white border dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
