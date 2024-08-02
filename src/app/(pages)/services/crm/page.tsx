@@ -28,12 +28,7 @@ const Page: React.FC = () => {
             Selecting Excellence: Elevate Your CRM Experience with Us.
           </h3>
           <p data-aos="fade-down" className="md:text-xl text-sm text-white md:px-52 mmd:px-10 px-3 sm:px-20 text-center">
-            Discover CRM excellence with our innovative methodology, blending
-            precision and innovation for unparalleled success. Seamlessly
-            integrating technology and data-driven insights, we propel
-            businesses to enduring triumphs and elevate customer journeys.
-            Experience the pinnacle of effective work, meticulously designed for
-            sustained growth and unmatched satisfaction.
+            Discover CRM excellence with our innovative methodology, blending precision and innovation for unparalleled success. Seamlessly integrating technology and data-driven insights, we propel businesses to enduring triumphs and elevate customer journeys. Experience the pinnacle of effective work, meticulously designed for sustained growth and unmatched satisfaction.
           </p>
         </div>
       </div>

@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
 import FAQData, { FAQItem } from "@/app/ui/services/data/ProductFAQ";
-import { HiMiniArrowSmallRight } from "react-icons/hi2";
-import { Button } from "@/components/ui/button";
+import { MdOutlineManageAccounts } from "react-icons/md";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 
 export const metadata: Metadata = {
@@ -11,7 +9,7 @@ export const metadata: Metadata = {
   description: "Vionsys IT Solutions India Pvt Ltd offers comprehensive product development services to help you bring your creative ideas to life. Our skilled team offers complete solutions from concept to launch, including market research, design, development, and testing. Whether you require software, mobile apps, or corporate solutions, we guarantee a smooth development process that produces excellent outcomes. Partner with Vionsys to make your vision a reality. ",
   openGraph: {
     images: "/opangraph.png",
-    description:"Vionsys IT Solutions India Pvt Ltd provides experienced product development services geared to your specific company requirements. Our team specializes in developing cutting-edge products that appeal to your target audience and match market demands. From early planning and prototyping to final deployment and maintenance, we offer a full development lifecycle to ensure your product stands out in the competitive marketplace. Vionsys' creative solutions can help you succeed in the marketplace. "
+    description: "Vionsys IT Solutions India Pvt Ltd provides experienced product development services geared to your specific company requirements. Our team specializes in developing cutting-edge products that appeal to your target audience and match market demands. From early planning and prototyping to final deployment and maintenance, we offer a full development lifecycle to ensure your product stands out in the competitive marketplace. Vionsys' creative solutions can help you succeed in the marketplace. "
   }
 };
 
@@ -45,8 +43,7 @@ const page = () => {
               data-aos-duration="500"
               className="max-w-xl text-lg md:text-xl"
             >
-              Discover our innovative solutions and transform your business
-              today.
+              At Vionsys IT Solutions India Pvt Ltd, we offer comprehensive services to help your business succeed. Our expertise spans the entire product life cycle, ensuring your product meets market demand and exceeds customer expectations.
             </p>
           </div>
         </div>
@@ -74,18 +71,17 @@ const page = () => {
           <div className="grid grid-cols-1 md:gap-6 gap-2 pt-2 md:pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             <div className="rounded-lg bg-white md:p-6 p-2 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
-                <BriefcaseIcon className="h-6 w-6" />
+                <MdOutlineManageAccounts className="h-6 w-6" />
               </div>
               <h3
                 data-aos="zoom-in"
                 data-aos-duration="500"
                 className="mt-4 text-xl font-semibold"
               >
-                Product Strategy
+                Resource Management
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Craft a unique product strategy tailored to your business needs,
-                ensuring alignment with your objectives and market demands.
+                We develop unique product options tailored to your business needs. Our approach ensures alignment with your goals and market requirements, setting your product up for success.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
@@ -97,11 +93,10 @@ const page = () => {
                 data-aos-duration="500"
                 className="mt-4 text-xl font-semibold"
               >
-                Product Design
+                Production Planning
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Transform your vision into reality with captivating product
-                designs that optimize efficiency and enhance user experience.
+                Our product line turns your vision into a reality. We create beautiful designs that optimize performance and enhance the user experience, ensuring your products stand out in the marketplace.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
@@ -113,12 +108,10 @@ const page = () => {
                 data-aos-duration="500"
                 className="mt-4 text-xl font-semibold"
               >
-                Product Development
+                The Best of Things
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Bring your ideas to life with expert product development
-                services, delivering engaging mobile apps and innovative
-                solutions.
+                We ensure the highest quality and reliability of your products through our stringent quality controls. Our testing methods ensure that your product performs flawlessly in the real world.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
@@ -130,12 +123,10 @@ const page = () => {
                 data-aos-duration="500"
                 className="mt-4 text-xl font-semibold"
               >
-                Quality Assurance
+                Product placement
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Ensure the highest standards of quality and reliability for your
-                products with our rigorous quality assurance processes and
-                testing methodologies.
+                Bring your product to market successfully with our simple product launch solution. We offer tailored integration strategies for your digital ecosystem, ensuring a smooth transition and improved market growth.
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
@@ -147,29 +138,10 @@ const page = () => {
                 data-aos-duration="500"
                 className="mt-4 text-xl font-semibold"
               >
-                Product Launch
+                Continuous improvement
               </h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Successfully introduce your products to the market with our
-                seamless product launch solutions, including integration
-                strategies tailored to your digital ecosystem.
-              </p>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
-                <PencilIcon className="h-6 w-6" />
-              </div>
-              <h3
-                data-aos="zoom-in"
-                data-aos-duration="500"
-                className="mt-4 text-xl font-semibold"
-              >
-                Continuous Improvement
-              </h3>
-              <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Establish a culture of continuous improvement within your
-                product development process, empowering teams to iterate, learn
-                and innovate to deliver ongoing value to customers.
+                We help you create a culture of continuous improvement in your product development. By empowering your teams to iterate, learn, and innovate, we ensure your product delivers ongoing value to your customers.
               </p>
             </div>
           </div>

@@ -4,44 +4,44 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 const items = [
   {
-    title: "CRM Deployment",
+    title: "CRM customization",
     description:
-      "Assisting clients in setting up and customizing CRM software to suit their specific business needs and workflows.",
+      "You won’t find a one-size-fits-all quality CRM. Our team tailors this platform to suit your business. We will also integrate it with your existing system. This will create a central location for all customer data.",
   },
   {
     title: "CRM Integration",
     description:
-      "Integrating CRM systems with other business applications such as email marketing platforms, accounting software and e-commerce platforms to streamline data flow and improve efficiency.",
+      "CRM systems can be integrated with other corporate systems such as email marketing, accounting software and e-commerce systems to provide smooth and efficient data flow.",
   },
   {
-    title: "CRM Customization",
+    title: "CRM Resources",
     description:
-      "Tailoring CRM solutions to meet the unique requirements of different industries and businesses including custom fields, workflows and automation.",
+      "CRM systems are tailored to the specific needs of businesses and industries, including custom farms, processes and automation.",
   },
   {
-    title: "CRM Strategy Consulting",
+    title: "Reporting and Analysis",
     description:
-      "Advising clients on CRM best practices, strategic planning and process optimization to enhance customer engagement, retention and satisfaction.",
+      "Drive actionable insights through customer data. We’ll help set up reports and dashboards to track key metrics, identify trends, and drive data-driven decisions.",
   },
   {
-    title: "CRM Migration and Upgrades",
+    title: "User Adoption & Training",
     description:
-      "Assisting with migrating data from legacy systems to modern CRM platforms as well as upgrading existing CRM software to newer versions for improved functionality and performance.",
+      "Change is hard. Extensive training will be provided to sales, marketing and customer service departments. We will train them in a way that every employee feels comfortable and confident working with this new CRM system.",
   },
   {
-    title: "Data Management",
+    title: "CRM security",
     description:
-      "Helping organizations effectively manage and analyze customer data to gain insights, identify trends and make data-driven decisions.",
+      "Ensure customer data security, and our staff will assist you with all best practices related to CRM security & compliance of your system in accordance with various data privacy laws.",
   },
   {
-    title: "CRM Analytics and Reporting",
+    title: "CRM Change Management",
     description:
-      "Implementing advanced analytics tools and reporting dashboards within CRM systems to track key performance metrics, measure ROI and drive continuous improvement.",
+      "As your business grows, your needs from a CRM will change. We’ll help you track changes to your CRM system, so you’re still behind.",
   },
   {
-    title: "CRM Security and Compliance",
+    title: "CRM Support",
     description:
-      "Ensuring the security and compliance of CRM systems with industry standards and regulations including data protection laws like GDPR and HIPAA.",
+      "We don’t get lost at the end of the process. We’ll be here to address your routine questions, troubleshoot problems that arise, and collaborate whenever you need to change your CRM.",
   },
 ];
 
@@ -65,7 +65,7 @@ function Empower() {
       </p>{" "}
       <br />
       <div data-aos="zoom-out">
-        <BentoGrid className="max-w-6xl mx-auto relative bg-clip-text text-transparent bg-gradient-to-b from-black to-black text-center">
+        <BentoGrid className="max-w-6xl mx-auto relative bg-clip-text text-transparent bg-gradient-to-b from-black to-black text-center py-4">
           {items.map((item, i) => (
             <BentoGridItem
               data-aos="zoom-in"
