@@ -1,6 +1,76 @@
+import { Descriptions } from "antd";
 import React from "react";
 
 function Future() {
+
+  const cards = [
+    {
+      id: 1,
+      front: {
+        title: "Salesforce Consulting",
+        description: "Our Salesforce consulting services are designed to help you identify and implement the best strategies for your business. We work closely with you to understand your specific needs and tailor our solutions to your specific needs."
+      },
+      back: {
+        title: "Our consulting services include:",
+        list: [{ title: "Requirements Analysis", description: "A comprehensive analysis of your business processes and requirements." }, { title: "Action Plan", description: "A customized Salesforce roadmap." }, { title: "Solution Design", description: "To create a comprehensive solution framework that will maximize the capabilities of Salesforce." }, { title: "Change Management", description: "Ensure smooth transition and adoption of Salesforce across your organization." }]
+      }
+    },
+    {
+      id: 2,
+      front: {
+        title: "Salesforce Implementation",
+        description: "We offer end-to-end Salesforce deployment services, ensuring that Salesforce integrates seamlessly with your existing systems. Our user interface is designed to be efficient and hassle-free, allowing you to start taking advantage of Salesforce quickly."
+      },
+      back: {
+        title: "Our service users include:",
+        list: [{ title: "Program Outline", description: "Program timeline and detailed milestones." }, { title: "Configuration", description: "Customizing Salesforce to fit your business process." }, { title: "Integration", description: "Seamless integration with other operating systems and applications." }, { title: "Data Migration", description: "Secure and accurate migration of your existing data to Salesforce." }, { title: "Usage Training", description: "A comprehensive training program to ensure your team is proficient in using Salesforce." }]
+      }
+    },
+    {
+      id: 3,
+      front: {
+        title: "Salesforce Products",
+        description: "Every business is unique, and we understand that your Salesforce model should reflect that. Our customization services are designed to tailor Salesforce to meet your specific business needs."
+      },
+      back: {
+        title: "Our customization services include:",
+        list: [{ title: "Custom Development", description: "Building custom applications and roles in Salesforce." }, { title: "Business strategy", description: "The process of automating business processes to improve efficiency." }, { title: "Custom Reports and Dashboards", description: "Create insightful reports and dashboards that provide real-time business intelligence." }, { title: "Data Migration", description: "Secure and accurate migration of your existing data to Salesforce." }, { title: "Better user interface", description: "Salesforce UI enhancements to improve user experience and adoption." }]
+      }
+    },
+    {
+      id: 4,
+      front: {
+        title: "Salesforce integration",
+        description: "Seamlessly integrate Salesforce with your other business applications for an integrated, efficient ecosystem. Our integration services ensure that data flows seamlessly between Salesforce and your other systems, giving you a comprehensive view of your business operations."
+      },
+      back: {
+        title: "Our integration services include:",
+        list: [{ title: "API Integration", description: "Using Salesforce with third-party applications using APIs." }, { title: "Middleware solutions", description: "Use of middleware for complex integration." }, { title: "Custom Connectors", description: "To configure custom connectors for unique integration needs." }, { title: "Data Synchronization", description: "Ensure consistent and consistent data flow across systems." }]
+      }
+    },
+    {
+      id: 5,
+      front: {
+        title: "Salesforce Project Management",
+        description: "Our Salesforce Managed Services offer ongoing support and maintenance to ensure your Salesforce instance continues to meet the needs of your growing business. "
+      },
+      back: {
+        title: "We recommend that:",
+        list: [{ title: "Proactive monitoring", description: "Constantly monitoring your Salesforce instance to identify and fix issues before they affect your business." }, { title: "System Administration", description: "Ongoing maintenance of user accounts, security settings, and system settings." }, { title: "Performance Improvement", description: "Continue to optimize your Salesforce instances to increase performance." }, { title: "Feature enhancements", description: "By updating your Salesforce instance with the latest features and functionality." }]
+      }
+    },
+    {
+      id: 6,
+      front: {
+        title: "Salesforce training and support",
+        description: "Empower your team with the knowledge and skills needed to get the most out of Salesforce. "
+      },
+      back: {
+        title: "Our training and support services include:",
+        list: [{ title: "Customized Training Plan", description: "Customized training based on your specific business plan and Salesforce configuration." }, { title: "Help required", description: "Reach out to our expert support team whenever you need help." }, { title: "•	User acquisition strategies", description: "Strategies and best practices to build user engagement and maximize ROI." }]
+      }
+    }
+  ]
   return (
     <div>
       <div className="md:px-10 md:py-12 p-5 text-center relative md:mt-10 mt-3">
@@ -22,7 +92,7 @@ function Future() {
           success in an increasingly competitive landscape.
         </p>
       </div>
-      <div className="w-full h-auto bg-slate-50 grid-cols-6 justify-evenly">
+      <div className="w-screen h-auto bg-slate-50 grid-cols-6 justify-evenly">
         <section className="container space-y-8  py-4 mx-auto md:py-6 lg:py-12">
           <div className="mx-auto flex w-full flex-col items-center space-y-4 text-center">
             <h2
@@ -36,99 +106,38 @@ function Future() {
               online visibility.
             </p>
           </div>
-          <div
-            data-aos="zoom-out"
-            className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3"
-          >
-            {/*first */}
-            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
-                <div className="space-y-2">
-                  <h3 className="font-bold text-black">AI Integration</h3>
-                  <p className="text-md text-black">
-                    The integration of AI and ML into Salesforce can empower
-                    users with predictive analytics and automation capabilities,
-                    enabling more informed decision-making and personalized
-                    interactions.
-                  </p>
+          <div className="flex justify-center items-center w-full">
+            <div className="flex flex-wrap justify-evenly items-center gap-x-4 gap-y-8 md:px-16 px-4">
+              {cards.map((card) => (
+                <div className="flip-card" key={card.id}>
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <div className="flex justify-center items-center w-full h-full">
+                        <div className="w-full py-10 flex flex-col justify-between gap-4 px-2">
+                          <h2 className="text-xl font-semibold">{card?.front?.title}</h2>
+                          <p>{card?.front?.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flip-card-back">
+                      <div className="w-full h-full flex flex-col justify-center gap-4 px-2">
+                        <ul>
+                          {card.back.list.map((item) => (
+                            <li key={item.title} className="flex flex-col justify-start items-start">
+                              <span className="text-sm font-semibold underline text-blue-600">{item.title}:</span>
+                              <span className="text-sm text-start ml-4">{item.description}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            {/*Second */}
-            <div className="relative outline outline-amber-600 hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
-                <div className="space-y-2">
-                  <h3 className="font-bold ">Customer Experience</h3>
-                  <p className="text-md text-black">
-                    In an increasingly competitive landscape, prioritizing
-                    customer experience can be a key differentiator for
-                    businesses. Salesforce's tools for understanding and
-                    engaging
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/*third */}
-            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
-                <div className="space-y-2">
-                  <h3 className="font-bold text-black">
-                    Data Privacy and Security
-                  </h3>
-                  <p className="text-md text-black">
-                    data privacy regulations becoming more stringent, companies
-                    must prioritize security and compliance
-                    strategies.Salesforce users need to ensure that they adhere
-                    to regulations.
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/*fourth */}
-            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
-                <div className="space-y-2">
-                  <h3 className="font-bold text-black">
-                    Integration with Emerging Technologies
-                  </h3>
-                  <p className="text-md text-black">
-                    Integrating with emerging technologies like blockchain, IoT
-                    and AR can unlock new opportunities for innovation and
-                    differentiation.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/*fifth */}
-            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
-                <div className="space-y-2">
-                  <h3 className="font-bold text-black">
-                    Customization and Flexibility
-                  </h3>
-                  <p className="text-md text-black">
-                    Salesforce's customization capabilities enable companies to
-                    tailor the platform to their specific needs and workflows.
-                    Investing in customizations and integrations
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/*sixth */}
-            <div className="relative outline outline-amber-600  hover:scale-105 hover:bg-blue-100 transition-all overflow-hidden rounded-3xl border bg-background p-2">
-              <div className="flex h-180 flex-col justify-between rounded-md md:p-6 p-2">
-                <div className="space-y-2">
-                  <h3 className="font-bold text-black">Continued Growth</h3>
-                  <p className="text-md text-black">
-                    As cloud-based solutions become more ubiquitous and
-                    companies increasingly adopt CRM systems, Salesforce is
-                    poised to maintain its growth trajectory.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
+
+
         </section>
       </div>
     </div>

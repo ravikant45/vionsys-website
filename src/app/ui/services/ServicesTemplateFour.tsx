@@ -81,17 +81,7 @@ const ServicesTemplateFour: React.FC = () => {
                   Search Engine Optimization(SEO)
                 </h1>
                 <p className="md:text-lg text-base">
-                  In digital marketing, our SEO service enhances online
-                  visibility and drives sustainable growth. Using advanced
-                  strategies and detailed optimization, we boost your website's
-                  search engine rankings. Through keyword research, on-page
-                  optimization, and link-building, we position your brand
-                  prominently in search results. Our expert team delivers
-                  measurable results, driving targeted traffic and maximizing
-                  ROI. With a tailored, continuously refined approach, we keep
-                  your online presence competitive and adaptable. Trust us to
-                  navigate SEO complexities and unlock your digital marketing
-                  potential.
+                  Our SEO services in digital marketing increase online visibility and drive consistent growth. Using advanced techniques and extensive optimization, we increase your website’s search engine ranking. Through keyword research, on-page optimization and link building, we clearly position your brand in search results. Our team of experts deliver measurable results, drive targeted traffic and maximize ROI. With a tailored, consistently refined approach, we make your online presence competitive and scalable. Trust us to navigate the complexities of SEO and unlock your digital marketing potential.
                 </p>
               </div>
               <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
@@ -145,17 +135,7 @@ const ServicesTemplateFour: React.FC = () => {
                   Content Marketing
                 </h1>
                 <p className="md:text-lg text-base">
-                  Within the realm of digital marketing, our Content Marketing
-                  service serves as the cornerstone for building brand authority
-                  and driving engagement. Through strategic storytelling and
-                  compelling content creation, we captivate your audience and
-                  establish your brand as a thought leader in your industry.
-                  With a focus on delivering valuable and relevant content, we
-                  aim to educate, inspire and engage your audience, driving
-                  organic growth and fostering long-term customer relationships.
-                  Trust us to craft tailored content strategies that resonate
-                  with your audience and elevate your brand's presence in the
-                  digital landscape.
+                  In the realm of digital marketing, our content marketing service is a cornerstone for building brand authority and driving engagement. Through strategic storytelling and engaging content creation, we connect with your audience and establish your brand as a thought leader in your industry. Focused on providing valuable and relevant content, we aim to educate, inspire and engage your audience, inspire organic growth and nurture long-term customer relationships. Trust us to develop customized content strategies that resonate with your audience and elevate your brand’s presence in the digital landscape.
                 </p>
               </div>
               <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
@@ -257,16 +237,7 @@ const ServicesTemplateFour: React.FC = () => {
                   Email Marketing
                 </h1>
                 <p className="md:text-lg text-base">
-                  In the digital marketing sphere, our Email Marketing service
-                  stands as a beacon for fostering direct and personalized
-                  connections with your audience. Through strategic campaigns
-                  and compelling content, we harness the power of email to
-                  nurture customer relationships and drive conversions. With
-                  tailored strategies and meticulous attention to detail, we
-                  ensure that your email campaigns resonate with your audience,
-                  delivering measurable results and driving business growth.
-                  Trust us to elevate your email marketing efforts and unlock
-                  the full potential of your brand's communication strategy.
+                  In digital marketing, our email marketing services stand as prophets in developing direct and personal connections with your audience. Through strategic campaigns and engaging content, we harness the power of email to nurture customer relationships and drive conversion. We use customized strategies and careful attention to detail to ensure your email campaigns align with your audience, deliver measurable results and boost performance. Trust us to improve your email marketing efforts and unlock the full potential of your brand’s communication strategy.
                 </p>
               </div>
               <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">

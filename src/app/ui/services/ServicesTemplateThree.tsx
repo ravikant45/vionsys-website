@@ -58,7 +58,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
                 <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
                 <div className="w-full flex flex-col gap-4 py-6 md:px-8 px-4">
                     <h3 data-aos="fade-down" className="text-center text-MainHeading font-extrabold relative z-20 bg-clip-text capitalize">{data.cardsTitle}</h3>
-                    <div data-aos="zoom-in" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:px-6 gap-x-4 gap-y-14 md:mt-0 mt-8">
+                    <div data-aos="zoom-in" className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:px-6 gap-x-4 gap-y-24 md:mt-0 mt-8">
                         {
                             data?.cards.map((card) => (
                                 <PinContainer
@@ -66,11 +66,11 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
                                     title={card.title}
                                     href="https://twitter.com/mannupaaji"
                                 >
-                                    <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 md:w-[20rem] w-[18rem] h-[20rem] md:h-[20rem] ">
+                                    <div className="flex justify-between basis-full gap-2 flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 md:w-[20rem] w-[18rem] h-[22rem] md:h-[22rem] ">
                                         <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-black">
                                             {card.title}
                                         </h3>
-                                        <div className="!m-0 !p-0 font-normal">
+                                        <div className="!m-0 !p-0 font-normal h-[50%]">
                                             <span className="text-black text-sm">
                                                 {card.message}
                                             </span>

@@ -100,25 +100,28 @@ const cards = [
 
 function TrustUs() {
   return (
-    <div className="grid md:grid-cols-3 px-2 py-4 grid-cols-1 justify-items-center items-center">
-      <div className="h-screen w-full col-span-2 md:order-1 order-2">
-        <LayoutGrid cards={cards} />
+    <section>
+      <div className="grid md:grid-cols-3 px-2 py-4 grid-cols-1 justify-items-center items-center">
+        <div className="h-screen w-full col-span-2 md:order-1 order-2">
+          <LayoutGrid cards={cards} />
+        </div>
+        <div className="order-1 md:order-2 p-8">
+          <p data-aos="fade-left" className="font-extrabold text-MainHeading">
+            Why trust us?
+          </p>
+          <p data-aos="fade-right" className="text-SubHeading mt-5 font-bold">
+            Achieve digital transformation for your retail business services
+          </p>
+          <p data-aos="zoom-out" className="text-paragraph mt-5 mb-5">
+            Enhance your business through digital transformation and get the best from Vionsys IT Solutions India Pvt. Ltd. Join our vibrant team and explore the limitless possibilities. Here, you will participate in new projects, thrive in a collaborative environment, and experience a continuous learning program that supports your professional development Find the ideal environment to unlock your full potential in the dynamic IT career in.
+          </p>
+        </div>
       </div>
-      <div className="order-1 md:order-2 p-8">
-        <p data-aos="fade-left" className="font-extrabold text-MainHeading">
-          Why trust us?
-        </p>
-        <p data-aos="fade-right" className="text-SubHeading mt-5 font-bold">
-          Achieve digital transformation for your retail business services
-        </p>
-        <p data-aos="zoom-out" className="text-paragraph mt-5 mb-5">
-          Trust on us for your IT requirements, backed by our track record of
-          successful projects, commitment to data security, adherence to high
-          service quality standards and dedication to fostering enduring client
-          partnerships founded on trust and reliability.
-        </p>
+
+      <div>
+
       </div>
-    </div>
+    </section>
   );
 }
 

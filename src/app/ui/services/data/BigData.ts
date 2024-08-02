@@ -33,40 +33,40 @@ import DataCiAndCdImage from "../../../../../public/assets/services/BigData/devO
 
 export const BigData: BiAndAnalyticsDataType = {
     mainTitle: "Big Data Analytics",
-    subTitle: "Discover the power of our Big Data Analytics services, meticulously designed to transform raw data into actionable insights. With our tailored approach, we seamlessly integrate data collection, analysis and visualization, unveiling hidden opportunities for growth within your organization. Our bespoke solutions empower businesses to optimize operations and navigate towards sustained success in today's ever-evolving landscape.",
+    subTitle: "Explore the power of our Big Data Analytics service, which is optimized to turn random data into actionable insights. With our tailored methodology, we seamlessly integrate data collecting, analytics, and visualization to find hidden potential for growth within your firm. Our customized solutions empower businesses to maximize efficiency and navigate the path to ongoing success in today’s ever-changing landscape.",
     secondSectionImage: BigDataCollectionImage,
     secondTitle: "Unveiling Insights with Big Data Analytics",
-    secondSubTitle: "Cultivating a rich data ecosystem, our approach to data collection and integration is a meticulous orchestration of gathering and harmonizing diverse datasets from a myriad of sources. Through a systematic process of acquisition, organization and standardization, we ensure not just consistency and accuracy but a seamless fusion that illuminates insights previously hidden in the data's complexity. By integrating these disparate datasets, organizations are empowered with a panoramic view of their operations, customer behaviors and market dynamics. This holistic perspective becomes the cornerstone for informed decision-making and strategic planning, propelling businesses towards agile and future-ready strategies.",
+    secondSubTitle: "Building a rich data ecosystem, our approach to collecting and integrating data is a careful orchestration of collecting and reconciling data sets from myriad sources Through systematic access, organization and standardization and we ensure not only exact consistency but seamless fusion. Integrating these types of data enables organizations to gain a comprehensive view of their operations, customer behavior and market dynamics This holistic approach is the cornerstone of, and provides, informed decision making and strategic planning businesses move to faster and future-ready processes.",
     cardsTitle: "benefits in our big data analytics service spectrum",
     cards: [
         {
             title: "Data Quality Assurance",
-            message: "Prioritize accuracy, completeness and relevance of data for generating reliable insights.",
+            message: "Prioritize accurate, complete and relevant data to provide reliable insights.",
             image: DataQualityImage
         },
         {
             title: "Scalability",
-            message: "Choose tools and infrastructure capable of handling large data volumes and increasing processing demands as the business grows.",
+            message: "Select tools and services that can handle the project’s increasing data volumes and increase processing requirements.",
             image: DataScalabilityImage
         },
         {
-            title: "Advanced Analytical Techniques",
-            message: "Utilize machine learning and predictive analytics to uncover deep insights within the data.",
+            title: "Advanced Research Methods",
+            message: "Use machine learning and predictive analytics to unlock deep insights in the data.",
             image: DataAnalyticalImage
         },
         {
-            title: "Actionable Insights",
-            message: " Translate analysis findings into tangible strategies and decisions that benefit the organization.",
+            title: "Applicable search",
+            message: "Translate analytical findings into tangible strategies and decisions that benefit the organization.",
             image: DataInsightsImage
         },
         {
-            title: "Effective Visualization",
-            message: "Communicate insights through data visualization techniques, aiding understanding and decision-making across the organization.",
+            title: "Effective Graphic Design",
+            message: "Communicate insights through data visualization techniques, contributing to understanding and decision-making across the organization.",
             image: DataVisualizationImage
         },
         {
             title: "Integration and Development",
-            message: "Implement practices to ensure smooth data workflows and adaptability to changing business needs and data environments.",
+            message: "Implement practices to ensure smooth data operations and adapt to changing business needs and data environments.",
             image: DataCiAndCdImage
         }
     ],

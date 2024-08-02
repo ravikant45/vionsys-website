@@ -39,7 +39,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-cardPara font-normal max-w-sm dark:text-neutral-300"
               >
-                Our vision is to be a leading provider of innovative IT solutions, driving digital transformation and empowering businesses to thrive in the ever-evolving technological landscape.
+                Vionsys, a pioneering IT solutions provider, specializes in software development, cloud services, and cybersecurity. We provide innovative, scalable solutions to accelerate corporate growth and efficiency while providing sturdy, secure, and cutting-edge technology for a competitive advantage.
               </CardItem>
             </div>
           </CardBody>
@@ -71,7 +71,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-cardPara font-normal max-w-sm dark:text-neutral-300"
               >
-                Our mission is to deliver exceptional IT solutions tailored to the unique needs of our clients, leveraging cutting- edge technologies, fostering innovation and providing unparalleled customer satisfaction.
+                We aim to provide innovative IT solutions that improve efficiency and drive growth. We are committed to driving innovation, ensuring the highest level of service, and building lasting relationships with our customers by understanding and meeting their unique needs. Through our expertise and commitment, we aim to create a transformational impact on businesses and communities worldwide.
               </CardItem>
             </div>
           </CardBody>
@@ -103,7 +103,7 @@ function ThreeDCard() {
                 translateZ="60"
                 className="text-cardPara font-normal max-w-sm  dark:text-neutral-300"
               >
-                Embodying a culture of innovation, integrity and collaboration, we strive for excellence in every endeavor. Our commitment to customer-centricity ensures unwavering dedication to client success, fostering enduring relationships built on trust, transparency and exceptional service.
+                We value innovation, customer focus, integrity, excellence, collaboration, empowerment, and sustainability. Our goal is to deliver cutting-edge IT solutions with transparency and ethical standards, encourage teamwork, and drive positive change for our customers and communities.
               </CardItem>
             </div>
           </CardBody>
