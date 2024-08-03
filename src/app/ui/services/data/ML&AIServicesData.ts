@@ -66,7 +66,7 @@ const MLAIServicesData: MLAIServicesData = {
     {
       id: 2,
       icon: IoChatbox,
-      title: "AI&ML Development",
+      title: "AI & ML Development",
       description: "We provide end-to-end development services for AI and ML applications, ensuring your solutions are robust and scalable and deliver the results you want.",
       subTitle: "Our development services include:",
       list: [
@@ -118,7 +118,7 @@ const MLAIServicesData: MLAIServicesData = {
     {
       id: 6,
       icon: RiAiGenerate,
-      title: "AI and ML support and maintenance",
+      title: "AI and ML Support",
       description: "Our support and maintenance services ensure that your AI and ML solutions continue to deliver value over time.",
       subTitle: "We recommend that:",
       list: [
