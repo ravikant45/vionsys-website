@@ -39,11 +39,11 @@ interface SoftwareServicesData {
 const SoftwareServicesData: SoftwareServicesData = {
   headline: " SOFTWARE DEVELOPMENT",
   paragraph:
-    "Choosing us for your software development needs means choosing a partner dedicated to your success. We don't just write code, we craft digital experiences that resonate with your audience and drive results. Our secret sauce? A perfect blend of expertise, innovation and customer-centricity.",
+    "At Vionsys IT Solutions India Pvt Ltd, we specialize in turning innovative ideas into robust software solutions. Our team of experienced professionals and engineers is dedicate d to delivering high-quality software that meets your business needs and exceeds your expectations.",
   Services: [
     {
       id: 1,
-      title: "Custom Development",
+      title: "Custom Software Development",
       logo: BiSolidCustomize,
       desc: "Unique and innovative software solutions tailored to your specific business needs.",
     },

@@ -123,9 +123,9 @@ function Future() {
                       <div className="w-full h-full flex flex-col justify-center gap-4 px-2">
                         <ul>
                           {card.back.list.map((item) => (
-                            <li key={item.title} className="flex flex-col justify-start items-start">
-                              <span className="text-sm font-semibold underline text-blue-600">{item.title}:</span>
-                              <span className="text-sm text-start ml-4">{item.description}</span>
+                            <li key={item?.title} className="flex flex-col justify-start items-start">
+                              <span className="text-md font-medium underline text-white">{item?.title}:</span>
+                              <span className="text-sm text-start ml-4">{item?.description}</span>
                             </li>
                           ))}
                         </ul>

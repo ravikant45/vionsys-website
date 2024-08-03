@@ -1,9 +1,6 @@
+"use client";
 import React from 'react';
-
-import Image from 'next/image';
-
-import ChooseUsIMG from '../../../../public/assets/Home/ChooseUs.svg';
-
+import { motion } from "framer-motion";
 function ChooseUs() {
   const card = [
     {
@@ -41,12 +38,30 @@ function ChooseUs() {
   ]
   return (
     <section className='w-screen bg-slate-100 py-4'>
-      <h2 className='capitalize text-MainHeading text-[#215cbc] font-bold text-center'>Why choose us</h2>
+      <motion.h2
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.2,
+          x: { type: 'spring', stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: 'easeInOut',
+        }}
+        className='capitalize text-MainHeading text-[#215cbc] font-bold text-center'>Why choose us</motion.h2>
       {/* Data */}
       <div className='grid overflow-hidden lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 px-6 py-6 grid-cols-1 justify-items-center items-center gap-8 mx-2'>
         {
           card.map((card, index) => (
-            <div key={index} className={`relative w-[270px] h-[390px] rounded-[45%_5%_40%_5%_/_30%_5%_31%_5%] shadow-md shadow-blue5 flex flex-col justify-center items-center ${card.color}`}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.2,
+                scale: { type: 'spring', stiffness: 30 },
+                opacity: { duration: 0.6 },
+                ease: 'easeInOut',
+              }}
+              key={index} className={`relative w-[270px] h-[390px] rounded-[45%_5%_40%_5%_/_30%_5%_31%_5%] shadow-md shadow-blue5 flex flex-col justify-center items-center ${card.color}`}>
 
               <div className={`w-[105%] bg-white bg-dot-slate-300 text-black px-4 py-2 rounded-md shadow-md shadow-blue5 ${card.first}`}>
                 <span className="text-xl font-bold text-blue2 flex items-center justify-center">{card?.title}</span>
@@ -56,7 +71,7 @@ function ChooseUs() {
                 <p>{card?.description}</p>
               </div>
 
-            </div>
+            </motion.div>
           ))
         }
       </div>

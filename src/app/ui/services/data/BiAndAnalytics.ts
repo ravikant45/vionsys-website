@@ -32,40 +32,40 @@ import ScalableSolutions from "../../../../../public/assets/services/AIBigDataAn
 
 export const BiAndAnalyticsData: BiAndAnalyticsDataType = {
     mainTitle: "Business Intelligence & Analytics Services",
-    subTitle: "Our tailored Business Intelligence and Analytics Services seamlessly convert data into strategic assets, empowering proactive decision-making. Through meticulous data collection, analysis and visualization, we unveil hidden insights and growth opportunities within your organization. With our bespoke solutions, businesses optimize operations and propel towards sustained success in today's dynamic landscape.",
+    subTitle: "Our business intelligence and well-designed analytics services transform data into strategic assets that empower proactive decision-making. Through careful data collection, analysis, and visualization, we uncover hidden insights and growth opportunities within your organization. With our bespoke solutions, businesses optimize productivity and continue to thrive in today’s dynamic environment.",
     secondSectionImage: DataCollectionImage,
     secondTitle: "Unlock Insights with Advanced Analytics",
-    secondSubTitle: "Leverage our cutting-edge analytics solutions to extract valuable insights from your data. Our advanced techniques and expertise help you uncover hidden trends, predict future outcomes and make data-driven decisions with confidence. Whether you are aiming to optimize operations, enhance customer experiences or drive innovation, our analytics services provide the competitive edge you need in today's dynamic business landscape.",
+    secondSubTitle: "Extract valuable insights from your data by leveraging our state-of-the-art analytics solutions. Our advanced methods and expertise help you uncover hidden trends, predict future results, and make data-driven decisions with confidence. Whether you are aiming to improve efficiency, enhance customer experience, or drive innovation, our research activities will provide the competitive edge you need in today’s dynamic business environment.",
     cardsTitle: "benefits in our bi and analytics service spectrum",
     cards: [
         {
             title: "Data-Driven Decision Making",
-            message: "Data-driven decision making harnesses the power of data analysis to inform strategic choices and drive organizational success.",
+            message: "Data-driven decision making uses the power of data analytics to inform strategic choices and drive organizational success.",
             image: DataDrivenImage
         },
         {
-            title: "Improved Operational Efficiency",
-            message: "Improved operational efficiency optimizes workflows and resource allocation, leading to streamlined processes and cost savings.",
+            title: "Improve Productivity",
+            message: "Improved operational efficiencies improve operational and distribution efficiencies, resulting in smooth scheduling and cost reduction.",
             image: OperationalEfficency
         },
         {
-            title: "Enhanced Performance Monitoring",
-            message: "Enhanced performance monitoring provides insights key metrics, enabling adjustments and improved business outcomes.",
+            title: "Enhanced Performance Management",
+            message: "Enhanced performance management provides key metrics to be analyzed, providing flexibility and improved business results.",
             image: PerformanceMonitoring
         },
         {
             title: "Innovation and Product Development",
-            message: "Data insights fuel innovation, guiding the development of new products and strategies for market success.",
+            message: "Data insights fuel innovation, guide innovation and strategic market success.",
             image: InnovationImage
         },
         {
-            title: "Efficient Resource Allocation",
-            message: "Efficient resource allocation optimizes utilization and minimizes waste, enhancing overall productivity and profitability.",
+            title: "Distribution of efficiencies",
+            message: "Efficient resource allocation leads to better utilization and reduced waste, increasing both efficiency and profitability.",
             image: ResourceAllocation
         },
         {
             title: "Scalable Solutions",
-            message: "Adapt and grow with flexible BI and analytics solutions that scale with your business needs.",
+            message: "Adapt and grow with flexible BI and analytics solutions that match your business needs.",
             image: ScalableSolutions
         }
     ],
