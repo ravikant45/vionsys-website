@@ -1,21 +1,81 @@
+"use client";
 import React from 'react';
-
-import Image from 'next/image';
-
-import ChooseUsIMG from '../../../../public/assets/Home/ChooseUs.svg';
-
+import { motion } from "framer-motion";
 function ChooseUs() {
+  const card = [
+    {
+      id: 1,
+      title: "Skills",
+      description: "We have a talented team of professionals who specialize in various areas of IT, including web design, UI/UX design, branding, digital marketing, software development, graphic design, SEO and online advertising.",
+      first: 'order-1 mt-10',
+      second: 'order-2',
+      color: "bg-[#fccb9f]"
+    },
+    {
+      id: 2,
+      title: "Quality Assurance",
+      description: "We maintain high standards of quality in all supplies. The team follows a rigorous testing and quality control process to ensure products and services meet or exceed customer expectations.",
+      first: 'order-2 mt-0',
+      second: 'order-1',
+      color: "bg-[#fccb9f]"
+    },
+    {
+      id: 3,
+      title: "Timely Deliveries",
+      description: "We value time and ensure that all services are delivered within the agreed timeline. The team follows a meticulous process to ensure that projects are completed on time without compromising on quality.",
+      first: 'order-1 mt-10',
+      second: 'order-2',
+      color: "bg-[#fccb9f]"
+    },
+    {
+      id: 4,
+      title: "Well-Designed Plan",
+      description: "The company uses agile development methodologies to ensure the business process is simple and efficient. Focused on delivering solutions on time and budget, Vionsys IT Solutions helps businesses save time and effort.",
+      first: 'order-2 mt-0',
+      second: 'order-1',
+      color: "bg-[#fccb9f]"
+    }
+  ]
   return (
-    <div className='grid overflow-x-hidden md:grid-cols-2 px-6 py-4 grid-cols-1 bg-slate-100 justify-items-center items-center'>
-      <div className=''>
-        <p data-aos="fade-right" className='font-extrabold text-MainHeading'>Why choose us?</p>
-        <p data-aos="fade-left" className='text-SubHeading font-bold mt-5'>Ensure the protection of your brand with our Cybersecurity & IT Solutions</p>
-        <p data-aos="fade-up" className='text-paragraph mt-5 mb-5'>Choose us for your IT requirements as we provide innovative solutions, have a team of highly skilled experts, provide reliable support and prioritize customer satisfaction to propel your business towards success.</p>
+    <section className='w-screen bg-slate-100 py-4'>
+      <motion.h2
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.2,
+          x: { type: 'spring', stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: 'easeInOut',
+        }}
+        className='capitalize text-MainHeading text-[#215cbc] font-bold text-center'>Why choose us</motion.h2>
+      {/* Data */}
+      <div className='grid overflow-hidden lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 px-6 py-6 grid-cols-1 justify-items-center items-center gap-8 mx-2'>
+        {
+          card.map((card, index) => (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.2,
+                scale: { type: 'spring', stiffness: 30 },
+                opacity: { duration: 0.6 },
+                ease: 'easeInOut',
+              }}
+              key={index} className={`relative w-[270px] h-[390px] rounded-[45%_5%_40%_5%_/_30%_5%_31%_5%] shadow-md shadow-blue5 flex flex-col justify-center items-center ${card.color}`}>
+
+              <div className={`w-[105%] bg-white bg-dot-slate-300 text-black px-4 py-2 rounded-md shadow-md shadow-blue5 ${card.first}`}>
+                <span className="text-xl font-bold text-blue2 flex items-center justify-center">{card?.title}</span>
+              </div>
+
+              <div className={`p-4 text-black ${card.second}`}>
+                <p>{card?.description}</p>
+              </div>
+
+            </motion.div>
+          ))
+        }
       </div>
-      <div>
-        <Image data-aos="zoom-in" src={ChooseUsIMG} quality={100} alt='' className='p-6' />
-      </div>
-    </div>
+    </section>
   )
 }
 

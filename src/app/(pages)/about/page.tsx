@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import LifeAtVionsys from "../../ui/about/LifeAtVionsys";
 import ISOLogo from "@/components/ui/ISOLogo";
 import CeoDesk from "@/app/ui/about/CeoDesk";
+import CeoDesk2 from "@/app/ui/about/CeoDesk2";
 const AboutUs = dynamic(() => import("../../ui/about/AboutUs"), {
   loading: () => <p>Loading...</p>,
 });
@@ -29,8 +30,9 @@ const page = () => {
   return (
     <div className="pt-16 overflow-x-hidden">
       <AboutUs />
-      <CeoDesk />
+      {/* <CeoDesk /> */}
       <About2 />
+      <CeoDesk2 />
       <ThreeDCard />
       <LifeAtVionsys />
       <ISOLogo />

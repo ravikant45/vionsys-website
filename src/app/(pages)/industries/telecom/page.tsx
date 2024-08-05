@@ -1,9 +1,22 @@
-import React from 'react'
+import Hero from "@/app/ui/industries/telecom/Hero";
+import ChooseUs from "@/app/ui/industries/telecom/ChooseUs";
+import CTA from "@/app/ui/industries/telecom/CTA";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <>
+      <div className="overflow-x-hidden">
+        {/* Hero Section */}
+        <Hero />
 
-export default page
+        {/* Why Choose Us Section */}
+        <ChooseUs />
+
+        {/* CTA */}
+        <CTA />
+      </div>
+    </>
+  );
+};
+
+export default page;
