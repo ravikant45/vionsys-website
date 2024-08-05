@@ -1,3 +1,5 @@
+"use client"
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 
@@ -8,16 +10,43 @@ export default function Herosection() {
       <div className="flex flex-col justify-center">
         <div className="max-w-xl mb-6">
         
-          <h2 data-aos="fade-down" className="max-w-lg mb-6 text-MainHeading font-bold tracking-tight">
+          <motion.h2
+           initial={{ opacity: 0, x: -100 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           transition={{
+             delay: 0.3,
+             x: { type: "spring", stiffness: 30 },
+             duration: 0.6,
+             ease: "easeInOut",
+           }}
+           className="max-w-lg mb-6 text-MainHeading font-bold tracking-tight">
           Driving Competitiveness and Compliance: Vionsys IT Solutions for the Financial Sector
-          </h2>
-          <p data-aos="fade-down" className="text-base text-gray-700 md:text-lg">
+          </motion.h2>
+          <motion.p 
+           initial={{ opacity: 0, x: -100 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           transition={{
+             delay: 0.3,
+             x: { type: "spring", stiffness: 30 },
+             duration: 0.6,
+             ease: "easeInOut",
+           }}
+           className="text-base text-gray-700 md:text-lg">
           Innovative IT solutions are needed to maintain competitiveness, guarantee compliance and improve customer experience in a dynamic and highly regulated financial sector Vionys IT Solutions India Pvt Ltd specializes in IT services an innovative platform that targets the specific challenges and expectations of financial institutions including banks and insurance companies as well as corporate venture capitalists and fintech startups.
-          </p>
+          </motion.p>
         </div>
        
       </div>
-      <div data-aos="zoom-in" className="relative rounded-xl flex justify-center items-center ">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.3,
+          scale: { type: "spring", stiffness: 30 },
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+       className="relative rounded-xl flex justify-center items-center ">
         <Image 
          className='object-cover w-full h-full'
          src="/assets/Industries/finance/Sector.jpg"
@@ -26,7 +55,7 @@ export default function Herosection() {
          alt=""
         />
        
-      </div>
+      </motion.div>
     </div>
   </div>
   )

@@ -18,7 +18,7 @@ const Service = () => {
           icons: <AiOutlineAppstoreAdd className="h-20 w-20 p-3" />,
           title: "Software Solutions",
           img: "/assets/Industries/Field/Field11.jpg",
-          para1: "Field Service Management Software",
+          para1: "Field Service Management",
           Des1: "Develop and implement solutions for scheduling, and field personnel management.",
           para2: "Client Relationship Management",
           Des2: "Integrate CRM technologies to manage customer interactions, and track service history.",
