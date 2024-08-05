@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { MdOutlineMail } from "react-icons/md";
-import { GrLocation } from "react-icons/gr";
-import { TbDeviceLandlinePhone } from "react-icons/tb";
 import LinkedIn from "../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../public/assets/socialicons/facebook.png";
@@ -11,19 +8,19 @@ import Twitter from "../../../../public/assets/socialicons/Twitter4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import LogoImage from "/public/assets/logo.png";
- 
-  const industries = [
-    "IT Digital Transformation",
-    "Banking",
-    "Pharmaceutical",
-    "Education",
-    "Insurance",
-    "E-Commerce",
-    "Construction",
-    "Healthcare",
-    "Field Services",
-    "Finance"
-  ];
+
+const industries = [
+  "IT Digital Transformation",
+  "Banking",
+  "Pharmaceutical",
+  "Education",
+  "Insurance",
+  "E-Commerce",
+  "Construction",
+  "Healthcare",
+  "Field Services",
+  "Finance"
+];
 const Footer = () => {
   const columnStyle: React.CSSProperties = {
     textAlign: "left",
@@ -49,13 +46,13 @@ const Footer = () => {
                 className=" text-start text-2xl text-white font-bold"
               >
                 {/* Logo */}
-                { <div className="text-center md:text-left flex justify-left items-center ">
-              <Image
-                src={LogoImage}
-                alt=""
-                className="bg-white text-center object-contain rounded-md px-4 h-20 w-64"
-              />
-            </div> }
+                {<div className="text-center md:text-left flex justify-left items-center ">
+                  <Image
+                    src={LogoImage}
+                    alt=""
+                    className="bg-white text-center object-contain rounded-md px-4 h-20 w-64"
+                  />
+                </div>}
               </motion.h3>
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
@@ -74,7 +71,7 @@ const Footer = () => {
                 cloud services and IT consulting, we enable businesses to excel
                 in the digital age.{" "}
               </motion.p>
-             
+
             </div>
 
             {/* Our Services */}
@@ -103,30 +100,30 @@ const Footer = () => {
                 }}
                 className="grid md:grid-cols-2 grid-cols-1 gap-2 text-base"
               >
-                <Link href="/services/softwareDevelopment">
+                <Link href="/services/software-development">
                   Software Development
                 </Link>
-                <Link href="/services/webDevelopment">Web Development</Link>
+                <Link href="/services/web-development">Web Development</Link>
 
                 <Link href="/services/salesforce">Salesforce</Link>
                 <Link href="/services/devOps">DevOps Solutions</Link>
-                <Link href="/services/cloudComputing">Cloud Computing</Link>
+                <Link href="/services/cloud-computing">Cloud Computing</Link>
                 <Link href="/services/crm">CRM</Link>
-                <Link href="/services/digitalMarketing">Digital Marketing</Link>
-                <Link href="/services/biAnalytics">BI and Analytics</Link>
+                <Link href="/services/digital-marketing">Digital Marketing</Link>
+                <Link href="/services/bi-analytics">BI and Analytics</Link>
                 <Link href="/services/testing">Testing and QA</Link>
-                  <Link href="/services/productDevelopment">
-                    Product Development
-                  </Link>
-                <Link href="/services/bigDataAnalytics">
+                <Link href="/services/product-development">
+                  Product Development
+                </Link>
+                <Link href="/services/big-data-analytics">
                   Big Data Analytics
                 </Link>
-                <Link href="/services/machineLearningAI">
+                <Link href="/services/ML-AI">
                   Machine Learning and AI
                 </Link>
               </motion.div>
-               {/* social media icons */}
-               <motion.div
+              {/* social media icons */}
+              <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -176,37 +173,37 @@ const Footer = () => {
               </motion.div>
             </div>
             {/* industries */}
-              <div className=" md:text-left flex flex-col col-span-2 gap-2">
-                <motion.h3
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.3,
-                    y: { type: "spring", stiffness: 30 },
-                    opacity: { duration: 0.6 },
-                    ease: "easeIn",
-                  }}
-                  className="md:text-2xl text-xl text-start text-white font-bold mb-2"
-                >
-                  Industries
-                </motion.h3>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.3,
-                    y: { type: "spring", stiffness: 30 },
-                    opacity: { duration: 0.6 },
-                    ease: "easeIn",
-                  }}
-                >
-                  <ul className="grid md:grid-cols-2 grid-cols-1 gap-2 text-base">
+            <div className=" md:text-left flex flex-col col-span-2 gap-2">
+              <motion.h3
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                }}
+                className="md:text-2xl text-xl text-start text-white font-bold mb-2"
+              >
+                Industries
+              </motion.h3>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  y: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                }}
+              >
+                <ul className="grid md:grid-cols-2 grid-cols-1 gap-2 text-base">
                   {industries.map((industry, index) => (
                     <li key={index}>{industry}</li>
                   ))}
                 </ul>
-                </motion.div>
-              </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
