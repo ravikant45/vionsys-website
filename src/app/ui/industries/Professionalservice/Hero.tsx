@@ -1,6 +1,6 @@
-import Link from "next/link";
+"use client"
 import React from "react";
-
+import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <>
@@ -48,20 +48,17 @@ const Hero = () => {
         </div>
         <div className="py-10 flex md:h-screen h-full items-center justify-center">
           <div className="max-w-full flex-shrink-0 px-4 text-center lg:max-w-4xl lg:py-8 pt-10">
-            <h1
-              data-aos="fade-left"
-              data-aos-duration="600"
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
               className="md:text-5xl text-3xl font-bold tracking-tight text-white"
             >
               Revolutionize
-              <span className="text-sky-500"> Professional Services</span> With
+              <span className="text-blue-600"> Professional Services</span> With
               <span className="text-amber-500"> Vionsys</span>
-            </h1>
-            <p
-              data-aos="fade-right"
-              data-aos-duration="600"
-              className="py-6 md:text-lg text-sm leading-6 text-gray-300"
-            >
+            </motion.h1>
+            <p className="py-6 md:text-lg text-sm leading-6 text-gray-200">
               In an increasingly competitive business environment, businesses
               need expert advice and personalized solutions to tackle complex
               obstacles and achieve their strategic goals. Vionsys IT Solutions
