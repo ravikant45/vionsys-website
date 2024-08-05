@@ -66,13 +66,13 @@ const videos: Video[] = [
     video: "/assets/Home/HomeV1.mp4",
     title: "Software Development",
     desc: "Your one-stop destination for top-notch software design & development services.",
-    link: "/services/softwareDevelopment",
+    link: "/services/software-development",
   },
   {
     video: "/assets/Home/HomeV2.mp4",
     title: "Machine Learning and AI",
     desc: "Elevate your business with advanced Machine Learning & AI technologies. Harness data-driven insights for smarter decisions and innovation.",
-    link: "/services/machineLearningAI",
+    link: "/services/ML-AI",
   },
   {
     video: "/assets/Home/HomeV5.mp4",
@@ -84,7 +84,7 @@ const videos: Video[] = [
     video: "/assets/Home/HomeV4.mp4",
     title: "Digital Marketing",
     desc: "Efficient Digital Marketing Solutions for Streamlined Results. Maximize Impact, Minimize Effort.",
-    link: "/services/digitalMarketing",
+    link: "/services/digital-marketing",
   },
 ];
 
