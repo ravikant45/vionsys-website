@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import ITHero from "@/../public/assets/industries/ITDigital/ITHero.jpg"
 
 const Hero = () => {
   return (
@@ -10,7 +9,7 @@ const Hero = () => {
           alt="Hero Image"
           className="md:h-full h-[40vh] w-full object-fit opacity-35"
           height={1080}
-          src={ITHero}
+          src={"/assets/Industries/ITDigital/ITHero.jpg"}
           style={{
             aspectRatio: "1920/1080",
             objectFit: "cover",
