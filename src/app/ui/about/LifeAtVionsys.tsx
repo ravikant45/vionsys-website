@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client"
 import React from "react";
 import { FaHandsHelping } from "react-icons/fa";
 import { FaUsersGear } from "react-icons/fa6";
@@ -7,7 +7,7 @@ import { FaBrain } from "react-icons/fa6";
 import { FaBriefcase } from "react-icons/fa6";
 import { FaBalanceScale } from "react-icons/fa";
 import { Metadata } from "next";
-
+import { motion } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Life At Vionsys",
@@ -21,9 +21,16 @@ const LifeAtVionsys: React.FC = () => {
       description:
         "We offers a comprehensive benefits package that includes healthcare, retirement plans, wellness programs and other perks designed to support employees' health, financial security and overall well-being.",
       icon: (
-        <div data-aos="flip-right" className="p-4  rounded-full relative z-20 ">
+        <motion.div  initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="p-4  rounded-full relative z-20 ">
           <FaHandsHelping size={45} className="text-blue1" />
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -32,9 +39,16 @@ const LifeAtVionsys: React.FC = () => {
       description:
         "We foster a vibrant and inclusive culture that values diversity, teamwork and respect. We encourage our employees to bring their authentic selves to work and contribute to a positive and supportive environment",
       icon: (
-        <div data-aos="flip-right" className="p-4  rounded-full relative z-20 ">
+        <motion.div  initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="p-4  rounded-full relative z-20 ">
           <FaUsersGear  size={45} className="text-blue1" />
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -43,9 +57,16 @@ const LifeAtVionsys: React.FC = () => {
       description:
         "We recognize the importance of work-life balance and offer flexible work arrangements, including remote work options and flexible hours, to help employees manage their responsibilities effectively.",
       icon: (
-        <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
+        <motion.div  initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="p-4 rounded-full relative z-20">
           <FaRegClock  size={45} className="text-blue1" />
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -54,9 +75,16 @@ const LifeAtVionsys: React.FC = () => {
       description:
         "We promotes a culture of innovation and collaboration where employees are encouraged to think creatively, share ideas and collaborate across teams to drive business growth and achieve shared goals.",
       icon: (
-        <div data-aos="flip-right" className="p-4 rounded-full relative z-20 ">
+        <motion.div  initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="p-4 rounded-full relative z-20 ">
           <FaBrain  size={45} className="text-blue1" />
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -65,9 +93,16 @@ const LifeAtVionsys: React.FC = () => {
       description:
         "We invest in our employees' professional development by offering training programs, mentorship opportunities, and career advancement pathways to help them grow their skills and advance their careers.",
       icon: (
-        <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
+        <motion.div  initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="p-4 rounded-full relative z-20">
           <FaBriefcase  size={45} className="text-blue1" />
-        </div>
+        </motion.div>
       ),
     },
     {
@@ -76,9 +111,16 @@ const LifeAtVionsys: React.FC = () => {
         description:
           "WWe foster a healthy work-life balance, empowering employees to manage their workload efficiently while prioritizing family time. This dedication enhances professional satisfaction and happiness.",
         icon: (
-          <div data-aos="flip-right" className="p-4 rounded-full relative z-20">
+          <motion.div  initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="p-4 rounded-full relative z-20">
             <FaBalanceScale  size={45} className="text-blue1" />
-          </div>
+          </motion.div>
         ),
       },
   ];

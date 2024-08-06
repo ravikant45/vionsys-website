@@ -1,7 +1,8 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
+import { motion } from "framer-motion";
 interface Video {
   video: any;
   title: string;
@@ -25,8 +26,9 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
   isVisible,
 }) => (
   <div
-    className={`relative ${isVisible ? "" : "hidden"
-      } h-[30rem] md:h-full w-[100vw]`}
+    className={`relative ${
+      isVisible ? "" : "hidden"
+    } h-[30rem] md:h-full w-[100vw]`}
   >
     <video
       className="w-full h-full object-cover opacity-50"
@@ -38,8 +40,15 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
       Your browser does not support the video tag.
     </video>
     <div className="absolute items-center left-1 h-full top-0 flex w-full p-2 md:p-5">
-      <div
-        data-aos="fade-right"
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.2,
+          x: { type: "spring", stiffness: 20 },
+          opacity: { duration: 0.4 },
+          ease: "easeInOut",
+        }}
         className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3"
       >
         <h1 className="loop_video_title text-4xl md:text-6xl text-white max-w-[50rem] font-bold">
@@ -56,7 +65,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
         <Link href={link}>
           <Button>Discover with us</Button>
         </Link>
-      </div>
+      </motion.div>
     </div>
   </div>
 );
