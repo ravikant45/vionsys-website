@@ -1,5 +1,7 @@
+"use client"
 import { Button } from '@/components/ui/button';
 import { Solutions } from '@/utils/Solutions';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react'
 import { SiSitepoint } from "react-icons/si";
@@ -27,7 +29,16 @@ export default function SecondSection() {
 
       <div className="grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
-        <div data-aos="flip-down" className="max-w-md">
+        <motion.div 
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.3,
+          scale: { type: "spring", stiffness: 30 },
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+             className="max-w-md">
           <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-xl bg-indigo-50">
             {/* sdfgh */}
             <SiSitepoint className='text-[20px]'/>
@@ -36,9 +47,18 @@ export default function SecondSection() {
           <p className="mb-3 text-sm text-gray-900">
             {data.para1}
           </p>
-        </div>
+        </motion.div>
 
-        <div data-aos="flip-down" className="max-w-md">
+        <motion.div 
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.3,
+          scale: { type: "spring", stiffness: 30 },
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className="max-w-md">
           <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-xl bg-indigo-50">
             {/* sdfghj */}
             <SiSitepoint className='text-[20px]'/>
@@ -47,9 +67,18 @@ export default function SecondSection() {
           <p className="mb-3 text-sm text-gray-900">
             {data.para2}
           </p>
-         </div>
+         </motion.div>
 
-        <div data-aos="flip-down" className="max-w-md">
+        <motion.div
+       initial={{ opacity: 0, scale: 0.5 }}
+       whileInView={{ opacity: 1, scale: 1 }}
+       transition={{
+         delay: 0.3,
+         scale: { type: "spring", stiffness: 30 },
+         duration: 0.3,
+         ease: "easeInOut",
+       }}
+         className="max-w-md">
           <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-xl bg-indigo-50">
            {/* dfghj */}
            <SiSitepoint className='text-[20px]'/>
@@ -58,9 +87,18 @@ export default function SecondSection() {
           <p className="mb-3 text-sm text-gray-900">
            {data.para3}
           </p>
-          </div>
+          </motion.div>
 
-        <div data-aos="flip-down" className="max-w-md">
+        <motion.div 
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.3,
+          scale: { type: "spring", stiffness: 30 },
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+         className="max-w-md">
           <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-xl bg-indigo-50">
             {/* asdfgh */}
             <SiSitepoint className='text-[20px]'/>
@@ -69,7 +107,7 @@ export default function SecondSection() {
           <p className="mb-3 text-sm text-gray-900">
            {data.para4}
           </p>
-          </div>
+          </motion.div>
 
       </div>
       </div>
@@ -82,17 +120,44 @@ export default function SecondSection() {
 <div className="p-8 bg-slate-500 bg-opacity-10 border-t rounded-xl shadow-xl ">
 <div className="flex">
 <div className="relative w-full">
-  <h2 data-aos="fade-left" data-aos-duration="500" className="text-center mb-6 text-MainHeading font-bold tracking-tight sm:text-4xl">
+  <motion.h2 
+  initial={{ opacity: 0, x: -100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{
+    delay: 0.3,
+    x: { type: "spring", stiffness: 30 },
+    duration: 0.6,
+    ease: "easeInOut",
+  }}
+   className="text-center mb-6 text-MainHeading font-bold tracking-tight sm:text-4xl">
   Work with Vionys IT Solutions
-  </h2>
-  <p data-aos="fade-right" data-aos-duration="500" className="mb-4 text-base text-center text-gray-700">
+  </motion.h2>
+  <motion.p 
+  initial={{ opacity: 0, x: 100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{
+    delay: 0.3,
+    x: { type: "spring", stiffness: 30 },
+    duration: 0.6,
+    ease: "easeInOut",
+  }}
+  className="mb-4 text-base text-center text-gray-700">
   Vionsys IT Solutions India Pvt. Transform your healthcare operations with Our flagship IT solutions empower healthcare providers to drive operational efficiencies, drive innovation, and deliver better patient care. Contact us today to learn how we can help your organization thrive in the dynamic healthcare landscape.
-  </p>
- <div className='flex justify-center items-center'>
+  </motion.p>
+ <motion.div
+ initial={{ opacity: 0, x: -100 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ transition={{
+   delay: 0.3,
+   x: { type: "spring", stiffness: 30 },
+   duration: 0.6,
+   ease: "easeInOut",
+ }}
+  className='flex justify-center items-center'>
  <Link href={"/contact"}>
-  <Button className="text-lg text-center" data-aos="fade-left" data-aos-duration="500">Contact Us</Button>
+  <Button className="text-lg text-center">Contact Us</Button>
 </Link>
- </div>
+ </motion.div>
 </div>
 </div>
 </div>

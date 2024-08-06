@@ -2,7 +2,7 @@ const itData = [
     {
       id: 1,
       title: "Strategic Assessment and Roadmap Development:",
-      imageSrc: "/assets/industries/ITDigital/Content1.jpg",
+      imageSrc: "/assets/Industries/ITDigital/Content1.jpg",
       items: [
         {
           text: "Current State Assessment:",
@@ -21,7 +21,7 @@ const itData = [
     {
       id: 2,
       title: "Technology Integration",
-      imageSrc: "/assets/industries/ITDigital/Content2.jpg",
+      imageSrc: "/assets/Industries/ITDigital/Content2.jpg",
       items: [
         {
           text: "Cloud Services:",
@@ -40,7 +40,7 @@ const itData = [
     {
       id: 3,
       title: "Process Optimization:",
-      imageSrc: "/assets/industries/ITDigital/Content3.jpg",
+      imageSrc: "/assets/Industries/ITDigital/Content3.jpg",
       items: [
         {
           text: "Business process restructuring (BPR):",
@@ -59,7 +59,7 @@ const itData = [
     {
       id: 4,
       title: "Cybersecurity and Compliance",
-      imageSrc: "/assets/industries/ITDigital/Content4.jpg",
+      imageSrc: "/assets/Industries/ITDigital/Content4.jpg",
       items: [
         {
           text: "Risk Analysis:",

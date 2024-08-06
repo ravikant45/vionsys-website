@@ -8,7 +8,7 @@ const InsuranceOurServices = () => {
   return (
     <section className="bg-slate-100 py-10 overflow-x-hidden">
       <div className="text-center mb-8">
-        <p className="font-heading text-2xl sm:text-4xl leading-8 font-semibold tracking-tight text-blue2">
+        <p className="font-extrabold text-MainHeading text-center sm:text-4xl leading-8 tracking-tight text-blue2">
           Our Services
         </p>
       </div>

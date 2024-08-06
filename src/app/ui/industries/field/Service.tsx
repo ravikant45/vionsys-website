@@ -18,7 +18,7 @@ const Service = () => {
           icons: <AiOutlineAppstoreAdd className="h-20 w-20 p-3" />,
           title: "Software Solutions",
           img: "/assets/Industries/Field/Field11.jpg",
-          para1: "Field Service Management Software",
+          para1: "Field Service Management",
           Des1: "Develop and implement solutions for scheduling, and field personnel management.",
           para2: "Client Relationship Management",
           Des2: "Integrate CRM technologies to manage customer interactions, and track service history.",
@@ -136,12 +136,12 @@ const Service = () => {
           </div>
 
           <div className="flex flex-col md:flex-row">
-            <div className={`mb-6 md:mb-0 md:p-0 p-3 w-1/3 ${item.className2}`}>
+            <div className={`mb-6 md:mb-0 md:p-0 p-3 md:w-1/3 w-full ${item.className2}`}>
               <Image
-                className="w-full mx-auto rounded-lg"
+                className="mx-auto rounded-lg"
                 src={item.img}
-                width={400}
-                height={300}
+                width={1000}
+                height={1000}
                 alt="can_help_banner"
               />
             </div>

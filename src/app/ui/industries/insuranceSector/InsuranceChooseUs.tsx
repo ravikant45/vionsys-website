@@ -16,7 +16,7 @@ const InsuranceChooseUs = () => {
       <div className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="font-heading mt-2 text-2xl sm:text-4xl leading-8 font-semibold tracking-tight text-blue2">
+            <p className="font-extrabold text-MainHeading text-center font-heading mt-2 sm:text-4xl leading-8 tracking-tight text-blue2">
               Why Choose Vionsys ?
             </p>
           </div>

@@ -9,7 +9,7 @@ const Hero = () => {
           alt="Hero Image"
           className="md:h-full h-[40vh] w-full object-fit opacity-35"
           height={1080}
-          src={"/assets/industries/ITDigital/ITHero.jpg"}
+          src={"/assets/Industries/ITDigital/ITHero.jpg"}
           style={{
             aspectRatio: "1920/1080",
             objectFit: "cover",

@@ -1,17 +1,27 @@
-import Link from "next/link";
+"use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <>
       <section className="pt-10 px-2 md:h-[80vh] sm:py-16 md:py-24 flex items-center justify-center bg-gray-100">
         <div className="mx-auto max-w-4xl text-center py-5">
           {/* <p className="text-lg font-medium leading-8 text-gray-500">Innovative IT Solutions</p> */}
-          <h1 data-aos="fade-left" data-aos-duration="1000" className="text-3xl sm:text-4xl md:text-5xl py-5 lg:text-5xl font-bold leading-10 tracking-tight text-black">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.2,
+              y: { type: "spring", stiffness: 20 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
+            className="text-3xl sm:text-4xl md:text-5xl py-5 lg:text-5xl font-bold leading-10 tracking-tight text-black"
+          >
             Transforming the Future of{" "}
             <span className="text-amber-600">Banking</span>
-          </h1>
-          <p data-aos="fade-right" data-aos-duration="1000" className="text-paragraph md:text-lg leading-relaxed px-4 py-4">
+          </motion.h1>
+          <p className="text-paragraph md:text-lg leading-relaxed px-4 py-4">
             The banking industry is at the forefront of technological
             innovation, it needs robust, secure and scalable IT infrastructure
             to meet today’s banking requirements Vionsys IT Solutions India Pvt
