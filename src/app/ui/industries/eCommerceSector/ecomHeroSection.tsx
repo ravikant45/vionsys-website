@@ -27,14 +27,12 @@ const ecomHeroSection = () => {
               className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 md:px-16 lg:px-32 xl:px-48"
             >
               <h1
-                className="text-orange md:text-5xl text-3xl font-bold mb-4 capitalize"
-                data-aos="fade-down"
+                className="text-orange font-extrabold text-MainHeading md:text-5xl text-3xl mb-4 capitalize"
               >
                 E-commerce Sector
               </h1>
               <p
                 className="lg:text-xl text-Paragraph text-white max-w-3xl"
-                data-aos="fade-up"
               >
                 The e-commerce industry is constantly expanding and changing,
                 driven by technological advancements and changing consumer

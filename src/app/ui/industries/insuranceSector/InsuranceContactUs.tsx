@@ -16,7 +16,7 @@ const InsuranceContactUs = () => {
               }}
               className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
         <div className="lg:text-center">
-          <p className="mt-2 text-MainHeading leading-8 font-semibold tracking-tight text-gray-800 sm:text-4xl">
+          <p className="mt-2 font-extrabold text-MainHeading text-center sm:text-4xl leading-8 tracking-tight  text-gray-800">
             Partner with{" "}
             <span className="text-blue2">Vionsys IT Solutions</span>
           </p>

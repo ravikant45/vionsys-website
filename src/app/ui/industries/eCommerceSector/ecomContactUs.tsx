@@ -16,7 +16,7 @@ const ecomContactUs = () => {
           }}
           className="md:text-MainHeading text-CardHeading font-extrabold md:py-2 py-1 capitalize"
         >
-          Partner with Vionsys IT Solutions{" "}
+          Partner with Vionsys IT Solutions
         </motion.h1>
         <motion.p
           initial={{ opacity: 0.0, x: -100 }}
@@ -27,7 +27,7 @@ const ecomContactUs = () => {
             ease: "easeInOut",
           }}
           className="md:text-Paragraph text-Paragraph-sm py-3"
-        >
+          >
           Vionsys IT Solutions India Pvt. Transform your e-commerce operations
           by Our flagship IT solutions help e-commerce organizations achieve
           operational efficiencies, drive innovation and deliver exceptional
