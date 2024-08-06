@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Blogs",
   description:
     "Stay updated with the latest trends, insights, and innovations in the IT industry. Our blog features expert articles, technology updates, and company news, helping you stay ahead in your career and knowledge.",
+
   openGraph: {
     images: "/opangraph.png",
     description:

@@ -4,13 +4,17 @@ import { BiAndAnalyticsData } from "@/app/ui/services/data/BiAndAnalytics";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import Firstsection from "@/app/ui/services/biAnalytics/Firstsection";
 import { Metadata } from "next";
+import { BaseUrl } from "@/app/sitemap";
 
 export const metadata: Metadata = {
   title: "Business Intelligence & Analytics Service",
-  description:"Vionsys IT Solutions India Pvt Ltd's Business Intelligence and Analytics services will help you realize the full potential of data. We offer comprehensive solutions to help businesses make data-driven decisions, streamline processes, and improve business performance. Our skilled team use cutting-edge technology to provide actionable insights that promote growth. Discover how our BI and Analytics services can help your business today. ",
+  description: "Vionsys IT Solutions India Pvt Ltd's Business Intelligence and Analytics services will help you realize the full potential of data. We offer comprehensive solutions to help businesses make data-driven decisions, streamline processes, and improve business performance. Our skilled team use cutting-edge technology to provide actionable insights that promote growth. Discover how our BI and Analytics services can help your business today. ",
+  alternates: {
+    canonical: `${BaseUrl}/services/bi-analytics`
+  },
   openGraph: {
-    images:"/opangraph.png",
-    description:"Vionsys IT Solutions India Pvt Ltd provides superior Business Intelligence and Analytics services to help you maximize the value of your data. Our bespoke solutions include in-depth analysis, real-time reporting, and predictive insights, allowing you to make educated decisions and stay ahead of the competition. Partner with us for tailored BI and Analytics to improve your business intelligence skills.  "
+    images: "/opangraph.png",
+    description: "Vionsys IT Solutions India Pvt Ltd provides superior Business Intelligence and Analytics services to help you maximize the value of your data. Our bespoke solutions include in-depth analysis, real-time reporting, and predictive insights, allowing you to make educated decisions and stay ahead of the competition. Partner with us for tailored BI and Analytics to improve your business intelligence skills.  "
   }
 };
 
@@ -18,7 +22,7 @@ const BiAndAnalyticsDatapage = () => {
   return (
     <main className="pt-16">
       {/* First section */}
-      <Firstsection/>
+      <Firstsection />
       {/* Second section */}
       <section className=" bg-gray-100 w-[100vw] overflow-x-hidden -mt-[70px] pt-16 pb-6 md:pb-16 md:px-10 px-3">
         <div className="w-full">
