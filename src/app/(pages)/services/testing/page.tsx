@@ -21,13 +21,17 @@ import { TbReportAnalytics } from "react-icons/tb";
 import { Metadata } from "next";
 import Link from "next/link";
 import Quality from "/public/assets/services/Testing/Quality.jpeg";
+import { BaseUrl } from "@/app/sitemap";
 
 export const metadata: Metadata = {
   title: "Testing Services",
   description: "Vionsys IT Solutions India Pvt Ltd provides complete Testing and Quality Assurance (QA) services to ensure the reliability and performance of your software. Our skilled team provides comprehensive testing solutions, ranging from functional and performance testing to security and usability tests. Partner with us for comprehensive testing that finds and addresses issues early on, ensuring the success of your product. Choose Vionsys for reliable quality. ",
+  alternates: {
+    canonical: `${BaseUrl}/services/testing`
+  },
   openGraph: {
-    images:"/opangraph.png",
-    description:"Vionsys IT Solutions India Pvt Ltd specializes in offering top-tier testing and quality assurance (QA) services to ensure the delivery of flawless software solutions. Our stringent testing techniques, which include automation, manual, and regression testing, ensure that your apps work well under any conditions. Protect your company's reputation with our complete QA services, which reduce risks and improve software quality. "
+    images: "/opangraph.png",
+    description: "Vionsys IT Solutions India Pvt Ltd specializes in offering top-tier testing and quality assurance (QA) services to ensure the delivery of flawless software solutions. Our stringent testing techniques, which include automation, manual, and regression testing, ensure that your apps work well under any conditions. Protect your company's reputation with our complete QA services, which reduce risks and improve software quality. "
   }
 };
 
@@ -207,7 +211,7 @@ const page: React.FC = () => {
                 data-aos="flip-left"
                 key={service.id}
                 className="flex flex-col py-4 items-center gap-2 bg-white border border-gray-200 rounded-lg shadow-md transition-transform hover:scale-110 hover:z-10 hover:shadow-xl"
-                style={{ margin: "10px" }} 
+                style={{ margin: "10px" }}
               >
                 {service.icon}
                 <h4 className="text-blue3 font-bold items-center relative z-20 bg-clip-text">

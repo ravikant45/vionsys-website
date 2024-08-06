@@ -1,3 +1,4 @@
+import { BaseUrl } from "@/app/sitemap";
 import CaseStudies from "@/app/ui/casestudy/CaseStudies";
 import { Metadata } from "next";
 
@@ -5,6 +6,9 @@ export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "Discover how Vionsys IT Solutions Pvt Ltd has successfully delivered innovative IT solutions to clients across various industries. Our case stories showcase our expertise, commitment, and the impact of our work.",
+  alternates: {
+    canonical: `${BaseUrl}/caseStudies`
+  },
   openGraph: {
     images: "/opangraph.png",
     description:
