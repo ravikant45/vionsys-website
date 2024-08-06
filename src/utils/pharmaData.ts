@@ -12,7 +12,7 @@ export interface Service {
 export const pharmaData: Service[] = [
   {
     title: "Supervision of Clinical Trials",
-    imageSrc: "/assets/industries/Pharma/PharmaContent1.jpg",
+    imageSrc: "/assets/Industries/Pharma/PharmaContent1.jpg",
     features: [
       {
         title: "Clinical Data Management:",
@@ -33,7 +33,7 @@ export const pharmaData: Service[] = [
   },
   {
     title: "Research and Development (R&D):",
-    imageSrc: "/assets/industries/Pharma/PharmaContent2.jpg",
+    imageSrc: "/assets/Industries/Pharma/PharmaContent2.jpg",
     features: [
       {
         title: "Laboratory Information Management Systems (LIMS):",
@@ -54,7 +54,7 @@ export const pharmaData: Service[] = [
   },
   {
     title: "Supply Chain Management",
-    imageSrc: "/assets/industries/Pharma/PharmaContent3.jpg",
+    imageSrc: "/assets/Industries/Pharma/PharmaContent3.jpg",
     features: [
       {
         title: "Inventory Management:",
@@ -75,7 +75,7 @@ export const pharmaData: Service[] = [
   },
   {
     title: "Patient engagement and support",
-    imageSrc: "/assets/industries/Pharma/PharmaContent4.jpg",
+    imageSrc: "/assets/Industries/Pharma/PharmaContent4.jpg",
     features: [
       {
         title: "Patient access:",
@@ -96,7 +96,7 @@ export const pharmaData: Service[] = [
   },
   {
     title: "Data Protection and Privacy",
-    imageSrc: "/assets/industries/Pharma/PharmaContent5.jpg",
+    imageSrc: "/assets/Industries/Pharma/PharmaContent5.jpg",
     features: [
       {
         title: "HIPAA Compliance:",

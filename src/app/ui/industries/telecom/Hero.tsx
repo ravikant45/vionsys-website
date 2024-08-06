@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 
 const Hero = () => {
   return (
@@ -9,9 +8,8 @@ const Hero = () => {
             <div className="flex flex-col md:flex-row items-center">
               <div className="w-full md:w-1/2">
                 <Image
-                  src={"/assets/industries/Telecom/TelecomHero.jpg"}
+                  src={"/assets/Industries/Telecom/TelecomHero.jpg"}
                   alt="Telecommunication"
-                  layout="responsive"
                   width={996}
                   height={480}
                   className="rounded-xl"

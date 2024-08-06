@@ -15,7 +15,7 @@ interface Feature {
 const telecomData: ServiceData[] = [
   {
     subheading: "Network Infrastructure and Management",
-    imageSrc: "/assets/industries/Telecom/TelecomContent1.jpeg",
+    imageSrc: "/assets/Industries/Telecom/TelecomContent1.jpeg",
 
     features: [
       {
@@ -41,7 +41,7 @@ const telecomData: ServiceData[] = [
 
   {
     subheading: "Cloud and Data Center Solutions",
-    imageSrc: "/assets/industries/Telecom/TelecomContent2.jpeg",
+    imageSrc: "/assets/Industries/Telecom/TelecomContent2.jpeg",
 
     features: [
       {
@@ -67,7 +67,7 @@ const telecomData: ServiceData[] = [
 
   {
     subheading: "Customer Experience Management",
-    imageSrc: "/assets/industries/Telecom/TelecomContent3.jpeg",
+    imageSrc: "/assets/Industries/Telecom/TelecomContent3.jpeg",
 
     features: [
       {
@@ -93,7 +93,7 @@ const telecomData: ServiceData[] = [
 
   {
     subheading: "Cybersecurity Solutions",
-    imageSrc: "/assets/industries/Telecom/TelecomContent4.jpeg",
+    imageSrc: "/assets/Industries/Telecom/TelecomContent4.jpeg",
 
     features: [
       {
@@ -119,7 +119,7 @@ const telecomData: ServiceData[] = [
 
   {
     subheading: "IoT and Smart Solutions",
-    imageSrc: "/assets/industries/Telecom/TelecomContent5.png",
+    imageSrc: "/assets/Industries/Telecom/TelecomContent5.png",
 
     features: [
       {
@@ -145,7 +145,7 @@ const telecomData: ServiceData[] = [
 
   {
     subheading: "Digital Transformation",
-    imageSrc: "/assets/industries/Telecom/TelecomContent6.jpeg",
+    imageSrc: "/assets/Industries/Telecom/TelecomContent6.jpeg",
 
     features: [
       {
@@ -171,7 +171,7 @@ const telecomData: ServiceData[] = [
 
   {
     subheading: "Managed Services",
-    imageSrc: "/assets/industries/Telecom/TelecomContent7.png",
+    imageSrc: "/assets/Industries/Telecom/TelecomContent7.png",
 
     features: [
       {
