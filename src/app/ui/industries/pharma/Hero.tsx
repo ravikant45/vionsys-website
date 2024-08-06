@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import pharmaHero from '@/../public/assets/industries/Pharma/pharmaHero.jpg'
 
 const Hero = () => {
   return (
@@ -50,7 +51,7 @@ const Hero = () => {
           </div>
           <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
             <Image
-              src={"/assets/industries/Pharma/pharmaHero.jpg"}
+              src={pharmaHero}
               className=" md:rounded-tl-[108px]"
               alt="Image not found"
               height={400}
