@@ -7,7 +7,7 @@ const EcomOurServices = () => {
   return (
     <div className="min-h-screen p-4">
       <div className="container mx-auto">
-        <h1 className="font-bold text-MainHeading text-center border-b-4 py-8 border-gray-500">
+        <h1 className="font-extrabold text-MainHeading text-center border-b-4 py-8 border-gray-500">
           Our E-Commerce Services
         </h1>
         {services.map((service, index) => (
@@ -19,8 +19,6 @@ const EcomOurServices = () => {
             ease: "easeInOut",
           }} key={index} className="bg-dot-blue-300 py-5">
             <h2
-              data-aos="fade-up"
-              data-aos-duration="700"
               className="font-semibold text-SubHeading text-center md:mx-72 md:my-10 bg-blue-100 rounded-md"
             >
               {service.title}
@@ -28,7 +26,7 @@ const EcomOurServices = () => {
             {/* Main section*/}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {/* First card */}
-              <div data-aos="fade-right" data-aos-duration="700" className="bg-white rounded-lg shadow-lg p-8 hover:bg-gray-50 border-y-4  border-orange">
+              <div className="bg-white rounded-lg shadow-lg p-8 hover:bg-gray-50 border-y-4  border-orange">
                 <h3 className="font-semibold leading-5 mb-4 text-blue1">{service.sub1}</h3>
                 <p className="text-gray-700">{service.desc1}</p>
               </div>
@@ -38,12 +36,12 @@ const EcomOurServices = () => {
                 <p className="text-gray-700">{service.desc2}</p>
               </div>
               {/* Third card */}
-              <div data-aos="fade-left" data-aos-duration="700" className="bg-white rounded-lg shadow-lg p-8 hover:bg-gray-50 border-y-4 border-orange">
+              <div className="bg-white rounded-lg shadow-lg p-8 hover:bg-gray-50 border-y-4 border-orange">
                 <h3 className="font-semibold leading-5 mb-4 text-blue1">{service.sub3}</h3>
                 <p className="text-gray-700">{service.desc3}</p>
               </div>
               {/* Fourth card */}
-              <div data-aos="fade-left" data-aos-duration="700" className="bg-white rounded-lg shadow-lg p-8 hover:bg-gray-50 border-y-4 border-orange">
+              <div className="bg-white rounded-lg shadow-lg p-8 hover:bg-gray-50 border-y-4 border-orange">
                 <h3 className="font-semibold leading-5 mb-4 text-blue1">{service.sub4}</h3>
                 <p className="text-gray-700">{service.desc4}</p>
               </div>
