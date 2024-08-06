@@ -9,7 +9,7 @@ const page = () => {
   
 
   return (
-    <div className="md:pt-16 pt-14">
+    <div className="md:pt-16 pt-14 overflow-hidden">
       {/* Hero Section */}
       <Hero />
 
