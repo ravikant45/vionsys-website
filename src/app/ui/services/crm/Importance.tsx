@@ -1,12 +1,10 @@
 import React from "react";
-
 import Image from "next/image";
-
-import DDDM4 from "../../../../public/assets/services/crm/DDDM4.png";
-import ECR1 from "../../../../public/assets/services/crm/ECR1.png";
-import ECS2 from "../../../../public/assets/services/crm/ECS2.png";
-import ISP3 from "../../../../public/assets/services/crm/ISP3.png";
-import SAG5 from "../../../../public/assets/services/crm/SAG5.png";
+import DDDM4 from "../../../../../public/assets/services/crm/DDDM4.png";
+import ECR1 from "../../../../../public/assets/services/crm/ECR1.png";
+import ECS2 from "../../../../../public/assets/services/crm/ECS2.png";
+import ISP3 from "../../../../../public/assets/services/crm/ISP3.png";
+import SAG5 from "../../../../../public/assets/services/crm/SAG5.png";
 
 function Importance() {
   return (
