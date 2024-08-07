@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -87,7 +88,7 @@ const ThirdSection = () => {
       <div className="md:flex justify-evenly flex-row gap-20 items-center mt-0 px-2 md:py-7 py-2">
         <div className="flex justify-center ">
           <h1 className="py-5 md:py-10 tracking-wide md:text-5xl text-4xl text-start font-bold text-[#e57e2c]">
-            {" "} 
+            {" "}
             Get In Touch{" "}
             <p className="text-xl py-5 text-black">
               Sales: info@vionsys.com
@@ -96,9 +97,16 @@ const ThirdSection = () => {
           </h1>
         </div>
         <Form {...form}>
-          <form
+          <motion.form
             onSubmit={form.handleSubmit(onSubmit)}
-            data-aos="zoom-out"
+            initial={{ opacity: 0, scale: 1.1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
             className=" rounded-[10px] md:w-1/2 w-full px-4 py-2 bg-white lg:p-10"
           >
             <FormField
@@ -185,7 +193,7 @@ const ThirdSection = () => {
                 Submit
               </Button>
             )}
-          </form>
+          </motion.form>
         </Form>
         <Modal
           footer={null}

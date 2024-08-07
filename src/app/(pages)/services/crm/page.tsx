@@ -9,8 +9,12 @@ import { Metadata } from "next";
 import CRMFaq from "@/app/ui/services/CRMFaq";
 import CRMF from "/public/assets/services/crm/CRMH.jpg";
 import dynamic from "next/dynamic";
+import { BaseUrl } from "@/app/sitemap";
 export const metadata: Metadata = {
   title: "Customer Relationship Management Services",
+  alternates: {
+    canonical: `${BaseUrl}/services/crm`
+  }
 };
 const Page: React.FC = () => {
   return (

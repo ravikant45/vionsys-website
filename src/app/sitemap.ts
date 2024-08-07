@@ -1,8 +1,11 @@
 import { MetadataRoute } from "next";
-import { ServicesLinks } from "./ui/navbar/Navlinks";
-const BaseUrl = process.env.DOMAIN;
+import { IndustriesLinks, ServicesLinks } from "./ui/navbar/Navlinks";
+export const BaseUrl = process.env.DOMAIN;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const Services: MetadataRoute.Sitemap = ServicesLinks.map(({ href }) => ({
+    url: `${BaseUrl}${href}`,
+  }));
+  const Industries: MetadataRoute.Sitemap = IndustriesLinks.map(({ href }) => ({
     url: `${BaseUrl}${href}`,
   }));
 
@@ -17,8 +20,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${BaseUrl}/career`,
     },
     {
-      url: `${BaseUrl}/industries`,
+      url: `${BaseUrl}/blogs`,
     },
+    {
+      url: `${BaseUrl}/caseStudies`,
+    },
+
     ...Services,
+    ...Industries,
   ];
 }
