@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -17,13 +20,19 @@ const Hero = () => {
           width={1920}
         />
         <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center px-4 text-center text-white">
-          <h1
-            data-aos="fade-left"
-            data-aos-duration="500"
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
             className="text-2xl font-bold tracking-tight sm:text-5xl md:text-6xl mt-6"
           >
             IT Digital Transformation
-          </h1>
+          </motion.h1>
         </div>
       </div>
     </>
