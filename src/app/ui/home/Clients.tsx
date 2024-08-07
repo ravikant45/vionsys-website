@@ -42,7 +42,7 @@ export function InfiniteMovingCardsDemo() {
           opacity: { duration: 0.6 },
           ease: "easeInOut",
         }}
-        className="md:text-MainHeading text-MainHeading-sm font-extrabold text-center"
+        className="md:text-MainHeading text-MainHeading font-extrabold text-center"
       >
         Our Clients
       </motion.h1>
