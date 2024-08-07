@@ -27,16 +27,16 @@ const WhyChoose = () => {
                 Solutions
               </p>
               <ol className="mt-2">
-                <li className="mt-3 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-l-md">
+                <li data-aos="fade-right" className="mt-3 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-l-md">
                   <strong>Skills: </strong>Our talented team specializes in various areas of IT, including web design, UI/UX design, branding, digital marketing, software development, graphic design, SEO, and online advertising.
                 </li>
-                <li className="mt-3">
+                <li data-aos="fade-left" className="mt-3">
                   <strong>Quality Assurance: </strong>We uphold high-quality standards through rigorous testing and control processes to exceed customer expectations.
                 </li>
-                <li className="mt-3">
+                <li data-aos="fade-right" className="mt-3">
                   <strong>Timely Deliveries: </strong>We prioritize timely deliveries, ensuring all services are completed on schedule without compromising quality.
                 </li>
-                <li className="mt-3">
+                <li data-aos="fade-left" className="mt-3">
                   <strong>Well-Designed Plan: </strong>Using agile methodologies, we streamline business processes to deliver on-time, on-budget solutions, helping businesses save time and effort.
                 </li>
               </ol>

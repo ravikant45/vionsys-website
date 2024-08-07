@@ -76,7 +76,7 @@ const WhyTrust: React.FC = () => {
               supports your professional development. Find the ideal environment
               to unlock your full potential in the dynamic IT career.
             </p>
-            <ul className="max-w-2xl mx-auto divide-y shadow shadow-blue-600 rounded-xl">
+            <ul data-aos="zoom-out" className="max-w-2xl mx-auto divide-y shadow shadow-blue-600 rounded-xl">
               {trust.map((item) => (
                  <div key={item.id} className="py-2 px-4">
                  <details className="group">
