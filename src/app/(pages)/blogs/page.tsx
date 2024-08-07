@@ -1,3 +1,4 @@
+import { BaseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
   title: "Blogs",
   description:
     "Stay updated with the latest trends, insights, and innovations in the IT industry. Our blog features expert articles, technology updates, and company news, helping you stay ahead in your career and knowledge.",
+  alternates: {
+    canonical: `${BaseUrl}/blogs`
+  },
   openGraph: {
     images: "/opangraph.png",
     description:
