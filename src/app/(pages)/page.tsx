@@ -7,23 +7,23 @@ import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
 import AOS from "aos";
-import InfiniteMovingCardsDemo from "../ui/home/Clients";
-import WhyTrust from "../ui/home/WhyTrust";
-import WhyChoose from "../ui/home/WhyChoose";
 
 const AboutOurCompany = dynamic(() => import("./../ui/home/AboutOurCompany"), {
   loading: () => <p>Loading...</p>,
 });
-const ChooseUs = dynamic(() => import("./../ui/home/ChooseUs"), {
+const WhyChoose = dynamic(() => import("./../ui/home/WhyChoose"), {
   loading: () => <p>Loading...</p>,
 });
 const Hero = dynamic(() => import("./../ui/home/Home"), {
   loading: () => <p>Loading...</p>,
 });
+const InfiniteMovingCardsDemo = dynamic(() => import("./../ui/home/Clients"), {
+  loading: () => <p>Loading...</p>,
+});
 const Industries = dynamic(() => import("./../ui/home/Industries"), {
   loading: () => <p>Loading...</p>,
 });
-const TrustUs = dynamic(() => import("./../ui/home/TrustUs"), {
+const WhyTrust = dynamic(() => import("./../ui/home/WhyTrust"), {
   loading: () => <p>Loading...</p>,
 });
 const WeProvide = dynamic(() => import("./../ui/home/WeProvide"), {
@@ -48,10 +48,8 @@ export default function Home() {
       <Hero />
       <AboutOurCompany />
       <WeProvide />
-      {/* <ChooseUs /> */}
       <WhyChoose />
       <Industries />
-      {/* <TrustUs /> */}
       <WhyTrust />
       <InfiniteMovingCardsDemo/>
       <WorkWithUs />
