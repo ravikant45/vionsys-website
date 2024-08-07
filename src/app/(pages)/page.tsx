@@ -8,6 +8,8 @@ import { useEffect } from "react";
 
 import AOS from "aos";
 import InfiniteMovingCardsDemo from "../ui/home/Clients";
+import WhyTrust from "../ui/home/WhyTrust";
+import WhyChoose from "../ui/home/WhyChoose";
 
 const AboutOurCompany = dynamic(() => import("./../ui/home/AboutOurCompany"), {
   loading: () => <p>Loading...</p>,
@@ -46,9 +48,11 @@ export default function Home() {
       <Hero />
       <AboutOurCompany />
       <WeProvide />
-      <ChooseUs />
+      {/* <ChooseUs /> */}
+      <WhyChoose />
       <Industries />
-      <TrustUs />
+      {/* <TrustUs /> */}
+      <WhyTrust />
       <InfiniteMovingCardsDemo/>
       <WorkWithUs />
     </div>
