@@ -1,7 +1,9 @@
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+"use client";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -12,11 +14,31 @@ const Hero = () => {
             <h1 className="text-sm text-orange font-medium">
               Modernizing Pharma with Digital Solutions
             </h1>
-            <h2 data-aos="fade-right" className="text-4xl text-gray-700 font-extrabold md:text-5xl">
+            <motion.h2
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
+              className="text-4xl text-gray-700 font-extrabold md:text-5xl"
+            >
               <span className="pr-2 text-blue2">Pharma</span>
               Industry
-            </h2>
-            <p data-aos="fade-left" className="text-paragraph">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
+              className="text-paragraph"
+            >
               The pharmaceutical sector is continually evolving, fueled by
               technological breakthroughs, severe regulatory standards, and the
               need for efficient medication development and delivery systems.
@@ -24,7 +46,7 @@ const Hero = () => {
               for the pharmaceutical industry, assisting organizations in
               streamlining operations, ensuring compliance, and accelerating
               innovation.
-            </p>
+            </motion.p>
             <div className="flex flex-col md:flex-row items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
               <Link href="/contact">
                 <Button>Let's get started</Button>
@@ -60,7 +82,7 @@ const Hero = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
