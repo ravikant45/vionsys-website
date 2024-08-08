@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 const Faq = () => {
   return (
     <div>
@@ -14,7 +15,16 @@ const Faq = () => {
                 <div className="grid gap-2">
                   <h3 className=" font-bold">What is DevOps?</h3>
                   <div className=" text-paragraph">
-                    <p data-aos="fade-left" data-aos-duration="600">
+                    <motion.p
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
+                    >
                       DevOps is a set of practices that combines software
                       development (Dev) and IT operations (Ops). It aims to
                       shorten the systems development life cycle and provide
@@ -22,7 +32,7 @@ const Faq = () => {
                       involves automation, collaboration and a culture shift
                       within an organization to enable faster delivery of
                       applications and services.
-                    </p>
+                    </motion.p>
                   </div>
                 </div>
                 <div className="grid gap-2">
@@ -30,7 +40,16 @@ const Faq = () => {
                     What are some common DevOps tools?
                   </h3>
                   <div className=" text-paragraph">
-                    <p data-aos="fade-left" data-aos-duration="600">
+                    <motion.p
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
+                    >
                       Some of the most popular DevOps tools include: Version
                       control systems (e.g. Git, SVN), Continuous
                       Integration/Continuous Deployment (CI/CD) tools (e.g.
@@ -39,7 +58,7 @@ const Faq = () => {
                       platforms (e.g. Docker, Kubernetes), Monitoring and
                       logging tools (e.g. Prometheus, Grafana, ELK Stack), Cloud
                       platforms (e.g. AWS, Azure, Google Cloud)
-                    </p>
+                    </motion.p>
                   </div>
                 </div>
               </div>
@@ -50,7 +69,16 @@ const Faq = () => {
                   What is a typical DevOps workflow?
                 </h3>
                 <div className=" text-paragraph">
-                  <p data-aos="fade-right" data-aos-duration="600">
+                  <motion.p
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      delay: 0.2,
+                      x: { type: "spring", stiffness: 20 },
+                      opacity: { duration: 0.4 },
+                      ease: "easeInOut",
+                    }}
+                  >
                     A typical DevOps workflow includes the following stages:
                     Code: Developers write and commit code to a version control
                     system. Build: Automated build processes compile the code
@@ -59,7 +87,7 @@ const Faq = () => {
                     Deploy: The artifact is deployed to a staging or production
                     environment. Monitor: The deployed application is monitored
                     for performance, errors and other metrics.
-                  </p>
+                  </motion.p>
                 </div>
               </div>
               <div className="grid gap-2">
@@ -67,7 +95,16 @@ const Faq = () => {
                   What are the benefits of adopting DevOps?
                 </h3>
                 <div className=" text-paragraph">
-                  <p data-aos="fade-right" data-aos-duration="600">
+                  <motion.p
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      delay: 0.2,
+                      x: { type: "spring", stiffness: 20 },
+                      opacity: { duration: 0.4 },
+                      ease: "easeInOut",
+                    }}
+                  >
                     Some of the key benefits of adopting DevOps include: Faster
                     software delivery: DevOps enables organizations to release
                     new features and updates more frequently. Improved
@@ -76,7 +113,7 @@ const Faq = () => {
                     promotes better communication and collaboration between
                     development and operations teams. Cost savings: Automation
                     and efficient workflows.
-                  </p>
+                  </motion.p>
                 </div>
               </div>
             </div>

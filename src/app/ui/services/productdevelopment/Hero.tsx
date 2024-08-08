@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 const Hero = () => {
@@ -17,23 +19,35 @@ const Hero = () => {
             width={1920}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 px-4 text-center text-white">
-            <h1
-              data-aos="fade-left"
-              data-aos-duration="500"
+            <motion.h1
+             initial={{ opacity: 0, x: 100 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{
+               delay: 0.2,
+               x: { type: "spring", stiffness: 30 },
+               opacity: { duration: 0.4 },
+               ease: "easeInOut",
+             }}
               className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
             >
               Product Development
-            </h1>
-            <p
-              data-aos="fade-left"
-              data-aos-duration="500"
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="max-w-xl text-lg md:text-xl"
             >
               At Vionsys IT Solutions India Pvt Ltd, we offer comprehensive
               services to help your business succeed. Our expertise spans the
               entire product life cycle, ensuring your product meets market
               demand and exceeds customer expectations.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>

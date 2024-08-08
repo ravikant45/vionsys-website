@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import CRMF from "/public/assets/services/crm/CRMH.jpg";
-
+import { motion } from "framer-motion";
 const Firstsection = () => {
   return (
     <div>
@@ -13,20 +14,41 @@ const Firstsection = () => {
           quality={100}
         />
         <div className="absolute bottom-4 px-3 flex justify-center items-center flex-col gap-2 transform text-white">
-          <h1
-            data-aos="fade-left"
+          <motion.h1
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
             className="md:text-5xl text-xl text-white font-extrabold text-center"
           >
             Customer Relationship Management (CRM)
-          </h1>
-          <h3
-            data-aos="fade-right"
+          </motion.h1>
+          <motion.h3
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 20 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
             className="text-white italic md:text-xl text-sm"
           >
             Selecting Excellence: Elevate Your CRM Experience with Us.
-          </h3>
-          <p
-            data-aos="fade-down"
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.2,
+              y: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
             className="md:text-xl text-sm text-white md:px-52 mmd:px-10 px-3 sm:px-20 text-center"
           >
             Discover CRM excellence with our innovative methodology, blending
@@ -35,7 +57,7 @@ const Firstsection = () => {
             businesses to enduring triumphs and elevate customer journeys.
             Experience the pinnacle of effective work, meticulously designed for
             sustained growth and unmatched satisfaction.
-          </p>
+          </motion.p>
         </div>
       </div>
     </div>

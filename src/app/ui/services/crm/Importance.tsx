@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import DDDM4 from "../../../../../public/assets/services/crm/DDDM4.png";
 import ECR1 from "../../../../../public/assets/services/crm/ECR1.png";
 import ECS2 from "../../../../../public/assets/services/crm/ECS2.png";
@@ -13,8 +15,15 @@ function Importance() {
         Why CRM is important for your business
       </h1>
       <ul className="grid md:grid-cols-2 grid-cols-1 justify-center md:gap-y-10 md:gap-x-10 items-center md:p-4">
-        <li
-          data-aos="fade-left"
+        <motion.li
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
           className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
           <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
@@ -37,10 +46,17 @@ function Importance() {
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
-        </li>
+        </motion.li>
 
-        <li
-          data-aos="fade-left"
+        <motion.li
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
           className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
           <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
@@ -62,10 +78,17 @@ function Importance() {
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
-        </li>
+        </motion.li>
 
-        <li
-          data-aos="fade-right"
+        <motion.li
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 20 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
           className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
           <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
@@ -88,10 +111,17 @@ function Importance() {
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
-        </li>
+        </motion.li>
 
-        <li
-          data-aos="fade-right"
+        <motion.li
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 20 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
           className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
           <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto ">
@@ -113,10 +143,17 @@ function Importance() {
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
-        </li>
+        </motion.li>
 
-        <li
-          data-aos="fade-left"
+        <motion.li
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
           className="relative flex md:flex-row flex-col items-start p-2 md:h-[30vh]"
         >
           <div className="order-1 md:w-3/5 sm:ml-6 xl:ml-0 md:px-3 px-1 py-1 h-auto">
@@ -139,7 +176,7 @@ function Importance() {
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
-        </li>
+        </motion.li>
       </ul>
     </div>
   );

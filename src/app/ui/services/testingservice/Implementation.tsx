@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 import { SiReadthedocs } from "react-icons/si";
 import { GrPlan } from "react-icons/gr";
@@ -12,8 +14,15 @@ const Implementation = () => {
         <div className="grid md:grid-cols-5 grid-cols-1 justify-center items-center gap-4 px-8">
           {/* left side */}
           <div className=" col-span-2 flex flex-col justify-center items-center gap-4 md:order-1 order-2">
-            <div
-              data-aos="fade-left"
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"
             >
               <div className="flex justify-center items-center border-r px-2 py-8">
@@ -33,10 +42,17 @@ const Implementation = () => {
                   meticulously chart out project specifications with precision.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div
-              data-aos="fade-right"
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"
             >
               <div className="flex justify-center items-center border-r px-2">
@@ -56,10 +72,17 @@ const Implementation = () => {
                   process, driving efficiency and effectiveness throughout.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div
-              data-aos="fade-up"
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.2,
+                y: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.6 },
+                ease: "easeInOut",
+              }}
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"
             >
               <div className="flex justify-center items-center border-r px-2">
@@ -78,23 +101,37 @@ const Implementation = () => {
                   ensuring precision in our testing approach.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
           {/* middle */}
           <div className="md:flex hidden justify-center items-center md:order-2 order-1">
-            <div
-              data-aos="zoom-out"
+            <motion.div
+              initial={{ opacity: 0, scale: 1.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.2,
+                scale: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.6 },
+                ease: "easeInOut",
+              }}
               className="col-span-1 w-44 h-44 h-22 md:rounded-full bg-gray2 flex justify-center items-center border-4 border-blue1"
             >
               <h3 className="uppercase font-bold text-center text-black text-2xl">
                 Steps of testing
               </h3>
-            </div>
+            </motion.div>
           </div>
           {/* Right side */}
           <div className="col-span-2 flex flex-col justify-center items-center gap-4 order-3">
-            <div
-              data-aos="fade-left"
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"
             >
               <div className="flex justify-center items-center border-r px-2 py-8">
@@ -114,10 +151,17 @@ const Implementation = () => {
                   testing procedures.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div
-              data-aos="fade-right"
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"
             >
               <div className="flex justify-center items-center border-r px-2">
@@ -137,10 +181,17 @@ const Implementation = () => {
                   software quality assurance.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div
-              data-aos="fade-up"
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.2,
+                y: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.6 },
+                ease: "easeInOut",
+              }}
               className="grid md:grid-cols-3 grid-cols-2 gap-2 border-b"
             >
               <div className="flex justify-center items-center border-r px-2">
@@ -158,7 +209,7 @@ const Implementation = () => {
                   transparency in our testing procedures.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
