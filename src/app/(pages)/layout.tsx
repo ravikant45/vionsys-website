@@ -8,10 +8,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import Providers from "@/utils/Providers";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Vionsys IT Solutions India Pvt. Ltd.",
-    template: "%s - Vionsys IT Solutions India Pvt. Ltd.",
-  },
+  title: "Vionsys IT Solutions India Pvt. Ltd.",
   openGraph: {
     images: "/opangraph.png",
   },
@@ -29,7 +26,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
     <main className={GeistSans.className}>
       <GoogleTagManager gtmId="GTM-MQT388RN" />
       <Providers>
