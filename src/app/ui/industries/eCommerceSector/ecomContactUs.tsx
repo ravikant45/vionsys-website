@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 const ecomContactUs = () => {
   return (
     <section id="section3">
@@ -45,9 +46,9 @@ const ecomContactUs = () => {
           className="flex justify-center items-center"
         >
           <Link href="/contact">
-            <button className="bg-orange rounded-[7px] text-white px-5 py-3 font-headingFont text-sm  transition-all duration-150 ease-linear hover:bg-zinc-600">
+            <Button>
               Contact Us
-            </button>
+            </Button>
           </Link>
         </motion.div>
       </div>
