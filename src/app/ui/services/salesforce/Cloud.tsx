@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import { MdOutlineCloud } from "react-icons/md";
@@ -19,9 +21,26 @@ function Cloud() {
         </div>
       </div>
       <div className="max-w-screen px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
-        <div data-aos="zoom-out" className="mt-12">
-          <ul
-            data-aos="zoom-in"
+        <motion.div
+          initial={{ opacity: 0, scale: 1.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 0.2,
+            scale: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.6 },
+            ease: "easeInOut",
+          }}
+          className="mt-12"
+        >
+          <motion.ul
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
             className="grid md:grid-cols-2 grid-cols-1 gap-x-8"
           >
             <li className="bg-gray-100 p-5 mb-20">
@@ -57,7 +76,11 @@ function Cloud() {
                     Service Cloud
                   </h4>
                   <p className="my-2 text-paragraph leading-6 text-gray-500">
-                    Empower your customer service team with Service Cloud to deliver unparalleled customer experiences. This robust platform allows you to assist customers through various channels, expedite issue resolution with AI-driven tools and foster enduring customer connections.
+                    Empower your customer service team with Service Cloud to
+                    deliver unparalleled customer experiences. This robust
+                    platform allows you to assist customers through various
+                    channels, expedite issue resolution with AI-driven tools and
+                    foster enduring customer connections.
                   </p>
                 </div>
               </div>
@@ -103,8 +126,8 @@ function Cloud() {
                 </div>
               </div>
             </li>
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </div>
     </div>
   );

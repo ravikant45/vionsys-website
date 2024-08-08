@@ -1,18 +1,26 @@
+"use client"
 import exp from "/public/assets/services/exp.jpg";
 import inno from "/public/assets/services/inno.jpg";
 import supp from "/public/assets/services/supp.jpg";
 import Image from "next/image";
-import { Feature } from "./data/CloudComputingServicesData";
+import { motion } from "framer-motion";
+import { Feature } from "../data/CloudComputingServicesData";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 
 const ServicesTemplateTwo = ({ data }: { data: any }) => {
   return (
-    <main className="">
+    <main>
       {/* hero section */}
       <section>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="700"
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.2,
+            y: { type: "spring", stiffness: 20 },
+            opacity: { duration: 0.6 },
+            ease: "easeInOut",
+          }}
           className="flex h-screen justify-center items-center dark:bg-slate-800"
         >
           <div className="mx-auto flex justify-center px-4 sm:mt-6 sm:px-4 md:mt-4 lg:mt-2 lg:px-8">
@@ -44,21 +52,48 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       {/* the services section */}
       <section className="container space-y-3 bg-slate-100 py-4 mx-auto md:py-6 lg:py-12">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-2 text-center">
-          <h2 data-aos="fade-left" className="text-MainHeading font-extrabold">
+          <motion.h2
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
+            className="text-MainHeading font-extrabold"
+          >
             Our Features
-          </h2>
-          <p data-aos="fade-right" className="text-SubHeading font-bold">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 20 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
+            className="text-SubHeading font-bold"
+          >
             Discover the amazing features offered by us to enhance your online
             presence.
-          </p>
+          </motion.p>
         </div>
-        <div
-          data-aos="zoom-out"
+        <motion.div
+          initial={{ opacity: 0, scale: 1.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 0.2,
+            scale: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.6 },
+            ease: "easeInOut",
+          }}
           className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3"
         >
           {data?.features?.map((feat: Feature) => {
@@ -79,22 +114,39 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </section>
       {/* why choose us section */}
       <section>
         <div className="flex flex-col justify-center items-center font-bold md:py-5">
-          <h1 data-aos="fade-right" className="text-MainHeading font-extrabold">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.2,
+              y: { type: "spring", stiffness: 20 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
+            className="text-MainHeading font-extrabold"
+          >
             Why Choose Us
-          </h1>
-          <p
-            data-aos="fade-left"
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 20 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
             className="max-w-[50rem] text-SubHeading font-bold text-center"
           >
             Understanding the importance of selecting the right development
             partner for your business, we present why we're the ideal choice for
             your development needs.
-          </p>
+          </motion.p>
         </div>
 
         {/* the static section for the why choose us  */}
@@ -103,8 +155,15 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
           {/* First section */}
           <div className="w-full px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2">
             {/* left side */}
-            <div
-              data-aos="fade-left"
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="flex flex-col justify-center gap-2 md:p-10 p-2"
             >
               <h1 className="text-2xl text-black font-bold">Expertise</h1>
@@ -113,7 +172,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 development, encompassing proficiency in programming languages,
                 frameworks and industry-specific practices.
               </p>
-            </div>
+            </motion.div>
 
             {/* right side */}
             <div className="flex justify-center items-center">
@@ -139,8 +198,15 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 height={400}
               />
             </div>
-            <div
-              data-aos="fade-right"
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="flex justify-center items-center md:order-2 order-1"
             >
               {/* right side */}
@@ -153,14 +219,21 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                   creative problem-solving.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* third section */}
           <div className="w-full px-2 grid md:grid-cols-2 gap-4 grid-cols-1 py-2">
             {/* left side */}
-            <div
-              data-aos="fade-left"
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="flex flex-col justify-center md:p-10 p-2 gap-2"
             >
               <h1 className="text-2xl text-black font-bold">On-Time Support</h1>
@@ -170,7 +243,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
                 adapting to changing requirements, delivering updates regularly
                 and maintaining transparent communication with clients.
               </p>
-            </div>
+            </motion.div>
 
             {/* right side */}
             <div className="flex justify-center items-center">

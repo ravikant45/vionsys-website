@@ -1,4 +1,5 @@
-import { Descriptions } from "antd";
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 
 function Future() {
@@ -212,8 +213,15 @@ function Future() {
             outcomes
           </h1>
         </div>
-        <p
-          data-aos="fade-right"
+        <motion.p
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 20 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
           className="text-base text-gray-800 font-medium text-left pt-3"
         >
           As a company leveraging Salesforce, it's essential to recognize that
@@ -222,17 +230,24 @@ function Future() {
           strategies. By remaining agile and fully harnessing the capabilities
           of the Salesforce platform, you can position yourself for long-term
           success in an increasingly competitive landscape.
-        </p>
+        </motion.p>
       </div>
       <div className="w-screen h-auto bg-slate-50 grid-cols-6 justify-evenly">
         <section className="container space-y-8  py-4 mx-auto md:py-6 lg:py-12">
           <div className="mx-auto flex w-full flex-col items-center space-y-4 text-center">
-            <h2
-              data-aos="fade-left"
+            <motion.h2
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
             >
               "Our Attributes"
-            </h2>
+            </motion.h2>
             <p className="font-bold md:text-SubHeading text-lg text-[#e57e2c] sm:leading-7">
               Explore the incredible offerings provided by us to enrich your
               online visibility.

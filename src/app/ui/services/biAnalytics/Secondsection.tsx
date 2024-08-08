@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { BiAndAnalyticsData } from "@/app/ui/services/data/BiAndAnalytics";
 const Secondsection = () => {
   return (
@@ -7,26 +9,50 @@ const Secondsection = () => {
       <section className=" bg-gray-100 w-[100vw] overflow-x-hidden -mt-[70px] pt-16 pb-6 md:pb-16 md:px-10 px-3">
         <div className="w-full">
           <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6">
-            <div data-aos="zoom-in" className="w-full p-4 lg:w-1/2 lg:mb-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.2,
+                scale: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.6 },
+                ease: "easeInOut",
+              }}
+              className="w-full p-4 lg:w-1/2 lg:mb-0"
+            >
               <Image
                 src={BiAndAnalyticsData.secondSectionImage}
                 alt=""
                 className="w-full rounded-3xl"
               />
-            </div>
+            </motion.div>
             <div className="w-full lg:w-1/2 md:p-10 p-4">
-              <h2
-                data-aos="fade-left"
+              <motion.h2
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.4 },
+                  ease: "easeInOut",
+                }}
                 className="text-SubHeading font-bold mb-4 text-[28px] text-center md:text-start"
               >
                 {BiAndAnalyticsData.secondTitle}
-              </h2>
-              <p
-                data-aos="fade-right"
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", stiffness: 20 },
+                  opacity: { duration: 0.4 },
+                  ease: "easeInOut",
+                }}
                 className="text-paragraph text-center text-[18px] md:text-start"
               >
                 {BiAndAnalyticsData.secondSubTitle}
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
@@ -43,7 +69,6 @@ const Secondsection = () => {
                 className="flex justify-end h-auto relative border border-gray-300 rounded-3xl items-center md:flex-row flex-col-reverse text-slate-100/50"
               >
                 <Image
-                  data-aos="zoom-in"
                   quality={100}
                   width="300"
                   height="200"
@@ -52,16 +77,33 @@ const Secondsection = () => {
                   className="p-4 h-full w-96 md:w-72 rounded-3xl bg-grid-yellow-500"
                 />
                 <div className="md:p-4 p-2 md:w-64 w-auto">
-                  <h3
-                    data-aos="fade-left"
+                  <motion.h3
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      delay: 0.2,
+                      x: { type: "spring", stiffness: 30 },
+                      opacity: { duration: 0.4 },
+                      ease: "easeInOut",
+                    }}
                     className="max-w-xs !pb-2 !m-0 font-bold  text-base text-violet-800"
                   >
                     {card.title}
-                  </h3>
+                  </motion.h3>
                   <div className="!m-0 !p-0 font-normal">
-                    <span data-aos="fade-right" className="text-black text-md">
+                    <motion.span
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
+                      className="text-black text-md"
+                    >
                       {card.message}
-                    </span>
+                    </motion.span>
                   </div>
                 </div>
               </div>
@@ -108,17 +150,31 @@ const Secondsection = () => {
                           </g>
                         </svg>
                       </div>
-                      <div
-                        data-aos="fade-right"
+                      <motion.div
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          delay: 0.2,
+                          x: { type: "spring", stiffness: 20 },
+                          opacity: { duration: 0.4 },
+                          ease: "easeInOut",
+                        }}
                         className="border-black shadow shadow-indigo-300 border px-5 py-2 rounded-b-3xl mt-8 rounded-tr-3xl flex items-center w-fit"
                       >
                         <h4 className="text-lg leading-6 font-medium text-violet-900">
                           {faq.question}
                         </h4>
-                      </div>
+                      </motion.div>
                     </div>
-                    <div
-                      data-aos="fade-left"
+                    <motion.div
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
                       className="flex flex-row items-start"
                     >
                       <div className="border-black shadow shadow-indigo-300 border rounded-b-3xl md:mt-8 mt-2 rounded-tl-3xl p-5 w-fit flex items-center">
@@ -147,7 +203,7 @@ const Secondsection = () => {
                           </g>
                         </svg>
                       </div>
-                    </div>
+                    </motion.div>
                   </li>
                 ))}
               </ul>

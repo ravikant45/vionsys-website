@@ -1,39 +1,58 @@
+"use client"
 import React from "react";
 import { MdOutlineManageAccounts } from "react-icons/md";
-
+import { motion } from "framer-motion";
 const Secondsection = () => {
   return (
     <div>
       <section className="w-full py-12 md:py-24 lg:py-16  dark:bg-gray-800">
         <div className="container px-4 md:px-6">
           <div className="space-y-3 text-center">
-            <h2
-              data-aos="zoom-in"
-              data-aos-duration="500"
+            <motion.h2
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.2,
+                scale: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.6 },
+                ease: "easeInOut"
+              }}
               className="text-3xl text-gray-700 font-bold tracking-tighter md:text-4xl"
             >
               Our Key <span className="text-blue-700">Services</span>
-            </h2>
-            <p
-              data-aos="zoom-out"
-              data-aos-duration="500"
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, scale: 1.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.2,
+                scale: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.6 },
+                ease: "easeInOut"
+              }}
               className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
             >
               We offer a wide range of services to help your business succeed.
-            </p>
+            </motion.p>
           </div>
           <div className="grid grid-cols-1 md:gap-6 gap-2 pt-2 md:pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             <div className="rounded-lg bg-white md:p-6 p-2 shadow-lg transition-transform hover:-translate-y-2 dark:bg-gray-950">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <MdOutlineManageAccounts className="h-6 w-6" />
               </div>
-              <h3
-                data-aos="zoom-in"
-                data-aos-duration="500"
+              <motion.h3
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  scale: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeInOut"
+                }}
                 className="mt-4 text-xl font-semibold"
               >
                 Resource Management
-              </h3>
+              </motion.h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 We develop unique product options tailored to your business
                 needs. Our approach ensures alignment with your goals and market
@@ -44,13 +63,19 @@ const Secondsection = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <CogIcon className="h-6 w-6" />
               </div>
-              <h3
-                data-aos="zoom-in"
-                data-aos-duration="500"
+              <motion.h3
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  scale: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeInOut"
+                }}
                 className="mt-4 text-xl font-semibold"
               >
                 Production Planning
-              </h3>
+              </motion.h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Our product line turns your vision into a reality. We create
                 beautiful designs that optimize performance and enhance the user
@@ -61,13 +86,19 @@ const Secondsection = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <LightbulbIcon className="h-6 w-6" />
               </div>
-              <h3
-                data-aos="zoom-in"
-                data-aos-duration="500"
+              <motion.h3
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  scale: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeInOut"
+                }}
                 className="mt-4 text-xl font-semibold"
               >
                 The Best of Things
-              </h3>
+              </motion.h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 We ensure the highest quality and reliability of your products
                 through our stringent quality controls. Our testing methods
@@ -78,13 +109,19 @@ const Secondsection = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <RocketIcon className="h-6 w-6" />
               </div>
-              <h3
-                data-aos="zoom-in"
-                data-aos-duration="500"
+              <motion.h3
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  scale: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeInOut"
+                }}
                 className="mt-4 text-xl font-semibold"
               >
                 Product placement
-              </h3>
+              </motion.h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Bring your product to market successfully with our simple
                 product launch solution. We offer tailored integration
@@ -96,13 +133,19 @@ const Secondsection = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-700 text-white dark:bg-gray-50 dark:text-gray-900">
                 <WrenchIcon className="h-6 w-6" />
               </div>
-              <h3
-                data-aos="zoom-in"
-                data-aos-duration="500"
+              <motion.h3
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  scale: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeInOut"
+                }}
                 className="mt-4 text-xl font-semibold"
               >
                 Continuous improvement
-              </h3>
+              </motion.h3>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
                 We help you create a culture of continuous improvement in your
                 product development. By empowering your teams to iterate, learn,

@@ -1,7 +1,8 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import ITStaffing from "/public/assets/services/ITStaffing/ITStaffing.jpg";
-
+import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <div>
@@ -14,8 +15,15 @@ const Hero = () => {
             quality={100}
           />
         </div>
-        <div
-          data-aos="fade-up"
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.2,
+            y: { type: "spring", stiffness: 20 },
+            opacity: { duration: 0.6 },
+            ease: "easeInOut",
+          }}
           className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10 md:pt-10"
         >
           <h1 className="md:text-4xl text-2xl font-extrabold md:py-6 py-1">
@@ -28,7 +36,7 @@ const Hero = () => {
             connect organizations with top-tier talent and provide flexible
             staffing solutions tailored to their unique needs.
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
