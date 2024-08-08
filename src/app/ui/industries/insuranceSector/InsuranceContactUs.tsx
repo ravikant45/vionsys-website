@@ -29,7 +29,7 @@ const InsuranceContactUs = () => {
           company prosper in today's ever-changing insurance landscape
         </p>
         <Link href="/contact" passHref>
-          <Button className="text-lg m-5">Contact Us</Button>
+          <Button>Contact Us</Button>
         </Link>{" "}
       </motion.div>
     </section>

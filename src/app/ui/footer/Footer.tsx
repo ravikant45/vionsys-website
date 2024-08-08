@@ -8,19 +8,9 @@ import Twitter from "../../../../public/assets/socialicons/Twitter4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import LogoImage from "/public/assets/logo.png";
+import { IndustriesLinks } from "../navbar/Navlinks";
 
-const industries = [
-  "IT Digital Transformation",
-  "Banking",
-  "Pharmaceutical",
-  "Education",
-  "Insurance",
-  "E-Commerce",
-  "Construction",
-  "Healthcare",
-  "Field Services",
-  "Finance"
-];
+
 const Footer = () => {
   const columnStyle: React.CSSProperties = {
     textAlign: "left",
@@ -198,8 +188,10 @@ const Footer = () => {
                 }}
               >
                 <ul className="grid md:grid-cols-2 grid-cols-1 gap-2 text-base">
-                  {industries.map((industry, index) => (
-                    <li key={index}>{industry}</li>
+                  {IndustriesLinks.map((IndustriesLinks, index) => (
+                    <li key={index}>
+                      <Link href={IndustriesLinks.href}>{IndustriesLinks.title}</Link>
+                    </li>
                   ))}
                 </ul>
               </motion.div>
