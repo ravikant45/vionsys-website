@@ -3,14 +3,12 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { GoogleTagManager } from '@next/third-parties/google'
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Vionsys IT Solutions India Pvt. Ltd.",
-    template: "%s - Vionsys IT Solutions India Pvt. Ltd.",
-  },
+  title: "Vionsys IT Solutions India Pvt. Ltd.",
+
   openGraph: {
     images: "/src/app/opengraph-image.png",
   },
@@ -29,12 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <GoogleTagManager gtmId="GTM-MQT388RN"/>
+      <GoogleTagManager gtmId="GTM-MQT388RN" />
       <body className={GeistSans.className}>
         <Toaster position="bottom-center" />
         {children}
         <Analytics />
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
     </html>
   );
