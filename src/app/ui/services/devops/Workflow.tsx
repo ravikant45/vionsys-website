@@ -1,27 +1,40 @@
+"use client";
 import React from "react";
 import { SVGProps } from "react";
-
+import { motion } from "framer-motion";
 const Workflow = () => {
   return (
     <div>
       <section className="w-full py- l5g:pb-10 md:py-24 lg:py-4 dark:bg-gray-800">
         <div className="container px-4 md:px-6">
           <div className="space-y-4 text-center">
-            <h2
-              data-aos="fade-right"
-              data-aos-duration="600"
+            <motion.h2
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="text-MainHeading font-bold tracking-tighter sm:text-4xl md:text-5xl"
             >
               DevOps Workflow
-            </h2>
-            <p
-              data-aos="fade-left"
-              data-aos-duration="600"
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
               className="mx-auto max-w-[700px] text-SubHeading font-bold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
             >
               Streamline your development and deployment process with our DevOps
               solutions.
-            </p>
+            </motion.p>
           </div>
           <div className="mt-12 grid grid-cols-1 md:gap-8 gap-3 sm:grid-cols-2 md:grid-cols-4 lg:gap-12">
             <div className="flex flex-col items-center md:gap-4 gap-2 rounded-lg bg-white p-6 shadow-sm transition-all hover:scale-105 hover:shadow-md dark:bg-gray-950">

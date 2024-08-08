@@ -1,103 +1,141 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 const Thirdsection = () => {
   return (
-    <div>
+    <>
       <section className="w-full py-12 md:py-24 lg:py-16 ">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
             <div className="space-y-4">
               <div className="space-y-2">
-                <h2
-                  data-aos="fade-left"
-                  data-aos-duration="500"
+                <motion.h2
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: 0.2,
+                    x: { type: "spring", stiffness: 30 },
+                    opacity: { duration: 0.4 },
+                    ease: "easeInOut",
+                  }}
                   className="text-3xl font-bold text-gray-700 tracking-tighter lg:text-4xl"
                 >
                   Why Choose <span className="text-blue-700">Us</span>
-                </h2>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="500"
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: 0.2,
+                    x: { type: "spring", stiffness: 30 },
+                    opacity: { duration: 0.4 },
+                    ease: "easeInOut",
+                  }}
                   className="max-w-[600px] text-gray-500 md:text-lg/relaxed lg:text-lg/relaxed xl:text-lg/relaxed dark:text-gray-400"
                 >
                   Discover the benefits of our exceptional product or service
                   and why we are the best choice for your needs.
-                </p>
+                </motion.p>
               </div>
               <div className="grid gap-6">
                 <div className="flex items-start gap-4">
-                  <RocketIcon
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50"
-                  />
+                  <RocketIcon className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50" />
                   <div>
-                    <h3
-                      data-aos="fade-left"
-                      data-aos-duration="500"
+                    <motion.h3
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
                       className="text-lg font-semibold"
                     >
                       Unparalleled Performance
-                    </h3>
-                    <p
-                      data-aos="fade-left"
-                      data-aos-duration="500"
+                    </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
                       className="text-gray-500 dark:text-gray-400"
                     >
                       Our cutting-edge technology ensures lightning-fast speeds
                       and uninterrupted service, delivering an exceptional user
                       experience.
-                    </p>
+                    </motion.p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <ShieldIcon
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50"
-                  />
+                  <ShieldIcon className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50" />
                   <div>
-                    <h3
-                      data-aos="fade-left"
-                      data-aos-duration="500"
+                    <motion.h3
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
                       className="text-lg font-semibold"
                     >
                       Robust Security
-                    </h3>
-                    <p
-                      data-aos="fade-left"
-                      data-aos-duration="500"
+                    </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
                       className="text-gray-500 dark:text-gray-400"
                     >
                       Your data and privacy are our top priority. We employ
                       state-of-the-art security measures to protect your
                       information.
-                    </p>
+                    </motion.p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <SettingsIcon
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50"
-                  />
+                  <SettingsIcon className="h-6 w-6 flex-shrink-0 text-gray-900 dark:text-gray-50" />
                   <div>
-                    <h3
-                      data-aos="fade-left"
-                      data-aos-duration="500"
+                    <motion.h3
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
                       className="text-lg font-semibold"
                     >
                       Exceptional Support
-                    </h3>
-                    <p
-                      data-aos="fade-left"
-                      data-aos-duration="500"
+                    </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: 0.2,
+                        x: { type: "spring", stiffness: 30 },
+                        opacity: { duration: 0.4 },
+                        ease: "easeInOut",
+                      }}
                       className="text-gray-500 dark:text-gray-400"
                     >
                       We provide ongoing support and maintenance services to
                       ensure that your product continues to meet your needs and
                       perform at its best.
-                    </p>
+                    </motion.p>
                   </div>
                 </div>
               </div>
@@ -112,7 +150,7 @@ const Thirdsection = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

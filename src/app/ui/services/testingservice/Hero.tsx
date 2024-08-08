@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import SoftwareTestingImage from "/public/assets/services/Testing/software-testing-banner.png";
@@ -14,13 +16,30 @@ const Hero = () => {
           />
           <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-start w-full px-4">
             <div className="md:w-[50%] w-full flex flex-col gap-2 p-2">
-              <h4
-                data-aos="fade-left"
+              <motion.h4
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.4 },
+                  ease: "easeInOut",
+                }}
                 className="md:text-5xl text-xl font-extrabold text-orange "
               >
                 Ensuring Software Stability Through Rigorous Testing
-              </h4>
-              <p data-aos="fade-right" className="md:text-lg text-sm py-4">
+              </motion.h4>
+              <motion.p
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", stiffness: 20 },
+                  opacity: { duration: 0.4 },
+                  ease: "easeInOut",
+                }}
+                className="md:text-lg text-sm py-4"
+              >
                 We redefine software testing and quality assurance with a
                 tailored approach that merges innovation and expertise. With a
                 relentless pursuit of perfection, we meticulously assess, refine
@@ -28,7 +47,7 @@ const Hero = () => {
                 exceptional performance. Trust us to elevate your software to
                 new heights of reliability and user satisfaction, empowering
                 your business for success in today's dynamic digital landscape.
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
