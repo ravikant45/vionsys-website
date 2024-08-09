@@ -31,10 +31,10 @@ const withAuthHOC = <P extends object>(
       );
     }
 
-    return <WrappedComponent {...(props as P)} role={role} />;
+    // Ensure role is passed down
+    return <WrappedComponent {...props} role={role} />;
   };
 
   return ComponentWithAuth;
 };
-
 export default withAuthHOC;
