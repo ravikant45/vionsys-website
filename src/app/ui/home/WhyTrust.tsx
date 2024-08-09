@@ -1,3 +1,5 @@
+'use client'
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Magic from "../../../../public/assets/Home/Magic.jpeg";
 import Image from "next/image";
@@ -58,16 +60,37 @@ const WhyTrust: React.FC = () => {
         <Image className="xl:max-w-6xl" src={Magic} alt="Decorative Background" />
         <div className="content bg-white p-2 pt-8 md:p-6 pb-12 lg:max-w-xl w-full lg:absolute top-10 right-5">
           <div>
-            <p data-aos="fade-left" className="font-extrabold text-MainHeading">
+            <motion.p initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", stiffness: 20 },
+                  opacity: { duration: 0.4 },
+                  ease: "easeInOut",
+                }} className="font-extrabold text-MainHeading">
               Why trust us?
-            </p>
-            <p
-              data-aos="fade-right"
+            </motion.p>
+            <motion.p
+             initial={{ opacity: 0, x: 100 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{
+               delay: 0.2,
+               x: { type: "spring", stiffness: 30 },
+               opacity: { duration: 0.4 },
+               ease: "easeInOut",
+             }}
               className="text-SubHeading md:mt-5 mt-3 font-bold"
             >
               Achieve digital transformation for your retail business services
-            </p>
-            <p data-aos="zoom-out" className="text-paragraph mt-5 mb-5">
+            </motion.p>
+            <motion.p initial={{ opacity: 0, scale: 1.2 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="text-paragraph mt-5 mb-5">
               Enhance your business through digital transformation and get the
               best from Vionsys IT Solutions India Pvt. Ltd. Join our vibrant
               team and explore the limitless possibilities. Here, you will
@@ -75,8 +98,15 @@ const WhyTrust: React.FC = () => {
               environment, and experience a continuous learning program that
               supports your professional development. Find the ideal environment
               to unlock your full potential in the dynamic IT career.
-            </p>
-            <ul data-aos="zoom-out" className="max-w-2xl mx-auto divide-y shadow shadow-blue-600 rounded-xl">
+            </motion.p>
+            <motion.ul initial={{ opacity: 0, scale: 1.2 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }} className="max-w-2xl mx-auto divide-y shadow shadow-blue-600 rounded-xl">
               {trust.map((item) => (
                  <div key={item.id} className="py-2 px-4">
                  <details className="group">
@@ -107,7 +137,7 @@ const WhyTrust: React.FC = () => {
                  </details>
                </div>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         </div>
       </section>

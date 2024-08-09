@@ -32,7 +32,7 @@ const Page = () => {
       <FaqSec />
       {/* CTA */}
       <section className="bg-gray-100">
-      <ScheduleMeetAndContactCTA />
+        <ScheduleMeetAndContactCTA />
       </section>
     </main>
   );

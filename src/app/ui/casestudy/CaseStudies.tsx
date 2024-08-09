@@ -5,6 +5,7 @@ import React from "react";
 import { CaseStudy } from "../dashboard/caseStudies/AllCaseStudies";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 // import { formatDate } from "@/utils/formatDate";
 
 const CaseStudies = () => {
@@ -20,7 +21,17 @@ const CaseStudies = () => {
   }
   return (
     <div className="px-8 w-full py-20  bg-gray-100">
-      <div className="text-center mb-8">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.2,
+          y: { type: "spring", stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: "easeInOut",
+        }}
+        className="text-center mb-8"
+      >
         <h1 className="text-3xl font-bold text-gray-800">Case Studies</h1>
         <p className="mt-4 text-lg text-gray-600 md:px-20">
           Explore our collection of case studies showcasing successful projects
@@ -28,8 +39,18 @@ const CaseStudies = () => {
           have helped our clients achieve their goals through our expertise and
           commitment to excellence.
         </p>
-      </div>
-      <div className="flex flex-wrap ">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 1.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.2,
+          scale: { type: "spring", stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: "easeInOut",
+        }}
+        className="flex flex-wrap "
+      >
         {data &&
           data.data.map((study: CaseStudy) => {
             return (
@@ -74,7 +95,7 @@ const CaseStudies = () => {
               </div>
             );
           })}
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,12 +1,7 @@
 "use client";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "aos/dist/aos.css";
 import dynamic from "next/dynamic";
-
-import { useEffect } from "react";
-
-import AOS from "aos";
 
 const AboutOurCompany = dynamic(() => import("./../ui/home/AboutOurCompany"), {
   loading: () => <p>Loading...</p>,
@@ -34,15 +29,6 @@ const WorkWithUs = dynamic(() => import("./../ui/home/WorkWithUs"), {
 });
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 300,
-      easing: "ease-in-sine",
-      offset: 100,
-      delay: 10,
-    });
-    AOS.refresh();
-  }, []);
   return (
     <div className="pt-14 overflow-x-hidden">
       <Hero />

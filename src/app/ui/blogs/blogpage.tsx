@@ -4,7 +4,7 @@ import Loading from "@/app/(pages)/loading";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { IoMdArrowBack } from "react-icons/io";
-
+import { motion } from "framer-motion";
 import Link from "next/link";
 import useGetBlog from "@/services/blogs/useGetBlog";
 import { Button } from "@/components/ui/button";
@@ -17,12 +17,12 @@ const BlogPage = () => {
   if (isPending) return <Loading />;
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <div className="md:px-10 px-8 py-20 p-3 w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
         <div className="mb-4 flex justify-start">
           <Link
             href={"/blogs"}
-            className="bg-blue-500 text-white rounded-md p-2 flex items-center gap-2 hover:bg-blue-600 transition"
+            className="text-blue-600 hover:text-blue-800 transition-colors font-semibold rounded-md p-2 flex items-center gap-2"
           >
             <IoMdArrowBack size={20} />
             <span>Back</span>
@@ -30,7 +30,17 @@ const BlogPage = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mb-8">
-          <div className="w-full lg:w-1/2 relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.3 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
+            className="w-full lg:w-1/2 relative"
+          >
             <Image
               src={data?.data.image}
               alt={data?.data.title}
@@ -40,11 +50,21 @@ const BlogPage = () => {
               objectFit="cover"
               className="rounded-lg shadow-sm"
             />
-          </div>
+          </motion.div>
           <div className="flex flex-col lg:w-1/2">
-            <h1 className="text-4xl font-bold mb-4 text-gray-800">
+            <motion.h1
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
+              className="text-4xl font-bold mb-4 text-gray-800"
+            >
               {data?.data.title}
-            </h1>
+            </motion.h1>
             {/* <p className="text-sm text-gray-600">
             <span className="font-semibold">Posted On:&nbsp;</span>
             {formatDate(data?.data.postDate)}
@@ -61,27 +81,57 @@ const BlogPage = () => {
       {/* CTA */}
       <div className="w-full max-w-4xl my-4 mx-auto p-2">
         <div className="border border-[#215cbc] p-4 md:p-6 rounded-lg text-center">
-          <h2 className="text-MainHeading font-bold mb-4">
+          <motion.h2
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 20 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
+            className="text-MainHeading font-bold mb-4"
+          >
             Let's Connect and Innovate Together!
-          </h2>
+          </motion.h2>
 
-          <p className="text-lg mb-4 text-gray-700">
+          <motion.p
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
+            className="text-lg mb-4 text-gray-700"
+          >
             We turn your ideas into reality. Whether it's{" "}
             <strong>
               custom software, expert advice, or an IT challenge, we're here to
               help.
             </strong>{" "}
             Reach out today and let's innovate and grow together!
-          </p>
+          </motion.p>
 
-          <p className="mt-4 flex md:gap-4 gap-2 justify-center items-center flex-wrap">
+          <motion.p
+            initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut",
+            }}
+            className="mt-4 flex md:gap-4 gap-2 justify-center items-center flex-wrap"
+          >
             <Link href="/contact">
-              <Button data-aos="fade-left">Contact us</Button>
+              <Button>Contact us</Button>
             </Link>
-          </p>
+          </motion.p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
