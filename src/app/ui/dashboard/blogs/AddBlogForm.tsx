@@ -202,6 +202,7 @@ const BlogForm: React.FC<BlogProps> = ({
               name="seoDescription"
               rules={[
                 { required: true, message: "Please enter a SEO Description" },
+                { max: 100, message: "Maximum 100 characters allowed" },
               ]}
             >
               <Input

@@ -21,7 +21,7 @@ export async function generateMetadata({
         product?.data?.seoDescription ||
         "Discover how Vionsys IT Solutions Pvt Ltd has successfully delivered innovative IT solutions to clients across various industries. Our case stories showcase our expertise, commitment, and the impact of our work.",
       openGraph: {
-        images: "/opangraph.png",
+        images: product?.data?.image || "/opangraph.png",
         description:
           product?.data?.seoDescription ||
           "Discover how Vionsys IT Solutions Pvt Ltd has successfully delivered innovative IT solutions to clients across various industries. Our case stories showcase our expertise, commitment, and the impact of our work.",
@@ -34,7 +34,6 @@ export async function generateMetadata({
       description: "An error occurred while fetching blog data.",
     };
   }
-
 }
 const page = () => {
   return <UserCaseStudies />;
