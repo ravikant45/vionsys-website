@@ -4,40 +4,25 @@ import useGetCaseStudy from "@/services/caseStudies/useGetCaseStudy";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
-import { jwtdecode } from "@/utils/jwt-decode";
 import { Modal } from "antd";
 import AddCaseStudyForm from "@/app/ui/dashboard/caseStudies/AddCaseStudyForm";
 import useDeleteCaseStudy from "@/services/caseStudies/useDeleteCaseStudy";
 import Loading from "@/app/(pages)/loading";
-import { formatDate } from "@/utils/formatDate";
+import withAuthHOC from "@/HOC/withAuthHOC";
 
-const Page = () => {
+const Page = ({ role }: { role: string }) => {
   const { id: keyWord } = useParams();
 
   const router = useRouter();
   const [openmodalDelete, setopenmodalDelete] = useState(false);
   const [deleteblogId, setdeleteblogId] = useState("");
-  const [role, setRole] = useState<string | null>(null);
   const { data, isPending } = useGetCaseStudy(keyWord);
   const { mutate: deleteCaseStudy, isPending: isDeletingCaseStudy } =
     useDeleteCaseStudy();
   const [showModal, setShowModal] = useState<boolean>(false);
   const handleCancelDeleteModal = () => setopenmodalDelete(false);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          const { role } = jwtdecode(token);
-          setRole(role);
-        } catch (e) {
-          console.log(e);
-        }
-      }
-    }
-  }, []);
 
   const handleDeleteCaseStudy = (id: string) => {
     deleteCaseStudy(id, {
@@ -153,4 +138,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default withAuthHOC(Page, "admin");

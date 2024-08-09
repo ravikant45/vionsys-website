@@ -3,42 +3,26 @@ import Loading from "@/app/(pages)/loading";
 import AddBlogForm from "@/app/ui/dashboard/blogs/AddBlogForm";
 
 import { Button } from "@/components/ui/button";
+import withAuthHOC from "@/HOC/withAuthHOC";
 import useGetBlog from "@/services/blogs/useGetBlog";
-import { formatDate } from "@/utils/formatDate";
-import { jwtdecode } from "@/utils/jwt-decode";
 import { Modal } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
-const Page: React.FC = () => {
+const Page = ({ role }: { role: string }) => {
   const { id } = useParams();
-  const [role, setRole] = useState<string | null>(null);
   const { data, isPending } = useGetBlog(id);
   const [showModal, setShowModal] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          const { role } = jwtdecode(token);
-          setRole(role);
-        } catch (e) {
-          console.log(e);
-        }
-      }
-    }
-  }, []);
 
   if (isPending) {
     return <Loading />;
   }
 
   return (
-    <div className="py-6 flex justify-center items-center md:px-10 bg-gray-100">
+    <section className="py-6 flex justify-center items-center md:px-10 bg-gray-100">
       <div className="py-8 md:px-4 px-8 p-3  w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
         <div className="mb-4 flex justify-start">
           <Link
@@ -108,8 +92,8 @@ const Page: React.FC = () => {
           />
         </Modal>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Page;
+export default withAuthHOC(Page, "admin");
