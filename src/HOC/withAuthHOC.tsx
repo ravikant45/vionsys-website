@@ -2,13 +2,13 @@ import Errorpage from "@/components/ui/Errorpage";
 import { jwtdecode } from "@/utils/jwt-decode";
 import React, { useEffect, useState } from "react";
 
-interface WithAuthProps {
+export interface WithAuthProps {
   role: string | null;
 }
 
 const withAuthHOC = <P extends object>(
   WrappedComponent: React.ComponentType<P & WithAuthProps>,
-  allowedRole: string
+  allowedRole: string = ""
 ) => {
   const ComponentWithAuth: React.FC<P> = (props) => {
     const [role, setRole] = useState<string | null>(null);
@@ -31,10 +31,10 @@ const withAuthHOC = <P extends object>(
       );
     }
 
-    return <WrappedComponent {...(props as P)} role={role} />;
+    // Ensure role is passed down
+    return <WrappedComponent {...props} role={role} />;
   };
 
   return ComponentWithAuth;
 };
-
 export default withAuthHOC;

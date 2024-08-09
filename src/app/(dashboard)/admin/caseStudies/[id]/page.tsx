@@ -10,9 +10,9 @@ import { Modal } from "antd";
 import AddCaseStudyForm from "@/app/ui/dashboard/caseStudies/AddCaseStudyForm";
 import useDeleteCaseStudy from "@/services/caseStudies/useDeleteCaseStudy";
 import Loading from "@/app/(pages)/loading";
-import withAuthHOC from "@/HOC/withAuthHOC";
+import withAuthHOC, { WithAuthProps } from "@/HOC/withAuthHOC";
 
-const Page = ({ role }: { role: string }) => {
+const Page: React.FC<WithAuthProps> = ({ role }) => {
   const { id: keyWord } = useParams();
 
   const router = useRouter();

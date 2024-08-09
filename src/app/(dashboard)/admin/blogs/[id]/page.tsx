@@ -3,7 +3,7 @@ import Loading from "@/app/(pages)/loading";
 import AddBlogForm from "@/app/ui/dashboard/blogs/AddBlogForm";
 
 import { Button } from "@/components/ui/button";
-import withAuthHOC from "@/HOC/withAuthHOC";
+import withAuthHOC, { WithAuthProps } from "@/HOC/withAuthHOC";
 import useGetBlog from "@/services/blogs/useGetBlog";
 import { Modal } from "antd";
 import Image from "next/image";
@@ -12,7 +12,7 @@ import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
-const Page = ({ role }: { role: string }) => {
+const Page: React.FC<WithAuthProps> = ({ role }) => {
   const { id } = useParams();
   const { data, isPending } = useGetBlog(id);
   const [showModal, setShowModal] = useState<boolean>(false);
