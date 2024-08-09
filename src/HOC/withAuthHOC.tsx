@@ -8,7 +8,7 @@ interface WithAuthProps {
 
 const withAuthHOC = <P extends object>(
   WrappedComponent: React.ComponentType<P & WithAuthProps>,
-  allowedRole: string
+  allowedRole: string = ""
 ) => {
   const ComponentWithAuth: React.FC<P> = (props) => {
     const [role, setRole] = useState<string | null>(null);
