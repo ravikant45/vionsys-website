@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Button } from "./button";
 import Job_modal from "@/app/ui/Careers/Job_modal";
 import { Modal } from "antd";
-
 export const HoverEffect = ({
   items,
   className,
@@ -22,25 +21,36 @@ export const HoverEffect = ({
   const [isVisible, setIsVisible] = useState(false);
   const [currentItemIndex, setCurrentItemIndex] = useState<number | null>(null);
 
-
   return (
     <>
       <Job_modal isModalOpen={isModalOpen} setisModalOpen={setisModalOpen} />
-       <Modal
-              width={"700px"}
-                footer={null}
-                open={isVisible}
-                onCancel={() => setIsVisible(false)}
-              >
-                {currentItemIndex !== null && (
-                  <div className="p-3">
-                    <CardTitle>{items[currentItemIndex].position}</CardTitle>
-                    <section className="mt-4" dangerouslySetInnerHTML={{ __html: items[currentItemIndex]?.jobDescription }} />
-                  </div>
-                )}
-              </Modal>
-      <div
-        data-aos="zoom-out"
+      <Modal
+        width={"700px"}
+        footer={null}
+        open={isVisible}
+        onCancel={() => setIsVisible(false)}
+      >
+        {currentItemIndex !== null && (
+          <div className="p-3">
+            <CardTitle>{items[currentItemIndex].position}</CardTitle>
+            <section
+              className="mt-4"
+              dangerouslySetInnerHTML={{
+                __html: items[currentItemIndex]?.jobDescription,
+              }}
+            />
+          </div>
+        )}
+      </Modal>
+      <motion.div
+        initial={{ opacity: 0, scale: 1.2 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.2,
+          scale: { type: "spring", stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: "easeInOut",
+        }}
         className={cn(
           "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 w-full",
           className
@@ -70,13 +80,15 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
-           
+
             <Card>
               <CardTitle>{item?.position}</CardTitle>
               <section className="line-clamp-4">
-                <div dangerouslySetInnerHTML={{ __html: item?.jobDescription }} />
+                <div
+                  dangerouslySetInnerHTML={{ __html: item?.jobDescription }}
+                />
               </section>
-             
+
               <span
                 className="text-blue-700 capitalize cursor-pointer"
                 onClick={() => {
@@ -101,7 +113,7 @@ export const HoverEffect = ({
             </Card>
           </div>
         ))}
-      </div>
+      </motion.div>
     </>
   );
 };

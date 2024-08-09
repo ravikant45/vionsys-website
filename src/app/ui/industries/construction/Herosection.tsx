@@ -61,7 +61,7 @@ export default function Herosection() {
     </div>
   </div>
 
-  <h1 className='text-center text-2xl font-bold sm:text-4xl text-orange'><div data-aos="flip-left">Our Services</div></h1>
+  <h1 className='text-center text-2xl font-bold sm:text-4xl text-orange'>Our Services</h1>
   </div>
   )
 }

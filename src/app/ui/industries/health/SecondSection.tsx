@@ -13,7 +13,7 @@ export default function SecondSection() {
    <div className="px-4 bg-dot-slate-300 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 
    <h1 className='w-full  py-5 text-center font-bold text-orange text-4xl'>
-        <div data-aos="flip-left">Our Services</div>
+        Our Services
         </h1>
 
     {Solutions.map((data)=>(
