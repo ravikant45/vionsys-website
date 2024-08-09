@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import BlogPage from "@/app/ui/blogs/blogpage";
+import { BaseUrl } from "@/app/sitemap";
 
 export async function generateMetadata({
   params,
@@ -9,9 +10,8 @@ export async function generateMetadata({
   const { id: blogKey } = params;
 
   try {
-    const baseUrl = process.env.DOMAIN;
     const product = await fetch(
-      `${baseUrl}/api/blogs/getOne?blogKey=${blogKey}`
+      `${BaseUrl}/api/blogs/getOne?blogKey=${blogKey}`
     ).then((res) => res.json());
 
     return {
@@ -20,7 +20,12 @@ export async function generateMetadata({
         product?.data?.seoDescription ||
         "Stay updated with the latest trends, insights, and innovations in the IT industry. Our blog features expert articles, technology updates, and company news, helping you stay ahead in your career and knowledge.",
       openGraph: {
-        images: product?.data?.image || "/opangraph.png",
+        images: [
+          {
+            url: product?.data?.image || `${BaseUrl}/opangraph.png`,
+            alt: product?.data?.title,
+          },
+        ],
         description:
           product?.data?.seoDescription ||
           "Explore the Vionsys IT Solutions Pvt Ltd blog for the latest industry trends, expert insights, and company news. Stay informed and inspired with our in-depth articles and technology updates.",
