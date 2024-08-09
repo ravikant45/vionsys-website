@@ -28,8 +28,15 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div
-      data-aos="zoom-in"
+    <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }}
       className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative"
     >
       {cards.map((card, i) => (
@@ -60,7 +67,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
         )}
         animate={{ opacity: selected?.id ? 0.3 : 0 }}
       />
-    </div>
+    </motion.div>
   );
 };
 

@@ -15,7 +15,7 @@ export default function SecondSection() {
                 <div key={item.id}>
                     <div className='py-5'>
                     <h1 className='text-SubHeading sm:text-MainHeading text-center border-y-2 border-MainHeading'>
-                    <div data-aos="flip-left">{item.heading}</div>
+                    {item.heading}
                     </h1>
                     </div>
                     <div className="grid gap-6 row-gap-10 lg:grid-cols-2 mb-5">
