@@ -1,66 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { jwtdecode } from "@/utils/jwt-decode";
-import Errorpage from "@/components/ui/Errorpage";
-import Loading from "@/app/(pages)/loading";
+import React from "react";
+
 import dynamic from "next/dynamic";
+import withAuthHOC, { WithAuthProps } from "@/HOC/withAuthHOC";
 
 // Dynamically import the AllBlogs component to avoid SSR issues
 const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
   ssr: false,
 });
 
-const Page = () => {
-  const [role, setRole] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          const { role } = jwtdecode(token);
-          setRole(role);
-        } catch (e) {
-          setError("Failed to decode token.");
-        }
-      } else {
-        setError("No token found.");
-      }
-      setLoading(false);
-    }
-  }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
-
-  if (error) {
-    return (
-      <Errorpage
-        errorCode="400"
-        errorTitle={"Error"}
-        errorDescription={error}
-      />
-    );
-  }
-
-  return (
-    <>
-      {role === "admin" ? (
-        <AllBlogs role={role} />
-      ) : (
-        <Errorpage
-          errorCode="401"
-          errorTitle={"You're not authorized!!"}
-          errorDescription={
-            "You tried to access a page you did not have prior authorization for."
-          }
-        />
-      )}
-    </>
-  );
+const Page: React.FC<WithAuthProps> = ({ role }) => {
+  return <AllBlogs role={role} />;
 };
 
-export default Page;
+export default withAuthHOC(Page, "admin");
