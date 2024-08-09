@@ -21,6 +21,7 @@ export async function PUT(req: NextRequest) {
     const title = data.get("title") as string;
     const keyWord = data.get("keyWord") as string;
     const description = data.get("description") as string;
+    const seoDescription = data.get("seoDescription") as string;
     const image = data.get("file") as unknown as File;
 
     // if id is not present then throw exception
@@ -52,6 +53,7 @@ export async function PUT(req: NextRequest) {
       where: { id },
       data: {
         title,
+        seoDescription,
         description,
         keyWord,
         image: caseStudyImage,

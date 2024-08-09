@@ -145,6 +145,7 @@ const Page = () => {
             image={data?.data?.image}
             keyWord={data?.data?.keyWord}
             setShowModal={setShowModal}
+            seoDescription={data?.data?.seoDescription}
           />
         </Modal>
       </div>
