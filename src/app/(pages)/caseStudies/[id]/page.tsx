@@ -17,9 +17,7 @@ export async function generateMetadata({
 
     return {
       title: product?.data?.title,
-      description:
-        product?.data?.seoDescription ||
-        "Discover how Vionsys IT Solutions Pvt Ltd has successfully delivered innovative IT solutions to clients across various industries. Our case stories showcase our expertise, commitment, and the impact of our work.",
+      description: product?.data?.seoDescription,
       openGraph: {
         images: [
           {
@@ -27,9 +25,7 @@ export async function generateMetadata({
             alt: product?.data?.title,
           },
         ],
-        description:
-          product?.data?.seoDescription ||
-          "Discover how Vionsys IT Solutions Pvt Ltd has successfully delivered innovative IT solutions to clients across various industries. Our case stories showcase our expertise, commitment, and the impact of our work.",
+        description: product?.data?.seoDescription,
       },
     };
   } catch (error) {
