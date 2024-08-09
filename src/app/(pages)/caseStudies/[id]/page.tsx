@@ -30,6 +30,7 @@ export async function generateMetadata({
       description: "An error occurred while fetching blog data.",
     };
   }
+
 }
 const page = () => {
   return <UserCaseStudies />;
