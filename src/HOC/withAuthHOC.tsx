@@ -2,7 +2,7 @@ import Errorpage from "@/components/ui/Errorpage";
 import { jwtdecode } from "@/utils/jwt-decode";
 import React, { useEffect, useState } from "react";
 
-interface WithAuthProps {
+export interface WithAuthProps {
   role: string | null;
 }
 

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { MdDeleteOutline } from "react-icons/md";
 import useDeleteBlog from "@/services/blogs/useDeleteBlog";
 import Loading from "@/app/(pages)/loading";
+import { WithAuthProps } from "@/HOC/withAuthHOC";
 
 interface Blog {
   createdAt: string;
@@ -20,7 +21,7 @@ interface Blog {
   keyWord: string;
 }
 
-const AllBlogs = ({ role }: { role: string }) => {
+const AllBlogs: React.FC<WithAuthProps> = ({ role }) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState<boolean>(false);
   const [deleteblogId, setdeleteblogId] = useState<string>("");
 

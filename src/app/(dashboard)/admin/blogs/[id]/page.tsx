@@ -3,7 +3,7 @@ import Loading from "@/app/(pages)/loading";
 import AddBlogForm from "@/app/ui/dashboard/blogs/AddBlogForm";
 
 import { Button } from "@/components/ui/button";
-import withAuthHOC from "@/HOC/withAuthHOC";
+import withAuthHOC, { WithAuthProps } from "@/HOC/withAuthHOC";
 import useGetBlog from "@/services/blogs/useGetBlog";
 import { Modal } from "antd";
 import Image from "next/image";
@@ -12,7 +12,7 @@ import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
-const Page: React.FC<{ role: string }> = ({ role }) => {
+const Page: React.FC<WithAuthProps> = ({ role }) => {
   const { id } = useParams();
   const { data, isPending } = useGetBlog(id);
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -23,7 +23,7 @@ const Page: React.FC<{ role: string }> = ({ role }) => {
 
   return (
     <section className="py-6 flex justify-center items-center md:px-10 bg-gray-100">
-      <div className="py-8 md:px-4 px-8 p-3 w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
+      <div className="py-8 md:px-4 px-8 p-3  w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
         <div className="mb-4 flex justify-start">
           <Link
             href={"/admin/blogs"}
@@ -50,6 +50,10 @@ const Page: React.FC<{ role: string }> = ({ role }) => {
             <h1 className="text-4xl font-bold mb-4 text-gray-800">
               {data?.data.title}
             </h1>
+            {/* <p className="text-sm text-gray-600">
+              <span className="font-semibold">Posted On:&nbsp;</span>
+              {formatDate(data?.data.postDate)}
+            </p> */}
           </div>
         </div>
 
