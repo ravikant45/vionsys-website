@@ -16,19 +16,15 @@ export async function generateMetadata({
 
     return {
       title: product?.data?.title,
-      description:
-        product?.data?.seoDescription ||
-        "Stay updated with the latest trends, insights, and innovations in the IT industry. Our blog features expert articles, technology updates, and company news, helping you stay ahead in your career and knowledge.",
+      description: product?.data?.seoDescription,
       openGraph: {
         images: [
           {
-            url: product?.data?.image || `${BaseUrl}/opangraph.png`,
+            url: product?.data?.image,
             alt: product?.data?.title,
           },
         ],
-        description:
-          product?.data?.seoDescription ||
-          "Explore the Vionsys IT Solutions Pvt Ltd blog for the latest industry trends, expert insights, and company news. Stay informed and inspired with our in-depth articles and technology updates.",
+        description: product?.data?.seoDescription,
       },
     };
   } catch (error) {
