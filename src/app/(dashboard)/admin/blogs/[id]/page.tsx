@@ -104,6 +104,7 @@ const Page: React.FC = () => {
             postDate={data?.data?.createdDate}
             keyWord={data?.data?.keyWord}
             setShowModal={setShowModal}
+            seoDescription={data?.data?.seoDescription}
           />
         </Modal>
       </div>

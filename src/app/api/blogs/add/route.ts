@@ -2,7 +2,6 @@ import cloudinaryUpload from "@/helper/cloudinaryUpload";
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../prisma/database";
 import isAdmin from "@/helper/isAdmin";
-
 async function fileToBuffer(file: File): Promise<Buffer> {
   const arrayBuffer = await file.arrayBuffer();
   return Buffer.from(arrayBuffer);
@@ -19,6 +18,7 @@ export async function POST(req: NextRequest) {
     const description = data.get("description") as string;
     const image = data.get("file") as unknown as File;
     const postDate = data.get("currentDate") as string;
+    const seoDescription = data.get("seoDescription") as string;
     const blogImageBuffer = await fileToBuffer(image);
 
     // upload the image on the cloudinary
@@ -31,6 +31,7 @@ export async function POST(req: NextRequest) {
         title,
         keyWord,
         description,
+        seoDescription,
         postDate,
         image: cloudinary_url,
       },
