@@ -204,6 +204,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
               name="seoDescription"
               rules={[
                 { required: true, message: "Please enter the Description!" },
+                { max: 250, message: "Maximum 250 characters allowed" },
               ]}
             >
               <Input
