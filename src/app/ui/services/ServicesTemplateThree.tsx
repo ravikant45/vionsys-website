@@ -14,7 +14,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
   return (
     <>
       {/* First section */}
-      <section className="overflow-x-hidden">
+      <section>
         <AuroraBackground>
           <motion.div
             initial={{ opacity: 0.0, y: 40 }}
@@ -41,11 +41,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
         <div className="w-full">
           <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6">
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 md:p-6">
-              <Image
-                src={data.secondSectionImage}
-                alt=""
-                className="w-full"
-              />
+              <Image src={data.secondSectionImage} alt="" className="w-full" />
             </div>
             <div className="w-full lg:w-1/2 p-2">
               <motion.h2
@@ -90,7 +86,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
               delay: 0.2,
               y: { type: "spring", stiffness: 30 },
               opacity: { duration: 0.6 },
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
             className="text-center text-MainHeading font-extrabold relative z-20 bg-clip-text capitalize"
           >
@@ -103,7 +99,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
               delay: 0.2,
               scale: { type: "spring", stiffness: 30 },
               opacity: { duration: 0.6 },
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
             className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:px-6 gap-x-4 gap-y-24 md:mt-0 mt-8"
           >

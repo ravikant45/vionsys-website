@@ -13,6 +13,7 @@ interface CaseStudyFormProps {
   id?: string;
   title?: string;
   description?: string;
+  seoDescription?: string;
   image?: string;
   keyWord?: string;
   setShowModal: (show: boolean) => void; // Add setShowModal prop
@@ -21,6 +22,7 @@ interface CaseStudyFormProps {
 interface FormValues {
   title: string;
   keyWord: string;
+  seoDescription: string;
   file: UploadFile[];
 }
 
@@ -31,6 +33,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   id,
   title = "",
   keyWord,
+  seoDescription = "",
   description: initialDescription = "",
   image,
   setShowModal,
@@ -48,6 +51,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
     const formData = new FormData();
     formData.append("title", values.title);
     formData.append("keyWord", values.keyWord);
+    formData.append("seoDescription", values.seoDescription);
     formData.append("description", description);
 
     if (fileList.length > 0) {
@@ -80,6 +84,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
     form.setFieldsValue({
       title,
       keyWord,
+      seoDescription,
     });
     setDescription(initialDescription);
 
@@ -187,6 +192,25 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
                 name="keyWord"
                 type="text"
                 placeholder="Enter key Word"
+                autoComplete="off"
+                className="appearance-none rounded-md relative block w-full px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              />
+            </Form.Item>
+          </LabelInputContainer>
+
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="seoDescription">SEO Description</Label>
+            <Form.Item
+              name="seoDescription"
+              rules={[
+                { required: true, message: "Please enter the Description!" },
+              ]}
+            >
+              <Input
+                id="seoDescription"
+                name="seoDescription"
+                type="text"
+                placeholder="Enter SEO Description"
                 autoComplete="off"
                 className="appearance-none rounded-md relative block w-full px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
               />
