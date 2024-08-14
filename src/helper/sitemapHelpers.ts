@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
-export const BaseUrl = process.env.DOMAIN || "";
-const lastModified = new Date();
+
+const BaseUrl = process.env.DOMAIN || "";
 
 // Generic function to fetch data from an API endpoint
 const fetchData = async (endpoint: string) => {
@@ -15,6 +15,7 @@ const fetchData = async (endpoint: string) => {
 };
 
 // Static pages for the sitemap
+const lastModified = new Date();
 export const staticPages: MetadataRoute.Sitemap = [
   { url: `${BaseUrl}`, priority: 1 },
   { url: `${BaseUrl}/about`, priority: 0.9 },
