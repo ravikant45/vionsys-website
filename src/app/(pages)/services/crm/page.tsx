@@ -9,6 +9,7 @@ import CRMFaq from "@/app/ui/services/CRMFaq";
 import dynamic from "next/dynamic";
 import { BaseUrl } from "@/app/sitemap";
 import Firstsection from "@/app/ui/services/crm/Firstsection";
+import ClientsServices from "@/utils/ClientsServices";
 export const metadata: Metadata = {
   title: "Customer Relationship Management Services",
   alternates: {
@@ -22,6 +23,7 @@ const Page: React.FC = () => {
       <Empower />
       <Img />
       <Importance />
+      <ClientsServices/>
       <CRMFaq />
       {/* Contact us and schedule a meet section */}
       <ScheduleMeetAndContactCTA />

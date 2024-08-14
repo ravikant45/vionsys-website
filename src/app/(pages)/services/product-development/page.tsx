@@ -5,6 +5,7 @@ import Hero from "@/app/ui/services/productdevelopment/Hero";
 import Secondsection from "@/app/ui/services/productdevelopment/Secondsection";
 import Thirdsection from "@/app/ui/services/productdevelopment/Thirdsection";
 import Faq from "@/app/ui/services/productdevelopment/Faq";
+import ClientsServices from "@/utils/ClientsServices";
 
 export const metadata: Metadata = {
   title: "Product Development Services",
@@ -26,6 +27,7 @@ const page = () => {
       <Hero />
       <Secondsection />
       <Thirdsection />
+      <ClientsServices/>
       <Faq />
       {/* CTA */}
       <section className="bg-gray-100">

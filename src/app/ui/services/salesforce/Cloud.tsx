@@ -7,7 +7,7 @@ import cloudback from "/public/assets/services/Salesforce/cloudback.jpg";
 
 function Cloud() {
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-2">
       <div className="bg-black relative bg-contain border-t-8 border-blue-500 rounded-3xl ">
         <Image
           src={cloudback}

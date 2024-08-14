@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { BaseUrl } from "@/app/sitemap";
 import Hero from "@/app/ui/services/ITStaffing/Hero";
+import ClientsServices from "@/utils/ClientsServices";
 
 export const metadata: Metadata = {
   title: "IT Staffing",
@@ -25,10 +26,11 @@ function Page() {
     <div className="pt-16">
       <Hero />
       <Services />
+      <ClientsServices/>
       <Choose />
       {/* CTA */}
       <section className="bg-gray-100">
-        <ScheduleMeetAndContactCTA />
+      <ScheduleMeetAndContactCTA />
       </section>
     </div>
   );

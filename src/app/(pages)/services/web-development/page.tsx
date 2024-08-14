@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { BaseUrl } from "@/app/sitemap";
 import Ourservices from "@/app/ui/services/webdevelopment/Ourservices";
+import ClientsServices from "@/utils/ClientsServices";
 
 export const metadata: Metadata = {
   title: "Web Development Service",
@@ -29,6 +30,7 @@ const Page = () => {
     <main className="pt-16 overflow-x-hidden">
       <Firstsec />
       <Ourservices />
+      <ClientsServices/>
       <FaqSec />
       {/* CTA */}
       <section className="bg-gray-100">

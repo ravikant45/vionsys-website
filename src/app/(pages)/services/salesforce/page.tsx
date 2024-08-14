@@ -6,6 +6,7 @@ import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
 import Hero from "@/app/ui/services/salesforce/Hero";
+import ClientsServices from "@/utils/ClientsServices";
 
 export const metadata: Metadata = {
   title: "Salesforce Services",
@@ -25,6 +26,7 @@ const salesforce = () => {
     <div className="pt-10 overflow-x-hidden">
       <Hero />
       <Future />
+      <ClientsServices/>
       <Cloud />
       <Provide />
       <ScheduleMeetAndContactCTA />

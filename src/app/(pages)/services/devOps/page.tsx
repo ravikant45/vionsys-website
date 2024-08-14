@@ -6,6 +6,7 @@ import Faq from "@/app/ui/services/devops/Faq";
 import Workflow from "@/app/ui/services/devops/Workflow";
 import Keyfeatures from "@/app/ui/services/devops/Keyfeatures";
 import Hero from "@/app/ui/services/devops/Hero";
+import ClientsServices from "@/utils/ClientsServices";
 export const metadata: Metadata = {
   title: "DevOpes Services",
   description:
@@ -26,6 +27,7 @@ const page = () => {
         <Hero />
         <Keyfeatures />
         <Workflow />
+        <ClientsServices/>
         <Faq />
         <section className="bg-gray-100">
         <ScheduleMeetAndContactCTA />

@@ -6,6 +6,7 @@ import Hero from "@/app/ui/services/testingservice/Hero";
 import Chooseus from "@/app/ui/services/testingservice/Chooseus";
 import Ourservices from "@/app/ui/services/testingservice/Ourservices";
 import Implementation from "@/app/ui/services/testingservice/Implementation";
+import ClientsServices from "@/utils/ClientsServices";
 
 export const metadata: Metadata = {
   title: "Testing Services",
@@ -29,6 +30,7 @@ const page: React.FC = () => {
       <Ourservices />
       <Implementation />
       {/* Schedule a meet and contact us */}
+      <ClientsServices/>
       <ScheduleMeetAndContactCTA />
     </main>
   );
