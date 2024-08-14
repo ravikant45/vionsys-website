@@ -1,32 +1,33 @@
 import { MetadataRoute } from "next";
 import { IndustriesLinks, ServicesLinks } from "./ui/navbar/Navlinks";
-export const BaseUrl = process.env.DOMAIN;
+import {
+  generateDynamicEntries,
+  generateSitemapEntries,
+  getAllBlogsFetch,
+  getAllCaseStudiesFetch,
+  staticPages,
+} from "@/helper/sitemapHelpers";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const Services: MetadataRoute.Sitemap = ServicesLinks.map(({ href }) => ({
-    url: `${BaseUrl}${href}`,
-  }));
-  const Industries: MetadataRoute.Sitemap = IndustriesLinks.map(({ href }) => ({
-    url: `${BaseUrl}${href}`,
-  }));
+  // Generate sitemaps for services and industries
+  const servicesSitemap = generateSitemapEntries(ServicesLinks);
+  const industriesSitemap = generateSitemapEntries(IndustriesLinks);
+
+  // Fetch blog and case study data and generate sitemap entries
+  const blogs = await getAllBlogsFetch();
+  const blogSitemap = generateDynamicEntries(blogs, "/blogs");
+
+  const caseStudies = await getAllCaseStudiesFetch();
+  const caseStudiesSitemap = generateDynamicEntries(
+    caseStudies,
+    "/caseStudies"
+  );
 
   return [
-    {
-      url: `${BaseUrl}/about`,
-    },
-    {
-      url: `${BaseUrl}/contact`,
-    },
-    {
-      url: `${BaseUrl}/career`,
-    },
-    {
-      url: `${BaseUrl}/blogs`,
-    },
-    {
-      url: `${BaseUrl}/caseStudies`,
-    },
-
-    ...Services,
-    ...Industries,
+    ...staticPages,
+    ...servicesSitemap,
+    ...industriesSitemap,
+    ...blogSitemap,
+    ...caseStudiesSitemap,
   ];
 }
