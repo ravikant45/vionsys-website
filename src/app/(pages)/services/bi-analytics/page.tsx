@@ -1,14 +1,33 @@
 import React from "react";
-import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
-import Firstsection from "@/app/ui/services/biAnalytics/Firstsection";
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
-import Secondsection from "@/app/ui/services/biAnalytics/Secondsection";
+import DynamicLoader from "@/components/ui/DynamicLoader";
+
+// Dynamic imports for components
+const Firstsection = dynamic(
+  () => import("@/app/ui/services/biAnalytics/Firstsection"),
+  {
+    loading: () => <DynamicLoader />,
+  }
+);
+const Secondsection = dynamic(
+  () => import("@/app/ui/services/biAnalytics/Secondsection"),
+  {
+    loading: () => <DynamicLoader />,
+  }
+);
+const ScheduleMeetAndContactCTA = dynamic(
+  () => import("@/utils/ScheduleMeetAndContactCTA"),
+  {
+    loading: () => <DynamicLoader />,
+  }
+);
 
 export const metadata: Metadata = {
   title: "Business Intelligence & Analytics Service",
   description:
-    "Vionsys IT Solutions India Pvt Ltd's Business Intelligence and Analytics services will help you realize the full potential of data. We offer comprehensive solutions to help businesses make data-driven decisions, streamline processes, and improve business performance. Our skilled team use cutting-edge technology to provide actionable insights that promote growth. Discover how our BI and Analytics services can help your business today. ",
+    "Vionsys IT Solutions India Pvt Ltd's Business Intelligence and Analytics services will help you realize the full potential of data. We offer comprehensive solutions to help businesses make data-driven decisions, streamline processes, and improve business performance. Our skilled team uses cutting-edge technology to provide actionable insights that promote growth. Discover how our BI and Analytics services can help your business today. ",
   alternates: {
     canonical: `${BaseUrl}/services/bi-analytics`,
   },
@@ -25,7 +44,7 @@ const BiAndAnalyticsDatapage = () => {
       <Firstsection />
       <Secondsection />
       <section className="bg-gray-100">
-      <ScheduleMeetAndContactCTA />
+        <ScheduleMeetAndContactCTA />
       </section>
     </main>
   );

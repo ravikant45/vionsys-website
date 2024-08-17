@@ -1,7 +1,16 @@
 import React from "react";
 import { Metadata } from "next";
-import UserCaseStudies from "@/app/ui/casestudy/UserCaseStudies";
+import dynamic from "next/dynamic";
 import { BaseUrl } from "@/app/sitemap";
+import DynamicLoader from "@/components/ui/DynamicLoader";
+
+// Dynamically import UserCaseStudies component
+const UserCaseStudies = dynamic(
+  () => import("@/app/ui/casestudy/UserCaseStudies"),
+  {
+    loading: () => <DynamicLoader />,
+  }
+);
 
 export async function generateMetadata({
   params,
@@ -32,12 +41,13 @@ export async function generateMetadata({
     console.error("Error generating metadata:", error);
     return {
       title: "Error",
-      description: "An error occurred while fetching blog data.",
+      description: "An error occurred while fetching case study data.",
     };
   }
 }
-const page = () => {
+
+const Page = () => {
   return <UserCaseStudies />;
 };
 
-export default page;
+export default Page;

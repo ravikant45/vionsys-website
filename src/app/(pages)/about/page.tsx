@@ -5,29 +5,35 @@ import LifeAtVionsys from "../../ui/about/LifeAtVionsys";
 import ISOLogo from "@/components/ui/ISOLogo";
 import CeoDesk2 from "@/app/ui/about/CeoDesk2";
 import { BaseUrl } from "@/app/sitemap";
+import DynamicLoader from "@/components/ui/DynamicLoader";
+
+// Dynamic imports for components
 const AboutUs = dynamic(() => import("../../ui/about/AboutUs"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <DynamicLoader />,
 });
 const About2 = dynamic(() => import("../../ui/about/About2"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <DynamicLoader />,
 });
 const ThreeDCard = dynamic(() => import("../../ui/about/ThreeDCard"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <DynamicLoader />,
 });
-const Countries = dynamic(() => import("../../ui/about/Countries"))
+const Countries = dynamic(() => import("../../ui/about/Countries"), {
+  loading: () => <DynamicLoader />,
+});
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Vionsys, a pioneering IT solutions provider, specializes in software development, cloud services, and cybersecurity. We provide innovative, scalable solutions designed to accelerate corporate growth and efficiency while providing sturdy, secure, and cutting-edge technology for a competitive advantage.",
+  description:
+    "Vionsys, a pioneering IT solutions provider, specializes in software development, cloud services, and cybersecurity. We provide innovative, scalable solutions designed to accelerate corporate growth and efficiency while providing sturdy, secure, and cutting-edge technology for a competitive advantage.",
   alternates: {
-    canonical: `${BaseUrl}/about`
+    canonical: `${BaseUrl}/about`,
   },
   openGraph: {
     images: "/opangraph.png",
-    description: "We provide premium IT services such as custom software, cloud solutions, and cybersecurity. Our devoted staff provides organizations with innovative technologies, assuring a competitive advantage and operational efficiency. Vionsys offers transformational IT skills."
-  }
+    description:
+      "We provide premium IT services such as custom software, cloud solutions, and cybersecurity. Our devoted staff provides organizations with innovative technologies, assuring a competitive advantage and operational efficiency. Vionsys offers transformational IT skills.",
+  },
 };
-
 
 const page = () => {
   return (
