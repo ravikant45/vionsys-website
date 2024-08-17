@@ -55,7 +55,7 @@ const WhyTrust: React.FC = () => {
   };
 
   return (
-    <section className="mx-auto p-3 md:py-5 px-0 md:p-5 md:px-0">
+    <main className="mx-auto p-3 md:py-5 px-0 md:p-5 md:px-0">
       <section className="relative md:px-10 px-5 md:p-0 transform duration-500 hover:shadow-2xl cursor-pointer hover:-translate-y-1">
         <Image
           className="xl:max-w-6xl"
@@ -64,7 +64,7 @@ const WhyTrust: React.FC = () => {
         />
         <div className="content bg-white p-2 pt-8 md:p-6 pb-12 lg:max-w-xl w-full lg:absolute top-10 right-5">
           <div>
-            <motion.p
+            <motion.h1
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
@@ -76,8 +76,8 @@ const WhyTrust: React.FC = () => {
               className="font-extrabold text-MainHeading"
             >
               Why trust us?
-            </motion.p>
-            <motion.p
+            </motion.h1>
+            <motion.h2
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
@@ -89,7 +89,7 @@ const WhyTrust: React.FC = () => {
               className="text-SubHeading md:mt-5 mt-3 font-bold"
             >
               Achieve digital transformation for your retail business services
-            </motion.p>
+            </motion.h2>
             <motion.p
               initial={{ opacity: 0, scale: 1.2 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -109,7 +109,7 @@ const WhyTrust: React.FC = () => {
               supports your professional development. Find the ideal environment
               to unlock your full potential in the dynamic IT career.
             </motion.p>
-            <motion.ul
+            <motion.section
               initial={{ opacity: 0, scale: 1.2 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
@@ -154,11 +154,11 @@ const WhyTrust: React.FC = () => {
                   </details>
                 </div>
               ))}
-            </motion.ul>
+            </motion.section>
           </div>
         </div>
       </section>
-    </section>
+    </main>
   );
 };
 
