@@ -89,8 +89,8 @@ const Navbar = () => {
       >
         {/* Logo of the organization */}
         <div className="px-4">
-          <Link href="/">
-            <Image src={LogoImage} alt="" className="w-[152px]" />
+          <Link href="/" aria-label="Home link">
+            <Image src={LogoImage} alt="Home-link" className="w-[152px]" />
           </Link>
         </div>
 
@@ -104,6 +104,7 @@ const Navbar = () => {
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                     onClick={closeMenu}
+                    aria-label="Home link"
                   >
                     Home
                   </NavigationMenuLink>
@@ -112,7 +113,12 @@ const Navbar = () => {
 
               {/* About page */}
               <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
+                <Link
+                  href="/about"
+                  aria-label="About link"
+                  legacyBehavior
+                  passHref
+                >
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                     onClick={closeMenu}
@@ -124,15 +130,18 @@ const Navbar = () => {
 
               {/*Services dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger aria-label="Services dropdown">
+                  Services
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
-                    {ServicesLinks.map((component) => (
+                    {ServicesLinks?.map((component) => (
                       <ListItem
                         className="hover:cursor-pointer"
                         key={component.title}
                         title={component.title}
                         href={component.href}
+                        aria-label={component.title}
                       >
                         {/* {component.description} */}
                       </ListItem>
@@ -143,7 +152,9 @@ const Navbar = () => {
 
               {/* articles links */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Insights</NavigationMenuTrigger>
+                <NavigationMenuTrigger aria-label="Insights dropdown">
+                  Insights
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[500px] ">
                     {ArticlesLinks.map((component) => (
@@ -152,6 +163,7 @@ const Navbar = () => {
                         key={component.title}
                         title={component.title}
                         href={component.href}
+                        aria-label={component.title}
                       >
                         {/* {component.description} */}
                       </ListItem>
@@ -162,7 +174,9 @@ const Navbar = () => {
 
               {/*Industries dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
+                <NavigationMenuTrigger aria-label="Industries dropdown">
+                  Industries
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
                     {IndustriesLinks.map((component) => (
@@ -171,6 +185,7 @@ const Navbar = () => {
                         key={component.title}
                         title={component.title}
                         href={component.href}
+                        aria-label={component.title}
                       >
                         {/* {component.description} */}
                       </ListItem>
@@ -185,6 +200,7 @@ const Navbar = () => {
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                     onClick={closeMenu}
+                    aria-label="Career link"
                   >
                     Career
                   </NavigationMenuLink>
@@ -197,6 +213,7 @@ const Navbar = () => {
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                     onClick={closeMenu}
+                    aria-label="Contact link"
                   >
                     Contact
                   </NavigationMenuLink>
@@ -209,9 +226,9 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div className="md:hidden block text-4xl cursor-pointer">
           {!showMenu ? (
-            <HiMenuAlt1 onClick={() => toggleMenu()} />
+            <HiMenuAlt1 onClick={() => toggleMenu()} aria-label="Open menu" />
           ) : (
-            <VscClose onClick={() => toggleMenu()} />
+            <VscClose onClick={() => toggleMenu()} aria-label="Close menu" />
           )}
         </div>
       </div>
