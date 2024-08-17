@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Button } from "@/components/ui/button";
 import { Modal } from "antd";
+import DynamicLoader from "@/components/ui/DynamicLoader";
 
 function WorkWithUs() {
   const [modalopen, setmodalopen] = useState(false);
@@ -15,7 +16,7 @@ function WorkWithUs() {
   return (
     <>
       <Modal open={modalopen} onCancel={handlecancle} footer={null}>
-        <Suspense fallback={"Loading..."}>
+        <Suspense fallback={<DynamicLoader />}>
           <iframe
             className="overflow-hidden"
             src="https://calendly.com/hr--eppa/30min"

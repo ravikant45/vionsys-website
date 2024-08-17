@@ -4,6 +4,7 @@ import { Modal } from "antd";
 import Link from "next/link";
 import React, { Suspense, useState } from "react";
 import { motion } from "framer-motion";
+import DynamicLoader from "@/components/ui/DynamicLoader";
 const ScheduleMeetAndContactCTA: React.FC = () => {
   const [modalopen, setmodalopen] = useState(false);
   const handlecancle = () => {
@@ -15,7 +16,7 @@ const ScheduleMeetAndContactCTA: React.FC = () => {
   return (
     <>
       <Modal open={modalopen} onCancel={handlecancle} footer={null}>
-        <Suspense fallback={"Loading..."}>
+        <Suspense fallback={<DynamicLoader />}>
           <iframe
             className="overflow-hidden"
             src="https://calendly.com/hr--eppa/30min"

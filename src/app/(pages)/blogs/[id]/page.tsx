@@ -1,6 +1,11 @@
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
-import BlogPage from "@/app/ui/blogs/blogpage";
 import { BaseUrl } from "@/app/sitemap";
+import DynamicLoader from "@/components/ui/DynamicLoader";
+
+const BlogPage = dynamic(() => import("@/app/ui/blogs/blogpage"), {
+  loading: () => <DynamicLoader />,
+});
 
 export async function generateMetadata({
   params,
@@ -14,19 +19,24 @@ export async function generateMetadata({
       `${BaseUrl}/api/blogs/getOne?blogKey=${blogKey}`
     ).then((res) => res.json());
 
-    return {
-      title: product?.data?.title,
-      description: product?.data?.seoDescription,
-      openGraph: {
-        images: [
-          {
-            url: product?.data?.image,
-            alt: product?.data?.title,
-          },
-        ],
-        description: product?.data?.seoDescription,
-      },
-    };
+    if (product?.data) {
+      return {
+        title: product.data.title || "Blog Post",
+        description: product.data.seoDescription || "Read our blog post.",
+        openGraph: {
+          images: product.data.image
+            ? [{ url: product.data.image, alt: product.data.title }]
+            : undefined,
+          description: product.data.seoDescription,
+        },
+      };
+    } else {
+      // Handle case where no blog data is returned
+      return {
+        title: "Blog Post Not Found",
+        description: "This blog post could not be found.",
+      };
+    }
   } catch (error) {
     console.error("Error generating metadata:", error);
     return {

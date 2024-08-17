@@ -1,16 +1,18 @@
 import { BaseUrl } from "@/app/sitemap";
+import DynamicLoader from "@/components/ui/DynamicLoader";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
   ssr: false,
+  loading: () => <DynamicLoader />,
 });
 export const metadata: Metadata = {
   title: "Blogs",
   description:
     "Stay updated with the latest trends, insights, and innovations in the IT industry. Our blog features expert articles, technology updates, and company news, helping you stay ahead in your career and knowledge.",
   alternates: {
-    canonical: `${BaseUrl}/blogs`
+    canonical: `${BaseUrl}/blogs`,
   },
   openGraph: {
     images: "/opangraph.png",

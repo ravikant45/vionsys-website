@@ -8,6 +8,7 @@ import MLAIFaq from "@/app/ui/services/MLAIFaq";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { Modal } from "antd";
 import { motion } from "framer-motion";
+import ClientsServices from "@/utils/ClientsServices";
 interface Feature {
   id: number;
   icon: React.ComponentType;
@@ -241,6 +242,10 @@ const AlMLCards: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Clients */}
+      <ClientsServices/>
+      {/* FAQ */}
       <MLAIFaq />
 
       <section className="bg-gray-100">

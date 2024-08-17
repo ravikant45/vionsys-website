@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BiAndAnalyticsData } from "@/app/ui/services/data/BiAndAnalytics";
+import ClientsServices from "@/utils/ClientsServices";
+
 const Secondsection = () => {
   return (
     <div>
@@ -111,7 +113,8 @@ const Secondsection = () => {
           </div>
         </div>
       </section>
-
+       {/* Clients Section */}
+       <ClientsServices/>
       {/* Fourth section */}
       <section>
         <div className=" bg-gray-100 py-4 w-full relative flex items-center justify-center overflow-x-hidden">
