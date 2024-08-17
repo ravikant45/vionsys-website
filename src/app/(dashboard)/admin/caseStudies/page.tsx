@@ -1,11 +1,20 @@
 "use client";
-import AllCaseStudies from "@/app/ui/dashboard/caseStudies/AllCaseStudies";
+
+import dynamic from "next/dynamic";
 import withAuthHOC from "@/HOC/withAuthHOC";
-
 import React from "react";
+import DynamicLoader from "@/components/ui/DynamicLoader";
 
-const page = () => {
+// Dynamically import the AllCaseStudies component
+const AllCaseStudies = dynamic(
+  () => import("@/app/ui/dashboard/caseStudies/AllCaseStudies"),
+  {
+    loading: () => <DynamicLoader />,
+  }
+);
+
+const Page = () => {
   return <AllCaseStudies />;
 };
 
-export default withAuthHOC(page, "admin");
+export default withAuthHOC(Page, "admin");
