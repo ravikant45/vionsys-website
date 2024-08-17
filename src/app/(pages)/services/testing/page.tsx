@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
+      
+import ClientsServices from "@/utils/ClientsServices";
 import DynamicLoader from "@/components/ui/DynamicLoader";
 
 // Dynamic imports for components
@@ -32,6 +34,7 @@ const ScheduleMeetAndContactCTA = dynamic(
   }
 );
 
+
 export const metadata: Metadata = {
   title: "Testing Services",
   description:
@@ -54,6 +57,7 @@ const Page: React.FC = () => {
       <Ourservices />
       <Implementation />
       {/* Schedule a meet and contact us */}
+      <ClientsServices/>
       <ScheduleMeetAndContactCTA />
     </main>
   );

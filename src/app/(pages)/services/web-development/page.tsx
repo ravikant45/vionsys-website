@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
+
+import ClientsServices from "@/utils/ClientsServices";
+
 import DynamicLoader from "@/components/ui/DynamicLoader";
 import webdevServicesData from "@/app/ui/services/data/WebdevServicesData";
 
@@ -51,6 +54,7 @@ const Page = () => {
     <main className="pt-16 overflow-x-hidden">
       <Firstsec />
       <Ourservices />
+      <ClientsServices/>
       <FaqSec />
       {/* CTA */}
       <section className="bg-gray-100">

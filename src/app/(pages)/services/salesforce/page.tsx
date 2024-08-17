@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
+
+import ClientsServices from "@/utils/ClientsServices";
+
 import DynamicLoader from "@/components/ui/DynamicLoader";
 
 // Dynamic imports for components
@@ -42,6 +45,7 @@ const Salesforce: React.FC = () => {
     <div className="pt-10 overflow-x-hidden">
       <Hero />
       <Future />
+      <ClientsServices/>
       <Cloud />
       <Provide />
       <ScheduleMeetAndContactCTA />

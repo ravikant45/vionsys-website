@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
+
+import ClientsServices from "@/utils/ClientsServices";
+
 import DynamicLoader from "@/components/ui/DynamicLoader";
 
 // Dynamic imports for components
@@ -29,6 +32,7 @@ const ScheduleMeetAndContactCTA = dynamic(
   }
 );
 
+
 export const metadata: Metadata = {
   title: "Customer Relationship Management Services",
   alternates: {
@@ -43,6 +47,7 @@ const Page: React.FC = () => {
       <Empower />
       <Img />
       <Importance />
+      <ClientsServices/>
       <CRMFaq />
       {/* Contact us and schedule a meet section */}
       <ScheduleMeetAndContactCTA />

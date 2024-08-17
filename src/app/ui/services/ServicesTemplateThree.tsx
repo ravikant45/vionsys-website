@@ -6,6 +6,7 @@ import { PinContainer } from "@/components/ui/3d-pin";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import { BiAndAnalyticsDataType } from "./data/BiAndAnalytics";
+import ClientsServices from "@/utils/ClientsServices";
 
 interface Props {
   data: BiAndAnalyticsDataType;
@@ -131,6 +132,8 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
         </div>
       </section>
 
+      {/* Client */}
+      <ClientsServices/>
       {/* Fourth section */}
       <section>
         <div className="py-4 w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
@@ -230,6 +233,8 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
           </div>
         </div>
       </section>
+
+
 
       <ScheduleMeetAndContactCTA />
     </>

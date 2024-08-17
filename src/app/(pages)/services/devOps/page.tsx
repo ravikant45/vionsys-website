@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
+
+import ClientsServices from "@/utils/ClientsServices";
+
 import DynamicLoader from "@/components/ui/DynamicLoader";
 
 // Dynamic imports for components
@@ -47,6 +50,7 @@ const Page: React.FC = () => {
         <Hero />
         <Keyfeatures />
         <Workflow />
+        <ClientsServices/>
         <Faq />
         <section className="bg-gray-100">
           <ScheduleMeetAndContactCTA />

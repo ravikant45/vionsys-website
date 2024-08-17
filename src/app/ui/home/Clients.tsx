@@ -1,6 +1,5 @@
 "use client";
 
-import ClientImage2 from "../../../../public/assets/clients/client-2.png";
 import ClientImage3 from "../../../../public/assets/clients/client-3.png";
 import ClientImage4 from "../../../../public/assets/clients/client-4.png";
 import ClientImage5 from "../../../../public/assets/clients/client-5.png";
@@ -19,7 +18,6 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  { id: "2", img: ClientImage2.src },
   { id: "3", img: ClientImage3.src },
   { id: "4", img: ClientImage4.src },
   { id: "5", img: ClientImage5.src },
@@ -27,7 +25,7 @@ const testimonials: Testimonial[] = [
   { id: "7", img: ClientImage7.src },
   { id: "8", img: ClientImage8.src },
   { id: "9", img: ClientImage9.src },
-  { id: "10", img: ClientImage10.src },
+  { id: "10",img: ClientImage10.src },
 ];
 
 export function InfiniteMovingCardsDemo() {

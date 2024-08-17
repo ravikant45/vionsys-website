@@ -8,6 +8,7 @@ import ContentMarketing from "/public/assets/services/DigitalMarketing/content.j
 import SocialMediaMarketing from "/public/assets/services/DigitalMarketing/social.jpg";
 import EmailMarketing from "/public/assets/services/DigitalMarketing/Email.jpg";
 import { motion } from "framer-motion";
+import ClientsServices from "@/utils/ClientsServices";
 const ServicesTemplateFour: React.FC = () => {
   return (
     <main>
@@ -517,7 +518,8 @@ const ServicesTemplateFour: React.FC = () => {
           </motion.div>
         </div>
       </div>
-
+      
+      <ClientsServices/>
       {/* FAQ section for digital marketing */}
       <section
         id="faq"

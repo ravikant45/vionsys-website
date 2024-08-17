@@ -4,6 +4,7 @@ import supp from "/public/assets/services/supp.jpg";
 import Image from "next/image";
 import { Feature } from "./data/CloudComputingServicesData";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
+import ClientsServices from "@/utils/ClientsServices";
 
 const ServicesTemplateTwo = ({ data }: { data: any }) => {
   return (
@@ -185,7 +186,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
           </div>
         </section>
       </section>
-
+      <ClientsServices/>
       {/* CTA */}
       <section className="bg-gray-100">
         <ScheduleMeetAndContactCTA />

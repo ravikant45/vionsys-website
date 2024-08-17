@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { SparklesCore } from "@/components/ui/sparkles";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
+import ClientsServices from "@/utils/ClientsServices";
 const ServicesTemplateOne = ({ data }: { data: any }) => {
   const getWaveColor = (heading: string): string[] => {
     switch (heading) {
@@ -125,6 +126,8 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
         </div>
       </section>
 
+     <ClientsServices/>
+     
       {/* faq section */}
       <section>
         <div className="bg-white">
