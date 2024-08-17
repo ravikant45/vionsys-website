@@ -64,7 +64,7 @@ const AboutOurCompany = () => {
         <LayoutGrid cards={cards} />
       </div>
       <div className="col-span-1 px-5">
-        <motion.h4
+        <motion.h1
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -76,8 +76,8 @@ const AboutOurCompany = () => {
           className="font-extrabold text-MainHeading"
         >
           About Our Company
-        </motion.h4>
-        <motion.h5
+        </motion.h1>
+        <motion.h2
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -90,8 +90,8 @@ const AboutOurCompany = () => {
         >
           Elevating your business through exemplary IT services is our
           unwavering passion and commitment.
-        </motion.h5>
-        <motion.div
+        </motion.h2>
+        <motion.p
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
@@ -109,9 +109,11 @@ const AboutOurCompany = () => {
           Our team of experts works closely with clients to understand their
           specific requirements, ensuring a high-quality, sustainable solution
           that delivers lasting results.
-        </motion.div>
-        <Link href="/about">
-          <Button className="text-lg">Learn More</Button>
+        </motion.p>
+        <Link aria-label="about link" href="/about">
+          <Button color="white" className="text-lg">
+            Learn More
+          </Button>
         </Link>
       </div>
     </div>

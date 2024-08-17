@@ -1,12 +1,9 @@
 "use client";
 
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from "react";
 
-import { cn } from '@/lib/utils';
-import { Button } from './button';
+import { cn } from "@/lib/utils";
+import { Button } from "./button";
 
 export const InfiniteMovingCards = ({
   items,
@@ -113,7 +110,7 @@ export const InfiniteMovingCards = ({
                     {item.description}
                   </span>
                   <span className=" text-lg leading-[1.6] text-red-500 underline font-normal">
-                    <Button>{item.button}</Button>
+                    <Button size={"lg"}>{item.button}</Button>
                   </span>
                 </span>
               </div>
