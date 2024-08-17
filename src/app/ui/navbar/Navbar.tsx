@@ -141,7 +141,7 @@ const Navbar = () => {
                         key={component.title}
                         title={component.title}
                         href={component.href}
-                        aria-label={component.title}
+                        aria-label={component.ariaLabel}
                       >
                         {/* {component.description} */}
                       </ListItem>
@@ -163,7 +163,7 @@ const Navbar = () => {
                         key={component.title}
                         title={component.title}
                         href={component.href}
-                        aria-label={component.title}
+                        aria-label={component.ariaLabel}
                       >
                         {/* {component.description} */}
                       </ListItem>
@@ -185,7 +185,7 @@ const Navbar = () => {
                         key={component.title}
                         title={component.title}
                         href={component.href}
-                        aria-label={component.title}
+                        aria-label={component.ariaLabel}
                       >
                         {/* {component.description} */}
                       </ListItem>
