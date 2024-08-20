@@ -86,30 +86,29 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <li key={idx} className="flex-shrink-0">
-            <Link
-              href={item.href || "#"}
-              aria-label={item.ariaLabel}
-              className="w-[350px] max-w-full relative hover:scale-105 transition-all ease-linear 2s hover:cursor-pointer rounded-2xl border border-b-0 flex-shrink-0 border-grey-400 px-8 py-6 md:w-[450px]"
-              style={{
-                background:
-                  "linear-gradient(180deg, var(--indigo-200), var(--indigo-200))",
-              }}
-            >
-              <blockquote>
-                <span className="relative z-20 text-paragraph leading-[1.6] text-black font-bold">
-                  {item.name}
-                </span>
-                <div className="relative z-20 mt-6 flex flex-row items-center">
-                  <span className="flex flex-col gap-4">
-                    <span className="text-cardPara leading-[1.6] text-black border-slate-700 font-normal">
-                      {item.description}
-                    </span>
+          <Link
+            key={idx}
+            href={item.href || "#"}
+            aria-label={item.ariaLabel}
+            className="w-[350px] max-w-full relative hover:scale-105 transition-all ease-linear 2s hover:cursor-pointer rounded-2xl border border-b-0 flex-shrink-0 border-grey-400 px-8 py-6 md:w-[450px]"
+            style={{
+              background:
+                "linear-gradient(180deg, var(--indigo-200), var(--indigo-200))",
+            }}
+          >
+            <blockquote>
+              <span className="relative z-20 text-paragraph leading-[1.6] text-black font-bold">
+                {item.name}
+              </span>
+              <div className="relative z-20 mt-6 flex flex-row items-center">
+                <span className="flex flex-col gap-4">
+                  <span className="text-cardPara leading-[1.6] text-black border-slate-700 font-normal">
+                    {item.description}
                   </span>
-                </div>
-              </blockquote>
-            </Link>
-          </li>
+                </span>
+              </div>
+            </blockquote>
+          </Link>
         ))}
       </ul>
     </div>
