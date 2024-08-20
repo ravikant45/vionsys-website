@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BaseUrl = process.env.DOMAIN || "";
+const BaseUrl = process.env.DOMAIN || "https://www.fusion-institute.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
