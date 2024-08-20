@@ -1,34 +1,16 @@
+// AboutOurCompany.tsx
 import React from "react";
-import { LayoutGrid } from "@/components/ui/layout-grid2";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import { LayoutGrid } from "@/components/ui/layout-grid";
 import { motion } from "framer-motion";
 import CRM from "/public/assets/Home/CRM.png";
 import Service from "/public/assets/Home/Service.jpg";
 import AI from "/public/assets/Home/AI.jpg";
 import Salesforce from "/public/assets/Home/SalesforceImg.jpg";
 
-type Card = {
-  id: number;
-  content: JSX.Element | React.ReactNode | string;
-  className: string;
-  thumbnail: StaticImageData;
-};
-
-const SkeletonOne = () => {
-  return <div></div>;
-};
-
-const SkeletonTwo = () => {
-  return <div></div>;
-};
-const SkeletonThree = () => {
-  return <div></div>;
-};
-const SkeletonFour = () => {
-  return <div></div>;
-};
+const SkeletonOne = () => <div>Loading...</div>;
+const SkeletonTwo = () => <div>Loading...</div>;
+const SkeletonThree = () => <div>Loading...</div>;
+const SkeletonFour = () => <div>Loading...</div>;
 
 const cards = [
   {
@@ -110,11 +92,6 @@ const AboutOurCompany = () => {
           specific requirements, ensuring a high-quality, sustainable solution
           that delivers lasting results.
         </motion.p>
-        <Link aria-label="about link" href="/about">
-          <Button color="white" className="text-lg">
-            Learn More
-          </Button>
-        </Link>
       </div>
     </div>
   );

@@ -1,9 +1,6 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
 
 export const InfiniteMovingCards = ({
   items,
@@ -15,7 +12,8 @@ export const InfiniteMovingCards = ({
   items: {
     name: string;
     description: string;
-    button: any;
+    href: string;
+    ariaLabel: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -28,7 +26,9 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, []);
+
   const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -45,77 +45,70 @@ export const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
-      }
+      containerRef.current.style.setProperty(
+        "--animation-direction",
+        direction === "left" ? "forwards" : "reverse"
+      );
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
+      const speedMap = {
+        fast: "20s",
+        normal: "40s",
+        slow: "80s",
+      };
+      containerRef.current.style.setProperty(
+        "--animation-duration",
+        speedMap[speed] || "40s"
+      );
     }
   };
+
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-10  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-10 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_80%,transparent)]",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
+          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+          start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
-          <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-grey-400 px-8 py-6 md:w-[450px]"
+          <Link
+            href={item.href || "#"} // Default to "#" if href is undefined
+            key={idx}
+            aria-label={item.ariaLabel}
+            className="w-[350px] max-w-full relative hover:scale-105 transition-all ease-linear 2s hover:cursor-pointer rounded-2xl border border-b-0 flex-shrink-0 border-grey-400 px-8 py-6 md:w-[450px]"
             style={{
               background:
-                "linear-gradient(180deg, var(--indigo-200), var(--indigo-200)",
+                "linear-gradient(180deg, var(--indigo-200), var(--indigo-200))",
             }}
-            key={item.name}
           >
             <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className=" relative z-20 text-paragraph leading-[1.6] text-black font-bold">
+              <span className="relative z-20 text-paragraph leading-[1.6] text-black font-bold">
                 {item.name}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-4">
-                  <span className=" text-cardPara leading-[1.6] text-black border-slate-700 font-normal">
+                  <span className="text-cardPara leading-[1.6] text-black border-slate-700 font-normal">
                     {item.description}
-                  </span>
-                  <span className=" text-lg leading-[1.6] text-red-500 underline font-normal">
-                    <Button size={"lg"}>{item.button}</Button>
                   </span>
                 </span>
               </div>
             </blockquote>
-          </li>
+          </Link>
         ))}
       </ul>
     </div>
