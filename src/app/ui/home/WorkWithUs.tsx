@@ -28,7 +28,7 @@ function WorkWithUs() {
       <AuroraBackground>
         <div className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-24 py-4">
           {/* <div className='flex flex-col justify-items-center items-center'> */}
-          <motion.h4
+          <motion.h1
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -40,8 +40,8 @@ function WorkWithUs() {
             className="font-extrabold text-MainHeading text-center"
           >
             Want to work with us?
-          </motion.h4>
-          <motion.h5
+          </motion.h1>
+          <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -54,8 +54,8 @@ function WorkWithUs() {
           >
             Elevate your business through digital transformation, driving
             sustainable growth.
-          </motion.h5>
-          <motion.div
+          </motion.h2>
+          <motion.p
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -72,15 +72,16 @@ function WorkWithUs() {
             learning initiatives and chart a path for professional advancement.
             Discover the ideal environment to unleash your full potential in the
             dynamic IT industry.
-          </motion.div>
+          </motion.p>
           <div className="flex flex-wrap gap-7 text-center">
             <Button
+              aria-label="Schedule a meeting button"
               className="text-lg text-center"
               onClick={() => setmodalopen(true)}
             >
               Schedule a meeting
             </Button>
-            <Link href={"/contact"}>
+            <Link aria-label="contact us link" href={"/contact"}>
               <Button className="text-lg text-center">Contact Us</Button>
             </Link>
           </div>

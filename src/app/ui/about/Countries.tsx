@@ -13,7 +13,7 @@ interface CountryData {
   alt: string;
   extra?: string;
   extra1?: string;
-  extra2?: string
+  extra2?: string;
 }
 
 const countriesData: CountryData[] = [
@@ -21,18 +21,19 @@ const countriesData: CountryData[] = [
     id: "in",
     flag: inflag,
     name: "India",
-    description: "Stellar Spaces Office no.504 6th floor, Opposite Zensar IT Park Kharadi , Pune.",
+    description:
+      "Stellar Spaces Office no.504 6th floor, Opposite Zensar IT Park Kharadi , Pune.",
     alt: "Ind-Flag",
     extra: "(HeadQuarters)",
     extra1: "Contact no: (020) 4724-2493",
-    extra2: "Mobile no: +91 8766613742"
+    extra2: "Mobile no: +91 8766613742",
   },
   {
     id: "us",
     flag: us,
     name: "U.S.A",
     description: "Lyndon B, Dallas, TX United States",
-    alt: "US-Flag"
+    alt: "US-Flag",
   },
   {
     id: "qa",
@@ -40,8 +41,8 @@ const countriesData: CountryData[] = [
     name: "Qatar",
     description: "Icono View building, Near Holiday Villa C Ring Road, Qatar ",
     alt: "Qtr-Flag",
-    extra1: "Contact no: +974 70769424"
-  }
+    extra1: "Contact no: +974 70769424",
+  },
   // },
   // {
   //   id: "sn",
@@ -74,14 +75,27 @@ const Countries: React.FC = () => {
                   alt={country.alt}
                 />
                 <div className="space-y-2">
-                  <h5 className="text-2xl font-semibold text-black">
-                    {country.name} {country.extra && <span className="font-normal text-sm">{country.extra}</span>}
-                  </h5>
-                  <p className="text-gray-600 text-paragraph">{country.description}
-                    {country.extra2 && <span className="font-bold flex text-sm">{country.extra2}</span>}
-                    {country.extra1 && <span className="font-bold flex text-sm">{country.extra1}</span>}
+                  <h1 className="text-2xl font-semibold text-black">
+                    {country.name}{" "}
+                    {country.extra && (
+                      <span className="font-normal text-sm">
+                        {country.extra}
+                      </span>
+                    )}
+                  </h1>
+                  <p className="text-gray-600 text-paragraph">
+                    {country.description}
+                    {country.extra2 && (
+                      <span className="font-bold flex text-sm">
+                        {country.extra2}
+                      </span>
+                    )}
+                    {country.extra1 && (
+                      <span className="font-bold flex text-sm">
+                        {country.extra1}
+                      </span>
+                    )}
                   </p>
-
                 </div>
               </div>
             </div>
