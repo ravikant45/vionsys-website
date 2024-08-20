@@ -14,6 +14,13 @@ const AboutUs = () => {
             className="absolute inset-0 object-cover w-full h-full"
           >
             <source src="/assets/About/AboutBg.mp4" type="video/mp4" />
+            <track
+              src={"/assets/video-captions/about-us-video.vtt"}
+              kind="captions"
+              lang="en"
+              label="English Captions"
+              default
+            />
           </video>
 
           <div className="h-full absolute z-1 w-full flex flex-col justify-center top-10 py-4  items-center">
