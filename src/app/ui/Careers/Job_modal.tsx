@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal } from "antd";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
@@ -40,9 +40,11 @@ const formSchema = z.object({
 });
 
 const Job_modal = ({
+  jobTitle,
   isModalOpen,
   setisModalOpen,
 }: {
+  jobTitle: string;
   isModalOpen: any;
   setisModalOpen: any;
 }) => {
@@ -52,12 +54,17 @@ const Job_modal = ({
     defaultValues: {
       name: "",
       email: "",
-      position: "",
+      position: jobTitle || '', // Set default position
       experience: "",
       attachments: undefined,
     },
   });
   const [isPending, setIsPending] = useState<boolean>(false);
+  useEffect(() => {
+    if (jobTitle) {
+      form.setValue("position", jobTitle);
+    }
+  }, [jobTitle, form]);
 
   const handleClose = () => {
     setisModalOpen(false);
@@ -152,8 +159,9 @@ const Job_modal = ({
                           <FormLabel>Designation</FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="Enter Designation to apply"
-                              {...field}
+                              {...field} // Bind the field value and onChange handler
+                              readOnly={true}
+                              placeholder={jobTitle} // This is still optional
                             />
                           </FormControl>
                           <FormDescription></FormDescription>

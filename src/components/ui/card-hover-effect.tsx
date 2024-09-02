@@ -19,11 +19,12 @@ export const HoverEffect = ({
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isModalOpen, setisModalOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [jobTitle, setjobTitle] = useState("");
   const [currentItemIndex, setCurrentItemIndex] = useState<number | null>(null);
 
   return (
     <>
-      <Job_modal isModalOpen={isModalOpen} setisModalOpen={setisModalOpen} />
+      <Job_modal jobTitle={jobTitle} isModalOpen={isModalOpen} setisModalOpen={setisModalOpen} />
       <Modal
         width={"700px"}
         footer={null}
@@ -106,6 +107,7 @@ export const HoverEffect = ({
               <Button
                 onClick={() => {
                   setisModalOpen(true);
+                  setjobTitle(item?.position)
                 }}
               >
                 Apply
