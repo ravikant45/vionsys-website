@@ -42,7 +42,8 @@ const ResponsiveMenu: React.FC<Props> = ({ showMenu, closeMenu }) => {
                             <NavigationMenuLink className={navigationMenuTriggerStyle()} onClick={handleClick}>
                                 About
                             </NavigationMenuLink>
-                        </Link>
+                        </Link> 
+                        
                     </NavigationMenuItem>
 
                     {/* services dropdown */}

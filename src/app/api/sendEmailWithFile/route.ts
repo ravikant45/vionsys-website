@@ -10,11 +10,10 @@ export async function POST(req: NextRequest) {
       subject: "Vionsys Website career application",
       html: `
            <h2>Vionsys Website Job application for ${position}</h2>
-           <h4>Applicant Details:</h4>
-           <br/>
-            <h2><span style="font-weight: bold;">Name:</span> <span style="font-weight: lighter;">${name}</span></h2>
-            <h2><span style="font-weight: bold;">Email:</span> <span style="font-weight: lighter;">${email}</span></h2>
-            <h2><span style="font-weight: bold;">Experience:</span> <span style="font-weight: lighter;">${experience}</span></h2>
+           <h3>Applicant Details:</h3>
+            <h3><span style="font-weight: bold;">Name:</span> <span style="font-weight: lighter;">${name}</span></h3>
+            <h3><span style="font-weight: bold;">Email:</span> <span style="font-weight: lighter;">${email}</span></h3>
+            <h3><span style="font-weight: bold;">Experience:</span> <span style="font-weight: lighter;">${experience}</span></h3>
         `,
       attachments: attachments.map((file: any) => ({
         filename: file.filename,
