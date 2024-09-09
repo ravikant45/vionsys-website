@@ -8,6 +8,20 @@ import ClientImage7 from "../../../../public/assets/clients/client-7.png";
 import ClientImage8 from "../../../../public/assets/clients/client-8.png";
 import ClientImage9 from "../../../../public/assets/clients/client-9.png";
 import ClientImage10 from "../../../../public/assets/clients/client-10.png";
+import Client01 from "../../../../public/assets/clients/Client1.png";
+import Client02 from "../../../../public/assets/clients/Client2.png";
+import Client03 from "../../../../public/assets/clients/Client3.png";
+import Client04 from "../../../../public/assets/clients/Client4.png";
+import Client05 from "../../../../public/assets/clients/Client5.png";
+import Client06 from "../../../../public/assets/clients/Client6.png";
+import Client07 from "../../../../public/assets/clients/Client7.png";
+import Client08 from "../../../../public/assets/clients/Client8.png";
+import Client09 from "../../../../public/assets/clients/Client9.png";
+import Client10 from "../../../../public/assets/clients/Client10.png";
+import Client11 from "../../../../public/assets/clients/Client11.png";
+import Client12 from "../../../../public/assets/clients/Client12.png";
+import Client13 from "../../../../public/assets/clients/Client13.png";
+import Client14 from "../../../../public/assets/clients/Client14.png";
 
 import InfiniteMovingCards2 from "../../../components/ui/infinite-moving-cards2";
 import { motion } from "framer-motion";
@@ -25,8 +39,23 @@ const testimonials: Testimonial[] = [
   { id: "7", img: ClientImage7.src },
   { id: "8", img: ClientImage8.src },
   { id: "9", img: ClientImage9.src },
-  { id: "10",img: ClientImage10.src },
+  { id: "10", img: ClientImage10.src },
+  { id: "11", img: Client01.src },
+  { id: "12", img: Client02.src },
+  { id: "13", img: Client03.src },
+  { id: "14", img: Client04.src },
+  { id: "15", img: Client05.src },
+  { id: "16", img: Client06.src },
+  { id: "17", img: Client07.src },
+  { id: "18", img: Client08.src },
+  { id: "19", img: Client09.src },
+  { id: "20", img: Client10.src },
+  { id: "21", img: Client11.src },
+  { id: "22", img: Client12.src },
+  { id: "23", img: Client13.src },
+  { id: "24", img: Client14.src },
 ];
+
 
 export function InfiniteMovingCardsDemo() {
   return (
