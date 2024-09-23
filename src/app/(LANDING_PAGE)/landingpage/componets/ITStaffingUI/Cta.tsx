@@ -1,10 +1,17 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import Pop_Model from "./Pop_Model";
 
-const Cta = () => {
+type PopModelProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Cta: React.FC<PopModelProps> = ({ showModal, setShowModal }) => {
+
   return (
     <section>
       <div className="bg-gray-100 flex flex-col sm:flex-row items-center justify-center gap-2 p-4 md:p-10">
@@ -22,9 +29,13 @@ const Cta = () => {
           Ready to transform your business? Contact us today to get started!
         </motion.h3>
         <div className="text-4xl font-bold animate-pulse ease-out duration-1000 text-black">
-          <Link href="../app">
+          <button
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
             <FaArrowRightLong color="#215CBC" />
-          </Link>
+          </button>
         </div>
       </div>
     </section>

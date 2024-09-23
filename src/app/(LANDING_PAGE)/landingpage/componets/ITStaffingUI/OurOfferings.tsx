@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import backgroundImage from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/Offerings.jpg";
 import Link from "next/link";
+import Pop_Model from "./Pop_Model";
 
 // Define the structure of an offering
 interface Offering {
@@ -21,6 +22,11 @@ interface Offering {
   icon: React.ComponentType; // Type for react-icons
   color: string;
 }
+
+type OurOfferingsProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 // List of offerings
 const offerings: Offering[] = [
@@ -54,7 +60,7 @@ const offerings: Offering[] = [
   },
 ];
 
-const OurOfferings: React.FC = () => {
+const OurOfferings: React.FC<OurOfferingsProps> = ({ showModal, setShowModal }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [direction, setDirection] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -102,6 +108,7 @@ const OurOfferings: React.FC = () => {
       ref={containerRef}
       className="relative w-full py-12 md:py-10 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden"
     >
+      <Pop_Model showModal={showModal} setShowModal={setShowModal} />
       {/* Background image with dark overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-70"
@@ -169,11 +176,14 @@ const OurOfferings: React.FC = () => {
                 className="flex space-x-4"
               >
                 <Button
+                onClick={() => {
+                  setShowModal(true);
+                }}
                   variant="outline"
                   size="lg"
                   className="bg-white bg-opacity-20 text-white border-white"
                 >
-                  <Link href="/contact">Contact Us</Link>
+                  Contact Us
                 </Button>
               </motion.div>
             </motion.div>
