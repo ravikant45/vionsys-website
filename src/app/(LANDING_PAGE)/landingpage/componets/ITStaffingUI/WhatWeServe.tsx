@@ -70,7 +70,7 @@ export default function Component() {
                 ease: "easeInOut",
               }}
               key={industry.name}
-              className="border rounded-lg px-6 py-3 flex flex-col items-center text-center hover:bg-gray-200 transition-colors duration-300"
+              className="border group rounded-lg px-6 py-3 flex flex-col items-center text-center hover:scale-110 hover:bg-orange hover:text-white transition-colors duration-300"
             >
               {/* Conditionally render either Image or Icon based on the type */}
               {typeof Icon === "object" ? (
