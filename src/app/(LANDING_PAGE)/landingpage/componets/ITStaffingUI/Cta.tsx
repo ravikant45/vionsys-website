@@ -22,8 +22,8 @@ const Cta = () => {
           Ready to transform your business? Contact us today to get started!
         </motion.h3>
         <div className="text-4xl font-bold animate-pulse ease-out duration-1000 text-black">
-          <Link href={"/contact"}>
-            <FaArrowRightLong color="blue" />
+          <Link href="../app">
+            <FaArrowRightLong color="#215CBC" />
           </Link>
         </div>
       </div>

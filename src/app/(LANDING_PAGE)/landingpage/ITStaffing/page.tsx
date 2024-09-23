@@ -8,6 +8,9 @@ import OurHighlights from "../componets/ITStaffingUI/OurHighlights";
 import OurOfferings from "../componets/ITStaffingUI/OurOfferings";
 import ContactUs from "../componets/landingUI/ContactUs";
 import App from "../app";
+import ChooseUs from "../componets/ITStaffingUI/ChooseUs";
+import Sample from "../componets/ITStaffingUI/Sample";
+import InfiniteMovingCardsDemo from "@/app/ui/home/Clients";
 
 const page = () => {
   return (
@@ -18,6 +21,8 @@ const page = () => {
       <OurOfferings />
       <WhatWeServe />
       <Cta />
+      <ChooseUs />
+      <InfiniteMovingCardsDemo />
       <ContactUs />
       <App />
       <Footer />
