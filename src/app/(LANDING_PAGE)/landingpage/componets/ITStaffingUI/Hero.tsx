@@ -7,11 +7,18 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { countryCodes } from "@/utils/CountryCodes";
+import Pop_Model from "./Pop_Model";
 
-const Hero = () => {
+type HeroProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [isHovering, setIsHovering] = useState(false);
+  // const [showModal, setShowModal] = useState<boolean>(false);
 
   const handleSubmit = async (values: any) => {
     console.log("Form Values:", values); // Print form values to the console
@@ -32,10 +39,11 @@ const Hero = () => {
 
   return (
     <>
-      <section id="gradient" className="relative h-screen flex items-center md:pt-10 justify-center">
-        
-        
-
+      <Pop_Model showModal={showModal} setShowModal={setShowModal} />
+      <section
+        id="gradient"
+        className="relative h-screen flex items-center md:pt-10 justify-center"
+      >
         {/* Content */}
         <div className="relative z-10 container mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
           {/* Left Side: Title, Subheading, and Description */}
@@ -72,9 +80,11 @@ const Hero = () => {
             </p>
             <div>
               <button className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-sm font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined">
-                Get in Touch with Our Experts Today
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-sm font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined" onClick={() => {
+                      setShowModal(true);
+                    }}>
+                  Get in Touch with Our Experts Today
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -178,29 +188,22 @@ const Hero = () => {
                 ]}
               >
                 <div className="flex gap-2">
-                      <select className="border border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none">
-                        <option value="" disabled>
-                          Select Country
-                        </option>
-                        {countryCodes.map((country, index) => (
-                          <option key={index} value={country.code}>
-                            {country.code} {country.name}
-                          </option>
-                        ))}
-                      </select>
-                      <Input
-                        type="text"
-                        placeholder="Enter Phone Number"
-                        id="number"
-                        name="number"
-                        className=" w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                      />
-                    </div>
-                <Input
-                  placeholder="Enter Phone Number"
-                  className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
-                  disabled={loading}
-                />
+                  <select className="border border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none">
+                    <option value="" disabled>
+                      Select Country
+                    </option>
+                    {countryCodes.map((country, index) => (
+                      <option key={index} value={country.code}>
+                        {country.code} {country.name}
+                      </option>
+                    ))}
+                  </select>
+                  <Input
+                    placeholder="Enter Phone Number"
+                    className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                    disabled={loading}
+                  />
+                </div>
               </Form.Item>
 
               <Form.Item
