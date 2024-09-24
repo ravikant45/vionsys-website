@@ -2,8 +2,8 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>AI and ML Services page</div>
+    <div>Digital Marketing Landing Page</div>
   )
 }
 
-export default page;
+export default page
