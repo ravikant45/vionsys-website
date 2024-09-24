@@ -53,69 +53,132 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <div className="text-2xl font-bold text-center">Enquiry Form</div>
+    <div className="max-w-2xl mx-auto rounded-lg shadow-md">
+      {/* <div className="text-2xl font-bold text-center">Enquiry Form</div> */}
       <Modal
         open={showModal}
         footer={null} // Remove default footer with Ok and Cancel buttons
         onCancel={handleCancel}
       >
         <Form layout="vertical" onFinish={handleSubmit}>
+          <div className="text-2xl font-bold text-center pb-3">
+            Enquiry Form
+          </div>
           <Form.Item name="userType" className="mb-6">
             <Radio.Group
               onChange={(e) => setUserType(e.target.value)}
               value={userType}
+              className="text-black"
             >
-              <Radio value="employer">Are you an Employer?</Radio>
-              <Radio value="candidate">Are you a Candidate?</Radio>
+              <Radio value="employer" className="font-medium">
+                Are you an Employer?
+              </Radio>
+              <Radio value="candidate" className="font-medium">
+                Are you a Candidate?
+              </Radio>
             </Radio.Group>
           </Form.Item>
 
           {/* <div className="text-red-500 mb-4">* Fields are mandatory</div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
             <Form.Item
               name="name"
               label={<span className="font-semibold">Full Name</span>}
-              rules={[{ required: true, message: "Please enter your name!" }]}
+              rules={[
+                { required: true, message: "Please enter your full name!" },
+              ]}
             >
               <Input
                 id="name"
                 name="name"
                 type="text"
                 placeholder="Enter Your Name"
-                className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
               />
             </Form.Item>
 
             {userType === "employer" ? (
-              <Form.Item name="company" label={<span className="font-semibold">Company/Organisation</span>}>
-                <Input />
+              <Form.Item
+                name="company"
+                label={
+                  <span className="font-semibold">Company/Organisation</span>
+                }
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your company name!",
+                  },
+                ]}
+              >
+                <Input
+                  type="text"
+                  placeholder="Enter Company Name"
+                  id="company"
+                  name="company"
+                  className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                />
               </Form.Item>
             ) : (
               <Form.Item
-                name="emailId"
-                label="Email Id"
+                name="email"
+                label={<span className="font-semibold">Email</span>}
                 rules={[
                   {
                     required: true,
                     type: "email",
-                    message: "Please input a valid email!",
+                    message: "Please enter a valid email!",
                   },
                 ]}
               >
-                <Input />
+                <Input
+                  type="text"
+                  placeholder="Enter Email Address"
+                  id="email"
+                  name="email"
+                  className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                />
               </Form.Item>
             )}
 
             {userType === "employer" ? (
-              <Form.Item name="designation" label="Designation">
-                <Input />
+              <Form.Item
+                name="designation"
+                label={<span className="font-semibold">Designation</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your designation",
+                  },
+                ]}
+              >
+                <Input
+                  type="text"
+                  placeholder="Enter Your Designation"
+                  id="designation"
+                  name="designation"
+                  className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                />
               </Form.Item>
             ) : (
-              <Form.Item name="mobileNo" label="Mobile No.">
+              <Form.Item
+                name="phoneNo"
+                label={<span className="font-semibold">Phone Number</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your phone number!",
+                  },
+                ]}
+              >
                 <div>
-                  <Input />
+                  <Input
+                    type="Number"
+                    placeholder="Enter Mobile Number"
+                    id="phoneNo"
+                    name="phoneNo"
+                    className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                  />
                 </div>
               </Form.Item>
             )}
@@ -123,66 +186,150 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
             {userType === "employer" ? (
               <Form.Item
                 name="email"
-                label="Email"
+                label={<span className="font-semibold">Email</span>}
                 rules={[
                   {
                     required: true,
                     type: "email",
-                    message: "Please input a valid email!",
+                    message: "Please enter a valid email!",
                   },
                 ]}
               >
-                <Input />
+                <Input
+                  type="text"
+                  placeholder="Enter Email Address"
+                  id="email"
+                  name="email"
+                  className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                />
               </Form.Item>
             ) : (
-              <Form.Item name="qualification" label="Qualification">
-                <Input />
+              <Form.Item
+                name="qualification"
+                label={<span className="font-semibold">Qualification</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please Enter Qualification",
+                  },
+                ]}
+              >
+                <Input
+                  type="text"
+                  placeholder="Enter Your Qualification"
+                  id="qualification"
+                  name="qualification"
+                  className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                />
               </Form.Item>
             )}
 
             {userType === "employer" ? (
-              <Form.Item name="phone" label="Phone">
-                <Input />
+              <Form.Item
+                name="phoneNo"
+                label={<span className="font-semibold">Phone Number</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your phone number!",
+                  },
+                ]}
+              >
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="Enter Phone Number"
+                    id="phoneNo"
+                    name="phoneNo"
+                    className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
               </Form.Item>
             ) : (
-              <Form.Item name="experience" label="Experience">
-                <Input />
+              <Form.Item
+                name="experience"
+                label={<span className="font-semibold">Experience</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please Enter Experience",
+                  },
+                ]}
+              >
+                <Input
+                  type="number"
+                  placeholder="Enter Your Experience"
+                  id="experience"
+                  name="experience"
+                  className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                />
               </Form.Item>
             )}
 
             {userType === "employer" ? (
-              <Form.Item name="interestedIn" label="Service Required">
-                <Select>
-                  <Select.Option value="option1">
+              <Form.Item
+                name="interestedIn"
+                label={<span className="font-semibold">Service Required</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please Service Required",
+                  },
+                ]}
+              >
+                <Select placeholder="Select Service Required">
+                  <Select.Option value="Permanent Staffing">
                     Permanent Staffing
                   </Select.Option>
-                  <Select.Option value="option2">
-                    Contractual Staffing
+                  <Select.Option value="Contract Staffing">
+                    Contract Staffing
                   </Select.Option>
-                  <Select.Option value="option2">
+                  <Select.Option value="Temporary Staffing">
                     Temporary Staffing
                   </Select.Option>
-                  <Select.Option value="option2">
+                  <Select.Option value="Specialized Staffing">
                     Specialized Staffing
                   </Select.Option>
-                  <Select.Option value="option2">
+                  <Select.Option value="Recruitment Process Outsourcing (RPO)">
                     Recruitment Process Outsourcing (RPO)
                   </Select.Option>
-                  <Select.Option value="option2">
+                  <Select.Option value="Vendor Management Services (VMS)">
                     Vendor Management Services (VMS)
                   </Select.Option>
                 </Select>
               </Form.Item>
             ) : (
-              <Form.Item name="comments" label="Comments">
-                <Input.TextArea />
+              <Form.Item
+                name="comments"
+                label={<span className="font-semibold">Comments</span>}
+              >
+                <Input.TextArea
+                  placeholder="Comment here..."
+                  id="comments"
+                  name="comments"
+                  className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+                />
               </Form.Item>
             )}
           </div>
 
           {userType === "employer" ? (
-            <Form.Item name="message" label="Your Message">
-              <Input.TextArea />
+            <Form.Item
+              name="message"
+              label={<span className="font-semibold">Your Message</span>}
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter your message!",
+                },
+              ]}
+            >
+              <Input.TextArea
+                placeholder="Please enter your message here"
+                id="message"
+                name="message"
+                className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
+              />
             </Form.Item>
           ) : (
             ""
@@ -191,60 +338,20 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
           {userType === "candidate" && (
             <Form.Item
               name="cv"
-              label="Upload your CV (PDF or DOC)"
+              label={<span className="font-semibold">Upload your CV (PDF or DOC)</span>}
               className="text-bold"
+              rules={[
+                {
+                  required: true,
+                  message: "Please provide your cv!",
+                },
+              ]}
             >
-              {/* <Upload>
+              <Upload>
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>
-              </Upload> */}
-              {/* <Label htmlFor="cv">Upload your CV (PDF or DOC)</Label> */}
-              <Input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" />
+              </Upload>
             </Form.Item>
           )}
-          {userType === "candidate" && (
-            <div className="space-y-2">
-              {/* <Label htmlFor="cv">Upload your CV (PDF or DOC)</Label> */}
-              <Input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" />
-            </div>
-          )}
-
-          {/* <Form.Item>
-            <div className="flex space-x-4">
-              <Button
-                type="primary"
-                htmlType="submit"
-                className="bg-black text-white"
-                disabled={loading}
-              >
-                {loading && (
-                  <svg
-                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.418 3.582 8 8 8v-4c-2.697 0-5.074-1.072-6.834-2.709l2.834-2.833zm8-10.582A7.962 7.962 0 0120 12h4c0-6.627-5.373-12-12-12v4c2.697 0 5.074 1.072 6.834 2.709l-2.834 2.833z"
-                    ></path>
-                  </svg>
-                )}
-                Submit
-              </Button>
-              <Button htmlType="reset" className="bg-black text-white m-1">
-                Reset
-              </Button>
-            </div>
-          </Form.Item> */}
 
           <Form.Item>
             <div className="flex space-x-4 justify-end">

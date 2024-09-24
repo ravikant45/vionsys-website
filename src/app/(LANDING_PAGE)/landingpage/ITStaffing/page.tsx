@@ -7,7 +7,7 @@ import Footer from "@/app/ui/footer/Footer";
 import Navbar from "@/app/ui/navbar/Navbar";
 import OurHighlights from "../componets/ITStaffingUI/OurHighlights";
 import OurOfferings from "../componets/ITStaffingUI/OurOfferings";
-import ContactUs from "../componets/landingUI/ContactUs";
+import ContactUs from "../componets/WebDevelopmentUI/ContactUs";
 import ChooseUs from "../componets/ITStaffingUI/ChooseUs";
 import InfiniteMovingCardsDemo from "@/app/ui/home/Clients";
 import Pop_Model from "../componets/ITStaffingUI/Pop_Model";

@@ -2,11 +2,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Land1 from "../../images/landingImg/Land1.jpeg";
-import Land2 from "../../images/landingImg/Land2.jpeg";
-import Land3 from "../../images/landingImg/Land3.jpeg";
-import Land4 from "../../images/landingImg/Land5.jpg";
-import Land5 from "../../images/landingImg/Land6.jpg";
+import Land1 from "../../images/WebDevelopment/Land1.jpeg";
+import Land2 from "../../images/WebDevelopment/Land2.jpeg";
+import Land3 from "../../images/WebDevelopment/Land3.jpeg";
+import Land4 from "../../images/WebDevelopment/Land5.jpg";
+import Land5 from "../../images/WebDevelopment/Land6.jpg";
 import { TypewriterEffect1 } from "@/components/ui/typewriter-effect1";
 import React from "react";
 import LogoImage from "/public/assets/logo.png";

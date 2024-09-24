@@ -18,7 +18,6 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [isHovering, setIsHovering] = useState(false);
-  // const [showModal, setShowModal] = useState<boolean>(false);
 
   const handleSubmit = async (values: any) => {
     console.log("Form Values:", values); // Print form values to the console
@@ -42,10 +41,10 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
       <Pop_Model showModal={showModal} setShowModal={setShowModal} />
       <section
         id="gradient"
-        className="relative h-screen flex items-center md:pt-10 justify-center"
+        className="relative h-screen flex items-center md:pt-10 pt-24 justify-center"
       >
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
+        <div className="relative z-10 container pt-16 mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
           {/* Left Side: Title, Subheading, and Description */}
           <div className="md:w-1/2 mb-8 md:mb-0">
             <motion.h1
@@ -57,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 opacity: { duration: 0.4 },
                 ease: "easeInOut",
               }}
-              className="text-2xl  text-blue2 md:text-6xl font-bold mb-4"
+              className="text-3xl text-blue2 md:text-6xl font-bold mb-4"
             >
               Need an Employee?
             </motion.h1>
@@ -111,13 +110,13 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               opacity: { duration: 0.6 },
               ease: "easeInOut",
             }}
-            className="md:w-1/2 flex text-start justify-center items-center p-4 md:mt-6"
+            className="md:w-1/2 flex text-start justify-center items-center md:p-4 p-2 md:mt-6"
           >
             <Form
               form={form}
               layout="vertical"
               onFinish={handleSubmit}
-              className="space-y-1 md:py-4 md:px-6 rounded-xl bg-white"
+              className="space-y-1 md:py-4 md:px-6 p-4 rounded-xl bg-white"
             >
               <div>
                 <h1 className="text-center text-blue1 text-xl font-bold pt-2">
