@@ -12,8 +12,6 @@ import {
 } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import backgroundImage from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/Offerings.jpg";
-import Link from "next/link";
-import Pop_Model from "./Pop_Model";
 
 // Define the structure of an offering
 interface Offering {
@@ -108,7 +106,6 @@ const OurOfferings: React.FC<OurOfferingsProps> = ({ showModal, setShowModal }) 
       ref={containerRef}
       className="relative w-full py-12 md:py-10 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden"
     >
-      <Pop_Model showModal={showModal} setShowModal={setShowModal} />
       {/* Background image with dark overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-70"

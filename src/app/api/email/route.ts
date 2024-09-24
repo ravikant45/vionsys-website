@@ -1,8 +1,8 @@
 import { transporter } from "@/lib/transporter";
-
 export async function POST(req: Request) {
     try {
         const { name, number, email, message } = await req.json();
+        
         // Setup email data
         const mailOptions = {
             from: process.env.GMAIL_USER!,
