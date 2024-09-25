@@ -2,7 +2,7 @@ type Form2Data = {
   name: string;
   email: string;
   phone: {
-    countryCode: String;
+    countryCode: string;
     number: string;
   };
   qualification: string;
