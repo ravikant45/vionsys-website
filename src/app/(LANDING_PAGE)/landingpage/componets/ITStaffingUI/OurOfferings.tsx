@@ -174,7 +174,7 @@ const OurOfferings: React.FC<OurOfferingsProps> = ({ showModal, setShowModal }) 
               >
                 <Button
                 onClick={() => {
-                  setShowModal(true);
+                  setShowModal(!showModal);
                 }}
                   variant="outline"
                   size="lg"
