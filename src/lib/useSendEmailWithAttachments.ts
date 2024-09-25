@@ -11,7 +11,7 @@ const useSendEmailWithAttachments = async ({data,sendTo,subject,html}:bodyType) 
           from: process.env.GMAIL_USER!,
           to: sendTo,
           subject: subject,
-          html:html
+          html
          ,
           attachments: data.attachments.map((file: any) => ({
             filename: file.filename,

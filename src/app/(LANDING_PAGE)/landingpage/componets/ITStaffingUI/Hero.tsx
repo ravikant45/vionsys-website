@@ -1,29 +1,51 @@
 "use client";
 import React, { useState } from "react";
-import HeroImg from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/Hero.jpg";
-import Image from "next/image";
 import { Button, Form, Input } from "antd";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { countryCodes } from "@/utils/CountryCodes";
-import Pop_Model from "./Pop_Model";
+import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
 
 type HeroProps = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+type Inputs = {
+  name: string;
+  phone: {
+    countryCode: string;
+    number: string;
+  };
+  email: string;
+  message: string;
+};
+
 const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
-  const [isHovering, setIsHovering] = useState(false);
+  const [countryCode, setCountryCode] = useState<string>(""); 
 
   const handleSubmit = async (values: any) => {
-    console.log("Form Values:", values); // Print form values to the console
+
+    const formattedData = {
+      ...values,
+      phone: countryCode+ " " +values.number,
+      
+    };
+
+    console.log(formattedData);
+    const template = StaffingLandingPageTemplate(formattedData);
+
+    const updatedData = {
+      formattedData,
+      template,
+    };
+    
     setLoading(true);
     try {
-      const response = await axios.post("/api/email", values, {
+      const response = await axios.post("/api/email", updatedData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -36,9 +58,9 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
     setLoading(false);
   };
 
+
   return (
     <>
-      <Pop_Model showModal={showModal} setShowModal={setShowModal} />
       <section
         id="gradient"
         className="relative h-screen flex items-center md:pt-10 pt-24 justify-center"
@@ -81,7 +103,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               <button className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-sm font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined" onClick={() => {
-                      setShowModal(true);
+                      setShowModal(!showModal);
                     }}>
                   Get in Touch with Our Experts Today
                   <svg
@@ -176,18 +198,16 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                   </span>
                 }
                 rules={[
-                  {
-                    required: true,
-                    message: "Please enter your phone number!",
-                  },
-                  {
-                    pattern: /^\d{10}$/,
-                    message: "Phone number must be numeric and 10 digits long.",
-                  },
+                  { required: true, message: "Please enter your phone number!" },
+                  { pattern: /^\d{10}$/, message: "Phone number must be numeric and 10 digits long." },
                 ]}
               >
                 <div className="flex gap-2">
-                  <select className="border border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none">
+                  <select
+                    className="border border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none"
+                    value={countryCode} // Bind value to state
+                    onChange={(e) => setCountryCode(e.target.value)} // Update state on change
+                  >
                     <option value="" disabled>
                       Select Country
                     </option>

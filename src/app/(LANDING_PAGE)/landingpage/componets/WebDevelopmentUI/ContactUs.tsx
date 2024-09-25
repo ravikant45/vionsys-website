@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
@@ -15,6 +15,7 @@ import LinkedIn from "../../../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../../../public/assets/socialicons/Twitter4.png";
+import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
 
 type Inputs = {
   name: string;
@@ -31,10 +32,22 @@ const ContactUs: React.FC = () => {
   const [form] = Form.useForm();
 
   const handleSubmit = async (values: any) => {
-    console.log("Form Values:", values); // Print form values to the console
+    const formattedData = {
+      ...values,
+      phone: values.countryCode + " " + values.number,
+    };
+
+    const template = StaffingLandingPageTemplate(formattedData);
+    const updatedData = {
+      formattedData,
+      template,
+    };
+    console.log("formated", formattedData);
+
+    // Print form values to the console
     setLoading(true);
     try {
-      const response = await axios.post("/api/email", values, {
+      const response = await axios.post("/api/email", updatedData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -51,7 +64,6 @@ const ContactUs: React.FC = () => {
     <>
       <div className="w-[100%] md:h-full grid md:grid-cols-3">
         <div className="relative w-full flex md:justify-between md:items-center col-span-2">
-
           {/* Image Section */}
           <Image
             src={Contact}
@@ -159,8 +171,8 @@ const ContactUs: React.FC = () => {
                 ]}
               >
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.7 }} //X:100
-                  whileInView={{ opacity: 1, scale: 1 }} //y:100
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   transition={{
                     delay: 0.2,
                     scale: { type: "spring", stiffness: 30 },
@@ -169,16 +181,35 @@ const ContactUs: React.FC = () => {
                   }}
                 >
                   <div className="flex gap-2">
-                    <select className="border md:w-40 border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none">
-                      <option value="" disabled>
-                        Select Country
-                      </option>
-                      {countryCodes.map((country, index) => (
-                        <option key={index} value={country.code}>
-                          {country.code} {country.name}
+                    {/* Country Code Selection */}
+                    <Form.Item
+                      name="countryCode"
+                      noStyle
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please select a country code!",
+                        },
+                      ]}
+                    >
+                      <select
+                        className="border md:w-40 border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none"
+                        onChange={(e) =>
+                          form.setFieldsValue({ countryCode: e.target.value })
+                        }
+                      >
+                        <option value="" disabled>
+                          Select Country
                         </option>
-                      ))}
-                    </select>
+                        {countryCodes.map((country, index) => (
+                          <option key={index} value={country.code}>
+                            {country.code} {country.name}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Item>
+
+                    {/* Phone Number Input */}
                     <Input
                       type="text"
                       placeholder="Enter Phone Number"
@@ -225,7 +256,10 @@ const ContactUs: React.FC = () => {
 
               <Form.Item>
                 <div className="flex justify-center w-full items-center">
-                  <Button disabled={loading} className="text-lg w-full text-center">
+                  <Button
+                    disabled={loading}
+                    className="text-lg w-full text-center"
+                  >
                     {loading && (
                       <svg
                         className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline"
@@ -255,7 +289,7 @@ const ContactUs: React.FC = () => {
             </Form>
           </div>
         </div>
-        
+
         {/* Right section */}
         <div className=" flex flex-col justify-center items-center gap-4 font-extrabold text-MainHeading  border-l-2 pl-5 border-slate-200">
           <motion.div
