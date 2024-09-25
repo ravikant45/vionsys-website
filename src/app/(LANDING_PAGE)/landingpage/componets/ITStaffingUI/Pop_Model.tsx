@@ -5,6 +5,10 @@ import { Modal, Form, Input, Radio, Select, Button, Upload } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { StaffingEmployerTemplate } from "@/utils/staffingEmployerTemplate";
+import { StaffingEmployeeTemplate } from "@/utils/staffingEmployeeTemplate";
+import { country } from "@/utils/CountryCodes";
+import Image from "next/image";
 
 interface SampleProps {
   showModal: boolean;
@@ -16,6 +20,23 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
   const [hasModalBeenShown, setHasModalBeenShown] = useState(false); // Track if modal has been shown
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
+  const [countryCode, setCountryCode] = useState<string>("");
+
+  const handleCountryChange = (value: string) => {
+    setCountryCode(value);
+  };
+
+  const filterOption = (
+    input: string,
+    option?: { value: string; children: React.ReactNode }
+  ) => {
+    const childrenAsString = option?.children?.toString().toLowerCase() || "";
+    return (
+      (childrenAsString.includes(input.toLowerCase()) ||
+        option?.value.toLowerCase().includes(input.toLowerCase())) ??
+      false
+    ); // Ensure a boolean return
+  };
 
   useEffect(() => {
     if (!hasModalBeenShown) {
@@ -31,14 +52,39 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
   }, [hasModalBeenShown, setShowModal]);
 
   const handleSubmit = async (values: any) => {
-    console.log("Form Values:", values); // Print form values to the console
+    console.log("Form Values:", values);
+    const data = {
+      ...values,
+      phone: countryCode + " " + values.phoneNo,
+    };
+    console.log(data);
+    const template = !data.cv
+      ? StaffingEmployerTemplate(data)
+      : StaffingEmployeeTemplate(data);
+    const updatedData = {
+      data,
+      template,
+    };
     setLoading(true);
     try {
-      const response = await axios.post("/api/email", values, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      if (data.cv) {
+        const response = await axios.post(
+          "/api/sendEmailWithFile",
+          updatedData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+      } else {
+        const response = await axios.post("/api/email", updatedData, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      }
+
       toast.success("Thanks for connecting with us!");
       form.resetFields();
       setShowModal(false);
@@ -53,7 +99,7 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto rounded-lg shadow-md">
+    <div className="max-w-3xl mx-auto rounded-lg shadow-md">
       {/* <div className="text-2xl font-bold text-center">Enquiry Form</div> */}
       <Modal
         open={showModal}
@@ -171,9 +217,36 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
                   },
                 ]}
               >
-                <div>
+                <div className="flex gap-2">
+                  <Select
+                    showSearch
+                    className="w-32"
+                    placeholder="Country"
+                    optionFilterProp="children"
+                    value={countryCode}
+                    onChange={handleCountryChange}
+                    filterOption={filterOption}
+                  >
+                    <option value="" disabled>
+                      Country
+                    </option>
+                    {country.map((c, index) => (
+                      <Select.Option key={index} value={c.code}>
+                        <div className="flex items-center">
+                          <Image
+                            src={c.image}
+                            width={20}
+                            height={20}
+                            alt={`Flag of ${c.code}`}
+                            className="mr-2"
+                          />
+                          {c.code}
+                        </div>
+                      </Select.Option>
+                    ))}
+                  </Select>
                   <Input
-                    type="Number"
+                    type="text"
                     placeholder="Enter Mobile Number"
                     id="phoneNo"
                     name="phoneNo"
@@ -235,7 +308,34 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
                   },
                 ]}
               >
-                <div>
+                <div className="flex gap-2">
+                  <Select
+                    showSearch
+                    className="w-32"
+                    placeholder="Country"
+                    optionFilterProp="children"
+                    value={countryCode}
+                    onChange={handleCountryChange}
+                    filterOption={filterOption}
+                  >
+                    <option value="" disabled>
+                      Country
+                    </option>
+                    {country.map((c, index) => (
+                      <Select.Option key={index} value={c.code}>
+                        <div className="flex items-center">
+                          <Image
+                            src={c.image}
+                            width={20}
+                            height={20}
+                            alt={`Flag of ${c.code}`}
+                            className="mr-2"
+                          />
+                          {c.code}
+                        </div>
+                      </Select.Option>
+                    ))}
+                  </Select>
                   <Input
                     type="text"
                     placeholder="Enter Phone Number"
@@ -338,7 +438,11 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
           {userType === "candidate" && (
             <Form.Item
               name="cv"
-              label={<span className="font-semibold">Upload your CV (PDF or DOC)</span>}
+              label={
+                <span className="font-semibold">
+                  Upload your CV (PDF or DOC)
+                </span>
+              }
               className="text-bold"
               rules={[
                 {
