@@ -31,7 +31,7 @@ const Cta: React.FC<PopModelProps> = ({ showModal, setShowModal }) => {
         <div className="text-4xl font-bold animate-pulse ease-out duration-1000 text-black">
           <button
             onClick={() => {
-              setShowModal(true);
+              setShowModal(!showModal);
             }}
           >
             <FaArrowRightLong color="#215CBC" />

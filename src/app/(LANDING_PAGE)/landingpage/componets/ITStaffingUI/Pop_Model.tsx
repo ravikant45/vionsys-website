@@ -20,7 +20,7 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
   useEffect(() => {
     if (!hasModalBeenShown) {
       const timer = setTimeout(() => {
-        setShowModal(true);
+        setShowModal(!showModal);
         setHasModalBeenShown(true);
       }, 5000);
 
