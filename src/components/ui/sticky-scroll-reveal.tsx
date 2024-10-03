@@ -4,6 +4,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 
+
 export const StickyScroll = ({
   content,
   contentClassName,
@@ -40,7 +41,6 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = ["var(--black)", "var(--neutral-900)" ];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
     "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
@@ -48,10 +48,7 @@ export const StickyScroll = ({
   ];
   return (
     <motion.div
-      animate={{
-        backgroundColor: "white", // Changing background color to white
-      }}
-      className="md:h-[30rem] h-[20rem]  overflow-y-auto flex justify-center relative space-x-10 rounded-md md:p-10 p-5 text-black" // Changing text color to black
+      className="md:h-[25rem] h-[20rem]  overflow-y-auto flex justify-around relative space-x-10 rounded-md md:p-10 p-5 text-black" // Changing text color to black
       ref={ref}
     >
       <div className="div relative flex items-start md:px-4">
@@ -59,14 +56,28 @@ export const StickyScroll = ({
           {content.map((item, index) => (
             <div key={item.title + index} className="md:my-5">
               <motion.h2
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  scale: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeInOut"
+                }}
                 
-                
-                className="md:text-2xl text-xl text-MainHeading font-bold" // Removing text color class to inherit black color
+                className="md:text-2xl text-xl text-orange font-bold" // Removing text color class to inherit black color
               >
                 {item.title}
               </motion.h2>
               <motion.p
-                
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  scale: { type: "spring", stiffness: 30 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeInOut"
+                }}
                 className="md:text-lg text-sm max-w-lg mt-10 text-paragraph" // Removing text color class to inherit black color
               >
                 {item.description}
@@ -81,7 +92,7 @@ export const StickyScroll = ({
           background: linearGradients[activeCard % linearGradients.length],
         }}
         className={cn(
-          "hidden lg:block h-60 w-96 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-72 w-96 rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >

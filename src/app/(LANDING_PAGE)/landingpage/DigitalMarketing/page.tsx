@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import DigitalMarketing from './DigitalMarketing';
 
 const page = () => {
   return (
-    <div>Digital Marketing Landing Page</div>
+    <>
+      <DigitalMarketing />
+    </>
   )
 }
 

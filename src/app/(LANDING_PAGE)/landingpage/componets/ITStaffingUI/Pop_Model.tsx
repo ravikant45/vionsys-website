@@ -35,7 +35,7 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
       (childrenAsString.includes(input.toLowerCase()) ||
         option?.value.toLowerCase().includes(input.toLowerCase())) ??
       false
-    ); // Ensure a boolean return
+    );
   };
 
   useEffect(() => {
@@ -55,9 +55,8 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
     console.log("Form Values:", values);
     const data = {
       ...values,
-      phone: countryCode + " " + values.phoneNo,
+      countryCode,
     };
-    console.log(data);
     const template = !data.cv
       ? StaffingEmployerTemplate(data)
       : StaffingEmployeeTemplate(data);
@@ -207,21 +206,21 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
                 />
               </Form.Item>
             ) : (
-              <Form.Item
-                name="phoneNo"
-                label={<span className="font-semibold">Phone Number</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your phone number!",
-                  },
-                ]}
-              >
-                <div className="flex gap-2">
+              <>
+                <Form.Item
+                  name="countryCode"
+                  label={<span className="font-semibold">Country Code</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please select your country code!",
+                    },
+                  ]}
+                >
                   <Select
                     showSearch
                     className="w-32"
-                    placeholder="Country"
+                    placeholder="Select Country"
                     optionFilterProp="children"
                     value={countryCode}
                     onChange={handleCountryChange}
@@ -245,6 +244,18 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
                       </Select.Option>
                     ))}
                   </Select>
+                </Form.Item>
+
+                <Form.Item
+                  name="phoneNo"
+                  label={<span className="font-semibold">Mobile Number</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your mobile number!",
+                    },
+                  ]}
+                >
                   <Input
                     type="text"
                     placeholder="Enter Mobile Number"
@@ -252,8 +263,8 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
                     name="phoneNo"
                     className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
                   />
-                </div>
-              </Form.Item>
+                </Form.Item>
+              </>
             )}
 
             {userType === "employer" ? (

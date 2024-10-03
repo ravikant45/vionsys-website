@@ -17,8 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import toast from "react-hot-toast";
-import { FaLessThanEqual } from "react-icons/fa";
-//fileschema
+import { CareerFormTemplate } from "@/utils/CareerFormTemplate";
 const fileSchema = z.object({
   filename: z.string(),
   content: z.any(), // zod doesn't works well with instanceof(File) or FileList
@@ -71,11 +70,17 @@ const Job_modal = ({
   };
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    console.log(values)
+    const template = CareerFormTemplate(values);
+    const updatedData = {
+      values,
+      template
+    }
     try {
       setIsPending(true);
       const response: AxiosResponse<any> = await axios.post(
-        "/api/sendEmailWithFile", // Replace with your API endpoint
-        values,
+        "/api/sendEmailWithFile",
+        updatedData,
         {
           headers: {
             "Content-Type": "form-data",
