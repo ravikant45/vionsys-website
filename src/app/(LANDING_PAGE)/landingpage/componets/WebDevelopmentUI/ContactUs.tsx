@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
@@ -62,7 +63,7 @@ const ContactUs: React.FC = () => {
 
   return (
     <>
-      <div className="w-[100%] md:h-full grid md:grid-cols-3">
+      <div className="w-[100%] md:h-full bg-white grid md:grid-cols-3">
         <div className="relative w-full flex md:justify-between md:items-center col-span-2">
           {/* Image Section */}
           <Image
@@ -72,7 +73,7 @@ const ContactUs: React.FC = () => {
           />
 
           {/* Form section */}
-          <div className=" md:h-auto w-full md:pr-6  rounded-2xl">
+          <div className=" md:h-auto w-full md:pr-6  rounded-2xl border-r-2   border-slate-200">
             <h2 className="text-2xl text-orange font-extrabold text-center leading-tight text-blue950 md:text-3xl py-4">
               Get In Touch
             </h2>
@@ -95,7 +96,7 @@ const ContactUs: React.FC = () => {
               form={form}
               layout="vertical"
               onFinish={handleSubmit}
-              className="p-4"
+              className="p-4 "
             >
               <Form.Item
                 className="w-full"
@@ -291,7 +292,7 @@ const ContactUs: React.FC = () => {
         </div>
 
         {/* Right section */}
-        <div className=" flex flex-col justify-center items-center gap-4 font-extrabold text-MainHeading  border-l-2 pl-5 border-slate-200">
+        <div className=" flex flex-col w-screen md:w-[100%] md:w- justify-center items-center gap-4 font-extrabold text-MainHeading ">
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -303,10 +304,13 @@ const ContactUs: React.FC = () => {
             }}
             className="text-center"
           >
-            Let’s discuss how we can build something remarkable!
+            Let’s Get Started Today!
           </motion.div>
-          <div className="font-bold text-SubHeading text-center">
-            Let's stay in touch
+          <div className="font-bold text-lg px-2 text-slate-500 text-center">
+            Our team of professionals is ready to bring your ideas to reality.
+            whether you need custom software development, mobile app solutions,
+            salesforce or cloud-based services, it staffing, crm and more, we’re
+            here to help.
           </div>
           {/* social media icons */}
           <motion.div
