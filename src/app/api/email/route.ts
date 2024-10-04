@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
   try {
     await useSendEmail({
-      sendTo: "ssbankar18@gmail.com",
+      sendTo: "info@vionsys.com",
       subject: "Vionsys Website Contact Form",
       html: html,
     });

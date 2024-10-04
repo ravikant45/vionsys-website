@@ -52,11 +52,12 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
   }, [hasModalBeenShown, setShowModal]);
 
   const handleSubmit = async (values: any) => {
-    console.log("Form Values:", values);
+    console.log("Form Values:", values.phone);
     const data = {
       ...values,
       countryCode,
     };
+    console.log(data);
     const template = !data.cv
       ? StaffingEmployerTemplate(data)
       : StaffingEmployeeTemplate(data);
@@ -247,7 +248,7 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
                 </Form.Item>
 
                 <Form.Item
-                  name="phoneNo"
+                  name="phone"
                   label={<span className="font-semibold">Mobile Number</span>}
                   rules={[
                     {
@@ -259,8 +260,8 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
                   <Input
                     type="text"
                     placeholder="Enter Mobile Number"
-                    id="phoneNo"
-                    name="phoneNo"
+                    id="phone"
+                    name="phone"
                     className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
                   />
                 </Form.Item>

@@ -20,10 +20,8 @@ import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate
 
 type Inputs = {
   name: string;
-  phone: {
     countryCode: string;
     number: string;
-  };
   email: string;
   message: string;
 };
@@ -35,7 +33,7 @@ const ContactUs: React.FC = () => {
   const handleSubmit = async (values: any) => {
     const formattedData = {
       ...values,
-      phone: values.countryCode + " " + values.number,
+      countryCode: values.countryCode
     };
 
     const template = StaffingLandingPageTemplate(formattedData);
@@ -158,18 +156,7 @@ const ContactUs: React.FC = () => {
               </Form.Item>
 
               <Form.Item
-                name="number"
                 label={<span className="font-semibold">Phone Number</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter your phone number!",
-                  },
-                  {
-                    pattern: /^\d{10}$/,
-                    message: "Phone number must be numeric and 10 digits long.",
-                  },
-                ]}
               >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.7 }}
@@ -193,12 +180,7 @@ const ContactUs: React.FC = () => {
                         },
                       ]}
                     >
-                      <select
-                        className="border md:w-40 border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none"
-                        onChange={(e) =>
-                          form.setFieldsValue({ countryCode: e.target.value })
-                        }
-                      >
+                      <select className="border md:w-40 border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none">
                         <option value="" disabled>
                           Select Country
                         </option>
@@ -211,13 +193,26 @@ const ContactUs: React.FC = () => {
                     </Form.Item>
 
                     {/* Phone Number Input */}
-                    <Input
-                      type="text"
-                      placeholder="Enter Phone Number"
-                      id="number"
+                    <Form.Item
                       name="number"
-                      className=" w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    />
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please enter your phone number!",
+                        },
+                        {
+                          pattern: /^\d{10}$/,
+                          message:
+                            "Phone number must be numeric and 10 digits long.",
+                        },
+                      ]}
+                    >
+                      <Input
+                        type="text"
+                        placeholder="Enter Phone Number"
+                        className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </Form.Item>
                   </div>
                 </motion.div>
               </Form.Item>
