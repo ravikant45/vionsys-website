@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 import React, { useState } from 'react'
 import Hero from '../componets/SalesforceUI/Hero'
@@ -10,7 +11,7 @@ import Cta from '../componets/ITStaffingUI/Cta'
 import SalesforceCta from '../componets/SalesforceUI/SalesforceCta'
 
 const page = () => {
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div id='contactbg' className='pt-16 overflow-hidden'>

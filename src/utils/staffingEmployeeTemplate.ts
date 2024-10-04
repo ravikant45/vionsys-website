@@ -2,7 +2,7 @@ type Form2Data = {
   name: string;
   email: string;
   countryCode: string;
-  phoneNo: string;
+  phone: string;
   qualification: string;
   experience: string;
   comments: string;
@@ -32,7 +32,7 @@ export const StaffingEmployeeTemplate = (data: Form2Data): string => `
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Contact Number:</td>
-                <td style="padding: 10px 0;">${data.countryCode} ${data.phoneNo}</td>
+                <td style="padding: 10px 0;">${data.countryCode} ${data.phone}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Qualification:</td>

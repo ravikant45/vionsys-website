@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
   try {
     await useSendEmailWithAttachments({
       data,
-      sendTo: "ssbankar18@gmail.com",
+      sendTo: "info@vionsys.com",
       subject: "Vionsys Website career application",
       html:html,
     });

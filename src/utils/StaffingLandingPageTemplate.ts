@@ -1,10 +1,8 @@
 type Form3Data = {
   name: string;
   email: string;
-  phone: {
-    countryCode: string;
-    number: string;
-  };
+  countryCode: string;
+  number: string;
   message: string;
 };
 
@@ -31,7 +29,7 @@ export const StaffingLandingPageTemplate = (data: Form3Data): string => `
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Contact Number:</td>
-                <td style="padding: 10px 0;">${data.phone.countryCode} ${data.phone.number}</td>
+                <td style="padding: 10px 0;">${data.countryCode} ${data.number}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Your Message:</td>
