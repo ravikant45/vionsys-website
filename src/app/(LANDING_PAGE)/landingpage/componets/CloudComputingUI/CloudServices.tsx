@@ -116,14 +116,17 @@ export default function CloudServices() {
       </motion.p>
       <div className="max-w-7xl mx-auto">
         <div className="relative">
-          <motion.div initial={{ opacity: 0, scale: 0.5 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               delay: 0.2,
               scale: { type: "spring", stiffness: 30 },
               opacity: { duration: 0.6 },
-              ease: "easeInOut"
-            }} className="bg-white rounded-lg shadow-xl overflow-hidden">
+              ease: "easeInOut",
+            }}
+            className="bg-white rounded-lg shadow-xl overflow-hidden"
+          >
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/2 h-64 sm:h-80 lg:h-auto relative">
                 {slides.map((slide, index) => (
@@ -163,13 +166,13 @@ export default function CloudServices() {
                         </li>
                       ))}
                     </ul>
-                    <p className="text-sm sm:text-base text-gray-600">
+                    <p className="text-sm sm:text-base text-gray-600 mb-5">
                       {slide.description}
                     </p>
                     <button className="group px-6 py-3 bg-amber-500 text-white rounded-full font-medium flex items-center space-x-2 transition-all duration-300 ease-in-out hover:bg-amber-600">
-              <span>Get Started</span>
-              <FaArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+                      <span>Get Started</span>
+                      <FaArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </button>
                   </div>
                 ))}
               </div>
