@@ -51,7 +51,7 @@ const ThirdSection = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      countryCode:"+91",
+      countryCode: "+91",
       number: "",
       email: "",
       message: "",
@@ -60,10 +60,10 @@ const ThirdSection = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     const template = MainContactFormTemplate(values);
-    const updatedData={
+    const updatedData = {
       values,
-      template
-    }
+      template,
+    };
     try {
       setIsPending(true);
       const response: AxiosResponse<any> = await axios.post(
@@ -103,7 +103,7 @@ const ThirdSection = () => {
             Get In Touch{" "}
             <p className="text-xl py-5 text-black">
               Sales: info@vionsys.com
-              <span className="flex py-5">Mobile: +91 8766613742</span>
+              <span className="flex py-5">Mobile: +91 9156137273</span>
             </p>
           </h1>
         </div>
