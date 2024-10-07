@@ -49,7 +49,7 @@ const App: React.FC = () => {
         footer={null} // Remove default footer with Ok and Cancel buttons
         onCancel={handleCancel} // Add onCancel handler to handle the upper X button
       >
-        <div className="max-w-lg mx-auto md:p-8 p-1 bg-white shadow-xl rounded-lg">
+        <div className="max-w-lg mx-auto md:p-8 p-1 bg-white rounded-lg">
           <Form form={form} layout="vertical" onFinish={handleSubmit}>
             <h1 className="text-center font-bold text-blue-600 md:text-3xl text-xl pb-5">
               Connect with Us

@@ -24,10 +24,15 @@ import {
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Modal } from "antd";
+import { countryCodes } from "@/utils/CountryCodes";
+import { MainContactFormTemplate } from "@/utils/MainContactFormTemplate";
 
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Username must be at least 2 characters.",
+  }),
+  countryCode: z.string().min(1, {
+    message: "Please select a country code.",
   }),
   number: z.string().refine((value) => /^\d{10}$/.test(value), {
     message:
@@ -46,6 +51,7 @@ const ThirdSection = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      countryCode: "+91",
       number: "",
       email: "",
       message: "",
@@ -53,11 +59,16 @@ const ThirdSection = () => {
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    const template = MainContactFormTemplate(values);
+    const updatedData = {
+      values,
+      template,
+    };
     try {
       setIsPending(true);
       const response: AxiosResponse<any> = await axios.post(
-        "/api/email", // Replace with your API endpoint
-        values,
+        "/api/email",
+        updatedData,
         {
           headers: {
             "Content-Type": "application/json",
@@ -92,7 +103,7 @@ const ThirdSection = () => {
             Get In Touch{" "}
             <p className="text-xl py-5 text-black">
               Sales: info@vionsys.com
-              <span className="flex py-5">Mobile: +91 8766613742</span>
+              <span className="flex py-5">Mobile: +91 9156137273</span>
             </p>
           </h1>
         </div>
@@ -130,9 +141,33 @@ const ThirdSection = () => {
                 <FormItem>
                   <FormLabel>Contact Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter contact number" {...field} />
+                    <div className="flex gap-2">
+                      {/* Country Code Selection */}
+                      <FormField
+                        control={form.control}
+                        name="countryCode"
+                        render={({ field }) => (
+                          <select
+                            {...field}
+                            className="border w-24 border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none"
+                          >
+                            {countryCodes.map((country, index) => (
+                              <option key={index} value={country.code}>
+                                {country.code} {country.name}
+                              </option>
+                            ))}
+                          </select>
+                        )}
+                      />
+
+                      {/* Phone Number Input */}
+                      <Input
+                        placeholder="Enter phone number"
+                        {...field}
+                        className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
                   </FormControl>
-                  <FormDescription></FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
