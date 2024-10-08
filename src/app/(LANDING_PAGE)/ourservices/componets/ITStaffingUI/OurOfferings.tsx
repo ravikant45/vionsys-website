@@ -11,7 +11,7 @@ import {
   FiBriefcase,
 } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
-import backgroundImage from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/Offerings.jpg";
+import backgroundImage from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/Offerings.jpg";
 
 // Define the structure of an offering
 interface Offering {

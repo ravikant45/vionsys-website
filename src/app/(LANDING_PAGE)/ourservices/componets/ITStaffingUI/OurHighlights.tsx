@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import { CheckCircledIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import React from "react";
-import HighlightsImg from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/Highlights.jpeg"
+import HighlightsImg from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/Highlights.jpeg"
 const OurHighlights = () => {
   return (
     <>
