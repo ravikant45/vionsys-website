@@ -8,7 +8,7 @@ import Image from "next/image";
 import call from "../../images/ITStaffing/SectorIcons/call1.png";
 import mail from "../../images/ITStaffing/SectorIcons/mail.png";
 import { Form, Input } from "antd";
-import Contact from "@/app/(LANDING_PAGE)/landingpage/images/WebDevelopment/Contact4.png";
+import Contact from "@/app/(LANDING_PAGE)/ourservices/images/WebDevelopment/Contact4.png";
 import { Button } from "@/components/ui/button";
 import { countryCodes } from "@/utils/CountryCodes";
 import Link from "next/link";

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CrmHero from "../../../landingpage/images/Crm/Hero1.jpg";
+import CrmHero from "../../../ourservices/images/Crm/Hero1.jpg";
 import { motion } from "framer-motion";
 import HeroContactForm from "../HeroContactForm";
 
