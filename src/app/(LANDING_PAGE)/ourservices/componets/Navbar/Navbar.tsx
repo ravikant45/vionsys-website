@@ -53,14 +53,10 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className="hidden md:flex items-center space-x-8 cursor-default">
-              <div className="text-gray-600 font-semibold hover:text-gray-900 flex items-center">
-                <IoCallOutline className="h-5 w-5 mr-2 font-bold" />
-                <span>+91 8766613742</span>
-              </div>
-              <div className="text-gray-600 font-semibold hover:text-gray-900 flex items-center">
-                <IoCallOutline className="h-5 w-5 mr-2 font-bold" />
-                <span>(020) 4724-2493</span>
-              </div>
+              {/* CTA Button */}
+              <button className="cursor-pointer text-sm font-bold border border-300 text-blue3 uppercase bg-white px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition">
+              Get a Free Staffing Consultation!
+              </button>
               <div className="text-gray-600 font-semibold hover:text-gray-900 flex items-center">
                 <IoMailOutline className="h-5 w-5 mr-2 font-bold" />
                 <span>info@vionsys.com</span>
@@ -70,7 +66,7 @@ const Navbar: React.FC = () => {
                 onClick={() => setShowModal(!showModal)}
               >
                 <IoCallSharp className="w-5 h-5" />
-                <span className="px-1 font-semibold">Call Now</span>
+                <span className="px-1 font-semibold">Submit Request</span>
               </div>
             </div>
 

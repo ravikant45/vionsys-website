@@ -2,15 +2,15 @@
 
 import { GiRadioTower } from "react-icons/gi";
 import { motion } from "framer-motion";
-import companies1 from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/companies.png";
-import Healthcare from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/Healthcare.png";
-import Education from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/Education.png";
-import eCommerce from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/eCommerce.png";
-import construction from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/construction1.png";
-import banking from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/banking.png";
-import manufacturing from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/manufacturing.png";
-import insurance from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/insurance.png";
-import Entertainment from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/SectorIcons/Entertainment.png";
+import companies1 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/companies.png";
+import Healthcare from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/Healthcare.png";
+import Education from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/Education.png";
+import eCommerce from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/eCommerce.png";
+import construction from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/construction1.png";
+import banking from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/banking.png";
+import manufacturing from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/manufacturing.png";
+import insurance from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/insurance.png";
+import Entertainment from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/SectorIcons/Entertainment.png";
 import Image from "next/image";
 
 const industries = [

@@ -2,12 +2,12 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import choose1 from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/choose1.jpg";
-import choose2 from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/choose2.jpg";
-import choose3 from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/choose3.jpg";
-import choose4 from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/choose4.jpg";
-import choose5 from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/choose5.jpg";
-import choose6 from "@/app/(LANDING_PAGE)/landingpage/images/ITStaffing/choose6.jpg";
+import choose1 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose1.jpg";
+import choose2 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose2.jpg";
+import choose3 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose3.jpg";
+import choose4 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose4.jpg";
+import choose5 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose5.jpg";
+import choose6 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose6.jpg";
 import {
   FaGlobeAsia,
   FaUsers,

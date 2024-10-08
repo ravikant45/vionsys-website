@@ -1,4 +1,4 @@
-import CloudHero from "../../../landingpage/images/CloudComputing/CloudHero2.jpg";
+import CloudHero from "../../../ourservices/images/CloudComputing/CloudHero2.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import HeroContactForm from "../HeroContactForm";

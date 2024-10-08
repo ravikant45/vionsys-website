@@ -3,9 +3,9 @@
 // import { useState, useEffect } from "react"
 // import { motion, AnimatePresence } from "framer-motion"
 // import Image from "next/image"
-// import CrmBuilding2 from "../../../landingpage/images/Crm/CrmBuilding2.jpg"
-// import CrmBuilding from "../../../landingpage/images/Crm/CrmBuilding.jpg"
-// import CrmBuilding4 from "../../../landingpage/images/Crm/CrmBuilding4.jpg"
+// import CrmBuilding2 from "../../../ourservices/images/Crm/CrmBuilding2.jpg"
+// import CrmBuilding from "../../../ourservices/images/Crm/CrmBuilding.jpg"
+// import CrmBuilding4 from "../../../ourservices/images/Crm/CrmBuilding4.jpg"
 
 // const slides = [
 //   {
@@ -77,9 +77,9 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import CrmBuilding2 from "../../../landingpage/images/Crm/CrmBuilding2.jpg";
-import CrmBuilding from "../../../landingpage/images/Crm/CrmBuilding.jpg";
-import CrmBuilding4 from "../../../landingpage/images/Crm/CrmBuilding4.jpg";
+import CrmBuilding2 from "../../../ourservices/images/Crm/CrmBuilding2.jpg";
+import CrmBuilding from "../../../ourservices/images/Crm/CrmBuilding.jpg";
+import CrmBuilding4 from "../../../ourservices/images/Crm/CrmBuilding4.jpg";
 
 const images = [CrmBuilding2, CrmBuilding, CrmBuilding4];
 

@@ -4,14 +4,14 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { FaAngleRight } from "react-icons/fa6";
-import CRM1 from "../../../landingpage/images/Crm/Crm1.jpg";
-import CRM2 from "../../../landingpage/images/Crm/Crm2.jpg";
-import CRM3 from "../../../landingpage/images/Crm/Crm3.jpg";
-import CRM4 from "../../../landingpage/images/Crm/Crm4.jpg";
-import CRM5 from "../../../landingpage/images/Crm/Crm5.jpg";
-import CRM6 from "../../../landingpage/images/Crm/Crm6.jpg";
-import CRM7 from "../../../landingpage/images/Crm/Crm7.jpg";
-import CRM8 from "../../../landingpage/images/Crm/Crm8.jpg";
+import CRM1 from "../../../ourservices/images/Crm/Crm1.jpg";
+import CRM2 from "../../../ourservices/images/Crm/Crm2.jpg";
+import CRM3 from "../../../ourservices/images/Crm/Crm3.jpg";
+import CRM4 from "../../../ourservices/images/Crm/Crm4.jpg";
+import CRM5 from "../../../ourservices/images/Crm/Crm5.jpg";
+import CRM6 from "../../../ourservices/images/Crm/Crm6.jpg";
+import CRM7 from "../../../ourservices/images/Crm/Crm7.jpg";
+import CRM8 from "../../../ourservices/images/Crm/Crm8.jpg";
 import { motion } from "framer-motion";
 
 interface Service {
