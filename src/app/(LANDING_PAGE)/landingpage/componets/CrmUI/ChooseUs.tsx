@@ -42,7 +42,7 @@ export default function ChooseUs() {
   ];
 
   return (
-    <div className="min-h-screen p-4 md:p-8 bg-white">
+    <div className="min-h-screen p-4 md:p-8 bg-dot-slate-300">
       <div className="max-w-5xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}

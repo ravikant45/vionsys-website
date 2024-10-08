@@ -71,7 +71,7 @@ const services: Service[] = [
   },
 ];
 
-export default function Sample() {
+export default function CrmServices() {
   const [selectedService, setSelectedService] = useState<Service>(services[0]);
   const [isMobile, setIsMobile] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
