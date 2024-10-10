@@ -1,7 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const CloudCta = () => {
+interface PopUpCtaProps {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+}
+
+const CloudCta: React.FC<PopUpCtaProps> = ({ showModal, setShowModal }) => {
   return (
       <motion.div
           initial={{ opacity: 0, scale: 0.6 }}
@@ -21,7 +26,9 @@ const CloudCta = () => {
             Unlock the potential of cloud computing to optimize your
             infrastructure and reduce costs.
           </p>
-          <button className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg transition">
+          <button onClick={() => {
+                  setShowModal(!showModal);
+                }} className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg transition">
             Start Your Cloud Journey
           </button>
         </div>

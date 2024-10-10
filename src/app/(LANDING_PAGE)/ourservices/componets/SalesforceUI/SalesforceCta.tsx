@@ -1,7 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const SalesforceCta = () => {
+type HeroSalesforceCtaProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const SalesforceCta: React.FC<HeroSalesforceCtaProps> = ({ showModal, setShowModal }) => {
   return (
       <motion.section initial={{ opacity: 0, scale: 0.6 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -16,7 +21,9 @@ const SalesforceCta = () => {
         Take your business to the next level with our cutting-edge IT solutions.
         </p>
         <p className="mt-8">
-          <button className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
+          <button onClick={() => {
+                  setShowModal(!showModal);
+                }} className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
             <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-sm font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined">
               Get Started Now

@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import HeroContactForm from "../HeroContactForm";
 
-type HeroProps = {
+type HeroSalesforceProps = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+const Hero: React.FC<HeroSalesforceProps> = ({ showModal, setShowModal }) => {
+
+  const salesforceHeading = "Contact Us Toady!"
+
   return (
     <div className="">
       <video
@@ -77,7 +80,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form Component */}
-        <HeroContactForm />
+        <HeroContactForm heading={salesforceHeading} />
       </div>
     </div>
   );

@@ -1,7 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const CrmCta = () => {
+type HeroCrmCtaProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const CrmCta: React.FC<HeroCrmCtaProps> = ({ showModal, setShowModal }) => {
   return (
     <section className="relative z-10 overflow-hidden bg-[#215CBC] py-10 md:px-8 px-4 my-10">
       <div className="container">
@@ -51,12 +56,13 @@ const CrmCta = () => {
               }}
               className="text-center lg:text-right"
             >
-              <a
+              <button onClick={() => {
+                  setShowModal(!showModal);
+                }}
                 className="font-semibold rounded-lg mx-auto inline-flex items-center justify-center bg-white py-4 px-9 hover:bg-opacity-90"
-                href="#"
               >
                 Begin Your Transformation
-              </a>
+              </button>
             </motion.div>
           </div>
         </div>

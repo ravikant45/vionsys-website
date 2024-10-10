@@ -9,6 +9,7 @@ import ClientsServices from '@/utils/ClientsServices'
 import SalesforceChooseUs from '../componets/SalesforceUI/SalesforceChooseUs'
 import Cta from '../componets/ITStaffingUI/Cta'
 import SalesforceCta from '../componets/SalesforceUI/SalesforceCta'
+import PopUp from '../PopUp'
 
 const page = () => {
     const [showModal, setShowModal] = useState(false);
@@ -20,9 +21,10 @@ const page = () => {
             <SalesforceOfferings />
             <ClientsServices />
             <Services />
-            <SalesforceChooseUs />
-            <SalesforceCta />
+            <SalesforceChooseUs showModal={showModal} setShowModal={setShowModal} />
+            <SalesforceCta showModal={showModal} setShowModal={setShowModal} />
             <ContactUs />
+            <PopUp showModal={showModal} setShowModal={setShowModal} />
         </div>
     )
 }

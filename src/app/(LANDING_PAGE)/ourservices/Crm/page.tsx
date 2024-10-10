@@ -8,6 +8,7 @@ import ClientsServices from '@/utils/ClientsServices'
 import CrmServices from '../componets/CrmUI/CrmServices'
 import CrmImage from '../componets/CrmUI/CrmImage'
 import CrmCta from '../componets/CrmUI/CrmCta'
+import PopUp from '../PopUp'
 
 const page = () => {
     const [showModal, setShowModal] = useState(false)
@@ -16,11 +17,12 @@ const page = () => {
         <div className='overflow-hidden'>
             <Hero showModal={showModal} setShowModal={setShowModal} />
             <CrmServices />
-            <ChooseUs />
+            <ChooseUs showModal={showModal} setShowModal={setShowModal} />
             <CrmImage />
             <ClientsServices />
-            <CrmCta />
+            <CrmCta showModal={showModal} setShowModal={setShowModal} />
             <ContactUs/ >
+            <PopUp showModal={showModal} setShowModal={setShowModal} />
         </div>
     )
 }
