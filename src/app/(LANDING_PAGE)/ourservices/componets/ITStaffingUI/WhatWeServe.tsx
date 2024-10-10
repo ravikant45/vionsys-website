@@ -53,8 +53,7 @@ export default function Component() {
         }}
         className="text-SubHeading font-bold mb-8 text-center"
       >
-        Our staffing solutions cater to diverse industries, meeting their unique
-        IT needs with proven expertise in sectors like:
+        We Serve Diverse Industries Including IT, Non IT, Consumer Retail, Manufacturing, Energy, Finance, Healthcare, BPO And Many More.
       </motion.p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         {industries.map((industry) => {

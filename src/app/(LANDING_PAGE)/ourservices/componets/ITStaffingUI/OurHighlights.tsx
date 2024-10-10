@@ -38,13 +38,13 @@ const OurHighlights = () => {
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 mt-1">
                     {index === 0 &&
-                      "Enhance your IT capabilities with our expert professionals, bringing fresh perspectives and cutting-edge skills to your team."}
+                      "Strengthen your IT team with our skilled professionals, delivering fresh insights and advanced expertise to elevate your capabilities."}
                     {index === 1 &&
-                      "Our streamlined process ensures you find the right talent quickly, reducing time-to-hire without compromising on quality."}
+                      "Our efficient process helps you find the right talent fast, reducing time-to-hire while maintaining top quality."}
                     {index === 2 &&
-                      "We provide tailored solutions, matching professionals with the exact skills and experience your projects demand."}
+                      "We offer customized solutions, matching professionals with the exact skills and experience required for your projects."}
                     {index === 3 &&
-                      "Join numerous satisfied clients who have achieved their IT goals through our proven recruitment strategies."}
+                      "Become one of the many satisfied clients who have reached their IT goals using our effective recruitment strategies."}
                   </p>
                 </div>
               </li>

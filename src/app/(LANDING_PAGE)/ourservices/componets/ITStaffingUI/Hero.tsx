@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
 import HeroContactForm from "../HeroContactForm";
 
@@ -7,6 +8,7 @@ type HeroProps = {
 };
 
 const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+  const Staffingheading = "Get the Right IT Talent for Your Projects!";
   return (
     <>
       <section
@@ -44,14 +46,15 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               Hire Top Talents With Our IT Staffing Services
             </motion.h2>
             <p className="text-lg text-slate-600 mb-6">
-              We provide cutting-edge solutions to help your business grow. Our
-              team of experts is ready to assist you with all your needs.
+              If you're seeking talented employees, we’re excited to collaborate
+              and discuss how we can work together and bring value to our
+              respective organizations.
             </p>
             <div>
-              <button className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
-                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
+              <button className="relative hover:scale-105 ease-in-out duration-500 inline-flex h-14 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
+                <span className="absolute hover:scale-125 ease-in-out duration-500 inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
                 <span
-                  className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-sm font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined"
+                  className="inline-flex  h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-md font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined"
                   onClick={() => {
                     setShowModal(!showModal);
                   }}
@@ -74,7 +77,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           </div>
 
           {/* Right Side: Contact Form */}
-          <HeroContactForm />
+          <HeroContactForm heading={Staffingheading} />
         </div>
       </section>
     </>
