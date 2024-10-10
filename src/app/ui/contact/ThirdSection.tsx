@@ -60,9 +60,11 @@ const ThirdSection = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     const template = MainContactFormTemplate(values);
+    const sendTo = ["info@vionsys.com"];
     const updatedData = {
       values,
       template,
+      sendTo,
     };
     try {
       setIsPending(true);

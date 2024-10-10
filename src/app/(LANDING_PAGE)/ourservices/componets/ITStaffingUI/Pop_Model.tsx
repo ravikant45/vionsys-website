@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { Modal, Form, Input, Radio, Select, Button, Upload } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
@@ -10,17 +9,21 @@ import { StaffingEmployeeTemplate } from "@/utils/staffingEmployeeTemplate";
 import { country } from "@/utils/CountryCodes";
 import Image from "next/image";
 
-interface SampleProps {
+interface PopModalProps {
   showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal: (show: boolean) => void;
 }
 
-export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
+export default function Pop_Model({ showModal, setShowModal }: PopModalProps) {
+  
   const [userType, setUserType] = useState("employer");
   const [hasModalBeenShown, setHasModalBeenShown] = useState(false); // Track if modal has been shown
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("");
+  const [isModal2Open, setIsModal2Open] = useState(false);
+
+  
 
   const handleCountryChange = (value: string) => {
     setCountryCode(value);
@@ -50,22 +53,25 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
       };
     }
   }, [hasModalBeenShown, setShowModal]);
+  
+  if (!showModal) return null;
 
   const handleSubmit = async (values: any) => {
-    console.log("Form Values:", values.phone);
     const data = {
       ...values,
       countryCode,
     };
-    console.log(data);
+    const sendTo = ["ssbankar18@gmail.com"];
     const template = !data.cv
       ? StaffingEmployerTemplate(data)
       : StaffingEmployeeTemplate(data);
     const updatedData = {
       data,
       template,
+      sendTo,
     };
     setLoading(true);
+    console.log(updatedData.data);
     try {
       if (data.cv) {
         const response = await axios.post(
@@ -85,9 +91,9 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
         });
       }
 
-      toast.success("Thanks for connecting with us!");
-      form.resetFields();
       setShowModal(false);
+      setIsModal2Open(true);
+      form.resetFields();
     } catch (error) {
       toast.error("Failed to send message");
     }
@@ -379,37 +385,63 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
             )}
 
             {userType === "employer" ? (
-              <Form.Item
-                name="interestedIn"
-                label={<span className="font-semibold">Service Required</span>}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please Service Required",
-                  },
-                ]}
-              >
-                <Select placeholder="Select Service Required">
-                  <Select.Option value="Permanent Staffing">
-                    Permanent Staffing
-                  </Select.Option>
-                  <Select.Option value="Contract Staffing">
-                    Contract Staffing
-                  </Select.Option>
-                  <Select.Option value="Temporary Staffing">
-                    Temporary Staffing
-                  </Select.Option>
-                  <Select.Option value="Specialized Staffing">
-                    Specialized Staffing
-                  </Select.Option>
-                  <Select.Option value="Recruitment Process Outsourcing (RPO)">
-                    Recruitment Process Outsourcing (RPO)
-                  </Select.Option>
-                  <Select.Option value="Vendor Management Services (VMS)">
-                    Vendor Management Services (VMS)
-                  </Select.Option>
-                </Select>
-              </Form.Item>
+              <>
+                <Form.Item
+                  name="interestedIn"
+                  label={
+                    <span className="font-semibold">Service Required</span>
+                  }
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please select a service required",
+                    },
+                  ]}
+                >
+                  <Select placeholder="Select Service Required">
+                    <Select.Option value="Permanent Staffing">
+                      Permanent Staffing
+                    </Select.Option>
+                    <Select.Option value="Contract Staffing">
+                      Contract Staffing
+                    </Select.Option>
+                    <Select.Option value="Temporary Staffing">
+                      Temporary Staffing
+                    </Select.Option>
+                    <Select.Option value="Specialized Staffing">
+                      Specialized Staffing
+                    </Select.Option>
+                    <Select.Option value="Recruitment Process Outsourcing (RPO)">
+                      Recruitment Process Outsourcing (RPO)
+                    </Select.Option>
+                    <Select.Option value="Vendor Management Services (VMS)">
+                      Vendor Management Services (VMS)
+                    </Select.Option>
+                  </Select>
+                </Form.Item>
+
+                <Form.Item
+                  name="lookingFor"
+                  label={
+                    <span className="font-semibold">Your Requirement</span>
+                  }
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please select IT or Non-IT",
+                    },
+                  ]}
+                >
+                  <Radio.Group className="text-black">
+                    <Radio value="IT" className="font-medium">
+                      IT
+                    </Radio>
+                    <Radio value="Non-IT" className="font-medium">
+                      Non-IT
+                    </Radio>
+                  </Radio.Group>
+                </Form.Item>
+              </>
             ) : (
               <Form.Item
                 name="comments"
@@ -511,6 +543,28 @@ export default function Pop_Model({ showModal, setShowModal }: SampleProps) {
           </Form.Item>
         </Form>
       </Modal>
+
+      {/* Thank you message modal */}
+      {/* <Modal
+        footer={null}
+        open={isModal2Open}
+        onCancel={() => setIsModal2Open(false)}
+        className=""
+      >
+        <div className="pt-6 flex justify-center items-center bg-white text-black">
+          <div className="flex flex-col items-center gap-4">
+            <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400">
+              <SiTicktick size={30} className="text-green-400" />
+            </div>
+            <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">
+              Thank you for reaching out!
+            </h2>
+            <p className="text-2xl font-semibold text-SubHeading text-center">
+              We appreciate your interest and will get back to you shortly.
+            </p>
+          </div>
+        </div>
+      </Modal> */}
     </div>
   );
 }

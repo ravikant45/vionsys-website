@@ -6,6 +6,7 @@ type Form1Data = {
   countryCode: string;
   phoneNo: string;
   interestedIn: string;
+  lookingFor: string;
   message: string;
   userType: string;
 };
@@ -46,6 +47,10 @@ export const StaffingEmployerTemplate = (data: Form1Data): string => `
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Service Required:</td>
                 <td style="padding: 10px 0;">${data?.interestedIn}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px 0; font-weight: bold;">Employer Requirnment:</td>
+                <td style="padding: 10px 0;">${data?.lookingFor}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Message:</td>

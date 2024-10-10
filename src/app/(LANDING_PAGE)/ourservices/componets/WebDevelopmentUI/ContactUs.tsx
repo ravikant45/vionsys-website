@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import call from "../../images/ITStaffing/SectorIcons/call1.png";
 import mail from "../../images/ITStaffing/SectorIcons/mail.png";
-import { Form, Input } from "antd";
+import { Form, Input, Modal } from "antd";
 import Contact from "@/app/(LANDING_PAGE)/ourservices/images/WebDevelopment/Contact4.png";
 import { Button } from "@/components/ui/button";
 import { countryCodes } from "@/utils/CountryCodes";
@@ -17,29 +17,33 @@ import Instagram from "../../../../../../public/assets/socialicons/instagram.png
 import Facebook from "../../../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../../../public/assets/socialicons/Twitter4.png";
 import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
+import { SiTicktick } from "react-icons/si";
 
 type Inputs = {
   name: string;
-    countryCode: string;
-    number: string;
+  countryCode: string;
+  number: string;
   email: string;
   message: string;
 };
 
 const ContactUs: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
+  const [isModal2Open, setIsModal2Open] = useState(false);
   const [form] = Form.useForm();
 
   const handleSubmit = async (values: any) => {
     const formattedData = {
       ...values,
-      countryCode: values.countryCode
+      countryCode: values.countryCode,
     };
 
     const template = StaffingLandingPageTemplate(formattedData);
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
     const updatedData = {
       formattedData,
       template,
+      sendTo,
     };
     console.log("formated", formattedData);
 
@@ -51,7 +55,7 @@ const ContactUs: React.FC = () => {
           "Content-Type": "application/json",
         },
       });
-      toast.success("Thanks for connecting with us!");
+      setIsModal2Open(true);
       form.resetFields();
     } catch (error) {
       toast.error("Failed to send message");
@@ -77,13 +81,13 @@ const ContactUs: React.FC = () => {
             </h2>
             <div className="flex md:flex-row flex-col md:justify-evenly justify-center items-center">
               <div className="flex py-1">
-                <Image src={call} alt="call icon" className="h2 w-6" />
+                <Image src={mail} alt="call icon" className="h-6 w-6" />
                 <span className="px-2 text-sm font-semibold flex items-center justify-center">
-                  +91 8766613742
+                  pawandolas@vionsys.com
                 </span>
               </div>
               <div className="flex py-1">
-                <Image src={mail} alt="call icon" className="h2 w-6" />
+                <Image src={mail} alt="call icon" className="h-6 w-6" />
                 <span className="px-2 text-sm font-semibold flex items-center justify-center">
                   info@vionsys.com
                 </span>
@@ -168,7 +172,7 @@ const ContactUs: React.FC = () => {
                     ease: "easeInOut",
                   }}
                 >
-                  <div className="flex gap-2">
+                  <div className="grid grid-cols-2 h-10 gap-x-2">
                     {/* Country Code Selection */}
                     <Form.Item
                       name="countryCode"
@@ -180,7 +184,7 @@ const ContactUs: React.FC = () => {
                         },
                       ]}
                     >
-                      <select className="border md:w-40 border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none">
+                      <select className="border h-10 border-gray-300 rounded text-black px-1  focus:outline-none">
                         <option value="" disabled>
                           Select Country
                         </option>
@@ -195,6 +199,7 @@ const ContactUs: React.FC = () => {
                     {/* Phone Number Input */}
                     <Form.Item
                       name="number"
+                      className="h-20"
                       rules={[
                         {
                           required: true,
@@ -283,6 +288,29 @@ const ContactUs: React.FC = () => {
                 </div>
               </Form.Item>
             </Form>
+
+            {/* Thank you message modal */}
+            <Modal
+              footer={null}
+              open={isModal2Open}
+              onCancel={() => setIsModal2Open(false)}
+              className=""
+            >
+              <div className="pt-6 flex justify-center items-center bg-white text-black">
+                <div className="flex flex-col items-center gap-4">
+                  <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400">
+                    <SiTicktick size={30} className="text-green-400" />
+                  </div>
+                  <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">
+                    Thank you for reaching out!
+                  </h2>
+                  <p className="text-2xl font-semibold text-SubHeading text-center">
+                    We appreciate your interest and will get back to you
+                    shortly.
+                  </p>
+                </div>
+              </div>
+            </Modal>
           </div>
         </div>
 

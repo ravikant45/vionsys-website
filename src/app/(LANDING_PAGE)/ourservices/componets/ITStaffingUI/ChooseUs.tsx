@@ -8,13 +8,6 @@ import choose3 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose3.
 import choose4 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose4.jpg";
 import choose5 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose5.jpg";
 import choose6 from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/choose6.jpg";
-import {
-  FaGlobeAsia,
-  FaUsers,
-  FaHandshake,
-  FaUserCheck,
-  FaProjectDiagram,
-} from "react-icons/fa";
 import Image from "next/image";
 
 const ChooseUs = () => {
@@ -24,51 +17,51 @@ const ChooseUs = () => {
     {
       id: 1,
       image: choose1,
-      icons: <FaGlobeAsia className="w-8 h-8" />,
-      title: "A Leading IT Staffing & Consulting Firm Across India & Globally",
+      
+      title: "Global IT Staffing and Consulting Services",
       description:
         "We specialize in providing outstanding IT staffing solutions, ensuring your business has access to top talent that drives success.",
     },
     {
       id: 2,
       image: choose2,
-      icons: <FaUsers className="w-8 h-8" />,
-      title: "Streamlined Processes for Quick and Effective Talent Placement",
+     
+      title: "Quick and Effective Talent Placement",
       description:
-        "Our efficient recruitment processes guarantee fast and accurate placements, reducing downtime and boosting your team’s productivity.",
+        "Our efficient recruitment processes guarantee fast and accurate placements, reducing downtime and boosting your team’s productivity and strenght.",
     },
     {
       id: 3,
       image: choose3,
-      icons: <FaHandshake className="w-10 h-10" />,
-      title: "Happy Clients & High Retention in IT Contract Staffing",
+      
+      title: "Happy Clients with High IT Staffing Retention",
       description:
-        "Our commitment to delivering exceptional services has resulted in satisfied clients and high retention rates, fostering long-term partnerships.",
+        "Our commitment to delivering exceptional solutions has resulted in satisfied clients and high retention rates, fostering long-term partnerships.",
     },
     {
       id: 4,
       image: choose4,
-      icons: <FaUserCheck className="w-8 h-8" />,
-      title: "Proven Success in Over 300+ Projects",
+     
+      title: "Customized Talent Solutions",
       description:
-        "With a successful track record across 300+ projects, we are your reliable partner for securing the best IT talent to fuel your business growth.",
+        "We understand that each business has unique needs. Our tailored talent solutions ensure you get the right fit for your specific IT requirements, enhancing team synergy and performance.",
     },
     {
       id: 5,
       image: choose5,
-      icons: <FaProjectDiagram className="w-8 h-8" />,
-      title: "Comprehensive Recruitment and Selection Process",
+      
+      title: "Expertise Across Multiple Domains",
       description:
-        "We meticulously screen and select the best candidates, ensuring they meet your specific project requirements and deliver results.",
+        "Our recruitment team possesses extensive knowledge across various IT domains, including software development, cybersecurity, cloud computing, and data analytics, ensuring we find candidates with the precise skills your projects demand.",
     },
 
     {
       id: 6,
       image: choose6,
-      icons: <FaProjectDiagram className="w-8 h-8" />,
-      title: "Comprehensive Recruitment and Selection Process",
+      
+      title: "Ongoing Support and Consultation",
       description:
-        "We meticulously screen and select the best candidates, ensuring they meet your specific project requirements and deliver results.",
+        "We provide continuous support and consultation throughout the staffing process, assisting you in adapting to changing needs and optimizing your IT team for sustained success.",
     },
   ];
 
