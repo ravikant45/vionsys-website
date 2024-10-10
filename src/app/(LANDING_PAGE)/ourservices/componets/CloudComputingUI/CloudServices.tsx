@@ -64,7 +64,12 @@ const slides = [
   },
 ];
 
-export default function CloudServices() {
+interface PopUpCloudProps {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+}
+
+const CloudServices: React.FC<PopUpCloudProps> = ({ showModal, setShowModal }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -97,7 +102,7 @@ export default function CloudServices() {
           opacity: { duration: 0.6 },
           ease: "easeInOut",
         }}
-        className="text-MainHeading font-extrabold text-center mb-1"
+        className="text-[#215CBC] text-4xl font-extrabold text-center mb-3"
       >
         Our Cloud Computing Services
       </motion.h2>
@@ -110,10 +115,27 @@ export default function CloudServices() {
           opacity: { duration: 0.6 },
           ease: "easeInOut",
         }}
-        className="text-SubHeading font-bold text-center mb-10"
+        className="text-orange text-3xl font-bold text-center mb-3"
       >
         We offer a wide range of services to help your business succeed.
       </motion.p>
+      <div className=" flex items-center justify-center">
+      <motion.p
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.2,
+          x: { type: "spring", stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: "easeInOut",
+        }}
+        className="max-w-7xl text-slate-600 text-2xl font-semibold text-center mb-10"
+      >
+        We provide a comprehensive range of cloud solutions, from scalable
+        infrastructure to secure data management, designed to drive your
+        business growth and success.
+      </motion.p>
+      </div>
       <div className="max-w-7xl mx-auto">
         <div className="relative">
           <motion.div
@@ -158,18 +180,20 @@ export default function CloudServices() {
                     <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary">
                       {slide.title}
                     </h2>
-                    <ul className="space-y-2 sm:space-y-4 mb-4 sm:mb-6">
+                    <ul className="space-y-2 sm:space-y-4 mb-4 sm:mb-3">
                       {slide.points.map((point, i) => (
                         <li key={i} className="flex items-start">
-                          <span className="mr-2 mt-1 text-primary">•</span>
-                          <span className="text-sm sm:text-base">{point}</span>
+                          <span className="mr-2 text-primary">•</span>
+                          <span className="text-base">{point}</span>
                         </li>
                       ))}
                     </ul>
-                    <p className="text-sm sm:text-base text-gray-600 mb-5">
+                    <p className="text-base sm:text-base text-gray-600 mb-5">
                       {slide.description}
                     </p>
-                    <button className="group px-6 py-3 bg-amber-500 text-white rounded-full font-medium flex items-center space-x-2 transition-all duration-300 ease-in-out hover:bg-amber-600">
+                    <button onClick={() => {
+                  setShowModal(!showModal);
+                }} className="group px-6 py-3 bg-amber-500 text-white rounded-full font-medium flex items-center space-x-2 transition-all duration-300 ease-in-out hover:bg-amber-600">
                       <span>Get Started</span>
                       <FaArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
@@ -214,3 +238,5 @@ export default function CloudServices() {
     </div>
   );
 }
+
+export default CloudServices;

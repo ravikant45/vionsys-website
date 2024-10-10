@@ -7,6 +7,7 @@ import CloudServices from '../componets/CloudComputingUI/CloudServices';
 import HowWeWork from '../componets/CloudComputingUI/HowWeWork';
 import CloudChooseUs from '../componets/CloudComputingUI/CloudChooseUs';
 import CloudCta from '../componets/CloudComputingUI/CloudCta';
+import PopUp from '../PopUp';
 
 const page = () => {
   const [showModal, setShowModal] = useState(false)
@@ -14,12 +15,13 @@ const page = () => {
   return (
     <div className='overflow-hidden'>
       <Hero showModal={showModal} setShowModal={setShowModal} />
-      <CloudServices />
+      <CloudServices showModal={showModal} setShowModal={setShowModal} />
       <HowWeWork />
       <ClientsServices />
       <CloudChooseUs />
-      <CloudCta />
+      <CloudCta showModal={showModal} setShowModal={setShowModal} />
       <ContactUs />
+      <PopUp showModal={showModal} setShowModal={setShowModal} />
     </div>
   )
 }

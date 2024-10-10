@@ -20,13 +20,13 @@ const steps = [
     icon: <LuCog className="w-6 h-6" />,
     title: "Implementation",
     description:
-      "Our team manages the migration process, ensuring minimal disruption and maximum security.",
+      "Our team manages by ensuring minimal disruption and maximum security.",
   },
   {
     icon: <LuPhone className="w-6 h-6" />,
     title: "Ongoing Support",
     description:
-      "Continuous monitoring and support to keep your cloud environment optimized and secure.",
+      "Continuous monitoring and support to keep cloud environment optimized and secure.",
   },
 ];
 

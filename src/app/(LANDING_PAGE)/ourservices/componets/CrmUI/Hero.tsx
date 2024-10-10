@@ -3,19 +3,20 @@ import CrmHero from "../../../ourservices/images/Crm/Hero1.jpg";
 import { motion } from "framer-motion";
 import HeroContactForm from "../HeroContactForm";
 
-type HeroProps = {
+type HeroCrmProps = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+const Hero: React.FC<HeroCrmProps> = ({ showModal, setShowModal }) => {
+  const CrmHeading = "Contact Us Now";
+
   return (
     <div className="pt-16">
       <div className="relative">
         <Image src={CrmHero} alt="" className="object-fill md:block hidden" />
       </div>
       <div className="md:absolute items-center left-1 h-full top-0 flex md:flex-row lg:flex-row flex-col w-full p-2 md:p-10">
-        
         {/*Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -29,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3"
         >
           <h1 className="text-4xl md:text-6xl text-[#215CBC] max-w-[50rem] font-bold pt-[10%]">
-            Customer Relationship Management (CRM)
+          CRM Services And Solutions
           </h1>
           <p className="md:text-4xl text-2xl font-semibold text-orange">
             Take Your Business to New Heights with us.
@@ -39,11 +40,10 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               Highlights:
             </h1>
             <ul className="list-[upper-roman] mb-2 font-medium text-xl px-4">
-              <li className="mb-3">
-                Streamlined processes for greater efficiency
-              </li>
-              <li className="mb-3">Enhance customer relationships</li>
-              <li className="mb-3">Optimize overall business performance</li>
+              <li className="mb-2">Enhanced Customer Relationship Data-Driven Decision Making</li>
+              <li className="mb-2">Enhanced Customer Service</li>
+              <li className="mb-2">Improved Sales Performance</li>
+              <li className="mb-2">Data-Driven Decision Making</li>
             </ul>
           </div>
           <div className="flex justify-start items-center pb-3">
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form Component */}
-        <HeroContactForm />
+        <HeroContactForm heading={CrmHeading} />
       </div>
     </div>
   );
