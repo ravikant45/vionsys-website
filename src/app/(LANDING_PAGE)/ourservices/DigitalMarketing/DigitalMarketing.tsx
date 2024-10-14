@@ -11,6 +11,7 @@ import ChooseUs from '../componets/DigitalMarketingUI/ChooseUs';
 
 const DigitalMarketing = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
+
   return (
     <div id="gradient">
         <Hero showModal={showModal} setShowModal={setShowModal}/>
@@ -19,7 +20,8 @@ const DigitalMarketing = () => {
         <HowWeWork/>
         <InfiniteMovingCardsDemo/>
         <CTA />
-        <ContactUs/>
+        <ContactUs />
+        
     </div>
   )
 }

@@ -13,6 +13,8 @@ import PopUp from "../PopUp";
 const WebPage = () => {
   
     const [showModal, setShowModal] = useState(false);
+    const [isModal2Open, setIsModal2Open] = useState<boolean>(false);
+
 
   return (
     <main className="overflow-x-hidden"> 
@@ -25,6 +27,7 @@ const WebPage = () => {
       <WorkWithUs/>
       <ContactUs />
       <PopUp showModal={showModal} setShowModal={setShowModal} />
+     
     </main>
   )
 }

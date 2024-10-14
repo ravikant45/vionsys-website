@@ -11,7 +11,6 @@ import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-hot-toast";
-import { SiTicktick } from "react-icons/si";
 import {
   Form,
   FormControl,
@@ -22,10 +21,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
-import { Modal } from "antd";
 import { countryCodes } from "@/utils/CountryCodes";
 import { MainContactFormTemplate } from "@/utils/MainContactFormTemplate";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -46,7 +44,7 @@ const formSchema = z.object({
 
 const ThirdSection = () => {
   const [isPending, setIsPending] = useState<boolean>(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -79,13 +77,8 @@ const ThirdSection = () => {
       );
 
       setIsPending(false);
-      setIsModalOpen(true);
-      setTimeout(() => {
-        setIsModalOpen(false);
-      }, 3000);
-      // toast.success("Thanks, For Connecting With Us");
-      console.log("Response:", response.data);
       form.reset(); // Reset the form after successful submission
+      router.push("/thank-you");
     } catch (error) {
       const err = error as AxiosError;
       console.error("Error:", err.response?.data || err.message);
@@ -232,26 +225,6 @@ const ThirdSection = () => {
             )}
           </motion.form>
         </Form>
-        <Modal
-          footer={null}
-          open={isModalOpen}
-          onCancel={() => setIsModalOpen(false)}
-          className=""
-        >
-          <div className="pt-6 flex justify-center items-center bg-white text-black">
-            <div className="flex flex-col items-center gap-4">
-              <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400">
-                <SiTicktick size={30} className="text-green-400" />
-              </div>
-              <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">
-                Thank you for reaching out!
-              </h2>
-              <p className="text-2xl font-semibold text-SubHeading text-center">
-                We appreciate your interest and will get back to you shortly.
-              </p>
-            </div>
-          </div>
-        </Modal>
       </div>
     </>
   );

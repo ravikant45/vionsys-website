@@ -77,7 +77,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           </div>
         </motion.div>
 
-        <HeroContactForm />
+        <HeroContactForm heading="Contact our digital marketing experts to grow your brand." />
       </div>
     </div>
   );
