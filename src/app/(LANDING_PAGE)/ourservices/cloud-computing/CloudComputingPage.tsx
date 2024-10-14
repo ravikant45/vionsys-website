@@ -9,7 +9,7 @@ import CloudChooseUs from '../componets/CloudComputingUI/CloudChooseUs';
 import CloudCta from '../componets/CloudComputingUI/CloudCta';
 import PopUp from '../PopUp';
 
-const page = () => {
+const CloudComputingPage = () => {
   const [showModal, setShowModal] = useState(false)
 
   return (
@@ -26,4 +26,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default CloudComputingPage
