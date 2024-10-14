@@ -5,7 +5,7 @@ import { Button, Form, Input, Modal } from "antd";
 import axios from "axios";
 import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
 import { motion } from "framer-motion";
-import { SiTicktick } from "react-icons/si";
+import { useRouter } from "next/navigation";
 
 type Inputs = {
   name: string;
@@ -17,21 +17,23 @@ type Inputs = {
   message: string;
 };
 
-const HeroContactForm: React.FC<{ heading: string }> = ({ heading }) => {
+const HeroContactForm: React.FC<{
+  heading: string;
+}> = ({ heading }) => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [isModal2Open, setIsModal2Open] = useState(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("");
+  const router = useRouter();
 
   const handleSubmit = async (values: any) => {
     const formattedData = {
       ...values,
-      phone: countryCode + " " + values.number,
+      countryCode,
     };
 
     console.log(formattedData);
     const template = StaffingLandingPageTemplate(formattedData);
-    const sendTo = ["ssbankar18@gmail.com",""];
+    const sendTo = ["ssbankar18@gmail.com"];
     const updatedData = {
       formattedData,
       template,
@@ -45,13 +47,12 @@ const HeroContactForm: React.FC<{ heading: string }> = ({ heading }) => {
           "Content-Type": "application/json",
         },
       });
-      setLoading(false)
-      setIsModal2Open(true)
+      setLoading(false);
       form.resetFields();
+      router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
     }
-    setLoading(false);
   };
   return (
     <>
@@ -74,7 +75,7 @@ const HeroContactForm: React.FC<{ heading: string }> = ({ heading }) => {
         >
           <div>
             <h1 className="text-center text-blue1 text-xl font-bold pt-2">
-             {heading}
+              {heading}
             </h1>
             <p className="text-sm text-orange text-center pb-4">
               Our Team will reach out to you shortly!
@@ -209,28 +210,6 @@ const HeroContactForm: React.FC<{ heading: string }> = ({ heading }) => {
             </div>
           </Form.Item>
         </Form>
-
-        {/* Thank you message modal */}
-        <Modal
-          footer={null}
-          open={isModal2Open}
-          onCancel={() => setIsModal2Open(false)}
-          className=""
-        >
-          <div className="pt-6 flex justify-center items-center bg-white text-black">
-            <div className="flex flex-col items-center gap-4">
-              <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400">
-                <SiTicktick size={30} className="text-green-400" />
-              </div>
-              <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">
-                Thank you for reaching out!
-              </h2>
-              <p className="text-2xl font-semibold text-SubHeading text-center">
-                We appreciate your interest and will get back to you shortly.
-              </p>
-            </div>
-          </div>
-        </Modal>
       </motion.div>
     </>
   );

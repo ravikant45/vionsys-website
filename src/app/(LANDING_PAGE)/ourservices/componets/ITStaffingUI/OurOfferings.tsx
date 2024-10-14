@@ -43,7 +43,7 @@ const offerings: Offering[] = [
     description:
       "Skilled professionals for short-term needs, ensuring flexibility and seamless productivity.",
     icon: FaWpforms,
-    color: "bg-gradient-to-br from-orange-400 to-yellow-500", // Unique gradient
+    color: "bg-gradient-to-br from-amber-400 to-yellow-500", // Unique gradient
   },
   {
     title: "Contract Staffing",

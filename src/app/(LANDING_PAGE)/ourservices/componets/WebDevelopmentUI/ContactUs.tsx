@@ -5,7 +5,6 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import call from "../../images/ITStaffing/SectorIcons/call1.png";
 import mail from "../../images/ITStaffing/SectorIcons/mail.png";
 import { Form, Input, Modal } from "antd";
 import Contact from "@/app/(LANDING_PAGE)/ourservices/images/WebDevelopment/Contact4.png";
@@ -17,7 +16,6 @@ import Instagram from "../../../../../../public/assets/socialicons/instagram.png
 import Facebook from "../../../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../../../public/assets/socialicons/Twitter4.png";
 import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
-import { SiTicktick } from "react-icons/si";
 
 type Inputs = {
   name: string;
@@ -27,9 +25,8 @@ type Inputs = {
   message: string;
 };
 
-const ContactUs: React.FC = () => {
+export default function ContactUs() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [isModal2Open, setIsModal2Open] = useState(false);
   const [form] = Form.useForm();
 
   const handleSubmit = async (values: any) => {
@@ -55,7 +52,6 @@ const ContactUs: React.FC = () => {
           "Content-Type": "application/json",
         },
       });
-      setIsModal2Open(true);
       form.resetFields();
     } catch (error) {
       toast.error("Failed to send message");
@@ -79,16 +75,10 @@ const ContactUs: React.FC = () => {
             <h2 className="text-2xl text-orange font-extrabold text-center leading-tight text-blue950 md:text-3xl py-4">
               Get In Touch
             </h2>
-            <div className="flex md:flex-row flex-col md:justify-evenly justify-center items-center">
+            <div className="flex md:flex-row gap-6 flex-col md:justify-evenly justify-center items-center">
               <div className="flex py-1">
-                <Image src={mail} alt="call icon" className="h-6 w-6" />
-                <span className="px-2 text-sm font-semibold flex items-center justify-center">
-                  pawandolas@vionsys.com
-                </span>
-              </div>
-              <div className="flex py-1">
-                <Image src={mail} alt="call icon" className="h-6 w-6" />
-                <span className="px-2 text-sm font-semibold flex items-center justify-center">
+                <Image src={mail} alt="call icon" className="h-5 w-5" />
+                <span className="px-2 text-xs font-semibold flex items-center justify-center">
                   info@vionsys.com
                 </span>
               </div>
@@ -288,29 +278,6 @@ const ContactUs: React.FC = () => {
                 </div>
               </Form.Item>
             </Form>
-
-            {/* Thank you message modal */}
-            <Modal
-              footer={null}
-              open={isModal2Open}
-              onCancel={() => setIsModal2Open(false)}
-              className=""
-            >
-              <div className="pt-6 flex justify-center items-center bg-white text-black">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400">
-                    <SiTicktick size={30} className="text-green-400" />
-                  </div>
-                  <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">
-                    Thank you for reaching out!
-                  </h2>
-                  <p className="text-2xl font-semibold text-SubHeading text-center">
-                    We appreciate your interest and will get back to you
-                    shortly.
-                  </p>
-                </div>
-              </div>
-            </Modal>
           </div>
         </div>
 
@@ -400,6 +367,4 @@ const ContactUs: React.FC = () => {
       </div>
     </>
   );
-};
-
-export default ContactUs;
+}

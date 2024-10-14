@@ -33,7 +33,7 @@ const Navbar: React.FC = ( ) => {
 
   return (
     <nav
-      className={`fixed z-50 w-full bg-white transition-all duration-300 ${
+      className={`fixed px-4 z-50 w-full bg-white transition-all duration-300 ${
         visible ? "top-0 shadow-md shadow-gray-200" : "-top-full"
       }`}
     >

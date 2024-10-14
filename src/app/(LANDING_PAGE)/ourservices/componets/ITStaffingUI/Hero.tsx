@@ -4,16 +4,16 @@ import HeroContactForm from "../HeroContactForm";
 
 type HeroProps = {
   showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal: (show: boolean) => void;
 };
 
-const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+const Hero: React.FC<HeroProps> = ({ showModal, setShowModal}) => {
   const Staffingheading = "Get the Right IT Talent for Your Projects!";
   return (
     <>
       <section
         id="gradient"
-        className="relative h-screen flex items-center justify-center"
+        className="relative h-full flex items-center justify-center"
       >
         {/* Content */}
         <div className="relative z-10 container pt-16 mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
@@ -81,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
         </div>
       </section>
     </>
-  );
+  );                                               
 };
 
 export default Hero;
