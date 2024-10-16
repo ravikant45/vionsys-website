@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { Modal, Button, Form, Input, Select } from "antd";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { country, countryCodes } from "@/utils/CountryCodes";
-import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
-import Image from "next/image";
+import { country } from "@/utils/CountryCodes";
+  import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { MainContactFormTemplate } from "@/utils/MainContactFormTemplate";
 
 type Inputs = {
   name: string;
@@ -16,7 +17,6 @@ type Inputs = {
   email: string;
   message: string;
 };
-
 interface PopUpProps {
   showModal: boolean;
   setShowModal: (value: boolean) => void;
@@ -26,6 +26,7 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("");
+  const router = useRouter();
 
   const handleCountryChange = (value: string) => {
     setCountryCode(value);
@@ -44,16 +45,19 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   };
 
   const handleSubmit = async (values: any) => {
+    
     const formattedData = {
       ...values,
-      phone: `${countryCode} ${values.number}`,
+      countryCode,
     };
-
-    const template = StaffingLandingPageTemplate(formattedData);
+    console.log(formattedData)
+    const template = MainContactFormTemplate(formattedData)
+    const sendTo = ["ssbankar18@gmail.com"];
 
     const updatedData = {
       formattedData,
       template,
+      sendTo
     };
 
     setLoading(true);
@@ -63,8 +67,9 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
           "Content-Type": "application/json",
         },
       });
-      toast.success("Thanks for connecting with us!");
+      setLoading(false);
       form.resetFields();
+      router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
     }

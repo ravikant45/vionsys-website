@@ -1,206 +1,184 @@
 "use client";
-import React from "react";
+
+import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import { FaAngleRight } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import Service1 from "../../images/WebDevelopment/Service1.jpg";
+import Service2 from "../../images/WebDevelopment/Service2.jpg";
+import Service3 from "../../images/WebDevelopment/Service3.jpg";
+import Service4 from "../../images/WebDevelopment/Service4.jpg";
+import Service5 from "../../images/WebDevelopment/Service5.jpg";
+import Service6 from "../../images/WebDevelopment/Service6.jpg";
+import Service7 from "../../images/WebDevelopment/Service7.jpg";
 
-const Services = () => {
+
+interface Service {
+  title: string;
+  description: string;
+  imageSrc: any;
+  supportedPlatforms: string[];
+}
+
+const services: Service[] = [
+  {
+    title: "Premium Website Quality",
+    description:
+      "We specialize in creating premium-quality websites with responsive web design that seamlessly aligns with your vision. Our expert team ensures every detail reflects your brand, providing a user-friendly experience across all devices.",
+    imageSrc: Service1,
+    supportedPlatforms: ["Adobe XD", "Figma", "Sketch", "InVision"],
+  },
+  {
+    title: "24/7 Service Support",
+    description:
+      "Our clients are our top priority, and we are dedicated to providing the best web design services along with 24/7 support. We stay active across all communication channels to ensure comprehensive customer assistance.",
+    imageSrc: Service2,
+    supportedPlatforms: ["React Native", "Flutter", "Swift", "Kotlin"],
+  },
+  {
+    title: "Website Maintenance",
+    description:
+      "We provide a tailored solution to ensure your online presence stays polished and functional. Our dedicated team works tirelessly behind the scenes, safeguarding your site against glitches and optimizing its performance.",
+    imageSrc: Service3,
+    supportedPlatforms: ["Node.js", "Django", "Ruby on Rails", ".NET"],
+  },
+  {
+    title: "Responsive Web Design",
+    description:
+      "Experience the innovation of our responsive web design services, tailored to adapt seamlessly across all devices. With our cutting-edge approach, your website will captivate users whether they're browsing on a desktop, tablet, or smartphone.",
+    imageSrc: Service4,
+    supportedPlatforms: ["Magento", "Bigcommerce", "Shopify", "WooCommerce"],
+  },
+  {
+    title: "Fast Delivery & Total Transparency",
+    description:
+      "Get ready to experience the thrill of lightning-fast delivery paired with unparalleled transparency in our cutting-edge web design services! At our core, we prioritize efficiency and honesty, ensuring your project progresses seamlessly while keeping you fully informed every step of the way.",
+    imageSrc: Service5,
+    supportedPlatforms: ["AWS", "Google Cloud", "Azure", "IBM Cloud"],
+  },
+  {
+    title: "Graphic Design & Logo Design",
+    description:
+      "Explore our vibrant array of graphic design and logo creation services that ignite your brand's visual identity. Let your brand speak volumes through our expertly crafted designs, where every pixel tells a story of innovation and excellence.",
+    imageSrc: Service6,
+    supportedPlatforms: [
+      "Salesforce",
+      "Zoho CRM",
+      "HubSpot",
+      "Microsoft Dynamics",
+    ],
+  },
+  {
+    title: "Web Hosting and Domain Services",
+    description:
+      "We offer comprehensive web hosting and domain services to ensure your online presence is seamless and robust. Our web hosting solutions are designed to meet the diverse needs of businesses, providing reliable, secure, and high-performance hosting environments.",
+    imageSrc: Service7,
+    supportedPlatforms: [
+      "Salesforce Service Cloud",
+      "Salesforce Marketing Cloud",
+    ],
+  },
+];
+
+export default function Solutions() {
+  const [selectedService, setSelectedService] = useState<Service>(services[0]);
+  const [isMobile, setIsMobile] = useState(false);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  const handleServiceClick = (service: Service) => {
+    setSelectedService(service);
+    if (isMobile && imageRef.current) {
+      imageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <main>
-      <section className="heading pt-6">
+    <div className="min-h-screen text-slate-700 p-8">
+      <motion.h1
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: 0.2,
+          x: { type: "spring", stiffness: 20 },
+          opacity: { duration: 0.4 },
+          ease: "easeInOut",
+        }}
+        className="text-MainHeading font-bold mb-4"
+      >
+        Our Services
+      </motion.h1>
+      <p className="mb-8 text-lg text-gray-800">
+        We provide top-notch web design and development services tailored to
+        your unique needs. Our customized and affordable web design solutions
+        ensure your website stands out. With us, you can select the best plans
+        to create a responsive web design that perfectly aligns with your
+        vision.
+      </p>
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="w-full md:w-1/3">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`p-4 cursor-pointer border-b border-gray-700 flex justify-between items-center ${
+                selectedService.title === service.title
+                  ? "text-blue-700"
+                  : "hover:bg-gray-200"
+              }`}
+              onClick={() => handleServiceClick(service)}
+            >
+              <span>{service.title}</span>
+              <FaAngleRight className="w-5 h-5" />
+            </div>
+          ))}
+        </div>
         <motion.div
-                      initial={{ opacity: 0, y: 100 }} //X:100
-                      whileInView={{ opacity: 1, y: 0 }} //y:100
-                      transition={{
-                        delay: 0.2,
-                        scale: { type: "spring", stiffness: 30 },
-                        opacity: { duration: 0.6 },
-                        ease: "easeInOut",
-                      }} className="w-full text-center mx-auto mb-4 font-bold leading-tight text-MainHeading">
-          Our Services
+          initial={{ opacity: 0, y: 100 }} //X:100
+          whileInView={{ opacity: 1, y: 0 }} //y:100
+          transition={{
+            delay: 0.2,
+            scale: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.6 },
+            ease: "easeInOut",
+          }}
+          className="w-full md:w-2/3"
+          ref={imageRef}
+        >
+          <Image
+            src={selectedService.imageSrc}
+            alt={selectedService.title}
+            width={600}
+            height={400}
+            className="w-full h-64 object-cover mb-4"
+          />
+          <motion.h2
+            initial={{ opacity: 0, scale: 1.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }}
+            className="text-2xl font-bold mb-2"
+          >
+            {selectedService.title}
+          </motion.h2>
+          <p>{selectedService.description}</p>
         </motion.div>
-        <p className="md:w-[70%] w-full mx-auto px-4 text-lg text-gray-800 text-paragraph text-center">
-          We provide top-notch web design and development services tailored to
-          your unique needs. Our customized and affordable web design solutions
-          ensure your website stands out. With us, you can select the best plans
-          to create a responsive web design that perfectly aligns with your
-          vision.
-        </p>
-      </section>
-      <section>
-        <motion.div
-                      initial={{ opacity: 0, scale: 0.7 }} //X:100
-                      whileInView={{ opacity: 1, scale: 1 }} //y:100
-                      transition={{
-                        delay: 0.2,
-                        scale: { type: "spring", stiffness: 30 },
-                        opacity: { duration: 0.6 },
-                        ease: "easeInOut",
-                      }} className="container relative flex flex-col justify-between h-full max-w-6xl px-4 mx-auto xl:px-0 pt-5">
-          <div className="w-full">
-            <div className="flex flex-col w-full mb-10 sm:flex-row">
-              <div className="w-full mb-10 sm:mb-0 sm:w-1/2 transition-transform duration-300 ease-in-out transform hover:scale-105">
-                <div className="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-indigo-500 rounded-lg"></span>
-                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-indigo-500 rounded-lg">
-                    <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        Premium Website Quality
-                      </h3>
-                    </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-indigo-500 uppercase">
-                      ------------
-                    </p>
-                    <p className="mb-2 text-gray-600">
-                      We specialize in creating premium-quality websites with
-                      responsive web design that seamlessly aligns with your
-                      vision. Our expert team ensures every detail reflects your
-                      brand, providing a user-friendly experience across all
-                      devices.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full sm:w-1/2 transition-transform duration-300 ease-in-out transform hover:scale-105">
-                <div className="relative h-full ml-0 md:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-purple-500 rounded-lg"></span>
-                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-purple-500 rounded-lg">
-                    <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        24/7 Service Support
-                      </h3>
-                    </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">
-                      ------------
-                    </p>
-                    <p className="mb-2 text-gray-600">
-                      Our clients are our top priority, and we are dedicated to
-                      providing the best web design services along with 24/7
-                      support. We stay active across all communication channels
-                      to ensure comprehensive customer assistance.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col w-full mb-5 sm:flex-row">
-              <div className="w-full mb-10 sm:mb-0 sm:w-1/2 transition-transform duration-300 ease-in-out transform hover:scale-105">
-                <div className="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded-lg"></span>
-                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-blue-400 rounded-lg">
-                    <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        Website Maintenance
-                      </h3>
-                    </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-blue-400 uppercase">
-                      ------------
-                    </p>
-                    <p className="mb-2 text-gray-600">
-                      We provide a tailored solution to ensure your online
-                      presence stays polished and functional. Our dedicated team
-                      works tirelessly behind the scenes, safeguarding your site
-                      against glitches and optimizing its performance.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full mb-10 sm:mb-0 sm:w-1/2 transition-transform duration-300 ease-in-out transform hover:scale-105">
-                <div className="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-yellow-400 rounded-lg"></span>
-                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-yellow-400 rounded-lg">
-                    <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        Responsive Web Design
-                      </h3>
-                    </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-yellow-400 uppercase">
-                      ------------
-                    </p>
-                    <p className="mb-2 text-gray-600">
-                      Experience the innovation of our responsive web design
-                      services, tailored to adapt seamlessly across all devices.
-                      With our cutting-edge approach, your website will
-                      captivate users whether they're browsing on a desktop,
-                      tablet, or smartphone.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full mb-10 sm:mb-0 sm:w-1/2 transition-transform duration-300 ease-in-out transform hover:scale-105">
-                <div className="relative h-full ml-0 md:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded-lg"></span>
-                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-green-500 rounded-lg">
-                    <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        Fast Delivery & Total Transparency
-                      </h3>
-                    </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-green-500 uppercase">
-                      ------------
-                    </p>
-                    <p className="mb-2 text-gray-600">
-                      Get ready to experience the thrill of lightning-fast
-                      delivery paired with unparalleled transparency in our
-                      cutting-edge web design services! At our core, we
-                      prioritize efficiency and honesty, ensuring your project
-                      progresses seamlessly while keeping you fully informed
-                      every step of the way.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col w-full mb-10 sm:flex-row">
-              <div className="w-full mb-10 sm:mb-0 sm:w-1/2 transition-transform duration-300 ease-in-out transform hover:scale-105">
-                <div className="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-indigo-500 rounded-lg"></span>
-                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-indigo-500 rounded-lg">
-                    <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        Graphic Design & Logo Design
-                      </h3>
-                    </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-indigo-500 uppercase">
-                      ------------
-                    </p>
-                    <p className="mb-2 text-gray-600">
-                      Explore our vibrant array of graphic design and logo
-                      creation services that ignite your brand's visual
-                      identity. Let your brand speak volumes through our
-                      expertly crafted designs, where every pixel tells a story
-                      of innovation and excellence.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full sm:w-1/2 transition-transform duration-300 ease-in-out transform hover:scale-105">
-                <div className="relative h-full ml-0 md:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-purple-500 rounded-lg"></span>
-                  <div className="relative h-full md:p-5 p-1 bg-white border-2 border-purple-500 rounded-lg">
-                    <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">
-                        Web Hosting and Domain Services
-                      </h3>
-                    </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">
-                      ------------
-                    </p>
-                    <p className="mb-2 text-gray-600">
-                      We offer comprehensive web hosting and domain services to
-                      ensure your online presence is seamless and robust. Our
-                      web hosting solutions are designed to meet the diverse
-                      needs of businesses, from startups to large enterprises,
-                      providing reliable, secure, and high-performance hosting
-                      environments.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
-};
-
-export default Services;
+}

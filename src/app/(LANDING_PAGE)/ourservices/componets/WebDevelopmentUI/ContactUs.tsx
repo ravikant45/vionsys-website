@@ -16,6 +16,7 @@ import Instagram from "../../../../../../public/assets/socialicons/instagram.png
 import Facebook from "../../../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../../../public/assets/socialicons/Twitter4.png";
 import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
+import { useRouter } from "next/navigation";
 
 type Inputs = {
   name: string;
@@ -28,6 +29,7 @@ type Inputs = {
 export default function ContactUs() {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
+  const router = useRouter();
 
   const handleSubmit = async (values: any) => {
     const formattedData = {
@@ -52,11 +54,12 @@ export default function ContactUs() {
           "Content-Type": "application/json",
         },
       });
+      setLoading(false);
       form.resetFields();
+      router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
     }
-    setLoading(false);
   };
 
   return (
@@ -72,9 +75,18 @@ export default function ContactUs() {
 
           {/* Form section */}
           <div className=" md:h-auto w-full md:pr-6  rounded-2xl border-r-2   border-slate-200">
-            <h2 className="text-2xl text-orange font-extrabold text-center leading-tight text-blue950 md:text-3xl py-4">
+            <motion.h2 
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }}
+            className="text-2xl text-orange font-extrabold text-center leading-tight text-blue950 md:text-3xl py-4">
               Get In Touch
-            </h2>
+            </motion.h2>
             <div className="flex md:flex-row gap-6 flex-col md:justify-evenly justify-center items-center">
               <div className="flex py-1">
                 <Image src={mail} alt="call icon" className="h-5 w-5" />
