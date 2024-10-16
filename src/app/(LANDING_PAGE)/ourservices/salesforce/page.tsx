@@ -1,5 +1,4 @@
-import React from 'react'
-import SalesforcePage from './SalesforcePage';
+import SalesforcePage from './SalesforcePage'
 
 const page = () => {
   return (
