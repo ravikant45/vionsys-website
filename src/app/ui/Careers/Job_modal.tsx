@@ -19,6 +19,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import toast from "react-hot-toast";
 import { CareerFormTemplate } from "@/utils/CareerFormTemplate";
 import { SiTicktick } from "react-icons/si";
+import { useRouter } from "next/navigation";
 
 const fileSchema = z.object({
   filename: z.string(),
@@ -61,7 +62,7 @@ const Job_modal = ({
     },
   });
   const [isPending, setIsPending] = useState<boolean>(false);
-  const [isModal2Open, setIsModal2Open] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (jobTitle) {
@@ -74,9 +75,9 @@ const Job_modal = ({
   };
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
     const template = CareerFormTemplate(values);
     const sendTo = ["info@vionsys.com"];
+    
     const updatedData = {
       values,
       template,
@@ -95,12 +96,9 @@ const Job_modal = ({
         }
       );
 
-      console.log("Email sent successfully", response);
       setIsPending(false);
       setisModalOpen(false); // Close job application modal first
-      setTimeout(() => {
-        setIsModal2Open(true); // Open thank-you modal with slight delay
-      }, 200);
+      router.push("/thank-you");
       form.reset(); // Reset the form after successful submission
     } catch (error) {
       const err = error as AxiosError;
@@ -262,28 +260,6 @@ const Job_modal = ({
                 </div>
               </form>
             </Form>
-          </div>
-        </div>
-      </Modal>
-
-      {/* Thank you message modal */}
-      <Modal
-        footer={null}
-        open={isModal2Open}
-        onCancel={() => setIsModal2Open(false)}
-        className=""
-      >
-        <div className="pt-6 flex justify-center items-center bg-white text-black">
-          <div className="flex flex-col items-center gap-4">
-            <div className="text-center p-4 bg-green-50 rounded-full border-2 border-green-400">
-              <SiTicktick size={30} className="text-green-400" />
-            </div>
-            <h2 className="text-center text-4xl font-bold text-[#215cbc] capitalize">
-              Thank you for reaching out!
-            </h2>
-            <p className="text-2xl font-semibold text-SubHeading text-center">
-              We appreciate your interest and will get back to you shortly.
-            </p>
           </div>
         </div>
       </Modal>

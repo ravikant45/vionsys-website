@@ -9,24 +9,26 @@ import WhychooseUs from "../componets/WebDevelopmentUI/WhychooseUs";
 import ContactUs from "../componets/WebDevelopmentUI/ContactUs";
 // import SocialLinks from "../componets/WebDevelopmentUI/SocialLinks";
 import PopUp from "../PopUp";
+import Banner from "../componets/WebDevelopmentUI/Banner";
+import StaticCTA from "@/components/ui/StaticCTA";
 
 const WebPage = () => {
   
     const [showModal, setShowModal] = useState(false);
-    const [isModal2Open, setIsModal2Open] = useState<boolean>(false);
 
 
   return (
     <main className="overflow-x-hidden"> 
     {/* h-screen scrollbar-thin overflow-y-scroll */}
-      <HeroSection />
+      <HeroSection showModal={showModal} setShowModal={setShowModal} />
       <Services />
       <InfiniteMovingCardsDemo />
-      <PricingSection />
+      <PricingSection showModal={showModal} setShowModal={setShowModal} />
       <WhychooseUs />
-      <WorkWithUs/>
+      <Banner showModal={showModal} setShowModal={setShowModal} />
       <ContactUs />
       <PopUp showModal={showModal} setShowModal={setShowModal} />
+      <StaticCTA message="Get a free consultation" setShowModal={setShowModal}/>
      
     </main>
   )

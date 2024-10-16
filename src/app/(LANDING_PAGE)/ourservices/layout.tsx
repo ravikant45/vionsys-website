@@ -1,12 +1,10 @@
-// layout.tsx
-
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Footer from "@/app/ui/footer/Footer";
-import Navbar from "./componets/Navbar/Navbar";
+import ClientNavbar from "./componets/Navbar/ClientNavbar";
 
 export const metadata: Metadata = {
   title: "Landing Page - Vionsys IT Solutions India Pvt. Ltd.",
@@ -29,7 +27,7 @@ export default function RootLayout({
     <main className={GeistSans.className}>
       <GoogleTagManager gtmId="GTM-MQT388RN" />
       <Toaster position="bottom-center" />
-      <Navbar/>
+      <ClientNavbar />
       {children}
       <Footer />
     </main>

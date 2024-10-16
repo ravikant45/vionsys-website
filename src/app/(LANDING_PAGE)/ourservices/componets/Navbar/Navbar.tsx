@@ -4,18 +4,16 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  IoCallOutline,
-  IoMailOutline,
-  IoMenu,
-  IoCallSharp,
-} from "react-icons/io5";
+import { IoCallOutline, IoMailOutline, IoMenu } from "react-icons/io5";
 import LogoImage from "/public/assets/logo.png";
 import { RxCross2 } from "react-icons/rx";
 
+interface PopUpProps {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+}
 
-
-const Navbar: React.FC = ( ) => {
+const Navbar = ({ showModal, setShowModal }: PopUpProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -47,23 +45,16 @@ const Navbar: React.FC = ( ) => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8 cursor-default">
-            {/* CTA Button */}
-            <button
-              
-              className="cursor-pointer text-sm font-semibold border-2 rounded-md border-orange text-blue3 uppercase bg-white px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition"
-            >
-              <span>Contact Us Now!</span>
-            </button>
             <div className="text-gray-600 font-semibold hover:text-gray-900 flex items-center">
               <IoMailOutline className="h-5 w-5 mr-2 font-bold" />
               <span>info@vionsys.com</span>
             </div>
-            <div
-              className="bg-orange text-white flex px-5 py-2 hover:bg-blue-700 rounded-md cursor-pointer"
-            >
-              <IoCallSharp className="w-5 h-5" />
-              <span className="px-1 font-semibold">Submit Request</span>
-            </div>
+            {/* CTA Button */}
+            <button
+            onClick={()=> setShowModal(!showModal)}
+            className="cursor-pointer text-sm font-semibold border-2 rounded-md border-orange text-blue3 uppercase bg-white px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition">
+              <span>Contact Us Now!</span>
+            </button>
           </div>
 
           <div className="md:hidden">
@@ -84,9 +75,7 @@ const Navbar: React.FC = ( ) => {
       {isMenuOpen && (
         <div className="md:hidden cursor-default">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <div
-              className="bg-orange text-white px-5 py-2 hover:bg-blue-700 rounded-md cursor-pointer"
-            >
+            <div className="bg-orange text-white px-5 py-2 hover:bg-blue-700 rounded-md cursor-pointer">
               <IoCallOutline className="w-5 h-5" />
               Submit Request
             </div>
