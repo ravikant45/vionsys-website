@@ -7,12 +7,13 @@ type Form2Data = {
   experience: string;
   comments: string;
   userType: string;
+  file:any
 };
 
 export const StaffingEmployeeTemplate = (data: Form2Data): string => `
 <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; max-width: 600px; margin: auto;">
     <h1 style="color: #e57e2c; font-size: 24px; text-align: center; font-weight: bold;">
-        New CV Submission from ${data.userType}
+        New CV Submission from ${data?.userType}
     </h1>
     <p style="font-size: 18px; text-align: center; color: #555;">
         You have received a new CV submission from the IT Staffing Landing Page.
@@ -24,32 +25,32 @@ export const StaffingEmployeeTemplate = (data: Form2Data): string => `
         <table style="width: 100%; font-size: 16px; color: #333; margin-top: 10px;">
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Full Name:</td>
-                <td style="padding: 10px 0;">${data.name}</td>
+                <td style="padding: 10px 0;">${data?.name}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Email:</td>
-                <td style="padding: 10px 0;">${data.email}</td>
+                <td style="padding: 10px 0;">${data?.email}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Contact Number:</td>
-                <td style="padding: 10px 0;">${data.countryCode} ${data.phone}</td>
+                <td style="padding: 10px 0;">${data?.countryCode} ${data?.phone}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Qualification:</td>
-                <td style="padding: 10px 0;">${data.qualification}</td>
+                <td style="padding: 10px 0;">${data?.qualification}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Experience:</td>
-                <td style="padding: 10px 0;">${data.experience}</td>
+                <td style="padding: 10px 0;">${data?.experience}</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 10px 0; font-weight: bold;">Comments:</td>
-                <td style="padding: 10px 0;">${data.comments}</td>
+                <td style="padding: 10px 0;">${data?.comments}</td>
             </tr>
         </table>
 
         <div style="margin-top: 20px; text-align: center;">
-            <a href="mailto:${data.email}" style="background-color: #e57e2c; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;">Contact ${data.name}</a>
+            <a href="mailto:${data?.email}" style="background-color: #e57e2c; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;">Contact ${data.name}</a>
         </div>
     </div>
 

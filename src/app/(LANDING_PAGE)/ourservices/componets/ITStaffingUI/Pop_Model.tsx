@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Modal, Form, Input, Radio, Select, Button, Upload } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { Modal, Form, Input, Radio, Select, Button } from "antd";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { StaffingEmployerTemplate } from "@/utils/staffingEmployerTemplate";
@@ -15,21 +14,16 @@ interface PopModalProps {
   setShowModal: (show: boolean) => void;
 }
 
-export default function Pop_Model({
-  showModal,
-  setShowModal,
-}: PopModalProps) {
+export default function Pop_Model({ showModal, setShowModal }: PopModalProps) {
   const [userType, setUserType] = useState("employer");
   const [hasModalBeenShown, setHasModalBeenShown] = useState(false); // Track if modal has been shown
   const [loading, setLoading] = useState<boolean>(false);
+  const [attachments, setAttachments] = useState<
+    { filename: string; content: string }[] | undefined
+  >();
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("");
   const router = useRouter();
-
-  const handleCloseModals = () => {
-    form.resetFields();
-    setShowModal(false);
-  };
 
   const handleCountryChange = (value: string) => {
     setCountryCode(value);
@@ -65,18 +59,18 @@ export default function Pop_Model({
   const handleSubmit = async (values: any) => {
     setLoading(true);
 
-    const data = { ...values, countryCode };
-    const sendTo = ["ssbankar18@gmail.com"];
-    const template = !data.cv
+    const data = { ...values, countryCode, attachments };
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
+    const template = !data.attachments
       ? StaffingEmployerTemplate(data)
       : StaffingEmployeeTemplate(data);
     const updatedData = {
-      data,
+      ...data,
       template,
       sendTo,
     };
     try {
-      if (data.cv) {
+      if (data?.attachments) {
         await axios.post("/api/sendEmailWithFile", updatedData, {
           headers: { "Content-Type": "application/json" },
         });
@@ -91,7 +85,6 @@ export default function Pop_Model({
     } catch (error) {
       toast.error("Failed to send message");
     }
-    
   };
 
   const handleCancel = () => {
@@ -478,23 +471,29 @@ export default function Pop_Model({
 
             {userType === "candidate" && (
               <Form.Item
-                name="cv"
                 label={
                   <span className="font-semibold">
-                    Upload your CV (PDF or DOC)
+                    Upload Your CV (PDF or DOC)
                   </span>
                 }
-                className="text-bold"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please provide your cv!",
-                  },
-                ]}
+                rules={[{ required: true, message: "Please upload your CV!" }]}
               >
-                <Upload>
-                  <Button icon={<UploadOutlined />}>Click to Upload</Button>
-                </Upload>
+                <Input
+                  type="file"
+                  multiple
+                  onChange={async (e) => {
+                    const files = e.target.files;
+                    if (files) {
+                      const filesArray = await Promise.all(
+                        Array.from(files).map(async (file) => ({
+                          filename: file.name,
+                          content: await toBase64(file), // Convert to base64
+                        }))
+                      );
+                      setAttachments(filesArray); // Update the form field with the array of file data
+                    }
+                  }}
+                />
               </Form.Item>
             )}
 
@@ -544,3 +543,11 @@ export default function Pop_Model({
     </>
   );
 }
+const toBase64 = (file: File) => {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
+};
