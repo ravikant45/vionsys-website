@@ -8,7 +8,6 @@ import { z } from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -18,15 +17,13 @@ import { Input } from "@/components/ui/input";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import toast from "react-hot-toast";
 import { CareerFormTemplate } from "@/utils/CareerFormTemplate";
-import { SiTicktick } from "react-icons/si";
 import { useRouter } from "next/navigation";
 
 const fileSchema = z.object({
   filename: z.string(),
-  content: z.any(),
+  content: z.string(),
 });
 
-// Define your form schema using zod
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Username must be at least 2 characters.",
@@ -36,9 +33,9 @@ const formSchema = z.object({
     message: "Position must be at least 3 characters.",
   }),
   experience: z.string().min(1, {
-    message: "Experience must be at least 1 characters.",
+    message: "Experience must be at least 1 character.",
   }),
-  attachments: z.array(fileSchema),
+  attachments: z.array(fileSchema).optional(),
 });
 
 const Job_modal = ({
@@ -50,17 +47,17 @@ const Job_modal = ({
   isModalOpen: any;
   setisModalOpen: any;
 }) => {
-  // Initialize useForm hook
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
-      position: jobTitle || "", // Set default position
+      position: jobTitle || "",
       experience: "",
       attachments: undefined,
     },
   });
+
   const [isPending, setIsPending] = useState<boolean>(false);
   const router = useRouter();
 
@@ -77,9 +74,9 @@ const Job_modal = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const template = CareerFormTemplate(values);
     const sendTo = ["info@vionsys.com"];
-    
+
     const updatedData = {
-      values,
+      ...values,
       template,
       sendTo,
     };
@@ -91,15 +88,15 @@ const Job_modal = ({
         updatedData,
         {
           headers: {
-            "Content-Type": "form-data",
+            "Content-Type": "application/json",
           },
         }
       );
 
       setIsPending(false);
-      setisModalOpen(false); // Close job application modal first
+      setisModalOpen(false);
       router.push("/thank-you");
-      form.reset(); // Reset the form after successful submission
+      form.reset();
     } catch (error) {
       const err = error as AxiosError;
       console.error("Error:", err.response?.data || err.message);
@@ -218,15 +215,14 @@ const Job_modal = ({
                           onChange={(e) => {
                             const files = e.target.files;
                             if (files) {
-                              Promise.all(
-                                Array.from(files).map(async (file) => ({
+                              const filesArray = Array.from(files).map(
+                                async (file) => ({
                                   filename: file.name,
-                                  content: Buffer.from(
-                                    await file.arrayBuffer()
-                                  ).toString("base64"),
-                                }))
-                              ).then((filesArray) => {
-                                field.onChange(filesArray);
+                                  content: await toBase64(file), // Convert to base64
+                                })
+                              );
+                              Promise.all(filesArray).then((result) => {
+                                field.onChange(result);
                               });
                             }
                           }}
@@ -265,6 +261,16 @@ const Job_modal = ({
       </Modal>
     </div>
   );
+};
+
+// Convert file to base64
+const toBase64 = (file: File) => {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = (error) => reject(error);
+  });
 };
 
 export default Job_modal;
