@@ -8,7 +8,7 @@ import PricingSection from "../componets/WebDevelopmentUI/PricingSection";
 import WhychooseUs from "../componets/WebDevelopmentUI/WhychooseUs";
 import ContactUs from "../componets/WebDevelopmentUI/ContactUs";
 // import SocialLinks from "../componets/WebDevelopmentUI/SocialLinks";
-import PopUp from "../PopUp";
+import WebDevPopModal from "../componets/WebDevelopmentUI/WebDevPopModal";
 import Banner from "../componets/WebDevelopmentUI/Banner";
 import StaticCTA from "@/components/ui/StaticCTA";
 
@@ -27,9 +27,8 @@ const WebPage = () => {
       <WhychooseUs />
       <Banner showModal={showModal} setShowModal={setShowModal} />
       <ContactUs />
-      <PopUp showModal={showModal} setShowModal={setShowModal} />
-      <StaticCTA message="Get a free consultation" setShowModal={setShowModal}/>
-     
+      <WebDevPopModal showModal={showModal} setShowModal={setShowModal} />
+      <StaticCTA message="Get a Free Consultation" cta="Request a Callback" setShowModal={setShowModal}/>
     </main>
   )
 }

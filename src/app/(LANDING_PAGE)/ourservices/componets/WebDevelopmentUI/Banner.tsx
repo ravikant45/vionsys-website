@@ -35,12 +35,12 @@ const Banner: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             opacity: { duration: 0.4 },
             ease: "easeInOut",
           }}
-          className="text-3xl font-extrabold text-white sm:text-6xl"
+          className="text-3xl font-extrabold text-white sm:text-5xl"
         >
-          Want to work
+          Let's Talk
           <strong className="block font-extrabold text-blue-500">
             {" "}
-            with us?{" "}
+            Say Hello to Your New Website!{" "}
           </strong>
         </motion.h1>
 
@@ -53,10 +53,10 @@ const Banner: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             opacity: { duration: 0.4 },
             ease: "easeInOut",
           }}
-          className="mt-4 max-w-3xl md:text-3xl text-orange"
+          className="mt-4 max-w-3xl md:text-2xl text-orange"
         >
-          Elevate your business through digital transformation, driving
-          sustainable growth.
+          Your vision matters to us. Let’s connect and create a website that
+          elevates your brand, drives traffic, and delivers measurable success.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, x: 100 }}
@@ -70,17 +70,17 @@ const Banner: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           className="mt-4 max-w-3xl text-white sm:text-sm/relaxed"
         >
           Explore limitless possibilities with Vionsys IT Solutions India Pvt.
-          Ltd. Join our vibrant team where you'll engage in innovative
-          projects, thrive in a collaborative atmosphere, access ongoing
-          learning initiatives, and chart a path for professional advancement.
-          Discover the ideal environment to unleash your full potential in the
-          dynamic IT industry.
+          Ltd. Join our vibrant team where you'll engage in innovative projects,
+          thrive in a collaborative atmosphere, access ongoing learning
+          initiatives, and chart a path for professional advancement. Discover
+          the ideal environment to unleash your full potential in the dynamic IT
+          industry.
         </motion.p>
 
         {/* Button */}
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
           <button
-            className="font-sans flex gap-2 items-center shadow-xl text-lg text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue2 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
+            className="font-sans flex gap-2 items-center shadow-xl text-md text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue2 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
             onClick={() => setShowModal(!showModal)}
           >
             Get Started Now

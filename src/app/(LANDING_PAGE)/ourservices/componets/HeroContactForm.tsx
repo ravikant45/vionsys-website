@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { countryCodes } from "@/utils/CountryCodes";
 import toast from "react-hot-toast";
-import { Button, Form, Input, Modal } from "antd";
+import { Button, Form, Input, Modal, Select } from "antd";
 import axios from "axios";
 import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
 import { motion } from "framer-motion";
@@ -14,6 +14,7 @@ type Inputs = {
     number: string;
   };
   email: string;
+  intrestedIn: string;
   message: string;
 };
 
@@ -33,7 +34,7 @@ const HeroContactForm: React.FC<{
 
     console.log(formattedData);
     const template = StaffingLandingPageTemplate(formattedData);
-    const sendTo = ["ssbankar18@gmail.com"];
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
     const updatedData = {
       formattedData,
       template,
@@ -78,7 +79,7 @@ const HeroContactForm: React.FC<{
               {heading}
             </h1>
             <p className="text-sm text-orange text-center pb-4">
-              Our Team will reach out to you shortly!
+              Our team will be in touch with you shortly.
             </p>
           </div>
 
@@ -142,7 +143,7 @@ const HeroContactForm: React.FC<{
                 value={countryCode} // Bind value to state
                 onChange={(e) => setCountryCode(e.target.value)} // Update state on change
               >
-                <option value="" disabled>
+                <option value="" defaultValue={+91} disabled>
                   Select Country
                 </option>
                 {countryCodes.map((country, index) => (
@@ -157,6 +158,37 @@ const HeroContactForm: React.FC<{
                 disabled={loading}
               />
             </div>
+          </Form.Item>
+
+          <Form.Item
+            name="interestedIn"
+            label={<span className="font-semibold">Service Required</span>}
+            rules={[
+              {
+                required: true,
+                message: "Please select a service required",
+              },
+            ]}
+          >
+            <Select placeholder="Select Service Required">
+              <Select.Option value="Business Website">
+                Business Website
+              </Select.Option>
+              <Select.Option value="E-Commerce Website">
+                E-Commerce Website
+              </Select.Option>
+              <Select.Option value="Educational Website">
+                Educational Website
+              </Select.Option>
+              <Select.Option value="Static Website">
+                Static Website
+              </Select.Option>
+              <Select.Option value="Dynamic Website">
+                Dynamic Website
+              </Select.Option>
+
+              <Select.Option value="Other">Other</Select.Option>
+            </Select>
           </Form.Item>
 
           <Form.Item

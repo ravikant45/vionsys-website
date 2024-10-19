@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react";
 
 interface StaticCTAProps {
   message: string;
+  cta: string;
   setShowModal: (show: boolean) => void;
 }
 
-const StaticCTA: React.FC<StaticCTAProps> = ({ message, setShowModal }) => {
+const StaticCTA: React.FC<StaticCTAProps> = ({ message,cta, setShowModal }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
@@ -41,7 +42,7 @@ const StaticCTA: React.FC<StaticCTAProps> = ({ message, setShowModal }) => {
         className="bg-orange hover:bg-amber-500 text-sm font-bold text-white px-4 py-1 rounded-md"
         onClick={() => setShowModal(true)}
       >
-        Contact Us Today
+        {cta}
       </button>
     </div>
   ) : null;
