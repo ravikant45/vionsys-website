@@ -28,9 +28,7 @@ const ITStaffingPage = () => {
       <InfiniteMovingCardsDemo />
       <ContactUs />
       <Pop_Model showModal={showModal} setShowModal={setShowModal} />
-      
-      {/* Static CTA that appears after scrolling past Hero */}
-      <StaticCTA message="Get a Free Staffing Consultation!" setShowModal={setShowModal} />
+      <StaticCTA message="Get a Free Staffing Consultation!" cta="Contact us Today" setShowModal={setShowModal} />
     </div>
   );
 };

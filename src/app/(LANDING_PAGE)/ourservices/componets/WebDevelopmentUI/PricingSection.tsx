@@ -1,23 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
+import { RxDoubleArrowRight } from "react-icons/rx";
 
 const plans = [
   {
     name: "Basic Plan",
-    price: "₹24,999",
+    price: "$599",
     description: "Inexpensive website solution for small businesses",
     features: [
-      "Basic Project Tools",
-      "Up to 5 Website Pages",
-      "10 GB Storage",
-      "Access to Basic Templates",
-      "Standard Support",
-      "Email Support",
-      "SEO Basics Package",
-      "Monthly Performance Report",
-      "1 Year of Free Website Hosting",
+      "Essential Project Tools",
+      "5 Customizable Web Pages",
+      "Storage Space of 10 GB",
+      "Access to a Range of Basic Templates",
+      "Standard Customer Support",
+      "Email-Based Assistance",
+      "Basic SEO Optimization Package",
+      "Monthly Site Performance Report",
+      "1 Year of Complimentary Web Hosting",
     ],
-    buttonText: "Buy Now",
+    buttonText: "Get More Details",
     buttonLink: "/auth/login",
     buttonStyle: "bg-blue-500 text-white hover:bg-blue-600",
     mostPopular: false,
@@ -25,22 +26,22 @@ const plans = [
   },
   {
     name: "Advanced Plan",
-    price: "₹49,999",
+    price: "$1799",
     description: "Comprehensive website package for growing businesses",
     features: [
       "Advanced Project Tools",
-      "Up to 10 Website Pages",
-      "50 GB Storage",
-      "Custom Domain Integration",
-      "Priority Support",
-      "Access to Premium Templates",
-      "SEO Advanced Package",
-      "Bi-weekly Performance Report",
-      "1 Year of Free Website Hosting",
-      "Social Media Integration",
-      "Basic E-commerce Features",
+      "10 Fully Customizable Web Pages",
+      "Storage Capacity of 50 GB ",
+      "Integration with Custom Domains",
+      "Priority Customer Support",
+      "Access to Premium-Quality Templates",
+      "Advanced SEO Optimization Package",
+      "Bi-weekly Website Performance Reports",
+      "1 Year of Free Hosting Services",
+      "Social Media Connectivity",
+      "Basic E-commerce Functionality",
     ],
-    buttonText: "Buy Now",
+    buttonText: "Get Details",
     buttonLink: "/auth/login",
     buttonStyle: "bg-green-500 text-white hover:bg-green-600",
     mostPopular: true,
@@ -48,25 +49,25 @@ const plans = [
   },
   {
     name: "Enterprise Plan",
-    price: "₹74,999",
+    price: "$2799",
     description: "Complete website solution for enterprises",
 
     features: [
-      "Comprehensive Project Suite",
-      "Up to 20 Website Pages",
-      "100 GB Storage",
-      "Advanced Security Features",
-      "Dedicated Support",
-      "Custom Software Development Tools",
-      "SEO Premium Package",
-      "Weekly Performance Report",
-      "1 Year of Free Website Hosting",
-      "Advanced E-commerce Features",
-      "Multilingual Website Support",
-      "Personalized Training Sessions",
-      "Regular Backups & Maintenance",
+      "Extensive Project Toolkit",
+      "Support for 20 Web Pages",
+      "Storage Capacity of 100 GB",
+      "Enhanced Security Measures",
+      "Priority Customer Support",
+      "Custom Development Tools for Software",
+      "Premium SEO Package",
+      "Weekly Performance Updates",
+      "One Year of Complimentary Website Hosting",
+      "Enhanced E-commerce Capabilities",
+      "Support for Multiple Languages",
+      "Tailored Training Sessions",
+      "Regular Backups and Ongoing Maintenance",
     ],
-    buttonText: "Buy Now",
+    buttonText: "Get Details",
     buttonLink: "/auth/login",
     buttonStyle: "bg-yellow-500 text-white hover:bg-yellow-600",
     mostPopular: false,
@@ -166,9 +167,9 @@ export default function Pricing({ showModal, setShowModal }: HeroProps) {
             </div>
             <button
               onClick={() => setShowModal(!showModal)}
-              className={`${plan.buttonStyle} mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium`}
+              className={`${plan.buttonStyle} mt-8 flex justify-center items-center gap-2 w-full py-3 px-6 border border-transparent rounded-md text-center font-medium`}
             >
-              {plan.buttonText}
+              {plan.buttonText} <RxDoubleArrowRight />
             </button>
           </motion.div>
         ))}
