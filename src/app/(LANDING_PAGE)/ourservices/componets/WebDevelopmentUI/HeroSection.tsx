@@ -1,198 +1,323 @@
-"use client";
-import Image from "next/image";
+/* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Land1 from "../../images/WebDevelopment/Land1.jpeg";
-import Land2 from "../../images/WebDevelopment/Land2.jpeg";
-import Land3 from "../../images/WebDevelopment/Land3.jpeg";
-import Land4 from "../../images/WebDevelopment/Land5.jpg";
-import Land5 from "../../images/WebDevelopment/Land6.jpg";
-import { TypewriterEffect1 } from "@/components/ui/typewriter-effect1";
-import React from "react";
-import LogoImage from "/public/assets/logo.png";
+import { Button, Form, Image, Input, Select } from "antd";
+import { country } from "@/utils/CountryCodes";
+import { WebDevPopModalTemplate } from "@/utils/WebDevPopModalTemplate";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-const HeroSection = () => {
-  const gridStyle = {
-    backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px), 
-                      linear-gradient(180deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px)`,
-    backgroundSize: "140px 160px", // Adjust the grid size here
+type HeroProps = {
+  showModal: boolean;
+  setShowModal: (show: boolean) => void;
+};
+
+const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [form] = Form.useForm();
+  const [countryCode, setCountryCode] = useState<string>("+1");
+  const router = useRouter();
+
+  const handleCountryChange = (value: string) => {
+    setCountryCode(value);
   };
 
-  const words = [
-    {
-      text: "Web",
-      className: "text-black",
-    },
-    {
-      text: "Design",
-      className: "text-black",
-    },
-    {
-      text: "&",
-      className: "text-orange",
-    },
-    {
-      text: "Web",
-      className: "text-orange",
-    },
-    {
-      text: "Development",
-      className: "text-orange",
-    },
-    {
-      text: "Company",
-      className: "text-black",
-    },
-  ];
+  const filterOption = (
+    input: string,
+    option?: { value: string; children: React.ReactNode }
+  ) => {
+    const childrenAsString = option?.children?.toString().toLowerCase() || "";
+    return (
+      (childrenAsString.includes(input.toLowerCase()) ||
+        option?.value.toLowerCase().includes(input.toLowerCase())) ??
+      false
+    );
+  };
+
+  const handleSubmit = async (values: any) => {
+    setLoading(true);
+    const data = { ...values, countryCode };
+
+    const template = WebDevPopModalTemplate(data);
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
+    const updatedData = {
+      data,
+      template,
+      sendTo,
+    };
+    console.log("updated Data: ", updatedData);
+    try {
+      await axios.post("/api/email", updatedData, {
+        headers: { "Content-Type": "application/json" },
+      });
+      setLoading(false);
+      router.push("/thank-you");
+      form.resetFields();
+    } catch (error) {
+      toast.error("Failed to send message");
+    }
+  };
 
   return (
-    <main>
-      <div className=" w-full md:min-w-full md:p-10">
-        <div className="relative w-full max-w-full lg:max-w-6xl xl:max-w-screen-2xl mx-auto">
-          <div className="absolute inset-0 -mr-3.5 bg-gradient-to-r from-red-100 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:rotate-3 sm:rounded-3xl"></div>
-          <div className="relative  bg-white shadow-lg sm:rounded-3xl ">
-            <div className=" px-4 md:px-20 py-6">
-              {/* navbar  */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center justify-center">
-                  <div className="flex md:items-center justify-center text-3xl font-bold text-true-gray-800">
-                    <div className="px-4 py-2">
-                      <Link href="/">
-                        <Image src={LogoImage} alt="" className="w-[152px]" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="hidden md:flex items-center justify-center">
-                  <Link
-                    href={"/contact"}
-                    className="mr-5 text-lg font-medium text-true-gray-800 hover:text-cool-gray-700 transition duration-150 ease-in-out"
+    <>
+      <section
+        id="bg2"
+        className="relative h-full flex items-center justify-center"
+      >
+        {/* Content */}
+        <div className="relative z-10 container pt-16 mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
+          {/* Left Side: Title, Subheading, and Description */}
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <motion.h1
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 20 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
+              className="text-3xl text-blue2 md:text-6xl font-bold mb-4"
+            >
+              Web Design & Web Development Company
+            </motion.h1>
+            <motion.h2
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
+              className="text-2xl text-SubHeading md:text-3xl font-semibold mb-4"
+            >
+              You Think, We Make It!
+            </motion.h2>
+            <p className="text-lg text-slate-600 mb-6">
+              Your one-stop destination for top-notch web design & development
+              services.
+            </p>
+            <div>
+              <button className="relative animate-bounce hover:scale-105 ease-in-out duration-800 inline-flex h-14 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
+                <span className="absolute hover:scale-125 ease-in-out duration-800 inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
+                <span
+                  className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-md font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined"
+                  onClick={() => {
+                    setShowModal(!showModal);
+                  }}
+                >
+                  Get in Touch with Our Experts Today
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 448 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    Get In Touch
-                  </Link>
-                  <Link
-                    href={"/about"}
-                    className="px-6 py-3 rounded-3xl font-medium text-orange outline-none focus:outline-none shadow-md from-true-gray-900 transition duration-200 ease-in-out"
-                  >
-                    About Us
-                  </Link>
-                </div>
-              </div>
-              {/* <!-- /nav -->
-
-          <!-- hero section --> */}
-
-              <div className="flex md:h-[100vh] h-[60vh] md:mt-16" style={gridStyle}>
-                <div className="flex flex-col justify-center items-center md:w-1/2 w-full">
-                  <div className="flex flex-col justify-center md:pr-8 xl:pr-0 md::max-w-xl">
-                    <div className="md:max-w-xl mb-6">
-                      <h2 className="mb-6 md:text-3xl font-bold tracking-tight text-gray-900 text-2xl sm:leading-none h-auto md:h-24 h-30">
-                        <TypewriterEffect1 words={words} />
-                      </h2>
-                      <motion.div
-                        initial={{ opacity: 0, x: -100 }} //X:100
-                        whileInView={{ opacity: 1, x: 0 }} //y:100
-                        transition={{
-                          delay: 0.2,
-                          scale: { type: "spring", stiffness: 30 },
-                          opacity: { duration: 0.6 },
-                          ease: "easeInOut",
-                        }} className="text-base text-gray-800 md:text-xl">
-                        Your one-stop destination for top-notch web design &
-                        development services.
-                      </motion.div>
-                    </div>
-                    <motion.div
-                      initial={{ opacity: 0, x: 100 }} //X:100
-                      whileInView={{ opacity: 1, x: 0 }} //y:100
-                      transition={{
-                        delay: 0.2,
-                        scale: { type: "spring", stiffness: 30 },
-                        opacity: { duration: 0.6 },
-                        ease: "easeInOut",
-                      }}
-                      className="inline-flex mb-6 items-center italic font-semibold transition-colors duration-200 text-purple-600 hover:text-purple-900 text-lg"
-                    >
-                      You Think, We Make It!
-                    </motion.div>
-                    <div>
-                      <Link
-                        href={"/"}
-                        className="relative border hover:border-sky-600 duration-500 group cursor-pointer text-sky-50  overflow-hidden h-14 w-56 rounded-md bg-sky-800 p-2 flex justify-center md:my-6 items-center font-extrabold"
-                      >
-                        <div className="absolute z-10 w-48 h-48 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-900 delay-150 group-hover:delay-75"></div>
-                        <div className="absolute z-10 w-40 h-40 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-800 delay-150 group-hover:delay-100"></div>
-                        <div className="absolute z-10 w-32 h-32 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-700 delay-150 group-hover:delay-150"></div>
-                        <div className="absolute z-10 w-24 h-24 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-600 delay-150 group-hover:delay-200"></div>
-                        <div className="absolute z-10 w-16 h-16 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-500 delay-150 group-hover:delay-300"></div>
-                        <p className="z-10">Discover More</p>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="md:block hidden">
-                  <div className=" flex justify-center items-center">
-                    <div className="flex gap-8 md:h-[80vh] h-[60vh]">
-                      <div className="flex flex-col justify-center items-center">
-                        <div>
-                          <Image
-                            src={Land1}
-                            alt=""
-                            width="150"
-                            height="220"
-                            className="rounded-xl"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-end items-center gap-10">
-                        <div>
-                          <Image
-                            src={Land2}
-                            alt=""
-                            width="150"
-                            height="220"
-                            className="rounded-xl"
-                          />
-                        </div>
-                        <div>
-                          <Image
-                            src={Land3}
-                            alt=""
-                            width="150"
-                            height="220"
-                            className="rounded-xl"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-start items-center gap-8">
-                        <div>
-                          <Image
-                            src={Land4}
-                            alt=""
-                            width="150"
-                            height="220"
-                            className="rounded-xl"
-                          />
-                        </div>
-                        <div>
-                          <Image
-                            src={Land5}
-                            alt=""
-                            width="150"
-                            height="220"
-                            className="rounded-xl"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    <path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"></path>
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
+
+          {/* Right Side: Contact Form */}
+          <Form
+            form={form}
+            layout="vertical"
+            onFinish={handleSubmit}
+            className="space-y-1 md:py-4 md:px-4 p-2 rounded-xl bg-white"
+          >
+            <div>
+              <h1 className="text-center text-blue1 text-xl font-bold pt-1">
+                {" "}
+                {/* Adjusted padding top */}
+                Get A Free Call
+              </h1>
+              <p className="text-sm text-orange text-center pb-2">
+                {" "}
+                {/* Reduced padding bottom */}
+                Our team will be in touch with you shortly.
+              </p>
+            </div>
+
+            <Form.Item
+              className="w-full"
+              name="name"
+              label={
+                <span className="block text-sm font-medium text-black">
+                  Full Name
+                </span>
+              }
+              rules={[
+                { required: true, message: "Please enter your full name" },
+              ]}
+            >
+              <Input
+                placeholder="Enter Your Name"
+                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                disabled={loading}
+              />
+            </Form.Item>
+
+            <Form.Item
+              name="email"
+              label={
+                <span className="block text-sm font-medium text-black">
+                  Email Address
+                </span>
+              }
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter your email!",
+                  type: "email",
+                },
+              ]}
+            >
+              <Input
+                placeholder="Enter Email Address"
+                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                disabled={loading}
+              />
+            </Form.Item>
+
+            <div className="flex gap-x-2">
+              <Form.Item
+                name="countryCode"
+                label={<span className="font-semibold"> Country</span>}
+                rules={[
+                  { required: true, message: "Please select your country!" },
+                ]}
+                initialValue="+1"
+                className="w-36"
+              >
+                <Select
+                  showSearch
+                  placeholder="Country"
+                  optionFilterProp="children"
+                  onChange={handleCountryChange}
+                  filterOption={filterOption}
+                >
+                  {country.map((c, index) => (
+                    <Select.Option key={index} value={c.code}>
+                      <div className="flex items-center">
+                        <Image
+                          src={c.image}
+                          width={20}
+                          height={20}
+                          alt={`Flag of ${c.code}`}
+                          className=""
+                        />
+                        <span className="ml-2">{c.code}</span>
+                      </div>
+                    </Select.Option>
+                  ))}
+                </Select>
+              </Form.Item>
+
+              <Form.Item
+                name="phone"
+                label={<span className="font-semibold">Phone Number</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your phone number!",
+                  },
+                ]}
+                className="w-full"
+              >
+                <Input placeholder="Enter Phone Number" />
+              </Form.Item>
+            </div>
+
+            <Form.Item
+              name="service"
+              label={<span className="font-semibold">Service Required</span>}
+              rules={[
+                { required: true, message: "Please select a service required" },
+              ]}
+            >
+              <Select placeholder="Select Service Required">
+                <Select.Option value="Business Website">
+                  Business Website
+                </Select.Option>
+                <Select.Option value="E-Commerce Website">
+                  E-Commerce Website
+                </Select.Option>
+                <Select.Option value="Educational Website">
+                  Educational Website
+                </Select.Option>
+                <Select.Option value="Static Website">
+                  Static Website
+                </Select.Option>
+                <Select.Option value="Dynamic Website">
+                  Dynamic Website
+                </Select.Option>
+                <Select.Option value="Other">Other</Select.Option>
+              </Select>
+            </Form.Item>
+
+            <Form.Item
+              name="message"
+              label={
+                <span className="block text-sm font-medium text-black">
+                  Your Message
+                </span>
+              }
+              rules={[
+                { required: true, message: "Please enter your message!" },
+              ]}
+            >
+              <Input.TextArea
+                placeholder="Leave a comment..."
+                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                disabled={loading}
+              />
+            </Form.Item>
+
+            <Form.Item>
+              <div className="flex justify-center items-center">
+                <Button
+                  className="w-full bg-blue-600 border-2 border-[#3e3e3e] rounded-lg text-white px-4 mt-2 py-2 text-base hover:bg-blue-700 transition-all transform hover:scale-105"
+                  htmlType="submit"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.418 3.582 8 8 8v-4c-2.697 0-5.074-1.072-6.834-2.709l2.834-2.833zm8-10.582A7.962 7.962 0 0120 12h4c0-6.627-5.373-12-12-12v4c2.697 0 5.074 1.072 6.834 2.709l-2.834 2.833z"
+                      ></path>
+                    </svg>
+                  ) : (
+                    "Submit"
+                  )}
+                </Button>
+              </div>
+            </Form.Item>
+          </Form>
         </div>
-      </div>
-    </main>
+      </section>
+    </>
   );
 };
 

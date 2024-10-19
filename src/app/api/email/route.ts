@@ -1,14 +1,14 @@
 // email.ts (API Route)
 import useSendEmail from "@/lib/useSendEmail";
-
 export async function POST(req: Request) {
   const data = await req.json();
   console.log(data);
   const html = data.template;
+  const sendToEmail = data.sendTo;
 
   try {
     await useSendEmail({
-      sendTo: "info@vionsys.com",
+      sendTo: sendToEmail,
       subject: "Vionsys Website Contact Form",
       html: html,
     });

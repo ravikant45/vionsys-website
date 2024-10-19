@@ -7,9 +7,12 @@ import {
   FiChevronRight,
   FiUserPlus,
   FiUsers,
-  FiUserCheck,
   FiBriefcase,
 } from "react-icons/fi";
+import { FaUserGear,FaWpforms  } from "react-icons/fa6";
+import { IoIosPaper } from "react-icons/io";
+
+
 import { Button } from "@/components/ui/button";
 import backgroundImage from "@/app/(LANDING_PAGE)/ourservices/images/ITStaffing/Offerings.jpg";
 
@@ -29,34 +32,49 @@ type OurOfferingsProps = {
 // List of offerings
 const offerings: Offering[] = [
   {
-    title: "Contract To Hire Staffing",
-    description:
-      "Find the perfect fit with a trial period before committing to full-time employment.",
-    icon: FiUserCheck,
-    color: "bg-gradient-to-br from-purple-400 to-indigo-500",
-  },
-  {
-    title: "Recruitment Process Outsourcing",
-    description:
-      "Streamline your hiring process with our comprehensive RPO solutions.",
-    icon: FiUsers,
-    color: "bg-gradient-to-br from-green-400 to-cyan-500",
-  },
-  {
-    title: "Contract Staffing",
-    description:
-      "Flexible staffing solutions for short-term projects and temporary needs.",
-    icon: FiBriefcase,
-    color: "bg-gradient-to-br from-sky-400 to-blue-500",
-  },
-  {
     title: "Permanent Staffing",
     description:
       "Build your dream team with our expert permanent placement services.",
     icon: FiUserPlus,
     color: "bg-gradient-to-br from-pink-400 to-red-500",
   },
+  {
+    title: "Temporary Staffing Solutions",
+    description:
+      "Skilled professionals for short-term needs, ensuring flexibility and seamless productivity.",
+    icon: FaWpforms,
+    color: "bg-gradient-to-br from-amber-400 to-yellow-500", // Unique gradient
+  },
+  {
+    title: "Contract Staffing",
+    description:
+      "Flexible staffing solutions for short-term projects and temporary needs.",
+    icon: FiBriefcase,
+    color: "bg-gradient-to-br from-blue-400 to-teal-500", // Unique gradient
+  },
+  {
+    title: "Specialized Staffing",
+    description:
+      "Expert talent tailored to meet your specific business needs.",
+    icon: IoIosPaper,
+    color: "bg-gradient-to-br from-purple-400 to-indigo-500", // Unique gradient
+  },
+  {
+    title: "Recruitment Process Outsourcing",
+    description:
+      "Streamline your hiring process with our comprehensive RPO solutions.",
+    icon: FiUsers,
+    color: "bg-gradient-to-br from-green-400 to-lime-500", // Unique gradient
+  },
+  {
+    title: "Vendor Management Services (VMS)",
+    description:
+      "Streamlined vendor coordination for optimized performance and compliance.",
+    icon: FaUserGear,
+    color: "bg-gradient-to-br from-cyan-400 to-blue-500", // Unique gradient
+  },
 ];
+
 
 const OurOfferings: React.FC<OurOfferingsProps> = ({ showModal, setShowModal }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);

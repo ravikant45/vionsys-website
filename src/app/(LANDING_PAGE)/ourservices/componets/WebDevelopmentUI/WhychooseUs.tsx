@@ -1,177 +1,146 @@
-"use client";
+// Content.tsx
 import React from "react";
-import { motion } from "framer-motion";
+
+// Import the required icons from react-icons
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { FaCode } from "react-icons/fa6";
-import { MdTouchApp } from "react-icons/md";
-import { FaCogs } from "react-icons/fa";
-import { MdVerified } from "react-icons/md";
+import { MdTouchApp, MdVerified, MdSupportAgent } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
-import { FaTasks } from "react-icons/fa";
-import { MdSupportAgent } from "react-icons/md";
+import { GrUserSettings } from "react-icons/gr";
+import { LuListTodo } from "react-icons/lu";
+import {motion} from "framer-motion";
 
-const WhychooseUs = () => {
+
+
+// Updated data array
+const data = [
+  {
+    icon: <FaCode size={40} color="#e57e2c" />,
+    title: "Design and Development",
+    description:
+      "With a deep understanding of design and development, we seamlessly blend aesthetics and functionality to create stunning websites.",
+  },
+  {
+    icon: <HiOutlineDesktopComputer size={40} color="#e57e2c" />,
+    title: "Robust Development",
+    description:
+      "Our websites aren't just pretty faces – they're built to be reliable and robust, ensuring seamless performance.",
+  },
+  {
+    icon: <MdTouchApp size={40} color="#e57e2c" />,
+    title: "User-Friendly Experience",
+    description:
+      "We design websites with your users in mind, making navigation a breeze for a delightful user experience.",
+  },
+  {
+    icon: <GrUserSettings size={40} color="#e57e2c" />,
+    title: "Customized Approach",
+    description:
+      "Your project is unique, and so is our approach. We tailor our services to meet your specific needs.",
+  },
+  {
+    icon: <MdVerified size={40} color="#e57e2c" />,
+    title: "Commitment to Quality",
+    description:
+      "Quality is our priority, and we're committed to delivering websites that exceed your expectations.",
+  },
+  {
+    icon: <IoIosPeople size={40} color="#e57e2c" />,
+    title: "Professional Team",
+    description:
+      "Our team consists of passionate professionals dedicated to bringing your vision to life with creativity and expertise.",
+  },
+  {
+    icon: <LuListTodo size={40} color="#e57e2c" />,
+    title: "Comprehensive Services",
+    description:
+      "From concept to launch, we offer a full range of web design and development services, making us your one-stop solution.",
+  },
+  {
+    icon: <MdSupportAgent size={40} color="#e57e2c" />,
+    title: "Continued Support",
+    description:
+      "Our support doesn't end at launch – we're here to ensure your website stays updated and performs at its best.",
+  },
+];
+
+const WhyChooseUs: React.FC = () => {
   return (
-    <main>
-      <section className="">
-        <div className="py-6 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-                initial={{ opacity: 0, y: -100 }} //X:100
-                whileInView={{ opacity: 1, y: 0 }} //y:100
-                transition={{
-                  delay: 0.2,
-                  scale: { type: "spring", stiffness: 30 },
-                  opacity: { duration: 0.6 },
-                  ease: "easeInOut",
-                }} className="lg:text-center">
-              <div
-                className="text-MainHeading mb-2 font-bold "
-              >
-                Why choose us?
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <motion.h2 
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.2,
+          scale: { type: "spring", stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: "easeInOut"
+        }}
+        className="max-w-lg mb-6 font-sans text-MainHeading font-bold leading-none tracking-tight  md:mx-auto">
+          <span className="relative inline-block">
+            <svg
+              viewBox="0 0 52 24"
+              fill="currentColor"
+              className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+            >
+              <defs>
+                <pattern
+                  id="34f481be-159a-4846-821d-9ca19fb6bcc5"
+                  x="0"
+                  y="0"
+                  width=".135"
+                  height=".30"
+                >
+                  <circle cx="1" cy="1" r=".7" />
+                </pattern>
+              </defs>
+              <rect
+                fill="url(#34f481be-159a-4846-821d-9ca19fb6bcc5)"
+                width="52"
+                height="24"
+              />
+            </svg>
+            <span className="relative">Why Choose Us</span>
+          </span>{" "}
+        </motion.h2>
+        <p className="text-base text-SubHeading md:text-lg">
+          We know design, We know development. We are web design experts!
+        </p>
+        <p className="text-base text-gray-700 pt-2 md:text-md">
+          Our team specializes in creating visually stunning, responsive
+          websites that perfectly align with your vision. Combining innovative
+          design with robust development, we ensure your online presence is not
+          only attractive but also highly functional and user-friendly.
+        </p>
+      </div>
+      <div className="grid gap-8 row-gap-5 mb-8 md:row-gap-8 lg:grid-cols-4 sm:grid-cols-2">
+        {/* Card Items */}
+        {data.map((item, index) => (
+          <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.2,
+              scale: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeInOut"
+            }}
+            key={index}
+            className="duration-300 transform bg-white border-l-4 border-blue3 hover:-translate-y-2"
+          >
+            <div className="flex flex-col justify-between items-center h-full py-2 px-2 border border-l-0 rounded-r shadow-sm">
+              <div className="mr-4">{item.icon}</div>
+              <div className="text-center">
+                <h6 className="mb-2 font-semibold leading-5">{item.title}</h6>
+                <p className="text-sm text-gray-900">{item.description}</p>
               </div>
-              <p className="font-heading mt-2 text-SubHeading leading-8 font-bold tracking-tight">
-                We know design, We know development. We are web design experts!
-              </p>
-              <p className="mt-4 max-w-3xl md:text-lg text-base text-gray-800 lg:mx-auto">
-                Our team specializes in creating visually stunning, responsive
-                websites that perfectly align with your vision. Combining
-                innovative design with robust development, we ensure your online
-                presence is not only attractive but also highly functional and
-                user-friendly.
-              </p>
-            </motion.div>
-
-            <motion.div
-                initial={{ opacity: 0, y: -100 }} //X:100
-                whileInView={{ opacity: 1, y: 0 }} //y:100
-                transition={{
-                  delay: 0.2,
-                  scale: { type: "spring", stiffness: 30 },
-                  opacity: { duration: 0.6 },
-                  ease: "easeInOut",
-                }} className="md:mt-10 mt-3">
-              <div className="md:gap-10 md:grid md:grid-cols-2 md:gap-x-8">
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                    <FaCode size={50} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                  Expertise in Design and Development
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                  With a deep understanding of design and development, we
-                    seamlessly blend aesthetics and functionality to create
-                    stunning websites.
-                  </div>
-                </div>
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                      <HiOutlineDesktopComputer size={50} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                    Robust Development
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                    Our websites aren't just pretty faces – they're built to be
-                    reliable and robust, ensuring seamless performance.
-                  </div>
-                </div>
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                      <MdTouchApp size={50} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                    User-Friendly Experience
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                    We design websites with your users in mind, making
-                    navigation a breeze for a delightful user experience.
-                  </div>
-                </div>
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                      <FaCogs size={50} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                    Customized Approach
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                    Your project is unique, and so is our approach. We tailor
-                    our services to meet your specific needs.
-                  </div>
-                </div>
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                      <MdVerified size={50} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                    Commitment to Quality
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                    Quality is our priority, and we're committed to delivering
-                    websites that exceed your expectations.
-                  </div>
-                </div>
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                      <IoIosPeople size={50} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                    Professional Team
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                    Our team consists of passionate professionals dedicated to
-                    bringing your vision to life with creativity and expertise.
-                  </div>
-                </div>
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                      <FaTasks size={40} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                    Comprehensive Services
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                    From concept to launch, we offer a full range of web design
-                    and development services, making us your one-stop solution.
-                  </div>
-                </div>
-                <div className="relative md:mt-0 mt-3">
-                  <div className="md:block hidden">
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                      <MdSupportAgent size={50} color="#e57e2c" />
-                    </div>
-                  </div>
-                  <p className="font-heading md:ml-16 text-lg leading-6 font-bold text-gray-700">
-                    Continued Support
-                  </p>
-                  <div className="mt-2 md:ml-16 text-paragraph">
-                    Our support doesn't end at launch – we're here to ensure
-                    your website stays updated and performs at its best.
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    </main>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default WhychooseUs;
+export default WhyChooseUs;

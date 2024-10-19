@@ -5,7 +5,15 @@ import { FaArrowRight } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ChooseUs() {
+type HeroCrmChooseProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const ChooseUs: React.FC<HeroCrmChooseProps> = ({
+  showModal,
+  setShowModal,
+}) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const points = [
@@ -99,8 +107,13 @@ export default function ChooseUs() {
                       transition={{ duration: 0.3 }}
                     >
                       <p className="text-gray-800 mb-4">{point.description}</p>
-                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                        Learn More <FaArrowRight className="ml-2" />
+                      <Button
+                        onClick={() => {
+                          setShowModal(!showModal);
+                        }}
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
+                      >
+                        Contact Us Now <FaArrowRight className="ml-2" />
                       </Button>
                     </motion.div>
                   )}
@@ -112,4 +125,6 @@ export default function ChooseUs() {
       </div>
     </div>
   );
-}
+};
+
+export default ChooseUs;

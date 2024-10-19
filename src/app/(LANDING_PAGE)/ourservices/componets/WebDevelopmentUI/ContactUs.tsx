@@ -5,41 +5,61 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import call from "../../images/ITStaffing/SectorIcons/call1.png";
 import mail from "../../images/ITStaffing/SectorIcons/mail.png";
-import { Form, Input } from "antd";
+import { Form, Input, Select } from "antd";
 import Contact from "@/app/(LANDING_PAGE)/ourservices/images/WebDevelopment/Contact4.png";
 import { Button } from "@/components/ui/button";
-import { countryCodes } from "@/utils/CountryCodes";
+import { country } from "@/utils/CountryCodes";
 import Link from "next/link";
 import LinkedIn from "../../../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../../../public/assets/socialicons/Twitter4.png";
 import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
+import { useRouter } from "next/navigation";
 
 type Inputs = {
   name: string;
-    countryCode: string;
-    number: string;
+  countryCode: string;
+  phone: string;
   email: string;
   message: string;
 };
 
-const ContactUs: React.FC = () => {
+export default function ContactUs() {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
+  const router = useRouter();
+  const [countryCode, setCountryCode] = useState<string>("");
+
+  const handleCountryChange = (value: string) => {
+    setCountryCode(value);
+  };
+
+  const filterOption = (
+    input: string,
+    option?: { value: string; children: React.ReactNode }
+  ) => {
+    const childrenAsString = option?.children?.toString().toLowerCase() || "";
+    return (
+      (childrenAsString.includes(input.toLowerCase()) ||
+        option?.value.toLowerCase().includes(input.toLowerCase())) ??
+      false
+    );
+  };
 
   const handleSubmit = async (values: any) => {
     const formattedData = {
       ...values,
-      countryCode: values.countryCode
+      countryCode: values.countryCode,
     };
 
     const template = StaffingLandingPageTemplate(formattedData);
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
     const updatedData = {
       formattedData,
       template,
+      sendTo,
     };
     console.log("formated", formattedData);
 
@@ -51,12 +71,12 @@ const ContactUs: React.FC = () => {
           "Content-Type": "application/json",
         },
       });
-      toast.success("Thanks for connecting with us!");
+      setLoading(false);
       form.resetFields();
+      router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
     }
-    setLoading(false);
   };
 
   return (
@@ -72,19 +92,23 @@ const ContactUs: React.FC = () => {
 
           {/* Form section */}
           <div className=" md:h-auto w-full md:pr-6  rounded-2xl border-r-2   border-slate-200">
-            <h2 className="text-2xl text-orange font-extrabold text-center leading-tight text-blue950 md:text-3xl py-4">
+            <motion.h2
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.2,
+                scale: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.6 },
+                ease: "easeInOut",
+              }}
+              className="text-2xl text-orange font-extrabold text-center leading-tight text-blue950 md:text-3xl py-4"
+            >
               Get In Touch
-            </h2>
-            <div className="flex md:flex-row flex-col md:justify-evenly justify-center items-center">
+            </motion.h2>
+            <div className="flex md:flex-row gap-6 flex-col md:justify-evenly justify-center items-center">
               <div className="flex py-1">
-                <Image src={call} alt="call icon" className="h2 w-6" />
-                <span className="px-2 text-sm font-semibold flex items-center justify-center">
-                  +91 8766613742
-                </span>
-              </div>
-              <div className="flex py-1">
-                <Image src={mail} alt="call icon" className="h2 w-6" />
-                <span className="px-2 text-sm font-semibold flex items-center justify-center">
+                <Image src={mail} alt="call icon" className="h-5 w-5" />
+                <span className="px-2 text-xs font-semibold flex items-center justify-center">
                   info@vionsys.com
                 </span>
               </div>
@@ -155,67 +179,54 @@ const ContactUs: React.FC = () => {
                 </motion.div>
               </Form.Item>
 
-              <Form.Item
-                label={<span className="font-semibold">Phone Number</span>}
-              >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    delay: 0.2,
-                    scale: { type: "spring", stiffness: 30 },
-                    opacity: { duration: 0.6 },
-                    ease: "easeInOut",
-                  }}
+              <div className="flex gap-x-2">
+                <Form.Item
+                  name="countryCode"
+                  label={<span className="font-semibold"> Country</span>}
+                  rules={[
+                    { required: true, message: "Please select your country!" },
+                  ]}
+                  initialValue="+1"
+                  className="w-36"
                 >
-                  <div className="flex gap-2">
-                    {/* Country Code Selection */}
-                    <Form.Item
-                      name="countryCode"
-                      noStyle
-                      rules={[
-                        {
-                          required: true,
-                          message: "Please select a country code!",
-                        },
-                      ]}
-                    >
-                      <select className="border md:w-40 border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none">
-                        <option value="" disabled>
-                          Select Country
-                        </option>
-                        {countryCodes.map((country, index) => (
-                          <option key={index} value={country.code}>
-                            {country.code} {country.name}
-                          </option>
-                        ))}
-                      </select>
-                    </Form.Item>
+                  <Select
+                    showSearch
+                    placeholder="Country"
+                    optionFilterProp="children"
+                    onChange={handleCountryChange}
+                    filterOption={filterOption}
+                  >
+                    {country.map((c, index) => (
+                      <Select.Option key={index} value={c.code}>
+                        <div className="flex items-center">
+                          <Image
+                            src={c.image}
+                            width={20}
+                            height={20}
+                            alt={`Flag of ${c.code}`}
+                            className="mr-2"
+                          />
+                          {c.code}
+                        </div>
+                      </Select.Option>
+                    ))}
+                  </Select>
+                </Form.Item>
 
-                    {/* Phone Number Input */}
-                    <Form.Item
-                      name="number"
-                      rules={[
-                        {
-                          required: true,
-                          message: "Please enter your phone number!",
-                        },
-                        {
-                          pattern: /^\d{10}$/,
-                          message:
-                            "Phone number must be numeric and 10 digits long.",
-                        },
-                      ]}
-                    >
-                      <Input
-                        type="text"
-                        placeholder="Enter Phone Number"
-                        className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                      />
-                    </Form.Item>
-                  </div>
-                </motion.div>
-              </Form.Item>
+                <Form.Item
+                  name="phone"
+                  label={<span className="font-semibold">Phone Number</span>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your phone number!",
+                    },
+                  ]}
+                  className="w-full"
+                >
+                  <Input placeholder="Enter Phone Number" />
+                </Form.Item>
+              </div>
 
               <Form.Item
                 name="message"
@@ -372,6 +383,4 @@ const ContactUs: React.FC = () => {
       </div>
     </>
   );
-};
-
-export default ContactUs;
+}

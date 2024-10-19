@@ -1,290 +1,179 @@
-"use client";
-import {
-  businessPackBenefits,
-  proPackBenefits,
-  starterPackBenefits,
-} from "@/utils/PricingDetails";
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
+import { RxDoubleArrowRight } from "react-icons/rx";
 
-const PricingSection = () => {
+const plans = [
+  {
+    name: "Basic Plan",
+    price: "$599",
+    description: "Inexpensive website solution for small businesses",
+    features: [
+      "Essential Project Tools",
+      "5 Customizable Web Pages",
+      "Storage Space of 10 GB",
+      "Access to a Range of Basic Templates",
+      "Standard Customer Support",
+      "Email-Based Assistance",
+      "Basic SEO Optimization Package",
+      "Monthly Site Performance Report",
+      "1 Year of Complimentary Web Hosting",
+    ],
+    buttonText: "Get More Details",
+    buttonLink: "/auth/login",
+    buttonStyle: "bg-blue-500 text-white hover:bg-blue-600",
+    mostPopular: false,
+    textColor: "text-[#2563eb]", // Basic Plan text color
+  },
+  {
+    name: "Advanced Plan",
+    price: "$1799",
+    description: "Comprehensive website package for growing businesses",
+    features: [
+      "Advanced Project Tools",
+      "10 Fully Customizable Web Pages",
+      "Storage Capacity of 50 GB ",
+      "Integration with Custom Domains",
+      "Priority Customer Support",
+      "Access to Premium-Quality Templates",
+      "Advanced SEO Optimization Package",
+      "Bi-weekly Website Performance Reports",
+      "1 Year of Free Hosting Services",
+      "Social Media Connectivity",
+      "Basic E-commerce Functionality",
+    ],
+    buttonText: "Get Details",
+    buttonLink: "/auth/login",
+    buttonStyle: "bg-green-500 text-white hover:bg-green-600",
+    mostPopular: true,
+    textColor: "text-[#16A34A]", // Advanced Plan text color
+  },
+  {
+    name: "Enterprise Plan",
+    price: "$2799",
+    description: "Complete website solution for enterprises",
+
+    features: [
+      "Extensive Project Toolkit",
+      "Support for 20 Web Pages",
+      "Storage Capacity of 100 GB",
+      "Enhanced Security Measures",
+      "Priority Customer Support",
+      "Custom Development Tools for Software",
+      "Premium SEO Package",
+      "Weekly Performance Updates",
+      "One Year of Complimentary Website Hosting",
+      "Enhanced E-commerce Capabilities",
+      "Support for Multiple Languages",
+      "Tailored Training Sessions",
+      "Regular Backups and Ongoing Maintenance",
+    ],
+    buttonText: "Get Details",
+    buttonLink: "/auth/login",
+    buttonStyle: "bg-yellow-500 text-white hover:bg-yellow-600",
+    mostPopular: false,
+    textColor: "text-[#CA8A04]", // Enterprise Plan text color
+  },
+];
+
+type HeroProps = {
+  showModal: boolean;
+  setShowModal: (show: boolean) => void;
+};
+
+export default function Pricing({ showModal, setShowModal }: HeroProps) {
   return (
     <div className="relative w-full md:h-auto">
-      <div className="absolute hidden w-full bg-gray-50 lg:block md:h-96" />
-      <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      <div>
+        <motion.h2
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 20 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
+          className="text-MainHeading font-bold text-center mt-12"
+        >
+          Inexpensive Website Solutions Plans & Pricing
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.4 },
+            ease: "easeInOut",
+          }}
+          className="max-w-3xl mx-auto mt-4 text-paragraph text-center"
+        >
+          Explore our enticing array of "Plans & Pricing" designed just for you!
+          Dive into a world of options tailored to suit your needs and budget.
+        </motion.p>
+      </div>
+      <div className="mt-24 container space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+        {plans.map((plan, index) => (
           <motion.div
-            initial={{ opacity: 0, y: -100 }} //X:100
-            whileInView={{ opacity: 1, y: 0 }} //y:100
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               delay: 0.2,
               scale: { type: "spring", stiffness: 30 },
               opacity: { duration: 0.6 },
               ease: "easeInOut",
             }}
-            className="max-w-lg mb-6 leading-none tracking-tight text-MainHeading font-bold md:mx-auto"
+            key={index}
+            className="relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col"
           >
-            <span className="relative inline-block">
-              <svg
-                viewBox="0 0 52 24"
-                fill="currentColor"
-                className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-              >
-                <defs>
-                  <pattern
-                    id="2c67e949-4a23-49f7-bf27-ca140852cf21"
-                    x="0"
-                    y="0"
-                    width=".135"
-                    height=".30"
-                  >
-                    <circle cx="1" cy="1" r=".7" />
-                  </pattern>
-                </defs>
-                <rect
-                  fill="url(#2c67e949-4a23-49f7-bf27-ca140852cf21)"
-                  width="52"
-                  height="24"
-                />
-              </svg>
-              <span className="relative">Inexpensive Website Solutions</span>
-            </span>{" "}
-            Plans & Pricing
-          </motion.div>
-          <p className="text-paragraph md:text-lg">
-            Explore our enticing array of "Plans & Pricing" designed just for
-            you! Dive into a world of options tailored to suit your needs and
-            budget.
-          </p>
-        </div>
-        <div className="grid gap-10 lg:grid-cols-3 md:grid-col-2  grid-cols-1 sm:mx-auto m-auto h-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.7 }} //X:100
-            whileInView={{ opacity: 1, scale: 1 }} //y:100
-            transition={{
-              delay: 0.2,
-              scale: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.6 },
-              ease: "easeInOut",
-            }}
-            className="group"
-          >
-            <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[650px] md:justify-between">
-                <div>
-                  <div className="mb-4 text-center">
-                    <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
-                      <h1 className="bg-[#0EA5E9] rounded-lg w-[70%] p-1">
-                        Basic Plan
-                      </h1>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <p className="mr-2 text-3xl font-semibold text-white lg:text-4xl">
-                        &#8377; 24,999
-                      </p>
-                      <p className="text-lg text-gray-500">/ Project</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-2">
-                    {starterPackBenefits.map((benefit) => {
-                      return (
-                        <li key={benefit?.id} className="flex items-center">
-                          <div className="mr-3">
-                            <svg
-                              className="w-4 h-4 text-[#0444b1]"
-                              viewBox="0 0 24 24"
-                              strokeLinecap="round"
-                              strokeWidth="2"
-                            >
-                              <polyline
-                                fill="none"
-                                stroke="currentColor"
-                                points="6,12 10,16 18,8"
-                              />
-                              <circle
-                                cx="12"
-                                cy="12"
-                                fill="none"
-                                r="11"
-                                stroke="currentColor"
-                              />
-                            </svg>
-                          </div>
-                          <p className="font-medium text-gray-300">
-                            {benefit?.benefit}
-                          </p>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-                <div className="">
-                  <button
-                    type="submit"
-                    className="inline-flex bottom-0 flex-col justify-center font-semibold items-center w-full h-12 px-6 hover:scale-105 tracking-wide text-white transition bg-[#e57e2c] duration-200 rounded shadow-md focus:shadow-outline focus:outline-none"
-                  >
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-              <div className="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
-              <div className="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
-              <div className="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
+            <div className="flex-1">
+              <h3 className={`text-xl font-semibold ${plan.textColor}`}>
+                {plan.name}
+              </h3>
+              {plan.mostPopular && (
+                <p className="absolute top-0 py-1.5 px-4 bg-emerald-500 text-white rounded-full text-xs font-semibold uppercase tracking-wide transform -translate-y-1/2">
+                  Most popular
+                </p>
+              )}
+              <p className="mt-4 flex items-baseline">
+                <span className="text-4xl font-extrabold tracking-tight">
+                  {plan.price}
+                </span>
+                <span className="ml-1 text-xl font-semibold">/project</span>
+              </p>
+              <p className="mt-6">{plan.description}</p>
+              <ul role="list" className="mt-6 space-y-3">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="flex-shrink-0 w-6 h-6 text-emerald-500"
+                      aria-hidden="true"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span className="ml-3">{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+            <button
+              onClick={() => setShowModal(!showModal)}
+              className={`${plan.buttonStyle} mt-8 flex justify-center items-center gap-2 w-full py-3 px-6 border border-transparent rounded-md text-center font-medium`}
+            >
+              {plan.buttonText} <RxDoubleArrowRight />
+            </button>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.7 }} //X:100
-            whileInView={{ opacity: 1, scale: 1 }} //y:100
-            transition={{
-              delay: 0.2,
-              scale: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.6 },
-              ease: "easeInOut",
-            }}
-            className="group"
-          >
-            <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[650px] md:justify-between">
-                <div>
-                  <div className="mb-4 text-center">
-                    <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
-                      <h1 className="bg-[#10b981] rounded-lg w-[70%] p-1">
-                        Advanced Plan
-                      </h1>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <p className="mr-2 text-3xl font-semibold text-white lg:text-4xl">
-                        &#8377; 49,999
-                      </p>
-                      <p className="text-lg text-gray-500">/ Project</p>
-                    </div>
-                  </div>
-
-                  <ul className="space-y-2">
-                    {proPackBenefits.map((benefit) => {
-                      return (
-                        <li key={benefit?.id} className="flex items-center">
-                          <div className="mr-3">
-                            <svg
-                              className="w-4 h-4 text-[#0444b1]"
-                              viewBox="0 0 24 24"
-                              strokeLinecap="round"
-                              strokeWidth="2"
-                            >
-                              <polyline
-                                fill="none"
-                                stroke="currentColor"
-                                points="6,12 10,16 18,8"
-                              />
-                              <circle
-                                cx="12"
-                                cy="12"
-                                fill="none"
-                                r="11"
-                                stroke="currentColor"
-                              />
-                            </svg>
-                          </div>
-                          <p className="font-medium text-gray-300">
-                            {benefit?.benefit}
-                          </p>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-                <div>
-                  <button
-                    type="submit"
-                    className="inline-flex flex-col justify-center items-center font-semibold hover:scale-105 w-full h-12 px-6  tracking-wide text-white bg-[#0444b1] transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none"
-                  >
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-              <div className="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
-              <div className="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
-              <div className="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.7 }} //X:100
-            whileInView={{ opacity: 1, scale: 1 }} //y:100
-            transition={{
-              delay: 0.2,
-              scale: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.6 },
-              ease: "easeInOut",
-            }}
-            className="group"
-          >
-            <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-105">
-              <div className="md:p-4 p-2 flex flex-col bg-gray-900 rounded md:h-[650px] h-auto md:justify-between">
-                <div>
-                  <div className="mb-4 text-center">
-                    <div className="mb-4 text-xl font-medium tracking-wide text-white flex flex-col items-center">
-                      <h1 className="bg-[#ca8a04] rounded-lg w-[70%] p-1">
-                        Enterprise Plan
-                      </h1>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <p className="mr-2 text-3xl font-semibold text-white lg:text-4xl">
-                        &#8377; 74,999
-                      </p>
-                      <p className="text-lg text-gray-500">/ Project</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-2">
-                    {businessPackBenefits.map((benefit) => {
-                      return (
-                        <li key={benefit?.id} className="flex items-center">
-                          <div className="mr-3">
-                            <svg
-                              className="w-4 h-4 text-[#0444b1]"
-                              viewBox="0 0 24 24"
-                              strokeLinecap="round"
-                              strokeWidth="2"
-                            >
-                              <polyline
-                                fill="none"
-                                stroke="currentColor"
-                                points="6,12 10,16 18,8"
-                              />
-                              <circle
-                                cx="12"
-                                cy="12"
-                                fill="none"
-                                r="11"
-                                stroke="currentColor"
-                              />
-                            </svg>
-                          </div>
-                          <p className="font-medium text-gray-300">
-                            {benefit?.benefit}
-                          </p>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-                <div className="">
-                  <button
-                    type="submit"
-                    className="inline-flex bottom-0 flex-col justify-center items-center font-semibold w-full h-12 px-6 hover:scale-105 tracking-wide text-white transition bg-[#e57e2c] duration-200 rounded shadow-md focus:shadow-outline focus:outline-none"
-                  >
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-              <div className="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
-              <div className="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
-              <div className="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
-            </div>
-          </motion.div>
-        </div>
+        ))}
       </div>
     </div>
   );
-};
-
-export default PricingSection;
+}

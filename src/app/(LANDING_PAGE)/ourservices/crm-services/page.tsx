@@ -1,9 +1,10 @@
-import SalesforcePage from './SalesforcePage'
+import React from 'react'
+import CrmPage from './CrmPage'
 
 const page = () => {
   return (
     <div>
-        <SalesforcePage />
+        <CrmPage />
     </div>
   )
 }

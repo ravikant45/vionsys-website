@@ -3,12 +3,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import HeroContactForm from "../HeroContactForm";
 
-type HeroProps = {
+interface PopUpHeroProps {
   showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-};
+  setShowModal: (value: boolean) => void;
+}
 
-const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+const Hero: React.FC<PopUpHeroProps> = ({ showModal, setShowModal }) => {
+
+  const Cloudheading = "Book Your Free Consultation";
+
   return (
     <div className="pt-16">
       <div className="relative">
@@ -35,25 +38,28 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             Cloud Computing Services
           </h1>
           <p className="md:text-4xl font-semibold text-white">
-            Take Your Business to New Heights with us.
+            Smart Cloud Solutions for Your Business Growth!
+          </p>
+          <p className="md:text-2xl font-semibold text-white">
+            Secure and managed cloud solutions that deliver outcome-driven
+            modernization.
           </p>
           <div>
             <h1 className="text-white text-2xl font-semibold mb-2">
               Highlights:
             </h1>
-            <ul className="list-decimal mb-2 text-white font-medium text-xl px-4">
-              <li className="mb-2">
-                Streamlined processes for greater efficiency
-              </li>
-              <li className="mb-2">Enhance customer relationships</li>
-              <li className="mb-2">Optimize overall business performance</li>
+            <ul className="list-decimal mb-2 text-white font-medium text-xl pl-8">
+              <li className="mb-2">Cost-efficient cloud services</li>
+              <li className="mb-2">Flexible and customizable solutions</li>
+              <li className="mb-2">24/7 support and monitoring</li>
+              <li className="mb-2">Secure data storage and access</li>
             </ul>
           </div>
           <div className="flex justify-start items-center pb-3">
             <button className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
               <span
-                className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-sm font-medium text-[#F0F0EE] bg-blue1 backdrop-blur-3xl gap-2 undefined"
+                className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-base font-medium text-[#F0F0EE] bg-blue1 backdrop-blur-3xl gap-2 undefined"
                 onClick={() => {
                   setShowModal(!showModal);
                 }}
@@ -76,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form Component */}
-        <HeroContactForm />
+        <HeroContactForm heading={Cloudheading} />
       </div>
     </div>
   );

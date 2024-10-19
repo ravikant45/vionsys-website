@@ -15,6 +15,7 @@ type HeroProps = {
 
 const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const message = "Contact us Today";
 
   return (
     <section className="relative h-full md:w-[100vw]">
@@ -117,7 +118,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form */}
-        <HeroContactForm />
+        <HeroContactForm heading={message} />
       </div>
     </section>
   );
