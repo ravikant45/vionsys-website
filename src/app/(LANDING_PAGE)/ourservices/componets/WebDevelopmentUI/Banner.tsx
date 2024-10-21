@@ -25,7 +25,7 @@ const Banner: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center flex flex-col items-center justify-center px-4 py-32 sm:px-6 lg:px-8 w-full lg:max-w-4xl">
+      <div className="relative md:gap-y-2 z-10 text-center flex flex-col items-center justify-center px-4 py-32 sm:px-6 lg:px-8 w-full lg:max-w-4xl">
         <motion.h1
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -53,28 +53,10 @@ const Banner: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             opacity: { duration: 0.4 },
             ease: "easeInOut",
           }}
-          className="mt-4 max-w-3xl md:text-2xl text-orange"
+          className="mt-4 max-w-3xl md:text-2xl text-white"
         >
           Your vision matters to us. Let’s connect and create a website that
           elevates your brand, drives traffic, and delivers measurable success.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{
-            delay: 0.2,
-            x: { type: "spring", stiffness: 30 },
-            opacity: { duration: 0.4 },
-            ease: "easeInOut",
-          }}
-          className="mt-4 max-w-3xl text-white sm:text-sm/relaxed"
-        >
-          Explore limitless possibilities with Vionsys IT Solutions India Pvt.
-          Ltd. Join our vibrant team where you'll engage in innovative projects,
-          thrive in a collaborative atmosphere, access ongoing learning
-          initiatives, and chart a path for professional advancement. Discover
-          the ideal environment to unleash your full potential in the dynamic IT
-          industry.
         </motion.p>
 
         {/* Button */}

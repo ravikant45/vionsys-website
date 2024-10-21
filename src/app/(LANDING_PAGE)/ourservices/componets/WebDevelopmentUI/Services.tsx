@@ -12,7 +12,6 @@ import Service5 from "../../images/WebDevelopment/Service5.jpg";
 import Service6 from "../../images/WebDevelopment/Service6.jpg";
 import Service7 from "../../images/WebDevelopment/Service7.jpg";
 
-
 interface Service {
   title: string;
   description: string;
@@ -132,11 +131,10 @@ export default function Solutions() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`p-4 cursor-pointer border-b border-gray-700 flex justify-between items-center ${
-                selectedService.title === service.title
+              className={`p-4 cursor-pointer border-b border-gray-700 flex justify-between items-center ${selectedService.title === service.title
                   ? "text-blue-700"
                   : "hover:bg-gray-200"
-              }`}
+                }`}
               onClick={() => handleServiceClick(service)}
             >
               <span>{service.title}</span>
@@ -145,8 +143,8 @@ export default function Solutions() {
           ))}
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 100 }} //X:100
-          whileInView={{ opacity: 1, y: 0 }} //y:100
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.2,
             scale: { type: "spring", stiffness: 30 },
@@ -161,7 +159,10 @@ export default function Solutions() {
             alt={selectedService.title}
             width={600}
             height={400}
-            className="w-full h-64 object-cover mb-4"
+            quality={100}
+            className="w-full h-32 md:h-80 object-cover mb-4" 
+            priority={selectedService.title === services[0].title}
+            placeholder="blur"
           />
           <motion.h2
             initial={{ opacity: 0, scale: 1.5 }}
@@ -170,7 +171,7 @@ export default function Solutions() {
               delay: 0.2,
               scale: { type: "spring", stiffness: 30 },
               opacity: { duration: 0.6 },
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
             className="text-2xl font-bold mb-2"
           >

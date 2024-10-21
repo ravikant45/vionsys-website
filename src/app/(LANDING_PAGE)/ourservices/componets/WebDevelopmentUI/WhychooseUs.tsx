@@ -8,7 +8,7 @@ import { MdTouchApp, MdVerified, MdSupportAgent } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { GrUserSettings } from "react-icons/gr";
 import { LuListTodo } from "react-icons/lu";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 
 
@@ -67,17 +67,17 @@ const data = [
 const WhyChooseUs: React.FC = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-        <motion.h2 
-        initial={{ opacity: 0, scale: 0.5 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{
-          delay: 0.2,
-          scale: { type: "spring", stiffness: 30 },
-          opacity: { duration: 0.6 },
-          ease: "easeInOut"
-        }}
-        className="max-w-lg mb-6 font-sans text-MainHeading font-bold leading-none tracking-tight  md:mx-auto">
+      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-4xl md:mb-12">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 0.2,
+            scale: { type: "spring", stiffness: 30 },
+            opacity: { duration: 0.6 },
+            ease: "easeInOut"
+          }}
+          className="max-w-lg mb-6 font-sans text-MainHeading font-bold leading-none tracking-tight  md:mx-auto">
           <span className="relative inline-block">
             <svg
               viewBox="0 0 52 24"
@@ -104,10 +104,10 @@ const WhyChooseUs: React.FC = () => {
             <span className="relative">Why Choose Us</span>
           </span>{" "}
         </motion.h2>
-        <p className="text-base text-SubHeading md:text-lg">
+        <p className="text-base text-SubHeading font-semibold md:text-lg">
           We know design, We know development. We are web design experts!
         </p>
-        <p className="text-base text-gray-700 pt-2 md:text-md">
+        <p className="text-base text-gray-900 pt-2 md:text-sm">
           Our team specializes in creating visually stunning, responsive
           websites that perfectly align with your vision. Combining innovative
           design with robust development, we ensure your online presence is not
@@ -118,18 +118,18 @@ const WhyChooseUs: React.FC = () => {
         {/* Card Items */}
         {data.map((item, index) => (
           <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.05, y: -10 }}
             transition={{
-              delay: 0.2,
-              scale: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.6 },
-              ease: "easeInOut"
+              duration: 0.2,
+              scale: { type: "spring", stiffness: 300, damping: 20 }, /* Less stiff spring for smoother return */
+              ease: "easeInOut",
             }}
             key={index}
-            className="duration-300 transform bg-white border-l-4 border-blue3 hover:-translate-y-2"
+            className="transform bg-white border-l-4 border-blue3 transition-transform duration-500 hover:shadow-2xl shadow-md" /* Adjusted shadow transitions */
           >
-            <div className="flex flex-col justify-between items-center h-full py-2 px-2 border border-l-0 rounded-r shadow-sm">
+            <div className="flex flex-col justify-between items-center h-full py-4 px-4 border border-l-0 rounded-r shadow-sm hover:shadow-none">
               <div className="mr-4">{item.icon}</div>
               <div className="text-center">
                 <h6 className="mb-2 font-semibold leading-5">{item.title}</h6>
@@ -139,6 +139,8 @@ const WhyChooseUs: React.FC = () => {
           </motion.div>
         ))}
       </div>
+
+
     </div>
   );
 };
