@@ -4,25 +4,23 @@ import { Modal, Button, Form, Input, Select } from "antd";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { country } from "@/utils/CountryCodes";
-  import Image from "next/image";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MainContactFormTemplate } from "@/utils/MainContactFormTemplate";
 
 type Inputs = {
   name: string;
-  phone: {
-    countryCode: string;
-    number: string;
-  };
+  countryCode: string;
+  number: string;
   email: string;
   message: string;
 };
 interface PopUpProps {
-  showModal: boolean;
-  setShowModal: (value: boolean) => void;
+  showModal1: boolean;
+  setShowModal1: (value: boolean) => void;
 }
 
-const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
+const PopUp: React.FC<PopUpProps> = ({ showModal1, setShowModal1 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("");
@@ -31,6 +29,8 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   const handleCountryChange = (value: string) => {
     setCountryCode(value);
   };
+
+
 
   const filterOption = (
     input: string,
@@ -45,10 +45,10 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   };
 
   const handleSubmit = async (values: any) => {
-    
+    console.log(values)
+
     const formattedData = {
-      ...values,
-      countryCode,
+      ...values
     };
     console.log(formattedData)
     const template = MainContactFormTemplate(formattedData)
@@ -72,17 +72,18 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
       router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
+      console.log(error);
     }
     setLoading(false);
   };
 
   const handleCancel = () => {
-    setShowModal(false);
+    setShowModal1(false);
   };
 
   return (
     <div className="inset-0 flex flex-col items-center justify-center">
-      <Modal open={showModal} footer={null} onCancel={handleCancel}>
+      <Modal open={showModal1} footer={null} onCancel={handleCancel}>
         <div className="w-full max-w-md mx-auto md:p-6 p-1 bg-white rounded-lg">
           <Form form={form} layout="vertical" onFinish={handleSubmit}>
             <h1 className="text-center font-bold text-blue-600 md:text-3xl text-xl pb-5">
@@ -123,34 +124,23 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
               />
             </Form.Item>
 
-            <Form.Item
-              name="number"
-              label={
-                <span className="font-semibold text-gray-700">
-                  Contact Number
-                </span>
-              }
-              rules={[
-                { required: true, message: "Please enter your phone number!" },
-                {
-                  pattern: /^\d{10}$/,
-                  message: "Phone number must be numeric and 10 digits long.",
-                },
-              ]}
-              className="mb-3"
-            >
-              <div className="flex gap-2 cursor-pointer">
+            <div className="flex gap-x-2">
+              <Form.Item
+                name="countryCode"
+                label={<span className="font-semibold"> Country</span>}
+                rules={[
+                  { required: true, message: "Please select your country!" },
+                ]}
+                initialValue="+1"
+                className="w-36"
+              >
                 <Select
                   showSearch
                   placeholder="Country"
                   optionFilterProp="children"
-                  value={countryCode}
                   onChange={handleCountryChange}
                   filterOption={filterOption}
                 >
-                  <option value="" disabled>
-                    Country
-                  </option>
                   {country.map((c, index) => (
                     <Select.Option key={index} value={c.code}>
                       <div className="flex items-center">
@@ -166,12 +156,22 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
                     </Select.Option>
                   ))}
                 </Select>
-                <Input
-                  placeholder="Enter Contact Number"
-                  className="border border-gray-300 rounded-md px-2"
-                />
-              </div>
-            </Form.Item>
+              </Form.Item>
+
+              <Form.Item
+                name="number"
+                label={<span className="font-semibold">Phone Number</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your phone number!",
+                  },
+                ]}
+                className="w-full"
+              >
+                <Input placeholder="Enter Phone Number" />
+              </Form.Item>
+            </div>
 
             <Form.Item
               name="message"

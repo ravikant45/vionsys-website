@@ -136,7 +136,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               <h1 className="text-center text-blue1 text-xl font-bold pt-1">
                 {" "}
                 {/* Adjusted padding top */}
-                Get A Free Call
+                Request a FREE Call!
               </h1>
               <p className="text-sm text-orange text-center pb-2">
                 {" "}
@@ -159,7 +159,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             >
               <Input
                 placeholder="Enter Your Name"
-                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                className="w-full px-2 border text-black border-gray-300 rounded"
                 disabled={loading}
               />
             </Form.Item>
@@ -181,12 +181,12 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             >
               <Input
                 placeholder="Enter Email Address"
-                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                className="w-full px-2 border text-black border-gray-300 rounded"
                 disabled={loading}
               />
             </Form.Item>
 
-            <div className="flex gap-x-2">
+            <div className="flex gap-x-2 h-16">
               <Form.Item
                 name="countryCode"
                 label={<span className="font-semibold"> Country</span>}
@@ -275,7 +275,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             >
               <Input.TextArea
                 placeholder="Leave a comment..."
-                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                className="w-full px-2 border text-black border-gray-300 rounded"
                 disabled={loading}
               />
             </Form.Item>

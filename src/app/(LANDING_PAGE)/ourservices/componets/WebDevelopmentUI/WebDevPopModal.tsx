@@ -19,7 +19,7 @@ export default function WebDevPopModal({
 }: WebDevPopModalProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
-  const [hasModalBeenShown, setHasModalBeenShown] = useState(false);
+  
   const [countryCode, setCountryCode] = useState<string>("+1");
   const router = useRouter();
 
@@ -39,18 +39,7 @@ export default function WebDevPopModal({
     );
   };
 
-  useEffect(() => {
-    if (!hasModalBeenShown) {
-      const timer = setTimeout(() => {
-        setShowModal(!showModal);
-        setHasModalBeenShown(true);
-      }, 5000);
-
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [hasModalBeenShown, setShowModal]);
+  
 
   if (!showModal) return null;
 
