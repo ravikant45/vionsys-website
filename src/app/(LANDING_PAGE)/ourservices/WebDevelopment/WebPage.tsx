@@ -42,7 +42,7 @@ const WebPage = () => {
       <Banner showModal={showModal} setShowModal={setShowModal} />
       <ContactUs />
       <WebDevPopModal showModal={showModal} setShowModal={setShowModal} />
-      <StaticCTA message="Get a Free Consultation" cta="Request a Callback" setShowModal1={setShowModal1} />
+      <StaticCTA message="Get a Free Consultation" cta="Request a Callback" setShowModal={setShowModal} />
       <PopUp setShowModal1={setShowModal1} showModal1={showModal1} />
     </main>
   )
