@@ -17,7 +17,6 @@ const SalesforcePage = () => {
     return (
         <div id='contactbg' className='pt-16 overflow-hidden'>
             <Hero showModal={showModal} setShowModal={setShowModal} />
-            <Cta showModal={showModal} setShowModal={setShowModal} />
             <SalesforceOfferings />
             <ClientsServices />
             <Services />

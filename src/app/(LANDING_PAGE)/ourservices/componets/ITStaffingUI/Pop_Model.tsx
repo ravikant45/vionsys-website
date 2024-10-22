@@ -10,11 +10,11 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 interface PopModalProps {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 }
 
-export default function Pop_Model({ showModal, setShowModal }: PopModalProps) {
+export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalProps) {
   const [userType, setUserType] = useState("employer");
   const [hasModalBeenShown, setHasModalBeenShown] = useState(false); // Track if modal has been shown
   const [loading, setLoading] = useState<boolean>(false);
@@ -44,7 +44,7 @@ export default function Pop_Model({ showModal, setShowModal }: PopModalProps) {
   useEffect(() => {
     if (!hasModalBeenShown) {
       const timer = setTimeout(() => {
-        setShowModal(!showModal);
+        setEnquiryModal(!enquiryModal);
         setHasModalBeenShown(true);
       }, 5000);
 
@@ -52,9 +52,9 @@ export default function Pop_Model({ showModal, setShowModal }: PopModalProps) {
         clearTimeout(timer);
       };
     }
-  }, [hasModalBeenShown, setShowModal]);
+  }, [hasModalBeenShown, setEnquiryModal]);
 
-  if (!showModal) return null;
+  if (!enquiryModal) return null;
 
   const handleSubmit = async (values: any) => {
     setLoading(true);
@@ -88,7 +88,7 @@ export default function Pop_Model({ showModal, setShowModal }: PopModalProps) {
   };
 
   const handleCancel = () => {
-    setShowModal(false);
+    setEnquiryModal(false);
   };
 
   return (
@@ -96,7 +96,7 @@ export default function Pop_Model({ showModal, setShowModal }: PopModalProps) {
       <div className="max-w-3xl mx-auto rounded-lg shadow-md">
         {/* <div className="text-2xl font-bold text-center">Enquiry Form</div> */}
         <Modal
-          open={showModal}
+          open={enquiryModal}
           footer={null} // Remove default footer with Ok and Cancel buttons
           onCancel={handleCancel}
           destroyOnClose={true} // Ensure it resets when closed

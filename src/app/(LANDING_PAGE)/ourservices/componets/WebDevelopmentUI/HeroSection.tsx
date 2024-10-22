@@ -9,11 +9,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 type HeroProps = {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 };
 
-const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("+1");
@@ -105,7 +105,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 <span
                   className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-md font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined"
                   onClick={() => {
-                    setShowModal(!showModal);
+                    setEnquiryModal(!enquiryModal);
                   }}
                 >
                   Get in Touch with Our Experts Today
@@ -126,6 +126,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           </div>
 
           {/* Right Side: Contact Form */}
+          <div className="md:py-6">
           <Form
             form={form}
             layout="vertical"
@@ -136,7 +137,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               <h1 className="text-center text-blue1 text-xl font-bold pt-1">
                 {" "}
                 {/* Adjusted padding top */}
-                Get A Free Call
+                Request a FREE Call!
               </h1>
               <p className="text-sm text-orange text-center pb-2">
                 {" "}
@@ -159,7 +160,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             >
               <Input
                 placeholder="Enter Your Name"
-                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                className="w-full px-2 border text-black border-gray-300 rounded"
                 disabled={loading}
               />
             </Form.Item>
@@ -181,12 +182,12 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             >
               <Input
                 placeholder="Enter Email Address"
-                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                className="w-full px-2 border text-black border-gray-300 rounded"
                 disabled={loading}
               />
             </Form.Item>
 
-            <div className="flex gap-x-2">
+            <div className="flex gap-x-2 h-16">
               <Form.Item
                 name="countryCode"
                 label={<span className="font-semibold"> Country</span>}
@@ -275,7 +276,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             >
               <Input.TextArea
                 placeholder="Leave a comment..."
-                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                className="w-full px-2 border text-black border-gray-300 rounded"
                 disabled={loading}
               />
             </Form.Item>
@@ -315,6 +316,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               </div>
             </Form.Item>
           </Form>
+          </div>
         </div>
       </section>
     </>

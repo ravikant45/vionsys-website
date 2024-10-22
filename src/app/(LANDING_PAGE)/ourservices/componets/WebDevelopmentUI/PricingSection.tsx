@@ -5,18 +5,19 @@ import { RxDoubleArrowRight } from "react-icons/rx";
 const plans = [
   {
     name: "Basic Plan",
-    price: "$599",
+    price: "$799",
     description: "Inexpensive website solution for small businesses",
     features: [
       "Essential Project Tools",
       "5 Customizable Web Pages",
       "Storage Space of 10 GB",
-      "Access to a Range of Basic Templates",
       "Standard Customer Support",
+      "Access to a Range of Basic Templates",
+
       "Email-Based Assistance",
       "Basic SEO Optimization Package",
       "Monthly Site Performance Report",
-      "1 Year of Complimentary Web Hosting",
+      "6 Months of Complimentary Web Hosting",
     ],
     buttonText: "Get More Details",
     buttonLink: "/auth/login",
@@ -26,7 +27,7 @@ const plans = [
   },
   {
     name: "Advanced Plan",
-    price: "$1799",
+    price: "$1899",
     description: "Comprehensive website package for growing businesses",
     features: [
       "Advanced Project Tools",
@@ -38,10 +39,9 @@ const plans = [
       "Advanced SEO Optimization Package",
       "Bi-weekly Website Performance Reports",
       "1 Year of Free Hosting Services",
-      "Social Media Connectivity",
       "Basic E-commerce Functionality",
     ],
-    buttonText: "Get Details",
+    buttonText: "Get More Details",
     buttonLink: "/auth/login",
     buttonStyle: "bg-green-500 text-white hover:bg-green-600",
     mostPopular: true,
@@ -49,7 +49,7 @@ const plans = [
   },
   {
     name: "Enterprise Plan",
-    price: "$2799",
+    price: "$2899",
     description: "Complete website solution for enterprises",
 
     features: [
@@ -57,17 +57,16 @@ const plans = [
       "Support for 20 Web Pages",
       "Storage Capacity of 100 GB",
       "Enhanced Security Measures",
-      "Priority Customer Support",
-      "Custom Development Tools for Software",
-      "Premium SEO Package",
-      "Weekly Performance Updates",
-      "One Year of Complimentary Website Hosting",
-      "Enhanced E-commerce Capabilities",
       "Support for Multiple Languages",
-      "Tailored Training Sessions",
+      "Priority Customer Support",
+      "Access to Premium-Quality Templates",
+      "Premium SEO Package",
+      "Bi-weekly Website Performance Reports",
+      "1 Year of Free Hosting Services",
+      "Enhanced E-commerce Capabilities",
       "Regular Backups and Ongoing Maintenance",
     ],
-    buttonText: "Get Details",
+    buttonText: "Get More Details",
     buttonLink: "/auth/login",
     buttonStyle: "bg-yellow-500 text-white hover:bg-yellow-600",
     mostPopular: false,
@@ -76,11 +75,11 @@ const plans = [
 ];
 
 type HeroProps = {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 };
 
-export default function Pricing({ showModal, setShowModal }: HeroProps) {
+export default function Pricing({ enquiryModal, setEnquiryModal }: HeroProps) {
   return (
     <div className="relative w-full md:h-auto">
       <div>
@@ -95,7 +94,7 @@ export default function Pricing({ showModal, setShowModal }: HeroProps) {
           }}
           className="text-MainHeading font-bold text-center mt-12"
         >
-          Inexpensive Website Solutions Plans & Pricing
+          Plans & Pricing
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, x: 100 }}
@@ -108,8 +107,7 @@ export default function Pricing({ showModal, setShowModal }: HeroProps) {
           }}
           className="max-w-3xl mx-auto mt-4 text-paragraph text-center"
         >
-          Explore our enticing array of "Plans & Pricing" designed just for you!
-          Dive into a world of options tailored to suit your needs and budget.
+          Check out our exciting range of plans and pricing- from simple to all-inclusive, we have options to match your needs and budget perfectly.
         </motion.p>
       </div>
       <div className="mt-24 container space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
@@ -166,7 +164,7 @@ export default function Pricing({ showModal, setShowModal }: HeroProps) {
               </ul>
             </div>
             <button
-              onClick={() => setShowModal(!showModal)}
+              onClick={() => setEnquiryModal(!enquiryModal)}
               className={`${plan.buttonStyle} mt-8 flex justify-center items-center gap-2 w-full py-3 px-6 border border-transparent rounded-md text-center font-medium`}
             >
               {plan.buttonText} <RxDoubleArrowRight />

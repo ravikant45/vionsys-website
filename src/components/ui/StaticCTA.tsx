@@ -5,10 +5,10 @@ import React, { useEffect, useState } from "react";
 interface StaticCTAProps {
   message: string;
   cta: string;
-  setShowModal: (show: boolean) => void;
+  setEnquiryModal: (show: boolean) => void;
 }
 
-const StaticCTA: React.FC<StaticCTAProps> = ({ message,cta, setShowModal }) => {
+const StaticCTA: React.FC<StaticCTAProps> = ({ message, cta, setEnquiryModal }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
@@ -33,14 +33,13 @@ const StaticCTA: React.FC<StaticCTAProps> = ({ message,cta, setShowModal }) => {
 
   return isVisible ? (
     <div
-      className={`fixed bottom-0 text-white md:left-[25%] md:w-[50%] left-0 w-full rounded-tl-3xl rounded-tr-3xl bg-blue3 shadow-lg z-50 px-8 py-3 flex justify-center gap-8 items-center ${
-        shouldAnimate ? "animate-fadeIn" : ""
-      }`}
+      className={`fixed bottom-0 text-white md:left-[25%] md:w-[50%] left-0 w-full rounded-tl-3xl rounded-tr-3xl bg-blue3 shadow-lg z-50 px-8 py-3 flex justify-center gap-8 items-center ${shouldAnimate ? "animate-fadeIn" : ""
+        }`}
     >
       <div className="md:text-lg text-md font-semibold">{message}</div>
       <button
         className="bg-orange hover:bg-amber-500 text-sm font-bold text-white px-4 py-1 rounded-md"
-        onClick={() => setShowModal(true)}
+        onClick={() => setEnquiryModal(true)}
       >
         {cta}
       </button>

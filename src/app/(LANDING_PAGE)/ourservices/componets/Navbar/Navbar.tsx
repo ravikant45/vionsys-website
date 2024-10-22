@@ -1,10 +1,9 @@
-// Navbar.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { IoCallOutline, IoMailOutline, IoMenu } from "react-icons/io5";
+import {  IoMailOutline, IoMenu } from "react-icons/io5";
 import LogoImage from "/public/assets/logo.png";
 import { RxCross2 } from "react-icons/rx";
 import { BiPhone } from "react-icons/bi";
@@ -69,9 +68,8 @@ const Navbar = ({ showModal, setShowModal }: PopUpProps) => {
 
   return (
     <nav
-      className={`fixed px-4 z-50 w-full bg-white transition-all duration-300 ${
-        visible ? "top-0 shadow-md shadow-gray-200" : "-top-full"
-      }`}
+      className={`fixed px-4 z-50 w-full bg-white transition-all duration-300 ${visible ? "top-0 shadow-md shadow-gray-200" : "-top-full"
+        }`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-16">
@@ -120,13 +118,24 @@ const Navbar = ({ showModal, setShowModal }: PopUpProps) => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden cursor-default">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <div className="bg-orange text-white px-5 py-2 hover:bg-blue-700 rounded-md cursor-pointer">
-              <IoCallOutline className="w-5 h-5" />
-              Submit Request
-            </div>
+        <div className="md:hidden px-2 pt-2 pb-3 space-y-3 sm:px-3 cursor-default">
+          <div className="text-gray-600 font-semibold flex items-center space-x-2">
+            <BiPhone size={20} className="animate-bounce" />
+            <Link href="tel:02047242493" className="hover:text-gray-900">
+              (020) 4724-2493
+            </Link>
           </div>
+          <div className="text-gray-600 font-semibold flex items-center space-x-2">
+            <IoMailOutline className="h-5 w-5" />
+            <span>info@vionsys.com</span>
+          </div>
+          {/* Mobile CTA Button */}
+          <button
+            onClick={() => setShowModal(!showModal)}
+            className="cursor-pointer text-sm font-semibold border-2 rounded-md border-orange text-blue3 uppercase bg-white px-4 py-2 mt-4 w-full active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition"
+          >
+            Contact Us Now!
+          </button>
         </div>
       )}
     </nav>

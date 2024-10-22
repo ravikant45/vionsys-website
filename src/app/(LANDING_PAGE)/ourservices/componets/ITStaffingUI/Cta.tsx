@@ -3,14 +3,14 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import Pop_Model from "./Pop_Model";
+
 
 type PopModelProps = {
-  showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  enquiryModal: boolean;
+  setEnquiryModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Cta: React.FC<PopModelProps> = ({ showModal, setShowModal }) => {
+const Cta: React.FC<PopModelProps> = ({ enquiryModal, setEnquiryModal }) => {
   return (
     <section>
       <div className="bg-gray-100 flex flex-col sm:flex-row items-center justify-center gap-2 p-4 md:p-10">
@@ -24,7 +24,7 @@ const Cta: React.FC<PopModelProps> = ({ showModal, setShowModal }) => {
             ease: "easeInOut",
           }}
           onClick={() => {
-            setShowModal(!showModal);
+            setEnquiryModal(!enquiryModal);
           }}
           className="text-xl md:text-2xl font-semibold animate-pulse ease-out duration-1000 bg-gradient-to-l from-black to-blue-950 bg-clip-text text-transparent cursor-pointer"
         >
@@ -33,7 +33,7 @@ const Cta: React.FC<PopModelProps> = ({ showModal, setShowModal }) => {
         <div className="text-4xl font-bold animate-pulse ease-out duration-1000 text-black">
           <button
             onClick={() => {
-              setShowModal(!showModal);
+              setEnquiryModal(!enquiryModal);
             }}
           >
             <FaArrowRightLong color="#215CBC" />

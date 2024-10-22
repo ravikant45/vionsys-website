@@ -4,16 +4,14 @@ import { Modal, Button, Form, Input, Select } from "antd";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { country } from "@/utils/CountryCodes";
-  import Image from "next/image";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MainContactFormTemplate } from "@/utils/MainContactFormTemplate";
 
 type Inputs = {
   name: string;
-  phone: {
-    countryCode: string;
-    number: string;
-  };
+  countryCode: string;
+  number: string;
   email: string;
   message: string;
 };
@@ -32,6 +30,8 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
     setCountryCode(value);
   };
 
+
+
   const filterOption = (
     input: string,
     option?: { value: string; children: React.ReactNode }
@@ -45,14 +45,14 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   };
 
   const handleSubmit = async (values: any) => {
-    
+    console.log(values)
+
     const formattedData = {
-      ...values,
-      countryCode,
+      ...values
     };
     console.log(formattedData)
     const template = MainContactFormTemplate(formattedData)
-    const sendTo = ["ssbankar18@gmail.com"];
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
 
     const updatedData = {
       formattedData,
@@ -72,6 +72,7 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
       router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
+      console.log(error);
     }
     setLoading(false);
   };
@@ -123,34 +124,23 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
               />
             </Form.Item>
 
-            <Form.Item
-              name="number"
-              label={
-                <span className="font-semibold text-gray-700">
-                  Contact Number
-                </span>
-              }
-              rules={[
-                { required: true, message: "Please enter your phone number!" },
-                {
-                  pattern: /^\d{10}$/,
-                  message: "Phone number must be numeric and 10 digits long.",
-                },
-              ]}
-              className="mb-3"
-            >
-              <div className="flex gap-2 cursor-pointer">
+            <div className="flex gap-x-2">
+              <Form.Item
+                name="countryCode"
+                label={<span className="font-semibold"> Country</span>}
+                rules={[
+                  { required: true, message: "Please select your country!" },
+                ]}
+                initialValue="+1"
+                className="w-36"
+              >
                 <Select
                   showSearch
                   placeholder="Country"
                   optionFilterProp="children"
-                  value={countryCode}
                   onChange={handleCountryChange}
                   filterOption={filterOption}
                 >
-                  <option value="" disabled>
-                    Country
-                  </option>
                   {country.map((c, index) => (
                     <Select.Option key={index} value={c.code}>
                       <div className="flex items-center">
@@ -166,12 +156,22 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
                     </Select.Option>
                   ))}
                 </Select>
-                <Input
-                  placeholder="Enter Contact Number"
-                  className="border border-gray-300 rounded-md px-2"
-                />
-              </div>
-            </Form.Item>
+              </Form.Item>
+
+              <Form.Item
+                name="number"
+                label={<span className="font-semibold">Phone Number</span>}
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your phone number!",
+                  },
+                ]}
+                className="w-full"
+              >
+                <Input placeholder="Enter Phone Number" />
+              </Form.Item>
+            </div>
 
             <Form.Item
               name="message"
