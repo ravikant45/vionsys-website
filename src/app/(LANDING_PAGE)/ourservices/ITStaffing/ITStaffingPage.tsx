@@ -12,23 +12,23 @@ import Pop_Model from "../componets/ITStaffingUI/Pop_Model";
 import StaticCTA from "@/components/ui/StaticCTA"; 
 
 const ITStaffingPage = () => {
-  const [showModal, setShowModal] = useState<boolean>(false);
+  const [enquiryModal, setEnquiryModal] = useState<boolean>(false);
 
   return (
     <div className="overflow-x-hidden">
       {/* Ensure Hero section has an ID for proper scroll detection */}
       <div id="hero">
-        <Hero showModal={showModal} setShowModal={setShowModal} />
+        <Hero enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       </div>
       <OurHighlights />
-      <OurOfferings showModal={showModal} setShowModal={setShowModal} />
+      <OurOfferings enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       <WhatWeServe />
-      <Cta showModal={showModal} setShowModal={setShowModal} />
+      <Cta enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       <ChooseUs />
       <InfiniteMovingCardsDemo />
       <ContactUs />
-      <Pop_Model showModal={showModal} setShowModal={setShowModal} />
-      <StaticCTA message="Get a Free Staffing Consultation!" cta="Contact us Today" setShowModal={setShowModal} />
+      <Pop_Model enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
+      <StaticCTA message="Get a Free Staffing Consultation!" cta="Contact us Today" setEnquiryModal={setEnquiryModal} />
     </div>
   );
 };

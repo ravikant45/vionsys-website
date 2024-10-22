@@ -75,11 +75,11 @@ const plans = [
 ];
 
 type HeroProps = {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 };
 
-export default function Pricing({ showModal, setShowModal }: HeroProps) {
+export default function Pricing({ enquiryModal, setEnquiryModal }: HeroProps) {
   return (
     <div className="relative w-full md:h-auto">
       <div>
@@ -164,7 +164,7 @@ export default function Pricing({ showModal, setShowModal }: HeroProps) {
               </ul>
             </div>
             <button
-              onClick={() => setShowModal(!showModal)}
+              onClick={() => setEnquiryModal(!enquiryModal)}
               className={`${plan.buttonStyle} mt-8 flex justify-center items-center gap-2 w-full py-3 px-6 border border-transparent rounded-md text-center font-medium`}
             >
               {plan.buttonText} <RxDoubleArrowRight />

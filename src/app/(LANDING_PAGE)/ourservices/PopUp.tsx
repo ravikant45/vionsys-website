@@ -16,11 +16,11 @@ type Inputs = {
   message: string;
 };
 interface PopUpProps {
-  showModal1: boolean;
-  setShowModal1: (value: boolean) => void;
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
 }
 
-const PopUp: React.FC<PopUpProps> = ({ showModal1, setShowModal1 }) => {
+const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("");
@@ -52,7 +52,7 @@ const PopUp: React.FC<PopUpProps> = ({ showModal1, setShowModal1 }) => {
     };
     console.log(formattedData)
     const template = MainContactFormTemplate(formattedData)
-    const sendTo = ["ssbankar18@gmail.com"];
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
 
     const updatedData = {
       formattedData,
@@ -78,12 +78,12 @@ const PopUp: React.FC<PopUpProps> = ({ showModal1, setShowModal1 }) => {
   };
 
   const handleCancel = () => {
-    setShowModal1(false);
+    setShowModal(false);
   };
 
   return (
     <div className="inset-0 flex flex-col items-center justify-center">
-      <Modal open={showModal1} footer={null} onCancel={handleCancel}>
+      <Modal open={showModal} footer={null} onCancel={handleCancel}>
         <div className="w-full max-w-md mx-auto md:p-6 p-1 bg-white rounded-lg">
           <Form form={form} layout="vertical" onFinish={handleSubmit}>
             <h1 className="text-center font-bold text-blue-600 md:text-3xl text-xl pb-5">

@@ -25,8 +25,8 @@ interface Offering {
 }
 
 type OurOfferingsProps = {
-  showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  enquiryModal: boolean;
+  setEnquiryModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 // List of offerings
@@ -76,7 +76,7 @@ const offerings: Offering[] = [
 ];
 
 
-const OurOfferings: React.FC<OurOfferingsProps> = ({ showModal, setShowModal }) => {
+const OurOfferings: React.FC<OurOfferingsProps> = ({ enquiryModal, setEnquiryModal }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [direction, setDirection] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -192,7 +192,7 @@ const OurOfferings: React.FC<OurOfferingsProps> = ({ showModal, setShowModal }) 
               >
                 <Button
                 onClick={() => {
-                  setShowModal(!showModal);
+                  setEnquiryModal(!enquiryModal);
                 }}
                   variant="outline"
                   size="lg"

@@ -5,11 +5,11 @@ import banner from "@/app/(LANDING_PAGE)/ourservices/images/WebDevelopment/banne
 import { motion } from "framer-motion";
 
 type HeroProps = {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 };
 
-const Banner: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+const Banner: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => {
   return (
     <section className="relative h-screen flex items-center justify-center">
       {/* Background Image */}
@@ -63,7 +63,7 @@ const Banner: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
         <div className="mt-8 flex flex-wrap gap-4 justify-center">
           <button
             className="font-sans flex gap-2 items-center shadow-xl text-md text-gray-50 bg-[#0A0D2D] backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue2 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
-            onClick={() => setShowModal(!showModal)}
+            onClick={() => setEnquiryModal(!enquiryModal)}
           >
             Get Started Now
             <svg

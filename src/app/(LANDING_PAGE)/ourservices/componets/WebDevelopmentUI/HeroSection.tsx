@@ -9,11 +9,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 type HeroProps = {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 };
 
-const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
+const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("+1");
@@ -105,7 +105,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 <span
                   className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-md font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined"
                   onClick={() => {
-                    setShowModal(!showModal);
+                    setEnquiryModal(!enquiryModal);
                   }}
                 >
                   Get in Touch with Our Experts Today
@@ -126,6 +126,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           </div>
 
           {/* Right Side: Contact Form */}
+          <div className="md:py-6">
           <Form
             form={form}
             layout="vertical"
@@ -315,6 +316,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               </div>
             </Form.Item>
           </Form>
+          </div>
         </div>
       </section>
     </>

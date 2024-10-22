@@ -9,11 +9,11 @@ import { RxCross2 } from "react-icons/rx";
 import { BiPhone } from "react-icons/bi";
 
 interface PopUpProps {
-  showModal1: boolean;
-  setShowModal1: (value: boolean) => void;
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
 }
 
-const Navbar = ({ showModal1, setShowModal1 }: PopUpProps) => {
+const Navbar = ({ showModal, setShowModal }: PopUpProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -95,7 +95,7 @@ const Navbar = ({ showModal1, setShowModal1 }: PopUpProps) => {
             </div>
             {/* CTA Button */}
             <button
-              onClick={() => setShowModal1(!showModal1)}
+              onClick={() => setShowModal(!showModal)}
               className="cursor-pointer text-sm font-semibold border-2 rounded-md border-orange text-blue3 uppercase bg-white px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition"
             >
               <span>Contact Us Now!</span>
@@ -131,7 +131,7 @@ const Navbar = ({ showModal1, setShowModal1 }: PopUpProps) => {
           </div>
           {/* Mobile CTA Button */}
           <button
-            onClick={() => setShowModal1(!showModal1)}
+            onClick={() => setShowModal(!showModal)}
             className="cursor-pointer text-sm font-semibold border-2 rounded-md border-orange text-blue3 uppercase bg-white px-4 py-2 mt-4 w-full active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition"
           >
             Contact Us Now!

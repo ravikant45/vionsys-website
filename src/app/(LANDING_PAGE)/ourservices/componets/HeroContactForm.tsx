@@ -14,7 +14,6 @@ type Inputs = {
     number: string;
   };
   email: string;
-  intrestedIn: string;
   message: string;
 };
 
@@ -158,37 +157,6 @@ const HeroContactForm: React.FC<{
                 disabled={loading}
               />
             </div>
-          </Form.Item>
-
-          <Form.Item
-            name="interestedIn"
-            label={<span className="font-semibold">Service Required</span>}
-            rules={[
-              {
-                required: true,
-                message: "Please select a service required",
-              },
-            ]}
-          >
-            <Select placeholder="Select Service Required">
-              <Select.Option value="Business Website">
-                Business Website
-              </Select.Option>
-              <Select.Option value="E-Commerce Website">
-                E-Commerce Website
-              </Select.Option>
-              <Select.Option value="Educational Website">
-                Educational Website
-              </Select.Option>
-              <Select.Option value="Static Website">
-                Static Website
-              </Select.Option>
-              <Select.Option value="Dynamic Website">
-                Dynamic Website
-              </Select.Option>
-
-              <Select.Option value="Other">Other</Select.Option>
-            </Select>
           </Form.Item>
 
           <Form.Item

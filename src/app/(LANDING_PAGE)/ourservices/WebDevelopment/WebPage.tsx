@@ -13,14 +13,14 @@ import PopUp from "../PopUp";
 
 const WebPage = () => {
 
+  const [enquiryModal, setEnquiryModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [showModal1, setShowModal1] = useState(false);
   const [hasModalBeenShown, setHasModalBeenShown] = useState(false);
 
   useEffect(() => {
     if (!hasModalBeenShown) {
       const timer = setTimeout(() => {
-        setShowModal1(!showModal1);
+        setShowModal(!showModal);
         setHasModalBeenShown(true);
       }, 5000);
 
@@ -28,22 +28,22 @@ const WebPage = () => {
         clearTimeout(timer);
       };
     }
-  }, [hasModalBeenShown, setShowModal1]);
+  }, [hasModalBeenShown, setShowModal]);
 
 
   return (
     <main className="overflow-x-hidden">
       {/* h-screen scrollbar-thin overflow-y-scroll */}
-      <HeroSection showModal={showModal} setShowModal={setShowModal} />
+      <HeroSection enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       <Services />
       <InfiniteMovingCardsDemo />
-      <PricingSection showModal={showModal} setShowModal={setShowModal} />
+      <PricingSection enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       <WhychooseUs />
-      <Banner showModal={showModal} setShowModal={setShowModal} />
+      <Banner enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       <ContactUs />
-      <WebDevPopModal showModal={showModal} setShowModal={setShowModal} />
-      <StaticCTA message="Get a Free Consultation" cta="Request a Callback" setShowModal={setShowModal} />
-      <PopUp setShowModal1={setShowModal1} showModal1={showModal1} />
+      <WebDevPopModal enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
+      <StaticCTA message="Get a Free Consultation" cta="Request a Callback" setEnquiryModal={setEnquiryModal} />
+      <PopUp setShowModal={setShowModal} showModal={showModal} />
     </main>
   )
 }
