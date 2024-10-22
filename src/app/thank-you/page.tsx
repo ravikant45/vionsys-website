@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 import { Button } from "@/components/ui/button";
 import {
@@ -36,12 +37,11 @@ const ThankYouPage = () => {
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-center text-gray-700">
-            We appreciate your interest in Vionsys IT Solutions. Our team will
-            review your submission and get back to you shortly.
+            We appreciate your interest- we'll get back to you shortly.
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button 
+          <Button
             className="bg-orange flex gap-2 text-md hover:bg-blue2 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
             onClick={handleButtonClick}
           >

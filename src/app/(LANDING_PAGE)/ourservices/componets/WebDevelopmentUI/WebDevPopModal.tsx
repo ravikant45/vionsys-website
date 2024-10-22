@@ -9,13 +9,13 @@ import { useRouter } from "next/navigation";
 import { WebDevPopModalTemplate } from "@/utils/WebDevPopModalTemplate";
 
 interface WebDevPopModalProps {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 }
 
 export default function WebDevPopModal({
-  showModal,
-  setShowModal,
+  enquiryModal,
+  setEnquiryModal,
 }: WebDevPopModalProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
@@ -41,7 +41,7 @@ export default function WebDevPopModal({
 
   
 
-  if (!showModal) return null;
+  if (!enquiryModal) return null;
 
   const handleSubmit = async (values: any) => {
     setLoading(true);
@@ -67,14 +67,14 @@ export default function WebDevPopModal({
   };
 
   const handleCancel = () => {
-    setShowModal(false);
+    setEnquiryModal(false);
   };
 
   return (
     <>
       <div className="max-w-3xl mx-auto rounded-lg shadow-md">
         <Modal
-          open={showModal}
+          open={enquiryModal}
           footer={null}
           onCancel={handleCancel}
           destroyOnClose={true}

@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import HeroContactForm from "../HeroContactForm";
 
 type HeroProps = {
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
+  enquiryModal: boolean;
+  setEnquiryModal: (show: boolean) => void;
 };
 
-const Hero: React.FC<HeroProps> = ({ showModal, setShowModal}) => {
+const Hero: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal}) => {
   const Staffingheading = "Get the Right IT Talent for Your Projects!";
   return (
     <>
@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal}) => {
                 <span
                   className="inline-flex  h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-md font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined"
                   onClick={() => {
-                    setShowModal(!showModal);
+                    setEnquiryModal(!enquiryModal);
                   }}
                 >
                   Get in Touch with Our Experts Today

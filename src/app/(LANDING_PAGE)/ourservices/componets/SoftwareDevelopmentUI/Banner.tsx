@@ -1,9 +1,13 @@
 import React from "react";
 import banner from "../../images/SoftwareDevelopment/banner.jpg";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
-const Banner = () => {
+interface PopUpProps {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+}
+
+const Banner: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 1.5 }}
@@ -29,14 +33,18 @@ const Banner = () => {
           Share your vision with us, and let’s work together toward achieving
           your goals.
         </p>
-        <Link href="#" className=" px-6">
+        <div className="px-6">
+
+
+
           <button
+            onClick={() => setShowModal(true)}
             className=" block w-full relative p-1 text-white animate-bounce px-4 rounded-md bg-blue2  isolation-auto z-10
         before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-blue2 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 font-semibold"
           >
             Start Your Project
           </button>
-        </Link>
+        </div>
       </div>
     </motion.div>
   );
