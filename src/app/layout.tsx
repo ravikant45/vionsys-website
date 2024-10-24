@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script"; // Import next/script for custom scripts
 
 export const metadata: Metadata = {
   title: "Vionsys IT Solutions India Pvt. Ltd.",
@@ -28,6 +29,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-MQT388RN" />
+      <head>
+        {/* Google tag (gtag.js) event */}
+        <Script id="gtag-event" strategy="afterInteractive">
+          {`
+            gtag('event', 'conversion_event_signup', {
+              // <event_parameters>
+            });
+          `}
+        </Script>
+      </head>
       <body className={GeistSans.className}>
         <Toaster position="bottom-center" />
         {children}
