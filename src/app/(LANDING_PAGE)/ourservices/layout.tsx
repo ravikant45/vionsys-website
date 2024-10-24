@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Footer from "@/app/ui/footer/Footer";
 import ClientNavbar from "./componets/Navbar/ClientNavbar";
-
+import Script from "next/script";
 export const metadata: Metadata = {
   title: "Landing Page - Vionsys IT Solutions India Pvt. Ltd.",
   openGraph: {
@@ -24,12 +24,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className={GeistSans.className}>
+    <html lang="eng">
       <GoogleTagManager gtmId="GTM-MQT388RN" />
-      <Toaster position="bottom-center" />
-      <ClientNavbar />
-      {children}
-      <Footer />
-    </main>
+      <head>
+        <Script id="gtag-event" strategy="afterInteractive">
+          {`
+            gtag('event', 'conversion_event_signup', {
+              // <event_parameters>
+            });
+          `}
+        </Script>
+        <main className={GeistSans.className}>
+          <Toaster position="bottom-center" />
+          <ClientNavbar />
+          {children}
+          <Footer />
+        </main>
+      </head>
+    </html>
   );
 }
