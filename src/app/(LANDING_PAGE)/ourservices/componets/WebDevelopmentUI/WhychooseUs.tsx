@@ -1,7 +1,5 @@
 // Content.tsx
 import React from "react";
-
-// Import the required icons from react-icons
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { FaCode } from "react-icons/fa6";
 import { MdTouchApp, MdVerified, MdSupportAgent } from "react-icons/md";
