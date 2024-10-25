@@ -5,20 +5,18 @@ import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleTagManager } from "@next/third-parties/google";
-import Script from "next/script"; // Import next/script for custom scripts
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Vionsys IT Solutions India Pvt. Ltd.",
-
   openGraph: {
     images: "/src/app/opengraph-image.png",
   },
   twitter: {
     images: "/src/app/opengraph-image.png",
   },
-
   description:
-    "Welcome to Vionsys IT Solutions. We specialize in delivering advanced IT services to drive your business forward. Our offerings include custom software development, robust cybersecurity measures and efficient cloud solutions. At Vionsys, we are committed to crafting innovative software tailored to your unique requirements ensuring your business thrives.",
+    "Welcome to Vionsys IT Solutions. We specialize in delivering advanced IT services to drive your business forward. Our offerings include custom software development, robust cybersecurity measures, and efficient cloud solutions. At Vionsys, we are committed to crafting innovative software tailored to your unique requirements, ensuring your business thrives.",
 };
 
 export default function RootLayout({
@@ -28,14 +26,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="GTM-MQT388RN" />
       <head>
-        {/* Google tag (gtag.js) event */}
+        {/* Google Tag Manager */}
+        <GoogleTagManager gtmId="GTM-MQT388RN" />
+
+        {/* Google Analytics gtag.js */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-WK7D7TXFNR`}
+          strategy="afterInteractive"
+        />
+
+        {/* Initialize gtag */}
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WK7D7TXFNR');
+          `}
+        </Script>
+
+        {/* Trigger custom Google Analytics event */}
         <Script id="gtag-event" strategy="afterInteractive">
           {`
-            gtag('event', 'conversion_event_signup', {
-              // <event_parameters>
-            });
+            if (typeof gtag === 'function') {
+              gtag('event', 'conversion_event_signup', {
+                // <event_parameters>
+              });
+            }
           `}
         </Script>
       </head>
