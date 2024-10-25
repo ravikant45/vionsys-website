@@ -67,7 +67,7 @@ const Navbar = ({ showModal, setShowModal }: PopUpProps) => {
   }, []);
 
   return (
-    <nav
+    <div
       className={`fixed px-4 z-50 w-full bg-white transition-all duration-300 ${visible ? "top-0 shadow-md shadow-gray-200" : "-top-full"
         }`}
     >
@@ -138,7 +138,7 @@ const Navbar = ({ showModal, setShowModal }: PopUpProps) => {
           </button>
         </div>
       )}
-    </nav>
+    </div>
   );
 };
 
