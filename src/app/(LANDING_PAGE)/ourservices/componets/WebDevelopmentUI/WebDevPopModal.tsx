@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Modal, Form, Input, Select, Button } from "antd";
 import axios from "axios";
 import toast from "react-hot-toast";
