@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import { motion } from "framer-motion";
 import { RxDoubleArrowRight } from "react-icons/rx";
 
 const plans = [
@@ -81,67 +80,24 @@ export default function Pricing({ enquiryModal, setEnquiryModal }: HeroProps) {
   return (
     <div className="relative w-full md:h-auto">
       <div>
-        <motion.h2
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{
-            delay: 0.2,
-            x: { type: "spring", stiffness: 20 },
-            opacity: { duration: 0.4 },
-          }}
-          className="text-MainHeading font-bold text-center mt-12"
-        >
+        <h2 className="text-MainHeading font-bold text-center mt-12">
           Plans & Pricing
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{
-            delay: 0.2,
-            x: { type: "spring", stiffness: 30 },
-            opacity: { duration: 0.4 },
-          }}
-          className="max-w-3xl mx-auto mt-4 text-paragraph text-center"
-        >
+        </h2>
+        <p className="max-w-3xl mx-auto mt-4 text-paragraph text-center">
           Check out our exciting range of plans and pricing - from simple to all-inclusive, we have options to match your needs and budget perfectly.
-        </motion.p>
+        </p>
       </div>
       <div className="mt-24 container space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
         {plans.map((plan, index) => (
-          <motion.div
+          <div
             key={index}
-            className={`relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col transition-transform transform-gpu ${plan.mostPopular ? "lg:scale-105 lg:shadow-lg" : ""}`}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{
-              delay: 0.2,
-              scale: { type: "spring", stiffness: 30, damping: 20 },
-              opacity: { duration: 0.6 },
-            }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 8px 30px rgba(0, 0, 0, 0.1)",
-              transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-              },
-            }}
+            className={`relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105 ${plan.mostPopular ? "lg:shadow-lg" : ""}`}
           >
-            {/* "Most Popular" Tag in Top Left Corner with Zoom Animation */}
+            {/* "Most Popular" Tag in Top Left Corner */}
             {plan.mostPopular && (
-              <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  duration: 1.5,
-                }}
-                className="absolute top-8 right-4 rounded-full shadow-md shadow-slate-300 px-3 py-1 text-xs border border-red-500 font-extrabold text-red-500"
-              >
+              <div className="absolute top-8 right-4 rounded-full shadow-md shadow-slate-300 px-3 py-1 text-xs border border-red-500 font-extrabold text-red-500">
                 Most Popular
-              </motion.div>
+              </div>
             )}
 
             <div className="flex-1">
@@ -179,20 +135,14 @@ export default function Pricing({ enquiryModal, setEnquiryModal }: HeroProps) {
               </ul>
             </div>
 
-            {/* Glowing Effect and Button Animation */}
-            <motion.button
+            {/* Button */}
+            <button
               onClick={() => setEnquiryModal(!enquiryModal)}
               className={`${plan.buttonStyle} mt-8 flex justify-center items-center gap-2 w-full py-3 px-6 border border-transparent rounded-md text-center font-medium`}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.3)",
-                transition: { type: "spring", stiffness: 300, damping: 20 },
-              }}
-              whileTap={{ scale: 0.95 }}
             >
               {plan.buttonText} <RxDoubleArrowRight />
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
         ))}
       </div>
     </div>
