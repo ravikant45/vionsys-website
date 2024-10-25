@@ -78,7 +78,7 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
         </video>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-blue2 opacity-40"></div>
 
         {/* Content */}
         <div className="relative z-10 container pt-16 mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
@@ -141,7 +141,7 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
           </div>
 
           {/* Right Side: Contact Form */}
-          <div className="md:py-6">
+          <div className="md:py-8">
             <Form
               form={form}
               layout="vertical"
