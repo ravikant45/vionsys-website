@@ -226,10 +226,12 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
                 rules={[{ required: true, message: "Please select your service!" }]}
               >
                 <Select placeholder="Select Service">
-                  <Select.Option value="Web Development">Web Development</Select.Option>
-                  <Select.Option value="Digital Marketing">Digital Marketing</Select.Option>
-                  <Select.Option value="App Development">App Development</Select.Option>
-                  <Select.Option value="SEO">SEO</Select.Option>
+                  <Select.Option value="Business Website">Business Website</Select.Option>
+                  <Select.Option value="E-Commerce Website">E-Commerce Website</Select.Option>
+                  <Select.Option value="Educational Website">Educational Website</Select.Option>
+                  <Select.Option value="Static Website">Static Website</Select.Option>
+                  <Select.Option value="Dynamic Website">Dynamic Website</Select.Option>
+                  <Select.Option value="Other">Other</Select.Option>
                 </Select>
               </Form.Item>
 
