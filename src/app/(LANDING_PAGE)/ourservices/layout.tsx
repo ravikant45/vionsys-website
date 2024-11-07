@@ -43,13 +43,12 @@ export default function RootLayout({
             gtag('config', 'G-WK7D7TXFNR');
           `}
         </Script>
-        <Script id="gtag-event" strategy="afterInteractive">
+        {/* Google tag (gtag.js) event */}
+        <Script id="gtag-conversion-event" strategy="afterInteractive">
           {`
-            if (typeof gtag === 'function') {
-              gtag('event', 'conversion_event_signup', {
-                // <event_parameters>
-              });
-            }
+            gtag('event', 'conversion_event_signup', {
+              // <event_parameters> can be specified here if needed
+            });
           `}
         </Script>
       </head>
