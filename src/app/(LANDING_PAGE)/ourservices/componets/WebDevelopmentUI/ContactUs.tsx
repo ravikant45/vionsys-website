@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 type Inputs = {
   name: string;
   countryCode: string;
-  phone: string;
+  number: string;
   email: string;
   message: string;
 };
@@ -214,7 +214,7 @@ export default function ContactUs() {
                 </Form.Item>
 
                 <Form.Item
-                  name="phone"
+                  name="number"
                   label={<span className="font-semibold">Phone Number</span>}
                   rules={[
                     {

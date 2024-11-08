@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { countryCodes } from "@/utils/CountryCodes";
+import { country, countryCodes } from "@/utils/CountryCodes";
 import toast from "react-hot-toast";
 import { Button, Form, Input, Modal, Select } from "antd";
 import axios from "axios";
 import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 type Inputs = {
   name: string;
-  phone: {
-    countryCode: string;
-    number: string;
-  };
+
+  countryCode: string;
+  number: string;
+
   email: string;
   message: string;
 };
@@ -22,16 +23,31 @@ const HeroContactForm: React.FC<{
 }> = ({ heading }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
-  const [countryCode, setCountryCode] = useState<string>("");
+  const [countryCode, setCountryCode] = useState<string>("+1");
   const router = useRouter();
+
+  const handleCountryChange = (value: string) => {
+    setCountryCode(value);
+  };
+
+  const filterOption = (
+    input: string,
+    option?: { value: string; children: React.ReactNode }
+  ) => {
+    const childrenAsString = option?.children?.toString().toLowerCase() || "";
+    return (
+      (childrenAsString.includes(input.toLowerCase()) ||
+        option?.value.toLowerCase().includes(input.toLowerCase())) ??
+      false
+    );
+  };
 
   const handleSubmit = async (values: any) => {
     const formattedData = {
       ...values,
       countryCode,
     };
-
-    console.log(formattedData);
+    console.log(formattedData.countryCode)
     const template = StaffingLandingPageTemplate(formattedData);
     const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
     const updatedData = {
@@ -121,43 +137,41 @@ const HeroContactForm: React.FC<{
             />
           </Form.Item>
 
-          <Form.Item
-            name="number"
-            label={
-              <span className="block text-sm font-medium text-black">
-                Phone Number
-              </span>
-            }
-            rules={[
-              { required: true, message: "Please enter your phone number!" },
-              {
-                pattern: /^\d{10}$/,
-                message: "Phone number must be numeric and 10 digits long.",
-              },
-            ]}
-          >
-            <div className="flex gap-2">
-              <select
-                className="border border-gray-300 rounded text-gray-900 mt-1 px-1 py-[10.5px] focus:outline-none"
-                value={countryCode} // Bind value to state
-                onChange={(e) => setCountryCode(e.target.value)} // Update state on change
+          <div className="flex gap-x-2 h-16">
+            <Form.Item
+              name="countryCode"
+              label={<span className="font-semibold">Country</span>}
+              rules={[{ required: true, message: "Please select your country!" }]}
+              initialValue="+1"
+              className="w-36"
+            >
+              <Select
+                showSearch
+                placeholder="Country"
+                optionFilterProp="children"
+                onChange={handleCountryChange}
+                filterOption={filterOption}
               >
-                <option value="" defaultValue={+91} disabled>
-                  Select Country
-                </option>
-                {countryCodes.map((country, index) => (
-                  <option key={index} value={country.code}>
-                    {country.code} {country.name}
-                  </option>
+                {country.map((c, index) => (
+                  <Select.Option key={index} value={c.code}>
+                    <div className="flex items-center">
+                      <Image src={c.image} width={20} height={20} alt={`Flag of ${c.code}`} />
+                      <span className="ml-2">{c.code}</span>
+                    </div>
+                  </Select.Option>
                 ))}
-              </select>
-              <Input
-                placeholder="Enter Phone Number"
-                className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
-                disabled={loading}
-              />
-            </div>
-          </Form.Item>
+              </Select>
+            </Form.Item>
+
+            <Form.Item
+              name="number"
+              label={<span className="font-semibold">Phone Number</span>}
+              rules={[{ required: true, message: "Please enter your phone number!" }]}
+              className="w-full"
+            >
+              <Input placeholder="Enter Phone Number" />
+            </Form.Item>
+          </div>
 
           <Form.Item
             name="message"
