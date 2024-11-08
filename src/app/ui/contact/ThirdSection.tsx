@@ -77,7 +77,7 @@ const ThirdSection = () => {
       );
 
       setIsPending(false);
-      form.reset(); // Reset the form after successful submission
+      form.reset();
       router.push("/thank-you");
     } catch (error) {
       const err = error as AxiosError;
