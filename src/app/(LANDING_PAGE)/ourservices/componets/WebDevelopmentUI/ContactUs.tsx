@@ -221,10 +221,14 @@ export default function ContactUs() {
                       required: true,
                       message: "Please enter your phone number!",
                     },
+                    {
+                      pattern: /^\d{8,15}$/,
+                      message: "Please enter valid phone number",
+                    },
                   ]}
                   className="w-full"
                 >
-                  <Input placeholder="Enter Phone Number" />
+                  <Input placeholder="Enter Phone Number" maxLength={15} minLength={8}/>
                 </Form.Item>
               </div>
 
