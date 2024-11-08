@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 type Inputs = {
   name: string;
   countryCode: string;
-  phone: string;
+  number: string;
   email: string;
   message: string;
 };
@@ -214,17 +214,21 @@ export default function ContactUs() {
                 </Form.Item>
 
                 <Form.Item
-                  name="phone"
+                  name="number"
                   label={<span className="font-semibold">Phone Number</span>}
                   rules={[
                     {
                       required: true,
                       message: "Please enter your phone number!",
                     },
+                    {
+                      pattern: /^\d{8,15}$/,
+                      message: "Please enter valid phone number",
+                    },
                   ]}
                   className="w-full"
                 >
-                  <Input placeholder="Enter Phone Number" />
+                  <Input placeholder="Enter Phone Number" maxLength={15} minLength={8}/>
                 </Form.Item>
               </div>
 

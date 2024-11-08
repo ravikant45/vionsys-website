@@ -51,6 +51,16 @@ export default function RootLayout({
             });
           `}
         </Script>
+
+         {/* New Google tag (gtag.js) event for conversion_event_signup_4 */}
+         <Script id="gtag-conversion-event-signup-4" strategy="afterInteractive">
+          {`
+            gtag('event', 'conversion_event_signup_4', {
+              // <event_parameters> can be specified here if needed
+            });
+          `}
+        </Script>
+        
       </head>
       <body className={GeistSans.className}>
         <Toaster position="bottom-center" />

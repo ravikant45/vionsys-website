@@ -16,7 +16,7 @@ interface PopModalProps {
 
 export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalProps) {
   const [userType, setUserType] = useState("employer");
-  const [hasModalBeenShown, setHasModalBeenShown] = useState(false); // Track if modal has been shown
+  const [hasModalBeenShown, setHasModalBeenShown] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [attachments, setAttachments] = useState<
     { filename: string; content: string }[] | undefined
@@ -250,6 +250,10 @@ export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalPro
                         required: true,
                         message: "Please enter your mobile number!",
                       },
+                      {
+                        pattern: /^\d{8,15}$/,
+                        message: "Please enter valid phone number",
+                      },
                     ]}
                   >
                     <Input
@@ -257,6 +261,8 @@ export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalPro
                       placeholder="Enter Mobile Number"
                       id="phone"
                       name="phone"
+                      maxLength={15}
+                      minLength={8}
                       className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
                     />
                   </Form.Item>
@@ -313,6 +319,10 @@ export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalPro
                       required: true,
                       message: "Please enter your phone number!",
                     },
+                    {
+                      pattern: /^\d{8,15}$/,
+                      message: "Please enter valid phone number",
+                    },
                   ]}
                 >
                   <div className="flex gap-2">
@@ -348,6 +358,8 @@ export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalPro
                       placeholder="Enter Phone Number"
                       id="phoneNo"
                       name="phoneNo"
+                      maxLength={15}
+                      minLength={8}
                       className="bg-white rounded border focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 outline-none text-gray-900 leading-6 transition-colors duration-200 ease-in-out"
                     />
                   </div>
