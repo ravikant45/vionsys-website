@@ -6,6 +6,7 @@ import Navbar from "../ui/navbar/Navbar";
 import Footer from "../ui/footer/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Providers from "@/utils/Providers";
+import ChatBot from "@/services/ChatBot";
 
 export const metadata: Metadata = {
   title: "Vionsys IT Solutions India Pvt. Ltd.",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         <Toaster position="bottom-center" />
         {children}
+        <ChatBot />
         <Footer />
       </Providers>
     </main>
