@@ -74,7 +74,7 @@ const Hero = () => {
             <Image
               src={"/assets/Industries/Pharma/pharmaHero.jpg"}
               className=" md:rounded-tl-[108px]"
-              alt="Image not found"
+              alt="Pharma Hero Image"
               height={400}
               width={700}
             />

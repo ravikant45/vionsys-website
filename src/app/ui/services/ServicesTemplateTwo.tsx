@@ -121,7 +121,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               <Image
                 src={exp}
                 className="rounded-2xl"
-                alt="support_image"
+                alt="expertise_image"
                 width={400}
                 height={400}
               />
@@ -135,7 +135,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               <Image
                 src={inno}
                 className="rounded-2xl"
-                alt="support_image"
+                alt="Innovation_image"
                 width={400}
                 height={400}
               />
@@ -186,7 +186,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
           </div>
         </section>
       </section>
-      <ClientsServices/>
+      <ClientsServices />
       {/* CTA */}
       <section className="bg-gray-100">
         <ScheduleMeetAndContactCTA />

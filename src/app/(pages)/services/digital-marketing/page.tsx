@@ -12,9 +12,9 @@ const ServicesTemplateFour = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services",
+  title: "Digital Marketing Solutions and Services Provider in Kharadi",
   description:
-    "Increase your online presence and drive growth with Vionsys IT Solutions India Pvt Ltd's comprehensive digital marketing services. Our skilled team offers customized techniques such as SEO, social media marketing, pay-per-click advertising, and content marketing to enhance traffic and conversions. Partner with Vionsys to enhance your brand and create measurable outcomes with our focused, data-driven digital marketing solutions.",
+    "Digital marketing services are one of the core services of Vionsys IT Solutions India Pvt. Ltd. Partner with us to turn your data into a significant asset.",
   alternates: {
     canonical: `${BaseUrl}/services/digital-marketing`,
   },

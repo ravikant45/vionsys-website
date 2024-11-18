@@ -34,9 +34,9 @@ const ScheduleMeetAndContactCTA = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Web Development Service",
+  title: "Pune's Best Web Development Services - Vionsys IT Solutions",
   description:
-    "Increase your internet visibility with Vionsys IT Solutions India Pvt Ltd's comprehensive web development services. Our skilled team specializes in designing responsive, user-friendly websites that are performance-optimized and built to increase interaction. From custom web apps to e-commerce solutions, we offer comprehensive services to meet your company's requirements. Choose Vionsys for unique web development that increases your digital footprint and success.",
+    "Vionsys IT Solutions India Pvt Ltd provides the best website design & development services in India & globally, it will help to convert your ideas into reality.",
   alternates: {
     canonical: `${BaseUrl}/services/web-development`,
   },
@@ -54,7 +54,7 @@ const Page = () => {
     <main className="pt-16 overflow-x-hidden">
       <Firstsec />
       <Ourservices />
-      <ClientsServices/>
+      <ClientsServices />
       <FaqSec />
       {/* CTA */}
       <section className="bg-gray-100">

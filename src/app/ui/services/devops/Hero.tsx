@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import devops from "/public/assets/services/devops.jpg";
@@ -17,7 +17,7 @@ const Hero = () => {
                   delay: 0.2,
                   y: { type: "spring", stiffness: 30 },
                   opacity: { duration: 0.6 },
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
                 className="lg:leading-tighter text-MainHeading font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]"
               >
@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
           </div>
           <Image
-            alt="Hero"
+            alt="DevOps Hero Image"
             className="mx-auto aspect-[3/1] md:h-[60vh] h-[30vh] overflow-hidden rounded-t-xl object-cover"
             height="300"
             src={devops}

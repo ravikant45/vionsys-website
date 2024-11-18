@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import ITStaffing from "/public/assets/services/ITStaffing/ITStaffing.jpg";
@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="bg-black">
           <Image
             src={ITStaffing}
-            alt=""
+            alt="IT Staffing Image"
             className="md:w-[100vw] md:h-[100vh] h-[50vh] sm:[50vh] opacity-55"
             quality={100}
           />

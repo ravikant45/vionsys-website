@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="relative w-full h-full flex justify-start items-center">
           <Image
             src={SoftwareTestingImage}
-            alt=""
+            alt="Software Testing Image"
             className="w-full h-full z-0"
           />
           <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-start w-full px-4">

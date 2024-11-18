@@ -2,14 +2,14 @@
 import React from "react";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import Image from "next/image";
-import seo from "../../images/DigitalMarketing/seo.jpg"
-import ppc from "../../images/DigitalMarketing/ppc.jpg"
-import social from "../../images/DigitalMarketing/social.jpg"
-import conversion from "../../images/DigitalMarketing/conversion.jpg"
-import orm from "../../images/DigitalMarketing/orm.jpg"
-import affiliate from "../../images/DigitalMarketing/afffiliate.jpg"
-import video from "../../images/DigitalMarketing/video.jpg"
-import {motion} from "framer-motion"
+import seo from "../../images/DigitalMarketing/seo.jpg";
+import ppc from "../../images/DigitalMarketing/ppc.jpg";
+import social from "../../images/DigitalMarketing/social.jpg";
+import conversion from "../../images/DigitalMarketing/conversion.jpg";
+import orm from "../../images/DigitalMarketing/orm.jpg";
+import affiliate from "../../images/DigitalMarketing/afffiliate.jpg";
+import video from "../../images/DigitalMarketing/video.jpg";
+import { motion } from "framer-motion";
 
 const content = [
   {
@@ -23,7 +23,7 @@ const content = [
           width={500}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Search Engine Optimization (SEO)"
         />
       </div>
     ),
@@ -39,7 +39,7 @@ const content = [
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Pay-Per-Click Advertising (PPC)"
         />
       </div>
     ),
@@ -55,7 +55,7 @@ const content = [
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Social Media Marketing"
         />
       </div>
     ),
@@ -71,7 +71,7 @@ const content = [
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Conversion Rate Optimization (CRO)"
         />
       </div>
     ),
@@ -87,7 +87,7 @@ const content = [
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Online Reputation Management (ORM)"
         />
       </div>
     ),
@@ -103,7 +103,7 @@ const content = [
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Affiliate Marketing"
         />
       </div>
     ),
@@ -119,7 +119,7 @@ const content = [
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt="Video Marketing"
         />
       </div>
     ),
@@ -128,17 +128,20 @@ const content = [
 
 export default function OurServices() {
   return (
-    <div  className="p-10">
-      <motion.h1 
-      initial={{ opacity: 0, scale: 1.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{
-        delay: 0.2,
-        scale: { type: "spring", stiffness: 30 },
-        opacity: { duration: 0.6 },
-        ease: "easeInOut"
-      }}
-      className="text-MainHeading py-4 font-bold flex flex-col items-center">Our Services</motion.h1>
+    <div className="p-10">
+      <motion.h1
+        initial={{ opacity: 0, scale: 1.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: 0.2,
+          scale: { type: "spring", stiffness: 30 },
+          opacity: { duration: 0.6 },
+          ease: "easeInOut",
+        }}
+        className="text-MainHeading py-4 font-bold flex flex-col items-center"
+      >
+        Our Services
+      </motion.h1>
       <StickyScroll content={content} />
     </div>
   );

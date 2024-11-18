@@ -9,7 +9,7 @@ const Firstsection = () => {
       <div className="bg-black relative">
         <Image
           src={CRMF}
-          alt=""
+          alt="CRM Image"
           className="md:w-[100vw] md:h-[100vh] h-[60vh] sm:[50vh] opacity-45"
           quality={100}
         />

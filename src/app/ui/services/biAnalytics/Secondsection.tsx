@@ -24,7 +24,7 @@ const Secondsection = () => {
             >
               <Image
                 src={BiAndAnalyticsData.secondSectionImage}
-                alt=""
+                alt="Advance BI and Analytics Image"
                 className="w-full rounded-3xl"
               />
             </motion.div>
@@ -75,7 +75,7 @@ const Secondsection = () => {
                   width="300"
                   height="200"
                   src={card.image}
-                  alt=""
+                  alt={`${card.title} Image`}
                   className="p-4 h-full w-96 md:w-72 rounded-3xl bg-grid-yellow-500"
                 />
                 <div className="md:p-4 p-2 md:w-64 w-auto">
@@ -113,8 +113,8 @@ const Secondsection = () => {
           </div>
         </div>
       </section>
-       {/* Clients Section */}
-       <ClientsServices/>
+      {/* Clients Section */}
+      <ClientsServices />
       {/* Fourth section */}
       <section>
         <div className=" bg-gray-100 py-4 w-full relative flex items-center justify-center overflow-x-hidden">

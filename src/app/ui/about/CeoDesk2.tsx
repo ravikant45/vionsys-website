@@ -69,7 +69,7 @@ const CeoDesk2 = () => {
                   <div className="mb-4 text-black flex flex-col items-start md:pr-10">
                     <Image
                       src={colon}
-                      alt=""
+                      alt="Colon Image"
                       height={100}
                       width={100}
                       className="py-4 rounded-sm"

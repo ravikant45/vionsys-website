@@ -9,7 +9,6 @@ interface PopUpHeroProps {
 }
 
 const Hero: React.FC<PopUpHeroProps> = ({ showModal, setShowModal }) => {
-
   const Cloudheading = "Book Your Free Consultation";
 
   return (
@@ -17,7 +16,7 @@ const Hero: React.FC<PopUpHeroProps> = ({ showModal, setShowModal }) => {
       <div className="relative">
         <Image
           src={CloudHero}
-          alt=""
+          alt="Cloud Hero Image"
           className="object-cover w-full h-screen"
         />
       </div>

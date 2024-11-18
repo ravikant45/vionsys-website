@@ -40,7 +40,7 @@ const Services = () => {
               >
                 <Image
                   src={service.imageSrc}
-                  alt="Illustration"
+                  alt={`${service.title} Image`}
                   className="rounded-lg"
                   width={450}
                   height={300}

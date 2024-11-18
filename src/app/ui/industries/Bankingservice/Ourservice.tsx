@@ -2,6 +2,7 @@
 import React from "react";
 import { services } from "@/utils/bankingservice";
 import { motion } from "framer-motion";
+
 const Ourservice: React.FC = () => {
   return (
     <div className="min-h-screen p-4">

@@ -228,7 +228,11 @@ export default function ContactUs() {
                   ]}
                   className="w-full"
                 >
-                  <Input placeholder="Enter Phone Number" maxLength={15} minLength={8}/>
+                  <Input
+                    placeholder="Enter Phone Number"
+                    maxLength={15}
+                    minLength={8}
+                  />
                 </Form.Item>
               </div>
 
@@ -340,7 +344,7 @@ export default function ContactUs() {
             >
               <Image
                 src={Facebook}
-                alt=""
+                alt="Facebook logo"
                 quality={100}
                 width={40}
                 height={40}
@@ -352,7 +356,7 @@ export default function ContactUs() {
             >
               <Image
                 src={Instagram}
-                alt=""
+                alt="Instagram logo"
                 quality={100}
                 width={40}
                 height={40}
@@ -364,7 +368,7 @@ export default function ContactUs() {
             >
               <Image
                 src={LinkedIn}
-                alt=""
+                alt="LinkedIn logo"
                 quality={100}
                 width={40}
                 height={40}
@@ -376,7 +380,7 @@ export default function ContactUs() {
             >
               <Image
                 src={Twitter}
-                alt=""
+                alt="Twitter logo"
                 quality={100}
                 width={40}
                 height={40}
