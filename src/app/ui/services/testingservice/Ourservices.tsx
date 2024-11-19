@@ -142,7 +142,7 @@ const Ourservices = () => {
         <div className="bg-black relative">
           <Image
             src={Quality}
-            alt=""
+            alt="Testing Quality Rating"
             className="md:w-[100vw] md:h-[100vh] h-[60vh] sm:[50vh] opacity-75"
             quality={100}
           />

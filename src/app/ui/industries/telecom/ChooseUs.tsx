@@ -42,7 +42,7 @@ const ChooseUs = () => {
                 height={1000}
                 width={1000}
                 src={service.imageSrc}
-                alt="Image not Found"
+                alt={`${service.subheading} Image`}
               />
             </div>
 

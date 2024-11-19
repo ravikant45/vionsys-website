@@ -12,7 +12,7 @@ const ecomHeroSection = () => {
           <div className="md:h-[100vh] h-[80vh] flex justify-center items-center relative overflow-hidden bg-[#000]">
             <Image
               src={ecommerceImageHero}
-              alt="heroimg"
+              alt="Ecommerce Image"
               className="object-cover w-full h-full opacity-35"
               quality={100}
             />
@@ -26,14 +26,10 @@ const ecomHeroSection = () => {
               }}
               className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 md:px-16 lg:px-32 xl:px-48"
             >
-              <h1
-                className="text-orange font-extrabold text-MainHeading md:text-5xl text-3xl mb-4 capitalize"
-              >
+              <h1 className="text-orange font-extrabold text-MainHeading md:text-5xl text-3xl mb-4 capitalize">
                 E-commerce Sector
               </h1>
-              <p
-                className="lg:text-xl text-Paragraph text-white max-w-3xl"
-              >
+              <p className="lg:text-xl text-Paragraph text-white max-w-3xl">
                 The e-commerce industry is constantly expanding and changing,
                 driven by technological advancements and changing consumer
                 preferences. Vionsys IT Solutions India Pvt Ltd provides

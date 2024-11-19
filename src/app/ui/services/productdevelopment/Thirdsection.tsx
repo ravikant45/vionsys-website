@@ -141,7 +141,7 @@ const Thirdsection = () => {
               </div>
             </div>
             <Image
-              alt="Why Choose Us"
+              alt="Product Development - Why Choose Us"
               className="mx-auto aspect-video lg:h-[60vh] overflow-hidden shadow-lg shadow-slate-500 bg-cover object-cover object-center sm:w-full lg:order-last"
               height="1000"
               src={"/assets/services/ProductDevelopment/ChooseUs.jpg"}

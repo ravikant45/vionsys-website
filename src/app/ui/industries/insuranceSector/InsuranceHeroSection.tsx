@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import InsuranceHero from "../../../../../public/assets/Industries/insuranceSector/InsuranceHero.jpg";
@@ -11,7 +11,7 @@ const InsuranceHeroSection = () => {
           <div className="md:h-[100vh] h-[80vh] flex justify-center items-center relative overflow-hidden bg-[#000]">
             <Image
               src={InsuranceHero}
-              alt="heroimg"
+              alt="Insurance Hero Img"
               className="object-cover w-full h-full opacity-60"
               quality={100}
             />

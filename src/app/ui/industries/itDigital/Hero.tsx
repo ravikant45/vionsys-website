@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import React from "react";
@@ -9,7 +9,7 @@ const Hero = () => {
     <>
       <div className="relative h-full md:h-[100vh] w-full overflow-hidden bg-black">
         <Image
-          alt="Hero Image"
+          alt="IT Digital Image"
           className="md:h-full h-[40vh] w-full object-fit opacity-35"
           height={1080}
           src={"/assets/Industries/ITDigital/ITHero.jpg"}

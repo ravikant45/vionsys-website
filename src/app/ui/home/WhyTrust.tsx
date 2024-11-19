@@ -60,7 +60,7 @@ const WhyTrust: React.FC = () => {
         <Image
           className="xl:max-w-6xl"
           src={Magic}
-          alt="Decorative Background"
+          alt="Trust Us Collabration Image"
         />
         <div className="content bg-white p-2 pt-8 md:p-6 pb-12 lg:max-w-xl w-full lg:absolute top-10 right-5">
           <div>

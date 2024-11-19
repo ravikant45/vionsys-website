@@ -118,7 +118,7 @@ const Footer = () => {
                 >
                   <Image
                     src={Facebook}
-                    alt=""
+                    alt="Facebook logo"
                     quality={100}
                     width={40}
                     height={40}
@@ -130,7 +130,7 @@ const Footer = () => {
                 >
                   <Image
                     src={Instagram}
-                    alt=""
+                    alt="Instagram logo"
                     quality={100}
                     width={40}
                     height={40}
@@ -142,7 +142,7 @@ const Footer = () => {
                 >
                   <Image
                     src={LinkedIn}
-                    alt=""
+                    alt="LinkedIn logo"
                     quality={100}
                     width={40}
                     height={40}
@@ -154,7 +154,7 @@ const Footer = () => {
                 >
                   <Image
                     src={Twitter}
-                    alt=""
+                    alt="Twitter logo"
                     quality={100}
                     width={40}
                     height={40}

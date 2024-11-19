@@ -25,9 +25,9 @@ const EcomContactUs = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "E-Commerce Tech Innovations",
+  title: "Kharadi's Best IT Services - Ecommerce Development Services",
   description:
-    "We offer sophisticated services tailored to the eCommerce sector, including seamless website development, mobile app integration and advanced cloud solutions. Our expertise in data analytics and business intelligence helps you gain valuable insights into customer behavior, while our security solutions protect against fraud and cyber threats. Increase in-store productivity, streamline operations, and provide exceptional shopping experiences. Partner with us to drive growth, improve conversion rates, and stay ahead of the competitive eCommerce landscape with innovative technology solutions.",
+    "Vionsys IT Solution offers professionalized tailored ecommerce services to small and medium size companies. Designed tools are used to increase sales engagement.",
   alternates: {
     canonical: `${BaseUrl}/industries/ecommerce`,
   },

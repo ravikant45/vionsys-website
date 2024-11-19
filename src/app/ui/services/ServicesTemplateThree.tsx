@@ -42,7 +42,11 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
         <div className="w-full">
           <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6">
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 md:p-6">
-              <Image src={data.secondSectionImage} alt="" className="w-full" />
+              <Image
+                src={data.secondSectionImage}
+                alt={data.mainTitle}
+                className="w-full"
+              />
             </div>
             <div className="w-full lg:w-1/2 p-2">
               <motion.h2
@@ -122,7 +126,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
                     width="300"
                     height="200"
                     src={card.image}
-                    alt=""
+                    alt={card.title}
                     className="w-full h-full"
                   />
                 </div>
@@ -133,7 +137,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
       </section>
 
       {/* Client */}
-      <ClientsServices/>
+      <ClientsServices />
       {/* Fourth section */}
       <section>
         <div className="py-4 w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
@@ -233,8 +237,6 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
           </div>
         </div>
       </section>
-
-
 
       <ScheduleMeetAndContactCTA />
     </>

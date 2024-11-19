@@ -35,7 +35,7 @@ function ThreeDCard() {
                 height="500"
                 width="1000"
                 className="h-32 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                alt="thumbnail"
+                alt="Vision"
               />
             </CardItem>
             <div className="flex justify-between items-center">
@@ -80,7 +80,7 @@ function ThreeDCard() {
                 height="500"
                 width="1000"
                 className="h-32 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                alt="thumbnail"
+                alt="Mission"
               />
             </CardItem>
             <div className="flex justify-between items-center">
@@ -127,7 +127,7 @@ function ThreeDCard() {
                 height="500"
                 width="1000"
                 className="h-32 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                alt="thumbnail"
+                alt="Company Value"
               />
             </CardItem>
             <div className="flex justify-between items-center ">
