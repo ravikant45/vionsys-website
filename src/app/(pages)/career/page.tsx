@@ -13,9 +13,9 @@ const JobsCard = dynamic(() => import("../../ui/Careers/JobsCard"), {
 });
 
 export const metadata: Metadata = {
-  title: "Career",
+  title: "Career - Kharadi's Best IT Development Services Company",
   description:
-    "Join Vionsys IT Solutions Pvt Ltd and advance your career in a dynamic technology environment. Explore new chances, improve your skills, and participate to creative IT projects. Apply now to join a forward-thinking, growth-oriented team.",
+    "Learn & Discover the best Career opportunities with Vionsys IT Solution India Pvt. Lt. Send an application now to join & find the best fit for your career goals.",
   alternates: {
     canonical: `${BaseUrl}/career`,
   },

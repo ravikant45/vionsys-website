@@ -16,9 +16,9 @@ const Cta = dynamic(() => import("@/app/ui/industries/field/Cta"), {
 });
 
 export const metadata: Metadata = {
-  title: "Advanced IT for Education",
+  title: "Best IT Solution Industry in Pune - Education Industry",
   description:
-    "We offer innovative IT services tailored to the education industry, including advanced learning management systems (LMS), e-learning solutions, and student information systems (SIS). Our technology improves classroom interaction, enhances productivity, and supports online research. With robust data management and cybersecurity, we ensure a safe and efficient learning environment. Partner with Vionsys to keep your teaching tools up-to-date, increase student success, and better manage your institution. Find out how our solutions can transform the educational experience and put your organization at the forefront of digital learning.",
+    "Vionsys IT Solutions India Pvt. ltd offers an overview of the educational sector in India. Become a part of Vionsys to keep your testing tools up to date.",
   alternates: {
     canonical: `${BaseUrl}/industries/education`,
   },

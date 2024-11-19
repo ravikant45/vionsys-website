@@ -22,9 +22,9 @@ const Countries = dynamic(() => import("../../ui/about/Countries"), {
 });
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | IT Development Solutions and Services Kharadi",
   description:
-    "Vionsys, a pioneering IT solutions provider, specializes in software development, cloud services, and cybersecurity. We provide innovative, scalable solutions designed to accelerate corporate growth and efficiency while providing sturdy, secure, and cutting-edge technology for a competitive advantage.",
+    "Vionsys IT Solutions provides specialization in website design, cybersecurity, IT Staffing, software development, digital marketing, CRM & cloud services.",
   alternates: {
     canonical: `${BaseUrl}/about`,
   },

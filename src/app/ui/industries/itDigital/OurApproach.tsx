@@ -75,7 +75,7 @@ const OurApproach = () => {
                 <Image
                   src={section.imageSrc}
                   className="rounded-2xl"
-                  alt="support_image"
+                  alt={section.title}
                   width={500}
                   height={500}
                 />

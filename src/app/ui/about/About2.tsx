@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 const About2 = () => {
   return (
     <div className="flex flex-col flex-wrap overflow-x-hidden">
@@ -45,15 +46,16 @@ const About2 = () => {
       <div className="w-screen h-[40] flex justify-center items-center border-t-8 border-b-8  border-text[#e57e2c]-500 rounded-3xl">
         <div className="w-screen flex md:flex-row flex-col justify-center items-center px-5 gap-2">
           <motion.h1
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{
-            delay: 0.2,
-            x: { type: "spring", stiffness: 20 },
-            opacity: { duration: 0.4 },
-            ease: "easeInOut",
-          }}
-            className="pt-6 text-paragraph">
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", stiffness: 20 },
+              opacity: { duration: 0.4 },
+              ease: "easeInOut",
+            }}
+            className="pt-6 text-paragraph"
+          >
             At our core, we've been driven by a clear objective: supporting
             entrepreneurs in bringing meaningful software solutions to life. Our
             dedication lies in creating and launching products that serve and
@@ -68,7 +70,7 @@ const About2 = () => {
           <Image
             className="py-2"
             src="/Corevalue.jpg"
-            alt="Image not Found"
+            alt="Collabration Importance Image"
             height={500}
             width={500}
           />

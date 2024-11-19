@@ -42,7 +42,7 @@ function Importance() {
           <div className="md:w-2/5 full">
             <Image
               src={ECR1}
-              alt=""
+              alt="Enhanced Customer Relationship Image"
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
@@ -74,7 +74,7 @@ function Importance() {
           <div className="md:w-2/5 full">
             <Image
               src={ECS2}
-              alt=""
+              alt="Enhanced Customer Service Image"
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
@@ -107,7 +107,7 @@ function Importance() {
           <div className="md:w-2/5 full">
             <Image
               src={ISP3}
-              alt=""
+              alt="Improved Sales Performance Image"
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
@@ -139,7 +139,7 @@ function Importance() {
           <div className="md:w-2/5 full">
             <Image
               src={DDDM4}
-              alt=""
+              alt="Data-Driven Decision Making Image"
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>
@@ -172,7 +172,7 @@ function Importance() {
           <div className="md:w-2/5 full">
             <Image
               src={SAG5}
-              alt=""
+              alt="Scalability and Growth Image"
               className="shadow-md rounded-lg bg-slate-50"
             />
           </div>

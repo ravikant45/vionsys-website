@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           <div className="embla__slide w-full h-full relative">
             <Image
               src={sdHero1}
-              alt="carousel image 1"
+              alt="Software development carousel image 1"
               className="absolute w-full h-full object-cover"
               quality={100}
             />
@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           <div className="embla__slide w-full h-full relative">
             <Image
               src={sdHero2}
-              alt="carousel image 2"
+              alt="Software development carousel image 2"
               className="absolute w-full h-full object-cover"
               quality={100}
             />
@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           <div className="embla__slide w-full h-full relative">
             <Image
               src={sdHero3}
-              alt="carousel image 3"
+              alt="Software development carousel image 3"
               className="absolute w-full h-full object-cover"
               quality={100}
             />

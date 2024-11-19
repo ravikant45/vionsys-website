@@ -27,9 +27,9 @@ const ScheduleMeetAndContactCTA = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Salesforce Services",
+  title: "Salesforce Services in Kharadi - Vionsys IT Solutions India",
   description:
-    "Maximize your company's potential with Vionsys IT Solutions India Pvt Ltd's complete Salesforce services. Our certified Salesforce experts provide specialized solutions, including implementation, modification, and integration, to help you optimize your business processes and improve customer connections. Whether you want to improve your sales, service, or marketing, Vionsys can alter your Salesforce platform to deliver exceptional outcomes.",
+    "Salesforce service is the core service of Vionsys IT Solution India Pvt. Ltd. Experts provide customized solutions that help implement, modify, and integrate.",
   alternates: {
     canonical: `${BaseUrl}/services/salesforce`,
   },
@@ -45,7 +45,7 @@ const Salesforce: React.FC = () => {
     <div className="pt-10 overflow-x-hidden">
       <Hero />
       <Future />
-      <ClientsServices/>
+      <ClientsServices />
       <Cloud />
       <Provide />
       <ScheduleMeetAndContactCTA />

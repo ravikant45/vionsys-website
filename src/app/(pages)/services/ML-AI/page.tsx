@@ -9,9 +9,9 @@ const AlMLCards = dynamic(() => import("@/app/ui/services/AlMLCards"), {
 });
 
 export const metadata: Metadata = {
-  title: "ML and AI Services",
+  title: "Kharadi's No. 1 company that provides best ML & AI Services",
   description:
-    "Vionsys IT Solutions India Pvt Ltd offers cutting-edge Machine Learning and AI services that can transform your organization. Our team of professionals provides unique solutions that use AI to automate operations, improve decision-making, and drive growth. From predictive analytics to custom AI models, we offer tailored services to fit your specific requirements. Today, use our powerful ML and AI solutions to propel your organization forward.",
+    "Vionsys IT Solutions India Pvt Ltd provides Machine Learning and AI services that can transform your company. Our solutions will grow your business forward.",
   alternates: {
     canonical: `${BaseUrl}/services/ML-AI`,
   },

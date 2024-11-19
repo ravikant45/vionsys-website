@@ -32,9 +32,10 @@ const ScheduleMeetAndContactCTA = dynamic(
   }
 );
 
-
 export const metadata: Metadata = {
-  title: "Customer Relationship Management Services",
+  title: "Customer Relationship Management Services - Best IT Company",
+  description:
+    "You will get the best CRM Services at Vionsys IT Solutions India Pvt Ltd. Elevate Your CRM Experience with CRM services that help in growing your business.",
   alternates: {
     canonical: `${BaseUrl}/services/crm`,
   },
@@ -47,7 +48,7 @@ const Page: React.FC = () => {
       <Empower />
       <Img />
       <Importance />
-      <ClientsServices/>
+      <ClientsServices />
       <CRMFaq />
       {/* Contact us and schedule a meet section */}
       <ScheduleMeetAndContactCTA />

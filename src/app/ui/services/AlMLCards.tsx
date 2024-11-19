@@ -75,7 +75,7 @@ const AlMLCards: React.FC = () => {
             <Image
               className="object-cover w-full lg:h-[40rem] rounded-md"
               src={ALML3}
-              alt="glasses photo"
+              alt="AI & ML photo"
               width={1000}
               height={1000}
             />
@@ -174,7 +174,7 @@ const AlMLCards: React.FC = () => {
           <Image
             className="object-cover w-full h-[40rem] sm:h-[26rem]"
             src={background}
-            alt="background image"
+            alt="AI & ML background image"
             height={1000}
             width={1000}
           />
@@ -244,7 +244,7 @@ const AlMLCards: React.FC = () => {
       </section>
 
       {/* Clients */}
-      <ClientsServices/>
+      <ClientsServices />
       {/* FAQ */}
       <MLAIFaq />
 

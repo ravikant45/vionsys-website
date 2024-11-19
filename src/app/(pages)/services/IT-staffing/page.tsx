@@ -27,9 +27,9 @@ const ScheduleMeetAndContactCTA = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "IT Staffing",
+  title: "Best IT Staffing Services and Solution for IT Companies",
   description:
-    "Enhance your team with Vionsys IT Solutions India Pvt Ltd's extensive IT staffing services. We offer bespoke solutions to match your specific requirements, whether you are seeking for temporary, contract-to-hire, or permanent IT workers. Our wide network and skills ensure that you hire the best people to propel your organization forward. Partner with Vionsys for dependable and effective IT staffing that boosts your workforce skills.",
+    "We are the leading IT Staffing Company in Pune. Our broad network and skilled professional experts ensure that you hire the best candidate in your Organization.",
   alternates: {
     canonical: `${BaseUrl}/services/IT-staffing`,
   },
@@ -45,11 +45,11 @@ const Page: React.FC = () => {
     <div className="pt-16">
       <Hero />
       <Services />
-      <ClientsServices/>
+      <ClientsServices />
       <Choose />
       {/* CTA */}
       <section className="bg-gray-100">
-      <ScheduleMeetAndContactCTA />
+        <ScheduleMeetAndContactCTA />
       </section>
     </div>
   );

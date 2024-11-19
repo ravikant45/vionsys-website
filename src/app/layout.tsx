@@ -8,7 +8,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Vionsys IT Solutions India Pvt. Ltd.",
+  title: "Kharadi's Best Software Company - Vionsys IT Solutions India",
   openGraph: {
     images: "/src/app/opengraph-image.png",
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     images: "/src/app/opengraph-image.png",
   },
   description:
-    "Welcome to Vionsys IT Solutions. We specialize in delivering advanced IT services to drive your business forward. Our offerings include custom software development, robust cybersecurity measures, and efficient cloud solutions. At Vionsys, we are committed to crafting innovative software tailored to your unique requirements, ensuring your business thrives.",
+    "Welcome to Vionsys IT Solutions. We are into specialized IT services that will help your business grow faster. At Vionsys we provide crafting innovations.",
 };
 
 export default function RootLayout({
@@ -54,8 +54,8 @@ export default function RootLayout({
             });
           `}
         </Script>
-         {/* New Google tag (gtag.js) event for conversion_event_signup_4 */}
-         <Script id="gtag-conversion-event-signup-4" strategy="afterInteractive">
+        {/* New Google tag (gtag.js) event for conversion_event_signup_4 */}
+        <Script id="gtag-conversion-event-signup-4" strategy="afterInteractive">
           {`
             gtag('event', 'conversion_event_signup_4', {
               // <event_parameters> can be specified here if needed

@@ -16,9 +16,9 @@ const CTA = dynamic(() => import("@/app/ui/industries/telecom/CTA"), {
 });
 
 export const metadata: Metadata = {
-  title: "Telecommunications IT Services",
+  title: "Custom Telecommunication IT Services | Vionsys IT Solutions",
   description:
-    "Our core services for the telecommunications sector include advanced network management, 5G services, and IoT integration to enhance connectivity and productivity. We offer innovative solutions such as AI-enabled customer insights, cybersecurity enhancements, and cloud-based services to keep improving rapidly in the field. With our customized platforms, your business can deliver a seamless communication experience, reduce operating costs, and ensure strong security. Count on Vionsys to transform the global communications landscape, enabling you to meet today’s demands and exceed customer expectations in a competitive digital communications environment.",
+    "As high end telecom software development industry we at Vionsys IT Solution PVT. ltd. offer innovative and productive solutions to help improve your services.",
   alternates: {
     canonical: `${BaseUrl}/industries/telecom`,
   },

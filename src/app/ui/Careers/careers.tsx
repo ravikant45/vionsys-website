@@ -11,7 +11,7 @@ const CareerComponent = () => {
           className="w-full h-full object-cover bg-no-repeat opacity-45"
           src={CareerImage}
           quality={70}
-          alt=""
+          alt="Career Image"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10 pt-10">
           <motion.h1

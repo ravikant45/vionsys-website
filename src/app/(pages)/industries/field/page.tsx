@@ -16,9 +16,9 @@ const Cta = dynamic(() => import("@/app/ui/industries/field/Cta"), {
 });
 
 export const metadata: Metadata = {
-  title: "Field Services IT Advancements",
+  title: "Kharadi's Best IT Services - Field Services IT Advancements",
   description:
-    "Our core IT solutions for field services include advanced software applications, mobile solutions, and IoT integration. We increase operational efficiency, simplify delivery and scheduling, and provide real-time data access for field technicians. Our cloud-based platforms and training support also reinforce ease of use and customer satisfaction. With Vionsys, you can better manage content, reduce response times, and compete in a dynamic field service environment. Find out how our technology solutions can transform your farm operations and drive success through innovation and efficiency.",
+    "We are leading in the services of the field in Industry. Vionsys IT Solutions India Pvt Ltd can manage better content & reduce response time on vibrant field.",
   alternates: {
     canonical: `${BaseUrl}/industries/field`,
   },

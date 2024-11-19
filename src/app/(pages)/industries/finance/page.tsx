@@ -19,9 +19,9 @@ const SecondSec = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Advanced IT for Finance Sector",
+  title: "Advanced IT for Finance Sector | Vionsys IT Solutions India",
   description:
-    "Our tailored IT services for the financial industry include advanced data analytics, secure cloud computing, and AI-driven risk management. Increase productivity, compliance, and customer satisfaction with innovative solutions designed to meet your specific needs. Whether you want to modernize an estate plan or implement robust security measures, our experts are here to help you stay ahead in the competitive financial environment. Explore easy integration and development opportunities with us.",
+    "Vionsys IT Solution India Pvt Ltd offers top-notch services in India for the financial sector. Partner with us to keep your company ahead of the competition.",
   alternates: {
     canonical: `${BaseUrl}/industries/finance`,
   },

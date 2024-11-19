@@ -25,9 +25,9 @@ const Cta = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Innovative IT for Professional Services",
+  title: "Innovative IT for Professional Services in Kharadi Pune",
   description:
-    "Our customized IT solutions empower your organization to improve efficiency and innovation. We specialize in cloud computing, AI-driven analytics, cybersecurity, and process automation, offering tailored approaches to meet your specific needs. Increase productivity, streamline operations and grow with our team of experts. Whether you need to upgrade existing systems or implement new technologies, Vionsys provides the knowledge and support to succeed. Partner with us to transform your professional services firm to compete in a rapidly evolving business environment.",
+    "Vionsys IT Solutions India Pvt Ltd provides professional services that help you grow your business by transforming services to compete in evolving business.",
   alternates: {
     canonical: `${BaseUrl}/industries/professional`,
   },

@@ -11,7 +11,7 @@ function Cloud() {
       <div className="bg-black relative bg-contain border-t-8 border-blue-500 rounded-3xl ">
         <Image
           src={cloudback}
-          alt=""
+          alt="Salesforce Cloud"
           className="lg:h-[70vh] h-auto lg:w-screen w-auto opacity-45 overflow-x-hidden"
         />
         <div className="absolute inset-0 flex justify-center items-center flex-col text-white ">

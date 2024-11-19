@@ -19,9 +19,9 @@ const SecondSection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Tech-Driven Construction Solutions",
+  title: "Best Tech-Driven Construction Solutions in Pune, Kharadi",
   description:
-    "Our tailored services for the construction industry include advanced project management tools, real-time data analytics and cloud-based solutions. We increase operational efficiency, streamline business processes and improve overall collaboration. Our technology solutions support complex construction design, infrastructure and safety management on site. With Vionsys, you can improve productivity, reduce costs, and stay on top of industry trends. Partnering with us to integrate innovative IT solutions drives growth and increases efficiency in your construction business, allowing you to win in a competitive market.",
+    "Vionsys IT Solutions provides the best services in the construction industry. With us, you can improve productivity & reduce cost & stay with the top trends.",
   alternates: {
     canonical: `${BaseUrl}/industries/construction`,
   },
