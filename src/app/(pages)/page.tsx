@@ -29,6 +29,9 @@ const WeProvide = dynamic(() => import("./../ui/home/WeProvide"), {
 const WorkWithUs = dynamic(() => import("./../ui/home/WorkWithUs"), {
   loading: () => <DynamicLoader />,
 });
+const Statistics = dynamic(() => import("./../ui/home/Statistics"),{
+  loading: () => <DynamicLoader />,
+});
 
 export default function Home() {
   return (
@@ -40,6 +43,7 @@ export default function Home() {
       <Industries />
       <WhyTrust />
       <InfiniteMovingCardsDemo />
+      <Statistics />
       <WorkWithUs />
     </div>
   );
