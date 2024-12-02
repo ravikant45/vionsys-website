@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import exp from "/public/assets/services/exp.jpg";
 import inno from "/public/assets/services/inno.jpg";
 import supp from "/public/assets/services/supp.jpg";
@@ -179,7 +179,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               <Image
                 src={exp}
                 className="rounded-2xl"
-                alt="support_image"
+                alt="expertise_image"
                 width={400}
                 height={400}
               />
@@ -193,7 +193,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               <Image
                 src={inno}
                 className="rounded-2xl"
-                alt="support_image"
+                alt="innovation_image"
                 width={400}
                 height={400}
               />

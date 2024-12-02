@@ -19,9 +19,9 @@ const CTA = dynamic(() => import("@/app/ui/industries/itDigital/CTA"), {
 });
 
 export const metadata: Metadata = {
-  title: "Elevate IT with Digital Transformation",
+  title: "IT Digital Transformation Services - Vionsys IT Solutions",
   description:
-    "Our IT Digital Transformation services leverage cutting-edge technologies like AI, IoT, and cloud solutions to enhance efficiency and drive growth. We tailor strategies to your needs, modernizing operations and improving customer experience. Partner and compete with us to open up new opportunities in a digital-first world. Embrace innovation with Vionsys IT Solutions and lead your business into the future through seamless technology integration.",
+    "Explore IT Digital services with Vionsys IT Solutions India Pvt Ltd. We modernize operations and enhance customers' experience by customizing strategies.",
   alternates: {
     canonical: `${BaseUrl}/industries/itDigital`,
   },

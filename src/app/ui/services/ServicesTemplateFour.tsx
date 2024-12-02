@@ -17,7 +17,7 @@ const ServicesTemplateFour: React.FC = () => {
         <div className="w-full h-full relative bg-black">
           <Image
             src={DigitalMarketingImage}
-            alt=""
+            alt="Digital Marketing Services"
             className="w-full h-full opacity-30  z-0"
           />
           <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-center w-full md:px-4 px-2">
@@ -129,7 +129,7 @@ const ServicesTemplateFour: React.FC = () => {
             <div className="md:w-[50%] w-full md:px-8">
               <Image
                 src={SearchEngineOptimization}
-                alt=""
+                alt="Search Engine Optimization"
                 className="w-full h-full border rounded-2xl"
               />
             </div>
@@ -140,7 +140,7 @@ const ServicesTemplateFour: React.FC = () => {
             <div className="md:w-[50%]  w-full md:px-8 md:order-1 order-2">
               <Image
                 src={ContentMarketing}
-                alt=""
+                alt="Content Marketing"
                 className="w-full h-full border rounded-2xl"
               />
             </div>
@@ -241,7 +241,7 @@ const ServicesTemplateFour: React.FC = () => {
             <div className="md:w-[50%] w-full md:px-8">
               <Image
                 src={SocialMediaMarketing}
-                alt=""
+                alt="Social Media Marketing"
                 className="w-full h-full border rounded-2xl"
               />
             </div>
@@ -252,7 +252,7 @@ const ServicesTemplateFour: React.FC = () => {
             <div className="md:w-[50%]  w-full md:px-8 md:order-1 order-2">
               <Image
                 src={EmailMarketing}
-                alt=""
+                alt="Email Marketing"
                 className="w-full h-full border rounded-2xl opacity-90"
               />
             </div>
@@ -518,8 +518,8 @@ const ServicesTemplateFour: React.FC = () => {
           </motion.div>
         </div>
       </div>
-      
-      <ClientsServices/>
+
+      <ClientsServices />
       {/* FAQ section for digital marketing */}
       <section
         id="faq"

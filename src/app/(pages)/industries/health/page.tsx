@@ -16,9 +16,9 @@ const SecondSection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Healthcare Digital Tech",
+  title: "Best IT Solution Industry in Kharadi - Healthcare Industry",
   description:
-    "We provide advanced IT services tailored to the healthcare industry, including electronic health record (EHR) systems, telemedicine solutions, and data management. Our solutions enhance patient care, streamline workflows, and ensure that they are compliant with regulations. We protect sensitive information and improve accessibility through robust cybersecurity measures and cloud-based platforms. Partner with Vionsys to implement state-of-the-art technologies that support superior clinical outcomes, operational efficiencies, and a seamless healthcare experience. Transform your healthcare strategy and stay on the cutting edge with our innovative IT solutions designed for today’s medical environments.",
+    "In India healthcare has become one of the largest service sectors. Vionsys IT Solutions provides customized advanced IT services to the healthcare industry.",
   alternates: {
     canonical: `${BaseUrl}/industries/health`,
   },

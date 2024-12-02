@@ -16,9 +16,9 @@ const Countries = dynamic(() => import("../../ui/about/Countries"), {
 });
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact us to get Best IT Software Development Services",
   description:
-    "Vionsys IT Solutions Pvt Ltd offers creative technology solutions. Our team is available to help with IT services, support, and inquiries. Contact us today to talk about your company needs and how we can help you achieve.",
+    "Vionsys IT Solutions India Pvt Ltd is here to help you with your inquiries. Contact us today to talk about company needs and how we can help you achieve.",
   alternates: {
     canonical: `${BaseUrl}/contact`,
   },

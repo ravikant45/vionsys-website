@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
-      
+
 import ClientsServices from "@/utils/ClientsServices";
 import DynamicLoader from "@/components/ui/DynamicLoader";
 
@@ -34,11 +34,10 @@ const ScheduleMeetAndContactCTA = dynamic(
   }
 );
 
-
 export const metadata: Metadata = {
-  title: "Testing Services",
+  title: "Testing & QA Software Services - Vionsys IT Solutions India",
   description:
-    "Vionsys IT Solutions India Pvt Ltd provides complete Testing and Quality Assurance (QA) services to ensure the reliability and performance of your software. Our skilled team provides comprehensive testing solutions, ranging from functional and performance testing to security and usability tests. Partner with us for comprehensive testing that finds and addresses issues early on, ensuring the success of your product. Choose Vionsys for reliable quality.",
+    "To ensure the reliability and performance of your software, Vionsys IT Solutions India Pvt Ltd provides complete Testing and Quality Assurance (QA) Services.",
   alternates: {
     canonical: `${BaseUrl}/services/testing`,
   },
@@ -57,7 +56,7 @@ const Page: React.FC = () => {
       <Ourservices />
       <Implementation />
       {/* Schedule a meet and contact us */}
-      <ClientsServices/>
+      <ClientsServices />
       <ScheduleMeetAndContactCTA />
     </main>
   );

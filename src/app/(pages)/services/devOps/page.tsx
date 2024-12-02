@@ -30,9 +30,9 @@ const ScheduleMeetAndContactCTA = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "DevOps Services",
+  title: "Pune's Best IT Solution Services - DevOps Software Services",
   description:
-    "Vionsys IT Solutions India Pvt Ltd's complete DevOps solutions will help you streamline your development and operational processes. Our services, which include continuous integration, automated deployment, and cloud administration, are designed to improve collaboration, speed, and efficiency. With our skilled DevOps solutions, you can transform your software development lifecycle and reduce time-to-market significantly. Trust Vionsys to streamline your operations for smooth and consistent delivery.",
+    "Vionsys IT Solutions India Pvt Ltd will guide you in developing and providing operational services. We can help transform your business. You can rely on us.",
   alternates: {
     canonical: `${BaseUrl}/services/devOps`,
   },
@@ -50,7 +50,7 @@ const Page: React.FC = () => {
         <Hero />
         <Keyfeatures />
         <Workflow />
-        <ClientsServices/>
+        <ClientsServices />
         <Faq />
         <section className="bg-gray-100">
           <ScheduleMeetAndContactCTA />

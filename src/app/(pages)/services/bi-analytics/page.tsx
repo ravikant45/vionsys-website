@@ -25,9 +25,9 @@ const ScheduleMeetAndContactCTA = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Business Intelligence & Analytics Service",
+  title: "Best Business Intelligence & Analytical Services in Kharadi",
   description:
-    "Vionsys IT Solutions India Pvt Ltd's Business Intelligence and Analytics services will help you realize the full potential of data. We offer comprehensive solutions to help businesses make data-driven decisions, streamline processes, and improve business performance. Our skilled team uses cutting-edge technology to provide actionable insights that promote growth. Discover how our BI and Analytics services can help your business today. ",
+    "The primary goal for Business Intelligence is to implement and program with our experts for market forecasting, trend analysis, and operations optimization.",
   alternates: {
     canonical: `${BaseUrl}/services/bi-analytics`,
   },

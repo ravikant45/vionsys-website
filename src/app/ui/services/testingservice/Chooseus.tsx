@@ -62,7 +62,7 @@ const Chooseus = () => {
             <div className="md:px-8">
               <Image
                 src={QualityAssuranceImage}
-                alt=""
+                alt="Quality Assurance Image"
                 className="w-full rounded-md"
               />
             </div>

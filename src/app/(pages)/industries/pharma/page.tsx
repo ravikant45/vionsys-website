@@ -16,9 +16,9 @@ const CTA = dynamic(() => import("@/app/ui/industries/pharma/CTA"), {
 });
 
 export const metadata: Metadata = {
-  title: "Pharma Industry Tech Experts",
+  title: "Pharma Industry Tech Experts - Best IT Sector in Kharadi",
   description:
-    "Open innovation in the pharma industry with Vionsys IT Solutions. Our core services empower pharmaceutical companies through cutting-edge technology solutions such as AI-driven drug discovery, cloud-based data, and advanced analytics. We streamline R&D processes, ensure compliance with industry regulations, and improve supply chain efficiency. By leveraging our expertise, you can increase productivity, improve patient outcomes, and compete in a rapidly evolving market. Count on Vionsys to deliver digital solutions tailored to seamlessly integrate the unique challenges of the pharmaceutical industry, helping you deliver breakthrough medicines with reliability and accuracy.",
+    "Vionsys IT Solutions provides the best pharmaceutical technology solutions that help optimize business processes and effectively respond to market demands.",
   alternates: {
     canonical: `${BaseUrl}/industries/pharma`,
   },

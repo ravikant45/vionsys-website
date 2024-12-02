@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="flex justify-center items-center w-screen h-screen  px-1">
         <Image
           src={salesbg2}
-          alt=""
+          alt="Salesforce Image"
           className="object-cover bg-cover w-full absolute h-screen"
         />
 

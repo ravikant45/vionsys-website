@@ -31,9 +31,9 @@ const InsuranceContactUs = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Insurance IT Enhancements",
+  title: "Insurance IT Enhancements - Vionsys IT Solutions India",
   description:
-    "Our comprehensive offerings for the insurance industry include AI-enabled risk analysis, fraud detection, and data analytics. We provide customized solutions that simplify system administration, improve customer communication, and ensure compliance. With our advanced cloud computing and cybersecurity strategies, you can protect sensitive information while being productive. Partner with Vionsys to drive innovation, reduce costs, and deliver exceptional customer experiences. Count on our expertise to transform your insurance business, helping you compete in a rapidly growing industry and better meet the needs of today’s insurers.",
+    "Our comprehensive offerings for the insurance industry include AI-enabled risk analysis, fraud detection & data analytics. where we help you compete in business.",
   alternates: {
     canonical: `${BaseUrl}/industries/insurance`,
   },

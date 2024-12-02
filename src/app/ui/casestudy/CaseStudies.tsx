@@ -59,7 +59,7 @@ const CaseStudies = () => {
                   width={300}
                   height={300}
                   src={study.image}
-                  alt="Card img"
+                  alt={`${study.title}Image`}
                   className="object-cover object-center w-full h-52"
                 />
                 <div className="flex flex-grow">

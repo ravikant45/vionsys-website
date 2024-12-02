@@ -35,9 +35,9 @@ const ScheduleMeetAndContactCTA = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Product Development Services",
+  title: "Vionsys IT Company - Product Development Services in Pune",
   description:
-    "Vionsys IT Solutions India Pvt Ltd offers comprehensive product development services to help you bring your creative ideas to life. Our skilled team offers complete solutions from concept to launch, including market research, design, development, and testing. Whether you require software, mobile apps, or corporate solutions, we guarantee a smooth development process that produces excellent outcomes. Partner with Vionsys to make your vision a reality.",
+    "Vionsys IT Solutions India Pvt Ltd is a professional software development company that offers product development services to help bring unique ideas to life.",
   alternates: {
     canonical: `${BaseUrl}/services/product-development`,
   },
@@ -54,7 +54,7 @@ const Page: React.FC = () => {
       <Hero />
       <Secondsection />
       <Thirdsection />
-      <ClientsServices/>
+      <ClientsServices />
       <Faq />
       {/* CTA */}
       <section className="bg-gray-100">
