@@ -44,11 +44,8 @@ export default function Home() {
       <Industries />
       <WhyTrust />
       <InfiniteMovingCardsDemo />
-<<<<<<< HEAD
-      <PortfolioSection />
-=======
       <Statistics />
->>>>>>> c9f04841d123853739b14d2d19a4162434dc16a6
+      <PortfolioSection />
       <WorkWithUs />
     </div>
   );
