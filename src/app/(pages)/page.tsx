@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dynamic from "next/dynamic";
 import DynamicLoader from "@/components/ui/DynamicLoader";
+import PortfolioSection from "../ui/home/Portfolio";
 
 // Dynamically import CaseStudies component
 const AboutOurCompany = dynamic(() => import("./../ui/home/AboutOurCompany"), {
@@ -40,6 +41,7 @@ export default function Home() {
       <Industries />
       <WhyTrust />
       <InfiniteMovingCardsDemo />
+      <PortfolioSection />
       <WorkWithUs />
     </div>
   );
