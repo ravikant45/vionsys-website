@@ -8,7 +8,7 @@ type HeroSalesforceProps = {
 
 const Hero: React.FC<HeroSalesforceProps> = ({ showModal, setShowModal }) => {
 
-  const salesforceHeading = "Contact Us Toady!"
+  const salesforceHeading = "Contact Us Today !"
 
   return (
     <div className="">

@@ -155,7 +155,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             >
               <div>
                 <h1 className="text-center text-blue1 text-xl font-bold pt-1">
-                Contact Us Toady !
+                Contact Us Today !
                 </h1>
                 <p className="text-sm text-orange text-center pb-2">
                   Our team will be in touch with you shortly.
