@@ -11,7 +11,7 @@ const VEmployeeModel = () => {
     { heading: "Flexible Pricing", description: "Top-Notch Services with up to 50% lower cost" },
     { heading: "Access to Top-Tier Talent", description: "Top 1% of developers while maintaining a low attrition rate" },
     { heading: "Scalable Resources", description: "Easily scale resources up or down based on your business needs" },
-    { heading: "Robust IP Protection", description: "Unwavering commitment to data security with zero IP breaches" },
+    { heading: "Robust IP Protection", description: "Unwavering commitment to data security with Zero IP breaches" },
     { heading: "Technological Excellence", description: "Leverage Agile Methodology for industry-leading technology practices" },
     { heading: "Strong Governance", description: "Complimentary supervisor, quality auditor, and service delivery manager for seamless project management" },
     { heading: "Effortless Communication", description: "Engage with experts across 20+ time zones, supported by top collaboration tools." },
