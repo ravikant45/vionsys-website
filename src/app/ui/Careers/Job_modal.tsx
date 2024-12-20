@@ -73,7 +73,7 @@ const Job_modal = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const template = CareerFormTemplate(values);
-    const sendTo = ["hr@vionsys.com"];
+    const sendTo = ["career@vionsys.com"];
 
     const updatedData = {
       ...values,

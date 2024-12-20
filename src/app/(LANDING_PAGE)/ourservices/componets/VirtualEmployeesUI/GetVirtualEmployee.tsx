@@ -28,7 +28,7 @@ const GetVirtualEmployee = () => {
     },
     {
       svgLink: "https://www.svgrepo.com/show/530445/data-analysis.svg",
-      heading: "Product Devlopement",
+      heading: "Product Development",
     },
     {
       svgLink: "https://www.svgrepo.com/show/530450/page-analysis.svg",
