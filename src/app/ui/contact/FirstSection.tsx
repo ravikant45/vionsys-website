@@ -1,8 +1,8 @@
 import React from "react";
-import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Image from "next/image";
-import first from "/public/assets/Contact/first.jpg";
-export function TypewriterEffectDemo() {}
+import first from "/public/assets/Contact/wtc6.jpg";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+
 const words = [
   {
     text: "Think",
@@ -21,18 +21,6 @@ const words = [
     className: "text-white",
   },
   {
-    text: "Redefining ",
-    className: "text-white ",
-  },
-  {
-    text: "IT",
-    className: "text-white",
-  },
-  {
-    text: "Solutions",
-    className: "text-white",
-  },
-  {
     text: ".",
     className: "text-white",
   },
@@ -48,20 +36,23 @@ const words = [
 
 const Conts = () => {
   return (
-    <>
-      <div className="pt-5">
-        <div className="md:w-[100vw] md:h-[100vh] h-[50vh] relative flex bg-black">
-          <Image
-            src={first}
-            alt="Contact Background Image"
-            className="w-full h-full  object-cover bg-no-repeat opacity-45"
-          />
-          <div className="absolute top-0  w-full text-2xl h-full flex items-center px-4">
-            <TypewriterEffect className="md:text-3xl text-2xl" words={words} />
-          </div>
+    <div className="pt-5">
+      <div className="md:w-[100vw] md:h-[100vh] h-[40vh] relative flex bg-black">
+        {/* Background Image */}
+        <Image
+          src={first}
+          alt="Contact Background Image"
+          quality={100}
+          className="w-full h-full object-fit object-bottom bg-no-repeat opacity-80"
+        />
+
+        {/* Hero Content */}
+        <div className="absolute top-0  w-full text-2xl h-full flex justify-center items-center px-4">
+          <TypewriterEffect className="md:text-3xl text-2xl" words={words} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
+
 export default Conts;
