@@ -50,6 +50,13 @@ const projects = [
       "/assets/Home/project7_2.png",
     ],
   },
+  {
+    images: [
+      "/assets/Home/project8.png",
+      "/assets/Home/project8_2.png",
+      "/assets/Home/project8_3.png",
+    ],
+  },
 ];
 
 export default function Portfolio() {

@@ -100,67 +100,6 @@ const Footer = () => {
                   </Link>
                 ))}
               </motion.div>
-              {/* social media icons */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 0.3,
-                  y: { type: "spring", stiffness: 30 },
-                  opacity: { duration: 0.6 },
-                  ease: "easeIn",
-                }}
-                className="flex gap-6 md:justify-center py-2"
-              >
-                <Link
-                  aria-label="facebook link"
-                  href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
-                >
-                  <Image
-                    src={Facebook}
-                    alt="Facebook logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-                <Link
-                  aria-label="instagram link"
-                  href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
-                >
-                  <Image
-                    src={Instagram}
-                    alt="Instagram logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-                <Link
-                  aria-label="linkedin link"
-                  href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
-                >
-                  <Image
-                    src={LinkedIn}
-                    alt="LinkedIn logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-                <Link
-                  aria-label="twitter link"
-                  href="https://twitter.com/vionsysit"
-                >
-                  <Image
-                    src={Twitter}
-                    alt="Twitter logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-              </motion.div>
             </div>
             {/* industries */}
             <div className=" md:text-left flex flex-col col-span-2 gap-2">
@@ -202,6 +141,77 @@ const Footer = () => {
               </motion.div>
             </div>
           </div>
+        </div>
+        <div className=" py-1">
+          {/* social media icons */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              y: { type: "spring", stiffness: 30 },
+              opacity: { duration: 0.6 },
+              ease: "easeIn",
+            }}
+            className="flex gap-6 md:justify-center py-2"
+          >
+            <Link
+              aria-label="facebook link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
+            >
+              <Image
+                src={Facebook}
+                alt="Facebook logo"
+                quality={100}
+                width={40}
+                height={40}
+              />
+            </Link>
+            <Link
+              aria-label="instagram link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
+            >
+              <Image
+                src={Instagram}
+                alt="Instagram logo"
+                quality={100}
+                width={40}
+                height={40}
+              />
+            </Link>
+            <Link
+              aria-label="linkedin link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
+            >
+              <Image
+                src={LinkedIn}
+                alt="LinkedIn logo"
+                quality={100}
+                width={40}
+                height={40}
+              />
+            </Link>
+            <Link
+              aria-label="twitter link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/vionsysit"
+            >
+              <Image
+                src={Twitter}
+                alt="Twitter logo"
+                quality={100}
+                width={40}
+                height={40}
+              />
+            </Link>
+          </motion.div>
         </div>
       </div>
       <hr />
