@@ -21,14 +21,6 @@ const CEODesk: CEODesk[] = [
     Message:
       "Navigating the evolving tech landscape, Vionsys IT Solutions leverages IT to address global needs. Our goal is to foster sustainable growth through innovation, cutting-edge technology, and strong connections.",
   },
-  {
-    Name: "Nilam Rathod",
-    Position: "CTO of Vionsys IT Solutions India Pvt. Ltd.",
-    Location: "Pune, India",
-    Img: "/assets/About/NilamRathod.jpeg",
-    Message:
-      "At Vionsys IT Solutions, we harness technology to drive innovation and solve challenges. Our commitment is to deliver robust, scalable solutions that meet evolving business needs with excellence and efficiency.",
-  },
 ];
 
 const CeoDesk2 = () => {
@@ -99,20 +91,6 @@ const CeoDesk2 = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="flex mt-6">
-        {CEODesk.map((_, index) => (
-          <button
-            aria-label="button for changing slide"
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`w-3 h-3 mx-2 rounded-full ${
-              currentSlide === index
-                ? "bg-orange border border-black"
-                : "bg-white border border-black"
-            }`}
-          />
-        ))}
       </div>
     </div>
   );

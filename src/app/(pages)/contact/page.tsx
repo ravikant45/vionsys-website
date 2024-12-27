@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 const page = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Conts />
       <Countries />
       <ThirdSection />
