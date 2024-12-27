@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { FaHandshake } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
+import CountUp from "react-countup";
 
 interface ImpactItem {
-  value: string;
+  value: number;
+  suffix: string;
   label: string;
   icon: JSX.Element;
 }
 
 const impactData: ImpactItem[] = [
   {
-    value: "5",
+    value: 5,
+    suffix: "",
     label: "Countries Reached",
     icon: (
       <svg
@@ -24,7 +28,8 @@ const impactData: ImpactItem[] = [
     ),
   },
   {
-    value: "130+",
+    value: 130,
+    suffix: "+",
     label: "Projects Delivered",
     icon: (
       <svg
@@ -38,17 +43,20 @@ const impactData: ImpactItem[] = [
     ),
   },
   {
-    value: "150+",
+    value: 150,
+    suffix: "+",
     label: "Clients Served",
     icon: <FaPeopleGroup className="size-12" />,
   },
   {
-    value: "75%",
+    value: 75,
+    suffix: "%",
     label: "Repeated Clients",
     icon: <FaHandshake className="size-12" />,
   },
   {
-    value: "120+",
+    value: 120,
+    suffix: "+",
     label: "Team Members",
     icon: (
       <svg
@@ -64,11 +72,19 @@ const impactData: ImpactItem[] = [
 ];
 
 const Statistics: React.FC = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
   return (
     <div className="text-gray-900 py-10 px-4 w-full bg-gray-50">
       <div className="mx-auto text-center">
         <h2 className="font-bold mb-6 text-MainHeading">Our Impact</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5"
+        >
           {impactData.map((item, index) => (
             <div
               key={index}
@@ -80,7 +96,12 @@ const Statistics: React.FC = () => {
                 </div>
               </div>
               <div className="text-3xl font-bold text-gray-800">
-                {item.value}
+                {inView ? (
+                  <CountUp start={0} end={item.value} duration={3} />
+                ) : (
+                  0
+                )}
+                {item.suffix}
               </div>
               <div className="text-gray-500 font-medium">{item.label}</div>
             </div>
