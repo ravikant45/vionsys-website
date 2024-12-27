@@ -53,7 +53,7 @@ const CeoDesk2 = () => {
           {CEODesk.map((item, index) => (
             <div
               key={index}
-              className="min-w-full flex md:flex-row flex-col justify-center items-start font-light tracking-wide"
+              className="min-w-full flex md:flex-row flex-col justify-center items-center font-light tracking-wide"
               style={{ fontFamily: "Open Sans, sans-serif" }}
             >
               <div className="md:w-1/2 md:order-1 order-2 md:py-0 mt-7">
@@ -77,7 +77,7 @@ const CeoDesk2 = () => {
                     width={500}
                     height={500}
                     alt={item.Name}
-                    className="w-48 h-48 border rounded-full"
+                    className="w-48 h-48 border rounded-full md:ml-6"
                   />
                 </div>
                 <div className="">

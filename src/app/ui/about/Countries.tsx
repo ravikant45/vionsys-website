@@ -34,7 +34,7 @@ const OfficeBranches = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className=" font-bold sm:text-MainHeading mb-4">
+          <h2 className=" font-bold text-MainHeading mb-4">
             Our Diverse Worldwide Locations and Regional Offices.
           </h2>
         </div>
