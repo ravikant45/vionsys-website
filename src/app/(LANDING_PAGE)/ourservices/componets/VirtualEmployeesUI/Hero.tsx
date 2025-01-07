@@ -1,4 +1,4 @@
- "use client";
+"use client";
 import { motion } from "framer-motion";
 import { Button, Form, Image, Input, Select } from "antd";
 import { country } from "@/utils/CountryCodes";
@@ -59,6 +59,10 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
     }
   };
 
+  const handleRedirect = () => {
+    router.push("/ourservices/virtualemployees/findDevlopers");
+  };
+
   return (
     <>
       <section
@@ -74,17 +78,17 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
           <source
-            src="/assets/VEmployee/virtualEmployeeVideo.mp4"
+            src="/assets/VEmployee/virtualEmployeeVideo1.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-blue2 opacity-30"></div>
+        <div className="absolute inset-0 bg-blue-100 opacity-30"></div>
 
         {/* Content */}
-        <div className="relative z-10 container pt-16 mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
+        <div className="relative z-10  container pt-16 mx-auto px-8 flex flex-col md:flex-row items-center justify-around">
           {/* Left Side: Title, Subheading, and Description */}
           <div className="md:w-1/2 w-full mb-8 md:mb-0 text-center md:text-left">
             <motion.h1
@@ -96,7 +100,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 opacity: { duration: 0.4 },
                 ease: "easeInOut",
               }}
-              className="text-xl sm:text-2xl md:text-6xl font-bold md:mb-4 text-white"
+              className="text-xl sm:text-2xl md:text-5xl tracking-tight font-bold md:mb-4 text-blue1"
             >
               Hire <span className="text-orange">Remote</span> IT Developer
             </motion.h1>
@@ -109,11 +113,11 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 opacity: { duration: 0.4 },
                 ease: "easeInOut",
               }}
-              className="text-sm sm:text-lg md:text-xl font-bold my-4 text-gray-200"
+              className="text-sm sm:text-lg md:text-xl font-bold my-4 text-gray-700"
             >
               Hire on Per Hours/Weekly/Monthly/Quarterly Basis!
             </motion.h2>
-            <p className="text-sm sm:text-base md:text-lg text-white mb-6">
+            <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-6">
               At Vionsys, we’re trusted by 1000+ global clients. With a top 1%
               development team hand-picked for your project, our extensive
               ecosystem spans 200+ tech stacks, ensuring the ideal fit for your
@@ -121,52 +125,67 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
             </p>
             <div>
               <button
-                className="relative animate-bounce hover:scale-105 ease-in-out duration-800 inline-flex h-12 sm:h-14 w-full md:w-auto active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                className="font-sans flex justify-center gap-2 items-center shadow-xl text-sm text-gray-50 bg-blue1 backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 py-1 overflow-hidden border-2 rounded-full group my-1 uppercase"
+                type="button"
+                onClick={handleRedirect}
+              >
+                Find a Developer
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 19"
+                  className="w-8 h-8 justify-end bg-gray-50 group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+                >
+                  <path
+                    className="fill-gray-800 group-hover:fill-gray-800"
+                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                className="flex justify-center gap-2 items-center shadow-xl text-sm bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 py-1 overflow-hidden border-2 rounded-full group my-1 uppercase"
                 onClick={() => {
                   setShowModal(!showModal);
                 }}
               >
-                <span className="absolute hover:scale-125 ease-in-out duration-800 inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-5 sm:px-7 text-sm sm:text-md font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2">
-                  Get in Touch with Our Experts Today
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    strokeWidth="0"
-                    viewBox="0 0 448 512"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"></path>
-                  </svg>
-                </span>
+                Talk To An Expert
+                <svg
+                  className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+                  viewBox="0 0 16 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                    className="fill-gray-800 group-hover:fill-gray-800"
+                  ></path>
+                </svg>
               </button>
+              {/*  */}
             </div>
           </div>
 
           {/* Right Side: Contact Form */}
-          <div className="md:py-8">
+          <div className="md:p-2">
             <Form
               form={form}
               layout="vertical"
               onFinish={handleSubmit}
-              className="space-y-3 md:py-4 md:px-4 p-2 rounded-xl bg-white"
+              className=" rounded-3xl md:col-span-2 p-4"
+              id="heroViBG"
             >
               <div>
-                <h1 className="text-center text-blue1 text-xl font-bold pt-1">
-                Contact Us Today !
+                <h1 className="text-center text-yellow-300 text-xl font-bold pt-1">
+                  Contact Us Today !
                 </h1>
-                <p className="text-sm text-orange text-center pb-2">
+                <p className="text-sm text-white text-center pb-2">
                   Our team will be in touch with you shortly.
                 </p>
               </div>
 
               <Form.Item
-                className="w-full"
+                className="w-full mb-2" // Reduced margin-bottom
                 name="name"
                 label={
-                  <span className="block text-sm font-medium text-black">
+                  <span className="text-sm font-medium text-yellow-300">
                     Full Name
                   </span>
                 }
@@ -176,15 +195,16 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               >
                 <Input
                   placeholder="Enter Your Name"
-                  className="w-full px-2 border text-black border-gray-300 rounded"
+                  className="w-full px-2 border text-black rounded"
                   disabled={loading}
                 />
               </Form.Item>
 
               <Form.Item
+                className="w-full mb-2" // Reduced margin-bottom
                 name="email"
                 label={
-                  <span className="block text-sm font-medium text-black">
+                  <span className="text-sm font-medium text-yellow-300">
                     Email Address
                   </span>
                 }
@@ -203,10 +223,16 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 />
               </Form.Item>
 
-              <div className="flex gap-x-2 h-16">
+              <div className="flex gap-x-2">
+                {" "}
+                {/* Reduced bottom margin */}
                 <Form.Item
                   name="countryCode"
-                  label={<span className="font-semibold">Country</span>}
+                  label={
+                    <span className="font-semibold text-yellow-300">
+                      Country
+                    </span>
+                  }
                   rules={[
                     { required: true, message: "Please select your country!" },
                   ]}
@@ -235,10 +261,13 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                     ))}
                   </Select>
                 </Form.Item>
-
                 <Form.Item
                   name="phone"
-                  label={<span className="font-semibold">Phone Number</span>}
+                  label={
+                    <span className="font-semibold text-yellow-300">
+                      Phone Number
+                    </span>
+                  }
                   rules={[
                     {
                       required: true,
@@ -258,10 +287,12 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                   />
                 </Form.Item>
               </div>
+
               <Form.Item
+                className="w-full mb-4" // Reduced margin-bottom
                 name="message"
                 label={
-                  <span className="block text-sm font-medium text-black">
+                  <span className="block text-sm font-medium text-yellow-300">
                     Your Message
                   </span>
                 }
@@ -271,7 +302,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               >
                 <Input.TextArea
                   placeholder="Leave a comment..."
-                  className="w-full px-2 border text-black border-gray-300 rounded"
+                  className="w-full px-2  border text-black border-gray-300 rounded"
                   disabled={loading}
                 />
               </Form.Item>
@@ -279,7 +310,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               <Form.Item>
                 <div className="flex justify-center items-center">
                   <Button
-                    className="w-full bg-blue-600 border-2 border-[#3e3e3e] rounded-lg text-white px-4 mt-2 py-2 text-base hover:bg-blue-700 transition-all transform hover:scale-105"
+                    className="w-full bg-yellow-300 rounded-lg text-black px-4 py-2 text-base hover:bg-yellow-500 transition-all transform hover:scale-100"
                     htmlType="submit"
                     disabled={loading}
                   >
