@@ -5,7 +5,6 @@ import { Select } from "antd";
 import { useRouter } from "next/navigation"; // Import useRouter from Next.js
 import { BsPlusLg } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const allSkills = [
@@ -41,7 +40,7 @@ const Page: React.FC = () => {
 
   const handleProceed = () => {
     // Navigate to the contact form page
-    router.push("/ourservices/virtualemployees/contactForm");
+    router.push("/ourservices/remoteitdeveloper/contactForm");
   };
 
   return (

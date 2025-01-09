@@ -1,151 +1,169 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const ComparativeAnalysis = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const data = [
     {
-      parameter: "Sourcing the Right Developers",
-      inHouse: "1-3 Months",
-      vionsys: "1-2 Days",
-      freelance: "1-4 Weeks",
+      category: "Sourcing the Right Developers",
+      columns: ["1-3 Months", "1-2 Days", "1-4 Weeks"],
     },
     {
-      parameter: "Time to Start a Project",
-      inHouse: "2-3 Months",
-      vionsys: "1-2 Weeks",
-      freelance: "1 Month",
+      category: "Time to Start a Project",
+      columns: ["2-3 Months", "1-2 Weeks", "1 Month"],
+    },
+    { category: "Acquisition Cost", columns: ["8-10k USD", "0", "1-5k USD"] },
+    { category: "Infrastructure Cost", columns: ["10-15k USD", "0", "0"] },
+    {
+      category: "Pricing Per Week",
+      columns: ["2000/4000 USD", "1000-1500 USD", "500-1000 USD"],
     },
     {
-      parameter: "Acquisition Cost",
-      inHouse: "8-10k USD",
-      vionsys: "0",
-      freelance: "1-5k USD",
+      category: "Project Failure",
+      columns: ["Moderate", "Nil Till Date", "High"],
+    },
+    { category: "Dedicated Team", columns: ["No", "Yes", "Yes"] },
+    { category: "Training Cost", columns: ["5000 USD", "0", "0"] },
+    {
+      category: "Timely Delivery",
+      columns: ["Average", "Yes", "Ask For Extension"],
     },
     {
-      parameter: "Infrastructure Cost",
-      inHouse: "10-15k USD",
-      vionsys: "0",
-      freelance: "0",
+      category: "Termination Cost",
+      columns: ["10-15k USD", "0", "Based On Contract"],
     },
     {
-      parameter: "Pricing Per Week",
-      inHouse: "2000/4000 USD",
-      vionsys: "1000-1500 USD",
-      freelance: "500-1000 USD",
+      category: "Assured Working Hours",
+      columns: ["40", "40-45", "Uncertain"],
     },
     {
-      parameter: "Project Failure",
-      inHouse: "Moderate",
-      vionsys: "Nil Till Date",
-      freelance: "High",
+      category: "Quality Auditor",
+      columns: ["5000 USD/Week", "0", "Additional"],
     },
-    {
-      parameter: "Dedicated Team",
-      inHouse: "No",
-      vionsys: "Yes",
-      freelance: "Yes",
-    },
-    {
-      parameter: "Training Cost",
-      inHouse: "5000 USD",
-      vionsys: "0",
-      freelance: "0",
-    },
-    {
-      parameter: "Timely Delivery",
-      inHouse: "Average",
-      vionsys: "Yes",
-      freelance: "Ask For Extension",
-    },
-    {
-      parameter: "Termination Cost",
-      inHouse: "10-15k USD",
-      vionsys: "0",
-      freelance: "Based On Contract",
-    },
-    {
-      parameter: "Assured Working Hours",
-      inHouse: "40",
-      vionsys: "40-45",
-      freelance: "Uncertain",
-    },
-    {
-      parameter: "Quality Auditor",
-      inHouse: "5000 USD/Week",
-      vionsys: "0",
-      freelance: "Additional",
-    },
-    {
-      parameter: "Data Privacy",
-      inHouse: "High",
-      vionsys: "High",
-      freelance: "Low",
-    },
+    { category: "Data Privacy", columns: ["High", "High", "Low"] },
   ];
-  
+
+  const headers = [
+    "Hiring In-House Developers",
+    "Vionsys IT Solutions",
+    "Freelancers/Upworks",
+  ];
 
   return (
-    <div className="relative md:p-6 p-4 my-8 rounded-lg shadow-lg">
-      <motion.h1
-        initial={{ opacity: 0, scale: 0.6 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{
-          delay: 0.2,
-          scale: { type: "spring", stiffness: 40 },
-          opacity: { duration: 0.6 },
-          ease: "easeInOut",
-        }}
-        className="font-bold text-MainHeading text-orange text-center mb-6"
-      >
-        Comparative Analysis
-      </motion.h1>
-      <div className="overflow-x-auto mx-auto max-w-5xl">
-        <table className="min-w-full bg-white rounded-lg">
-          <thead>
-            <tr className="bg-gradient-to-r from-blue-700 to-cyan-400">
-              <th className="py-3 px-6 text-center font- text-white">
-              </th>
-              <th className="py-3 px-6 text-center text-white border-x-[1px] border-black">
-                Hiring In-House Devlopers
-              </th>
-              <th className="py-3 px-6 text-center  text-white border-x-[1px] border-black">
-                Vionsys IT Solutions Pvt Ltd
-              </th>
-              <th className="py-3 px-6 text-center text-white">
-                Freelancers/Upworks
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((row, index) => (
-              <tr
-                key={index}
-                className="border-b border-gray-200 odd:bg-gray-200"
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8 }}
+      className="text-gray-700 body-font overflow-hidden bg-white py-5 md:p-6 p-4 "
+    >
+      <div className="container lg:px-20 mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-3xl font-bold text-center text-blue1 mb-10"
+        >
+          Comparative Analysis
+        </motion.h1>
+
+        <div className="flex flex-wrap">
+          {/* Left Sidebar */}
+          <motion.div
+            initial={{ x: -100 }}
+            animate={isInView ? { x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="lg:w-1/4 mt-20 hidden lg:block"
+          >
+            <div className="rounded-lg overflow-hidden shadow-md">
+              {data.map((item, index) => (
+                <p
+                  key={index}
+                  className={`${
+                    index % 2 === 0 ? "bg-blue-100" : "bg-white"
+                  } text-gray-700 text-center h-12 flex items-center justify-start px-4 font-medium`}
+                >
+                  {item.category}
+                </p>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right Table */}
+          <motion.div
+            initial={{ x: 100 }}
+            animate={isInView ? { x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="flex lg:w-[75%] w-full space-x-4" // Use space-x-4 to evenly space the columns horizontally
+          >
+            {headers.map((header, headerIndex) => (
+              <motion.div
+                key={headerIndex}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`w-full lg:w-1/3 mb-10 lg:mb-0 border-2 ${
+                  header === "Vionsys IT Solutions"
+                    ? "border-orange relative shadow-lg"
+                    : "border-gray-300"
+                } rounded-lg`}
+                style={{ position: "relative" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.zIndex = "10";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.zIndex = "1";
+                }}
               >
-                <td className="py-4 px-6 ">{row.parameter}</td>
-                <td
-                  className={`py-4 px-6 border-x-[1px] border-black ${
-                    index % 2 === 0 ? "bg-indigo-100" : ""
-                  }`}
-                >
-                  {row.inHouse}
-                </td>
-                <td
-                  className={`py-4 px-6 border-x-[1px] border-black ${
-                    index % 2 === 0 ? "bg-cyan-100" : ""
-                  }`}
-                >
-                  {row.vionsys}
-                </td>
-                <td className={`py-4 px-6 ${
-                    index % 2 === 0 ? "bg-teal-100" : ""
-                  }`}>{row.freelance}</td>
-              </tr>
+                {header === "Vionsys IT Solutions" && (
+                  <span className="bg-orange text-white px-3 py-1 text-xs absolute right-0 top-0 rounded-bl">
+                    Recommended
+                  </span>
+                )}
+
+                <div className="px-2 text-center h-20 flex flex-col items-center justify-center rounded-sm bg-white">
+                  <h2
+                    className={`text-lg font-semibold text-black ${
+                      header === "Vionsys IT Solutions" ? "text-blue1" : ""
+                    } rounded-lg`}
+                  >
+                    {header}
+                  </h2>
+                </div>
+
+                {/* Add padding to Vionsys IT Solutions */}
+                {header === "Vionsys IT Solutions" ? (
+                  <div>
+                    {data.map((item, rowIndex) => (
+                      <p
+                        key={rowIndex}
+                        className={`${
+                          rowIndex % 2 === 0 ? "bg-blue-50" : "bg-white"
+                        } text-gray-600 text-center h-12 flex items-center justify-center`}
+                      >
+                        {item.columns[headerIndex]}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  data.map((item, rowIndex) => (
+                    <p
+                      key={rowIndex}
+                      className={`${
+                        rowIndex % 2 === 0 ? "bg-blue-50" : "bg-white"
+                      } text-gray-600 text-center h-12 flex items-center justify-center`}
+                    >
+                      {item.columns[headerIndex]}
+                    </p>
+                  ))
+                )}
+              </motion.div>
             ))}
-          </tbody>
-        </table>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
