@@ -80,15 +80,6 @@ const Navbar = ({ showModal, setShowModal }: PopUpProps) => {
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8 cursor-default">
-            <div className="text-gray-600 font-semibold flex items-center">
-              <BiPhone
-                size={20}
-                className="text-gray-600 mr-2 animate-bounce"
-              />
-              <Link href="tel:02047242493" className="hover:text-gray-900">
-                (020) 4724-2493
-              </Link>
-            </div>
             <div className="text-gray-600 font-semibold hover:text-gray-900 flex items-center">
               <IoMailOutline className="h-5 w-5 mr-2 font-bold" />
               <span>info@vionsys.com</span>

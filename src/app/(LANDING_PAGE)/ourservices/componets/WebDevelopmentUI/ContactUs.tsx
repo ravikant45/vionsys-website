@@ -61,7 +61,7 @@ export default function ContactUs() {
       template,
       sendTo,
     };
-    console.log("formated", formattedData);
+    console.log("formate", formattedData);
 
     // Print form values to the console
     setLoading(true);
@@ -183,9 +183,6 @@ export default function ContactUs() {
                 <Form.Item
                   name="countryCode"
                   label={<span className="font-semibold"> Country</span>}
-                  rules={[
-                    { required: true, message: "Please select your country!" },
-                  ]}
                   initialValue="+1"
                   className="w-36"
                 >
@@ -216,16 +213,6 @@ export default function ContactUs() {
                 <Form.Item
                   name="number"
                   label={<span className="font-semibold">Phone Number</span>}
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter your phone number!",
-                    },
-                    {
-                      pattern: /^\d{8,15}$/,
-                      message: "Please enter valid phone number",
-                    },
-                  ]}
                   className="w-full"
                 >
                   <Input
