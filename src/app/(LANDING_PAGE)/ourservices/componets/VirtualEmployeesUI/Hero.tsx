@@ -60,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
   };
 
   const handleRedirect = () => {
-    router.push("/ourservices/virtualemployees/findDevlopers");
+    router.push("/ourservices/remoteitdeveloper/findDevlopers");
   };
 
   return (
@@ -115,7 +115,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               }}
               className="text-sm sm:text-lg md:text-xl font-bold my-4 text-gray-700"
             >
-              Hire on Per Hours/Weekly/Monthly/Quarterly Basis!
+              Hire on Per Hours/Weekly/Monthly/Quarterly Basis
             </motion.h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-500 mb-6">
               At Vionsys, we’re trusted by 1000+ global clients. With a top 1%
@@ -123,7 +123,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
               ecosystem spans 200+ tech stacks, ensuring the ideal fit for your
               software development needs.
             </p>
-            <div>
+            <div className="flex gap-4">
               <button
                 className="font-sans flex justify-center gap-2 items-center shadow-xl text-sm text-gray-50 bg-blue1 backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 py-1 overflow-hidden border-2 rounded-full group my-1 uppercase"
                 type="button"
@@ -142,9 +142,11 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 </svg>
               </button>
               <button
-                className="flex justify-center gap-2 items-center shadow-xl text-sm bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 py-1 overflow-hidden border-2 rounded-full group my-1 uppercase"
+                className="font-sans flex justify-center gap-2 items-center shadow-xl text-sm bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 py-1 overflow-hidden border-2 rounded-full group my-[6px] uppercase"
                 onClick={() => {
-                  setShowModal(!showModal);
+                  router.push(
+                    "https://calendly.com/vionsysit/30min?back=1&month=2025-01"
+                  );
                 }}
               >
                 Talk To An Expert
@@ -159,7 +161,6 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                   ></path>
                 </svg>
               </button>
-              {/*  */}
             </div>
           </div>
 
@@ -233,9 +234,6 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                       Country
                     </span>
                   }
-                  rules={[
-                    { required: true, message: "Please select your country!" },
-                  ]}
                   initialValue="+1"
                   className="w-36"
                 >
@@ -268,16 +266,6 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                       Phone Number
                     </span>
                   }
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please enter your phone number!",
-                    },
-                    {
-                      pattern: /^\d{8,15}$/,
-                      message: "Please enter valid phone number",
-                    },
-                  ]}
                   className="w-full"
                 >
                   <Input
