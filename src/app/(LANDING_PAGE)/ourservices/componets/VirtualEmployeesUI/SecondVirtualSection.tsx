@@ -72,7 +72,7 @@ const SecondVirtualSection = () => {
         {/* List Items */}
         <ul className="mt-2 text-xs sm:text-sm md:text-base text-gray-200 space-y-4">
           {[
-            "Instant access to over 300 developers skilled in 150+ technologies.",
+            "Instant access to over 500+ developers skilled in 150+ technologies.",
             "Flexible pricing options offer substantial cost savings.",
             "Comprehensive IP protection backed by stringent security protocols.",
           ].map((text, index) => (
