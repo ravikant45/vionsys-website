@@ -5,16 +5,16 @@ import { BaseUrl } from "@/app/sitemap";
 import DynamicLoader from "@/components/ui/DynamicLoader";
 
 // Dynamic imports for components
-const Hero = dynamic(() => import("@/app/ui/industries/itDigital/Hero"), {
+const Hero = dynamic(() => import("@/app/ui/industries/it-digital/Hero"), {
   loading: () => <DynamicLoader />,
 });
 const OurApproach = dynamic(
-  () => import("@/app/ui/industries/itDigital/OurApproach"),
+  () => import("@/app/ui/industries/it-digital/OurApproach"),
   {
     loading: () => <DynamicLoader />,
   }
 );
-const CTA = dynamic(() => import("@/app/ui/industries/itDigital/CTA"), {
+const CTA = dynamic(() => import("@/app/ui/industries/it-digital/CTA"), {
   loading: () => <DynamicLoader />,
 });
 
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "Explore IT Digital services with Vionsys IT Solutions India Pvt Ltd. We modernize operations and enhance customers' experience by customizing strategies.",
   alternates: {
-    canonical: `${BaseUrl}/industries/itDigital`,
+    canonical: `${BaseUrl}/industries/it_digital`,
   },
   openGraph: {
     images: "/opangraph.png",

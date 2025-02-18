@@ -55,7 +55,7 @@ const AlMLCards: React.FC = () => {
           >
             <div className="mx-auto flex justify-center px-4 sm:mt-6 sm:px-4 md:mt-4 lg:mt-2 lg:px-8">
               <div className="text-center py-10">
-                <h1 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-300 to-pink-500 bg-clip-text text-transparent sm:text-5xl md:text-6xl">
+                <h1 className="text-3xl font-extrabold capitalize tracking-tight bg-gradient-to-r from-indigo-300 to-pink-500 bg-clip-text text-transparent sm:text-5xl md:text-6xl">
                   <span className="block xl:inline">
                     <span className="mb-1 block">
                       {MLAIServicesData?.line1}
