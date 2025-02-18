@@ -26,7 +26,7 @@ const Hero = () => {
           }}
           className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10 md:pt-10"
         >
-          <h1 className="md:text-4xl text-2xl font-extrabold md:py-6 py-1">
+          <h1 className="md:text-4xl text-2xl font-extrabold md:py-6 py-1 capitalize">
             Welcome to Vionsys IT Staffing Services
           </h1>
           <p className="md:text-xl text-base md:w-2/3 pt-2">

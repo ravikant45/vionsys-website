@@ -9,7 +9,7 @@ const Hero = () => {
       <section className="w-full pt-12 md:pt-24 lg:pt-32">
         <div className=" md:px-6 space-y-10 xl:space-y-28">
           <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-            <div className="pt-5">
+            <div className="pt-5 capitalize">
               <motion.h1
                 initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -19,9 +19,9 @@ const Hero = () => {
                   opacity: { duration: 0.6 },
                   ease: "easeInOut",
                 }}
-                className="lg:leading-tighter text-MainHeading font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]"
+                className="lg:leading-tighter capitalize text-MainHeading font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]"
               >
-                Optimize Your DevOps with Acme
+                Optimize Your DevOps With Acme
               </motion.h1>
             </div>
             <div className="flex flex-col items-center justify-center space-y-4">

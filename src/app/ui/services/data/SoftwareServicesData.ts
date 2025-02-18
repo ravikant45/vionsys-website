@@ -2,7 +2,7 @@ import { BiSolidCustomize } from "react-icons/bi";
 import { FaBuilding } from "react-icons/fa6";
 import { FaMobileButton } from "react-icons/fa6";
 import { MdOutlineWeb } from "react-icons/md";
-import { FaWrench } from 'react-icons/fa';
+import { FaWrench } from "react-icons/fa";
 import { MdOutlineIntegrationInstructions } from "react-icons/md";
 
 import experties from "/public/assets/services/experties.jpg";
@@ -37,7 +37,7 @@ interface SoftwareServicesData {
 }
 
 const SoftwareServicesData: SoftwareServicesData = {
-  headline: " SOFTWARE DEVELOPMENT",
+  headline: "Software Development",
   paragraph:
     "At Vionsys IT Solutions India Pvt Ltd, we specialize in turning innovative ideas into robust software solutions. Our team of experienced professionals and engineers is dedicate d to delivering high-quality software that meets your business needs and exceeds your expectations.",
   Services: [

@@ -7,7 +7,7 @@ const Industries = () => {
       name: "IT Digital Transformation",
       description:
         "Stay ahead in today's digital landscape with our comprehensive IT Digital Transformation services, enabling businesses to adapt, grow, and thrive.",
-      href: "/industries/itDigital",
+      href: "/industries/it-digital",
       ariaLabel: "Read more about IT Digital Transformation",
     },
     {

@@ -23,7 +23,7 @@ const Hero = () => {
               opacity: { duration: 0.4 },
               ease: "easeInOut",
             }}
-            className="text-xl md:text-4xl px-2 text-white text-center font-extrabold"
+            className="text-xl capitalize md:text-4xl px-2 text-white text-center font-extrabold"
           >
             Drive Breakthrough Advancements In
             <span className="font-extrabold flex justify-center">

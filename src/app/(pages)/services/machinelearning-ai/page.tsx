@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Vionsys IT Solutions India Pvt Ltd provides Machine Learning and AI services that can transform your company. Our solutions will grow your business forward.",
   alternates: {
-    canonical: `${BaseUrl}/services/ML-AI`,
+    canonical: `${BaseUrl}/services/machinelearning-ai`,
   },
   openGraph: {
     images: "/opangraph.png",
