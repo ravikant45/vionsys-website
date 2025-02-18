@@ -28,7 +28,7 @@ const ServicesTemplateThree: React.FC<Props> = ({ data }) => {
             className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-10 py-4  md:h-[50vh]"
           >
             <div className="flex flex-col justify-center items-center gap-4">
-              <h3 className="text-5xl text-MainHeading font-extrabold text-center">
+              <h3 className="text-5xl text-MainHeading capitalize font-extrabold text-center">
                 {data.mainTitle}
               </h3>
               <p className="text-center text-paragraph">{data.subTitle}</p>

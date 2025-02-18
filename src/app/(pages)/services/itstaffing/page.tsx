@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description:
     "We are the leading IT Staffing Company in Pune. Our broad network and skilled professional experts ensure that you hire the best candidate in your Organization.",
   alternates: {
-    canonical: `${BaseUrl}/services/IT-staffing`,
+    canonical: `${BaseUrl}/services/itstaffing`,
   },
   openGraph: {
     images: "/opangraph.png",

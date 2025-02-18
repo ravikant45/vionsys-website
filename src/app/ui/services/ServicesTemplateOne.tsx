@@ -35,7 +35,7 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
         </div>
         <p
           data-aos="fade-down"
-          className="md:text-4xl text-3xl uppercase font-extrabold text-white tracking-wider leading-9 text-center"
+          className="md:text-4xl text-3xl capitalize font-extrabold text-white tracking-wider leading-9 text-center"
         >
           {data?.headline}
         </p>
@@ -126,8 +126,8 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
         </div>
       </section>
 
-     <ClientsServices/>
-     
+      <ClientsServices />
+
       {/* faq section */}
       <section>
         <div className="bg-white">

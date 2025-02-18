@@ -25,7 +25,7 @@ const Hero = () => {
                   opacity: { duration: 0.4 },
                   ease: "easeInOut",
                 }}
-                className="md:text-5xl text-xl font-extrabold text-orange "
+                className="md:text-5xl text-xl capitalize font-extrabold text-orange "
               >
                 Ensuring Software Stability Through Rigorous Testing
               </motion.h4>

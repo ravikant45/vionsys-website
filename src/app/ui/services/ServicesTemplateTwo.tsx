@@ -18,10 +18,10 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
         >
           <div className="mx-auto flex justify-center px-4 sm:mt-6 sm:px-4 md:mt-4 lg:mt-2 lg:px-8">
             <div className="text-center ">
-              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">
-                  <span className="mb-1 block">{data?.line1}</span>
-                  <span className="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl capitalize font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
+                <span className="block xl:inline capitalize">
+                  <span className="mb-1 block capitalize">{data?.line1}</span>
+                  <span className="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent capitalize">
                     {data?.line2}
                   </span>
                 </span>
