@@ -21,14 +21,6 @@ const CEODesk: CEODesk[] = [
     Message:
       "Navigating the evolving tech landscape, Vionsys IT Solutions leverages IT to address global needs. Our goal is to foster sustainable growth through innovation, cutting-edge technology, and strong connections.",
   },
-  {
-    Name: "Nilam Rathod",
-    Position: "CTO of Vionsys IT Solutions India Pvt. Ltd.",
-    Location: "Pune, India",
-    Img: "/assets/About/NilamRathod.jpeg",
-    Message:
-      "At Vionsys IT Solutions, we harness technology to drive innovation and solve challenges. Our commitment is to deliver robust, scalable solutions that meet evolving business needs with excellence and efficiency.",
-  },
 ];
 
 const CeoDesk2 = () => {
@@ -61,7 +53,7 @@ const CeoDesk2 = () => {
           {CEODesk.map((item, index) => (
             <div
               key={index}
-              className="min-w-full flex md:flex-row flex-col justify-center items-start font-light tracking-wide"
+              className="min-w-full flex md:flex-row flex-col justify-center items-center font-light tracking-wide"
               style={{ fontFamily: "Open Sans, sans-serif" }}
             >
               <div className="md:w-1/2 md:order-1 order-2 md:py-0 mt-7">
@@ -85,7 +77,7 @@ const CeoDesk2 = () => {
                     width={500}
                     height={500}
                     alt={item.Name}
-                    className="w-48 h-48 border rounded-full"
+                    className="w-48 h-48 border rounded-full md:ml-6"
                   />
                 </div>
                 <div className="">
@@ -99,20 +91,6 @@ const CeoDesk2 = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="flex mt-6">
-        {CEODesk.map((_, index) => (
-          <button
-            aria-label="button for changing slide"
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`w-3 h-3 mx-2 rounded-full ${
-              currentSlide === index
-                ? "bg-orange border border-black"
-                : "bg-white border border-black"
-            }`}
-          />
-        ))}
       </div>
     </div>
   );

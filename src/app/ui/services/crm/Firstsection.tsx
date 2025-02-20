@@ -23,7 +23,7 @@ const Firstsection = () => {
               opacity: { duration: 0.4 },
               ease: "easeInOut",
             }}
-            className="md:text-5xl text-xl text-white font-extrabold text-center"
+            className="md:text-5xl capitalize text-xl text-white font-extrabold text-center"
           >
             Customer Relationship Management (CRM)
           </motion.h1>

@@ -41,7 +41,7 @@ const ServicesTemplateFour: React.FC = () => {
                   opacity: { duration: 0.4 },
                   ease: "easeInOut",
                 }}
-                className="font-extrabold md:text-5xl text-xl"
+                className="font-extrabold md:text-5xl text-xl capitalize"
               >
                 Integrated Digital Marketing Services
               </motion.h3>

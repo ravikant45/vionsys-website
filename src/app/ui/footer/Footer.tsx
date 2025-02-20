@@ -6,12 +6,11 @@ import Instagram from "../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../public/assets/socialicons/Twitter4.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import LogoImage from "/public/assets/logo.png";
 import { IndustriesLinks, QuickLinks, ServicesLinks } from "../navbar/Navlinks";
-import { FaMapMarkerAlt, FaMobileAlt, FaPhone } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-
+ 
 const Footer = () => {
   const columnStyle: React.CSSProperties = {
     textAlign: "left",
@@ -45,7 +44,7 @@ const Footer = () => {
                 in the digital age.{" "}
               </div>
             </div>
-
+ 
             {/* Our Services */}
             <div className=" md:text-left flex flex-col col-span-2 gap-2">
               <h2 className="md:text-2xl text-xl text-start text-white font-bold mb-2">
@@ -62,59 +61,8 @@ const Footer = () => {
                   </Link>
                 ))}
               </div>
-              {/* social media icons */}
-              {/* <div className="flex gap-6 md:justify-center py-2">
-                <Link
-                  aria-label="facebook link"
-                  href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
-                >
-                  <Image
-                    src={Facebook}
-                    alt="Facebook logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-                <Link
-                  aria-label="instagram link"
-                  href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
-                >
-                  <Image
-                    src={Instagram}
-                    alt="Instagram logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-                <Link
-                  aria-label="linkedin link"
-                  href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
-                >
-                  <Image
-                    src={LinkedIn}
-                    alt="LinkedIn logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-                <Link
-                  aria-label="twitter link"
-                  href="https://twitter.com/vionsysit"
-                >
-                  <Image
-                    src={Twitter}
-                    alt="Twitter logo"
-                    quality={100}
-                    width={40}
-                    height={40}
-                  />
-                </Link>
-              </div> */}
             </div>
-
+ 
             {/* industries */}
             <div className=" md:text-left flex flex-col col-span-2 gap-2">
               <h2 className="md:text-2xl text-xl text-start text-white font-bold mb-2">
@@ -135,7 +83,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-
+ 
             {/* Header Links */}
             <div className=" md:text-left flex flex-col col-span-1 gap-2">
               <h2 className="md:text-2xl text-xl text-start text-white font-bold mb-2">
@@ -226,7 +174,7 @@ const Footer = () => {
           </div>
         </div> */}
       </div>
-
+ 
       <hr />
       <div className="text-center  relative flex justify-center items-center  ">
         <p className=" text-white">

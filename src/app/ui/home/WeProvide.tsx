@@ -36,7 +36,7 @@ function WeProvide() {
       name: "IT Staffing",
       description:
         "Empower your business with top-tier IT talent. Our IT staffing services provide skilled professionals who match your unique needs, ensuring the right fit for your team and driving success in your projects.",
-      href: "/services/IT-staffing",
+      href: "/services/itstaffing",
       ariaLabel: "Explore IT Staffing services",
     },
     {
@@ -53,7 +53,7 @@ function WeProvide() {
       name: "Machine Learning & AI",
       description:
         "Machine learning is a subset of artificial intelligence focused on developing algorithms that enable computers to learn from and make predictions based on data.",
-      href: "/services/ML-AI",
+      href: "/services/machinelearning-ai",
       ariaLabel: "Explore Machine Learning & AI services",
     },
     {

@@ -37,7 +37,7 @@ interface webdevServicesData {
   faq: FAQ[];
 }
 const webdevServicesData: webdevServicesData = {
-  headline: "WEB DEVELOPMENT",
+  headline: "Web Development",
   paragraph:
     "In our services, we are not just another web development company; we are digital innovation pioneers. Our mission is to revolutionize online experiences for businesses. Through cutting-edge technologies and creative design, we craft bespoke, user-centric websites and applications. These solutions empower businesses to command online presence, engage customers and seize digital opportunities.",
 
@@ -77,7 +77,7 @@ const webdevServicesData: webdevServicesData = {
       title: "Security and Performance",
       logo: MdOutlineSecurity,
       desc: "We ensure your website's safety and fast loading times with robust security measures.",
-    }
+    },
   ],
 
   workType: [
@@ -133,8 +133,8 @@ const webdevServicesData: webdevServicesData = {
     {
       id: 6,
       ques: "What is your approach to mobile responsiveness in web development?",
-      ans: "We prioritize mobile responsiveness to ensure that your website performs seamlessly across all devices. Our development process includes creating fluid grid layouts, flexible images and media queries to adapt the design to different screen sizes. This approach ensures that users have a consistent and optimized experience, whether they access your site on a desktop, tablet or smartphone."
-      },
+      ans: "We prioritize mobile responsiveness to ensure that your website performs seamlessly across all devices. Our development process includes creating fluid grid layouts, flexible images and media queries to adapt the design to different screen sizes. This approach ensures that users have a consistent and optimized experience, whether they access your site on a desktop, tablet or smartphone.",
+    },
   ],
 };
 export default webdevServicesData;

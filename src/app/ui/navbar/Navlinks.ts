@@ -28,7 +28,7 @@ export const ServicesLinks: {
   },
   {
     title: "Machine Learning and AI",
-    href: "/services/ML-AI",
+    href: "/services/machinelearning-ai",
     description:
       "Leverage advanced algorithms and artificial intelligence to extract insights, automate processes, and drive innovation.",
     ariaLabel: "Learn more about Machine Learning and AI services",
@@ -91,7 +91,7 @@ export const ServicesLinks: {
   },
   {
     title: "IT Staffing",
-    href: "/services/IT-staffing",
+    href: "/services/itstaffing",
     description:
       "Enhance your workforce, streamline recruitment processes, and boost organizational efficiency with our specialized IT staffing solutions.",
     ariaLabel: "Learn more about IT Staffing solutions",
@@ -123,7 +123,7 @@ export const IndustriesLinks: {
 }[] = [
   {
     title: "IT Digital Transformation",
-    href: "/industries/itDigital",
+    href: "/industries/it-digital",
     description:
       "IT digital transformation services that empower businesses to adapt, grow, and excel in the evolving digital landscape.",
     ariaLabel: "Learn more about IT Digital Transformation services",

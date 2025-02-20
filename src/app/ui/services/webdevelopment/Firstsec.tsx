@@ -39,7 +39,7 @@ const Page = () => {
                 ease: "easeInOut",
               }}
             >
-              <h1 className="relative z-10 md:text-3xl text-xl mx-auto max-w-xl uppercase shadow-md shadow-gray-200 text-gray-800 font-extrabold bg-gradient-to-r from-yellow-500 to-orange p-1 rounded-lg tracking-wider leading-9 text-center">
+              <h1 className="relative z-10 md:text-3xl text-xl mx-auto max-w-xl shadow-md shadow-gray-200 text-gray-800 font-extrabold bg-gradient-to-r from-yellow-500 to-orange p-1 rounded-lg tracking-wider leading-9 text-center capitalize">
                 {data?.headline}
               </h1>
               <p className="relative z-10 p-5 md:text-xl sm:text-base text-white text-center  mx-auto">
