@@ -96,10 +96,6 @@ const AllBlogs: React.FC<WithAuthProps> = ({ role }) => {
           {role !== "admin" && (
             <section className="flex flex-col w-full pb-6 md:py-4 justify-center items-center ">
               <h1 className="text-3xl font-bold p-3 text-black ">Blogs</h1>
-              <h1 className="text-xl md:text-3xl  ">
-                Discover Engaging Narratives and Informative Insights: Spotlight
-                on Our Latest Blog Post
-              </h1>
             </section>
           )}
           <div className="grid md:grid-cols-3 grid-cols-1 gap-6">

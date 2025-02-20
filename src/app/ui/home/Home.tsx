@@ -51,10 +51,10 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
         }}
         className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3"
       >
-        <h1 className="loop_video_title text-4xl md:text-6xl text-white max-w-[50rem] font-bold">
+        <h1 className="loop_video_title text-4xl md:text-5xl text-white max-w-[50rem] font-bold">
           {title}
         </h1>
-        <p className="loop_video_desc max-w-[25rem] md:text-base font-medium text-white">
+        <p className="loop_video_desc max-w-[30rem] md:text-base font-medium text-white">
           {desc}
         </p>
         <div className="flex justify-start items-center">
@@ -73,27 +73,27 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
 const videos: Video[] = [
   {
     video: "/assets/Home/HomeV1.mp4",
-    title: "Software Development",
+    title: "Custom Software Development: Innovation for the Future",
     desc: "Your one-stop destination for top-notch software design & development services.",
-    link: "/services/software-development",
+    link: "/contact",
   },
   {
     video: "/assets/Home/HomeV2.mp4",
-    title: "Machine Learning and AI",
-    desc: "Elevate your business with advanced Machine Learning & AI technologies. Harness data-driven insights for smarter decisions and innovation.",
-    link: "/services/ML-AI",
+    title: "Custom Software Development: Innovation for the Future",
+    desc: "Boost your business with AI & ML. Leverage data for smarter decisions and innovation.",
+    link: "/contact",
   },
   {
     video: "/assets/Home/HomeV5.mp4",
-    title: "Customer Relationship Management",
+    title: "Custom Software Development: Innovation for the Future",
     desc: "Streamline Customer Relationships with AI-Powered CRM. Improve Efficiency, Personalize Interactions and Foster Growth.",
-    link: "/services/crm",
+    link: "/contact",
   },
   {
     video: "/assets/Home/HomeV4.mp4",
-    title: "Digital Marketing",
+    title: "Custom Software Development: Innovation for the Future",
     desc: "Efficient Digital Marketing Solutions for Streamlined Results. Maximize Impact, Minimize Effort.",
-    link: "/services/digital-marketing",
+    link: "/contact",
   },
 ];
 
