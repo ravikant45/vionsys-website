@@ -157,7 +157,7 @@ export const IndustriesLinks: {
     ariaLabel: "Learn more about IT services for the Pharma Sector",
   },
   {
-    title: "Telecommunication Sector",
+    title: "Telecommunication",
     href: "/industries/telecom",
     description:
       "IT services that enhance telecom networks and customer experiences, driving innovation amid rapid technological changes.",
@@ -204,5 +204,62 @@ export const IndustriesLinks: {
     description:
       "IT solutions to streamline farming operations, enhance service delivery, and boost competitiveness with software, mobile apps, cloud services, IoT integration, and IT support.",
     ariaLabel: "Learn more about IT services for the Field Service Sector",
+  },
+];
+
+export const QuickLinks: {
+  title: string;
+  href: string;
+  description: string;
+  ariaLabel: string;
+}[] = [
+  {
+    title: "Home",
+    href: "/",
+    description:
+      "Design, development, testing, and maintenance of software applications tailored to your business needs.",
+    ariaLabel: "Learn more about Software Development services",
+  },
+  {
+    title: "About Us",
+    href: "/about",
+    description:
+      "Unlock valuable insights from your data and drive informed decision-making with our business intelligence and analytics solutions.",
+    ariaLabel: "Learn more about Business Intelligence and Analytics",
+  },
+  {
+    title: "Services",
+    href: "/services",
+    description:
+      "Comprehensive testing services to ensure the reliability, performance, and security of your software products.",
+    ariaLabel: "Learn more about Testing and Quality Assurance services",
+  },
+  {
+    title: "Insights",
+    href: "/blogs",
+    description:
+      "Leverage advanced algorithms and artificial intelligence to extract insights, automate processes, and drive innovation.",
+    ariaLabel: "Learn more about Machine Learning and AI services",
+  },
+  {
+    title: "Industries",
+    href: "//industries/itDigital",
+    description:
+      "Maximize customer engagement and streamline sales processes with our Salesforce CRM solutions tailored to your business needs.",
+    ariaLabel: "Learn more about Salesforce CRM services",
+  },
+  {
+    title: "Career",
+    href: "/career",
+    description:
+      "Centralize customer data, automate sales processes, and enhance customer relationships with our customizable CRM solutions.",
+    ariaLabel: "Learn more about CRM solutions",
+  },
+  {
+    title: "Contact Us",
+    href: "/contact",
+    description:
+      "End-to-end product development services from conceptualization to launch, ensuring high quality and user satisfaction.",
+    ariaLabel: "Learn more about Product Development services",
   },
 ];
