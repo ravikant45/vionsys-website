@@ -5,24 +5,18 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 interface Video {
   video: any;
-  title: string;
   desc: string;
-  link: string;
 }
 
 interface VideoComponentProps {
   video: any;
-  title: string;
   desc: string;
-  link: string;
   isVisible: boolean;
 }
 
 const VideoComponent: React.FC<VideoComponentProps> = ({
   video,
-  title,
   desc,
-  link,
   isVisible,
 }) => (
   <div
@@ -52,7 +46,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
         className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3"
       >
         <h1 className="loop_video_title text-4xl md:text-5xl text-white max-w-[50rem] font-bold">
-          {title}
+          Custom Software Development: Innovation for the Future
         </h1>
         <p className="loop_video_desc max-w-[30rem] md:text-base font-medium text-white">
           {desc}
@@ -62,7 +56,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
             You Think, We Make It!
           </div>
         </div>
-        <Link href={link}>
+        <Link href="/contact">
           <Button>Discover with us</Button>
         </Link>
       </motion.div>
@@ -73,27 +67,19 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
 const videos: Video[] = [
   {
     video: "/assets/Home/HomeV1.mp4",
-    title: "Custom Software Development: Innovation for the Future",
     desc: "Your one-stop destination for top-notch software design & development services.",
-    link: "/contact",
   },
   {
     video: "/assets/Home/HomeV2.mp4",
-    title: "Custom Software Development: Innovation for the Future",
     desc: "Boost your business with AI & ML. Leverage data for smarter decisions and innovation.",
-    link: "/contact",
   },
   {
     video: "/assets/Home/HomeV5.mp4",
-    title: "Custom Software Development: Innovation for the Future",
     desc: "Streamline Customer Relationships with AI-Powered CRM. Improve Efficiency, Personalize Interactions and Foster Growth.",
-    link: "/contact",
   },
   {
     video: "/assets/Home/HomeV4.mp4",
-    title: "Custom Software Development: Innovation for the Future",
     desc: "Efficient Digital Marketing Solutions for Streamlined Results. Maximize Impact, Minimize Effort.",
-    link: "/contact",
   },
 ];
 
@@ -115,11 +101,9 @@ const Home: React.FC = () => {
         <section className="flex relative bg-black">
           {videos.map((vid, idx) => (
             <VideoComponent
-              key={vid.link}
+              key={vid.desc}
               video={vid.video}
-              title={vid.title}
               desc={vid.desc}
-              link={vid.link}
               isVisible={idx === index}
             />
           ))}

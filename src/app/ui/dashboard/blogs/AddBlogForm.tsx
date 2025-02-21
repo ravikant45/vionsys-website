@@ -16,6 +16,7 @@ interface BlogProps {
   description?: string;
   image?: string;
   keyWord?: string;
+  author?: string;
   seoDescription?: string;
   postDate?: string;
   setShowModal: (show: boolean) => void;
@@ -24,6 +25,7 @@ interface BlogProps {
 interface FormValues {
   title: string;
   keyWord: string;
+  author: string;
   seoDescription: string;
   file: UploadFile[];
 }
@@ -35,6 +37,7 @@ const BlogForm: React.FC<BlogProps> = ({
   description: initialDescription = "",
   image,
   keyWord,
+  author,
   setShowModal,
 }) => {
   const [form] = Form.useForm();
@@ -50,6 +53,7 @@ const BlogForm: React.FC<BlogProps> = ({
       title,
       seoDescription,
       keyWord,
+      author,
     });
     setDescription(initialDescription);
     if (image) {
@@ -62,12 +66,15 @@ const BlogForm: React.FC<BlogProps> = ({
         } as UploadFile,
       ]);
     }
-  }, [form, title, initialDescription, keyWord, image, seoDescription]);
+    console.log("Author:", author);
+  }, [form, title, initialDescription, keyWord, author, image, seoDescription]);
 
   const handleFormSubmit = (values: FormValues) => {
     const formData = new FormData();
+    console.log(formData);
     formData.append("title", values.title);
     formData.append("keyWord", values.keyWord);
+    formData.append("author", values.author);
     formData.append("description", description);
     formData.append("seoDescription", values.seoDescription);
 
@@ -197,12 +204,32 @@ const BlogForm: React.FC<BlogProps> = ({
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
+            <Label htmlFor="author">Author Name</Label>
+            <Form.Item
+              name="author"
+              initialValue={author}
+              rules={[
+                { required: true, message: "Please enter a author name!" },
+              ]}
+            >
+              <Input
+                id="author"
+                name="author"
+                type="text"
+                placeholder="Enter Author Name"
+                autoComplete="off"
+                className="appearance-none rounded-md relative block w-full px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              />
+            </Form.Item>
+          </LabelInputContainer>
+
+          <LabelInputContainer className="mb-4">
             <Label htmlFor="seoDescription">SEO Description</Label>
             <Form.Item
               name="seoDescription"
               rules={[
                 { required: true, message: "Please enter a SEO Description" },
-                { max: 250, message: "Maximum 250 characters allowed" },
+                { max: 500, message: "Maximum 500 characters allowed" },
               ]}
             >
               <Input

@@ -235,7 +235,7 @@ export const QuickLinks: {
     ariaLabel: "Learn more about Testing and Quality Assurance services",
   },
   {
-    title: "Insights",
+    title: "Blogs",
     href: "/blogs",
     description:
       "Leverage advanced algorithms and artificial intelligence to extract insights, automate processes, and drive innovation.",

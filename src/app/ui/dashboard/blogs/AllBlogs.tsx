@@ -9,6 +9,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import useDeleteBlog from "@/services/blogs/useDeleteBlog";
 import Loading from "@/app/(pages)/loading";
 import { WithAuthProps } from "@/HOC/withAuthHOC";
+import { formatDate } from "@/utils/formatDate";
 
 interface Blog {
   createdAt: string;
@@ -16,6 +17,7 @@ interface Blog {
   id: string;
   image: string;
   postDate: string;
+  author: string;
   title: string;
   updatedAt: string;
   keyWord: string;
@@ -126,29 +128,21 @@ const AllBlogs: React.FC<WithAuthProps> = ({ role }) => {
                       />
                     </Link>
                   )}
-                  {/* <p className="absolute bottom-0 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded-tr-lg">
-                    {formatDate(blog.postDate)}
-                  </p> */}
                 </div>
-                <div className="p-4">
-                  <h2 className="text-xl font-semibold text-gray-800">
-                    {blog?.title}
-                  </h2>
-                </div>
-                <div className="p-4 flex justify-between items-center">
+                <div className="pt-4 px-4 flex justify-between items-center capitalize">
                   {role === "admin" ? (
                     <Link
                       href={`/admin/blogs/${blog?.keyWord}`}
-                      className="text-blue-500 hover:underline"
+                      className="hover:text-blue-500 hover:underline text-xl font-semibold text-gray-800"
                     >
-                      Read More
+                      {blog?.title.toLowerCase()}
                     </Link>
                   ) : (
                     <Link
                       href={`blogs/${blog?.keyWord}`}
-                      className="text-blue-500 hover:underline"
+                      className="hover:text-blue-500 hover:underline text-xl font-semibold text-gray-800"
                     >
-                      Read More
+                      {blog?.title?.toLowerCase()}
                     </Link>
                   )}
                   {role === "admin" && (
@@ -162,6 +156,13 @@ const AllBlogs: React.FC<WithAuthProps> = ({ role }) => {
                     />
                   )}
                 </div>
+                <p className="flex pb-4 pt-2 px-4">
+                  <span className="text-sm font-bold">{blog?.author} </span>
+                  <span className="mx-2 text-sm text-gray-500">-</span>
+                  <span className="text-sm text-gray-500">
+                    {formatDate(blog?.postDate)}
+                  </span>
+                </p>
               </div>
             ))}
           </div>
