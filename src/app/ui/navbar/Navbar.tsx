@@ -131,7 +131,7 @@ const Navbar = () => {
               {/*Services dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger aria-label="Services dropdown">
-                  Services
+                  <Link href={"/services"}>Services</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[300px] relative right-0 gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
