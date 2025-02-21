@@ -10,7 +10,7 @@ import LogoImage from "/public/assets/logo.png";
 import { IndustriesLinks, QuickLinks, ServicesLinks } from "../navbar/Navlinks";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
- 
+
 const Footer = () => {
   const columnStyle: React.CSSProperties = {
     textAlign: "left",
@@ -44,7 +44,7 @@ const Footer = () => {
                 in the digital age.{" "}
               </div>
             </div>
- 
+
             {/* Our Services */}
             <div className=" md:text-left flex flex-col col-span-2 gap-2">
               <h2 className="md:text-2xl text-xl text-start text-white font-bold mb-2">
@@ -62,7 +62,7 @@ const Footer = () => {
                 ))}
               </div>
             </div>
- 
+
             {/* industries */}
             <div className=" md:text-left flex flex-col col-span-2 gap-2">
               <h2 className="md:text-2xl text-xl text-start text-white font-bold mb-2">
@@ -83,7 +83,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
- 
+
             {/* Header Links */}
             <div className=" md:text-left flex flex-col col-span-1 gap-2">
               <h2 className="md:text-2xl text-xl text-start text-white font-bold mb-2">
@@ -115,7 +115,7 @@ const Footer = () => {
           </div>
         </div>
         {/* social media icons */}
-        <div className="flex gap-6 md:justify-center py-4">
+        <div className="flex gap-6 md:justify-center py-2">
           <Link
             aria-label="facebook link"
             href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
@@ -124,8 +124,8 @@ const Footer = () => {
               src={Facebook}
               alt="Facebook logo"
               quality={100}
-              width={40}
-              height={40}
+              width={50}
+              height={50}
             />
           </Link>
           <Link
@@ -136,8 +136,8 @@ const Footer = () => {
               src={Instagram}
               alt="Instagram logo"
               quality={100}
-              width={40}
-              height={40}
+              width={50}
+              height={50}
             />
           </Link>
           <Link
@@ -148,8 +148,8 @@ const Footer = () => {
               src={LinkedIn}
               alt="LinkedIn logo"
               quality={100}
-              width={40}
-              height={40}
+              width={50}
+              height={50}
             />
           </Link>
           <Link aria-label="twitter link" href="https://twitter.com/vionsysit">
@@ -157,11 +157,12 @@ const Footer = () => {
               src={Twitter}
               alt="Twitter logo"
               quality={100}
-              width={40}
-              height={40}
+              width={50}
+              height={50}
             />
           </Link>
         </div>
+
         <div className="flex gap-2 justify-center items-center">
           <IoMdMail className="h-5 w-5 text-white" />
           <p>info@vionsys.com</p>
@@ -174,7 +175,7 @@ const Footer = () => {
           </div>
         </div> */}
       </div>
- 
+
       <hr />
       <div className="text-center  relative flex justify-center items-center  ">
         <p className=" text-white">

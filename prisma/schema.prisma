@@ -25,6 +25,7 @@ model Blog {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   keyWord        String   @unique
+  author         String?
   seoDescription String
 }
 

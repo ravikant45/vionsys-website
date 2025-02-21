@@ -18,6 +18,7 @@ export async function PUT(req: NextRequest) {
     const id = data.get("id") as string;
     const title = data.get("title") as string;
     const keyWord = data.get("keyWord") as string;
+    const author = data.get("author") as string;
     const description = data.get("description") as string;
     const seoDescription = data.get("seoDescription") as string;
     const image = data.get("file") as unknown as File;
@@ -25,7 +26,7 @@ export async function PUT(req: NextRequest) {
     // If id is not present then throw exception
     if (!id) {
       throw new Error("Missing blog ID to update..");
-    }
+    } 
 
     //    find existing blog data
     const existingBlog = await prisma.blog.findUnique({ where: { id } });
@@ -54,6 +55,7 @@ export async function PUT(req: NextRequest) {
       data: {
         title,
         keyWord,
+        author,
         description,
         seoDescription,
         image: blogImageUrl,

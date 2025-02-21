@@ -40,13 +40,13 @@ export const generateSitemapEntries = (
     | "weekly"
     | "monthly"
     | "yearly"
-    | "never" = "yearly"
+    | "never" = "weekly"
 ): MetadataRoute.Sitemap => {
   const lastModified = new Date();
   return links?.map(({ href }) => ({
     url: `${BaseUrl}${href}`,
     lastModified,
-    changeFrequency,
+    changeFrequency: "weekly",
     priority,
   }));
 };
