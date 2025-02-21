@@ -158,7 +158,7 @@ const faqs = [
 
 const Index = () => {
   return (
-    <>
+    <section className="overflow-hidden">
       <section className="grid grid-cols-1 md:grid-cols-2 justify-between">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -192,7 +192,7 @@ const Index = () => {
             </header>
           </div>
         </motion.div>
-        <div className="w-full flex justify-center md:pl-6 items-center">
+        <div className="w-full flex justify-center md:pl-6 items-center overflow-hidden">
           <Image
             width={620}
             height={600}
@@ -309,7 +309,7 @@ const Index = () => {
           </motion.div>
         </motion.div>
       </motion.section>
-    </>
+    </section>
   );
 };
 
