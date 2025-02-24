@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div className="grid grid-cols-3 py-4">
+      <div className="grid md:grid-cols-3 py-4">
         <div className="flex gap-2">
           <FaMapMarkerAlt className="h-5 w-5 text-white mt-1 flex-shrink-0" />
           <div>
@@ -115,10 +115,11 @@ const Footer = () => {
           </div>
         </div>
         {/* social media icons */}
-        <div className="flex gap-6 md:justify-center py-2">
+        <div className="flex md:gap-6 justify-center py-2">
           <Link
             aria-label="facebook link"
-            href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
+            href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg"
+            className="auto"
           >
             <Image
               src={Facebook}
@@ -131,6 +132,7 @@ const Footer = () => {
           <Link
             aria-label="instagram link"
             href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
+            className="auto"
           >
             <Image
               src={Instagram}
@@ -143,6 +145,7 @@ const Footer = () => {
           <Link
             aria-label="linkedin link"
             href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
+            className="auto"
           >
             <Image
               src={LinkedIn}
@@ -152,7 +155,11 @@ const Footer = () => {
               height={50}
             />
           </Link>
-          <Link aria-label="twitter link" href="https://twitter.com/vionsysit">
+          <Link
+            aria-label="twitter link"
+            href="https://twitter.com/vionsysit"
+            className="auto"
+          >
             <Image
               src={Twitter}
               alt="Twitter logo"
@@ -163,7 +170,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="flex gap-2 justify-center items-center">
+        <div className="flex gap-2 md:justify-center md:items-center">
           <IoMdMail className="h-5 w-5 text-white" />
           <p>info@vionsys.com</p>
         </div>
