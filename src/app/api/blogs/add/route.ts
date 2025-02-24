@@ -15,11 +15,13 @@ export async function POST(req: NextRequest) {
     const data = await req.formData();
     const title = data.get("title") as string;
     const keyWord = data.get("keyWord") as string;
+    const author = data.get("author") as string;
     const description = data.get("description") as string;
     const image = data.get("file") as unknown as File;
     const postDate = data.get("currentDate") as string;
     const seoDescription = data.get("seoDescription") as string;
     const blogImageBuffer = await fileToBuffer(image);
+    console.log(author);
 
     // upload the image on the cloudinary
     const url = await cloudinaryUpload(blogImageBuffer, "vionsysBlogsImages");
@@ -30,6 +32,7 @@ export async function POST(req: NextRequest) {
       data: {
         title,
         keyWord,
+        author,
         description,
         seoDescription,
         postDate,

@@ -7,6 +7,7 @@ import Footer from "../ui/footer/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Providers from "@/utils/Providers";
 import ChatBot from "@/services/ChatBot";
+import { BaseUrl } from "@/app/sitemap";
 
 export const metadata: Metadata = {
   title: "Kharadi's Best Software Company - Vionsys IT Solutions India",
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
 
   description:
     "Welcome to Vionsys IT Solutions. We are into specialized IT services that will help your business grow faster. At Vionsys we provide crafting innovations.",
+
+  alternates: {
+    canonical: `${BaseUrl}`,
+  },
 };
 
 export default function RootLayout({

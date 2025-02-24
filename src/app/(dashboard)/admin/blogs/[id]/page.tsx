@@ -5,6 +5,7 @@ import AddBlogForm from "@/app/ui/dashboard/blogs/AddBlogForm";
 import { Button } from "@/components/ui/button";
 import withAuthHOC, { WithAuthProps } from "@/HOC/withAuthHOC";
 import useGetBlog from "@/services/blogs/useGetBlog";
+import { formatDate } from "@/utils/formatDate";
 import { Modal } from "antd";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,14 +47,17 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
               className="rounded-lg shadow-sm"
             />
           </div>
-          <div className="flex flex-col lg:w-1/2">
+          <div className="flex flex-col lg:w-1/2 capitalize">
             <h1 className="text-4xl font-bold mb-4 text-gray-800">
-              {data?.data.title}
+              {data?.data.title.toLowerCase()}
             </h1>
-            {/* <p className="text-sm text-gray-600">
-              <span className="font-semibold">Posted On:&nbsp;</span>
-              {formatDate(data?.data.postDate)}
-            </p> */}
+            <p className="flex">
+              <span className="text-sm font-bold">{data?.data.author} </span>
+              <span className="mx-2 text-sm text-gray-500">-</span>
+              <span className="text-sm text-gray-500">
+                {formatDate(data?.data.postDate)}
+              </span>
+            </p>
           </div>
         </div>
 
@@ -87,6 +91,7 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
             image={data?.data?.image}
             postDate={data?.data?.createdDate}
             keyWord={data?.data?.keyWord}
+            author={data?.data?.author}
             setShowModal={setShowModal}
             seoDescription={data?.data?.seoDescription}
           />
