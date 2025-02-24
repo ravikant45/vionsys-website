@@ -64,7 +64,7 @@ const BlogPage = ({ role }: any) => {
 
   return (
     <div className="overflow-x-hidden">
-      <div className="md:px-10 px-8 py-20 p-3 w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
+      <div className="md:px-10 px-2 py-20 md:p-3 p-1 w-full md:bg-white bg-white rounded-lg md:shadow-md shadow-lg">
         <div className="mb-4 flex justify-start">
           <Link
             href={"/blogs"}
@@ -75,7 +75,7 @@ const BlogPage = ({ role }: any) => {
           </Link>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mb-8">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 md:mb-8 mb-3">
           <motion.div
             initial={{ opacity: 0, scale: 1.3 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -107,7 +107,7 @@ const BlogPage = ({ role }: any) => {
                 opacity: { duration: 0.4 },
                 ease: "easeInOut",
               }}
-              className="text-4xl font-bold mb-4 text-gray-800"
+              className="md:text-4xl text-2xl font-bold mb-4 text-gray-800"
             >
               {data?.data.title.toLowerCase()}
             </motion.h1>
@@ -132,7 +132,7 @@ const BlogPage = ({ role }: any) => {
         </div>
 
         <div
-          className="prose prose-lg max-w-none mb-8"
+          className="prose md:prose-lg prose-base max-w-none mb-8"
           dangerouslySetInnerHTML={{ __html: data?.data?.description }}
         />
       </div>
@@ -190,12 +190,12 @@ const BlogPage = ({ role }: any) => {
       </div>
       <div className="border-t-2 border-gray-300 pb-5"></div>
 
-      <div className="p-5">
+      <div className="md:p-5 p-2">
         <span className="text-white bg-black font-semibold text-2xl px-5 py-1">
           Related Blogs
         </span>
         <div className="border-t-4 border-gray-800"></div>
-        <div className="grid grid-cols-3 mb-6 gap-5 p-4">
+        <div className="grid md:grid-cols-3 mb-6 gap-5 md:p-4 p-2">
           {Blogs.slice(currentIndex, currentIndex + blogsPerPage)?.map(
             (blog: Blog) => (
               <div
@@ -225,18 +225,18 @@ const BlogPage = ({ role }: any) => {
                     </Link>
                   )}
                 </div>
-                <div className="pt-4 flex justify-between items-center px-4">
+                <div className="pt-4 flex justify-between items-center md:px-4 px-2">
                   {role === "admin" ? (
                     <Link
                       href={`/admin/blogs/${blog?.keyWord}`}
-                      className="text-black hover:text-blue-500 hover:underline text-xl font-semibold capitalize"
+                      className="text-black hover:text-blue-500 hover:underline md:text-xl text-lg font-semibold capitalize"
                     >
                       {blog?.title?.toLowerCase()}
                     </Link>
                   ) : (
                     <Link
                       href={`/blogs/${blog?.keyWord}`}
-                      className="text-black hover:text-blue-500 hover:underline text-xl font-semibold capitalize"
+                      className="text-black hover:text-blue-500 hover:underline md:text-xl text-lg font-semibold capitalize"
                     >
                       {blog?.title?.toLowerCase()}
                     </Link>
@@ -253,7 +253,7 @@ const BlogPage = ({ role }: any) => {
                     />
                   )}
                 </div>
-                <p className="flex pb-4 pt-2 px-4">
+                <p className="flex pb-4 pt-2 md:px-4 px-2">
                   <span className="text-sm font-bold">{blog?.author} </span>
                   <span className="mx-2 text-sm text-gray-500">-</span>
                   <span className="text-sm text-gray-500">
