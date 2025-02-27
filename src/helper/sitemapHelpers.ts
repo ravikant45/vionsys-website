@@ -26,7 +26,7 @@ export const staticPages: MetadataRoute.Sitemap = [
 ].map((page) => ({
   ...page,
   lastModified,
-  changeFrequency: "yearly",
+  changeFrequency: "weekly",
 }));
 
 // Function to generate sitemap entries for static and dynamic links
