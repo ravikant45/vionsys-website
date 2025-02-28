@@ -10,6 +10,7 @@ import LogoImage from "/public/assets/logo.png";
 import { IndustriesLinks, QuickLinks, ServicesLinks } from "../navbar/Navlinks";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+// import PrivacyPolicy from "../../(pages)/privacy-policy";
 
 const Footer = () => {
   const columnStyle: React.CSSProperties = {
@@ -188,7 +189,8 @@ const Footer = () => {
         <p className=" text-white">
           {" "}
           Copyright &#169; {new Date().getFullYear()} Vionsys IT Solutions India
-          Pvt. Ltd . - All Rights Reserved.
+          Pvt. Ltd . - All Rights Reserved |{" "}
+          <Link href={"../privacy-policy"}>Privacy Policy</Link>
         </p>
       </div>
     </footer>
