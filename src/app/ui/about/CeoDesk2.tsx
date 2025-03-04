@@ -17,7 +17,7 @@ const CEODesk: CEODesk[] = [
     Name: "Govind Rathod",
     Position: "CEO of Vionsys IT Solutions India Pvt. Ltd.",
     Location: "Pune, India",
-    Img: "/assets/About/Govind Rathod.jpeg",
+    Img: "/assets/About/Govind Rathod.jpg",
     Message:
       "Navigating the evolving tech landscape, Vionsys IT Solutions leverages IT to address global needs. Our goal is to foster sustainable growth through innovation, cutting-edge technology, and strong connections.",
   },
@@ -56,28 +56,28 @@ const CeoDesk2 = () => {
               className="min-w-full flex md:flex-row flex-col justify-center items-center font-light tracking-wide"
               style={{ fontFamily: "Open Sans, sans-serif" }}
             >
-              <div className="md:w-1/2 md:order-1 order-2 md:py-0 mt-7">
+              <div className="md:w-1/2 md:order-2 order-1 md:py-0 mt-7">
                 <div className="text-left mx-auto">
-                  <div className="mb-4 text-black flex flex-col items-start md:pr-10">
+                  <div className="mb-4 text-black items-start ">
                     <Image
                       src={colon}
                       alt="Colon Image"
-                      height={100}
-                      width={100}
-                      className="py-4 rounded-sm"
+                      height={120}
+                      width={120}
+                      className="py-4 rounded-sm object-contain"
                     />
-                    <p className="text-base leading-6">"{item.Message}"</p>
+                    <p className="text-base leading-6 ">"{item.Message}"</p>
                   </div>
                 </div>
               </div>
-              <div className="md:w-1/2 md:order-2 order-1 flex flex-col md:items-start items-center">
+              <div className="md:w-1/2 md:order-1 order-2 flex flex-col md:items-start items-center mt-6">
                 <div className="flex items-start pb-6">
                   <Image
                     src={item.Img}
                     width={500}
                     height={500}
                     alt={item.Name}
-                    className="w-48 h-48 border rounded-full md:ml-6"
+                    className="w-52 h-52 border rounded-[50%] md:ml-6"
                   />
                 </div>
                 <div className="">
