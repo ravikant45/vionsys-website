@@ -15,8 +15,9 @@ const OfficeBranches = () => {
       id: "in",
       name: "India",
       flag: inflag,
-      description:
-        "Vionsys IT Solutions India Pvt. Ltd, 502, Tower-1, World Trade Center, Kharadi, Pune",
+      description: `Vionsys IT Solutions India Pvt. Ltd.`,
+      address:
+        "502, World Trade Center, Tower 1, Kharadi, Pune, India - 411014",
       extra: "(HeadQuarters)",
       extra1: "Contact no: (020) 4724-2493",
       extra2: "Mobile no: +91 8766613742",
@@ -40,7 +41,7 @@ const OfficeBranches = () => {
         </div>
 
         {/* Office Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-x-4 gap-y-6">
           {offices.map((office) => (
             <div
               key={office.id}
@@ -73,7 +74,10 @@ const OfficeBranches = () => {
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <FaMapMarkerAlt className="h-5 w-5 text-orange mt-1 flex-shrink-0" />
-                    <p className="text-gray-600">{office.description}</p>
+                    <div className="flex flex-col">
+                      <p className="text-gray-600">{office.description}</p>
+                      <p className="text-gray-600">{office.address}</p>
+                    </div>
                   </div>
 
                   {office.extra1 && (

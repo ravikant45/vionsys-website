@@ -4,15 +4,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "./button";
 import Job_modal from "@/app/ui/Careers/Job_modal";
-import { Modal } from "antd";
+import { Badge, Modal } from "antd";
+import { BiChevronRight, BiMapPin } from "react-icons/bi";
+import { CgLock } from "react-icons/cg";
+import { BsBriefcase } from "react-icons/bs";
+import { FiMapPin } from "react-icons/fi";
 export const HoverEffect = ({
   items,
   className,
 }: {
   items: {
     position: string;
-    jobDescription: string;
-    Requirement: string[];
+    experience: string;
+    location: string;
+    jobDescription: string[];
+    qualification: string[];
   }[];
   className?: string;
 }) => {
@@ -24,7 +30,11 @@ export const HoverEffect = ({
 
   return (
     <>
-      <Job_modal jobTitle={jobTitle} isModalOpen={isModalOpen} setisModalOpen={setisModalOpen} />
+      <Job_modal
+        jobTitle={jobTitle}
+        isModalOpen={isModalOpen}
+        setisModalOpen={setisModalOpen}
+      />
       <Modal
         width={"700px"}
         footer={null}
@@ -32,66 +42,114 @@ export const HoverEffect = ({
         onCancel={() => setIsVisible(false)}
       >
         {currentItemIndex !== null && (
-          <div className="p-3">
-            <CardTitle>{items[currentItemIndex].position}</CardTitle>
-            <section
-              className="mt-4"
-              dangerouslySetInnerHTML={{
-                __html: items[currentItemIndex]?.jobDescription,
-              }}
-            />
+          <div className="p-1">
+            <div className="font-bold text-2xl ">
+              {items[currentItemIndex].position}
+            </div>
+            <div className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-1 text-base font-semibold text-black py-1 px-2 border-2 rounded-xl">
+                <BsBriefcase className="h-5.5 w-5.5" />
+                {items[currentItemIndex]?.experience}
+              </div>
+              <div className="flex items-center gap-1 text-base font-semibold text-black py-1 px-2 border-2 rounded-xl">
+                <FiMapPin className="h-5.5 w-5.5" />
+                {items[currentItemIndex]?.location}
+              </div>
+            </div>
+            <section className="">
+              <div className="mt-4">
+                <h4 className="font-bold text-lg">Role & Responsibilities</h4>
+                {/* <ul className="py-1 text-gray-600 list-disc mt-1 ml-3">
+                  {items[currentItemIndex]?.jobDescription.map(
+                    (jobDescription, index) => (
+                      <li key={index}>{jobDescription}</li>
+                    )
+                  )}
+                </ul> */}
+                <ul className="py-1 text-gray-600 list-disc mt-1 ml-4">
+                  {items[currentItemIndex]?.jobDescription.map(
+                    (jobDescription, index) => (
+                      <li key={index}>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: jobDescription }}
+                        />
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+
+              <div className="mt-4">
+                <h4 className="font-bold text-lg">
+                  Required skills & qualification
+                </h4>
+                <ul className="py-1 text-gray-600 list-disc mt-1 ml-3">
+                  {items[currentItemIndex]?.qualification.map(
+                    (qualification, index) => (
+                      <li key={index}>{qualification}</li>
+                    )
+                  )}
+                </ul>
+              </div>
+            </section>
           </div>
         )}
       </Modal>
-      <motion.div
-        initial={{ opacity: 0, scale: 1.2 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{
-          delay: 0.2,
-          scale: { type: "spring", stiffness: 30 },
-          opacity: { duration: 0.6 },
-          ease: "easeInOut",
-        }}
-        className={cn(
-          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 w-full",
-          className
-        )}
-      >
+
+      <div className="grid grid-cols-3 gap-x-4 gap-y-6 relative overflow-hidden rounded-xl bg-background px-3 py-6">
         {items.map((item, idx) => (
           <div
             key={idx}
-            className="relative group block p-2 h-full w-full"
+            className="relative border-2 rounded-xl p-4 overflow-hidden transition-all hover:shadow-lg hover:border-y hover:border-r hover:border-orange hover:border-l-0"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <AnimatePresence>
-              {hoveredIndex === idx && (
-                <motion.span
-                  className="absolute inset-0 h-full w-full bg-neutral-200 block rounded-3xl"
-                  layoutId="hoverBackground"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: { duration: 0.15 },
-                  }}
-                  exit={{
-                    opacity: 0,
-                    transition: { duration: 0.15, delay: 0.2 },
-                  }}
-                />
-              )}
-            </AnimatePresence>
+            {/* Accent color bar inside the border */}
+            <div className="absolute left-0 top-0 h-full w-1 bg-blue2 rounded-l-xl" />
+            <div className="ml-2">
+              <h3 className="text-xl font-bold tracking-tight">
+                {item?.position}
+              </h3>
 
-            <Card>
-              <CardTitle>{item?.position}</CardTitle>
+              <div className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-1 text-base font-semibold text-blue2 py-1 px-2 border rounded-xl">
+                  <BsBriefcase className="h-5.5 w-5.5 text-blue2" />
+                  {item?.experience}
+                </div>
+                <div className="flex items-center gap-1 text-base font-semibold text-blue2 py-1 px-2 border rounded-xl">
+                  <FiMapPin className="h-5.5 w-5.5 text-blue2" />
+                  {item?.location}
+                </div>
+              </div>
+
               <section className="line-clamp-4">
-                <div
-                  dangerouslySetInnerHTML={{ __html: item?.jobDescription }}
-                />
+                <div className="mt-4">
+                  <h4 className="font-semibold">Role & Responsibilities</h4>
+                  <ul className="py-1 text-gray-600 list-disc mt-1 ml-4">
+                    {item?.jobDescription.map((jobDescription, index) => (
+                      <li key={index}>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: jobDescription }}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-4">
+                  <h4 className="font-semibold">
+                    Required skills & qualification
+                  </h4>
+                  <ul className="py-1 text-gray-600 list-disc mt-1 ml-4">
+                    {item?.qualification.map((qualification, index) => (
+                      <li key={index}>{qualification}</li>
+                    ))}
+                  </ul>
+                </div>
               </section>
 
               <span
-                className="text-blue-700 capitalize cursor-pointer"
+                className="text-blue2 capitalize cursor-pointer"
                 onClick={() => {
                   setIsVisible(true);
                   setCurrentItemIndex(idx);
@@ -99,23 +157,27 @@ export const HoverEffect = ({
               >
                 ...Read more
               </span>
-              <ul className="py-3">
-                {item?.Requirement.map((requirement, index) => (
-                  <li key={index}>{requirement}</li>
-                ))}
-              </ul>
-              <Button
-                onClick={() => {
-                  setisModalOpen(true);
-                  setjobTitle(item?.position)
-                }}
-              >
-                Apply
-              </Button>
-            </Card>
+
+              <div className="mt-5 flex items-center justify-end">
+                {/* <Button variant="link" className="p-0 h-auto font-medium">
+                  Read more
+                </Button> */}
+
+                <Button
+                  onClick={() => {
+                    setisModalOpen(true);
+                    setjobTitle(item?.position);
+                  }}
+                  className="group-hover:translate-x-0.5 transition-transform"
+                >
+                  Apply
+                  {/* <BiChevronRight className="ml-1 h-4 w-4" /> */}
+                </Button>
+              </div>
+            </div>
           </div>
         ))}
-      </motion.div>
+      </div>
     </>
   );
 };
