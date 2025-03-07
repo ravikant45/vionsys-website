@@ -13,18 +13,21 @@ interface CaseStudyFormProps {
   id?: string;
   title?: string;
   description?: string;
+  industry?: string;
   seoDescription?: string;
   image?: string;
-  imageMid?: string; 
+  imageMid?: string;
   keyWord?: string;
   setShowModal: (show: boolean) => void; // Add setShowModal prop
 }
 
 interface FormValues {
   title: string;
+  industry: string;
   keyWord: string;
   seoDescription: string;
   file: UploadFile[];
+  fileMid: UploadFile[];
 }
 
 // Dynamically import ReactQuill to avoid server-side rendering issues
@@ -34,6 +37,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   id,
   title = "",
   keyWord,
+  industry = "",
   seoDescription = "",
   description: initialDescription = "",
   image,
@@ -43,6 +47,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   const [form] = Form.useForm();
   const [description, setDescription] = useState<string>(initialDescription);
   const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const [fileMid, setFileMid] = useState<UploadFile[]>([]);
   const { mutate: updateCaseStudy, isPending: isCaseStudyUpdating } =
     useUpdateCaseStudy();
   const { mutate: addCaseStudy, isPending: isAddingCaseStudy } =
@@ -52,12 +57,16 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   const handleFormSubmit = (values: FormValues) => {
     const formData = new FormData();
     formData.append("title", values.title);
+    formData.append("industry", values.industry);
     formData.append("keyWord", values.keyWord);
     formData.append("seoDescription", values.seoDescription);
     formData.append("description", description);
 
     if (fileList.length > 0) {
-      formData.append("file", fileList[0].originFileObj as Blob);
+      formData.append("image", fileList[0].originFileObj as Blob);
+    }
+    if (fileMid.length > 0) {
+      formData.append("imageMid", fileMid[0].originFileObj as Blob);
     }
 
     if (isUpdating) {
@@ -67,6 +76,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
           form.resetFields();
           setDescription("");
           setFileList([]);
+          setFileMid([]);
           setShowModal(false); // Close modal after successful update
         },
       });
@@ -76,6 +86,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
           form.resetFields();
           setDescription("");
           setFileList([]);
+          setFileMid([]);
           setShowModal(false); // Close modal after successful addition
         },
       });
@@ -85,6 +96,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   useEffect(() => {
     form.setFieldsValue({
       title,
+      industry,
       keyWord,
       seoDescription,
     });
@@ -100,10 +112,24 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
         } as UploadFile,
       ]);
     }
-  }, [form, title, initialDescription, keyWord, image]);
+
+    if (imageMid) {
+      setFileMid([
+        {
+          uid: "-1",
+          name: "imageMid.png",
+          status: "done",
+          url: imageMid,
+        } as UploadFile,
+      ]);
+    }
+  }, [form, title, industry, initialDescription, keyWord, image, imageMid]);
 
   const handleFileChange = ({ fileList }: { fileList: UploadFile[] }) =>
     setFileList(fileList);
+
+  const handleFileChangeMid = ({ fileList }: { fileList: UploadFile[] }) =>
+    setFileMid(fileList);
 
   return (
     <div className="flex w-full justify-center items-center bg-orange mt-6 px-4 rounded-2xl">
@@ -130,9 +156,31 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="file">Image</Label>
+            <Label htmlFor="industry">Industry</Label>
             <Form.Item
-              name="file"
+              name="industry"
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter the industry belong!",
+                },
+              ]}
+            >
+              <Input
+                id="industry"
+                name="industry"
+                type="text"
+                placeholder="Enter industry"
+                autoComplete="off"
+                className="appearance-none rounded-md relative block w-full px-3 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              />
+            </Form.Item>
+          </LabelInputContainer>
+
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="image">Image</Label>
+            <Form.Item
+              name="image"
               valuePropName="fileList"
               getValueFromEvent={(e) =>
                 Array.isArray(e) ? e : e && e.fileList
@@ -142,7 +190,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
               ]}
             >
               <Upload
-                name="file"
+                name="image"
                 listType="picture"
                 beforeUpload={() => false}
                 maxCount={1}
@@ -183,24 +231,25 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="file">Image</Label>
+            <Label htmlFor="imageMid">2nd Mid Image</Label>
             <Form.Item
-              name="file"
+              name="imageMid"
               valuePropName="fileList"
               getValueFromEvent={(e) =>
                 Array.isArray(e) ? e : e && e.fileList
               }
+              // getValueFromEvent={(e) => e?.fileList || []}
               rules={[
                 { required: !isUpdating, message: "Please upload an image!" },
               ]}
             >
               <Upload
-                name="file"
+                name="imageMid"
                 listType="picture"
                 beforeUpload={() => false}
                 maxCount={1}
-                fileList={fileList}
-                onChange={handleFileChange}
+                fileList={fileMid}
+                onChange={handleFileChangeMid}
               >
                 <Button icon={<UploadOutlined />}>Click to upload</Button>
               </Upload>

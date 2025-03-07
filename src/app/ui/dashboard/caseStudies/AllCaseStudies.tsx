@@ -91,14 +91,6 @@ const AllCaseStudies = () => {
                       }}
                     ></p> */}
                   </div>
-                  {/* <div>
-                    <Link
-                      href={`/admin/caseStudies/${study?.keyWord}`}
-                      className="inline-block pb-1 mt-1 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
-                    >
-                      Read More{" "}
-                    </Link>
-                  </div> */}
                 </div>
               </div>
             </div>

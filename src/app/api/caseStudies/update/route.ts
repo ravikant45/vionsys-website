@@ -20,9 +20,11 @@ export async function PUT(req: NextRequest) {
     const id = data.get("id") as string;
     const title = data.get("title") as string;
     const keyWord = data.get("keyWord") as string;
+    const industry = data.get("industry") as string;
     const description = data.get("description") as string;
     const seoDescription = data.get("seoDescription") as string;
-    const image = data.get("file") as unknown as File;
+    const image = data.get("image") as unknown as File;
+    const imageMid = data.get("imageMid") as unknown as File;
 
     // if id is not present then throw exception
     if (!id) {
@@ -44,8 +46,19 @@ export async function PUT(req: NextRequest) {
       }
 
       const buffer = await fileToBuffer(image);
-      const url = await cloudinaryUpload(buffer, "vionsysBlogsImages");
+      const url = await cloudinaryUpload(buffer, "vionsysCaseStudies");
       caseStudyImage = url?.secure_url;
+    }
+
+    let caseStudyImageMid = existingData.image;
+    if (imageMid && imageMid?.size > 0) {
+      if (existingData.imageMid) {
+        await cloudinaryDelete(existingData.imageMid);
+      }
+
+      const bufferMid = await fileToBuffer(imageMid);
+      const urlMid = await cloudinaryUpload(bufferMid, "vionsysCaseStudies");
+      caseStudyImageMid = urlMid?.secure_url;
     }
 
     // update case study in database
@@ -53,10 +66,12 @@ export async function PUT(req: NextRequest) {
       where: { id },
       data: {
         title,
+        industry,
         seoDescription,
         description,
         keyWord,
         image: caseStudyImage,
+        imageMid: caseStudyImageMid,
       },
     });
 
