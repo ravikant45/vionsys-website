@@ -21,7 +21,7 @@ const AllCaseStudies = () => {
   const [addShowModal, setAddShowModal] = useState<boolean>(false);
   const { data, isPending } = useGetAllCaseStudies();
   const [role, setRole] = useState<string | null>(null);
-
+  console.log(data);
   data?.data?.sort(
     (a: any, b: any) =>
       new Date(b?.createdAt)?.getTime() - new Date(a?.createdAt)?.getTime()
@@ -58,11 +58,11 @@ const AllCaseStudies = () => {
         </div>
       )}
       <div className="relative py-8">
-        <div className="relative flex flex-wrap justify-center gap-8 z-10">
+        <div className="relative flex flex-wrap justify-center gap-y-6 z-10">
           {data?.data?.map((study: CaseStudy) => (
             <div
               key={study?.id}
-              className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col"
+              className="w-full mb-8 sm:w-1/2 px-2 lg:w-1/3 flex flex-col"
             >
               <Image
                 width={300}
@@ -74,31 +74,31 @@ const AllCaseStudies = () => {
               <div className="flex flex-grow">
                 <div className="triangle"></div>
                 <div className="flex flex-col w-full justify-between px-4 py-6 bg-white border border-gray-400 text">
-                  <div>
+                  <div className="line-clamp-3">
                     {/* <span className="inline-block mb-2 text-xs font-bold capitalize ">
                       {study.createdAt && formatDate(study.createdAt)}
                     </span> */}
                     <Link
                       href={`/admin/caseStudies/${study?.keyWord}`}
-                      className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
+                      className="block text-2xl font-black leading-tight hover:underline hover:text-blue-600"
                     >
                       {study.title}
                     </Link>
-                    <p
+                    {/* <p
                       className="mb-4"
                       dangerouslySetInnerHTML={{
                         __html: study.description?.slice(0, 150) + "...",
                       }}
-                    ></p>
+                    ></p> */}
                   </div>
-                  <div>
+                  {/* <div>
                     <Link
                       href={`/admin/caseStudies/${study?.keyWord}`}
                       className="inline-block pb-1 mt-1 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
                     >
                       Read More{" "}
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

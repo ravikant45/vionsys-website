@@ -7,7 +7,7 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 export default function JobsCard() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center md:pt-11 pt-3">
+      <div className="flex flex-col justify-center items-center md:pt-8 pt-3">
         <motion.h1
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -17,7 +17,7 @@ export default function JobsCard() {
             opacity: { duration: 0.4 },
             ease: "easeInOut",
           }}
-          className="text-MainHeading font-extrabold md:text-start text-center pb-3"
+          className="text-MainHeading font-extrabold md:text-start text-center"
         >
           Your Future Begins Here
         </motion.h1>

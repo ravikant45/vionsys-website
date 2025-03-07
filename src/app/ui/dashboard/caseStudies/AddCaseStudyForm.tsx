@@ -15,6 +15,7 @@ interface CaseStudyFormProps {
   description?: string;
   seoDescription?: string;
   image?: string;
+  imageMid?: string; 
   keyWord?: string;
   setShowModal: (show: boolean) => void; // Add setShowModal prop
 }
@@ -36,6 +37,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   seoDescription = "",
   description: initialDescription = "",
   image,
+  imageMid,
   setShowModal,
 }) => {
   const [form] = Form.useForm();
@@ -128,6 +130,31 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
+            <Label htmlFor="file">Image</Label>
+            <Form.Item
+              name="file"
+              valuePropName="fileList"
+              getValueFromEvent={(e) =>
+                Array.isArray(e) ? e : e && e.fileList
+              }
+              rules={[
+                { required: !isUpdating, message: "Please upload an image!" },
+              ]}
+            >
+              <Upload
+                name="file"
+                listType="picture"
+                beforeUpload={() => false}
+                maxCount={1}
+                fileList={fileList}
+                onChange={handleFileChange}
+              >
+                <Button icon={<UploadOutlined />}>Click to upload</Button>
+              </Upload>
+            </Form.Item>
+          </LabelInputContainer>
+
+          <LabelInputContainer className="mb-4">
             <Label htmlFor="description">Description</Label>
             <ReactQuill
               id="description"
@@ -179,6 +206,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
               </Upload>
             </Form.Item>
           </LabelInputContainer>
+
           <LabelInputContainer className="mb-4">
             <Label htmlFor="keyWord">Key Word</Label>
             <Form.Item

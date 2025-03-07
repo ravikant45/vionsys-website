@@ -71,25 +71,25 @@ const CaseStudies = () => {
                       </span> */}
                       <Link
                         href={`/caseStudies/${study.keyWord}`}
-                        className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
+                        className="block text-2xl font-black leading-tight hover:underline hover:text-blue-600"
                       >
                         {study.title}
                       </Link>
-                      <p
+                      {/* <p
                         className="mb-4"
                         dangerouslySetInnerHTML={{
                           __html: study.description?.slice(0, 150) + "...",
                         }}
-                      ></p>
+                      ></p> */}
                     </div>
-                    <div>
+                    {/* <div>
                       <Link
                         href={`/caseStudies/${study.keyWord}`}
                         className="inline-block pb-1 mt-1 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600"
                       >
                         Read More{" "}
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
