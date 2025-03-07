@@ -111,7 +111,7 @@ const Footer = () => {
           <FaMapMarkerAlt className="h-5 w-5 text-white mt-1 flex-shrink-0" />
           <div>
             <p>Vionsys IT Solutions India Pvt. Ltd.</p>
-            <p>Office No. 502, Tower 1, World Trade Center, Kharadi,</p>
+            <p>Office No. 502, World Trade Center, Tower 1, Kharadi,</p>
             <p>Pune, India - 411014</p>
           </div>
         </div>
