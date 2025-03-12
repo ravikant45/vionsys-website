@@ -11,11 +11,10 @@ import AddCaseStudyForm from "@/app/ui/dashboard/caseStudies/AddCaseStudyForm";
 import useDeleteCaseStudy from "@/services/caseStudies/useDeleteCaseStudy";
 import Loading from "@/app/(pages)/loading";
 import withAuthHOC, { WithAuthProps } from "@/HOC/withAuthHOC";
-import { FaSquareFacebook, FaSquareXTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { BsBuildings } from "react-icons/bs";
 import { motion } from "framer-motion";
-import Instagram from "../../../../../../public/assets/instagram.svg";
+import { RiTwitterXFill } from "react-icons/ri";
 
 const Page: React.FC<WithAuthProps> = ({ role }) => {
   const { id: keyWord } = useParams();
@@ -28,6 +27,11 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
     useDeleteCaseStudy();
   const [showModal, setShowModal] = useState<boolean>(false);
   const handleCancelDeleteModal = () => setopenmodalDelete(false);
+  const [visible, setVisible] = useState(false);
+  const [previewFile, setPreviewFile] = useState<{
+    url: string;
+    isPDF: boolean;
+  } | null>(null);
 
   const handleDeleteCaseStudy = (id: string) => {
     deleteCaseStudy(id, {
@@ -41,6 +45,19 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
   if (isPending) {
     return <Loading />;
   }
+
+  const handleCancel = () => {
+    setVisible(false);
+    setPreviewFile(null);
+  };
+
+  const handlePreviewResume = (url: string) => {
+    setPreviewFile({
+      url,
+      isPDF: url.endsWith(".pdf"),
+    });
+    setVisible(false);
+  };
 
   return (
     <div className="py-4 md:pl-8 px-4 flex justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300">
@@ -80,8 +97,8 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
           </Link>
         </div>
 
-        <section className="flex flex-col md:justify-center md:items-center md:flex-row gap-8 bg-gray-100 p-4 rounded-md">
-          <div className="flex flex-col justify-center">
+        <section className="flex flex-col md:justify-center md:flex-row gap-8 bg-gray-100 p-4 rounded-md h-full">
+          <div className="flex flex-col justify-center h-[100] pl-3">
             <motion.h1
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -91,46 +108,61 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
                 opacity: { duration: 0.4 },
                 ease: "easeInOut",
               }}
-              className="text-4xl font-bold text-gray-800 mb-4"
+              className="text-4xl font-bold top-0 text-gray-800 mb-4 text-center flex items-center h-full"
             >
               {data?.data.title}
             </motion.h1>
-            {/* Industry Icon */}
-            <div className="flex items-center gap-2 p-1 rounded-full text-xl font-medium">
-              <BsBuildings
-                size={40}
-                className="bg-orange text-white p-1 rounded-md"
-              />
-              <span className="font-bold text-xl">Industry:</span>{" "}
-              {data?.data.industry}
-            </div>
 
-            {/* social media icons */}
-            <div className="flex gap-4 py-4">
-              <Link
-                aria-label="facebook link"
-                href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
-              >
-                <FaSquareFacebook size={50} className="text-[#1877F2]" />
-              </Link>
-              <Link
-                aria-label="instagram link"
-                href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
-              >
-                {/* <Image src={Instagram} alt="instagram" /> */}
-              </Link>
-              <Link
-                aria-label="linkedin link"
-                href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
-              >
-                <FaLinkedin size={50} className="text-[#0077B5] text-center" />
-              </Link>
-              <Link
-                aria-label="twitter link"
-                href="https://twitter.com/vionsysit"
-              >
-                <FaSquareXTwitter size={48} />
-              </Link>
+            <div className="flex justify-between items-end h-full">
+              {/* Industry Icon */}
+              <div className="flex items-center gap-2 p-1 text-xl font-medium">
+                <BsBuildings
+                  size={40}
+                  className="bg-blue-500 hover:bg-black text-white p-1 rounded-md"
+                />
+                <span className="font-bold text-xl">Industry:</span>{" "}
+                {data?.data.industry}
+              </div>
+
+              {/* social media icons */}
+              <div className="flex gap-4">
+                <Link
+                  aria-label="facebook link"
+                  href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
+                >
+                  <FaFacebook
+                    size={40}
+                    className="text-blue-500 hover:text-black bg-white rounded-full transition-all transform hover:scale-105"
+                  />
+                </Link>
+                <Link
+                  aria-label="instagram link"
+                  href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
+                >
+                  <FaInstagram
+                    size={40}
+                    className="text-white bg-blue-500 hover:bg-black rounded-full p-1 transition-all transform hover:scale-105"
+                  />
+                </Link>
+                <Link
+                  aria-label="linkedin link"
+                  href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
+                >
+                  <FaLinkedinIn
+                    size={40}
+                    className="text-white bg-blue-500 hover:bg-black rounded-full transition-all transform hover:scale-105 p-1 text-center"
+                  />
+                </Link>
+                <Link
+                  aria-label="twitter link"
+                  href="https://twitter.com/vionsysit"
+                >
+                  <RiTwitterXFill
+                    size={40}
+                    className="rounded-full text-white bg-blue-500 hover:bg-black p-1 transition-all transform hover:scale-105"
+                  />
+                </Link>
+              </div>
             </div>
             {/* <p>Updated at : {formatDate(data.data.updatedAt)}</p> */}
           </div>
@@ -144,7 +176,7 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
               opacity: { duration: 0.6 },
               ease: "easeInOut",
             }}
-            className="w-full lg:w-1/2 relative"
+            className="w-full lg:w-1/2 relative pr-3"
           >
             <Image
               src={data?.data.image}
@@ -163,18 +195,21 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
           dangerouslySetInnerHTML={{ __html: data?.data?.description }}
         /> */}
 
-        <section className="flex h-[500px] my-4">
-          <Image
-            src={data?.data.imageMid}
-            alt={data?.data.title + " mid image"}
-            layout="responsive"
-            width={100}
-            height={100}
-            objectFit="cover"
-            className="rounded-lg shadow-md w-1/2 h-full"
-          />
+        <section className="flex my-4">
+          <div>
+            <div className="flex-1/2">
+              <Image
+                src={data?.data.imageMid}
+                alt={data?.data.title + " mid image"}
+                layout="responsive"
+                width={100}
+                height={100}
+                objectFit="cover"
+              />
+            </div>
+          </div>
           <div
-            className="prose prose-lg max-w-none text-gray-800 pt-6 w-1/2 h-full"
+            className="prose prose-sm max-w-none text-gray-800 w-1/2 h-full flex-2/3 leading-tight whitespace-normal"
             dangerouslySetInnerHTML={{ __html: data?.data?.description }}
           />
         </section>
@@ -183,6 +218,13 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
         <section className="mt-4">
           {role === "admin" && (
             <div className="flex gap-6 flex-wrap">
+              {/* Show case study pdf */}
+              <Button
+                onClick={() => handlePreviewResume(data?.data?.caseStudyFile)}
+                className="bg-blue-600 hover:bg-blue-500"
+              >
+                View Case Study PDF
+              </Button>
               <Button onClick={() => setShowModal(!showModal)}>Update</Button>
               <Button
                 onClick={() => {
@@ -216,6 +258,48 @@ const Page: React.FC<WithAuthProps> = ({ role }) => {
           />
         </Modal>
       </div>
+      {/* Document Preview Modal */}
+      <Modal
+        title="Document Preview"
+        open={previewFile !== null}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        {previewFile && (
+          <div className="flex flex-col items-center">
+            {previewFile.isPDF ? (
+              <embed
+                src={previewFile.url}
+                type="application/pdf"
+                width="100%"
+                height="500px"
+              />
+            ) : (
+              <img
+                src={previewFile.url}
+                alt="Preview"
+                className="w-full h-auto mb-4"
+              />
+            )}
+            <Link
+              href={
+                previewFile.isPDF
+                  ? previewFile.url
+                  : `${previewFile.url.replace(
+                      "/upload/",
+                      "/upload/fl_attachment/"
+                    )}`
+              }
+              download={previewFile.isPDF ? "document.pdf" : "image.png"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            >
+              Download
+            </Link>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };

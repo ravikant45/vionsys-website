@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../prisma/database";
 import cloudinaryDelete from "@/helper/cloudinaryDelete";
-import cloudinaryUpload from "@/helper/cloudinaryUpload";
-import { message } from "antd";
 import isAdmin from "@/helper/isAdmin";
 
 async function fileToBuffer(file: File): Promise<Buffer> {
@@ -15,16 +13,18 @@ export async function PUT(req: NextRequest) {
     //if user is admin ==> he can update the data
     await isAdmin(req);
 
-    const data = await req.formData();
-
-    const id = data.get("id") as string;
-    const title = data.get("title") as string;
-    const keyWord = data.get("keyWord") as string;
-    const industry = data.get("industry") as string;
-    const description = data.get("description") as string;
-    const seoDescription = data.get("seoDescription") as string;
-    const image = data.get("image") as unknown as File;
-    const imageMid = data.get("imageMid") as unknown as File;
+    const body = await req.json();
+    const {
+      id,
+      image,
+      imageMid,
+      title,
+      industry,
+      seoDescription,
+      keyWord,
+      description,
+      caseStudyFile,
+    } = body;
 
     // if id is not present then throw exception
     if (!id) {
@@ -37,28 +37,20 @@ export async function PUT(req: NextRequest) {
     if (!existingData) {
       throw new Error("Case study not found to update....");
     }
-
-    let caseStudyImage = existingData.image;
-    // Only delete and update image from cloudinary if new image is provided
-    if (image && image?.size > 0) {
+    if (image) {
       if (existingData.image) {
         await cloudinaryDelete(existingData.image);
       }
-
-      const buffer = await fileToBuffer(image);
-      const url = await cloudinaryUpload(buffer, "vionsysCaseStudies");
-      caseStudyImage = url?.secure_url;
     }
-
-    let caseStudyImageMid = existingData.image;
-    if (imageMid && imageMid?.size > 0) {
+    if (imageMid) {
       if (existingData.imageMid) {
         await cloudinaryDelete(existingData.imageMid);
       }
-
-      const bufferMid = await fileToBuffer(imageMid);
-      const urlMid = await cloudinaryUpload(bufferMid, "vionsysCaseStudies");
-      caseStudyImageMid = urlMid?.secure_url;
+    }
+    if (caseStudyFile) {
+      if (existingData.caseStudyFile) {
+        await cloudinaryDelete(existingData.caseStudyFile);
+      }
     }
 
     // update case study in database
@@ -70,8 +62,11 @@ export async function PUT(req: NextRequest) {
         seoDescription,
         description,
         keyWord,
-        image: caseStudyImage,
-        imageMid: caseStudyImageMid,
+        image: image ? image : existingData.image,
+        imageMid: imageMid ? imageMid : existingData.imageMid,
+        caseStudyFile: caseStudyFile
+          ? caseStudyFile
+          : existingData.caseStudyFile,
       },
     });
 

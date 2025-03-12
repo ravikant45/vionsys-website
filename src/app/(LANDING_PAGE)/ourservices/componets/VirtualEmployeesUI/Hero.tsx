@@ -46,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
       template,
       sendTo,
     };
-    console.log("updated Data: ", updatedData);
+    
     try {
       await axios.post("/api/email", updatedData, {
         headers: { "Content-Type": "application/json" },

@@ -14,6 +14,7 @@ interface CaseStudyFormProps {
   title?: string;
   description?: string;
   industry?: string;
+  caseStudyFile?: string;
   seoDescription?: string;
   image?: string;
   imageMid?: string;
@@ -22,12 +23,15 @@ interface CaseStudyFormProps {
 }
 
 interface FormValues {
+  id?: string;
   title: string;
   industry: string;
   keyWord: string;
+  description: string;
   seoDescription: string;
   file: UploadFile[];
   fileMid: UploadFile[];
+  caseStudyFile: UploadFile[];
 }
 
 // Dynamically import ReactQuill to avoid server-side rendering issues
@@ -42,12 +46,14 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   description: initialDescription = "",
   image,
   imageMid,
+  caseStudyFile,
   setShowModal,
 }) => {
   const [form] = Form.useForm();
   const [description, setDescription] = useState<string>(initialDescription);
   const [fileList, setFileList] = useState<UploadFile[]>([]);
   const [fileMid, setFileMid] = useState<UploadFile[]>([]);
+  const [caseStudyContent, setCaseStudyContent] = useState<UploadFile[]>([]);
   const { mutate: updateCaseStudy, isPending: isCaseStudyUpdating } =
     useUpdateCaseStudy();
   const { mutate: addCaseStudy, isPending: isAddingCaseStudy } =
@@ -55,39 +61,26 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
   const isUpdating = !!id;
 
   const handleFormSubmit = (values: FormValues) => {
-    const formData = new FormData();
-    formData.append("title", values.title);
-    formData.append("industry", values.industry);
-    formData.append("keyWord", values.keyWord);
-    formData.append("seoDescription", values.seoDescription);
-    formData.append("description", description);
-
-    if (fileList.length > 0) {
-      formData.append("image", fileList[0].originFileObj as Blob);
-    }
-    if (fileMid.length > 0) {
-      formData.append("imageMid", fileMid[0].originFileObj as Blob);
-    }
-
+    values.description = description;
     if (isUpdating) {
-      formData.append("id", id as string);
-      updateCaseStudy(formData, {
+      values.id = id;
+      updateCaseStudy(values, {
         onSuccess: () => {
           form.resetFields();
           setDescription("");
           setFileList([]);
           setFileMid([]);
-          setShowModal(false); // Close modal after successful update
+          setShowModal(false);
         },
       });
     } else {
-      addCaseStudy(formData, {
+      addCaseStudy(values, {
         onSuccess: () => {
           form.resetFields();
           setDescription("");
           setFileList([]);
           setFileMid([]);
-          setShowModal(false); // Close modal after successful addition
+          setShowModal(false);
         },
       });
     }
@@ -97,7 +90,9 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
     form.setFieldsValue({
       title,
       industry,
+      description: initialDescription,
       keyWord,
+      caseStudyFile,
       seoDescription,
     });
     setDescription(initialDescription);
@@ -123,13 +118,36 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
         } as UploadFile,
       ]);
     }
-  }, [form, title, industry, initialDescription, keyWord, image, imageMid]);
+
+    if (caseStudyFile) {
+      setCaseStudyContent([
+        {
+          uid: "-1",
+          name: "caseStudyFile.pdf",
+          status: "done",
+          url: caseStudyFile,
+        } as UploadFile,
+      ]);
+    }
+  }, [
+    form,
+    title,
+    industry,
+    initialDescription,
+    keyWord,
+    image,
+    caseStudyFile,
+    imageMid,
+  ]);
 
   const handleFileChange = ({ fileList }: { fileList: UploadFile[] }) =>
     setFileList(fileList);
 
   const handleFileChangeMid = ({ fileList }: { fileList: UploadFile[] }) =>
     setFileMid(fileList);
+
+  const handleCaseStudyPdf = ({ fileList }: { fileList: UploadFile[] }) =>
+    setCaseStudyContent(fileList);
 
   return (
     <div className="flex w-full justify-center items-center bg-orange mt-6 px-4 rounded-2xl">
@@ -252,6 +270,33 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
                 onChange={handleFileChangeMid}
               >
                 <Button icon={<UploadOutlined />}>Click to upload</Button>
+              </Upload>
+            </Form.Item>
+          </LabelInputContainer>
+
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="caseStudyFile">Upload Case Study Pdf</Label>
+            <Form.Item
+              name="caseStudyFile"
+              valuePropName="fileList"
+              getValueFromEvent={(e) =>
+                Array.isArray(e) ? e : e && e.fileList
+              }
+              rules={[
+                {
+                  required: !isUpdating,
+                  message: "Please upload an pdf file!",
+                },
+              ]}
+            >
+              <Upload
+                name="caseStudyFile"
+                beforeUpload={() => false}
+                maxCount={1}
+                fileList={caseStudyContent}
+                onChange={handleCaseStudyPdf}
+              >
+                <Button icon={<UploadOutlined />}>Click to Upload File</Button>
               </Upload>
             </Form.Item>
           </LabelInputContainer>

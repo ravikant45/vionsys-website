@@ -66,12 +66,10 @@ const BlogForm: React.FC<BlogProps> = ({
         } as UploadFile,
       ]);
     }
-    console.log("Author:", author);
   }, [form, title, initialDescription, keyWord, author, image, seoDescription]);
 
   const handleFormSubmit = (values: FormValues) => {
     const formData = new FormData();
-    console.log(formData);
     formData.append("title", values.title);
     formData.append("keyWord", values.keyWord);
     formData.append("author", values.author);

@@ -21,7 +21,7 @@ const AllCaseStudies = () => {
   const [addShowModal, setAddShowModal] = useState<boolean>(false);
   const { data, isPending } = useGetAllCaseStudies();
   const [role, setRole] = useState<string | null>(null);
-  console.log(data);
+
   data?.data?.sort(
     (a: any, b: any) =>
       new Date(b?.createdAt)?.getTime() - new Date(a?.createdAt)?.getTime()

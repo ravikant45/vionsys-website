@@ -30,8 +30,6 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
     setCountryCode(value);
   };
 
-
-
   const filterOption = (
     input: string,
     option?: { value: string; children: React.ReactNode }
@@ -45,19 +43,16 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   };
 
   const handleSubmit = async (values: any) => {
-    console.log(values)
-
     const formattedData = {
-      ...values
+      ...values,
     };
-    console.log(formattedData)
-    const template = MainContactFormTemplate(formattedData)
+    const template = MainContactFormTemplate(formattedData);
     const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
 
     const updatedData = {
       formattedData,
       template,
-      sendTo
+      sendTo,
     };
 
     setLoading(true);
@@ -173,7 +168,11 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
                 ]}
                 className="w-full"
               >
-                <Input placeholder="Enter Phone Number" maxLength={15} minLength={8} />
+                <Input
+                  placeholder="Enter Phone Number"
+                  maxLength={15}
+                  minLength={8}
+                />
               </Form.Item>
             </div>
 
