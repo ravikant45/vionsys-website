@@ -33,8 +33,10 @@ model CaseStudies {
   id             String   @id @default(auto()) @map("_id") @db.ObjectId
   title          String
   description    String
+  industry       String
   image          String   @unique
   imageMid       String
+  caseStudyFile  String
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   keyWord        String   @unique

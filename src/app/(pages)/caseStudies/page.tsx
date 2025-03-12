@@ -9,9 +9,14 @@ const CaseStudies = dynamic(() => import("@/app/ui/casestudy/CaseStudies"), {
 });
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Vionsys Case Studies: Innovation in IT & Digital Solutions",
   description:
-    "Discover how Vionsys IT Solutions Pvt Ltd has successfully delivered innovative IT solutions to clients across various industries. Our case stories showcase our expertise, commitment, and the impact of our work.",
+    "Explore Vionsys' case studies showcasing innovative solutions in software development, IT services, and digital transformation across diverse industries",
+  keywords: [
+    "Innovative IT solutions",
+    "Vionsys case studies",
+    "Digital transformation case studies",
+  ],
   alternates: {
     canonical: `${BaseUrl}/caseStudies`,
   },

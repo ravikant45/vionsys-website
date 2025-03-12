@@ -47,7 +47,6 @@ const HeroContactForm: React.FC<{
       ...values,
       countryCode,
     };
-    console.log(formattedData.countryCode)
     const template = StaffingLandingPageTemplate(formattedData);
     const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
     const updatedData = {
@@ -141,7 +140,9 @@ const HeroContactForm: React.FC<{
             <Form.Item
               name="countryCode"
               label={<span className="font-semibold">Country</span>}
-              rules={[{ required: true, message: "Please select your country!" }]}
+              rules={[
+                { required: true, message: "Please select your country!" },
+              ]}
               initialValue="+1"
               className="w-36"
             >
@@ -155,7 +156,12 @@ const HeroContactForm: React.FC<{
                 {country.map((c, index) => (
                   <Select.Option key={index} value={c.code}>
                     <div className="flex items-center">
-                      <Image src={c.image} width={20} height={20} alt={`Flag of ${c.code}`} />
+                      <Image
+                        src={c.image}
+                        width={20}
+                        height={20}
+                        alt={`Flag of ${c.code}`}
+                      />
                       <span className="ml-2">{c.code}</span>
                     </div>
                   </Select.Option>
@@ -175,9 +181,12 @@ const HeroContactForm: React.FC<{
               ]}
               className="w-full"
             >
-              <Input placeholder="Enter Phone Number" maxLength={15} minLength={8} />
+              <Input
+                placeholder="Enter Phone Number"
+                maxLength={15}
+                minLength={8}
+              />
             </Form.Item>
-
           </div>
 
           <Form.Item
