@@ -19,7 +19,7 @@ export default function WebDevPopModal({
 }: WebDevPopModalProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
-  
+
   const [countryCode, setCountryCode] = useState<string>("+1");
   const router = useRouter();
 
@@ -39,8 +39,6 @@ export default function WebDevPopModal({
     );
   };
 
-  
-
   if (!enquiryModal) return null;
 
   const handleSubmit = async (values: any) => {
@@ -53,7 +51,6 @@ export default function WebDevPopModal({
       template,
       sendTo,
     };
-    console.log("updated Data: ", updatedData);
     try {
       await axios.post("/api/email", updatedData, {
         headers: { "Content-Type": "application/json" },
@@ -157,7 +154,11 @@ export default function WebDevPopModal({
                 ]}
                 className="w-full"
               >
-                <Input placeholder="Enter Phone Number" minLength={8} maxLength={15}/>
+                <Input
+                  placeholder="Enter Phone Number"
+                  minLength={8}
+                  maxLength={15}
+                />
               </Form.Item>
             </div>
 

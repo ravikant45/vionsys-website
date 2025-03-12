@@ -2,51 +2,46 @@ import cloudinaryUpload from "@/helper/cloudinaryUpload";
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../prisma/database";
 import isAdmin from "@/helper/isAdmin";
-
-async function fileToBuffer(file: File): Promise<Buffer> {
-  const arrayBuffer = await file.arrayBuffer();
-  return Buffer.from(arrayBuffer);
-}
+import cloudinaryDelete from "@/helper/cloudinaryDelete";
 
 export async function POST(req: NextRequest) {
+  await isAdmin(req);
+  const body = await req.json();
+  const {
+    image,
+    imageMid,
+    title,
+    industry,
+    seoDescription,
+    keyWord,
+    description,
+    caseStudyFile,
+  } = body;
   try {
-    await isAdmin(req);
-    const data = await req.formData();
-
-    const title = data.get("title") as string;
-    const description = data.get("description") as string;
-    const keyWord = data.get("keyWord") as string;
-    const seoDescription = data.get("seoDescription") as string;
-    const image = data.get("file") as unknown as File;
-    const imageMid = data.get("file") as unknown as File;
-
-    // buffered image
-    const imageBuffer = await fileToBuffer(image);
-    const image2Buffer = await fileToBuffer(imageMid);
-
-    // upload image to the cloudinary
-    const url = await cloudinaryUpload(imageBuffer, "vionsysCaseStudies");
-    const url2 = await cloudinaryUpload(image2Buffer, "vionsysCaseStudies");
-    const cloudinary_url = url?.secure_url;
-    const cloudinary_url2 = url2?.secure_url;
+    console.log(body);
 
     //save case studies to the database
     await prisma.caseStudies.create({
       data: {
         title,
+        industry,
         seoDescription,
         keyWord,
         description,
-        image: cloudinary_url,
-        imageMid: cloudinary_url2,
+        caseStudyFile,
+        image,
+        imageMid,
       },
     });
 
     return NextResponse.json(
-      { message: "New Case Study added!!" },
+      { message: "New Case Study added successfully!!" },
       { status: 201 }
     );
   } catch (error: any) {
+    await cloudinaryDelete(image);
+    await cloudinaryDelete(imageMid);
+    await cloudinaryDelete(caseStudyFile);
     console.log("Error:-", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

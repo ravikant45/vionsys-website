@@ -9,20 +9,27 @@ import { IoMdArrowBack } from "react-icons/io";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { FaSquareFacebook, FaSquareXTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
 import { BsBuildings } from "react-icons/bs";
+import { FaFacebook } from "react-icons/fa";
 import {
   IoArrowBackCircleSharp,
   IoArrowForwardCircleSharp,
 } from "react-icons/io5";
-import { formatDate } from "@/utils/formatDate";
 import useGetAllCaseStudies from "@/services/caseStudies/useGetAllCaseStudies";
+import { Form, Input, Select } from "antd";
+import { country, countryCodes } from "@/utils/CountryCodes";
+import useSendCaseStudy from "@/services/caseStudies/useSendCaseStudy";
 
 interface caseStudy {
   id: string;
   image: string;
+  imageMid: string;
   title: string;
+  industry: string;
+  caseStudyFile: string;
   createdAt?: string;
   description?: string;
   keyWord?: string;
@@ -33,6 +40,14 @@ const UserCaseStudies = () => {
   const { data, isPending } = useGetCaseStudy(id);
   const { data: allCasestudies, isPending: allPending } =
     useGetAllCaseStudies();
+  const [form] = Form.useForm();
+  const [countryCode, setCountryCode] = useState<string>("+1");
+  const { mutate, isPending: caseStudyPending } = useSendCaseStudy();
+  const [loading, setLoading] = useState(false);
+
+  const handleCountryChange = (value: string) => {
+    setCountryCode(value);
+  };
 
   const caseStuides = (allCasestudies?.data || []).sort(
     (a: any, b: any) =>
@@ -42,7 +57,6 @@ const UserCaseStudies = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const caseStudiesPerPage = 6;
   const totalCaseStudies = caseStuides.length;
-
   const nextCaseStudies = () => {
     if (currentIndex + caseStudiesPerPage < totalCaseStudies) {
       setCurrentIndex(currentIndex + caseStudiesPerPage);
@@ -58,6 +72,64 @@ const UserCaseStudies = () => {
   if (isPending) {
     return <Loading />;
   }
+  const filterOption = (
+    input: string,
+    option?: { value: string; children: React.ReactNode }
+  ) => {
+    const childrenAsString = option?.children?.toString().toLowerCase() || "";
+    return (
+      (childrenAsString.includes(input.toLowerCase()) ||
+        option?.value.toLowerCase().includes(input.toLowerCase())) ??
+      false
+    );
+  };
+
+  const handleSubmit = async (values: any) => {
+    setLoading(true);
+    const { name, email, countryCode, number } = values;
+
+    const formData = {
+      fullName: name,
+      email,
+      mobileNumber: `${countryCode} ${number}`, // Combining country code and phone number
+    };
+
+    mutate(formData, {
+      onSuccess: async () => {
+        // Download PDF file if available
+        // Auto-download logic
+        if (data?.data?.caseStudyFile) {
+          try {
+            const response = await fetch(data.data.caseStudyFile);
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+
+            const link = document.createElement("a");
+            link.href = url;
+            link.setAttribute(
+              "download",
+              `case_study_${data?.data?.title}.pdf`
+            ); // Custom filename
+
+            document.body.appendChild(link);
+            link.click();
+
+            // Cleanup
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+          } catch (error) {
+            console.error("Download failed:", error);
+          }
+        }
+        form.resetFields();
+        setLoading(false);
+      },
+      onError: () => {
+        setLoading(false);
+      },
+    });
+  };
+
   return (
     <div className="overflow-hidden">
       <div className="py-14 md:pl-8 mt-3 px-4 flex justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300">
@@ -71,8 +143,8 @@ const UserCaseStudies = () => {
               <span className="ml-2 text-lg font-medium">Back</span>
             </Link>
           </div>
-          <section className="flex flex-col md:justify-center md:items-center md:flex-row gap-8 bg-gray-100 p-4 rounded-md">
-            <div className="flex flex-col justify-center">
+          <section className="flex flex-col md:justify-center md:flex-row gap-8 bg-gray-100 p-4 rounded-md h-full">
+            <div className="flex flex-col justify-center h-[100] pl-3">
               <motion.h1
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -82,75 +154,61 @@ const UserCaseStudies = () => {
                   opacity: { duration: 0.4 },
                   ease: "easeInOut",
                 }}
-                className="text-4xl font-bold text-gray-800 mb-4"
+                className="text-4xl font-bold top-0 text-gray-800 mb-4 text-center flex items-center h-full"
               >
                 {data?.data.title}
               </motion.h1>
-              {/* Industry Icon */}
-              <div className="flex items-center gap-2 p-1 rounded-full text-xl font-medium">
-                <BsBuildings
-                  size={40}
-                  className="bg-orange text-white p-1 rounded-md"
-                />
-                <span className="font-bold text-xl">Industry:</span> IT Service
-              </div>
 
-              {/* social media icons */}
-              <div className="flex gap-4 py-4">
-                <Link
-                  aria-label="facebook link"
-                  href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
-                >
-                  <FaSquareFacebook size={50} className="text-[#1877F2]" />
-                </Link>
-                <Link
-                  aria-label="instagram link"
-                  href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
-                >
-                  <svg
-                    width="50"
-                    height="50"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="instagram-gradient"
-                        x1="1"
-                        y1="1"
-                        x2="23"
-                        y2="23"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop offset="0%" stop-color="#feda75" />
-                        <stop offset="25%" stop-color="#fa7e1e" />
-                        <stop offset="50%" stop-color="#d62976" />
-                        <stop offset="75%" stop-color="#962fbf" />
-                        <stop offset="100%" stop-color="#4f5bd5" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M16 2H8C4.69 2 2 4.69 2 8V16C2 19.31 4.69 22 8 22H16C19.31 22 22 19.31 22 16V8C22 4.69 19.31 2 16 2ZM20 16C20 18.21 18.21 20 16 20H8C5.79 20 4 18.21 4 16V8C4 5.79 5.79 4 8 4H16C18.21 4 20 5.79 20 8V16ZM12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7ZM12 15C10.35 15 9 13.65 9 12C9 10.35 10.35 9 12 9C13.65 9 15 10.35 15 12C15 13.65 13.65 15 12 15ZM17.5 6.5C16.67 6.5 16 7.17 16 8C16 8.83 16.67 9.5 17.5 9.5C18.33 9.5 19 8.83 19 8C19 7.17 18.33 6.5 17.5 6.5Z"
-                      fill="url(#instagram-gradient)"
-                    />
-                  </svg>
-                </Link>
-                <Link
-                  aria-label="linkedin link"
-                  href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
-                >
-                  <FaLinkedin
-                    size={50}
-                    className="text-[#0077B5] text-center"
+              <div className="flex justify-between items-end h-full">
+                {/* Industry Icon */}
+                <div className="flex items-center gap-2 p-1 text-xl font-medium">
+                  <BsBuildings
+                    size={40}
+                    className="bg-blue-500 hover:bg-black text-white p-1 rounded-md"
                   />
-                </Link>
-                <Link
-                  aria-label="twitter link"
-                  href="https://twitter.com/vionsysit"
-                >
-                  <FaSquareXTwitter size={48} />
-                </Link>
+                  <span className="font-bold text-xl">Industry:</span>{" "}
+                  {data?.data.industry}
+                </div>
+
+                {/* social media icons */}
+                <div className="flex gap-4">
+                  <Link
+                    aria-label="facebook link"
+                    href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
+                  >
+                    <FaFacebook
+                      size={40}
+                      className="text-blue-500 hover:text-black bg-white rounded-full transition-all transform hover:scale-105"
+                    />
+                  </Link>
+                  <Link
+                    aria-label="instagram link"
+                    href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
+                  >
+                    <FaInstagram
+                      size={40}
+                      className="text-white bg-blue-500 hover:bg-black rounded-full p-1 transition-all transform hover:scale-105"
+                    />
+                  </Link>
+                  <Link
+                    aria-label="linkedin link"
+                    href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
+                  >
+                    <FaLinkedinIn
+                      size={40}
+                      className="text-white bg-blue-500 hover:bg-black rounded-full transition-all transform hover:scale-105 p-1 text-center"
+                    />
+                  </Link>
+                  <Link
+                    aria-label="twitter link"
+                    href="https://twitter.com/vionsysit"
+                  >
+                    <RiTwitterXFill
+                      size={40}
+                      className="rounded-full text-white bg-blue-500 hover:bg-black p-1 transition-all transform hover:scale-105"
+                    />
+                  </Link>
+                </div>
               </div>
               {/* <p>Updated at : {formatDate(data.data.updatedAt)}</p> */}
             </div>
@@ -164,7 +222,7 @@ const UserCaseStudies = () => {
                 opacity: { duration: 0.6 },
                 ease: "easeInOut",
               }}
-              className="w-full lg:w-1/2 relative"
+              className="w-full lg:w-1/2 relative pr-3"
             >
               <Image
                 src={data?.data.image}
@@ -178,16 +236,186 @@ const UserCaseStudies = () => {
             </motion.div>
           </section>
 
-          <section
-            className="prose prose-sm max-w-none text-gray-800 pt-6"
-            dangerouslySetInnerHTML={{ __html: data?.data?.description }}
-          />
+          <section className="flex my-4">
+            <div>
+              <div className="flex-1/2">
+                <Image
+                  src={data?.data.imageMid}
+                  alt={data?.data.title + " mid image"}
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  objectFit="cover"
+                />
+              </div>
+              {/* download case study */}
+              <div className="flex justify-center items-center">
+                <Form
+                  form={form}
+                  layout="vertical"
+                  onFinish={handleSubmit}
+                  className="space-y-1 md:py-4 md:px-6 p-4 rounded-xl bg-white border m-4 w-2/3"
+                >
+                  <div>
+                    <h1 className="text-center text-blue1 text-xl font-bold pt-2">
+                      Download Case Study
+                    </h1>
+                  </div>
+
+                  <Form.Item
+                    className="w-full"
+                    name="name"
+                    label={
+                      <span className="block text-sm font-medium text-black">
+                        Full Name
+                      </span>
+                    }
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your full name",
+                      },
+                    ]}
+                  >
+                    <Input
+                      placeholder="Enter Your Name"
+                      className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                      disabled={loading}
+                    />
+                  </Form.Item>
+
+                  <Form.Item
+                    name="email"
+                    label={
+                      <span className="block text-sm font-medium text-black">
+                        Email Address
+                      </span>
+                    }
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your email!",
+                        type: "email",
+                      },
+                    ]}
+                  >
+                    <Input
+                      placeholder="Enter Email Address"
+                      className="w-full mt-1 p-2 border text-black border-gray-300 rounded"
+                      disabled={loading}
+                    />
+                  </Form.Item>
+
+                  <div className="flex gap-x-2 h-16">
+                    <Form.Item
+                      name="countryCode"
+                      label={<span className="font-semibold">Country</span>}
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please select your country!",
+                        },
+                      ]}
+                      initialValue="+1"
+                      className="w-36"
+                    >
+                      <Select
+                        showSearch
+                        placeholder="Country"
+                        optionFilterProp="children"
+                        onChange={handleCountryChange}
+                        filterOption={filterOption}
+                      >
+                        {country.map((c, index) => (
+                          <Select.Option key={index} value={c.code}>
+                            <div className="flex items-center">
+                              <Image
+                                src={c.image}
+                                width={20}
+                                height={20}
+                                alt={`Flag of ${c.code}`}
+                              />
+                              <span className="ml-2">{c.code}</span>
+                            </div>
+                          </Select.Option>
+                        ))}
+                      </Select>
+                    </Form.Item>
+
+                    <Form.Item
+                      name="number"
+                      label={
+                        <span className="font-semibold">Phone Number</span>
+                      }
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please enter your phone number!",
+                        },
+                        {
+                          pattern: /^\d{8,15}$/,
+                          message: "Please enter valid phone number",
+                        },
+                      ]}
+                      className="w-full"
+                    >
+                      <Input
+                        placeholder="Enter Phone Number"
+                        maxLength={15}
+                        minLength={8}
+                      />
+                    </Form.Item>
+                  </div>
+
+                  <Form.Item>
+                    <div className="flex justify-center items-center">
+                      <Button
+                        className="w-full bg-blue-600 border-2 border-[#3e3e3e] rounded-lg text-white px-4 mt-2 py-2 text-base hover:bg-blue-700 transition-all transform hover:scale-105"
+                        type="submit"
+                        disabled={loading}
+                      >
+                        {loading ? (
+                          <svg
+                            className="animate-spin h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.418 3.582 8 8 8v-4c-2.697 0-5.074-1.072-6.834-2.709l2.834-2.833zm8-10.582A7.962 7.962 0 0120 12h4c0-6.627-5.373-12-12-12v4c2.697 0 5.074 1.072 6.834 2.709l-2.834 2.833z"
+                            ></path>
+                          </svg>
+                        ) : (
+                          "Download"
+                        )}
+                      </Button>
+                    </div>
+                  </Form.Item>
+                </Form>
+              </div>
+            </div>
+            <div
+              className="prose prose-sm max-w-none text-gray-800 w-1/2 h-full flex-2/3 leading-tight whitespace-normal"
+              dangerouslySetInnerHTML={{ __html: data?.data?.description }}
+            />
+          </section>
         </div>
       </div>
-      
+
+      {/* Recent Case Studies Section */}
       <div className="md:p-5 p-2">
         <span className="text-white bg-black font-semibold text-2xl px-5 py-1">
-          Other Case Studies
+          Recent Case Studies
         </span>
         <div className="border-t-4 border-gray-800"></div>
         <div className="grid md:grid-cols-3 mb-6 gap-5 md:p-4 p-2">

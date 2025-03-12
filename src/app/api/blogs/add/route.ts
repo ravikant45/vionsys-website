@@ -1,7 +1,7 @@
-import cloudinaryUpload from "@/helper/cloudinaryUpload";
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../prisma/database";
 import isAdmin from "@/helper/isAdmin";
+import uploadToCloudinary from "@/helper/uploadToCloudinary";
 async function fileToBuffer(file: File): Promise<Buffer> {
   const arrayBuffer = await file.arrayBuffer();
   return Buffer.from(arrayBuffer);
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     console.log(author);
 
     // upload the image on the cloudinary
-    const url = await cloudinaryUpload(blogImageBuffer, "vionsysBlogsImages");
+    const url = await uploadToCloudinary(blogImageBuffer, "vionsysBlogsImages");
     const cloudinary_url = url?.secure_url;
 
     // save the blog details in the database

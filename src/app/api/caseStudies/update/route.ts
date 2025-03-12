@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../prisma/database";
 import cloudinaryDelete from "@/helper/cloudinaryDelete";
-import cloudinaryUpload from "@/helper/cloudinaryUpload";
-import { message } from "antd";
 import isAdmin from "@/helper/isAdmin";
 
 async function fileToBuffer(file: File): Promise<Buffer> {
@@ -15,14 +13,18 @@ export async function PUT(req: NextRequest) {
     //if user is admin ==> he can update the data
     await isAdmin(req);
 
-    const data = await req.formData();
-
-    const id = data.get("id") as string;
-    const title = data.get("title") as string;
-    const keyWord = data.get("keyWord") as string;
-    const description = data.get("description") as string;
-    const seoDescription = data.get("seoDescription") as string;
-    const image = data.get("file") as unknown as File;
+    const body = await req.json();
+    const {
+      id,
+      image,
+      imageMid,
+      title,
+      industry,
+      seoDescription,
+      keyWord,
+      description,
+      caseStudyFile,
+    } = body;
 
     // if id is not present then throw exception
     if (!id) {
@@ -35,17 +37,20 @@ export async function PUT(req: NextRequest) {
     if (!existingData) {
       throw new Error("Case study not found to update....");
     }
-
-    let caseStudyImage = existingData.image;
-    // Only delete and update image from cloudinary if new image is provided
-    if (image && image?.size > 0) {
+    if (image) {
       if (existingData.image) {
         await cloudinaryDelete(existingData.image);
       }
-
-      const buffer = await fileToBuffer(image);
-      const url = await cloudinaryUpload(buffer, "vionsysBlogsImages");
-      caseStudyImage = url?.secure_url;
+    }
+    if (imageMid) {
+      if (existingData.imageMid) {
+        await cloudinaryDelete(existingData.imageMid);
+      }
+    }
+    if (caseStudyFile) {
+      if (existingData.caseStudyFile) {
+        await cloudinaryDelete(existingData.caseStudyFile);
+      }
     }
 
     // update case study in database
@@ -53,10 +58,15 @@ export async function PUT(req: NextRequest) {
       where: { id },
       data: {
         title,
+        industry,
         seoDescription,
         description,
         keyWord,
-        image: caseStudyImage,
+        image: image ? image : existingData.image,
+        imageMid: imageMid ? imageMid : existingData.imageMid,
+        caseStudyFile: caseStudyFile
+          ? caseStudyFile
+          : existingData.caseStudyFile,
       },
     });
 

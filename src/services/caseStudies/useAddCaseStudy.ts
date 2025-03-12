@@ -5,7 +5,7 @@ import { message } from "antd";
 const useAddCaseStudy = () => {
     const queryClient = useQueryClient();
     const { mutate, isPending } = useMutation({
-        mutationFn: (formData: FormData) => addCaseStudy(formData),
+        mutationFn: (values: any) => addCaseStudy(values),
         onSuccess: (res: any) => {
             // invalide 
             queryClient.invalidateQueries({

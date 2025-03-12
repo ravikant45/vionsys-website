@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-'use client'
+"use client";
 import { motion } from "framer-motion";
 import { Button, Form, Image, Input, Select } from "antd";
 import { country } from "@/utils/CountryCodes";
@@ -14,7 +14,10 @@ type HeroProps = {
   setEnquiryModal: (show: boolean) => void;
 };
 
-const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => {
+const HeroSection: React.FC<HeroProps> = ({
+  enquiryModal,
+  setEnquiryModal,
+}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("+1");
@@ -31,7 +34,8 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
     const childrenAsString = option?.children?.toString().toLowerCase() || "";
     return (
       (childrenAsString.includes(input.toLowerCase()) ||
-        option?.value.toLowerCase().includes(input.toLowerCase())) ?? false
+        option?.value.toLowerCase().includes(input.toLowerCase())) ??
+      false
     );
   };
 
@@ -46,7 +50,6 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
       template,
       sendTo,
     };
-    console.log("updated Data: ", updatedData);
     try {
       await axios.post("/api/email", updatedData, {
         headers: { "Content-Type": "application/json" },
@@ -61,7 +64,10 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
 
   return (
     <>
-      <section id="bg2" className="relative h-full flex items-center justify-center">
+      <section
+        id="bg2"
+        className="relative h-full flex items-center justify-center"
+      >
         {/* Background Video */}
         <video
           autoPlay
@@ -70,10 +76,7 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
-          <source
-            src="/assets/WebDev.mp4"
-            type="video/mp4"
-          />
+          <source src="/assets/WebDev.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -95,7 +98,8 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
               }}
               className="text-3xl md:text-6xl font-bold mb-4 text-white"
             >
-              Web Design <span className="text-orange">&</span> Web Development Company
+              Web Design <span className="text-orange">&</span> Web Development
+              Company
             </motion.h1>
             <motion.h2
               initial={{ opacity: 0, x: 100 }}
@@ -160,8 +164,14 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
               <Form.Item
                 className="w-full"
                 name="name"
-                label={<span className="block text-sm font-medium text-black">Full Name</span>}
-                rules={[{ required: true, message: "Please enter your full name" }]}
+                label={
+                  <span className="block text-sm font-medium text-black">
+                    Full Name
+                  </span>
+                }
+                rules={[
+                  { required: true, message: "Please enter your full name" },
+                ]}
               >
                 <Input
                   placeholder="Enter Your Name"
@@ -172,9 +182,17 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
 
               <Form.Item
                 name="email"
-                label={<span className="block text-sm font-medium text-black">Email Address</span>}
+                label={
+                  <span className="block text-sm font-medium text-black">
+                    Email Address
+                  </span>
+                }
                 rules={[
-                  { required: true, message: "Please enter your email!", type: "email" },
+                  {
+                    required: true,
+                    message: "Please enter your email!",
+                    type: "email",
+                  },
                 ]}
               >
                 <Input
@@ -188,7 +206,9 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
                 <Form.Item
                   name="countryCode"
                   label={<span className="font-semibold">Country</span>}
-                  rules={[{ required: true, message: "Please select your country!" }]}
+                  rules={[
+                    { required: true, message: "Please select your country!" },
+                  ]}
                   initialValue="+1"
                   className="w-36"
                 >
@@ -202,7 +222,12 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
                     {country.map((c, index) => (
                       <Select.Option key={index} value={c.code}>
                         <div className="flex items-center">
-                          <Image src={c.image} width={20} height={20} alt={`Flag of ${c.code}`} />
+                          <Image
+                            src={c.image}
+                            width={20}
+                            height={20}
+                            alt={`Flag of ${c.code}`}
+                          />
                           <span className="ml-2">{c.code}</span>
                         </div>
                       </Select.Option>
@@ -213,27 +238,49 @@ const HeroSection: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => 
                 <Form.Item
                   name="phone"
                   label={<span className="font-semibold">Phone Number</span>}
-                  rules={[{ required: true, message: "Please enter your phone number!" },{
-                    pattern: /^\d{8,15}$/,
-                    message: "Please enter valid phone number",
-                  },]}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your phone number!",
+                    },
+                    {
+                      pattern: /^\d{8,15}$/,
+                      message: "Please enter valid phone number",
+                    },
+                  ]}
                   className="w-full"
                 >
-                  <Input placeholder="Enter Phone Number" maxLength={15} minLength={8} />
+                  <Input
+                    placeholder="Enter Phone Number"
+                    maxLength={15}
+                    minLength={8}
+                  />
                 </Form.Item>
               </div>
 
               <Form.Item
                 name="service"
                 label={<span className="font-semibold">Service Required</span>}
-                rules={[{ required: true, message: "Please select your service!" }]}
+                rules={[
+                  { required: true, message: "Please select your service!" },
+                ]}
               >
                 <Select placeholder="Select Service">
-                  <Select.Option value="Business Website">Business Website</Select.Option>
-                  <Select.Option value="E-Commerce Website">E-Commerce Website</Select.Option>
-                  <Select.Option value="Educational Website">Educational Website</Select.Option>
-                  <Select.Option value="Static Website">Static Website</Select.Option>
-                  <Select.Option value="Dynamic Website">Dynamic Website</Select.Option>
+                  <Select.Option value="Business Website">
+                    Business Website
+                  </Select.Option>
+                  <Select.Option value="E-Commerce Website">
+                    E-Commerce Website
+                  </Select.Option>
+                  <Select.Option value="Educational Website">
+                    Educational Website
+                  </Select.Option>
+                  <Select.Option value="Static Website">
+                    Static Website
+                  </Select.Option>
+                  <Select.Option value="Dynamic Website">
+                    Dynamic Website
+                  </Select.Option>
                   <Select.Option value="Other">Other</Select.Option>
                 </Select>
               </Form.Item>
