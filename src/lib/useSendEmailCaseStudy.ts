@@ -16,8 +16,7 @@ const useSendEmailCaseStudy = async ({
   try {
     const mailOptions = {
       from: process.env.GMAIL_USER!,
-      // to: `info@vionsys.com, ${process.env.EMAIL_RECEIVER}`,
-      to: "asmitadhole@vionsys.com",
+      to: `info@vionsys.com, ${process.env.EMAIL_RECEIVER}`,
       subject: `Case Study Downloaded by ${fullName}`,
       html: `
               <div style="font-family: 'Open Sans', sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px; background-color: #f9f9f9;">
