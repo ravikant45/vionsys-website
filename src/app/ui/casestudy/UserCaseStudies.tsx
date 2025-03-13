@@ -154,12 +154,12 @@ const UserCaseStudies = () => {
                   opacity: { duration: 0.4 },
                   ease: "easeInOut",
                 }}
-                className="text-4xl font-bold top-0 text-gray-800 mb-4 text-center flex items-center h-full"
+                className="md:text-4xl text-2xl font-bold top-0 text-gray-800 mb-4 text-center flex items-center h-full"
               >
                 {data?.data.title}
               </motion.h1>
 
-              <div className="flex justify-between items-end h-full">
+              <div className="flex flex-col md:flex-row md:justify-between justify-start md:items-end h-full gap-2">
                 {/* Industry Icon */}
                 <div className="flex items-center gap-2 p-1 text-xl font-medium">
                   <BsBuildings
@@ -174,7 +174,8 @@ const UserCaseStudies = () => {
                 <div className="flex gap-4">
                   <Link
                     aria-label="facebook link"
-                    href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg "
+                    href="https://www.facebook.com/share/j5CS6REwZ5K4WJWz/?mibextid=qi2Omg"
+                    target="_blank"
                   >
                     <FaFacebook
                       size={40}
@@ -184,6 +185,7 @@ const UserCaseStudies = () => {
                   <Link
                     aria-label="instagram link"
                     href="https://www.instagram.com/vionsys.it.solutions/?igsh=aXMyYzU1cjZ3M3Ux"
+                    target="_blank"
                   >
                     <FaInstagram
                       size={40}
@@ -193,6 +195,7 @@ const UserCaseStudies = () => {
                   <Link
                     aria-label="linkedin link"
                     href="https://www.linkedin.com/company/vionsys-it-solutions-ind-pvt-ltd/?originalSubdomain=in"
+                    target="_blank"
                   >
                     <FaLinkedinIn
                       size={40}
@@ -202,6 +205,7 @@ const UserCaseStudies = () => {
                   <Link
                     aria-label="twitter link"
                     href="https://twitter.com/vionsysit"
+                    target="_blank"
                   >
                     <RiTwitterXFill
                       size={40}
@@ -236,9 +240,9 @@ const UserCaseStudies = () => {
             </motion.div>
           </section>
 
-          <section className="flex my-4">
-            <div>
-              <div className="flex-1/2">
+          <section className="flex md:flex-row flex-col-reverse my-4">
+            <div className="flex md:flex-col flex-col">
+              <div className="md:flex-1/2 w-full">
                 <Image
                   src={data?.data.imageMid}
                   alt={data?.data.title + " mid image"}
@@ -254,7 +258,7 @@ const UserCaseStudies = () => {
                   form={form}
                   layout="vertical"
                   onFinish={handleSubmit}
-                  className="space-y-1 md:py-4 md:px-6 p-4 rounded-xl bg-white border m-4 w-2/3"
+                  className="space-y-1 md:py-4 md:px-6 p-4 rounded-xl bg-white border m-4 md:w-2/3 w-full"
                 >
                   <div>
                     <h1 className="text-center text-blue1 text-xl font-bold pt-2">
@@ -405,7 +409,7 @@ const UserCaseStudies = () => {
               </div>
             </div>
             <div
-              className="prose prose-sm max-w-none text-gray-800 w-1/2 h-full flex-2/3 leading-tight whitespace-normal"
+              className="prose prose-sm max-w-none text-gray-800 md:w-1/2 w-full h-full flex-2/3 leading-tight whitespace-normal"
               dangerouslySetInnerHTML={{ __html: data?.data?.description }}
             />
           </section>
