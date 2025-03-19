@@ -13,9 +13,9 @@ export default function SecondSection() {
         {Services.map((item) => (
           <div key={item.id}>
             <div className="py-5">
-              <h1 className="text-SubHeading sm:text-MainHeading text-center border-y-2 border-MainHeading">
+              <h3 className="text-SubHeading sm:text-MainHeading text-center border-y-2 border-MainHeading">
                 {item.heading}
-              </h1>
+              </h3>
             </div>
             <div className="grid gap-6 row-gap-10 lg:grid-cols-2 mb-5">
               <div className={`lg:py-6 lg:pr-16 ${item.className1}`}>

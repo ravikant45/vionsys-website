@@ -49,7 +49,7 @@ function Empower() {
   return (
     <div className="flex-col gap-4 px-4 md:py-14 w-full dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative flex items-center justify-center">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{
@@ -61,7 +61,7 @@ function Empower() {
         className="md:text-3xl text-xl py-3 font-extrabold relative bg-clip-text text-transparent bg-gradient-to-b from-MainHeading to-MainHeading text-center"
       >
         Empower Your Tech Company with CRM
-      </motion.h1>
+      </motion.h2>
       <motion.p
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}

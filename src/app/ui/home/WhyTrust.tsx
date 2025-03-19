@@ -64,7 +64,7 @@ const WhyTrust: React.FC = () => {
         />
         <div className="content bg-white p-2 pt-8 md:p-6 pb-12 lg:max-w-xl w-full lg:absolute top-10 right-5">
           <div>
-            <motion.h1
+            <motion.h2
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
@@ -76,8 +76,8 @@ const WhyTrust: React.FC = () => {
               className="font-extrabold text-MainHeading"
             >
               Why trust us?
-            </motion.h1>
-            <motion.h2
+            </motion.h2>
+            <motion.h3
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
@@ -89,7 +89,7 @@ const WhyTrust: React.FC = () => {
               className="text-SubHeading md:mt-5 mt-3 font-bold"
             >
               Achieve digital transformation for your retail business services
-            </motion.h2>
+            </motion.h3>
             <motion.p
               initial={{ opacity: 0, scale: 1.2 }}
               whileInView={{ opacity: 1, scale: 1 }}

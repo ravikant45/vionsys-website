@@ -10,7 +10,7 @@ export default function Herosection() {
         <div className="grid gap-5 row-gap-8 lg:grid-cols-2">
           <div className="flex flex-col justify-center">
             <div className="max-w-xl mb-6">
-              <motion.h2
+              <motion.h1
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -23,7 +23,7 @@ export default function Herosection() {
               >
                 Modernizing the Construction Industry: Expert IT Solutions from
                 Vionsys
-              </motion.h2>
+              </motion.h1>
               <motion.p
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -65,9 +65,9 @@ export default function Herosection() {
         </div>
       </div>
 
-      <h1 className="text-center text-2xl font-bold sm:text-4xl text-orange">
+      <h2 className="text-center text-2xl font-bold sm:text-4xl text-orange">
         Our Services
-      </h1>
+      </h2>
     </div>
   );
 }

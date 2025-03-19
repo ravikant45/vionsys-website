@@ -51,7 +51,7 @@ const Services = () => {
                   index % 2 === 0 ? "order-2" : "order-1"
                 }`}
               >
-                <motion.h1
+                <motion.h2
                   initial={{ opacity: 0, x: -100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
@@ -63,7 +63,7 @@ const Services = () => {
                   className="text-ThirdHeading font-semibold"
                 >
                   {service.title}
-                </motion.h1>
+                </motion.h2>
                 {service.features.map((feature, idx) => (
                   <motion.div
                     key={idx}

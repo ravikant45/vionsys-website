@@ -7,9 +7,9 @@ const Ourservice: React.FC = () => {
   return (
     <div className="min-h-screen p-4">
       <div className="container mx-auto">
-        <h1 className="font-bold text-MainHeading text-center border-t-4 py-8  border-blue-600">
+        <h2 className="font-bold text-MainHeading text-center border-t-4 py-8  border-blue-600">
           Our Banking Services
-        </h1>
+        </h2>
         {services.map((service, index) => (
           <section className="bg-grid-blue-100 py-5">
             <React.Fragment key={index}></React.Fragment>

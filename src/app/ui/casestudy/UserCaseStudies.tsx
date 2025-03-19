@@ -261,9 +261,9 @@ const UserCaseStudies = () => {
                   className="space-y-1 md:py-4 md:px-6 p-4 rounded-xl bg-white border m-4 md:w-2/3 w-full"
                 >
                   <div>
-                    <h1 className="text-center text-blue1 text-xl font-bold pt-2">
+                    <h2 className="text-center text-blue1 text-xl font-bold pt-2">
                       Download Case Study
-                    </h1>
+                    </h2>
                   </div>
 
                   <Form.Item

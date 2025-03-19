@@ -51,9 +51,9 @@ const Page = () => {
         {/* Service section */}
         <section className="services_look bg-white py-3">
           <div className="flex justify-center items-center py-6">
-            <h1 className="md:text-4xl text-3xl font-bold text-orange leading-tight mb-2 border-t-4 border-b-4 border-blue3">
+            <h2 className="md:text-4xl text-3xl font-bold text-orange leading-tight mb-2 border-t-4 border-b-4 border-blue3">
               Our Services
-            </h1>
+            </h2>
           </div>
           <p className="relative md:px-5 px-2 z-10 text-paragraph text-gray-600 text-center">
             Unlock your business's potential with our expert software

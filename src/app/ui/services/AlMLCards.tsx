@@ -206,9 +206,9 @@ const AlMLCards: React.FC = () => {
       {/* Industries we serve */}
       <section className="py-10 md:py-20">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl md:text-3xl text-blue-700 decoration-orange pb-4 md:pb-10 font-bold">
+          <h2 className="text-2xl md:text-3xl text-blue-700 decoration-orange pb-4 md:pb-10 font-bold">
             Industries We Serve
-          </h1>
+          </h2>
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
             whileInView={{ opacity: 1, scale: 1 }}

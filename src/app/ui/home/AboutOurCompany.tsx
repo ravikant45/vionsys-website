@@ -46,7 +46,7 @@ const AboutOurCompany = () => {
         <LayoutGrid cards={cards} />
       </div>
       <div className="col-span-1 px-5">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -58,8 +58,8 @@ const AboutOurCompany = () => {
           className="font-extrabold text-MainHeading"
         >
           About Our Company
-        </motion.h1>
-        <motion.h2
+        </motion.h2>
+        <motion.h3
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -72,7 +72,7 @@ const AboutOurCompany = () => {
         >
           Elevating your business through exemplary IT services is our
           unwavering passion and commitment.
-        </motion.h2>
+        </motion.h3>
         <motion.p
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}

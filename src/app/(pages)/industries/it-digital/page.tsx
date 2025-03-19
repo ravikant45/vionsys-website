@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "Explore IT Digital services with Vionsys IT Solutions India Pvt Ltd. We modernize operations and enhance customers' experience by customizing strategies.",
   alternates: {
-    canonical: `${BaseUrl}/industries/it_digital`,
+    canonical: `${BaseUrl}/industries/it-digital`,
   },
   openGraph: {
     images: "/opangraph.png",

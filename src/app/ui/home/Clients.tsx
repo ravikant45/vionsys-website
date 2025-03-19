@@ -1,40 +1,38 @@
 "use client";
-import Client1 from "../../../../public/assets/clients/Client1.png"
-import Client2 from "../../../../public/assets/clients/Client2.png"
-import Client3 from "../../../../public/assets/clients/Client3.png"
-import Client4 from "../../../../public/assets/clients/Client4.png"
-import Client5 from "../../../../public/assets/clients/Client5.png"
-import Client6 from "../../../../public/assets/clients/Client6.png"
-import Client7 from "../../../../public/assets/clients/Client7.png"
-import Client8 from "../../../../public/assets/clients/Client8.png"
-import Client9 from "../../../../public/assets/clients/Client9.png"
-import Client10 from "../../../../public/assets/clients/Client10.png"
-import Client11 from "../../../../public/assets/clients/Client11.png"
-import Client12 from "../../../../public/assets/clients/Client12.png"
-import Client13 from "../../../../public/assets/clients/Client13.png"
-import Client14 from "../../../../public/assets/clients/Client14.png"
-import Client15 from "../../../../public/assets/clients/Client15.png"
-import Client16 from "../../../../public/assets/clients/Client16.png"
-import Client17 from "../../../../public/assets/clients/Client17.png"
-import Client18 from "../../../../public/assets/clients/Client18.png"
-import Client19 from "../../../../public/assets/clients/Client19.png"
-import Client20 from "../../../../public/assets/clients/Client20.png"
-import Client21 from "../../../../public/assets/clients/Client21.png"
-import Client22 from "../../../../public/assets/clients/Client22.png"
-import Client23 from "../../../../public/assets/clients/Client23.png"
-import Client24 from "../../../../public/assets/clients/Client24.png"
-import Client25 from "../../../../public/assets/clients/Client25.png"
-import Client26 from "../../../../public/assets/clients/Client26.png"
-import Client27 from "../../../../public/assets/clients/Client27.png"
-import Client28 from "../../../../public/assets/clients/Client28.png"
-import Client29 from "../../../../public/assets/clients/Client29.png"
-import Client30 from "../../../../public/assets/clients/Client30.png"
-import Client31 from "../../../../public/assets/clients/Client31.png"
-import Client32 from "../../../../public/assets/clients/Client32.png"
-import Client33 from "../../../../public/assets/clients/Client33.png"
-import Client34 from "../../../../public/assets/clients/Client34.png"
-
-
+import Client1 from "../../../../public/assets/clients/Client1.png";
+import Client2 from "../../../../public/assets/clients/Client2.png";
+import Client3 from "../../../../public/assets/clients/Client3.png";
+import Client4 from "../../../../public/assets/clients/Client4.png";
+import Client5 from "../../../../public/assets/clients/Client5.png";
+import Client6 from "../../../../public/assets/clients/Client6.png";
+import Client7 from "../../../../public/assets/clients/Client7.png";
+import Client8 from "../../../../public/assets/clients/Client8.png";
+import Client9 from "../../../../public/assets/clients/Client9.png";
+import Client10 from "../../../../public/assets/clients/Client10.png";
+import Client11 from "../../../../public/assets/clients/Client11.png";
+import Client12 from "../../../../public/assets/clients/Client12.png";
+import Client13 from "../../../../public/assets/clients/Client13.png";
+import Client14 from "../../../../public/assets/clients/Client14.png";
+import Client15 from "../../../../public/assets/clients/Client15.png";
+import Client16 from "../../../../public/assets/clients/Client16.png";
+import Client17 from "../../../../public/assets/clients/Client17.png";
+import Client18 from "../../../../public/assets/clients/Client18.png";
+import Client19 from "../../../../public/assets/clients/Client19.png";
+import Client20 from "../../../../public/assets/clients/Client20.png";
+import Client21 from "../../../../public/assets/clients/Client21.png";
+import Client22 from "../../../../public/assets/clients/Client22.png";
+import Client23 from "../../../../public/assets/clients/Client23.png";
+import Client24 from "../../../../public/assets/clients/Client24.png";
+import Client25 from "../../../../public/assets/clients/Client25.png";
+import Client26 from "../../../../public/assets/clients/Client26.png";
+import Client27 from "../../../../public/assets/clients/Client27.png";
+import Client28 from "../../../../public/assets/clients/Client28.png";
+import Client29 from "../../../../public/assets/clients/Client29.png";
+import Client30 from "../../../../public/assets/clients/Client30.png";
+import Client31 from "../../../../public/assets/clients/Client31.png";
+import Client32 from "../../../../public/assets/clients/Client32.png";
+import Client33 from "../../../../public/assets/clients/Client33.png";
+import Client34 from "../../../../public/assets/clients/Client34.png";
 
 import InfiniteMovingCards2 from "../../../components/ui/infinite-moving-cards2";
 import { motion } from "framer-motion";
@@ -81,11 +79,10 @@ const testimonials: Testimonial[] = [
   { id: "34", img: Client34.src },
 ];
 
-
 export function InfiniteMovingCardsDemo() {
   return (
     <div className="bg-[#fd4343] bg-[linear-gradient(45deg,_#fd4343_0%,_#ffbde9_50%,_#8983fb_100%)] p-6">
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -97,7 +94,7 @@ export function InfiniteMovingCardsDemo() {
         className="md:text-MainHeading text-MainHeading font-extrabold text-center"
       >
         Our Clients
-      </motion.h1>
+      </motion.h2>
       <div className="h-auto md:py-4 py-2 rounded-md flex antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards2
           items={testimonials}
