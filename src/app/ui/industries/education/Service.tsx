@@ -9,9 +9,9 @@ const Service = () => {
     <>
       <section>
         <motion.div className="flex flex-col items-center md:py-6 py-4">
-          <h1 className="font-extrabold text-MainHeading text-center">
+          <h2 className="font-extrabold text-MainHeading text-center">
             Our Services
-          </h1>
+          </h2>
           <p className="text-SubHeading mt-2 font-bold px-4 text-center max-w-5xl">
             Empowering Education Through Innovation: Tailored IT Solutions for a
             Smarter Learning Experience.

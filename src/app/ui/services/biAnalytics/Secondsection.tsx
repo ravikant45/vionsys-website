@@ -61,9 +61,9 @@ const Secondsection = () => {
 
         {/* Third Section */}
         <div className=" bg-gray-100 w-[100%] z-0 overflow-x-hidden md:pt-20 pt-10 md:gap-10 gap-5 bg-transparent flex-col relative flex items-center justify-center">
-          <h3 className="text-center md:text-MainHeading text-2xl text-[#215cbc] font-extrabold relative z-20 bg-clip-text capitalize">
+          <h2 className="text-center md:text-MainHeading text-2xl text-[#215cbc] font-extrabold relative z-20 bg-clip-text capitalize">
             {BiAndAnalyticsData.cardsTitle}
-          </h3>
+          </h2>
           <div className="flex md:gap-10 gap-2 py-2 flex-wrap justify-evenly w-full overflow-x-hidden">
             {BiAndAnalyticsData?.cards.map((card) => (
               <div

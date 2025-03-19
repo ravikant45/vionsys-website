@@ -32,7 +32,7 @@ const ServicesTemplateFour: React.FC = () => {
               }}
               className="md:w-[60%] w-full flex flex-col md:gap-6 "
             >
-              <motion.h3
+              <motion.h1
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -44,7 +44,7 @@ const ServicesTemplateFour: React.FC = () => {
                 className="font-extrabold md:text-5xl text-xl capitalize"
               >
                 Integrated Digital Marketing Services
-              </motion.h3>
+              </motion.h1>
               <motion.p
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -72,9 +72,9 @@ const ServicesTemplateFour: React.FC = () => {
       {/* digital marketing strategies */}
       <div className="w-full flex justify-center items-center flex-col gap-6 h-auto py-10">
         <div className="w-full px-4 flex justify-center items-center">
-          <h1 className="text-orange font-bold md:text-4xl text-2xl">
+          <h2 className="text-orange font-bold md:text-4xl text-2xl">
             Digital Marketing Strategies
-          </h1>
+          </h2>
         </div>
 
         <div className="flex flex-col md:gap-16 gap-4">
@@ -92,9 +92,9 @@ const ServicesTemplateFour: React.FC = () => {
               className="md:w-[50%] w-full pt-2 flex flex-col gap-4"
             >
               <div className="flex flex-col gap-3">
-                <h1 className="md:text-2xl text-xl font-semibold">
+                <h2 className="md:text-2xl text-xl font-semibold">
                   Search Engine Optimization(SEO)
-                </h1>
+                </h2>
                 <p className="md:text-lg text-base">
                   Our SEO services in digital marketing increase online
                   visibility and drive consistent growth. Using advanced
@@ -110,9 +110,9 @@ const ServicesTemplateFour: React.FC = () => {
                 </p>
               </div>
               <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
-                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                <h3 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
                   Key Strategies of SEO
-                </h2>
+                </h3>
                 <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
                   <li className="w-full bg-gray-100 p-3 rounded-md">
                     Keyword Research
@@ -156,9 +156,9 @@ const ServicesTemplateFour: React.FC = () => {
               className="md:w-[50%] w-full pt-2 flex flex-col gap-4 md:order-2 order-1 "
             >
               <div className="flex flex-col gap-3">
-                <h1 className="md:text-2xl text-xl font-semibold">
+                <h2 className="md:text-2xl text-xl font-semibold">
                   Content Marketing
-                </h1>
+                </h2>
                 <p className="md:text-lg text-base">
                   In the realm of digital marketing, our content marketing
                   service is a cornerstone for building brand authority and
@@ -174,9 +174,9 @@ const ServicesTemplateFour: React.FC = () => {
                 </p>
               </div>
               <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
-                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                <h3 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
                   Key Strategies of Content Marketing
-                </h2>
+                </h3>
                 <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
                   <li className="w-full bg-gray-100 p-3 rounded-md">
                     Create High-Quality Content
@@ -206,9 +206,9 @@ const ServicesTemplateFour: React.FC = () => {
               className="md:w-[50%] w-full pt-2 flex flex-col gap-4"
             >
               <div className="flex flex-col gap-3">
-                <h1 className="md:text-2xl text-xl font-semibold">
+                <h2 className="md:text-2xl text-xl font-semibold">
                   Social Media Marketing
-                </h1>
+                </h2>
                 <p className="md:text-lg text-base">
                   In the dynamic realm of digital marketing, our Social Media
                   Marketing (SMM) service boosts your online presence and
@@ -222,9 +222,9 @@ const ServicesTemplateFour: React.FC = () => {
                 </p>
               </div>
               <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
-                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                <h3 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
                   Key Strategies of SEO
-                </h2>
+                </h3>
                 <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
                   <li className="w-full bg-gray-100 p-3 rounded-md">
                     Influencer Marketing
@@ -268,9 +268,9 @@ const ServicesTemplateFour: React.FC = () => {
               className="md:w-[50%] w-full pt-2 flex flex-col gap-4 md:order-2 order-1 "
             >
               <div className="flex flex-col gap-3">
-                <h1 className="md:text-2xl text-xl font-semibold">
+                <h2 className="md:text-2xl text-xl font-semibold">
                   Email Marketing
-                </h1>
+                </h2>
                 <p className="md:text-lg text-base">
                   In digital marketing, our email marketing services stand as
                   prophets in developing direct and personal connections with
@@ -285,9 +285,9 @@ const ServicesTemplateFour: React.FC = () => {
                 </p>
               </div>
               <div className="flex flex-col md:w-[50%] w-full justify-start items-start gap-4 flex-1">
-                <h2 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
+                <h3 className=" md:items-start items-center md:text-xl text-orange text-lg font-semibold ">
                   Key Strategies of Email Marketing
-                </h2>
+                </h3>
                 <ul className="flex flex-col gap-3.5 w-full md:max-w-md ">
                   <li className="w-full bg-gray-100 p-3 rounded-md">
                     Responsive Design

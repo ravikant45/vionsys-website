@@ -10,7 +10,7 @@ const OurApproach = () => {
     <>
       {/* Description Section */}
       <section className="py-6 md:pt-8 space-y-3">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -22,7 +22,7 @@ const OurApproach = () => {
           className="text-MainHeading text-center font-extrabold px-4"
         >
           Strategic Approaches to IT Modernization
-        </motion.h1>
+        </motion.h2>
         <motion.p
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -46,7 +46,7 @@ const OurApproach = () => {
       {/* the static section for Our Approach  */}
       <section>
         <div className="flex flex-col justify-center items-center font-bold md:py-2">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -58,7 +58,7 @@ const OurApproach = () => {
             className="text-3xl text-orange font-extrabold"
           >
             Our Approach
-          </motion.h1>
+          </motion.h2>
         </div>
 
         <div className="z-0 bg-transparent md:p-10 px-1">
@@ -93,9 +93,9 @@ const OurApproach = () => {
                   index % 2 === 0 ? "order-2 md:order-2" : "order-2 md:order-1"
                 }`}
               >
-                <h1 className="text-2xl text-black font-bold">
+                <h2 className="text-2xl text-black font-bold">
                   {section.id}. {section.title}
-                </h1>
+                </h2>
                 <ul className="bg-white rounded-lg md:w-full w-full text-paragraph font-medium list-inside list-disc md:h-auto">
                   {section.items.map((item, idx) => (
                     <motion.li

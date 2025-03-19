@@ -95,9 +95,9 @@ const Industries = () => {
   return (
     <div className="z-0 px-6 py-4 overflow-x-hidden">
       <div className="text-center">
-        <h1 className="text-MainHeading font-extrabold mt-2">
+        <h2 className="text-MainHeading font-extrabold mt-2">
           Sectors We Serve
-        </h1>
+        </h2>
       </div>
       <div className="py-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards

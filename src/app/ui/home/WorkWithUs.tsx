@@ -28,7 +28,7 @@ function WorkWithUs() {
       <AuroraBackground>
         <div className="relative flex flex-col gap-4 items-center justify-center px-4 md:py-24 py-4">
           {/* <div className='flex flex-col justify-items-center items-center'> */}
-          <motion.h1
+          <motion.h3
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -40,8 +40,8 @@ function WorkWithUs() {
             className="font-extrabold text-MainHeading text-center"
           >
             Want to work with us?
-          </motion.h1>
-          <motion.h2
+          </motion.h3>
+          <motion.h4
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -54,7 +54,7 @@ function WorkWithUs() {
           >
             Elevate your business through digital transformation, driving
             sustainable growth.
-          </motion.h2>
+          </motion.h4>
           <motion.p
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -59,7 +59,7 @@ export interface Key {
 function choose() {
   return (
     <div>
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -71,7 +71,7 @@ function choose() {
         className="md:text-MainHeading text-2xl text-center text-[#e57e2c] font-extrabold"
       >
         Why Choose Us for Your IT Staffing Needs?
-      </motion.h1>
+      </motion.h2>
       <div className="flex justify-center">
         <div className="flex flex-wrap gap-4 p-6 justify-center">
           {styles.map((item) => (

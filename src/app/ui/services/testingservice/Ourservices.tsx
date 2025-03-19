@@ -148,7 +148,7 @@ const Ourservices = () => {
           />
           <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-start w-full px-4">
             <div className="md:w-[50%] w-full flex flex-col gap-2 p-2">
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -160,7 +160,7 @@ const Ourservices = () => {
                 className="md:text-5xl text-2xl py-4 text-white font-bold"
               >
                 Below are the testing implementation steps
-              </motion.h1>
+              </motion.h2>
               <motion.p
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}

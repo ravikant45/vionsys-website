@@ -85,9 +85,9 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
       {/* why choose us section */}
       <section>
         <div className="flex flex-col justify-center items-center font-bold md:py-5">
-          <h1 data-aos="fade-right" className="text-MainHeading font-extrabold">
+          <h2 data-aos="fade-right" className="text-MainHeading font-extrabold">
             Why Choose Us
-          </h1>
+          </h2>
           <p
             data-aos="fade-left"
             className="max-w-[50rem] text-SubHeading font-bold text-center"
@@ -108,7 +108,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               data-aos="fade-left"
               className="flex flex-col justify-center gap-2 md:p-10 p-2"
             >
-              <h1 className="text-2xl text-black font-bold">Expertise</h1>
+              <h2 className="text-2xl text-black font-bold">Expertise</h2>
               <p className="text-paragraph">
                 Expertise refers to specialized skills and knowledge in software
                 development, encompassing proficiency in programming languages,
@@ -146,7 +146,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
             >
               {/* right side */}
               <div className="flex flex-col justify-center gap-2 md:p-10 p-2">
-                <h1 className="text-2xl text-black font-bold">Innovation</h1>
+                <h2 className="text-2xl text-black font-bold">Innovation</h2>
                 <p className="text-paragraph">
                   Innovation involves introducing new ideas, technologies and
                   solutions to create value and drive progress in software
@@ -164,7 +164,7 @@ const ServicesTemplateTwo = ({ data }: { data: any }) => {
               data-aos="fade-left"
               className="flex flex-col justify-center md:p-10 p-2 gap-2"
             >
-              <h1 className="text-2xl text-black font-bold">On-Time Support</h1>
+              <h2 className="text-2xl text-black font-bold">On-Time Support</h2>
               <p className="text-paragraph">
                 Commitment to delivering timely and responsive assistance
                 throughout the software development process. This involves

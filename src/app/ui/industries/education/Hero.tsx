@@ -15,7 +15,7 @@ const Hero = () => {
         />
         <div className="relative h-[70vh] md:h-[90vh] bg-gray-900 bg-opacity-55 flex items-center justify-center">
           <div className="text-center max-w-5xl mx-auto px-4 md:px-8 py-16 lg:py-20">
-            <motion.h2
+            <motion.h1
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
@@ -27,7 +27,7 @@ const Hero = () => {
               className="text-3xl md:text-5xl font-extrabold text-white mb-6"
             >
               Education Sector
-            </motion.h2>
+            </motion.h1>
             <motion.p
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}

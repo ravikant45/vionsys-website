@@ -8,7 +8,7 @@ const AllBlogs = dynamic(() => import("@/app/ui/dashboard/blogs/AllBlogs"), {
   loading: () => <DynamicLoader />,
 });
 export const metadata: Metadata = {
-  title: "Blogs",
+  title: "Blogs - Vionsys IT Solutions India Pvt Ltd",
   description:
     "Stay updated with the latest trends, insights, and innovations in the IT industry. Our blog features expert articles, technology updates, and company news, helping you stay ahead in your career and knowledge.",
   alternates: {

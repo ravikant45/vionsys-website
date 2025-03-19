@@ -148,9 +148,9 @@ const LifeAtVionsys: React.FC = () => {
       <section className="w-[100vw] dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="w-full flex flex-col justify-center items-center gap-4 md:px-4 px-2 md:py-6 py-2">
-          <h1 className="text-3xl font-extrabold text-orange relative z-20">
+          <h2 className="text-3xl font-extrabold text-orange relative z-20">
             Life At Vionsys
-          </h1>
+          </h2>
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-8">
             {services.map((service) => (
               <div
@@ -158,9 +158,9 @@ const LifeAtVionsys: React.FC = () => {
                 className="flex flex-col justify-center items-center gap-2"
               >
                 {service.icon}
-                <h1 className="text-[#3469bc] text-xl font-bold relative z-20 bg-clip-text">
+                <h3 className="text-[#3469bc] text-xl font-bold relative z-20 bg-clip-text">
                   {service.title}
-                </h1>
+                </h3>
                 <p className="text-paragraph md:px-7 px-5 font-normal text-justify hover:text-black text-lg relative z-20 bg-clip-text">
                   {service.description}
                 </p>

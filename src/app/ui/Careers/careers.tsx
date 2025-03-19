@@ -29,7 +29,7 @@ const CareerComponent = () => {
             {" "}
             Build your career at Vionsys
           </motion.h1>
-          <motion.p
+          <motion.h5
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -44,7 +44,7 @@ const CareerComponent = () => {
             Ltd. Be part of a dynamic team where creativity, advancement and
             teamwork thrive. Embark on your path towards a brighter professional
             future now.
-          </motion.p>
+          </motion.h5>
         </div>
       </div>
     </div>

@@ -121,9 +121,9 @@ const Service = () => {
       <section>
         <div className="flex flex-col items-center md:pt-6 pt-4">
           <div className="px-14 w-full">
-            <h1 className="font-extrabold w-full  border-y-2 border-MainHeading text-MainHeading text-center">
+            <h2 className="font-extrabold w-full  border-y-2 border-MainHeading text-MainHeading text-center">
               Our Services
-            </h1>
+            </h2>
           </div>
         </div>
         {services.map((item) => (
@@ -132,9 +132,9 @@ const Service = () => {
             className="max-w-screen-xl mx-auto py-8 px-4 lg:py-10 lg:px-6"
           >
             <div className="text-center md:mb-6 mb-3">
-              <h2 className="text-2xl text-[#e57e2c] tracking-tight font-bold text-primary-800">
+              <h3 className="text-2xl text-[#e57e2c] tracking-tight font-bold text-primary-800">
                 {item.title}
-              </h2>
+              </h3>
             </div>
 
             <div className="flex flex-col md:flex-row">
@@ -164,9 +164,9 @@ const Service = () => {
                     }}
                     className={`h-auto py-4 px-6 border border-[#215cbc] border-t-0 ${item.className1}`}
                   >
-                    <h3 className="text-xl font-bold text-md mb-3">
+                    <h4 className="text-xl font-bold text-md mb-3">
                       {item.para1}
-                    </h3>
+                    </h4>
                     <p className="text-sm">{item.Des1}</p>
                   </motion.div>
                 </div>

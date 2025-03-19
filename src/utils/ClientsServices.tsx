@@ -3,45 +3,44 @@ import React from "react";
 import { motion } from "framer-motion";
 import InfiniteMovingServices from "../components/ui/InfiniteMovingServices";
 import Client1 from "../../public/assets/clients/ServicesClient/Client1.png";
-import Client2 from "../../public/assets/clients/ServicesClient/Client2.png"
-import Client3 from "../../public/assets/clients/ServicesClient/Client3.png"
-import Client4 from "../../public/assets/clients/ServicesClient/Client4.png"
-import Client5 from "../../public/assets/clients/ServicesClient/Client5.png"
-import Client6 from "../../public/assets/clients/ServicesClient/Client6.png"
-import Client7 from "../../public/assets/clients/ServicesClient/Client7.png"
-import Client8 from "../../public/assets/clients/ServicesClient/Client8.png"
-import Client9 from "../../public/assets/clients/ServicesClient/Client9.png"
-import Client10 from "../../public/assets/clients/ServicesClient/Client10.png"
-import Client11 from "../../public/assets/clients/ServicesClient/Client11.png"
-import Client12 from "../../public/assets/clients/ServicesClient/Client12.png"
-import Client13 from "../../public/assets/clients/ServicesClient/Client13.png"
-import Client14 from "../../public/assets/clients/ServicesClient/Client14.png"
-import Client15 from "../../public/assets/clients/ServicesClient/Client15.png"
-import Client16 from "../../public/assets/clients/ServicesClient/Client16.png"
-import Client17 from "../../public/assets/clients/ServicesClient/Client17.png"
-import Client18 from "../../public/assets/clients/ServicesClient/Client18.png"
-import Client19 from "../../public/assets/clients/ServicesClient/Client19.png"
-import Client20 from "../../public/assets/clients/ServicesClient/Client20.png"
-import Client21 from "../../public/assets/clients/ServicesClient/Client21.png"
-import Client22 from "../../public/assets/clients/ServicesClient/Client22.png"
-import Client23 from "../../public/assets/clients/ServicesClient/Client23.png"
-import Client24 from "../../public/assets/clients/ServicesClient/Client24.png"
-import Client25 from "../../public/assets/clients/ServicesClient/Client25.png"
-import Client26 from "../../public/assets/clients/ServicesClient/Client26.png"
-import Client27 from "../../public/assets/clients/ServicesClient/Client27.png"
-import Client28 from "../../public/assets/clients/ServicesClient/Client28.png"
-import Client29 from "../../public/assets/clients/ServicesClient/Client29.png"
-import Client30 from "../../public/assets/clients/ServicesClient/Client30.png"
-import Client31 from "../../public/assets/clients/ServicesClient/Client31.png"
-import Client32 from "../../public/assets/clients/ServicesClient/Client32.png"
-import Client33 from "../../public/assets/clients/ServicesClient/Client33.png"
-import Client34 from "../../public/assets/clients/ServicesClient/Client34.png"
+import Client2 from "../../public/assets/clients/ServicesClient/Client2.png";
+import Client3 from "../../public/assets/clients/ServicesClient/Client3.png";
+import Client4 from "../../public/assets/clients/ServicesClient/Client4.png";
+import Client5 from "../../public/assets/clients/ServicesClient/Client5.png";
+import Client6 from "../../public/assets/clients/ServicesClient/Client6.png";
+import Client7 from "../../public/assets/clients/ServicesClient/Client7.png";
+import Client8 from "../../public/assets/clients/ServicesClient/Client8.png";
+import Client9 from "../../public/assets/clients/ServicesClient/Client9.png";
+import Client10 from "../../public/assets/clients/ServicesClient/Client10.png";
+import Client11 from "../../public/assets/clients/ServicesClient/Client11.png";
+import Client12 from "../../public/assets/clients/ServicesClient/Client12.png";
+import Client13 from "../../public/assets/clients/ServicesClient/Client13.png";
+import Client14 from "../../public/assets/clients/ServicesClient/Client14.png";
+import Client15 from "../../public/assets/clients/ServicesClient/Client15.png";
+import Client16 from "../../public/assets/clients/ServicesClient/Client16.png";
+import Client17 from "../../public/assets/clients/ServicesClient/Client17.png";
+import Client18 from "../../public/assets/clients/ServicesClient/Client18.png";
+import Client19 from "../../public/assets/clients/ServicesClient/Client19.png";
+import Client20 from "../../public/assets/clients/ServicesClient/Client20.png";
+import Client21 from "../../public/assets/clients/ServicesClient/Client21.png";
+import Client22 from "../../public/assets/clients/ServicesClient/Client22.png";
+import Client23 from "../../public/assets/clients/ServicesClient/Client23.png";
+import Client24 from "../../public/assets/clients/ServicesClient/Client24.png";
+import Client25 from "../../public/assets/clients/ServicesClient/Client25.png";
+import Client26 from "../../public/assets/clients/ServicesClient/Client26.png";
+import Client27 from "../../public/assets/clients/ServicesClient/Client27.png";
+import Client28 from "../../public/assets/clients/ServicesClient/Client28.png";
+import Client29 from "../../public/assets/clients/ServicesClient/Client29.png";
+import Client30 from "../../public/assets/clients/ServicesClient/Client30.png";
+import Client31 from "../../public/assets/clients/ServicesClient/Client31.png";
+import Client32 from "../../public/assets/clients/ServicesClient/Client32.png";
+import Client33 from "../../public/assets/clients/ServicesClient/Client33.png";
+import Client34 from "../../public/assets/clients/ServicesClient/Client34.png";
 
 interface Testimonial {
   id: string;
   img: string;
 }
-
 
 const testimonials: Testimonial[] = [
   { id: "1", img: Client1.src },
@@ -80,16 +79,14 @@ const testimonials: Testimonial[] = [
   { id: "34", img: Client34.src },
 ];
 
-
-
 const ClientsServices = () => {
   return (
     <div className="p-2">
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.60,
+          delay: 0.6,
           y: { type: "spring", stiffness: 30 },
           opacity: { duration: 0.6 },
           ease: "easeInOut",
@@ -97,7 +94,7 @@ const ClientsServices = () => {
         className="md:text-MainHeading text-MainHeading font-extrabold text-center"
       >
         Our Clients
-      </motion.h1>
+      </motion.h2>
       <div className="h-auto rounded-md flex antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingServices
           items={testimonials}

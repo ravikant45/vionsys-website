@@ -31,11 +31,14 @@ const AboutUs = () => {
               transition={{ duration: 1 }}
               className="text-center mt-5 px-8 sm:mt-10 sm:px-20"
             >
-              <h1 className="text-white font-extrabold md:text-5xl text-xl">
+              <h1 className="hidden">
+                Vionsys IT solutions INDIA PVT. LTD. - About Us
+              </h1>
+              <h2 className="text-white font-extrabold md:text-5xl text-xl">
                 Ready To <br className="sm:hidden" />
                 <span className="block">Transform Your Ideas </span>
                 Into Reality?
-              </h1>
+              </h2>
             </motion.div>
           </div>
         </div>
