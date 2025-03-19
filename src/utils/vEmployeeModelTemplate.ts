@@ -1,10 +1,11 @@
 type Form6Data = {
-    name: string;
-    email: string;
-    message: string;
-  };
-  
-  export const vEmployeeModelTemplate = (data: Form6Data): string => `
+  name: string;
+  email: string;
+  message: string;
+  selectedSkills: string[];
+};
+
+export const vEmployeeModelTemplate = (data: Form6Data): string => `
     <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; max-width: 600px; margin: auto;">
         <h1 style="color: #e57e2c; font-size: 24px; text-align: center; font-weight: bold;">
             New Message from Vionsys Remote IT Developer Landing Page
@@ -25,7 +26,14 @@ type Form6Data = {
                     <td style="padding: 10px 0; font-weight: bold;">Email Address:</td>
                     <td style="padding: 10px 0;">${data?.email}</td>
                 </tr>
-               
+                <tr style="border-bottom: 1px solid #eee;">                    
+                <td style="padding: 10px 0; font-weight: bold;">Selected Skill:</td>
+                <td style="padding: 10px 0;">${
+                  data.selectedSkills && data.selectedSkills.length > 0
+                    ? data.selectedSkills.join(", ")
+                    : "None"
+                }</td>
+                </tr>
                 <tr style="border-bottom: 1px solid #eee;">
                     <td style="padding: 10px 0; font-weight: bold;">Your Message:</td>
                     <td style="padding: 10px 0;">${data?.message}</td>
@@ -33,7 +41,11 @@ type Form6Data = {
             </table>
     
             <div style="margin-top: 20px; text-align: center;">
-                <a href="mailto:${data.email}" style="background-color: #e57e2c; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;">Contact ${data.name}</a>
+                <a href="mailto:${
+                  data.email
+                }" style="background-color: #e57e2c; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;">
+                    Contact ${data.name}
+                </a>
             </div>
         </div>
     
@@ -42,4 +54,3 @@ type Form6Data = {
         </p>
     </div>
     `;
-  

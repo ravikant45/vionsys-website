@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,31 +8,34 @@ import { Button } from "@/components/ui/button";
 import { country } from "@/utils/CountryCodes";
 import { vEmployeeModelTemplate } from "@/utils/vEmployeeModelTemplate";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
-
 const Page: React.FC = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState<boolean>(false);
-  const router = useRouter(); // Initialize router for navigation
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const selectedSkills = JSON.parse(
+    decodeURIComponent(searchParams.get("skills") || "[]")
+  );
   const [countryCode, setCountryCode] = useState<string>("");
 
   const handleSubmit = async (values: any) => {
     const formattedData = {
       ...values,
       countryCode: values.countryCode,
+      selectedSkills,
     };
 
     const template = vEmployeeModelTemplate(formattedData);
-    //const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
-    const sendTo = ["workvansh1@gmail.com"];
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
+    //const sendTo = ["workvansh12@gmail.com"];
     const updatedData = {
       formattedData,
       template,
       sendTo,
     };
 
-    // Print form values to the console
     setLoading(true);
     try {
       const response = await axios.post("/api/email", updatedData, {
@@ -44,6 +48,7 @@ const Page: React.FC = () => {
       router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
+      setLoading(false);
     }
   };
 
@@ -64,12 +69,14 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className="relative mt-8 w-full h-screen flex flex-col lg:flex-row items-center justify-center mx-auto gap-8 px-4 py-8">
-      {/* Right Image (Hidden on Small Screens) */}
+    <div className="relative mt-8 w-full h-[600px] flex flex-col lg:flex-row items-center justify-center mx-auto gap-8 px-4 py-8">
+      {/* Right Image */}
       <div className="w-full lg:w-1/2 hidden lg:block">
-        <img
+        <Image
+          width={500}
+          height={500}
           className="w-full h-64 lg:h-full object-cover rounded-lg"
-          src="https://images.unsplash.com/photo-1629904869392-ae2a682d4d01?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/assets/VEmployee/contactImage.jpg"
           alt="Winding mountain road"
         />
       </div>
@@ -97,8 +104,8 @@ const Page: React.FC = () => {
             rules={[{ required: true, message: "Please enter your full name" }]}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.7 }} //X:100
-              whileInView={{ opacity: 1, scale: 1 }} //y:100
+              initial={{ opacity: 0, scale: 0.7 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
                 delay: 0.2,
                 scale: { type: "spring", stiffness: 30 },
@@ -111,11 +118,12 @@ const Page: React.FC = () => {
                 placeholder="Enter Your Name"
                 id="name"
                 name="name"
-                className=" w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </motion.div>
           </Form.Item>
 
+          {/* ... rest of your form fields remain the same ... */}
           <Form.Item
             name="email"
             label={<span className="font-semibold">Email Address</span>}
@@ -221,7 +229,6 @@ const Page: React.FC = () => {
               />
             </motion.div>
           </Form.Item>
-
           <Form.Item>
             <div className="flex justify-center w-full items-center">
               <Button disabled={loading} className="text-lg w-full text-center">
