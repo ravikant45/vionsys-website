@@ -45,18 +45,16 @@ function ContactUsForm({ heading, message, title }: ContactUsFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.message
-    ) {
+    if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill all required fields");
       return;
     }
-    const phoneNumber = formData.number ? `${selectedCountry.code} ${formData.number}` : "";
+    const phoneNumber = formData.number
+      ? `${selectedCountry.code} ${formData.number}`
+      : "";
     const formattedData = { ...formData, number: phoneNumber };
     const template = SoftwareDevelopmentTemplate(formattedData, title);
-    const sendTo = ["info@vionsys", "ramanpatil@vionsys.com"];
+    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
     const updatedData = { formattedData, template, sendTo };
 
     setLoading(true);

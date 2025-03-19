@@ -1,5 +1,5 @@
 import React from "react";
-import RemoteItDeveloper from "./RemoteItDeveloper";
+import RemoteItDeveloper from "../componets/RemoteDeveloperUI/RemoteItDeveloper";
 
 const page = () => {
   return <RemoteItDeveloper />;
