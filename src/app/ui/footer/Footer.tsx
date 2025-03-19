@@ -100,6 +100,7 @@ const Footer = () => {
                     {link.title}
                   </Link>
                 ))}
+                <Link href="/portfolio">Portfolio</Link>
               </div>
             </div>
           </div>
@@ -175,13 +176,6 @@ const Footer = () => {
           <IoMdMail className="h-5 w-5 text-white" />
           <p>info@vionsys.com</p>
         </div>
-        {/* <div className="flex gap-2">
-          <FaMobileAlt className="h-5 w-5 text-white" />
-          <div>
-            <p>Contact no: (020) 4724-2493</p>
-            <p>Mobile no: +91 8766613742</p>
-          </div>
-        </div> */}
       </div>
 
       <hr />

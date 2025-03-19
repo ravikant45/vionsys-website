@@ -62,6 +62,7 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
 
   const handleFormSubmit = (values: FormValues) => {
     values.description = description;
+    values.keyWord = values.keyWord.trim().split(" ").join("-");
     if (isUpdating) {
       values.id = id;
       updateCaseStudy(values, {
@@ -303,6 +304,10 @@ const AddCaseStudyForm: React.FC<CaseStudyFormProps> = ({
 
           <LabelInputContainer className="mb-4">
             <Label htmlFor="keyWord">Key Word</Label>
+            <p className="text-xs text-gray-500">
+              Note: Keyword must needs to be a single word example:
+              "key-word-page"
+            </p>
             <Form.Item
               name="keyWord"
               rules={[
