@@ -45,16 +45,22 @@ const projects = [
     ],
   },
   {
-    images: [
-      "/assets/Home/project7.png",
-      "/assets/Home/project7_2.png",
-    ],
+    images: ["/assets/Home/project7.png", "/assets/Home/project7_2.png"],
   },
   {
     images: [
       "/assets/Home/project8.png",
       "/assets/Home/project8_2.png",
       "/assets/Home/project8_3.png",
+    ],
+  },
+  {
+    images: [
+      "/assets/Home/project10_1.png",
+      "/assets/Home/project10_2.png",
+      "/assets/Home/project10_3.png",
+      "/assets/Home/project10_4.png",
+      "/assets/Home/project10_5.png",
     ],
   },
 ];
