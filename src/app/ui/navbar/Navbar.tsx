@@ -81,7 +81,7 @@ const Navbar = () => {
     setShowMenu(false);
   };
   return (
-    <>
+    <header>
       <div
         className={`fixed z-50 w-[100vw] flex p-2 justify-between items-center bg-white  ${
           visible ? "top-0 shadow-md shadow-gray2" : "-top-full"
@@ -90,7 +90,12 @@ const Navbar = () => {
         {/* Logo of the organization */}
         <div className="px-4">
           <Link href="/" aria-label="Home link">
-            <Image src={LogoImage} alt="Home-link" className="w-[152px]" />
+            <Image
+              title="logo"
+              src={LogoImage}
+              alt="Home-link"
+              className="w-[152px]"
+            />
           </Link>
         </div>
 
@@ -233,7 +238,7 @@ const Navbar = () => {
         </div>
       </div>
       <ResponsiveMenu showMenu={showMenu} closeMenu={closeMenu} />
-    </>
+    </header>
   );
 };
 

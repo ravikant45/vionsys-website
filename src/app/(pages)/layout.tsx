@@ -17,7 +17,9 @@ export const metadata: Metadata = {
   twitter: {
     images: "/opengraph.png",
   },
-
+  keywords:
+    "Vionsys, Vionsys IT Solutions, Vionsys IT Solutions India, Vionsys IT Solutions India pvt. ltd.",
+  publisher: "Vionsys IT solutions India pvt. ltd.",
   description:
     "Welcome to Vionsys IT Solutions. We are into specialized IT services that will help your business grow faster. At Vionsys we provide crafting innovations.",
 
@@ -32,15 +34,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className={GeistSans.className}>
+    <div className={GeistSans.className}>
       <GoogleTagManager gtmId="GTM-MQT388RN" />
       <Providers>
         <Navbar />
         <Toaster position="bottom-center" />
-        {children}
+        <main>{children}</main>
         <ChatBot />
         <Footer />
       </Providers>
-    </main>
+    </div>
   );
 }

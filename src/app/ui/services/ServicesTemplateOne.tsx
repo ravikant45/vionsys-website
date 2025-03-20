@@ -97,7 +97,7 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
                     height={500}
                     src={work?.img}
                     alt={work?.title}
-                  ></Image>
+                  />
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="text-base text-black font-semibold dark:text-white">
