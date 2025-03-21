@@ -18,7 +18,7 @@ function ContactUsForm({ heading, message, title }: ContactUsFormProps) {
   const router = useRouter();
 
   // ✅ Set default country to India (+91)
-  const defaultCountry = country.find((c) => c.code === "+91") || country[0];
+  const defaultCountry = country.find((c) => c.code === "+1") || country[0];
   const [selectedCountry, setSelectedCountry] = useState(defaultCountry);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -172,7 +172,7 @@ function ContactUsForm({ heading, message, title }: ContactUsFormProps) {
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            placeholder="Describe Your Project/Idea In Brief (Helps Us Come Back Better Prepared)"
+            placeholder="Your message"
             className="w-full h-full p-2 pb-5 placeholder:text-xs bg-stone-100 border-b text-stone-700 border-stone-600 focus:outline-none focus:ring-0"
             required
           ></textarea>

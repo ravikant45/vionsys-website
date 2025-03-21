@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 interface PopUpProps {
   showModal: boolean;
@@ -102,35 +103,22 @@ const SecondVirtualSection = ({ showModal, setShowModal }: PopUpProps) => {
         </ul>
       </div>
 
-      {/* Get a Free Consultation Button with Custom Icon */}
+      {/* Get a Free Consultation Button - Full Version by Default */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.05 }}
         transition={{
           delay: 0.4,
-          y: { type: "spring", stiffness: 30 },
+          y: { type: "spring", stiffness: 40, damping: 10 },
           opacity: { duration: 0.6 },
           ease: "easeInOut",
         }}
-        className="absolute bottom-8 right-8 z-20"
+        className="absolute bottom-8 right-8 z-20 hidden md:block"
       >
-        <button
-          onClick={() => setShowModal(!showModal)}
-          className="group w-12 hover:w-56 h-12 hover:bg-orange relative bg-orange rounded text-blue1 duration-700 before:duration-700 before:hover:500 flex justify-start gap-2 items-center p-2 pr-8 before:absolute before:-z-10 before:left-8 before:hover:left-52 before:w-6 before:h-6 before:bg-orange before:hover:bg-orange before:rotate-45"
-        >
-          {/* Custom Icon from Flaticon */}
-          <Image
-            src="/assets/VEmployee/liveChat.png"
-            alt="Custom Icon"
-            width={32} // Adjust width
-            height={32} // Adjust height
-            className="w-8 h-8 min-w-[32px] min-h-[32px] object-contain"
-          />
-
-          <span className="origin-left inline-flex duration-100 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-2 transform scale-x-0 group-hover:scale-x-100 transition-all text-sm whitespace-nowrap">
-            Get a Free Consultation
-          </span>
-        </button>
+        <Button onClick={() => setShowModal(!showModal)}>
+          Get a Free Consultation
+        </Button>
       </motion.div>
     </section>
   );
