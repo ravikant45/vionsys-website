@@ -3,7 +3,7 @@ import React from "react";
 const KeyBenefits = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="mt-2 md:mt-0 py-8 pb-6 sm:py-16 lg:pb-18">
+      <div className="py-8 sm:py-16 lg:pb-18">
         {/* Main Heading */}
         <h2 className="text-center text-3xl font-semibold text-orange p-6 mb-10">
           Key Benefits of Hiring Virtual Developers from Vionsys
@@ -11,9 +11,9 @@ const KeyBenefits = () => {
 
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
           {/* Background SVG */}
-          <div className="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
+          <div className="absolute inset-x-0 hidden top-2 md:block xl:px-44 md:px-20 lg:px-28">
             <svg
-              className="w-full transform transition duration-500 hover:scale-150"
+              className="w-full transform transition duration-500 hover:scale-110"
               xmlns="http://www.w3.org/2000/svg"
               width="875"
               height="48"
@@ -31,32 +31,40 @@ const KeyBenefits = () => {
           </div>
 
           {/* Grid Content */}
-          <div className="relative grid grid-cols-1 gap-y-8 sm:gap-y-10 md:grid-cols-3 md:gap-x-8 text-center">
-            {/* Reusable Benefit Card */}
-            {["Discovery Call", "Build Your Dream Team", "Get Started Now"].map(
-              (title, index) => (
-                <div key={index} className="cursor-pointer group">
-                  {/* Icon Section */}
-                  <div className="group-hover:border border-orange flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 dark:border-gray-700 rounded-full shadow group-hover:bg-blue1 group-hover:text-white">
-                    <span className="text-xl font-semibold">{index + 1}</span>
-                  </div>
-                  {/* Content Section */}
-                  <div className="group-hover:bg-orange mt-4 shadow-lg group-hover:text-white p-4 rounded transition duration-300 h-36 flex flex-col justify-between">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                      {title}
-                    </h3>
-                    <p className="mt-3 sm:mt-2 md:text-base  text-sm text-black dark:text-gray-400">
-                      {index === 0 &&
-                        "Experience the difference Vionsys can make for your project. Let's connect to discuss your needs."}
-                      {index === 1 &&
-                        "We will offer, flexible pricing just for you. Sign up now and seamlessly onboard your team."}
-                      {index === 2 &&
-                        "Start your project strong with defined goals and milestones."}
-                    </p>
-                  </div>
+          <div className="grid grid-cols-1 gap-y-8 sm:gap-y-10 md:grid-cols-3 md:gap-x-8 text-center relative">
+            {[
+              {
+                title: "Discovery Call",
+                description:
+                  "Experience the difference Vionsys can make for your project. Let's connect to discuss your needs.",
+              },
+              {
+                title: "Build Your Dream Team",
+                description:
+                  "We will offer flexible pricing just for you. Sign up now and seamlessly onboard your team.",
+              },
+              {
+                title: "Get Started Now",
+                description:
+                  "Start your project strong with defined goals and milestones.",
+              },
+            ].map((benefit, index) => (
+              <div key={index} className="cursor-pointer group">
+                {/* Icon Section */}
+                <div className="group-hover:border border-orange flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 dark:border-gray-700 rounded-full shadow group-hover:bg-blue1 group-hover:text-white">
+                  <span className="text-xl font-semibold">{index + 1}</span>
                 </div>
-              )
-            )}
+                {/* Content Section */}
+                <div className="group-hover:bg-orange mt-4 shadow-lg p-4 rounded transition duration-300 h-36 flex flex-col justify-between">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-black">
+                    {benefit.title}
+                  </h3>
+                  <p className="mt-3 sm:mt-2 text-sm md:text-base text-black dark:text-gray-400 group-hover:text-white">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

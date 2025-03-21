@@ -63,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                 Hire on Per Hours/Weekly/Monthly/Quarterly Basis
               </h2>
               <p className="text-gray-200 text-base mb-10 max-w-2xl">
-                At Vionsys, we’re trusted by 1000+ global clients. With a top 1%
+                At Vionsys, we’re trusted by 420+ global clients. With a top 1%
                 development team hand-picked for your project, our extensive
                 ecosystem spans 200+ tech stacks, ensuring the ideal fit for
                 your software development needs.
