@@ -80,15 +80,13 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
     <Modal open={showModal} onCancel={handleCancel} footer={null} width={700}>
       <div className="flex flex-col md:flex-row rounded-lg gap-4">
         {/* Left Side - Image */}
-        <div className="w-full md:w-1/2 h-64 md:h-96 flex items-center justify-center rounded-lg">
+        <div className="w-full md:w-1/2 flex items-center justify-center rounded-lg">
           <Image
             src="/assets/ModelImage.jpg"
-            className="object-cover rounded-lg"
+            className="rounded-lg w-full h-auto min-h-[150px] md:min-h-[300px] object-cover object-center"
             alt="Vionsys Contact Image"
-            layout="intrinsic"
-            width={400} // Adjust width for best fit
-            height={700} // Keep aspect ratio
-            objectFit="contain" // Prevents cropping
+            width={400}
+            height={700}
           />
         </div>
 

@@ -39,15 +39,35 @@ const GetVirtualEmployee: React.FC<KeyBenefitsProps> = ({ setSectionRef }) => {
       svgLink: "https://www.svgrepo.com/show/530450/page-analysis.svg",
       heading: "Business Process Automation",
     },
+    {
+      svgLink: "https://www.svgrepo.com/show/530459/recursive-server.svg",
+      heading: "AI/ML",
+    },
+    {
+      svgLink:
+        "https://www.svgrepo.com/show/530457/intelligent-positioning.svg",
+      heading: "Blockchain",
+    },
+    {
+      svgLink: "https://www.svgrepo.com/show/530441/surveillance-defense.svg",
+      heading: "Robotic Process Automation",
+    },
+    {
+      svgLink: "https://www.svgrepo.com/show/530451/dns.svg",
+      heading: "IoT (Internet of Things)",
+    },
   ];
 
   return (
-    <div className="px-2 py-10" ref={(ref) => setSectionRef(ref as HTMLDivElement | null)}>
+    <div
+      className="px-2 py-10"
+      ref={(ref) => setSectionRef(ref as HTMLDivElement | null)}
+    >
       <div id="features" className="mx-auto max-w-6xl">
         <h2 className="text-center font-display text-2xl text-blue1 font-bold md:text-MainHeading">
           Get On-Demand Remote IT Developers for All Your Software Needs
         </h2>
-        <ul className="mt-16 grid grid-cols-1 gap-6 text-center text-slate-700 md:grid-cols-4">
+        <ul className="mt-16 grid grid-cols-1 gap-6 text-center text-slate-700  md:grid-cols-4">
           {employeeBenefits.map((benefits, index) => (
             <motion.li
               initial={{ scale: 0, opacity: 0 }}
@@ -59,17 +79,16 @@ const GetVirtualEmployee: React.FC<KeyBenefitsProps> = ({ setSectionRef }) => {
                 ease: "easeInOut",
               }}
               key={index}
-              className="relative bg-white rounded-xl shadow-lg px-6 py-8 group overflow-hidden"
+              className="relative bg-white hover:text-white rounded-xl shadow-lg px-6 py-8 group overflow-hidden"
             >
               {/* Icon */}
-              <div className="relative z-10 transition-all duration-500 group-hover:text-black">
+              <div className="relative z-10 flex justify-center">
                 <img
                   src={benefits.svgLink}
-                  alt=""
-                  className="mx-auto h-10 w-10"
+                  alt={benefits.heading}
+                  className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-
               {/* Heading */}
               <h3 className="my-3 font-display font-medium group-hover:text-primary-500 z-10 relative">
                 {benefits.heading}

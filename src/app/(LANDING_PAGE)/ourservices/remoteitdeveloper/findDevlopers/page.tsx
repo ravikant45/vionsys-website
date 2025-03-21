@@ -32,6 +32,7 @@ const allSkills = [
   "Julia",
 
   // Web Development Frameworks/Libraries
+  "Web developer",
   "React",
   "Next.js",
   "Angular",
@@ -142,7 +143,6 @@ const allSkills = [
   "Penetration Testing",
   "Ethical Hacking",
   "Cryptography",
-  "OWASP",
   "Network Security",
 
   // Game Development
@@ -259,7 +259,7 @@ const Page: React.FC = () => {
               <button
                 key={skill}
                 onClick={() => handleSkillClick(skill)}
-                className={`flex items-center gap-2 py-2 px-4 rounded-full shadow-md text-sm font-medium transition-all 
+                className={`flex items-center gap-2 py-2 px-4 rounded-full shadow-md text-sm font-medium transition-all
                   ${
                     isSelected
                       ? "bg-blue2 text-white"
