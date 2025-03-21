@@ -4,19 +4,6 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import ScheduleMeetAndContactCTA from "@/utils/ScheduleMeetAndContactCTA";
 import ClientsServices from "@/utils/ClientsServices";
 const ServicesTemplateOne = ({ data }: { data: any }) => {
-  const getWaveColor = (heading: string): string[] => {
-    switch (heading) {
-      case "SOFTWARE DEVELOPMENT":
-        return ["#38bdf8", "#818cf8", "#c084fc", "#e879f9", "#22d3ee"];
-      case "WEB DEVELOPMENT":
-        return ["#f8d361", "#f69d3f", "#f76c5e", "#e879f9", "#22d3ee"];
-      case "PRODUCT DEVELOPMENT":
-        return ["#65f7d0", "#5fd3f3", "#4d7cff", "#D20062", "#22d3ee"];
-      default:
-        return ["#38bdf8", "#FEC7B4", "#102C57", "#e879f9", "#D20062"];
-    }
-  };
-
   return (
     <main className="overflow-x-hidden">
       {/* hero section */}
@@ -33,12 +20,12 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
             particleColor="#FFFFFF"
           />
         </div>
-        <p
+        <h1
           data-aos="fade-down"
           className="md:text-4xl text-3xl capitalize font-extrabold text-white tracking-wider leading-9 text-center"
         >
           {data?.headline}
-        </p>
+        </h1>
         <p data-aos="fade-up" className="text-paragraph text-white text-center">
           {data?.paragraph}
         </p>
@@ -47,12 +34,12 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
       {/* //the services sections */}
       <section className="services_look bg-dot-zinc-300 py-3">
         <div className=" flex justify-center items-center py-6">
-          <h1
+          <h2
             data-aos="fade-left"
             className="text-MainHeading font-extrabold text-center"
           >
             Our Services
-          </h1>
+          </h2>
         </div>
         <div
           data-aos="zoom-out"
@@ -67,9 +54,9 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
                 <span className=" bg-purple-700 p-5 w-16 h-16 rounded-full hover:cursor-pointer hover:scale-105 transition-all">
                   <ser.logo color="white" size={25} />
                 </span>
-                <h1 className="text-ThirdHeading text-[#e57e2c] text-center font-bold">
+                <h3 className="text-ThirdHeading text-[#e57e2c] text-center font-bold">
                   {ser?.title}
-                </h1>
+                </h3>
                 <p className="text-paragraph  text-center">{ser?.desc}</p>
               </div>
             );
@@ -80,12 +67,12 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
       {/* types of of that services */}
       <section className="">
         <div className=" flex flex-col justify-center items-center md:py-3">
-          <h1
+          <h2
             data-aos="fade-right"
             className="text-MainHeading font-extrabold md:p-5 md:px-5 px-2"
           >
             Why Choose Us
-          </h1>
+          </h2>
           <p
             data-aos="fade-left"
             className="max-w-[50rem] md:text-SubHeading text-ThirdHeading text-[#e57e2c] font-bold text-center md:px-5 px-2"
@@ -110,7 +97,7 @@ const ServicesTemplateOne = ({ data }: { data: any }) => {
                     height={500}
                     src={work?.img}
                     alt={work?.title}
-                  ></Image>
+                  />
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="text-base text-black font-semibold dark:text-white">

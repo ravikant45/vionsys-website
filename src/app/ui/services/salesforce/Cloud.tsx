@@ -15,9 +15,9 @@ function Cloud() {
           className="lg:h-[70vh] h-auto lg:w-screen w-auto opacity-45 overflow-x-hidden"
         />
         <div className="absolute inset-0 flex justify-center items-center flex-col text-white ">
-          <h1 className="md:text-5xl text-xl font-bold text-white text-center">
+          <h2 className="md:text-5xl text-xl font-bold text-white text-center">
             Salesforce Cloud
-          </h1>
+          </h2>
         </div>
       </div>
       <div className="max-w-screen px-4 sm:px-6 lg:px-8 flex flex-col justify-between">

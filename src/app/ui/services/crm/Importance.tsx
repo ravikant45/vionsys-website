@@ -11,9 +11,9 @@ import SAG5 from "../../../../../public/assets/services/crm/SAG5.png";
 function Importance() {
   return (
     <div className="grid overflow-x-hidden md:px-6 px-2 py-10 bg-slate-100 justify-items-center items-center">
-      <h1 className="text-2xl font-bold text-orange text-center">
+      <h2 className="text-2xl font-bold text-orange text-center">
         Why CRM is important for your business
-      </h1>
+      </h2>
       <ul className="grid md:grid-cols-2 grid-cols-1 justify-center md:gap-y-10 md:gap-x-10 items-center md:p-4">
         <motion.li
           initial={{ opacity: 0, x: 100 }}

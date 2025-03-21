@@ -32,9 +32,9 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
     </video>
     <div className="absolute md:items-start md:mt-32 items-center left-1 h-full top-0 flex w-full p-2 md:p-5">
       <div className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3">
-        <h1 className="loop_video_title text-4xl md:text-5xl text-white max-w-[50rem] font-bold">
+        <h2 className="loop_video_title text-4xl md:text-5xl text-white max-w-[50rem] font-bold">
           Custom Software Development: Innovation for the Future
-        </h1>
+        </h2>
         <p className="loop_video_desc max-w-[30rem] md:text-base font-medium text-white">
           Your one-stop destination for top-notch software design & development
           services.
@@ -72,6 +72,7 @@ const Home: React.FC = () => {
   return (
     <main>
       <section className="flex relative bg-black">
+        <h1 className="hidden">Vionsys IT solutions INDIA PVT. LTD.</h1>
         {videos.map((vid, idx) => (
           <VideoComponent
             key={idx}

@@ -8,7 +8,7 @@ const About2 = () => {
     <div className="flex flex-col flex-wrap overflow-x-hidden">
       <div className="w-screen flex justify-center items-center px-2 py-4 ">
         <div className="h-auto py-2 flex flex-col  gap-4 justify-center items-center bg-cover">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -21,8 +21,8 @@ const About2 = () => {
           >
             Crafting Solutions For
             <span className="text-orange"> Global Innovators.</span>
-          </motion.h1>
-          <motion.p
+          </motion.h2>
+          <motion.h5
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -39,13 +39,13 @@ const About2 = () => {
             delivered by an experienced team that offers tailored solutions,
             ensuring efficiency, reliability and scalability to help businesses
             thrive in the digital era.
-          </motion.p>
+          </motion.h5>
         </div>
       </div>
 
       <div className="w-screen h-[40] flex justify-center items-center border-t-8 border-b-8  border-text[#e57e2c]-500 rounded-3xl">
         <div className="w-screen flex md:flex-row flex-col justify-center items-center px-5 gap-2">
-          <motion.h1
+          <motion.h6
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
@@ -66,7 +66,7 @@ const About2 = () => {
             alike. We believe that by harnessing the transformative power of
             technology, we can pave the way for a more inclusive, sustainable
             and prosperous future for all.
-          </motion.h1>
+          </motion.h6>
           <Image
             className="py-2"
             src="/Corevalue.jpg"

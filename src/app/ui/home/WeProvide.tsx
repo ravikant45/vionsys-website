@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 function WeProvide() {
@@ -96,7 +95,7 @@ function WeProvide() {
   return (
     <div className="z-0 px-6 py-4 overflow-x-hidden">
       <div className="text-center">
-        <h1 className="text-MainHeading font-extrabold mt-2">IT Solutions</h1>
+        <h2 className="text-MainHeading font-extrabold mt-2">IT Solutions</h2>
       </div>
       <div className="py-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={slide1} direction="right" speed="slow" />

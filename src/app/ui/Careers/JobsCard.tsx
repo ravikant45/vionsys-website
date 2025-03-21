@@ -8,7 +8,7 @@ export default function JobsCard() {
   return (
     <>
       <div className="flex flex-col justify-center items-center md:pt-8 pt-3">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -20,8 +20,8 @@ export default function JobsCard() {
           className="text-MainHeading font-extrabold md:text-start text-center"
         >
           Your Future Begins Here
-        </motion.h1>
-        <motion.h2
+        </motion.h2>
+        <motion.h3
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -33,7 +33,7 @@ export default function JobsCard() {
           className="font-bold text-SubHeading"
         >
           Current Openings
-        </motion.h2>
+        </motion.h3>
       </div>
       <div className="w-full px-4">
         <HoverEffect items={Jobs} />

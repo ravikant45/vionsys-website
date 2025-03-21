@@ -8,7 +8,7 @@ const Ourservices = () => {
     <div>
       <section className=" pt-10">
         <div className=" flex flex-col justify-center items-center md:py-3 ">
-          <h1 className="font-bold text-3xl mb-5">
+          <h2 className="font-bold text-3xl mb-5">
             why
             <span className="text-orange mx-1 font-extrabold text-4xl relative inline-block stroke-current">
               Choose
@@ -25,7 +25,7 @@ const Ourservices = () => {
               </svg>
             </span>
             us
-          </h1>
+          </h2>
           <p className="text-lg text-gray-500 p-2 font-semibold text-SubHeading lg:text-xl text-center max-w-[50rem] dark:text-gray-400">
             At Vionsys IT Solutions India Pvt. Ltd., we understand that choosing
             a development partner is a critical decision for your business.

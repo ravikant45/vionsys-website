@@ -45,10 +45,7 @@ const projects = [
     ],
   },
   {
-    images: [
-      "/assets/Home/project7.png",
-      "/assets/Home/project7_2.png",
-    ],
+    images: ["/assets/Home/project7.png", "/assets/Home/project7_2.png"],
   },
   {
     images: [
@@ -57,14 +54,23 @@ const projects = [
       "/assets/Home/project8_3.png",
     ],
   },
+  {
+    images: [
+      "/assets/Home/project10_1.png",
+      "/assets/Home/project10_2.png",
+      "/assets/Home/project10_3.png",
+      "/assets/Home/project10_4.png",
+      "/assets/Home/project10_5.png",
+    ],
+  },
 ];
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen py-10">
-      <h1 className="text-MainHeading pb-8 font-bold text-center">
+      <h2 className="text-MainHeading pb-8 font-bold text-center">
         Our Recent Projects
-      </h1>
+      </h2>
       <div className="mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (

@@ -26,14 +26,14 @@ export default function HeroSec() {
             }}
             className="md:w-[80%] px-2 py-5 bg-black bg-opacity-30 border-x-4 border-orange rounded-3xl text-center w-full"
           >
-            <h3 className="font-bold md:text-4xl text-xl">
+            <h1 className="font-bold md:text-4xl text-xl">
               Revolutionizing Healthcare
               <br />
               <span className="md:text-2xl text-xl">
                 Vionsys IT Solutions Advanced IT Solutions for Enhanced Patient
                 Care and Operational Efficiency
               </span>
-            </h3>
+            </h1>
           </motion.div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const InsuranceOurServices = () => {
               index % 2 === 0 ? "2" : "1"
             }`}
           >
-            <motion.h1
+            <motion.h2
               initial={{ opacity: 0.0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
@@ -45,7 +45,7 @@ const InsuranceOurServices = () => {
               className="font-extrabold text-MainHeading mb-4 text-orange"
             >
               {InsuranceServices.title}
-            </motion.h1>
+            </motion.h2>
             <motion.div
               initial={{ opacity: 0.0, y: -100 }}
               whileInView={{ opacity: 1, y: 0 }}

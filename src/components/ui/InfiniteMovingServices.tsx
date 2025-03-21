@@ -1,6 +1,6 @@
 import { cn } from "../../utils/cn";
 import React, { useEffect, useRef, useState } from "react";
-import Image from 'next/image';
+import Image from "next/image";
 
 interface InfiniteMovingServicesProps {
   items: { id: string; img: string }[];
@@ -43,9 +43,15 @@ const InfiniteMovingServices: React.FC<InfiniteMovingServicesProps> = ({
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "right") {
-        containerRef.current.style.setProperty("--animation-direction", "forwards");
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "forwards"
+        );
       } else {
-        containerRef.current.style.setProperty("--animation-direction", "reverse");
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "reverse"
+        );
       }
     }
   };
@@ -82,7 +88,11 @@ const InfiniteMovingServices: React.FC<InfiniteMovingServicesProps> = ({
         {items.map((item) => (
           <li key={item.id} className="md:w-[20vw] w-[70vw] ">
             <div className="min-w-40 md:min-w-60 h-40 items-center flex justify-center">
-              <img src={item.img}  alt="" className="md:h-[25vh] object-cover w-full px-2 h-[20vh]" />
+              <img
+                src={item?.img}
+                alt={item?.img?.toString()}
+                className="md:h-[25vh] object-cover w-full px-2 h-[20vh]"
+              />
             </div>
           </li>
         ))}

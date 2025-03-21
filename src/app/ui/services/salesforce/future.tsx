@@ -205,13 +205,13 @@ function Future() {
     },
   ];
   return (
-    <div>
+    <div className="w-full h-auto overflow-x-hidden overflow-y-auto">
       <div className="md:px-10 md:py-12 p-5 text-center relative md:mt-10 mt-3">
         <div className="bg-gradient-to-r bg-clip-text text-transparent from-red-500 to-blue-700">
-          <h1 className="text-3xl font-bold  text-center py-2">
+          <h3 className="text-3xl font-bold text-center py-2">
             Companies utilizing Salesforce are poised for favorable future
             outcomes
-          </h1>
+          </h3>
         </div>
         <motion.p
           initial={{ opacity: 0, x: -100 }}
@@ -226,14 +226,16 @@ function Future() {
         >
           As a company leveraging Salesforce, it's essential to recognize that
           your future success hinges on your ability to adapt to evolving market
-          trends, embrace new technologies and prioritize customer-centric
+          trends, embrace new technologies, and prioritize customer-centric
           strategies. By remaining agile and fully harnessing the capabilities
           of the Salesforce platform, you can position yourself for long-term
           success in an increasingly competitive landscape.
         </motion.p>
       </div>
-      <div className="w-screen h-auto bg-slate-50 grid-cols-6 justify-evenly">
-        <section className="container space-y-8  py-4 mx-auto md:py-6 lg:py-12">
+
+      {/* Attributes Section */}
+      <div className="w-full h-auto bg-slate-50">
+        <div className="mx-auto py-4 md:py-6 lg:py-12 overflow-x-hidden overflow-y-auto">
           <div className="mx-auto flex w-full flex-col items-center space-y-4 text-center">
             <motion.h2
               initial={{ opacity: 0, x: 100 }}
@@ -246,14 +248,16 @@ function Future() {
               }}
               className="font-extrabold md:text-MainHeading text-2xl text-[#215cbc]"
             >
-              "Our Attributes"
+              Our Attributes
             </motion.h2>
             <p className="font-bold md:text-SubHeading text-lg text-[#e57e2c] sm:leading-7">
               Explore the incredible offerings provided by us to enrich your
               online visibility.
             </p>
           </div>
-          <div className="flex justify-center items-center w-full">
+
+          {/* Cards Section */}
+          <div className="flex justify-center items-center w-full h-auto py-4">
             <div className="flex flex-wrap justify-evenly items-center gap-x-4 gap-y-8 md:px-16 px-4">
               {cards.map((card) => (
                 <div className="flip-card" key={card.id}>
@@ -261,9 +265,9 @@ function Future() {
                     <div className="flip-card-front">
                       <div className="flex justify-center items-center w-full h-full">
                         <div className="w-full py-10 flex flex-col justify-between gap-4 px-2">
-                          <h2 className="text-xl font-semibold">
+                          <h3 className="text-xl font-semibold">
                             {card?.front?.title}
-                          </h2>
+                          </h3>
                           <p>{card?.front?.description}</p>
                         </div>
                       </div>
@@ -292,7 +296,7 @@ function Future() {
               ))}
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );

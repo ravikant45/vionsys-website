@@ -13,7 +13,7 @@ const WhyChoose = () => {
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
             <div className="max-w-xl mb-6">
-              <motion.h1
+              <motion.h3
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -25,8 +25,8 @@ const WhyChoose = () => {
                 className="font-extrabold text-MainHeading"
               >
                 Why Choose Us?
-              </motion.h1>
-              <motion.h2
+              </motion.h3>
+              <motion.h4
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -39,7 +39,7 @@ const WhyChoose = () => {
               >
                 Ensure the protection of your brand with our Cybersecurity & IT
                 Solutions
-              </motion.h2>
+              </motion.h4>
               <motion.ol
                 initial={{ opacity: 0, scale: 1.2 }}
                 whileInView={{ opacity: 1, scale: 1 }}

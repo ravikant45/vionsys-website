@@ -16,7 +16,7 @@ const Hero = () => {
           />
           <div className="bg-transparent z-10 text-white absolute top-0  h-full flex flex-col justify-center items-start w-full px-4">
             <div className="md:w-[50%] w-full flex flex-col gap-2 p-2">
-              <motion.h4
+              <motion.h1
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
@@ -28,7 +28,7 @@ const Hero = () => {
                 className="md:text-5xl text-xl capitalize font-extrabold text-orange "
               >
                 Ensuring Software Stability Through Rigorous Testing
-              </motion.h4>
+              </motion.h1>
               <motion.p
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
