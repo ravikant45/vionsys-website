@@ -35,7 +35,7 @@ const VEmployeeInfra = () => {
             className="flex items-start"
           >
             <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <FaChalkboardTeacher className="w-6 h-6 md:w-7 md:h-7 text-orange" />
+              <FaChalkboardTeacher className="w-6 h-6 md:w-7 md:h-7 text-white" />
             </div>
             <div className="ml-4">
               <p>Expertise in Software Development for SMEs</p>
@@ -53,7 +53,7 @@ const VEmployeeInfra = () => {
             className="flex items-start"
           >
             <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <FaRegHandshake className="w-6 h-6 md:w-8 md:h-8 text-orange" />
+              <FaRegHandshake className="w-6 h-6 md:w-8 md:h-8 text-white" />
             </div>
             <div className="ml-4">
               <p>
@@ -74,7 +74,7 @@ const VEmployeeInfra = () => {
             className="flex items-start"
           >
             <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <GoProjectSymlink className="w-6 h-6 md:w-7 md:h-7 text-orange" />
+              <GoProjectSymlink className="w-6 h-6 md:w-7 md:h-7 text-white" />
             </div>
             <div className="ml-4">
               <p>Innovative Technology Leadership</p>
@@ -92,7 +92,7 @@ const VEmployeeInfra = () => {
             className="flex items-start"
           >
             <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <PiCertificate className="w-6 h-6 md:w-7 md:h-7 text-orange" />
+              <PiCertificate className="w-6 h-6 md:w-7 md:h-7 text-white" />
             </div>
             <div className="ml-4">
               <p>

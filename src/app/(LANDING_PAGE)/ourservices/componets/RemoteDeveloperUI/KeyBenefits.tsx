@@ -2,13 +2,13 @@ import React from "react";
 
 const KeyBenefits = () => {
   return (
-    <section className="relative overflow-hidden bg-gray-50">
+    <section className="relative overflow-hidden">
       <div className="mt-2 md:mt-0 py-8 pb-6 sm:py-16 lg:pb-18">
         {/* Main Heading */}
         <h2 className="text-center text-3xl font-semibold text-orange p-6 mb-10">
           Key Benefits of Hiring Virtual Developers from Vionsys
         </h2>
-        
+
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
           {/* Background SVG */}
           <div className="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">

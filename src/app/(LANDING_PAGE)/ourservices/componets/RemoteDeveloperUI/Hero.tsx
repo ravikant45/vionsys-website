@@ -1,61 +1,16 @@
 "use client";
-import { Form } from "antd";
-import { vEmployeeModelTemplate } from "@/utils/vEmployeeModelTemplate";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ContactUsForm from "../software-development/ContactUsForm";
+import { useEffect } from "react";
 
-const Hero = () => {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [form] = Form.useForm();
-  const [countryCode, setCountryCode] = useState<string>("+1");
+type HeroProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
   const router = useRouter();
-
-  const handleCountryChange = (value: string) => {
-    setCountryCode(value);
-  };
-
-  const filterOption = (
-    input: string,
-    option?: { value: string; children: React.ReactNode }
-  ) => {
-    const childrenAsString = option?.children?.toString().toLowerCase() || "";
-    return (
-      (childrenAsString.includes(input.toLowerCase()) ||
-        option?.value.toLowerCase().includes(input.toLowerCase())) ??
-      false
-    );
-  };
-
-  const handleSubmit = async (values: any) => {
-    setLoading(true);
-    const data = { ...values, countryCode };
-
-    const template = vEmployeeModelTemplate(data);
-    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
-    //const sendTo = ["workvansh12@gmail.com"];
-    const updatedData = {
-      data,
-      template,
-      sendTo,
-    };
-    try {
-      await axios.post("/api/email", updatedData, {
-        headers: { "Content-Type": "application/json" },
-      });
-      setLoading(false);
-      toast.success("Message sent successfully!");
-      router.push("/thank-you");
-      form.resetFields();
-    } catch (error) {
-      toast.error("Failed to send message");
-    }
-  };
-
   const handleRedirect = () => {
     router.push("/ourservices/remoteitdeveloper/findDevlopers");
   };
@@ -63,13 +18,19 @@ const Hero = () => {
   const heading = "Contact Us Today !";
   const message = "Our team will be in touch with you shortly.";
 
+  useEffect(() => {
+    if (!showModal) {
+      setTimeout(() => setShowModal(true), 100);
+    }
+  }, []);
+
   return (
     <>
       <section className="relative h-full min-h-screen w-full flex justify-center gap-10 py-2">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/assets/VEmployee/bgImageHero.jpeg"
+            src="/assets/VEmployee/bgImageHero.jpg"
             alt="Background Image"
             fill
             priority
@@ -79,7 +40,7 @@ const Hero = () => {
         </div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-30"></div>
 
         {/* Content */}
         <div className="relative w-full flex md:flex-row flex-col gap-10 items-center p-5 md:px-16 pt-20 md:pt-10 z-10">
@@ -98,10 +59,10 @@ const Hero = () => {
               <h1 className="text-xl sm:text-2xl md:text-5xl tracking-tight font-bold md:mb-4 text-white">
                 Hire Remote IT Developer
               </h1>
-              <h2 className="text-sm sm:text-lg md:text-xl font-bold my-4 text-orange">
+              <h2 className="text-sm sm:text-lg md:text-xl font-bold my-4 text-gray-200">
                 Hire on Per Hours/Weekly/Monthly/Quarterly Basis
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6">
+              <p className="text-gray-200 text-base mb-10 max-w-2xl">
                 At Vionsys, we’re trusted by 1000+ global clients. With a top 1%
                 development team hand-picked for your project, our extensive
                 ecosystem spans 200+ tech stacks, ensuring the ideal fit for

@@ -35,7 +35,7 @@ const RemoteItDeveloper = () => {
 
   return (
     <div className="overflow-hidden">
-      <Hero />
+      <Hero showModal={showModal} setShowModal={setShowModal} />
       <VEmployeeModel />
       <SecondVirtualSection showModal={showModal} setShowModal={setShowModal} />
       <PopUp showModal={showModal} setShowModal={setShowModal} />
