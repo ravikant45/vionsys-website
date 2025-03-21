@@ -4,6 +4,26 @@ import { FaChalkboardTeacher, FaRegHandshake } from "react-icons/fa";
 import { GoProjectSymlink } from "react-icons/go";
 import { PiCertificate } from "react-icons/pi";
 import { motion } from "framer-motion";
+
+const features = [
+  {
+    icon: <FaChalkboardTeacher className="w-6 h-6 md:w-7 md:h-7 text-white" />,
+    text: "Expertise in Software Development for SMEs",
+  },
+  {
+    icon: <FaRegHandshake className="w-6 h-6 md:w-8 md:h-8 text-white" />,
+    text: "Extensive IT Problem-Solving Experience - Over 1 decade of expertise",
+  },
+  {
+    icon: <GoProjectSymlink className="w-6 h-6 md:w-7 md:h-7 text-white" />,
+    text: "Innovative Technology Leadership",
+  },
+  {
+    icon: <PiCertificate className="w-6 h-6 md:w-7 md:h-7 text-white" />,
+    text: "Seamlessly Connected Talent Pool - Remote developers, programmers, and solution architects",
+  },
+];
+
 const VEmployeeInfra = () => {
   return (
     <section className="relative flex w-full md:h-screen items-end justify-end bg-black overflow-hidden">
@@ -12,7 +32,7 @@ const VEmployeeInfra = () => {
         quality={100}
         className="absolute object-fit w-[80%] h-full opacity-30 md:opacity-100"
         src="/assets/VEmployee/VEmployeeInfra.jpg"
-        alt="about us image"
+        alt="VEmployee Infrastructure"
         layout="fill"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-700 to-transparent opacity-90 rounded-md"></div>
@@ -22,85 +42,29 @@ const VEmployeeInfra = () => {
           Vionsys significantly enhances the value of your technology
           infrastructure.
         </h2>
+
         <div className="md:space-y-5 space-y-2 text-white text-base sm:text-lg md:text-xl">
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              delay: 0.2,
-              x: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.4 },
-              ease: "easeInOut",
-            }}
-            className="flex items-start"
-          >
-            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <FaChalkboardTeacher className="w-6 h-6 md:w-7 md:h-7 text-white" />
-            </div>
-            <div className="ml-4">
-              <p>Expertise in Software Development for SMEs</p>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              delay: 0.2,
-              x: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.4 },
-              ease: "easeInOut",
-            }}
-            className="flex items-start"
-          >
-            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <FaRegHandshake className="w-6 h-6 md:w-8 md:h-8 text-white" />
-            </div>
-            <div className="ml-4">
-              <p>
-                Extensive IT Problem-Solving Experience- Offers over 1 decade of
-                experience
-              </p>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              delay: 0.2,
-              x: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.4 },
-              ease: "easeInOut",
-            }}
-            className="flex items-start"
-          >
-            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <GoProjectSymlink className="w-6 h-6 md:w-7 md:h-7 text-white" />
-            </div>
-            <div className="ml-4">
-              <p>Innovative Technology Leadership</p>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              delay: 0.2,
-              x: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.4 },
-              ease: "easeInOut",
-            }}
-            className="flex items-start"
-          >
-            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
-              <PiCertificate className="w-6 h-6 md:w-7 md:h-7 text-white" />
-            </div>
-            <div className="ml-4">
-              <p>
-                Seamlessly Connected Talent Pool- including remote developers,
-                programmers, and solution architects
-              </p>
-            </div>
-          </motion.div>
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.2 * index,
+                x: { type: "spring", stiffness: 30 },
+                opacity: { duration: 0.4 },
+                ease: "easeInOut",
+              }}
+              className="flex items-start"
+            >
+              <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-md bg-opacity-50 bg-black">
+                {feature.icon}
+              </div>
+              <div className="ml-4">
+                <p>{feature.text}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
