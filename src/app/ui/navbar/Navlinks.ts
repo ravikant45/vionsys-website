@@ -262,4 +262,10 @@ export const QuickLinks: {
       "End-to-end product development services from conceptualization to launch, ensuring high quality and user satisfaction.",
     ariaLabel: "Learn more about Product Development services",
   },
+  {
+    title: "Portfolio",
+    href: "/portfolio",
+    description: "Our Recent work with it's snapshots.",
+    ariaLabel: "Learn more about Our Recent Work",
+  },
 ];
