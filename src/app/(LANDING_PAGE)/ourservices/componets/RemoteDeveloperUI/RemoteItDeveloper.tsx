@@ -48,6 +48,8 @@ const RemoteItDeveloper = () => {
         <RemoteCTA
           message="Need expert help? Let's talk."
           cta="Talk to Experts"
+          showModal={showModal}
+          setShowModal={setShowModal}
         />
       )}
     </div>
