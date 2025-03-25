@@ -74,17 +74,13 @@ const SecondVirtualSection = ({ showModal, setShowModal }: PopUpProps) => {
         </ul>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.05 }}
-        transition={{ delay: 0.4, type: "spring", stiffness: 40, damping: 10 }}
+      <div
         className="absolute bottom-20 right-8 z-20 block"
       >
         <Button onClick={() => setShowModal(!showModal)}>
           Get a Free Consultation
         </Button>
-      </motion.div>
+      </div>
     </section>
   );
 };
