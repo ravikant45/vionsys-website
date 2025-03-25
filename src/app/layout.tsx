@@ -62,6 +62,20 @@ export default function RootLayout({
             });
           `}
         </Script>
+
+        {/* Google Ads Conversion Tracking */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16715348980"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16715348980');
+          `}
+        </Script>
       </head>
       <body className={GeistSans.className}>
         <Toaster position="bottom-center" />

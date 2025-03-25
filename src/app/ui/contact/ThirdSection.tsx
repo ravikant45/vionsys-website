@@ -98,7 +98,7 @@ const ThirdSection = () => {
             Get In Touch{" "}
             <p className="text-xl py-5 text-black">
               Sales: info@vionsys.com
-              <span className="flex py-5">Mobile: +91 99750 27273</span>
+              <span className="flex py-5">Mobile: +91 92230 01983</span>
             </p>
           </h1>
         </div>
