@@ -1,14 +1,20 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link"; // Import Link from next/link for navigation
 
 interface StaticCTAProps {
   message: string;
   cta: string;
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const RemoteCTA: React.FC<StaticCTAProps> = ({ message, cta }) => {
+const RemoteCTA: React.FC<StaticCTAProps> = ({
+  message,
+  cta,
+  showModal,
+  setShowModal,
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
@@ -38,11 +44,12 @@ const RemoteCTA: React.FC<StaticCTAProps> = ({ message, cta }) => {
       }`}
     >
       <div className="md:text-lg text-md font-semibold">{message}</div>
-      <Link href="/contact">
-        <button className="bg-orange hover:bg-amber-500 text-sm font-bold text-white px-4 py-1 rounded-md">
-          {cta}
-        </button>
-      </Link>
+      <button
+        onClick={() => setShowModal(!showModal)}
+        className="bg-orange hover:bg-amber-500 text-sm font-bold text-white px-4 py-1 rounded-md"
+      >
+        {cta}
+      </button>
     </div>
   ) : null;
 };
