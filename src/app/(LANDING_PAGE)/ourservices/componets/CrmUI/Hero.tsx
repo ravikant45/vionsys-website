@@ -79,7 +79,7 @@ const Hero: React.FC<HeroCrmProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form Component */}
-        <HeroContactForm heading={CrmHeading} />
+        <HeroContactForm heading={CrmHeading} title={"CRM Landing Page"} />
       </div>
     </div>
   );

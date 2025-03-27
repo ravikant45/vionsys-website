@@ -183,7 +183,7 @@ const allSkills = [
   "Technical Writing",
 ];
 
-const defaultSkills = ["Java", "React", "TypeScript"];
+const defaultSkills = ["React", "Salesforce"];
 
 const Page: React.FC = () => {
   const [selectedSkills, setSelectedSkills] = useState<string[]>(defaultSkills);
@@ -225,8 +225,8 @@ const Page: React.FC = () => {
       </div>
 
       {/* Left Content */}
-      <div className="w-full lg:w-1/2 bg-white rounded-lg p-6 lg:p-9">
-        <h2 className="text-2xl lg:text-4xl font-bold text-orange mb-4 text-center lg:text-left">
+      <div className="w-full lg:w-1/3 bg-white rounded-lg p-6 lg:p-9">
+        <h2 className="text-xl lg:text-2xl font-bold text-orange mb-4 text-center lg:text-left">
           Find your perfect match
         </h2>
         <h3 className="text-lg text-orange-500 font-medium mb-4 text-center lg:text-left">
@@ -259,14 +259,13 @@ const Page: React.FC = () => {
               <button
                 key={skill}
                 onClick={() => handleSkillClick(skill)}
-                className={`flex items-center gap-2 py-2 px-4 rounded-full shadow-md text-sm font-medium transition-all
+                className={`flex items-center gap-2 py-1 px-4 rounded-full shadow-md text-sm font-medium transition-all
                   ${
                     isSelected
                       ? "bg-blue2 text-white"
                       : "text-black hover:bg-[#ffedd5]"
                   }`}
               >
-                {!isSelected && <BsPlusLg className="text-lg" />}
                 {skill}
                 {isSelected && <AiOutlineClose className="text-lg" />}
               </button>

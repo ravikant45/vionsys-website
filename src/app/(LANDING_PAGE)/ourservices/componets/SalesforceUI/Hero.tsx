@@ -7,8 +7,7 @@ type HeroSalesforceProps = {
 };
 
 const Hero: React.FC<HeroSalesforceProps> = ({ showModal, setShowModal }) => {
-
-  const salesforceHeading = "Contact Us Today !"
+  const salesforceHeading = "Contact Us Today !";
 
   return (
     <div className="">
@@ -22,7 +21,6 @@ const Hero: React.FC<HeroSalesforceProps> = ({ showModal, setShowModal }) => {
         Your browser does not support the video tag.
       </video>
       <div className="absolute items-center left-1 h-full top-0 flex lg:flex-row md:flex-row flex-col w-full py-10 p-2 md:p-8">
-        
         {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -80,7 +78,10 @@ const Hero: React.FC<HeroSalesforceProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form Component */}
-        <HeroContactForm heading={salesforceHeading} />
+        <HeroContactForm
+          title={"Salesforce Landing Page"}
+          heading={salesforceHeading}
+        />
       </div>
     </div>
   );

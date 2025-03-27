@@ -38,12 +38,16 @@ const RemoteItDeveloper = () => {
       <Hero showModal={showModal} setShowModal={setShowModal} />
       <VEmployeeModel />
       <SecondVirtualSection showModal={showModal} setShowModal={setShowModal} />
-      <PopUp showModal={showModal} setShowModal={setShowModal} />
+      <PopUp
+        title={"Remote It Developer Landing Page"}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
       <GetVirtualEmployee setSectionRef={setKeyBenefitsRef} />
       <KeyBenefits />
       <VEmployeeInfra />
       <ComparativeAnalysis showModal={showModal} setShowModal={setShowModal} />
-      <ContactUs />
+      <ContactUs title={"Remote IT Developer Landing Page"} />
       {showCTA && (
         <RemoteCTA
           message="Need expert help? Let's talk."

@@ -15,8 +15,8 @@ import LinkedIn from "../../../../../../public/assets/socialicons/linkedin.png";
 import Instagram from "../../../../../../public/assets/socialicons/instagram.png";
 import Facebook from "../../../../../../public/assets/socialicons/facebook.png";
 import Twitter from "../../../../../../public/assets/socialicons/Twitter4.png";
-import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
 import { useRouter } from "next/navigation";
+import { vEmployeeModelTemplate } from "@/utils/vEmployeeModelTemplate";
 
 type Inputs = {
   name: string;
@@ -26,7 +26,11 @@ type Inputs = {
   message: string;
 };
 
-export default function ContactUs() {
+interface ContactUsProps {
+  title: string;
+}
+
+const ContactUs: React.FC<ContactUsProps> = ({ title }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const router = useRouter();
@@ -49,24 +53,35 @@ export default function ContactUs() {
   };
 
   const handleSubmit = async (values: any) => {
+    const phoneNumber = values.number
+      ? `${values.countryCode} ${values.number}`
+      : "";
+
     const formattedData = {
       ...values,
-      countryCode: values.countryCode,
+      number: phoneNumber, // Update the number field with country code
     };
 
-    const template = StaffingLandingPageTemplate(formattedData);
-    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
+    const subject = `${title} - Contact Form Submission`;
+
+    const template = vEmployeeModelTemplate(formattedData);
+    const sendTo = [
+      "info@vionsys.com",
+      "pawandolas@vionsys.com",
+      "dushyant.s@vionsys.com",
+    ];
+    // const sendTo = ["workvansh12@gmail.com"];
+
     const updatedData = {
       formattedData,
+      subject,
       template,
       sendTo,
     };
-    console.log("formate", formattedData);
 
-    // Print form values to the console
     setLoading(true);
     try {
-      const response = await axios.post("/api/email", updatedData, {
+      await axios.post("/api/email", updatedData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -76,7 +91,9 @@ export default function ContactUs() {
       router.push("/thank-you");
     } catch (error) {
       toast.error("Failed to send message");
+      console.log(error);
     }
+    setLoading(false);
   };
 
   return (
@@ -378,4 +395,6 @@ export default function ContactUs() {
       </div>
     </>
   );
-}
+};
+
+export default ContactUs;

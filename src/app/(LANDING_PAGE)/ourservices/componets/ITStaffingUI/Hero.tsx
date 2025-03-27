@@ -7,7 +7,7 @@ type HeroProps = {
   setEnquiryModal: (show: boolean) => void;
 };
 
-const Hero: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal}) => {
+const Hero: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal }) => {
   const Staffingheading = "Get the Right IT Talent for Your Projects!";
   return (
     <>
@@ -77,11 +77,14 @@ const Hero: React.FC<HeroProps> = ({ enquiryModal, setEnquiryModal}) => {
           </div>
 
           {/* Right Side: Contact Form */}
-          <HeroContactForm heading={Staffingheading} />
+          <HeroContactForm
+            title={"IT Staffing Landing Page"}
+            heading={Staffingheading}
+          />
         </div>
       </section>
     </>
-  );                                               
+  );
 };
 
 export default Hero;

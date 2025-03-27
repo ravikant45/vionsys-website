@@ -11,11 +11,13 @@ import { WebDevPopModalTemplate } from "@/utils/WebDevPopModalTemplate";
 interface WebDevPopModalProps {
   enquiryModal: boolean;
   setEnquiryModal: (show: boolean) => void;
+  title: string;
 }
 
 export default function WebDevPopModal({
   enquiryModal,
   setEnquiryModal,
+  title,
 }: WebDevPopModalProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
@@ -45,12 +47,15 @@ export default function WebDevPopModal({
     setLoading(true);
     const data = { ...values, countryCode };
     const template = WebDevPopModalTemplate(data);
-    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
-    const updatedData = {
-      data,
-      template,
-      sendTo,
-    };
+    const sendTo = [
+      "info@vionsys.com",
+      "pawandolas@vionsys.com",
+      "dushyant.s@vionsys.com",
+    ];
+    // const sendTo = ["workvansh12@gmail.com"];
+    const subject = `${title} - Contact Form Submission`; // Example: Customize this as needed
+    const updatedData = { data, template, sendTo, subject }; // Include subject here
+
     try {
       await axios.post("/api/email", updatedData, {
         headers: { "Content-Type": "application/json" },
