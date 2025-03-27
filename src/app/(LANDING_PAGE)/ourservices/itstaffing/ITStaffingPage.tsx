@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import Hero from "../componets/ITStaffingUI/Hero";
 import WhatWeServe from "../componets/ITStaffingUI/WhatWeServe";
@@ -9,7 +9,7 @@ import ContactUs from "../componets/WebDevelopmentUI/ContactUs";
 import ChooseUs from "../componets/ITStaffingUI/ChooseUs";
 import InfiniteMovingCardsDemo from "@/app/ui/home/Clients";
 import Pop_Model from "../componets/ITStaffingUI/Pop_Model";
-import StaticCTA from "@/components/ui/StaticCTA"; 
+import StaticCTA from "@/components/ui/StaticCTA";
 
 const ITStaffingPage = () => {
   const [enquiryModal, setEnquiryModal] = useState<boolean>(false);
@@ -21,14 +21,25 @@ const ITStaffingPage = () => {
         <Hero enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       </div>
       <OurHighlights />
-      <OurOfferings enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
+      <OurOfferings
+        enquiryModal={enquiryModal}
+        setEnquiryModal={setEnquiryModal}
+      />
       <WhatWeServe />
       <Cta enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
       <ChooseUs />
       <InfiniteMovingCardsDemo />
-      <ContactUs />
-      <Pop_Model enquiryModal={enquiryModal} setEnquiryModal={setEnquiryModal} />
-      <StaticCTA message="Get a Free Staffing Consultation!" cta="Contact us Today" setEnquiryModal={setEnquiryModal} />
+      <ContactUs title={"IT Staffing Landing Page"} />
+      <Pop_Model
+        title={"IT Staffing Landing Page"}
+        enquiryModal={enquiryModal}
+        setEnquiryModal={setEnquiryModal}
+      />
+      <StaticCTA
+        message="Get a Free Staffing Consultation!"
+        cta="Contact us Today"
+        setEnquiryModal={setEnquiryModal}
+      />
     </div>
   );
 };

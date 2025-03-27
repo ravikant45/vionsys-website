@@ -81,7 +81,10 @@ const Hero: React.FC<PopUpHeroProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form Component */}
-        <HeroContactForm heading={Cloudheading} />
+        <HeroContactForm
+          heading={Cloudheading}
+          title={"Cloud Computing Landing page"}
+        />
       </div>
     </div>
   );

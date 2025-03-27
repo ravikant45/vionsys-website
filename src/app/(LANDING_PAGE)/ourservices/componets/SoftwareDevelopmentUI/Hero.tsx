@@ -118,7 +118,10 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
         </motion.div>
 
         {/* Contact Form */}
-        <HeroContactForm heading={message} />
+        <HeroContactForm
+          title={"Software Development Landing Page"}
+          heading={message}
+        />
       </div>
     </section>
   );

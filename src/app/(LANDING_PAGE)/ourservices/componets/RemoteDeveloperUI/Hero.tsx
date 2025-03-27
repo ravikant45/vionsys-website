@@ -121,7 +121,7 @@ const Hero: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           <ContactUsForm
             heading={heading}
             message={message}
-            title={"Remote it developer Landing page"}
+            title={"Remote IT Developer Landing Page"}
           />
         </div>
       </section>

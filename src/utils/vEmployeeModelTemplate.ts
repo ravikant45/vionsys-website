@@ -1,6 +1,7 @@
 type Form6Data = {
   name: string;
   email: string;
+  number: string;
   message: string;
   selectedSkills: string[];
 };
@@ -8,7 +9,7 @@ type Form6Data = {
 export const vEmployeeModelTemplate = (data: Form6Data): string => `
     <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; max-width: 600px; margin: auto;">
         <h1 style="color: #e57e2c; font-size: 24px; text-align: center; font-weight: bold;">
-            New Message from Vionsys Remote IT Developer Landing Page
+            New Message from Vionsys Landing Page
         </h1>
         <p style="font-size: 18px; text-align: center; color: #555;">
             You have received a new message from the contact form.
@@ -26,14 +27,23 @@ export const vEmployeeModelTemplate = (data: Form6Data): string => `
                     <td style="padding: 10px 0; font-weight: bold;">Email Address:</td>
                     <td style="padding: 10px 0;">${data?.email}</td>
                 </tr>
-                <tr style="border-bottom: 1px solid #eee;">                    
-                <td style="padding: 10px 0; font-weight: bold;">Selected Skill:</td>
-                <td style="padding: 10px 0;">${
-                  data.selectedSkills && data.selectedSkills.length > 0
-                    ? data.selectedSkills.join(", ")
-                    : "None"
-                }</td>
+                 <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 10px 0; font-weight: bold;">Contact Number:</td>
+                    <td style="padding: 10px 0;">${data?.number}</td>
                 </tr>
+                ${
+                  data.selectedSkills && data.selectedSkills.length > 0
+                    ? `
+                    <tr style="border-bottom: 1px solid #eee;">                    
+                      <td style="padding: 10px 0; font-weight: bold;">Selected Skill:</td>
+                      <td style="padding: 10px 0;">${data.selectedSkills.join(
+                        ", "
+                      )}</td>
+                    </tr>
+                  `
+                    : ""
+                }
+                  
                 <tr style="border-bottom: 1px solid #eee;">
                     <td style="padding: 10px 0; font-weight: bold;">Your Message:</td>
                     <td style="padding: 10px 0;">${data?.message}</td>

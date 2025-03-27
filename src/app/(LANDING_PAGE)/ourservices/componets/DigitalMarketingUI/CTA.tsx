@@ -2,7 +2,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-const CTA = () => {
+type CTAProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const CTA: React.FC<CTAProps> = ({ showModal, setShowModal }) => {
   return (
     <section className="max-w-full pt-4 pb-8 md:px-10 md:py-10 px-2 flex justify-center">
       <motion.div
@@ -26,7 +31,7 @@ const CTA = () => {
           </p>
         </motion.div>
         <div className="flex items-center justify-center">
-          <Button>Get Started</Button>
+          <Button onClick={() => setShowModal(!showModal)}>Get Started</Button>
         </div>
       </motion.div>
     </section>

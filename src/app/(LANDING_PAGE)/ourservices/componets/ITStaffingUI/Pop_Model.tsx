@@ -12,9 +12,14 @@ import { useRouter } from "next/navigation";
 interface PopModalProps {
   enquiryModal: boolean;
   setEnquiryModal: (show: boolean) => void;
+  title: string;
 }
 
-export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalProps) {
+export default function Pop_Model({
+  enquiryModal,
+  setEnquiryModal,
+  title,
+}: PopModalProps) {
   const [userType, setUserType] = useState("employer");
   const [hasModalBeenShown, setHasModalBeenShown] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -60,15 +65,17 @@ export default function Pop_Model({ enquiryModal, setEnquiryModal }: PopModalPro
     setLoading(true);
 
     const data = { ...values, countryCode, attachments };
-    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
+    const sendTo = [
+      "info@vionsys.com",
+      "pawandolas@vionsys.com",
+      "dushyant.s@vionsys.com",
+    ];
+    // const sendTo = ["workvansh12@gmail.com"];
     const template = !data.attachments
       ? StaffingEmployerTemplate(data)
       : StaffingEmployeeTemplate(data);
-    const updatedData = {
-      ...data,
-      template,
-      sendTo,
-    };
+    const subject = `${title} - Contact Form Submission`; // Example: Customize this as needed
+    const updatedData = { ...data, template, sendTo, subject }; // Include subject her
     try {
       if (data?.attachments) {
         await axios.post("/api/sendEmailWithFile", updatedData, {

@@ -24,8 +24,12 @@ const SoftwareDevelopment = () => {
       <Technologies />
       <ChooseUs />
       <CTA showModal={showModal} setShowModal={setShowModal} />
-      <ContactUs  />
-      <PopUp showModal={showModal} setShowModal={setShowModal} />
+      <ContactUs title={"Software Development Landing Page"} />
+      <PopUp
+        title={"Software Development Landing Page"}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
     </div>
   );
 };

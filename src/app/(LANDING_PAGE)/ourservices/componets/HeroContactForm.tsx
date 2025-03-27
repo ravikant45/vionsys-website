@@ -3,24 +3,23 @@ import { country, countryCodes } from "@/utils/CountryCodes";
 import toast from "react-hot-toast";
 import { Button, Form, Input, Modal, Select } from "antd";
 import axios from "axios";
-import { StaffingLandingPageTemplate } from "@/utils/StaffingLandingPageTemplate";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { vEmployeeModelTemplate } from "@/utils/vEmployeeModelTemplate";
 
 type Inputs = {
   name: string;
-
   countryCode: string;
   number: string;
-
   email: string;
   message: string;
 };
 
 const HeroContactForm: React.FC<{
   heading: string;
-}> = ({ heading }) => {
+  title: string;
+}> = ({ heading, title }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("+1");
@@ -41,23 +40,36 @@ const HeroContactForm: React.FC<{
       false
     );
   };
-
   const handleSubmit = async (values: any) => {
+    const phoneNumber = values.number
+      ? `${values.countryCode} ${values.number}`
+      : "";
+
     const formattedData = {
       ...values,
-      countryCode,
+      number: phoneNumber, // Update the number field with country code
     };
-    const template = StaffingLandingPageTemplate(formattedData);
-    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
+
+    const subject = `${title} - Contact Form Submission`;
+
+    const template = vEmployeeModelTemplate(formattedData);
+    const sendTo = [
+      "info@vionsys.com",
+      "pawandolas@vionsys.com",
+      "dushyant.s@vionsys.com",
+    ];
+    // const sendTo = ["workvansh12@gmail.com"];
+
     const updatedData = {
       formattedData,
+      subject,
       template,
       sendTo,
     };
 
     setLoading(true);
     try {
-      const response = await axios.post("/api/email", updatedData, {
+      await axios.post("/api/email", updatedData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -68,6 +80,7 @@ const HeroContactForm: React.FC<{
     } catch (error) {
       toast.error("Failed to send message");
     }
+    setLoading(false);
   };
   return (
     <>
