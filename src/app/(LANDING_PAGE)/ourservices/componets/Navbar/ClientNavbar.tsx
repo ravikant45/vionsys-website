@@ -18,7 +18,7 @@ const ClientNavbar = () => {
         <Navbar showModal={showModal} setShowModal={setShowModal} />
       )}
       
-      <PopUp showModal={showModal} setShowModal={setShowModal} />
+      <PopUp title={"Landing Page"} showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };
