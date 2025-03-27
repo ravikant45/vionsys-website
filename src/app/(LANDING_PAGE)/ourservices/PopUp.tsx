@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 import { country } from "@/utils/CountryCodes";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { MainContactFormTemplate } from "@/utils/MainContactFormTemplate";
+import { vEmployeeModelTemplate } from "@/utils/vEmployeeModelTemplate";
 
 type Inputs = {
   name: string;
@@ -18,9 +18,10 @@ type Inputs = {
 interface PopUpProps {
   showModal: boolean;
   setShowModal: (value: boolean) => void;
+  title: string;
 }
 
-const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
+const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal, title }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [form] = Form.useForm();
   const [countryCode, setCountryCode] = useState<string>("");
@@ -43,14 +44,28 @@ const PopUp: React.FC<PopUpProps> = ({ showModal, setShowModal }) => {
   };
 
   const handleSubmit = async (values: any) => {
+    const phoneNumber = values.number
+      ? `${values.countryCode} ${values.number}`
+      : "";
+
     const formattedData = {
       ...values,
+      number: phoneNumber, // Update the number field with country code
     };
-    const template = MainContactFormTemplate(formattedData);
-    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
+
+    const subject = `${title} - Contact Form Submission`;
+
+    const template = vEmployeeModelTemplate(formattedData);
+    const sendTo = [
+      "info@vionsys.com",
+      "pawandolas@vionsys.com",
+      "dushyant.s@vionsys.com",
+    ];
     // const sendTo = ["workvansh12@gmail.com"];
+
     const updatedData = {
       formattedData,
+      subject,
       template,
       sendTo,
     };

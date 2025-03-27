@@ -19,8 +19,12 @@ const CrmPage = () => {
       <CrmImage />
       <ClientsServices />
       <CrmCta showModal={showModal} setShowModal={setShowModal} />
-      <ContactUs />
-      <PopUp showModal={showModal} setShowModal={setShowModal} />
+      <ContactUs title={"CRM Landing Page"} />
+      <PopUp
+        title={"CRM Landing Page"}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
     </div>
   );
 };

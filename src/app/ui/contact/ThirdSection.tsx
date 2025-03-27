@@ -58,7 +58,13 @@ const ThirdSection = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     const template = MainContactFormTemplate(values);
-    const sendTo = ["info@vionsys.com"];
+    const sendTo = [
+      "info@vionsys.com",
+      "pawandolas@vionsys.com",
+      "dushyant.s@vionsys.com",
+    ];
+    // const sendTo = ["workvansh12@gmail.com"];
+
     const updatedData = {
       values,
       template,

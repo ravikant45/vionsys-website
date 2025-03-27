@@ -4,20 +4,24 @@ import { country } from "@/utils/CountryCodes";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import { SoftwareDevelopmentTemplate } from "@/utils/SoftwareDevelopmentTemplate";
+import { vEmployeeModelTemplate } from "@/utils/vEmployeeModelTemplate";
 import Image from "next/image";
 
 interface ContactUsFormProps {
   heading: string;
   message: string;
   title: string;
+  selectedSkills?: string[];
 }
 
-function ContactUsForm({ heading, message, title }: ContactUsFormProps) {
+function ContactUsForm({
+  heading,
+  message,
+  title,
+  selectedSkills,
+}: ContactUsFormProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
-
-  // ✅ Set default country to India (+91)
   const defaultCountry = country.find((c) => c.code === "+1") || country[0];
   const [selectedCountry, setSelectedCountry] = useState(defaultCountry);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -52,10 +56,22 @@ function ContactUsForm({ heading, message, title }: ContactUsFormProps) {
     const phoneNumber = formData.number
       ? `${selectedCountry.code} ${formData.number}`
       : "";
-    const formattedData = { ...formData, number: phoneNumber };
-    const template = SoftwareDevelopmentTemplate(formattedData, title);
-    const sendTo = ["info@vionsys.com", "pawandolas@vionsys.com"];
-    const updatedData = { formattedData, template, sendTo };
+    const formattedData = {
+      ...formData,
+      selectedSkills: selectedSkills || [],
+      number: phoneNumber,
+    };
+    const template = vEmployeeModelTemplate(formattedData);
+    const sendTo = [
+      "info@vionsys.com",
+      "pawandolas@vionsys.com",
+      "dushyant.s@vionsys.com",
+    ];
+    //const sendTo = ["workvansh12@gmail.com"];
+
+    // Add a dynamic subject (e.g., based on the form title or a custom prop)
+    const subject = `${title} - Contact Form Submission`; // Example: Customize this as needed
+    const updatedData = { formattedData, template, sendTo, subject }; // Include subject here
 
     setLoading(true);
     try {
@@ -205,7 +221,7 @@ function ContactUsForm({ heading, message, title }: ContactUsFormProps) {
                 ></path>
               </svg>
             ) : (
-              "Get Started"
+              "Submit"
             )}
           </button>
         </div>

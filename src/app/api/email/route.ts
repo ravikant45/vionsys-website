@@ -5,11 +5,12 @@ export async function POST(req: Request) {
   console.log(data);
   const html = data.template;
   const sendToEmail = data.sendTo;
+  const subject = data.subject || "Vionsys Website Contact Form"; // Fallback subject if none provided
 
   try {
     await useSendEmail({
       sendTo: sendToEmail,
-      subject: "Vionsys Website Contact Form",
+      subject: subject, // Use the dynamic subject from the request
       html: html,
     });
 
