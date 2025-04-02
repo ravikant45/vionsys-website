@@ -116,7 +116,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                   passHref
                 >
                   <NavigationMenuLink
-                    className={navigationMenuTriggerStyle()}
+                    className="bg-transparent px-4 h-full"
                     onClick={closeMenu}
                   >
                     About
@@ -126,7 +126,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
 
               {/*Services dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger aria-label="Services dropdown">
+                <NavigationMenuTrigger aria-label="Services dropdown" className="bg-transparent">
                   <Link href={"/services"}>Services</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -148,7 +148,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
 
               {/* articles links */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger aria-label="Insights dropdown">
+                <NavigationMenuTrigger aria-label="Insights dropdown" className="bg-transparent">
                   Insights
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -170,7 +170,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
 
               {/*Industries dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger aria-label="Industries dropdown">
+                <NavigationMenuTrigger aria-label="Industries dropdown" className="bg-transparent">
                   Industries
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { BiShield, BiChevronDown } from "react-icons/bi";
 import { FaHospital, FaShoppingCart, FaGraduationCap, FaSatelliteDish } from "react-icons/fa";
+import { FaIndustry, FaOilCan } from "react-icons/fa6";
 import { MdOutlineConstruction } from "react-icons/md";
 import { RiBankLine, RiStethoscopeLine, RiComputerLine } from "react-icons/ri";
 
@@ -17,7 +18,10 @@ const industries = [
   { id: "construction", icon: <MdOutlineConstruction className="text-blue-500 w-6 h-6" />, title: "Construction", content: "We offer construction management software for project tracking, resource planning, and site safety compliance." },
   { id: "healthcare", icon: <FaHospital className="text-blue-500 w-6 h-6" />, title: "Healthcare", content: "Our healthcare software solutions improve patient care, hospital management, and telemedicine services." },
   { id: "education", icon: <FaGraduationCap className="text-blue-500 w-6 h-6" />, title: "Education", content: "We develop e-learning platforms and student management systems to enhance digital education experiences." },
+  { id: "manufacturing", icon: <FaIndustry className="text-blue-500 w-6 h-6" />, title: "Manufacturing", content: "Our manufacturing solutions enhance production efficiency, supply chain management, and real-time monitoring for optimized operations." },
+  { id: "oil_gas", icon: <FaOilCan className="text-blue-500 w-6 h-6" />, title: "Oil & Gas", content: "We provide software solutions for oil & gas companies to optimize exploration, drilling operations, and asset management." },
 ];
+
 
 export default function CapabilitiesSection() {
   const [openIndustry, setOpenIndustry] = useState<string | null>("banking");
