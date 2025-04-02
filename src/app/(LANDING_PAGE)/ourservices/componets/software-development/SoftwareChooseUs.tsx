@@ -24,6 +24,16 @@ function SoftwareChooseUs() {
       description:
         "Stay ahead of the curve with our utilization of the latest cloud technologies, guaranteeing that your business remains competitive and adaptable.",
     },
+    {
+      title: "Cutting-Edge Technologies",
+      description:
+        "we constantly update our skills and stay abreast of the latest trends and technologies in software development.",
+    },
+    {
+      title: "On-Time Delivery",
+      description:
+        "Our agile development methodology allows us to adapt to changing requirements and deliver incremental updates regularly.",
+    },
   ];
 
   return (
