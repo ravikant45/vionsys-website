@@ -8,14 +8,7 @@ type HeroSalesforceCtaProps = {
 
 const SalesforceCta: React.FC<HeroSalesforceCtaProps> = ({ showModal, setShowModal }) => {
   return (
-      <motion.section initial={{ opacity: 0, scale: 0.6 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{
-            delay: 0.2,
-            scale: { type: "spring", stiffness: 40 },
-            opacity: { duration: 0.6 },
-            ease: "easeInOut",
-          }} className="container mx-auto my-5 py-5 lg:px-0 bg-gray-200 rounded-lg text-center">
+      <section className="container mx-auto py-5 lg:px-0 bg-gray-200 rounded-lg text-center">
         <h3 className="text-3xl font-extrabold">Ready to grow your business?</h3>
         <p className="mt-8 text-xl font-light">
         Take your business to the next level with our cutting-edge IT solutions.
@@ -30,7 +23,7 @@ const SalesforceCta: React.FC<HeroSalesforceCtaProps> = ({ showModal, setShowMod
             </span>
           </button>
         </p>
-      </motion.section>
+      </section>
   );
 };
 

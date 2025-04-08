@@ -1,4 +1,4 @@
-import SalesforcePage from './SalesforcePage'
+import SalesforcePage from '../componets/SalesforceUI/SalesforcePage'
 
 const page = () => {
   return (

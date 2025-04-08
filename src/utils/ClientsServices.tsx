@@ -1,6 +1,6 @@
 "use client";
+
 import React from "react";
-import { motion } from "framer-motion";
 import InfiniteMovingServices from "../components/ui/InfiniteMovingServices";
 import Client1 from "../../public/assets/clients/ServicesClient/Client1.png";
 import Client2 from "../../public/assets/clients/ServicesClient/Client2.png";
@@ -81,26 +81,27 @@ const testimonials: Testimonial[] = [
 
 const ClientsServices = () => {
   return (
-    <div className="p-2">
-      <motion.h2
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.6,
-          y: { type: "spring", stiffness: 30 },
-          opacity: { duration: 0.6 },
-          ease: "easeInOut",
-        }}
-        className="md:text-MainHeading text-MainHeading font-extrabold text-center"
-      >
-        Our Clients
-      </motion.h2>
-      <div className="h-auto rounded-md flex antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <InfiniteMovingServices
-          items={testimonials}
-          direction="right"
-          speed="slow"
-        />
+    <div className="p-5 md:px-16 bg-black">
+      <div className="p-5 px-8 bg-white rounded-xl">
+        <div className="md:text-2xl w-full gap-10 items-center flex justify-evenly text-gray-700 font-extrabold text-center">
+          <span className="border-b hidden md:block border-gray-600 w-full" />
+          <h2 className="w-fit shrink-0">
+            Trusted by startups and Fortune{" "}
+            <span className="text-orange">120</span> companies
+          </h2>
+          <span className="border-b hidden md:block border-gray-600 w-full" />
+        </div>
+        <div className="h-auto rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+          <InfiniteMovingServices
+            items={testimonials}
+            direction="right"
+            speed="slow"
+          />
+        </div>
+
+        <div className="flex flex-row pt-4 items-center justify-center">
+          <span className="border-t border-gray-600 w-full" />
+        </div>
       </div>
     </div>
   );

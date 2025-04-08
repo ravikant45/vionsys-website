@@ -86,12 +86,12 @@ const InfiniteMovingServices: React.FC<InfiniteMovingServicesProps> = ({
         )}
       >
         {items.map((item) => (
-          <li key={item.id} className="md:w-[20vw] w-[70vw] ">
-            <div className="min-w-40 md:min-w-60 h-40 items-center flex justify-center">
+          <li key={item.id} className="md:w-[13vw] w-[70vw] ">
+            <div className="min-w-40 md:min-w-60 h-24 items-center flex justify-center">
               <img
                 src={item?.img}
                 alt={item?.img?.toString()}
-                className="md:h-[25vh] object-cover w-full px-2 h-[20vh]"
+                className="md:h-[15vh] object-cover w-fit px-2 h-[20vh]"
               />
             </div>
           </li>

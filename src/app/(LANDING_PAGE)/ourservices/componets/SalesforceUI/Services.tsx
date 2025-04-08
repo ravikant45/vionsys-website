@@ -8,8 +8,7 @@ import {
   LuLifeBuoy,
 } from "react-icons/lu";
 import { IoCog, IoCodeSlash } from "react-icons/io5";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const services = [
   {
@@ -83,61 +82,51 @@ const services = [
 ];
 
 export default function Services() {
-  const [activeStep, setActiveStep] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % services.length)
-    }, 2000)
-    return () => clearInterval(timer)
-  }, [])
+  const [activeTab, setActiveTab] = useState(1)
 
   return (
-    <section
-      id="services"
-      className="w-full pb-6 md:pb-10 lg:pb-12 pt-8 bg-gradient-to-b"
-    >
-      <div className="container px-4 md:px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: -100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.2,
-            y: { type: "spring", stiffness: 30 },
-            opacity: { duration: 0.6 },
-            ease: "easeInOut",
-          }}
-          className="text-3xl font-bold tracking-tighter text-center mb-8 text-orange"
-        >
-          Our Salesforce Services
-        </motion.h2>
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{
-                delay: 0.2,
-                scale: { type: "spring", stiffness: 30 },
-                opacity: { duration: 0.6 },
-                ease: "easeInOut",
-              }}
-              key={service.id}
-              className={`shadow-lg p-6 group duration-300 bg-white hover:bg-blue-100 hover:shadow-lg hover:-translate-y-1 border border-slate-300 rounded-lg ${
-                index === activeStep ? 'ring-2 ring-blue-500' : ''
-              }`}
-            >
-              <p className="flex items-center font-semibold text-xl mb-4 space-x-2 text-blue-600">
-                {service.icon}
-                <span>{service.title}</span>
-              </p>
-              <div>
-                <p className="text-muted-foreground">{service.description}</p>
+    <div className="bg-black text-white p-6 md:px-16 md:py-6">
+    <div className=" mx-auto">
+      <h2 className="text-4xl font-bold mb-6">Our Capabilities <span>in Salesforce</span></h2>
+      <p className="text-lg font-light mb-12">
+      Hire Our dedicated Salesforce developers for custom CRM solutions. <br /> We build scalable, high-performance systems that drive growth and enhance customer experiences.
+      </p>
+           
+      <div className="flex flex-col lg:flex-row bg-black rounded-xl overflow-hidden border border-gray-800">
+        {/* Left side - Tabs */}
+        <div className="lg:w-1/2 bg-gradient-to-r p-5 from-blue-600 to-blue-500">
+          <div className="md:pr-5 md:h-[65vh] md:overflow-y-auto scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-blue-500">
+            {services.map((service, index) => (
+              <div
+                key={service.id}
+                className={`py-4 px-4 mb-4 cursor-pointer border-b border-blue-400 ${activeTab === service.id ? "opacity-100" : "opacity-70 hover:opacity-90"}`}
+                onClick={() => setActiveTab(service.id)}
+              >
+                <div className="flex items-center">
+                  <span className="text-xl font-medium mr-4">{String(index + 1).padStart(2, "0")}.</span>
+                  <span className="text-xl font-medium">{service.title}</span>
+                </div>
               </div>
-            </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right side - Content */}
+        <div className="lg:w-1/2 flex items-center justify-center bg-black p-8">
+          {services.map((service) => (
+            <div key={service.id} className={`${activeTab === service.id ? "block" : "hidden"}`}>
+              <div className="flex flex-col md:w-96">
+                <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <div className="text-base text-gray-300">{service.description}</div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
+  </div>
   );
 }
