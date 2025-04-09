@@ -81,7 +81,7 @@ const testimonials: Testimonial[] = [
 
 const ClientsServices = () => {
   return (
-    <div className="p-5 md:px-16 bg-black">
+    <div className="p-5 md:px-16">
       <div className="p-5 px-8 bg-white rounded-xl">
         <div className="md:text-2xl w-full gap-10 items-center flex justify-evenly text-gray-700 font-extrabold text-center">
           <span className="border-b hidden md:block border-gray-600 w-full" />

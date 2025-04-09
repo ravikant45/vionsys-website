@@ -3,60 +3,65 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import salesbg2 from "/public/assets/services/Salesforce/salesbg2.jpg";
+import Link from "next/link";
 const Hero = () => {
-  return (
-    <div>
-      <div className="flex justify-center items-center w-screen h-screen  px-1">
-        <Image
-          src={salesbg2}
-          alt="Salesforce Image"
-          className="object-cover bg-cover w-full absolute h-screen"
-        />
-
-        <div className="relative w-screen flex flex-col justify-center items-center gap-4">
-          <motion.h1
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              delay: 0.2,
-              x: { type: "spring", stiffness: 30 },
-              opacity: { duration: 0.4 },
-              ease: "easeInOut",
-            }}
-            className="text-xl capitalize md:text-4xl px-2 text-white text-center font-extrabold"
-          >
-            Drive Breakthrough Advancements In
-            <span className="font-extrabold flex justify-center">
-              Salesforce
-            </span>{" "}
-          </motion.h1>
-
-          <motion.h3
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              delay: 0.2,
-              x: { type: "spring", stiffness: 20 },
-              opacity: { duration: 0.4 },
-              ease: "easeInOut",
-            }}
-            className="font-bold text-center md:text-2xl text-lg text-orange px-2"
-          >
-            Elevate Your Business with Our Salesforce Services.
-          </motion.h3>
-
-          <p className="text-center font-normal md:w-2/3 w-full text-paragraph md:px-2 px-1 leading-9 text-white relative">
-            At Vionsys IT Solutions India Pvt Ltd, we specialize in
-            comprehensive Salesforce implementation that helps businesses
-            leverage the full potential of this powerful CRM platform. Our team
-            of experts is dedicated to providing solutions that improve
-            efficiency, improve customer relationships and enhance your overall
-            efficiency.
-          </p>
+  const data = {
+    title: "Drive Breakthrough Advancements In Salesforce",
+    description:
+      "Elevate Your Business with Our Salesforce Services.",
+    
+  content:
+    "At Vionsys IT Solutions India Pvt Ltd, we specialize in comprehensive Salesforce implementation that helps businesses leverage the full potential of this powerful CRM platform. Our team of experts is dedicated to providing solutions that improve efficiency, improve customer relationships and enhance your overall efficiency.",
+  }
+   return (
+      <section className="relative h-full min-h-[82vh] w-full flex justify-center gap-10 py-2">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/assets/services/Salesforce/salesforceHero.jpg"
+            alt="Hero Image"
+            layout="fill"
+            objectFit="cover"
+            className="z-0 opacity-95"
+          />
+          <div className="absolute inset-0 bg-indigo-950/90 opacity-75"></div>
         </div>
-      </div>
-    </div>
-  );
+  
+        {/* Foreground Content */}
+        <div className="relative w-full flex md:flex-row flex-col gap-10 items-center p-5 md:px-16 pt-20 md:pt-10 z-10">
+          {/* Left side - Hero content */}
+          <div className="w-full">
+            <span className="text-white font-medium tracking-wider uppercase px-1 text-2xl">
+            Services
+            </span>
+            <h1 className="text-4xl mt-4 md:text-6xl font-medium text-white leading-tight mb-4">
+            Salesforce & Consulting <br /> Services
+            </h1>
+            <p className="h-1 mx-1 mt-6 w-28 bg-white" />
+  
+            <div className="flex mt-6 flex-row gap-4 items-center">
+              <Link
+                className="font-sans py-2 flex justify-center gap-2 items-center shadow-xl text-sm  backdrop-blur-md lg:font-semibold isolation-auto  before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 overflow-hidden border-2 rounded-full group my-[6px] uppercase"
+                href={"/contact"}
+              >
+                CONTACT US
+                <svg
+                  className="w-8 h-8 justify-end group-hover:rotate-90 bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+                  viewBox="0 0 16 19"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                    className="fill-gray-800 group-hover:fill-gray-800"
+                  ></path>
+                </svg>
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    );
 };
 
 export default Hero;
