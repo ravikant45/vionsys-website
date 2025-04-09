@@ -12,7 +12,7 @@ const ClientNavbar = () => {
 
   return (
     <>
-      {pathName === "/ourservices/software-development" ? (
+      {pathName === "/ourservices/software-development" || pathName === "/ourservices/salesforce" ? (
         <LandingNavbar showModal={showModal} setShowModal={setShowModal} />
       ) : (
         <Navbar showModal={showModal} setShowModal={setShowModal} />
