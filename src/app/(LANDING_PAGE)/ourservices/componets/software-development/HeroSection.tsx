@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
       <div className="relative w-full flex md:flex-row flex-col gap-10 items-center p-5 md:px-16 pt-20 md:pt-10 z-10">
         {/* Left side - Hero content */}
         <div className="lg:w-2/3">
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-4xl mt-4 md:text-5xl font-bold text-white leading-tight mb-4">
             Custom Software
           </h1>
           <p className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
@@ -64,7 +64,7 @@ const HeroSection: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
           </button>
 
           {/* Logos Section */}
-          <div className="mt-16 flex flex-wrap items-center gap-10">
+          <div className="mt-12 flex flex-wrap items-center gap-10">
             <div className="flex pr-6 flex-col border-r border-gray-500">
               <Image
                 src="/placeholder.svg?height=80&width=150"

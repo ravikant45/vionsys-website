@@ -1,5 +1,9 @@
-import { motion } from "framer-motion";
-import HeroContactForm from "../HeroContactForm";
+"use client";
+
+import ContactUsForm from "../software-development/ContactUsForm";
+import Image from "next/image";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 type HeroSalesforceProps = {
   showModal: boolean;
@@ -7,83 +11,107 @@ type HeroSalesforceProps = {
 };
 
 const Hero: React.FC<HeroSalesforceProps> = ({ showModal, setShowModal }) => {
-  const salesforceHeading = "Contact Us Today !";
+  const router = useRouter();
+  const heading = "Share Your Requirements";
+  const message =
+    "To help our experts understand your business objectives and create your customized plan.";
+
+  useEffect(() => {
+    if (!showModal) {
+      setTimeout(() => setShowModal(true), 100);
+    }
+  }, []);
 
   return (
-    <div className="">
-      <video
-        className="w-full h-screen object-cover opacity-50"
-        autoPlay
-        loop
-        muted
-      >
-        <source src="/assets/motionVideo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="absolute items-center left-1 h-full top-0 flex lg:flex-row md:flex-row flex-col w-full py-10 p-2 md:p-8">
-        {/* Left Side */}
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{
-            delay: 0.2,
-            x: { type: "spring", stiffness: 20 },
-            opacity: { duration: 0.4 },
-            ease: "easeInOut",
-          }}
-          className="md:max-w-[50rem] w-full flex flex-col gap-2 space-y-3"
-        >
-          <h1 className="loop_video_title text-3xl md:text-6xl text-[#215CBC] max-w-[50rem] font-bold">
-            Accelerate Your Growth with Salesforce
+    <section className="relative h-full min-h-screen w-full flex justify-center gap-10 py-2">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/assets/LandingPage/Salesforce/salesforce1.jpg"
+          alt="Hero Image"
+          layout="fill"
+          objectFit="cover"
+          className="z-0 opacity-95"
+        />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black to-transparent"></div>
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+      </div>
+
+      {/* Foreground Content */}
+      <div className="relative max-w-7xl flex md:flex-row flex-col gap-10 items-center p-5 md:px-16 pt-20 md:pt-10 z-10">
+        {/* Left side - Hero content */}
+        <div className="lg:w-2/3">
+          <h1 className="text-4xl mt-4 md:text-5xl font-bold text-white leading-tight mb-4">
+            Hire Our Skilled Salesforce
           </h1>
-          <p className="loop_video_desc md:text-4xl text-2xl font-semibold text-orange">
-            Take Your Business to New Heights with us.
+          <p className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            Developer On A Contract Basis
           </p>
-          <div className="flex justify-start items-center pb-3">
-            <button className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ff8c00_0%,#ffa500_50%,#1e90ff_100%)]"></span>
-              <span
-                className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-7 text-sm font-medium bg-[#F0F0EE] text-blue1 backdrop-blur-3xl gap-2 undefined"
-                onClick={() => {
-                  setShowModal(!showModal);
-                }}
+          {/* <p className="text-white text-base mb-10 max-w-2xl">
+            Tagline: Flexible, Skilled, and Ready – Contract-Based Salesforce Developers!
+            </p> */}
+
+          <div className="flex mt-10 flex-row gap-4 items-center">
+            <button
+              className="font-sans py-2 flex justify-center gap-2 items-center shadow-xl text-sm bg-blue-600 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-orange text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-3 overflow-hidden border-2 rounded-full group my-[6px] uppercase"
+              onClick={() => {
+                setShowModal(!showModal);
+              }}
+            >
+              CONTACT US
+              <svg
+                className="w-8 h-8 justify-end group-hover:rotate-90 bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
+                viewBox="0 0 16 19"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Get in Touch with Our Experts Today
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  strokeWidth="0"
-                  viewBox="0 0 448 512"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"></path>
-                </svg>
-              </span>
+                <path
+                  d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                  className="fill-gray-800 group-hover:fill-gray-800"
+                ></path>
+              </svg>
+            </button>
+
+            <span className="text-gray-500 text-base font-semibold flex flex-col items-center">
+              <span className="border-l border-gray-400 h-4" />
+              or
+              <span className="border-l border-gray-400 h-4" />
+            </span>
+
+            <button
+              onClick={() => {
+                router.push(
+                  "https://calendly.com/vionsysit/30min?back=1&month=2025-01"
+                );
+              }}
+              className="text-gray-300 hover:text-white underline text-base font-semibold"
+            >
+              Book A Call
             </button>
           </div>
-          <div>
-            <h1 className="text-[#215CBC] text-xl font-semibold mb-2">
-              Highlights:
-            </h1>
-            <ul className="list-disc mb-2 font-medium text-lg px-4">
-              <li className="mb-2">
-                Streamlined processes for greater efficiency
-              </li>
-              <li className="mb-2">Enhance customer relationships</li>
-              <li className="mb-2">Optimize overall business performance</li>
-            </ul>
-          </div>
-        </motion.div>
 
-        {/* Contact Form Component */}
-        <HeroContactForm
-          title={"Salesforce Landing Page"}
-          heading={salesforceHeading}
+          {/* Logos Section */}
+          <div className="mt-12 flex flex-col flex-wrap gap-5">
+            <div className="flex pl-2 flex-col border-l-2 border-blue-500">
+              <span className="text-white text-sm">
+                Expertise in Advanced Salesforce Tools & Technologies
+              </span>
+            </div>
+            <div className="flex pl-2 flex-col border-l-2 border-blue-500">
+              <span className="text-white text-sm">
+                Flexible Contracts & Transparent Pricing
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right side - Contact form */}
+        <ContactUsForm
+          heading={heading}
+          message={message}
+          title={"Salesforce Landing page"}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

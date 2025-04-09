@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -72,6 +72,21 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
   const [prevScrollPos, setPrevScrollPos] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
 
+  const [scrolling, setScrolling] = React.useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
@@ -93,8 +108,11 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
     <>
       <div
         className={`fixed z-50 w-full flex px-4 py-2 text-white justify-between items-center 
-        bg-gradient-to-r from-white via-transparent to-transparent backdrop-blur-2xl transition-all duration-300 
-          ${visible ? "top-0" : "-top-full"}`}
+          bg-gradient-to-r from-white transition-all duration-300 
+          ${visible ? "top-0" : "-top-full"}
+          ${
+            scrolling ? " via-gray-500 to-black" : "via-transparent to-transparent"
+          }`}
       >
         {/* Logo of the organization */}
         <div className="px-4">
@@ -116,7 +134,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
                   passHref
                 >
                   <NavigationMenuLink
-                    className={navigationMenuTriggerStyle()}
+                    className="bg-transparent px-4 h-full"
                     onClick={closeMenu}
                   >
                     About
@@ -126,7 +144,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
 
               {/*Services dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger aria-label="Services dropdown">
+                <NavigationMenuTrigger aria-label="Services dropdown" className="bg-transparent">
                   <Link href={"/services"}>Services</Link>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -148,7 +166,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
 
               {/* articles links */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger aria-label="Insights dropdown">
+                <NavigationMenuTrigger aria-label="Insights dropdown" className="bg-transparent">
                   Insights
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -170,7 +188,7 @@ const LandingNavbar: React.FC<HeroProps> = ({ showModal, setShowModal }) => {
 
               {/*Industries dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger aria-label="Industries dropdown">
+                <NavigationMenuTrigger aria-label="Industries dropdown" className="bg-transparent">
                   Industries
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
