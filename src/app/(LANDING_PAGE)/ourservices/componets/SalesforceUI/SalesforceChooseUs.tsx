@@ -6,39 +6,39 @@ import { LuCheckCircle, LuPencilRuler, LuCog, LuPhone } from "react-icons/lu";
 const features = [
   {
     icon: <LuCheckCircle className="w-8 h-8" />,
-    title: "Tailored Solutions",
+    title: "Skilled Professionals",
     description:
-      "We customize Salesforce to fit your unique business needs, ensuring it aligns perfectly with your processes, whether its sales, marketing or customer support.",
+      "We are working professionals who have dignified experience in their own field of interest. Our Salesforce Consulting Companies In USA, Middle East understand the most basic to the advanced needs of the clients.",
   },
   {
     icon: <LuPencilRuler className="w-8 h-8" />,
-    title: "Improved Efficiency",
+    title: "Expertise Built Over Years",
     description:
-      "Our Salesforce services streamline your operations by automating workflows, enabling your team to focus on what matters most—building relationships and closing deals.",
+      "We’ve successfully served clients worldwide. We have not left even a single client unsatisfied or being in doubt. We have helped a vast range of clients, and they have rated our services with the best reviews.",
   },
   {
     icon: <LuCog className="w-8 h-8" />,
-    title: "Scalability",
+    title: "Affordable Partner",
     description:
-      "As your business grows, Salesforce grows with you. We implement scalable solutions that can adapt to changing market demands and business objectives.",
+      "Our services stand out as some of the best among Salesforce consulting companies in the USA and the Middle East. We charge fee that will easily affordable and much less then what others are charging.",
   },
   {
     icon: <LuPhone className="w-8 h-8" />,
-    title: "Expert Integration",
+    title: "Guaranteed Satisfaction",
     description:
-      "Our team ensures seamless integration of Salesforce with your existing systems, allowing you to leverage all your business data for smarter decision-making.",
+      "We deliver Salesforce Consulting services that are both on-time and cost-efficient, with results that matter; we focus on making our clients reach the maximum possible extent of service satisfaction.",
   },
   {
     icon: <LuCog className="w-8 h-8" />,
-    title: "Enhanced Customer Experience",
+    title: "Services You Trust",
     description:
-      "With personalized customer insights, you can offer better support, resolve issues faster, and deliver a more engaging, customer-centric experience.",
+      "We believe in delivering on our promises, not making empty ones. We are genuinely serving the businesses with our world-class Salesforce Consulting Services for the last few years.",
   },
   {
     icon: <LuCog className="w-8 h-8" />,
-    title: "Ongoing Support and Training",
+    title: "Premium Quality Services",
     description:
-      "We provide continuous support and training, empowering your team to make the most of Salesforces robust capabilities.",
+      "No matter where you are, we challenge you to find a service provider that matches the quality we deliver. We don’t just claim to offer 'Premium Quality Services'—we’ve proven it.",
   },
 ];
 
@@ -57,7 +57,7 @@ const SalesforceChooseUs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.5 }}
-            className="p-6 bg-black shadow-lg rounded-lg border border-gray-700 w-80 text-center flex flex-col items-center"
+            className="p-6 bg-black shadow-lg rounded-lg border border-gray-700 w-[340px] text-center flex flex-col items-center"
           >
             <h3 className="text-xl font-semibold text-white mb-2">
               {feature.title}
