@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function SalesforceSymptoms() {
   return (
-    <div id="WhatToConsider" className=" text-gray-700 min-h-screen py-12 px-4">
+    <div className=" text-gray-700 h-full py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-sm tracking-wider uppercase mb-4">HIRE A SALESFORCE CONSULTANT</p>

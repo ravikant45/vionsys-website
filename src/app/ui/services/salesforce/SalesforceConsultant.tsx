@@ -1,6 +1,6 @@
 export default function SalesforceConsultant() {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div id="WhatToConsider" className="max-w-6xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <p className="text-orange-500 font-semibold tracking-wider uppercase mb-2">CONSULTANT</p>
           <h1 className="text-3xl md:text-4xl font-bold text-blue1 leading-tight">

@@ -34,7 +34,7 @@ const offerings = [
 
 function SalesforceOfferings() {
   return (
-    <div id="OurOfferings" className="h-full mx-auto px-4 py-16 max-w-6xl">
+    <div id="WhatWeOffer" className="h-full mx-auto px-4 py-16 max-w-6xl">
       <div className="text-center mb-12">
         <p className="text-orange font-medium tracking-wider uppercase text-sm mb-1">
           EXPERTISE
@@ -42,21 +42,23 @@ function SalesforceOfferings() {
         <h2 className="text-3xl font-bold text-blue1">What We Offer</h2>
       </div>
 
-      <div className="space-y-24">
+      <div className="space-y-12">
         {offerings.map(({ title, description, image, reverse, alt }, index) => (
           <div
             key={index}
             className={`flex flex-col ${
               reverse ? "md:flex-row-reverse" : "md:flex-row"
-            } items-center gap-8`}
+            } items-center mx-auto`}
           >
-            <div className="md:w-1/2 space-y-4">
+            <div className="md:w-1/2 flex justify-center">
+            <div className="max-w-md p-4 space-y-4">
               <h3 className="text-3xl font-bold text-blue1">{title}</h3>
               {description.map((text, i) => (
                 <p key={i} className="text-gray-700">
                   {text}
                 </p>
               ))}
+              </div>
             </div>
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative w-[90vw] md:w-full max-w-md h-[250px] sm:h-[300px] md:h-80 rounded-lg overflow-hidden">

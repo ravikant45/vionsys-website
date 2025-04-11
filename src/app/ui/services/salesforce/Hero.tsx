@@ -18,7 +18,7 @@ const Hero = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/assets/services/Salesforce/salesforceHero.jpg"
+            src="/assets/services/Salesforce/salesforce2.jpg"
             alt="Hero Image"
             layout="fill"
             objectFit="cover"
