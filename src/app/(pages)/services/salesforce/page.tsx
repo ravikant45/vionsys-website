@@ -1,40 +1,8 @@
-import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { BaseUrl } from "@/app/sitemap";
+import SalesforcePage from "@/app/ui/services/salesforce/SalesforcePage";
 
-import ClientsServices from "@/utils/ClientsServices";
 
-import DynamicLoader from "@/components/ui/DynamicLoader";
-import SalesforceOfferings from "@/app/ui/services/salesforce/SalesforceOfferings";
-import OverviewSection from "@/app/ui/services/salesforce/OverviewSection";
-import WhyChooseUs from "@/app/ui/services/salesforce/WhyChooseUs";
-import SalesforceConsults from "@/app/ui/services/salesforce/SalesforceConsults ";
-import SalesforceCTA from "@/app/ui/services/salesforce/SalesforceCTA";
-import SalesforceConsultant from "@/app/ui/services/salesforce/SalesforceConsultant";
-import SalesforceSymptoms from "@/app/ui/services/salesforce/SalesforceSymptoms";
-import FAQSection from "@/app/ui/services/salesforce/FAQSection";
-import NavSection from "@/app/ui/services/salesforce/NavSection";
-import ThirdSection from "@/app/ui/contact/ThirdSection";
-
-// Dynamic imports for components
-const Hero = dynamic(() => import("@/app/ui/services/salesforce/Hero"), {
-  loading: () => <DynamicLoader />,
-});
-const Future = dynamic(() => import("@/app/ui/services/salesforce/future"), {
-  loading: () => <DynamicLoader />,
-});
-const Cloud = dynamic(() => import("@/app/ui/services/salesforce/Cloud"), {
-  loading: () => <DynamicLoader />,
-});
-const Provide = dynamic(() => import("@/app/ui/services/salesforce/Provide"), {
-  loading: () => <DynamicLoader />,
-});
-const ScheduleMeetAndContactCTA = dynamic(
-  () => import("@/utils/ScheduleMeetAndContactCTA"),
-  {
-    loading: () => <DynamicLoader />,
-  }
-);
 
 export const metadata: Metadata = {
   title: "Salesforce Services in Kharadi - Vionsys IT Solutions India",
@@ -52,26 +20,8 @@ export const metadata: Metadata = {
 
 const Salesforce: React.FC = () => {
   return (
-    <div className="pt-10 overflow-x-hidden">
-      <Hero />
-      <NavSection />
-      <OverviewSection />
-      <SalesforceCTA />
-      <SalesforceOfferings />
-      <WhyChooseUs />
-      <SalesforceConsultant />
-      <SalesforceCTA />
-      <SalesforceSymptoms />
-      <SalesforceConsults />
-      <FAQSection />
-      <ThirdSection />
-      
-      {/* <Future />
-      <ClientsServices />
-      <Cloud />
-      <Provide /> */}
-      {/* <ScheduleMeetAndContactCTA /> */}
-      
+    <div>
+      <SalesforcePage />
     </div>
   );
 };

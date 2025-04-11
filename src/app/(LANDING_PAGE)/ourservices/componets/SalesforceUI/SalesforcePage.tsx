@@ -11,6 +11,7 @@ import SalesforceDeveloperHiring from "./SalesforceDeveloperHiring";
 import SalesforceTools from "./SalesforceTools";
 import CtaSalesforce from "./CtaSalesforce";
 import CTOBanner from "../software-development/CTOBanner";
+import Consults from "./Consults";
 
 const SalesforcePage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -46,6 +47,7 @@ const SalesforcePage = () => {
         showModal={showModal}
         setShowModal={setShowModal}
       />
+      <Consults/>
       <SalesforceDeveloperHiring />
       <ContactUs title={"Salesforce Landing Page"} />
       <PopUp
