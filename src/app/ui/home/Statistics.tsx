@@ -28,7 +28,7 @@ const impactData: ImpactItem[] = [
     ),
   },
   {
-    value: 130,
+    value: 70,
     suffix: "+",
     label: "Projects Delivered",
     icon: (
@@ -43,7 +43,7 @@ const impactData: ImpactItem[] = [
     ),
   },
   {
-    value: 150,
+    value: 90,
     suffix: "+",
     label: "Clients Served",
     icon: <FaPeopleGroup className="size-12" />,
@@ -55,7 +55,7 @@ const impactData: ImpactItem[] = [
     icon: <FaHandshake className="size-12" />,
   },
   {
-    value: 120,
+    value: 100,
     suffix: "+",
     label: "Team Members",
     icon: (
