@@ -41,7 +41,7 @@ function SalesforceConsults() {
     },
   ];
   return (
-    <div id="OurSalesforceConsults" className="h-full bg-[#1a0c05]">
+    <div id="OurSalesforceConsults" className="h-full bg-blue-950">
       <div className="mx-auto px-4 py-16 max-w-6xl">
         <div className="text-center mb-12">
           {/* <p className="text-white font-medium tracking-wider uppercase text-sm mb-1">OUR SALESFORCE CONSULTS</p> */}
@@ -70,7 +70,7 @@ function SalesforceConsults() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 flex justify-center">
-                  <div className="relative w-[90vw] md:w-full max-w-md h-[250px] sm:h-[300px] md:h-80 shadow-lg rounded-lg overflow-hidden">
+                  <div className="relative w-[90vw] md:w-full max-w-md h-[250px] sm:h-[300px] md:h-80 rounded-lg overflow-hidden">
                     <Image
                       src={image}
                       alt={alt}
